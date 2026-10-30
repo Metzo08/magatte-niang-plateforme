@@ -1,0 +1,947 @@
+REFERENTIEL
+D’AGREMENT 	ET DE 	CLASSIFICATION
+DES LABORATOIRES D’ESSAIS ET
+D’ETUDES GEOTECHNIQUES
+
+-- 1 of 24 --
+
+1
+Sommaire
+1. Objet ................................................................................................................................................. 2
+2. Processus d’agrément et de classification ........................................................................................ 2
+2.1. Introduction de la demande.................................................................................................... 3
+2.2. Recevabilité des demandes d’agrément et de classification ............................................................... 4
+2.3. Instruction du dossier de demande d’agrément et de classification...................................................... 5
+2.4. Délivrance du certificat d’agrément et de classification..................................................................... 7
+2.5. Durée de validité du certificat de qualification et de classification ....................................................... 7
+2.6. Délivrance d’un certificat provisoire d’agrément et de classification ................................................... 8
+2.7. Contestation et litiges .................................................................................................................. 8
+2.8. Procédure de réexamen ............................................................................................................. 8
+2.9. Procédure de reconduction/examen .............................................................................................. 9
+2.10. Sanctions ............................................................................................................................ 10
+3. Suivi/évaluation des laboratoires agréés ........................................................................................ 11
+3.1. Suivi ...................................................................................................................................... 11
+3.2. Procédure de réévaluation ......................................................................................................... 11
+4. Annexe : TABLEAUX DE LA LISTE DES ESSAIS NORMALISES PAR DOMAINE
+D’ACTIVITES ET PAR CATEGORIE ET PROFILS DU REFERENT TECHNIQUE ET DES
+INGENIEURS ........................................................................................................................................ 12
+
+-- 2 of 24 --
+
+2
+1. OBJET
+Le présent document décrit le processus d’attribution, de suivi, de contrôle, de renouvellement, de
+réexamen et de retrait de l’agrément et de la classification des laboratoires d’essais et d’études
+géotechniques au Sénégal.
+Les principaux objectifs du système d’agrément et de classification des laboratoires sont:
+ permettre au secteur BTP de se développer dans un cadre organisé qui évite la concurrence
+déloyale pour les entreprises structurées ;
+ inciter les laboratoires à mieux s’organiser et à faire appel à des ressources humaines qualifiées ;
+ s’assurer que le laboratoire dispose des moyens nécessaires pour l’exécution de ses activités
+dans des conditions satisfaisantes ;
+La gestion des activités des laboratoires d’essais et d’études dans le secteur des BTP, régit par la loi n°
+2023 - 12 du 21 juin 2023 et le décret n° 2023-1780 du 29 août 2023, est assurée par un comité
+d’agrément et de classification instituer au LNR-BTP.
+L’agrément d’un laboratoire a pour objet d’apporter une reconnaissance extérieure et indépendante de
+la capacité des laboratoires des BTP à réaliser des essais dans le respect des normes et principes validés
+par l’Autorité de Régulation. Il est accordé sur la base des références fournies par le laboratoire et les
+justificatifs de ses moyens de production, aussi bien humains que matériels, nécessaires à l’exécution de
+l’activité telle que définie dans le recueil des qualifications.
+2. PROCESSUS D’AGREMENT ET DE CLASSIFICATION
+Les laboratoires désireux de se faire agréer et classer doivent répondre à des critères préalablement
+définis par arrêté du Ministre en charge des Infrastructures. Les agréments sont répartis dans des
+domaines d’activités et par catégorie. Chaque domaine donne lieu à une définition des catégories
+précisant les activités et les exigences attendues, notamment en personnel et en matériel. Les laboratoires
+sont classés en catégories en fonction des agréments obtenus dans les domaines d’activités définis.
+Les demandes d’agrément et de classification présentées par les laboratoires sont de trois (3) types :
+ demande d'agrément pour les Laboratoires existants et les laboratoires nouvellement crées
+désirant se conformer aux dispositions du nouveau cadre réglementaire pour le contrôle des
+laboratoires d’essais et d’études géotechniques ;
+ demande de réexamen de l’agrément accordé à des laboratoires déjà agréés et sollicitant un
+nouvel agrément et une nouvelle classification ;
+ demande de renouvellement pour la reconduction annuelle de l’agrément et la classification
+afin de vérifier la pérennité de l'encadrement.
+L’évaluation des demandes d’agrément et de classification s’effectue sur la base d’un dossier permettant
+de valider les éléments suivants :
+ l’identification ;
+ les moyens humains (personnel d’encadrement), matériels et financiers ;
+ le volume d’activités et les références techniques.
+
+-- 3 of 24 --
+
+3
+Le processus d’agrément et de classification comprend les étapes suivantes :
+ l’introduction de la demande ;
+ l'étude de recevabilité du dossier ;
+ l'instruction du dossier ;
+ la décision d’agrément et de classification ;
+ la délivrance du certificat d’agrément et de classification ;
+ le suivi et le contrôle de l’agrément et de la classification ;
+ le réexamen ;
+ le retrait de l’agrément ;
+ le renouvellement de l’agrément et de la classification.
+2.1. Introduction de la demande
+Tout laboratoire éligible à un agrément et une classification peut accéder à la documentation précisant
+les modalités d'introduction de la demande d’agrément et de la classification d’un laboratoire. Cet accès
+peut être soit en consultant le site web du LNR - BTP ou du Ministère en charge des Infrastructures.
+Les demandes d’agrément accompagnées du dossier complet sont adressées par lettre
+recommandée avec accusé de réception ou déposées, contre récépissé, par les laboratoires
+concernés au Secrétariat du Comité d’agrément.
+Les pièces constitutives du dossier de demande d’agrément et de classification du
+laboratoire postulant sont celles indiquées dans les paragraphes A et B du présent document.
+Le dossier de demande d’agrément et de classification est composé des trois (03) sous-dossiers ci-après :
+A. Le sous-dossier : Renseignements généraux
+Il contient les pièces suivantes :
+A.1 - Lorsque l'activité du laboratoire est assurée par une personne physique :
+1. un extrait du certificat d’immatriculation au Registre du Commerce ;
+2. une photocopie certifiée conforme à l’original du diplôme d’ingénieur génie civil ou d’un diplôme
+reconnu équivalent du référent technique ;
+3. pour le profil du référent technique, une expérience professionnelle entre cinq (05) et dix (10) ans
+suivant le domaine d’activités et la catégorie ;
+4. un quitus fiscal de l’année en cours ;
+5. une Attestation de l’IPRES et de la Caisse de Sécurité sociale ;
+6. les états financiers certifiés ;
+7. le Plan d’Assurance Qualité ou équivalent ;
+8. un certificat de non faillite.
+A.2 - Lorsque l'activité du laboratoire est assurée par une personne morale :
+1. une copie des statuts de la personne morale ;
+2. un quitus fiscal de l’année en cours ;
+3. une photocopie certifiée du diplôme d’ingénieur génie civil (ou équivalent) conforme à l’original
+du référent technique ;
+
+-- 4 of 24 --
+
+4
+4. pour le profil du référent technique, une expérience professionnelle entre cinq (05) et dix (10) ans
+suivant le domaine d’activités et la catégorie ;
+5. une Attestation de l’IPRES et de la Caisse de Sécurité sociale ;
+6. un quitus de l’inspection du travail ;
+7. les états financiers certifiés ;
+8. le Plan d’Assurance Qualité ou équivalent.
+9. un certificat de non faillite.
+Le Comité d’agrément a toute la latitude pour procéder à la vérification des informations fournies.
+B. - Le sous-dossier : Moyens humains et matériels
+Il contient les pièces suivantes :
+a. la liste des moyens matériels, avec leurs spécifications techniques, et mention de leur date, de leur
+valeur d'achat ;
+b. la liste du personnel de maîtrise et d'encadrement en précisant leurs qualifications professionnelles
+et leur expérience: dans les moyens humains exigés en annexe sont indiqués le nombre et les profils
+des techniciens selon le domaine d’activités et la catégorie ;
+c. les plans des locaux ;
+d. le certificat d'agrément et de classification pour les laboratoires déjà agréés.
+C. - Le sous-dossier : volume d'activités et références techniques
+Il contient les pièces suivantes :
+a. les états financiers certifiés des deux (02) dernières années pour les laboratoires existants ;
+b. les références techniques des deux dernières années justifiées par des attestations délivrées par les
+bénéficiaires des prestations fournies.
+Les dispositions de ce paragraphe ne sont pas applicables aux laboratoires nouvellement créés.
+Le laboratoire, lors de la première instruction de son dossier, accompagne sa demande d’une lettre
+d’engagement, signée par son représentant légal, s’engageant sur les points suivants:
+ l’engagement à respecter les conditions administratives et financières définies par le Comité ;
+ le respect des règles de conduite auprès de son personnel et autres ;
+ informer, le cas échéant, le Comité de toute modification susceptible de remettre en cause
+l’agrément obtenu ;
+ attester la véracité des informations fournies.
+Le Comité accuse réception du dossier de demande d’agrément.
+2.2. Recevabilité des demandes d’agrément et de classification
+Le Secrétariat du Comité d’agrément reçoit les dossiers des demandeurs, procède à l’instruction
+administrative et vérifie que les dossiers sont complets conformément aux exigences fixées.
+La demande est jugée acceptable si le laboratoire a fourni tous les documents demandés.
+
+-- 5 of 24 --
+
+5
+Si le dossier reste incomplet au regard des critères de recevabilité, le Secrétariat notifie au demandeur,
+par écrit, dans un délai de quinze (15) jours, les éléments manquants. Si le complément d'informations
+n'est pas remis dans un délai de dix (10) jours ou est jugé insatisfaisant, le Secrétariat en informe le
+postulant de la non-acceptation de sa demande en lui précisant les raisons et en informe le Président du
+Comité d’agrément.
+Lorsque le dossier est jugé recevable, le Secrétariat du Comité d’agrément enregistre le dossier et
+l’introduit pour être examiné lors de la prochaine réunion du Comité.
+Seuls les dossiers jugés acceptables (si le laboratoire a fourni tous les documents demandés) seront
+soumis au Comité. Les autres seront rendus au demandeur qui a la liberté d’introduire une nouvelle
+demande avec un dossier conforme.
+2.3. Instruction du dossier de demande d’agrément et de classification
+Le Comité d’agrément instruit les dossiers de demande d’agrément et de classification jugés recevables
+qui sont portés sur l'ordre du jour de la réunion programmée.
+Le Comité vérifie d'abord le respect des conditions préalables à l’agrément et le respect des critères
+d'identification, des moyens humains et matériels, du volume des activités et des références du
+demandeur.
+Le Comité d’agrément mandate une sous-commission de trois (03) experts ayant les compétences
+requises pour effectuer une visite aux locaux dudit laboratoire en vue de vérifier les informations
+fournies dans son dossier. Les experts choisis ne doivent pas avoir d'intérêt personnel ou conflit avec le
+laboratoire candidat.
+Cette visite donne lieu à l'établissement d'un rapport à soumettre à l'appréciation du Comité d’agrément
+dans un délai de quinze (15) jours suivant le mandatement de la sous-commission. Les trois experts
+susvisés sont désignés par décision du Président sur proposition des membres du Comité d’agrément.
+2.3.1. Conditions préalables à l’agrément et la classification
+Pour prétendre à un agrément dans un domaine d’activités donné :
+A. Si l’activité est assurée par les personnes physiques, le demandeur doit :
+a. être résident au Sénégal ;
+b. être titulaire d’un diplôme d'ingénieur génie civil, ingénieur géologue ou d’un
+diplôme reconnu équivalent conformément à la réglementation en vigueur ;
+c. exercer, à titre principal, un ou plusieurs des domaines d’activités indiqués dans la
+demande ;
+d. justifier d'une expérience entre cinq (05) et dix (10) ans suivant le domaine d’activités et
+la catégorie.
+B. Si l’activité du laboratoire est assurée par une personne morale, celle-ci doit :
+a. être une société de droit sénégalais ;
+b. avoir pour objet principal l'exercice de l'une ou plusieurs des domaines d’activités de
+laboratoire précités ;
+
+-- 6 of 24 --
+
+6
+c. pour les sociétés anonymes, le référent technique doit remplir les conditions prévues aux
+conditions b), c) et d) du paragraphe A pour une personne physique.
+Pour les autres formes de sociétés, le référent technique doit remplir les conditions citées à l’alinéa
+précédent.
+2.3.2. Agrément et classification des laboratoires
+Quatre (04) domaines d’activités sont définis et présentés dans le tableau fourni en annexe, avec les
+catégories correspondantes variant entre deux (02) et quatre (04), selon la consistance des essais
+normalisés dans chaque domaine d’activités et chaque catégorie.
+Tout laboratoire doit être classé dans au moins un (01) des domaines d’activités définis. Les catégories
+de laboratoire sont fixées par domaine d’activités comme suit :
+ (A) Matériaux de construction, bétons hydrauliques : trois (03) catégories A1, A2 et A3 ;
+ (B) Géotechnique routière : quatre (04) catégories B1, B2, B3 et B4 ;
+ (C) Ingénierie des sols et fondations : deux (02) catégories, C1, et C2 ;
+ (D) Auscultation, Instrumentation et diagnostic des ouvrages : deux (02) catégories D1 et D2.
+Les tableaux fournis en annexe précisent les conditions de classification par domaine d’activités et par
+catégorie, ainsi que les profils exigés pour le référent technique, les ingénieurs et techniciens
+permanents.
+Un laboratoire est agréé dans un domaine d’activités déterminé et classé dans une catégorie
+correspondant à ce domaine d’activités, lorsque le Comité juge que les
+références fournies par lui ainsi que les moyens humains et matériels mis en place par le laboratoire,
+correspondent aux critères exigés.
+Par "références", il faut entendre les prestations effectivement exécutées par lui-même sans
+l’intermédiaire d’un sous-traitant. Les références présentées sur attestations fournies par les maîtres
+d’ouvrage ou des maîtres d’œuvre, et des clients privés devront notamment préciser la nature et le
+montant des prestations exécutées, leur lieu et date d’exécution.
+L'examen des dossiers de demande d’agrément s’effectue sur la base des éléments suivants :
+ les renseignements généraux fournis ;
+ les moyens humains et matériels ;
+ le ou les domaine (s) d’activités sollicité (s) ;
+ les emplois créés en termes d’effectif ;
+ les références techniques dans le ou les domaine (s) d’activités sollicité (s) ;
+ la fourniture du Quitus fiscal de l’année en cours;
+ la fourniture de l’Attestation de l’IPRES et de la Caisse de Sécurité sociale
+ un quitus de l’inspection du travail ;
+ un certificat de non faillite ;
+ les plans des locaux ;
+ les états financiers certifiés ;
+ le Plan d’Assurance Qualité ou équivalent.
+
+-- 7 of 24 --
+
+7
+L’agrément des laboratoires s’opère en deux phases distinctes: l’agrément d’abord suivant les critères
+définis, ensuite la classification suivant la définition des catégories définies par domaine d’activités.
+Le Comité se prononce sur l’attribution de l’agrément et de la classification au vu des références
+personnelles du référent technique ainsi que des garanties techniques, financières et morales présentées.
+2.4. Délivrance du certificat d’agrément et de classification
+2.4.1. Processus d’attribution
+L’attribution de l’agrément est décidée par le Président du Comité d’agrément, sur proposition du
+Comité d’agrément, sur la base de l’avis donné après l’examen du dossier de demande d’agrément.
+L’avis et la proposition du Comité fait l’objet d’un procès-verbal qui précise l’agrément accordé dans
+un domaine d’activités et une catégorie déterminés attestant de la capacité du laboratoire à exercer les
+prestations pour lesquelles il est qualifié.
+Le procès-verbal est signé par le Président du Comité et indique la liste des membres.
+2.4.2. Attribution du certificat d’agrément et de classification
+Le Président du Comité décide sur la base des documents suivants :
+ le procès-verbal de la réunion du Comité d’agrément ;
+ une fiche de présentation qui résume les éléments présentés dans le dossier et la comparaison
+avec les critères exigés ;
+ le certificat d’agrément et de classification rédigé selon un modèle standard.
+Une fois tous ces documents validés, le Président du Comité, agissant en qualité d’Autorité
+administrative indépendante, notifie au laboratoire concerné le certificat d’agrément et de classification.
+La décision d’agrément et de classification est inscrite au répertoire des laboratoires agréés.
+Le certificat d’agrément et de classification transmis au laboratoire concerné comporte les informations
+suivantes :
+ l’identité du laboratoire (raison sociale, adresse, forme juridique, etc.) ;
+ un numéro d’agrément ;
+ la date d’effet et la durée de validité de l’agrément, le ou les domaine (s) d’activités attribué (s)
+au laboratoire ;
+ la date d’échéance du certificat d’agrément et de classification.
+2.5. Durée de validité du certificat de qualification et de classification
+Le certificat d’agrément et de classification est valable pour une période de trois (03) ans. Sa validité
+court à partir de la date de validation par le Directeur général de LNR-BTP.
+À tout moment, un laboratoire peut solliciter un agrément complémentaire ou une catégorie supérieure.
+Tout laboratoire qui cesse totalement son activité ou dont l’activité ne correspond plus au certificat qui
+lui a été délivré est tenue de retourner celui-ci au Comité d’agrément. Il en est de même des laboratoires
+en liquidation judiciaire ou ceux dont le fonds de commerce a changé de propriétaire. Dans ce cas, le
+Président du Comité d’agrément procède au retrait du certificat d’agrément et classification accordé.
+
+-- 8 of 24 --
+
+8
+2.6. Délivrance d’un certificat provisoire d’agrément et de classification
+Un certificat provisoire d’agrément et de classification peut être délivré à un laboratoire nouvellement
+créé qui ne peut pas produire l'une des pièces suivantes :
+ les états financiers certifiés des trois dernières années ou depuis sa création, si ce dernier existe
+depuis moins de trois ans ;
+ les références techniques ;
+ le Quitus fiscal ;
+ l’Attestation de l’IPRES et de la Caisse de Sécurité Sociale.
+Le classement se fera dans la Catégorie inférieure dans le domaine d’activités visé et ne peut prétendre
+aux Catégories supérieures, qu’après une année au moins d’exercice de cette activité et dans les
+conditions fixées au point 2.3. La durée de validité du certificat provisoire est d'une année non
+renouvelable.
+Pour les laboratoires existants, en cas de demande de nouveaux agréments pour lesquels, ils n'ont pas
+produit de certificat de références y afférentes, ces agréments sont octroyés à titre provisoire
+conformément aux exigences du référentiel d’agrément. Le classement se fera dans la Catégorie
+inférieure dans le domaine d’activités visé et dans les mêmes conditions établies pour les nouveaux
+laboratoires.
+2.7. Contestations et litiges
+Lorsque le Comité estime que le dossier qui lui est présenté contient des écarts par rapport aux exigences
+de l’agrément demandé, celui-ci émet un avis de refus de l’agrément. Le Président du Comité notifie au
+demandeur la décision motivée de ce refus.
+Les décisions de refus d'attribution, de retrait ou de déclassement d’agrément sont susceptibles de
+recours selon la procédure décrite au paragraphe 2.8.
+Tout laboratoire qui estime n'avoir pas reçu l’agrément ou la classification auxquels il a droit, peut
+demander, au Comité un nouvel examen de son cas dans un délai maximum de trente (30) jours. Un
+délai maximum de deux (02) mois, à compter de la date de réception de la demande, est accordé au
+Comité d’agrément pour faire connaitre sa réponse au laboratoire requérant.
+Si le nouvel examen ne lui donne pas satisfaction, le laboratoire dispose alors, sous peine de forclusion,
+d'un délai de deux (02) mois après réception de la réponse du Comité, pour adresser au Comité de
+Règlement des Différends (CRD) institué LNR-BTP, un mémoire indiquant les motifs de sa réclamation.
+La réponse du CRD doit lui être fournie dans un délai de deux (02) mois suivant la date de remise de la
+réclamation.
+Les décisions du CRD sont immédiatement exécutoires et ont force contraignante sur les parties. Elles
+sont définitives, sauf en cas de recours devant la juridiction compétente.
+2.8. Procédure de réexamen
+Le certificat d’agrément et de classification d'un laboratoire peut être réexaminé par le Comité
+d’agrément dans les cas suivants :
+
+-- 9 of 24 --
+
+9
+ à la demande du laboratoire pour tenir compte des changements éventuels survenus dans sa
+situation, et ce, dans les mêmes conditions de recevabilité exigées;
+ à la demande du CRD, pour le réexamen du certificat d’agrément et de classification d'un
+laboratoire donné sur la base d'un rapport motivé.
+A l'occasion du réexamen, le laboratoire peut demander, de façon explicite, une extension de ses
+agréments dans une ou plusieurs activités.
+A l'issue de l'examen de ladite demande, le Comité d’agrément et de classification peut décider :
+ soit une extension de ses agréments dans un ou plusieurs domaines d’activités ;
+ soit un classement du laboratoire à la classe immédiatement supérieure dans le domaine
+d'activités concerné ;
+ soit un déclassement à la classe correspondant aux moyens humains exigés et aux moyens de
+production dont dispose effectivement le laboratoire.
+La décision de reclassement ou de déclassement donne lieu à l'établissement d'un nouveau certificat
+d’agrément et de classification qui sera notifié au laboratoire concerné.
+Tout laboratoire agréé et classé est tenu d'informer le Comité d’agrément et de classification de tout
+changement intervenu dans les éléments qui ont donné lieu à son agrément et classification.
+2.9. Procédure de reconduction/examen
+2.9.1 Vérification annuelle :
+Pour la prolongation annuelle du certificat, au cours des deux années qui suivent la délivrance du
+certificat, il y a lieu de noter ce qui suit :
+Deux mois avant l'échéance de la validité annuelle du certificat, le laboratoire agréé et classé est appelé
+à déposer un dossier de prolongation auprès du secrétariat du Comité muni des pièces justificatives des
+moyens humains ci-après :
+ les profils du référent technique et des ingénieurs ayant servi à l’agrément et la classification
+du laboratoire doivent être maintenus au cours de l'année ;
+ pour les trois (03) derniers mois, les moyens humains doivent correspondre au minimum exigé
+pour l’octroi de la classification.
+2.9.2 Examen du certificat d’agrément et de classification après expiration du délai de validité de
+trois(03) années :
+Deux (02) mois avant l'échéance de la validité du certificat d’agrément et de classification, le laboratoire
+agréé et classé est appelé à déposer un dossier complet pour le renouvellement de son agrément. La
+reconduction sera traitée sur les mêmes bases que les conditions de délivrance de l’agrément initial.
+La suspension de l’agrément peut intervenir lorsqu’il apparait que le laboratoire ne remplit pas les
+conditions d’agrément lors d’une validation annuelle ou d’un examen de reconduction. Le laboratoire
+peut à tout moment retrouver le bénéfice de son agrément sous réserve d’apporter la preuve qu’il a
+corrigé les dysfonctionnements ayant conduit à cette suspension.
+
+-- 10 of 24 --
+
+10
+2.10. Sanctions
+Les laboratoires qui se sont rendus coupables de faits délictueux ou de manquements graves et répétés
+dans l’exécution de leurs activités, peuvent se voir appliquer des sanctions suivant la gravité des faits.
+Le Président, sur proposition du Comité d’agrément, invite au préalable, par lettre recommandée avec
+accusé de réception, le laboratoire concerné à présenter, dans un délai de quinze jours (15), ses moyens
+de défense au regard des griefs qui lui sont reprochés.
+Le Comité d’agrément peut charger la sous-commission visée au paragraphe 2.3 ci-dessus pour procéder
+à l'instruction de la procédure de retrait y compris éventuellement une visite sur les lieux du laboratoire
+concerné.
+Le Comité d’agrément et de classification peut, le cas échéant, tenir une réunion pour entendre les
+explications du responsable du laboratoire concerné.
+Le Comité d’agrément statue ensuite sur la question et peut adopter l’une des mesures suivantes :
+1. avertissement ;
+2. substitution à l’agrément précédemment reconnu d’un agrément de degré inférieur ;
+3. retrait du certificat pour une durée de six (06) mois lorsque la falsification concerne la
+prolongation du délai de validité du certificat pour des agréments et classifications déjà
+accordées à titre provisoire au laboratoire ;
+4. rejet ou retrait du certificat pour une durée d'une année lorsque la falsification concerne la
+prolongation du délai de validité du certificat pour des agréments et classifications déjà
+accordés au laboratoire ;
+5. retrait du certificat pour une durée de deux (02) années lorsque la falsification concerne l'ajout
+ou la modification de l’agrément ou/et de catégorie non attribués précédemment au
+laboratoire ; ou la falsification des pièces justificatives tendant à obtenir indûment le
+certificat ;
+6. retrait définitif du certificat est proposé en cas de récidive de l'un des trois cas 3), 4) et 5)
+précités. Dans ce dernier cas, il est proposé que la décision de retrait définitif soit
+accompagnée de la poursuite judiciaire.
+Les sanctions sont applicables lorsque des actes frauduleux ou manquements graves aux engagements
+pris dans l'exécution des travaux de laboratoires. Elles sont aussi applicables lorsque deux marchés au
+moins du laboratoire qualifié et classé ont fait l’objet de résiliation, aux torts de celui-ci, au cours d’une
+même année, suite à des manquements à ses engagements dûment établis.
+La pénalité à appliquer est appréciée par le Comité selon la gravité des actes commis par le laboratoire
+qualifié et classé.
+La décision du retrait de l’agrément est notifiée au laboratoire concerné. Celui-ci sera tenu de retourner
+l'original du certificat d’agrément et de classification au Secrétariat du Comité.
+Le Président du Comité informe l'ensemble des administrations de la décision prise du retrait du
+certificat.
+
+-- 11 of 24 --
+
+11
+Les décisions de sanction sont publiées dans le site web du LNR-BTP et du ministère en charge des
+infrastructures et au portail des marchés publics.
+3. SUIVI/EVALUATION DES LABORATOIRES AGREES
+L’importance du suivi et de l’évaluation tient au fait qu’ils permettent de mesurer le degré de respect
+des objectifs fixés, de procéder éventuellement aux ajustements nécessaires et de faciliter le processus
+d’apprentissage à partir des enseignements tirés.
+3.1. Suivi
+Il s’agit du processus de suivi de la mise en œuvre de l’ensemble des activités effectuées par le comité
+à tout moment, entre l’attribution de l’agrément et son renouvellement. Le processus de suivi consiste à
+s’assurer que les attestations antérieurement remises correspondent toujours à la situation du
+bénéficiaire. Il permet de vérifier que les critères d’agrément et de classification exigés sont respectés
+pour garantir les objectifs fixés en termes de qualité, de fiabilités et respect des règles d’éthique et de
+déontologie.
+La tâche de suivi incombe à l’équipe du Comité d’agrément. Elle fait partie intégrante de leurs tâches
+quotidiennes visant à assurer du respect des règles établies. Des évaluations sur des aspects
+organisationnels et techniques sont réalisées deux (02) fois au minimum durant la durée de validité du
+certificat d’agrément, ou de façon inopinée, sur un échantillon de laboratoires d’essais et d’études
+géotechniques.
+3.2. Procédure de réévaluation
+Le Comité d’agrément procède à une réévaluation si des changements affectent significativement
+l'activité et le fonctionnement d'un laboratoire agréé et classé ou si toute autre information indique qu'il
+ne répond plus aux exigences et critères de l’agrément et de la classification attribués.
+A cette occasion, la suspension, le retrait temporaire ou définitif du certificat d’agrément et de
+classification peut-être prononcé par le Président du comité.
+
+-- 12 of 24 --
+
+12
+ANNEXE : TABLEAUX DE LA LISTE DES ESSAIS NORMALISES
+PAR DOMAINE D’ACTIVITES ET PAR CATEGORIE ET
+PROFILS DU REFERENT TECHNIQUE ET DES INGENIEURS
+Domaine d'activités (A,…D) Code couleurs critères
+A B C D Minimum Pertinent
+Catégorie (1,…4)
+ 1 A. 1 B. 1 C. 1 D. 1 ⦿
+2 A. 2 B. 2 C. 2 D. 2 ⦿
+3 A. 3 B. 3 - - ⦿
+4 - B. 4 - - ⦿
+
+-- 13 of 24 --
+
+13
+DOMAINES D’ACTIVITES (A) :
+Matériaux de construction et béton hydraulique
+N° CATEGORIE A.3 A.2 A.1
+ESSAIS
+ESSAIS SUR GRANULAT
+1 Détermination de la teneur en eau ⦿ ⦿ ⦿
+2 Détermination de la granularité - Analyse granulométrique par tamisage ⦿ ⦿ ⦿
+3 Détermination de la forme des granulats - Coefficient d'aplatissement
+(Coefficient de forme) ⦿ ⦿ ⦿
+4 Evaluation des fines - Équivalent de sable ⦿ ⦿ ⦿
+5 Détermination de la valeur de bleu de méthylène d'un sol ou d'un matériau
+rocheux par l'essai à la tache ⦿ ⦿ ⦿
+6 Détermination de la masse volumique apparente, de la masse volumique
+des particules, de la masse volumique réelle et de l'absorption d'eau ⦿ ⦿ ⦿
+7 Détermination de la teneur pondérale en matières organiques d'un
+matériau ⦿ ⦿
+8 Détermination de la résistance à la fragmentation (Los Angeles) ⦿ ⦿
+9 Détermination de la résistance à l'usure (micro-Deval) ⦿ ⦿
+10 Détermination du coefficient de polissage accéléré ⦿
+11 Détermination de la porosité du filler sec compacté ⦿
+12 Coefficient d'écoulement des granulats
+13 Détermination du coefficient de friabilité du sable
+14 Détermination du pourcentage de surfaces cassées dans les gravillons et
+graves naturelles (Angularité)
+15 Détermination de la résistance à l'usure par abrasion provoquée par les
+pneus à crampons - Essai scandinave
+ANALYSES CHIMIQUES GRANULAT
+1 Détermination de la teneur en sulfure d'hydrogène
+2 Détermination de la teneur en chlorure
+3 Détermination de la teneur en soufre
+4 Étude pétrographique des granulats appliquée à l'alcali-réaction
+5 Méthodes d'essai de réactivité aux alcalis
+ESSAIS SUR BETON ET ROCHE
+1 Résistance à la compression simple des éprouvettes ⦿ ⦿ ⦿
+2 Essais pour béton frais - Essai d'affaissement ⦿ ⦿ ⦿
+3 Confection et conservation des éprouvettes pour essais de résistance ⦿ ⦿ ⦿
+4 Détermination de la résistance en traction par fendage d’éprouvettes ⦿ ⦿
+5 Essais pour béton dans les structures : essais non destructifs -
+Détermination de l'indice de rebondissement (Scléromètre) ⦿ ⦿
+6 Essais pour béton dans les structures : carottes - Prélèvement, examen et
+essais en compression ⦿ ⦿
+7 Pavés en béton - Prescriptions et méthodes d'essai (mesure de résistance
+et absorption d’eau…) ⦿ ⦿
+8
+Essais des éléments de maçonnerie : détermination de l'absorption de l'eau
+par capillarité des éléments de maçonnerie en béton de granulats, en béton
+cellulaire autoclavé, en pierre reconstituée et naturelle et du taux initial
+d'absorption d'eau des éléments de maçonnerie en terre cuite
+⦿
+9 Briques et Blocs de terre crue pour murs et cloisons - Définitions -
+Spécifications - Méthodes d'essai - Conditions de réception
+
+-- 14 of 24 --
+
+14
+10 Méthodes d'essai des éléments de maçonnerie : détermination de la
+résistance à la compression ⦿
+11 Béton auto-plaçant - Essai d'étalement au cône ⦿
+12 Dalles en béton - Prescriptions et méthodes d'essai ⦿
+13 Éléments pour bordures de trottoir en béton - Prescriptions et méthodes
+d'essai
+14 Essais pour béton frais : teneur en air
+15 Essai de perméabilité aux gaz sur béton durci
+16 Essais pour béton durci : Résistance à la flexion des éprouvettes
+17 Essais pour béton durci : profondeur de pénétration d'eau sous pression
+18 Essais pour béton durci : détermination du fluage du béton en
+compression
+19 Détermination du module d'élasticité statique en compression du béton
+cellulaire autoclavé et du béton de granulats légers à structure ouverte
+20 Essais pour béton durci : détermination du module sécant d'élasticité en
+compression
+ESSAIS SUR CIMENT
+1 Détermination des résistances mécaniques (résistance à la flexion et
+compression) ⦿ ⦿
+2 Détermination du temps de prise et de la stabilité ⦿ ⦿
+3 Détermination du retrait et du gonflement ⦿
+4 Analyse chimique des ciments (dosage en sulfates, chlorure, alcalis,
+carbone…)
+5 Détermination de la finesse
+EAU DE GACHAGE POUR BETONS
+1
+Eau de gâchage pour bétons - Spécifications d'échantillonnage, d'essais et
+d'évaluation de l'aptitude à l'emploi, y compris les eaux des processus de
+l'industrie du béton, telle que l'eau de gâchage pour béton (pH, matières
+en suspension, essai chimiques…)
+ESSAIS SUR FER
+1 Acier pour armature et la précontrainte du béton –méthode d’essai: barres,
+fils machines et fils pour béton armé (caractéristiques géométriques) ⦿ ⦿
+2 Essai de traction- méthode d’essai à température ambiante ⦿
+3
+Acier pour armature et la précontrainte du béton –méthode d’essai: barres,
+fils machines et fils pour béton armé (pliage, pliage-dépliage, fatigue…)
+ADJUVANT POUR BETON ,MORTIER ET COULIS DE CIMENT
+1 Adjuvants pour béton, mortier et coulis : exigences communes
+2 Adjuvants pour mortier de montage - Définitions, exigences, conformité,
+marquage et étiquetage
+3 Adjuvants pour bétons projetés - Définitions, exigences, conformité,
+marquage et étiquetage
+4 adjuvants pour coulis de câble de précontrainte - Définitions, exigences,
+conformité, marquage et étiquetage
+5 Echantillonnage, évaluation et vérification de la constance des
+performances
+OUTILS DE DIMENSIONNEMENT
+1 Manuels ⦿ ⦿ ⦿
+2 Normes ⦿ ⦿ ⦿
+3 Logiciels
+
+-- 15 of 24 --
+
+15
+DOMAINES D’ACTIVITES (B) :
+Géotechnique routière
+N° CATEGORIE B.4 B.3 B.2 B.1
+ESSAIS
+ESSAIS SUR GRANULATS ET SOL
+1 Détermination de la teneur en eau ⦿ ⦿ ⦿ ⦿
+2 Détermination de la granularité - Analyse
+granulométrique par tamisage ⦿ ⦿ ⦿ ⦿
+3 Détermination des limites de liquidité et de
+plasticité ⦿ ⦿ ⦿ ⦿
+4 Détermination de la forme des granulats -
+Coefficient d'aplatissement (Coefficient de forme) ⦿ ⦿ ⦿ ⦿
+5 Détermination de la masse volumique apparente, de
+la masse volumique des particules, de la masse
+volumique réelle et de l'absorption d'eau
+⦿ ⦿ ⦿ ⦿
+6 Evaluation des fines - Équivalent de sable ⦿ ⦿ ⦿ ⦿
+7 Détermination de la valeur de bleu de méthylène
+d'un sol ou d'un matériau rocheux par l'essai à la
+tache
+⦿ ⦿ ⦿ ⦿
+8 Détermination de la masse volumique d'un sol fin ⦿ ⦿ ⦿ ⦿
+9 Détermination de la teneur pondérale en matières
+organiques d'un matériau ⦿ ⦿
+10 Détermination de la résistance à la fragmentation
+(Los Angeles) ⦿ ⦿
+11 Détermination de la résistance à l'usure (micro-
+Deval) ⦿ ⦿
+12 Détermination du coefficient de polissage accéléré ⦿
+13 Détermination du coefficient d'écoulement des
+granulats
+14 Détermination du coefficient de friabilité du sable
+15 Détermination de la porosité du filler sec compacté
+ANALYSE CHIMIQUE GRANULAT ET SOL
+1 Détermination de la teneur en sulfure d'hydrogène
+2 Détermination de la teneur en chlorure
+3 Détermination de la teneur en soufre
+4
+Étude pétrographique des granulats appliquée à
+l'alcali-réaction
+5 Méthodes d'essai de réactivité aux alcalis
+ESSAIS SUR BETON ET MATERIAU TRAITE
+1 Essais pour béton frais - Essai d'affaissement ⦿ ⦿ ⦿ ⦿
+2 Résistance à la compression des éprouvettes ⦿ ⦿ ⦿
+3 Détermination de la résistance en traction par
+fendage d’éprouvettes ⦿ ⦿
+4
+Essais pour béton dans les structures : essais non
+destructifs - Détermination de l'indice de
+rebondissement (Scléromètre)
+⦿ ⦿
+5 Essais pour béton dans les structures : carottes -
+Prélèvement, examen et essais en compression ⦿
+ESSAI DE PORTANCE
+
+-- 16 of 24 --
+
+16
+1
+Détermination des références de compactage d'un
+matériau - Essai Proctor Normal - Essai Proctor
+modifié
+⦿ ⦿ ⦿ ⦿
+2
+Reconnaissance et essais - Indice CBR après
+immersion. Indice CBR immédiat. Indice Portant
+Immédiat - Mesure sur échantillon compacté dans
+le moule CBR
+⦿ ⦿ ⦿ ⦿
+ESSAI IN SITU
+1 Détermination de la masse volumique d'un
+matériau en place ⦿ ⦿ ⦿ ⦿
+2 Portance des plates-formes - module sous
+chargement statique à la plaque (EV2) ⦿
+3 Mesure de la déflexion engendrée par une charge
+roulante ⦿
+4 Mesurage de la profondeur de macrotexture de la
+surface d'un revêtement ⦿
+5 Essais relatifs aux chaussées - Essais liés à l'uni
+ESSAI SUR CIMENT
+1 Détermination des résistances mécaniques
+(résistance à la flexion et compression) ⦿ ⦿
+2 Détermination du retrait et du gonflement ⦿
+3 Détermination du temps de prise et de la stabilité ⦿
+4 Analyse chimique des ciments (dosage en sulfates,
+chlorure, alcalis, carbone…)
+5 Détermination de la finesse
+ESSAI SUR MATERIAU BITUMINEUX
+1 Détermination de la masse volumique apparente des
+éprouvettes bitumineuses ⦿ ⦿ ⦿
+2 Teneur en liant soluble (extraction bitume) ⦿ ⦿ ⦿
+3 Essai Marshall ⦿ ⦿ ⦿
+4 Détermination de la sensibilité à l'eau des
+éprouvettes bitumineuses ⦿ ⦿
+5 Essai de compactage à la presse à cisaillement
+giratoire (PCG) ⦿ ⦿
+6 Essai d'orniérage ⦿
+7 Détermination de rigidité des matériaux bitumineux
+(module) ⦿
+8 Détermination de la résistance à la fatigue des
+matériaux bitumineux ⦿
+ESSAI SUR LIANT BITUMENEUX
+1 Détermination de la pénétrabilité à l'aiguille ⦿ ⦿ ⦿
+2 Détermination du point de ramollissement ⦿ ⦿
+3 Détermination de la résistance au durcissement sous
+l'effet de la chaleur et de l'air ⦿ ⦿
+4 Vieillissement long-terme accéléré réalisé dans un
+récipient de vieillissement sous pression (PAV) ⦿
+5 Détermination du point d'éclair ⦿
+6 Détermination de la teneur en paraffines ⦿
+7
+Vieillissement/conditionnement long-terme
+accéléré par la méthode du cylindre tournant
+(RCAT)
+
+-- 17 of 24 --
+
+17
+8 Détermination de la viscosité dynamique par
+viscosimètre capillaire sous vide
+9 Calcul de l'indice de viscosité à partir de la viscosité
+cinématique
+10 Détermination des caractéristiques de traction des
+bitumes modifiés par la méthode de force ductilité
+ESSAI SUR EMULSION
+1 Détermination de la teneur en eau dans les
+émulsions de bitume ⦿
+2 Détermination du temps d'écoulement à l'aide d'un
+viscosimètre à écoulement ⦿
+3 Détermination du pH des émulsions bitumineuses ⦿
+4 Détermination de l'indice de rupture des émulsions
+de bitume ⦿
+5 Détermination du résidu sur tamis des émulsions de
+bitume ⦿
+6 Détermination de la stabilité au stockage par
+tamisage ⦿
+7 Détermination de l'adhésivité des émulsions
+bitumineuses par l'essai d'immersion dans l'eau ⦿
+8 Détermination de la cohésion des liants bitumineux
+par la méthode du mouton-pendule
+9 Stabilité du mélange avec du ciment
+OUTILS DE DIMENSIONNEMENT
+1 Manuels ⦿ ⦿ ⦿ ⦿
+2 Normes ⦿ ⦿ ⦿ ⦿
+3 Logiciels ⦿
+
+-- 18 of 24 --
+
+18
+DOMAINES D’ACTIVITES (C):
+INGENIERIE DES SOLS ET FONDATION
+N° CATEGORIE C.2 C.1
+ESSAIS
+ESSAIS SOL
+1 Détermination de la teneur en eau ⦿ ⦿
+2 Essais de laboratoire sur les sols : Détermination de la distribution
+granulométrie des particules (par tamisage et densimétrie) ⦿ ⦿
+3 Détermination des limites de liquidité et de plasticité ⦿ ⦿
+4 Détermination de la valeur de bleu de méthylène d'un sol ou d'un
+matériau rocheux par l'essai à la tache ⦿ ⦿
+5 Evaluation des fines - Équivalent de sable ⦿ ⦿
+6 Détermination de la masse volumique des sols fins en laboratoire ⦿ ⦿
+7 Détermination de la masse volumique réelle et du coefficient
+d'absorption d'eau ⦿ ⦿
+8 Détermination de la teneur pondérale en matières organiques d'un sol ⦿
+9 Essais de perméabilité des sols ⦿
+ANALYSES CHIMIQUES SOL ET EAU DE LA NAPPE
+1 Dosage du sulfate soluble dans l'eau et dans l'acide
+2 Détermination de la teneur en chlorures solubles dans l'eau
+3 Détermination de la teneur en soufre total
+ESSAIS MECANIQUES SUR SOL
+1 Essai de cisaillement direct ⦿ ⦿
+2 Essai de chargement par palier à l'œdomètre ⦿ ⦿
+3 Essai triaxial ⦿
+ESSAIS IN SITU
+1 Reconnaissance et essais - Prélèvement des sols et des roches :
+Sondage manuel ⦿ ⦿
+2 Reconnaissance et essais - Prélèvement des sols et des roches :
+Sondage à la tarière ⦿
+3 Reconnaissance et essais - Prélèvement des sols et des roches :
+Sondage carotté ⦿
+4 Reconnaissance et essais – essai en place : Essai pressiomètrique
+Ménard ⦿
+5 Reconnaissance et essais – essai en place : Sondage au pénétromètre
+dynamique ⦿
+6 Reconnaissance et essais – essai en place : Mesure piézométrique ⦿
+7 Reconnaissance et essais – essai en place : Essai scissométrique
+8 Essai géophysique (Sondage Electrique vertical, tomographie de
+résistivité, RADAR…)
+OUTILS DE DIMENSIONNMENT
+1 Manuels ⦿ ⦿
+2 Normes ⦿ ⦿
+3 Logiciels ⦿
+
+-- 19 of 24 --
+
+19
+DOMAINES D’ACTIVITES (D) :
+AUSCULTATION, INSTRUMENTATION ET DIAGNOSTIQUE DES OUVRAGES
+N° CATEGORIE D.2 D.1
+ESSAIS
+ESSAI SUR OUVRAGE
+1 Essais pour béton dans les structures : essais non destructifs -
+Détermination de l'indice de rebondissement (Scléromètre) ⦿ ⦿
+2 Résistance à la compression des éprouvettes ⦿ ⦿
+3 Essais pour béton dans les structures : carottes - Prélèvement,
+examen et essais en compression ⦿
+4 Contrôle d'intégrité sur pieux (auscultation sonique, sismique,
+impédance mécanique, ultrasons, électromagnétique...) ⦿
+ESSAIS SUR CHAUSSEE
+1 Détermination masse volumique matériau en place ⦿ ⦿
+2 Détermination de la déflexion et du rayon de courbure ⦿ ⦿
+3 Essais relatifs aux chaussées - Essais liés à l'uni ⦿ ⦿
+4 Relevé de dégradation visuel ⦿ ⦿
+5 Sondage manuel pour identification ⦿ ⦿
+6 Carottage sur chaussée ⦿
+7 Mesurage de la profondeur de macrotexture de la surface d'un
+revêtement ⦿
+8 Mesure de la déflexion engendrée par une charge roulante ⦿
+9 Relevé de dégradation en continu ⦿
+10 Portance des plates-formes : module sous chargement statique à la
+plaque (EV2) ⦿
+11 Surveillance géotechnique par instrumentation in situ (inclinomètre
+– tassométre …)
+OUTILS DE DE TRAITEMENT ET D'ANALYSE
+1 Manuels ⦿ ⦿
+2 Normes ⦿ ⦿
+3 Logiciels ⦿
+
+-- 20 of 24 --
+
+20
+CRITERES MOYENS HUMAINS
+DOMAINE D'ACTIVITE (A) : MATERIAUX DE CONSTRUCTION, BETONS HYDRAULIQUES
+CATEGORIES A1 A2 A3
+MOYENS HUMAINS
+Référent technique Un (01) Ingénieur Un (01) Ingénieur Un (01) Ingénieur
+Qualification Génie civil, géologue ou similaire Génie civil, géologue ou similaire Génie civil, géologue ou similaire
+Expérience Sept (07) années dans le
+domaine d'activités
+Cinq (05) années dans le
+domaine d'activités
+Cinq (05) années dans le
+domaine d'activités
+Ingénieurs Un (01) Ingénieur Un (01) Ingénieur Un (01) Ingénieur
+Qualification Génie civil, géologue ou
+similaire spécialisés en géotechnique
+Génie civil, géologue ou
+similaire spécialisé en géotechnique
+Génie civil, géologue ou
+similaire spécialisé en géotechnique
+Expérience Sept (07) années dans le
+domaine d'activités
+Quatre (04) années dans le
+domaine d'activités
+Deux (02) années dans le
+domaine d'activités
+Techniciens
+supérieur Trois (03) Deux (02) Un (01)
+Qualification Agents de maîtrise Agents de maîtrise Agents de maîtrise
+Expérience Cinq (05) années Cinq (05) années Cinq (05) années
+Responsable
+QHSE Un (01) Responsable QHSE - -
+Qualification Master QHSE, Ingénieurs - -
+Expérience Quatre (04) années dans le domaine - -
+
+-- 21 of 24 --
+
+21
+DOMAINE D'ACTIVITE (B) : GEOTECHNIQUE ROUTIERE
+CATEGORIES B1 B2 B3 B4
+MOYENS HUMAINS
+Référent technique Un (01) Ingénieur Un (01) Ingénieur Un (01) Ingénieur Un (01) Ingénieur
+Qualification
+Génie civil, géologue ou
+similaire spécialisés en
+géotechnique
+Génie civil, géologue ou
+similaire spécialisés en
+géotechnique
+Génie civil, géologue ou
+similaire spécialisés en
+géotechnique
+Génie civil, géologue ou
+similaire
+Expérience Dix (10) années dans le
+domaine d'activités
+Sept (7) années dans le
+domaine d'activités
+Sept (07) années dans le
+domaine d'activités
+Cinq (05) années dans le
+domaine d'activités
+Ingénieurs Six (06) Ingénieurs Quatre (04) Ingénieurs Deux (02) Ingénieurs Un (1) Ingénieur
+Qualification
+Génie civil, géologue ou
+similaire spécialisés en
+géotechnique ou génie chimique
+Génie civil, géologue ou
+similaire spécialisés en
+géotechnique
+Génie civil, géologue ou
+similaire spécialisés en
+géotechnique
+Génie civil, géologue ou
+similaire spécialisé en
+géotechnique
+Expérience
+Un (01) de 10 années et le reste
+minimum trois (03) années dans
+le domaine d'activités
+Un (01) de 07 années et le
+reste minimum trois (03)
+années dans le domaine
+d'activités
+Trois (3) années dans le
+domaine d'activités
+Deux (02) années dans le
+domaine d'activités
+Techniciens
+supérieur Cinq (05) Cinq (05) Trois (03) Un (01)
+Qualification Agents de maîtrise Agents de maîtrise Agents de maîtrise Agents de maîtrise
+Expérience Cinq (05) années Cinq (05) années Cinq (05) années Cinq (05) années
+Responsable
+QHSE Un (01) Responsable QHSE Un (01) Responsable QHSE - -
+Qualification Master QHSE, Ingénieurs Master QHSE, Ingénieurs - -
+Expérience Quatre (4) années dans le
+domaine
+Quatre (4) années dans le
+domaine - -
+
+-- 22 of 24 --
+
+22
+DOMAINE D'ACTIVITE (C) : INGENIERIE DES SOLS ET FONDATION
+CATEGORIES C1 C2
+MOYENS HUMAINS
+Référent technique Un (01) Ingénieur Un (01) Ingénieur
+Qualification Génie civil, géologue ou
+similaire spécialisés en géotechnique Génie civil, géologue ou similaire
+Expérience Sept (07) années dans le
+domaine d'activités
+Cinq (05) années dans le
+domaine d'activités
+Ingénieurs Deux (02) Ingénieurs Un (01) Ingénieur
+Qualification Génie civil, géologue ou
+similaire spécialisés en géotechnique
+Génie civil, géologue ou
+similaire spécialisé en géotechnique
+Expérience Cinq (05) années dans le
+domaine d'activités
+Deux (02) années dans le
+domaine d'activités
+Techniciens
+supérieur Trois (03) Un (01)
+Qualification Agents de maîtrise Agents de maîtrise
+Expérience Cinq (05) années Cinq (05) années
+Responsable
+QHSE Un (01) Responsable QHSE -
+Qualification Master QHSE, Ingénieurs -
+Expérience Quatre (04) années dans le domaine -
+
+-- 23 of 24 --
+
+23
+DOMAINE D'ACTIVITE (D) : AUSCULTATION, INSTRUMENTATION ET DIAGNOSTIQUE DES OUVRAGES
+CATEGORIES D1 D2
+MOYENS HUMAINS
+Référent technique Un (01) Ingénieur Un (01) Ingénieur
+Qualification Génie civil, géologue ou
+similaire spécialisés en géotechnique
+Génie civil, géologue ou
+similaire spécialisés en géotechnique
+Expérience Dix (10) années dans le
+domaine d'activités
+Sept (07) années dans le
+domaine d'activités
+Ingénieurs Deux (02) Ingénieurs Un (01) Ingénieur
+Qualification Génie civil, géologue ou
+similaire spécialisés en géotechnique
+Génie civil, géologue ou
+similaire spécialisé en géotechnique
+Expérience Un (01) de 07 années et un (01) de cinq (5) années dans le
+domaine d'activités
+Cinq (05) années dans le
+domaine d'activités
+Techniciens
+supérieur Trois(03) Deux (02)
+Qualification Agent de maîtrise Agent de maîtrise
+Expérience Cinq (05) années Cinq (05) années
+Responsable
+QHSE Un (01) Responsable QHSE -
+Qualification Master QHSE, Ingénieurs _
+Expérience Quatre (04) années dans le domaine _
+
+-- 24 of 24 --
+

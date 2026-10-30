@@ -1,0 +1,585 @@
+
+> magatte-niang-plateforme@2.0.0 dev
+> next dev
+
+   Ôû▓ Next.js 15.5.25
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.100:3000
+   - Environments: .env.local, .env
+
+ Ô£ô Starting...
+ Ô£ô Ready in 10.3s
+ Ôùï Compiling / ...
+ Ô¿» ./src/data/initialData.ts
+Error:   x Unexpected token `{`. Expected identifier, string literal, numeric literal or [ for the computed key
+      ,-[C:\Users\hp\Downloads\magatte_niang_plateforme\src\data\initialData.ts:2350:1]
+ 2347 |     validatedForAI: true,
+ 2348 | 
+ 2349 |   // === NOUVEAUX COMMUNIQU├ëS BTP S├ëN├ëGAL (ajout├®s le 2026-09-22) ===
+ 2350 |   {
+      :   ^
+ 2351 |     id: 'pub-04',
+ 2352 |     title: 'SERMA BTP et le d├®fi de la construction m├®tallique au S├®n├®gal : vers une souverainet├® industrielle',
+ 2352 |     type: 'Presse',
+      `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/data/initialData.ts
+./src/components/providers/QueryProvider.tsx
+ Ô¿» ./src/data/initialData.ts
+Error:   x Unexpected token `{`. Expected identifier, string literal, numeric literal or [ for the computed key
+      ,-[C:\Users\hp\Downloads\magatte_niang_plateforme\src\data\initialData.ts:2350:1]
+ 2347 |     validatedForAI: true,
+ 2348 | 
+ 2349 |   // === NOUVEAUX COMMUNIQU├ëS BTP S├ëN├ëGAL (ajout├®s le 2026-09-22) ===
+ 2350 |   {
+      :   ^
+ 2351 |     id: 'pub-04',
+ 2352 |     title: 'SERMA BTP et le d├®fi de la construction m├®tallique au S├®n├®gal : vers une souverainet├® industrielle',
+ 2352 |     type: 'Presse',
+      `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/data/initialData.ts
+./src/components/providers/QueryProvider.tsx
+ Ô¿» ./src/data/initialData.ts
+Error:   x Unexpected token `{`. Expected identifier, string literal, numeric literal or [ for the computed key
+      ,-[C:\Users\hp\Downloads\magatte_niang_plateforme\src\data\initialData.ts:2350:1]
+ 2347 |     validatedForAI: true,
+ 2348 | 
+ 2349 |   // === NOUVEAUX COMMUNIQU├ëS BTP S├ëN├ëGAL (ajout├®s le 2026-09-22) ===
+ 2350 |   {
+      :   ^
+ 2351 |     id: 'pub-04',
+ 2352 |     title: 'SERMA BTP et le d├®fi de la construction m├®tallique au S├®n├®gal : vers une souverainet├® industrielle',
+ 2352 |     type: 'Presse',
+      `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/data/initialData.ts
+./src/components/providers/QueryProvider.tsx
+ GET / 500 in 29756ms
+ GET / 500 in 16560ms
+ GET /mediatheque 500 in 20559ms
+ GET / 500 in 3387ms
+ GET / 500 in 71ms
+ GET /mediatheque 500 in 76ms
+ Ô£ô Compiled /_error in 4.6s (625 modules)
+ ÔÜá Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ Ôùï Compiling /mediatheque ...
+ Ô£ô Compiled /mediatheque in 1145ms (578 modules)
+ GET /mediatheque 200 in 5371ms
+ Ôùï Compiling / ...
+ Ô£ô Compiled / in 599ms (595 modules)
+ GET / 200 in 2681ms
+ Ô£ô Compiled in 21.9s (1095 modules)
+ Ô£ô Compiled in 4.5s (1095 modules)
+ GET /mediatheque 200 in 3269ms
+ Ôùï Compiling / ...
+ Ô£ô Compiled / in 1269ms (595 modules)
+ GET / 200 in 2211ms
+ Ôùï Compiling /entites ...
+ Ô£ô Compiled /entites in 20.8s (1119 modules)
+ GET /entites 200 in 23416ms
+ Ôùï Compiling /expertises ...
+ Ô£ô Compiled /expertises in 4.4s (1128 modules)
+ GET /expertises 200 in 6416ms
+ Ôùï Compiling /projets ...
+ Ô£ô Compiled /projets in 4.5s (1143 modules)
+ GET /projets 200 in 5354ms
+ Ôùï Compiling /projets/[slug] ...
+ Ô£ô Compiled /projets/[slug] in 9.4s (1176 modules)
+ Ô£ô Compiled in 2.3s (543 modules)
+ GET /projets/hangar-logistique-diamniadio-38t 200 in 15100ms
+ GET /projets/hangar-logistique-diamniadio-38t 200 in 393ms
+ GET /projets/hangar-logistique-diamniadio-38t 200 in 545ms
+ GET /projets 200 in 508ms
+ Ô£ô Compiled in 5.2s (1166 modules)
+ GET /projets 200 in 599ms
+ GET /projets 200 in 4101ms
+ Ô£ô Compiled in 7.7s (1166 modules)
+ GET /projets 200 in 934ms
+ Ô£ô Compiled in 5.9s (1166 modules)
+ GET /projets 200 in 971ms
+ Ô¿» ./src/components/layout/Header.tsx
+Error:   x Expected '</', got ']'
+     ,-[C:\Users\hp\Downloads\magatte_niang_plateforme\src\components\layout\Header.tsx:465:1]
+ 462 |                 { href: '/contact', label: 'Contact & Devis direct' },
+ 463 |                 { href: '/profil', label: 'Magatte Niang ÔÇö profil & recherche' },
+ 464 |                 { href: '/espace-pro', label: 'Espace Administration (Acc├¿s r├®serv├®)' }
+ 465 |               ].map((item) => (
+     :               ^
+ 466 |                 <Link
+ 467 |                   key={item.href}
+ 468 |                   href={item.href}
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/layout/Header.tsx
+./src/components/layout/RootLayoutClient.tsx
+ Ô£ô Compiled in 3.5s (1166 modules)
+ GET /projets 200 in 776ms
+ GET / 200 in 1466ms
+ GET /projets 200 in 1669ms
+ GET / 200 in 389ms
+ Ô£ô Compiled in 10.3s (1166 modules)
+ GET / 200 in 819ms
+ GET / 200 in 4884ms
+ GET /entites 200 in 826ms
+ Ôùï Compiling /services/laboratoire ...
+ Ô£ô Compiled /services/laboratoire in 9.9s (1165 modules)
+ GET /services/laboratoire 200 in 12000ms
+ Ôùï Compiling /entites/[id] ...
+ Ô£ô Compiled /entites/[id] in 6.5s (1169 modules)
+ GET /entites/sbs-logistik 200 in 22539ms
+ GET /entites/sbs-industries 200 in 413ms
+ GET /projets 200 in 2141ms
+ GET /projets 200 in 2775ms
+ Ô£ô Compiled in 2.1s (553 modules)
+ Ô£ô Compiled in 859ms (553 modules)
+ GET /projets 200 in 954ms
+ GET /projets 200 in 127ms
+ Ô¿» ./src/components/layout/Header.tsx
+Error: 
+
+Caused by:
+    0: Failed to read source code from C:\Users\hp\Downloads\magatte_niang_plateforme\src\components\layout\Header.tsx
+    1: Le fichier sp├®cifi├® est introuvable. (os error 2)
+
+Import trace for requested module:
+./src/components/layout/Header.tsx
+./src/components/layout/RootLayoutClient.tsx
+ Ô¿» ./src/components/layout/Header.tsx
+Error: 
+
+Caused by:
+    0: Failed to read source code from C:\Users\hp\Downloads\magatte_niang_plateforme\src\components\layout\Header.tsx
+    1: Le fichier sp├®cifi├® est introuvable. (os error 2)
+
+Import trace for requested module:
+./src/components/layout/Header.tsx
+./src/components/layout/RootLayoutClient.tsx
+ Ô¿» ./src/components/layout/Header.tsx
+Error:   x Expected '}', got '<eof>'
+     ,-[C:\Users\hp\Downloads\magatte_niang_plateforme\src\components\layout\Header.tsx:114:1]
+ 111 |       document.documentElement.classList.add('dark');
+ 112 |       setIsDarkMode(true);
+ 113 |     }
+ 114 |   };
+     :     ^
+ 115 | // __PART2__
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/layout/Header.tsx
+./src/components/layout/RootLayoutClient.tsx
+ Ô¿» ./src/components/layout/Header.tsx
+Error:   x Unexpected eof
+     ,-[C:\Users\hp\Downloads\magatte_niang_plateforme\src\components\layout\Header.tsx:197:3]
+ 195 |                     </Link>
+ 196 | // __PART2B__
+ 197 | 
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/layout/Header.tsx
+./src/components/layout/RootLayoutClient.tsx
+ Ô¿» ./src/components/layout/Header.tsx
+Error:   x Unexpected eof
+     ,-[C:\Users\hp\Downloads\magatte_niang_plateforme\src\components\layout\Header.tsx:264:3]
+ 262 | // __PART3__
+ 263 | 
+ 264 | 
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/layout/Header.tsx
+./src/components/layout/RootLayoutClient.tsx
+ Ô¿» ./src/components/layout/Header.tsx
+Error:   x Unexpected eof
+     ,-[C:\Users\hp\Downloads\magatte_niang_plateforme\src\components\layout\Header.tsx:341:3]
+ 339 | 
+ 340 | 
+ 341 | 
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/layout/Header.tsx
+./src/components/layout/RootLayoutClient.tsx
+ Ô¿» ./src/components/layout/Header.tsx
+Error:   x Unexpected eof
+     ,-[C:\Users\hp\Downloads\magatte_niang_plateforme\src\components\layout\Header.tsx:400:3]
+ 398 | 
+ 399 | 
+ 400 | 
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/layout/Header.tsx
+./src/components/layout/RootLayoutClient.tsx
+ Ô£ô Compiled in 7s (1174 modules)
+ GET /projets 200 in 773ms
+ Ô£ô Compiled in 9.7s (1174 modules)
+ GET /projets 200 in 612ms
+ Ôùï Compiling / ...
+ Ô£ô Compiled / in 2.9s (630 modules)
+ GET / 200 in 6068ms
+ GET / 200 in 1705ms
+ Ô£ô Compiled in 4.8s (1183 modules)
+ GET /projets 200 in 1012ms
+ GET / 200 in 2105ms
+ GET /projets 200 in 2904ms
+ GET / 200 in 111ms
+ Ô£ô Compiled in 14.8s (1177 modules)
+ GET / 200 in 657ms
+ Ô£ô Compiled in 33.7s (1177 modules)
+ GET / 200 in 913ms
+ GET / 200 in 2405ms
+ Ôùï Compiling /espace-pro ...
+ Ô£ô Compiled /espace-pro in 9s (1179 modules)
+ GET /espace-pro 200 in 10022ms
+ Ôùï Compiling /contact ...
+ Ô£ô Compiled /contact in 7s (1181 modules)
+ GET /contact 200 in 8670ms
+ Ôùï Compiling /catalogue ...
+ Ô£ô Compiled /catalogue in 4.1s (1184 modules)
+ GET /catalogue 200 in 4950ms
+ Ôùï Compiling /mediatheque ...
+ Ô£ô Compiled /mediatheque in 4s (634 modules)
+ GET /mediatheque 200 in 4450ms
+ Ôùï Compiling /projets ...
+ Ô£ô Compiled /projets in 1847ms (634 modules)
+ GET /projets 200 in 3411ms
+ Ôùï Compiling /expertises ...
+ Ô£ô Compiled /expertises in 2.2s (629 modules)
+ GET /expertises 200 in 2540ms
+ GET /expertises 200 in 64ms
+ GET /expertises 200 in 96ms
+ GET /expertises 200 in 77ms
+ GET /expertises 200 in 150ms
+ GET /expertises 200 in 105ms
+ GET /expertises 200 in 95ms
+ GET /expertises 200 in 100ms
+ GET /expertises 200 in 86ms
+ GET /expertises 200 in 93ms
+ GET /expertises 200 in 121ms
+ GET /expertises 200 in 80ms
+ GET /expertises 200 in 402ms
+ GET /expertises 200 in 452ms
+ GET /expertises 200 in 92ms
+ GET /expertises 200 in 95ms
+ GET /expertises 200 in 79ms
+ Ôùï Compiling /entites/[id] ...
+ Ô£ô Compiled /entites/[id] in 1551ms (630 modules)
+ GET /entites/sbs-group 200 in 1962ms
+ GET /entites/serma-btp 200 in 143ms
+ GET /entites/sbs-labo 200 in 304ms
+ GET /entites/sbs-logistik 200 in 109ms
+ GET /entites/pgt 200 in 98ms
+ GET /entites/sbs-group 200 in 141ms
+ GET /entites/sbs-industries 200 in 142ms
+ GET /entites/p2m 200 in 105ms
+ Ôùï Compiling / ...
+ Ô£ô Compiled / in 1769ms (631 modules)
+ GET / 200 in 2175ms
+ Ô£ô Compiled in 30.7s (1188 modules)
+ GET / 200 in 34557ms
+ GET /expertises 200 in 41711ms
+ Ôùï Compiling /entites ...
+ Ô£ô Compiled /entites in 6.4s (631 modules)
+ GET /entites 200 in 7432ms
+ GET /entites 200 in 286ms
+ GET /expertises 200 in 698ms
+ GET /expertises 200 in 295ms
+ Ôùï Compiling /services/laboratoire ...
+ Ô£ô Compiled /services/laboratoire in 6.7s (629 modules)
+ GET /services/laboratoire 200 in 7810ms
+ GET /expertises 200 in 1271ms
+ GET /services/laboratoire 200 in 571ms
+ GET /expertises 200 in 395ms
+ GET /services/laboratoire 200 in 698ms
+ GET /expertises 200 in 619ms
+ GET /services/laboratoire 200 in 732ms
+ GET /expertises 200 in 516ms
+ GET /services/laboratoire 200 in 268ms
+ GET /expertises 200 in 379ms
+ GET / 200 in 2924ms
+ GET /expertises 200 in 746ms
+ Ôùï Compiling /api/entities ...
+ Ô£ô Compiled /api/entities in 22.5s (1199 modules)
+ GET /expertises 200 in 18548ms
+prisma:query SELECT "public"."Entity"."id", "public"."Entity"."name", "public"."Entity"."tagline", "public"."Entity"."badge", "public"."Entity"."color", "public"."Entity"."colorHex", "public"."Entity"."accentClass", "public"."Entity"."mission", "public"."Entity"."description", "public"."Entity"."leader", "public"."Entity"."leaderRole", "public"."Entity"."address", "public"."Entity"."city", "public"."Entity"."country", "public"."Entity"."phone", "public"."Entity"."email", "public"."Entity"."whatsapp", "public"."Entity"."ctaText", "public"."Entity"."ctaAction", "public"."Entity"."expertises", "public"."Entity"."equipmentList", "public"."Entity"."synergies", "public"."Entity"."verifiedMetrics", "public"."Entity"."icon", "public"."Entity"."createdAt", "public"."Entity"."updatedAt" FROM "public"."Entity" WHERE 1=1 ORDER BY "public"."Entity"."name" ASC OFFSET $1
+ GET /api/entities 200 in 26371ms
+ GET /expertises 200 in 323ms
+ GET /expertises 200 in 367ms
+ GET /expertises 200 in 261ms
+ GET /expertises 200 in 104ms
+ GET /expertises 200 in 151ms
+ Ôùï Compiling /services/laboratoire ...
+ Ô£ô Compiled /services/laboratoire in 683ms (640 modules)
+ GET /services/laboratoire 200 in 1082ms
+ GET /expertises 200 in 242ms
+ GET /expertises 200 in 772ms
+ GET /entites/p2m 200 in 575ms
+ Ôùï Compiling /api/entities/[id] ...
+ Ô£ô Compiled /api/entities/[id] in 15.7s (1209 modules)
+prisma:query SELECT 1
+prisma:query SELECT "public"."Product"."id", "public"."Product"."ref", "public"."Product"."name", "public"."Product"."category", "public"."Product"."subCategory", "public"."Product"."brand", "public"."Product"."dimensions", "public"."Product"."material", "public"."Product"."finish", "public"."Product"."color", "public"."Product"."usage", "public"."Product"."unit", "public"."Product"."packaging", "public"."Product"."origin", "public"."Product"."indicativePriceFCFA", "public"."Product"."isPriceVisible", "public"."Product"."availability", "public"."Product"."leadTime", "public"."Product"."images", "public"."Product"."specs", "public"."Product"."documents", "public"."Product"."createdAt", "public"."Product"."updatedAt" FROM "public"."Product" WHERE 1=1 ORDER BY "public"."Product"."createdAt" DESC OFFSET $1
+ GET /api/products 200 in 17220ms
+prisma:query SELECT "public"."Project"."id", "public"."Project"."slug", "public"."Project"."title", "public"."Project"."client", "public"."Project"."location", "public"."Project"."region", "public"."Project"."year", "public"."Project"."status", "public"."Project"."sector", "public"."Project"."primaryEntityId", "public"."Project"."partnerEntityIds", "public"."Project"."summary", "public"."Project"."technicalData", "public"."Project"."story", "public"."Project"."testimonial", "public"."Project"."images", "public"."Project"."isPublished", "public"."Project"."isFeatured", "public"."Project"."publicationApproval", "public"."Project"."createdAt", "public"."Project"."updatedAt" FROM "public"."Project" WHERE ("public"."Project"."primaryEntityId" = $1 AND "public"."Project"."isPublished" = $2) ORDER BY "public"."Project"."year" DESC OFFSET $3
+ GET /api/projects?entityId=p2m 200 in 17252ms
+prisma:query SELECT "public"."Entity"."id", "public"."Entity"."name", "public"."Entity"."tagline", "public"."Entity"."badge", "public"."Entity"."color", "public"."Entity"."colorHex", "public"."Entity"."accentClass", "public"."Entity"."mission", "public"."Entity"."description", "public"."Entity"."leader", "public"."Entity"."leaderRole", "public"."Entity"."address", "public"."Entity"."city", "public"."Entity"."country", "public"."Entity"."phone", "public"."Entity"."email", "public"."Entity"."whatsapp", "public"."Entity"."ctaText", "public"."Entity"."ctaAction", "public"."Entity"."expertises", "public"."Entity"."equipmentList", "public"."Entity"."synergies", "public"."Entity"."verifiedMetrics", "public"."Entity"."icon", "public"."Entity"."createdAt", "public"."Entity"."updatedAt" FROM "public"."Entity" WHERE ("public"."Entity"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+ GET /api/entities/p2m 200 in 21911ms
+ Ô£ô Compiled in 52.3s (1194 modules)
+ Ô£ô Compiled in 2.4s (570 modules)
+ Ô£ô Compiled in 2.3s (570 modules)
+ Ô£ô Compiled in 2.1s (570 modules)
+ Ô£ô Compiled in 2.2s (570 modules)
+ Ô£ô Compiled in 2.3s (570 modules)
+ Ô£ô Compiled in 2.7s (571 modules)
+ Ô£ô Compiled in 3.3s (571 modules)
+ GET / 200 in 5925ms
+ GET /projets 200 in 1595ms
+ Ôùï Compiling /projets/[slug] ...
+ Ô£ô Compiled /projets/[slug] in 7.6s (635 modules)
+ GET /projets/revetements-carrelage-villa-contemporaine-saly 200 in 11287ms
+ GET /entites/p2m 200 in 2962ms
+ GET /entites/p2m 200 in 3897ms
+ GET /expertises 200 in 644ms
+ GET /projets 200 in 337ms
+ GET /projets/usine-oxygene-psa-mako-dlm 200 in 416ms
+ GET /expertises 200 in 238ms
+ GET /entites/pgt 200 in 587ms
+ GET / 200 in 394ms
+ Ôùï Compiling /profil ...
+ Ô£ô Compiled /profil in 15.3s (1200 modules)
+ GET /profil 200 in 16910ms
+ GET /profil 200 in 365ms
+ Ôùï Compiling /publications ...
+ Ô£ô Compiled /publications in 7.5s (1211 modules)
+ GET /publications 200 in 8465ms
+ GET /profil 200 in 539ms
+ Ôùï Compiling /espace-pro ...
+ Ô£ô Compiled /espace-pro in 9.5s (642 modules)
+ GET /espace-pro 200 in 10799ms
+ Ô£ô Compiled in 18.3s (1212 modules)
+ GET /espace-pro 200 in 1074ms
+ GET /espace-pro 200 in 6926ms
+ Ôùï Compiling /_not-found ...
+ Ô£ô Compiled /_not-found in 22.3s (1201 modules)
+ GET /espace-pro 404 in 20324ms
+ GET /espace-pro 404 in 191ms
+ GET /espace-pro 404 in 1428ms
+ GET /espace-pro 404 in 926ms
+ Ô£ô Compiled in 13s (1196 modules)
+ Ôùï Compiling /_not-found ...
+ Ô£ô Compiled /_not-found in 2.3s (1187 modules)
+ GET /espace-pro 404 in 3730ms
+ GET /espace-pro 404 in 1486ms
+ GET /espace-pro 404 in 2207ms
+ GET /espace-pro 404 in 1571ms
+ Ôùï Compiling /contact ...
+ Ô£ô Compiled /contact in 9.5s (627 modules)
+ GET /contact 200 in 11026ms
+ GET /contact 200 in 579ms
+ GET /espace-pro 404 in 3593ms
+ GET /espace-pro 404 in 3513ms
+ Ôùï Compiling /espace-pro ...
+ Ô¿» ./src/app/espace-pro/page.tsx
+Error:   x Expected '</', got '{'
+      ,-[C:\Users\hp\Downloads\magatte_niang_plateforme\src\app\espace-pro\page.tsx:1194:1]
+ 1191 |                 </article>
+ 1192 |               ))
+ 1193 | 
+ 1194 |               {/* Total du panier */}
+      :               ^
+ 1195 |               <div className="border-t border-neutral-200 dark:border-brand-700 pt-4">
+ 1196 |                 <div className="flex items-center justify-between gap-3">
+ 1197 |                   <p className="text-sm font-mono text-neutral-600 dark:text-neutral-400">
+      `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/espace-pro/page.tsx
+ Ô¿» ./src/app/espace-pro/page.tsx
+Error:   x Expected '</', got '{'
+      ,-[C:\Users\hp\Downloads\magatte_niang_plateforme\src\app\espace-pro\page.tsx:1194:1]
+ 1191 |                 </article>
+ 1192 |               ))
+ 1193 | 
+ 1194 |               {/* Total du panier */}
+      :               ^
+ 1195 |               <div className="border-t border-neutral-200 dark:border-brand-700 pt-4">
+ 1196 |                 <div className="flex items-center justify-between gap-3">
+ 1197 |                   <p className="text-sm font-mono text-neutral-600 dark:text-neutral-400">
+      `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/espace-pro/page.tsx
+ GET /espace-pro 500 in 19603ms
+ GET /espace-pro 500 in 74ms
+ GET /espace-pro 500 in 92ms
+ ÔÜá Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ÔÜá Fast Refresh had to perform a full reload due to a runtime error.
+ ÔÜá Fast Refresh had to perform a full reload due to a runtime error.
+ GET /espace-pro 500 in 17516ms
+ ÔÜá Fast Refresh had to perform a full reload due to a runtime error.
+ Ô¿» ./src/app/espace-pro/page.tsx
+Error:   x Unterminated regexp literal
+      ,-[C:\Users\hp\Downloads\magatte_niang_plateforme\src\app\espace-pro\page.tsx:1541:1]
+ 1538 |         </section>
+ 1539 |       )}</main>
+ 1540 |       </div>
+ 1541 |     </div>
+      :      ^^^^^
+ 1542 |   );
+ 1543 | }
+      `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/espace-pro/page.tsx
+ GET /espace-pro 200 in 3249ms
+ GET /espace-pro 500 in 299ms
+ ÔÜá Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ÔÜá Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /espace-pro 500 in 3086ms
+ Ô£ô Compiled /_error in 23.2s (1314 modules)
+ ÔÜá Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /espace-pro 200 in 23733ms
+ Ô¿» [Error [InvariantError]: Invariant: Expected clientReferenceManifest to be defined. This is a bug in Next.js.]
+ Ô¿» [Error [InvariantError]: Invariant: Expected clientReferenceManifest to be defined. This is a bug in Next.js.] {
+  page: '/espace-pro'
+}
+ Ô£ô Compiled (1300 modules)
+ ÔÜá Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /espace-pro 500 in 3047ms
+ GET /espace-pro 200 in 890ms
+ Ô£ô Compiled in 77.3s (1314 modules)
+ Ô£ô Compiled in 13.1s (1314 modules)
+ Ô£ô Compiled in 3.9s (1314 modules)
+ Ô£ô Compiled in 5.6s (1314 modules)
+ GET /espace-pro 200 in 3923ms
+ Ôùï Compiling / ...
+ Ô£ô Compiled / in 15.4s (740 modules)
+ GET / 200 in 17434ms
+ GET / 200 in 469ms
+ Ôùï Compiling /entites/[id] ...
+ Ô£ô Compiled /entites/[id] in 4.4s (741 modules)
+ GET /entites/pgt 200 in 5115ms
+ GET /entites/p2m 200 in 555ms
+ Ôùï Compiling /catalogue/[id] ...
+ Ô£ô Compiled /catalogue/[id] in 21.1s (1333 modules)
+ Ô£ô Compiled in 8.2s (595 modules)
+ GET /catalogue/prod-02 200 in 35486ms
+ GET /catalogue/prod-02 200 in 4951ms
+ GET /catalogue/prod-03 200 in 585ms
+ Ôùï Compiling /expertises ...
+ Ô£ô Compiled /expertises in 9.6s (732 modules)
+ GET /expertises 200 in 10384ms
+ GET /expertises 200 in 477ms
+ Ôùï Compiling /projets ...
+ Ô£ô Compiled /projets in 5.5s (725 modules)
+ GET /projets 200 in 6008ms
+ GET /projets 200 in 178ms
+ Ôùï Compiling /projets/[slug] ...
+ Ô£ô Compiled /projets/[slug] in 6.9s (728 modules)
+ GET /projets/pont-franchissement-cours-eau-fatick 200 in 7856ms
+ GET /projets/pont-franchissement-cours-eau-fatick 200 in 417ms
+ Ôùï Compiling /mediatheque ...
+ Ô£ô Compiled /mediatheque in 5.7s (729 modules)
+ GET /mediatheque 200 in 6341ms
+ GET /mediatheque 200 in 270ms
+ Ôùï Compiling /catalogue ...
+ Ô£ô Compiled /catalogue in 2.9s (728 modules)
+ GET /catalogue 200 in 3245ms
+ Ôùï Compiling /contact ...
+ Ô£ô Compiled /contact in 753ms (729 modules)
+ GET /contact 200 in 1533ms
+ Ôùï Compiling /espace-pro ...
+ Ô£ô Compiled /espace-pro in 3.7s (735 modules)
+ GET /espace-pro 200 in 4115ms
+ Ôùï Compiling / ...
+ Ô£ô Compiled / in 6.4s (741 modules)
+ GET / 200 in 7243ms
+ GET /projets/hangar-logistique-diamniadio-38t 200 in 185ms
+ Ôùï Compiling /assistant ...
+ Ô£ô Compiled /assistant in 10.9s (1340 modules)
+ GET /assistant?besoin=serma-btp 200 in 11955ms
+ GET /assistant?besoin=serma-btp 200 in 790ms
+ GET / 200 in 146ms
+ GET /assistant 200 in 172ms
+ GET / 200 in 124ms
+ Ôùï Compiling /entites ...
+ Ô£ô Compiled /entites in 3s (740 modules)
+ GET /entites 200 in 3418ms
+ GET / 200 in 137ms
+ Ôùï Compiling /entites/[id] ...
+ Ô£ô Compiled /entites/[id] in 5.9s (740 modules)
+ GET /entites/serma-btp 200 in 7332ms
+ GET /entites/serma-btp 200 in 541ms
+ GET / 200 in 177ms
+ GET /entites/sbs-group 200 in 226ms
+ GET / 200 in 110ms
+ GET /assistant 200 in 699ms
+ GET / 200 in 401ms
+ GET /entites/sbs-labo 200 in 269ms
+ GET / 200 in 239ms
+ GET /entites 200 in 834ms
+ GET /entites 200 in 2210ms
+ GET /entites 200 in 3172ms
+ GET /entites 200 in 1871ms
+ Ôùï Compiling /profil ...
+ Ô£ô Compiled /profil in 18.5s (734 modules)
+ Ôùï Compiling /catalogue ...
+ GET /profil 200 in 20689ms
+ Ô£ô Compiled /catalogue in 4.4s (740 modules)
+ GET /catalogue 200 in 8502ms
+ GET /profil 200 in 6102ms
+ GET /catalogue 200 in 671ms
+ Ôùï Compiling /espace-pro ...
+ Ô£ô Compiled /espace-pro in 3.7s (756 modules)
+ GET /espace-pro 200 in 6689ms
+ GET /espace-pro 200 in 701ms
+ GET /entites 200 in 376ms
+ GET /entites 200 in 384ms
+ GET /entites/p2m 200 in 609ms
+ Ôùï Compiling /catalogue/[id] ...
+ Ô£ô Compiled /catalogue/[id] in 8.9s (733 modules)
+ GET /catalogue/prod-28 200 in 10842ms
+ GET /catalogue/prod-28 200 in 900ms
+ GET /catalogue/prod-28 200 in 689ms

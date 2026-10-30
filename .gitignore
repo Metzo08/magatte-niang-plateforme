@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+build/
+
+# Logs
+*.log
+*.err.log
+
+# Env files (contiennent des secrets - ne JAMAIS pousser)
+.env
+.env.local
+.env*.local
+
+# Temp files
+tmp*
+_tmp*
+_recovery_backups/
+__pycache__/
+pdf-images/
+tmp-sheets/
+tmp_esp_chunks/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# TS
+tsconfig.tsbuildinfo
+
+# Divers fichiers de travail locaux
+*.png.orig
+tokens.json
+copy-reelles.cjs

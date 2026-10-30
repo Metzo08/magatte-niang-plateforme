@@ -1,0 +1,404 @@
+### 1) OCCURRENCES DES TITRES (fichier:ligne + fenetre ±2)
+--- "Sourcing direct usines" -> 4 hit(s)
+  src\data\aiKnowledgeBase.ts:292
+     290| answer: `PGT (Polytech Global Trading) opère comme centrale d'achat internationale et opérateur de transit pour l'écosystème :
+     291| 
+     292| • **Sourcing direct usines :** Contrats de gros volumes auprès de fabricants certifiés en Europe, Turquie, Inde et Asie (fer à béton, profilés acier, 
+     293| • **Élimination des intermédiaires :** Garantit les prix les plus compétitifs du marché aux promoteurs et constructeurs au Sénégal.
+     294| • **Fret maritime & logistique portuaire :** Gestion complète du transport conteneurisé jusqu'au Port Autonome de Dakar (PAD).
+  src\data\initialData.ts:252
+     250| synergies: [
+     251| { entityId: 'sbs-group', role: 'Approvisionnement des programmes résidentiels', benefit: 'Tarifs grossistes et livraison cadencée' },
+     252| { entityId: 'pgt', role: 'Sourcing direct usines Italie, Espagne et Turquie', benefit: 'Disponibilité exclusive et maîtrise des coûts' }
+     253| ],
+     254| verifiedMetrics: [
+--- "Approvisionnement matières premières" -> 2 hit(s)
+  src\data\initialData.ts:843
+     841| { url: '/images/port-conteneurs.jpg', caption: 'Port Autonome de Dakar — terminal conteneurs & transit PGT', isHero: true },
+     842| { url: '/images/illustrations/sourcing-fret.svg', caption: 'Sourcing direct usines & chaîne logistique maritime internationale' },
+     843| { url: '/images/reelles/projet-ces-stockage-sendou-01.jpg', caption: 'Approvisionnement matières premières pour grands projets' },
+     844| { url: '/images/reelles/projet-oim-societe-generale-01.jpg', caption: 'Livraison cadencée sur sites de construction' }
+     845| ],
+  src\data\siteImages.ts:276
+     274| { src: '/images/port-conteneurs.jpg', caption: 'Port Autonome de Dakar — terminal conteneurs & transit PGT' },
+     275| { src: '/images/illustrations/sourcing-fret.svg', caption: 'Sourcing direct usines & chaîne logistique maritime internationale' },
+     276| { src: '/images/reelles/projet-ces-stockage-sendou-01.jpg', caption: 'Approvisionnement matières premières pour grands projets' },
+     277| { src: '/images/reelles/projet-oim-societe-generale-01.jpg', caption: 'Sourcing et livraison de matériaux pour projets institutionnels' },
+     278| ]
+--- "Sourcing et livraison de matériaux" -> 1 hit(s)
+  src\data\siteImages.ts:277
+     275| { src: '/images/illustrations/sourcing-fret.svg', caption: 'Sourcing direct usines & chaîne logistique maritime internationale' },
+     276| { src: '/images/reelles/projet-ces-stockage-sendou-01.jpg', caption: 'Approvisionnement matières premières pour grands projets' },
+     277| { src: '/images/reelles/projet-oim-societe-generale-01.jpg', caption: 'Sourcing et livraison de matériaux pour projets institutionnels' },
+     278| ]
+     279| };
+--- "Logistique lourde" -> 1 hit(s)
+  src\app\expertises\page.tsx:83
+      81| },
+      82| {
+      83| title: 'Logistique lourde & levage BTP',
+      84| entity: 'SB-S Logistik',
+      85| entityId: 'sbs-logistik',
+--- "Préfabrication béton industrielle" -> 2 hit(s)
+  src\app\assistant\page.tsx:86
+      84| { id: 'Materiaux', title: 'Matériaux finition / carrelage / sanitaires', desc: 'Grès cérame, faïence, équipements de salle d\'eau', icon: Layers, enti
+      85| { id: 'Engins', title: 'Location d\'engins / transport lourd', desc: 'Pelles 36T, grues télescopiques 60T, bennes 8x4', icon: Truck, entity: 'SB-S Log
+      86| { id: 'Prefabrication', title: 'Préfabrication béton industrielle', desc: 'Prédalles, bordures normalisées, tuyaux assainissement', icon: Factory, ent
+      87| { id: 'Sourcing', title: 'Sourcing international / importation', desc: 'Matières premières, fret maritime, transit portuaire', icon: Globe, entity: 'P
+      88| { id: 'Conseil', title: 'Expertise technique & conseil direction', desc: 'Audit de structure, arbitrage Eurocodes, diagnostic', icon: HelpCircle, enti
+  src\app\expertises\page.tsx:98
+      96| },
+      97| {
+      98| title: 'Préfabrication béton industrielle',
+      99| entity: 'SB-S Industries',
+     100| entityId: 'sbs-industries',
+--- "Fourniture de béton prêt à l'emploi" -> 0 hit(s)
+--- "Opérations de levage lourd" -> 1 hit(s)
+  src\data\initialData.ts:789
+     787| id: 'proj-15',
+     788| slug: 'levage-lourd-manutention-convois-chantiers',
+     789| title: 'Opérations de levage lourd, manutention & convois exceptionnels de chantier',
+     790| client: 'Partenaires industriels & énergétiques du Sénégal',
+     791| location: 'Dakar, Thiès & corridors miniers',
+--- "Bâtir l’avenir du Sénégal" -> 2 hit(s)
+  src\app\page.tsx:215
+     213| {/* Titre principal architectural */}
+     214| <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-title font-bold tracking-tight leading-[1.05]">
+     215| Bâtir l'Afrique de l'Ouest
+     216| <span className="block mt-2 text-gradient-gold">
+     217| par la rigueur d'ingénierie.
+  src\app\profil\page.tsx:43
+      41| </h1>
+      42| <p className="text-gold-400 font-semibold text-sm sm:text-base mb-4">
+      43| Bâtir l'avenir du Sénégal — {FOUNDER_PROFILE.title}
+      44| </p>
+      45| <p className="text-neutral-300 text-sm sm:text-base leading-relaxed max-w-3xl">
+--- "Bâtir l'avenir du Sénégal" -> 1 hit(s)
+  src\app\profil\page.tsx:43
+      41| </h1>
+      42| <p className="text-gold-400 font-semibold text-sm sm:text-base mb-4">
+      43| Bâtir l'avenir du Sénégal — {FOUNDER_PROFILE.title}
+      44| </p>
+      45| <p className="text-neutral-300 text-sm sm:text-base leading-relaxed max-w-3xl">
+--- "Espace Professionnel" -> 0 hit(s)
+--- "Laboratoire agréé" -> 3 hit(s)
+  src\app\page.tsx:209
+     207| <span className="inline-flex items-center gap-1.5 px-3 py-2 bg-gold-500/10 border border-gold-500/30 rounded-full text-xs font-semibold text-gold-500"
+     208| <Award className="w-3.5 h-3.5" />
+     209| <span>Laboratoire agréé d'État</span>
+     210| </span>
+     211| </div>
+  src\app\page.tsx:251
+     249| <div className="flex items-center gap-2 text-xs text-neutral-300">
+     250| <FileCheck2 className="w-4 h-4 text-emerald-400 shrink-0" />
+     251| <span>Laboratoire agréé d'État</span>
+     252| </div>
+     253| <div className="flex items-center gap-2 text-xs text-neutral-300">
+--- "Géotechnique & contrôle qualité" -> 1 hit(s)
+  src\app\services\laboratoire\page.tsx:31
+      29| </span>
+      30| <h1 className="text-3xl sm:text-4xl lg:text-5xl font-title font-bold tracking-tight mb-4">
+      31| SB-S Labo — <span className="text-emerald-400">Géotechnique & contrôle qualité</span>
+      32| </h1>
+      33| <p className="text-neutral-300 text-base sm:text-lg leading-relaxed max-w-3xl">
+
+### 2) EXPERTISE_IMAGES (siteImages.ts, def complete)
+    97| export const EXPERTISE_IMAGES = {
+    98|   charpenteMetal: '/images/reelles/projet-ces-stockage-sendou-03.jpg', // Ossature & charpente métallique sur chantier
+    99|   chantierInfrastructure: '/images/reelles/projet-ces-stockage-sendou-03.jpg', // Génie civil & infrastructures
+   100|   chantierLevage: '/images/reelles/sbs-reel-001.jpg',             // Montage chantier / coordination
+   101|   foreuseGeotechnique: '/images/reelles/sbs-labo-reel-005.jpg',   // Foreuse géotechnique en action
+   102|   ouvrageArtPont: '/images/reelles/sbs-reel-007.jpg',             // Ouvrages d'art & infrastructures
+   103|   enginTerrassement: '/images/engins/parc-terrassement.jpg',      // Parc d'engins de terrassement
+   104|   camionBenne: '/images/engins/camion-benne-40t.jpg',             // Camion benne 40T réel
+   105|   carrelageInterieur: '/images/carrelage-interieur.jpg',          // Finitions / intérieurs carrelés
+   106|   carrelagePrestige: '/images/carrelage-interieur.jpg',           // Intérieur prestige P2M
+   107|   sanitairesModernes: '/images/reelles/sbs-labo-reel-002.jpg',    // Matériel labo / sanitaires
+   108|   controleQualite: '/images/reelles/sbs-labo-reel-001.jpg',       // Laboratoire / contrôle qualité
+   109|   betonPrefabrique: '/images/beton-prefabrique.jpg',              // Préfabrication béton (planchers & prédalles)
+   110|   ingenieurBureau: '/images/reelles/sbs-labo-reel-004.jpg',       // Bureau d'études
+   111|   logistique: '/images/reelles/sbs-reel-007.jpg',                 // Logistique & engins
+   112|   sourcing: '/images/reelles/projet-ces-stockage-sendou-03.jpg',  // Chantier industriel CES
+   113| } as const;
+   114| 
+   115| export type SiteImageKey = keyof typeof SITE_IMAGES;
+   116| /**
+   117|  * Galeries par entité — VRAIES photos issues des dossiers officiels
+   118|  * (dossier 'doc magatte niang', flyers P2M et SB-S Logistik).
+   119|  * Affichées sur chaque page /entites/[id].
+   120|  */
+   121| export const ENTITY_GALLERY: Record<string, { src: string; caption: string }[]> = {
+   122|   // Galerie complète P2M : 136 photos réelles du showroom Mbao et des flyers
+
+### 3) CHAMPS IMAGE DANS PUBLICATIONS (initialData.ts) - 1er item
+  export const PUBLICATIONS: PublicationItem[] = [
+  {
+  id: 'pub-01',
+  title: 'Comportement mécanique des sols latéritiques sénégalais stabilisés aux liants hydrauliques locaux',
+  type: 'Article scientifique',
+  authors: ['Magatte Niang', 'Dr. Cheikh Tidiane Diop'],
+  date: '2024-03-12',
+  journalOrEvent: 'Revue Ouest-Africaine de Géotechnique & Génie Civil',
+  abstract: 'Étude expérimentale de la portance et de la durabilité à l\'immersion des graves latéritiques du plateau de Thiès après traitement au cimen
+  keywords: ['Sols latéritiques', 'Stabilisation au ciment', 'Indice CBR', 'Infrastructures sahéliennes'],
+  doi: '10.1016/j.wafrigeo.2024.03.012',
+  validatedForAI: true
+  },
+  {
+  id: 'pub-02',
+  title: 'Optimisation des assemblages boulonnés sur charpentes métalliques sous sollicitations marines côtières à Dakar',
+  type: 'Conférence',
+  authors: ['Magatte Niang'],
+  date: '2023-11-20',
+  journalOrEvent: 'Congrès International des Structures et Ouvrages d\'Art d\'Afrique de l\'Ouest (CISOA)',
+  abstract: 'Analyse du retour d\'expérience sur 15 ans d\'ouvrages métalliques implantés sur le littoral dakarois. Recommandations sur les revêtements 
+  keywords: ['Charpente métallique', 'Corrosion marine', 'Eurocode 3', 'Dakar littoral'],
+  validatedForAI: true
+  },
+  {
+  id: 'pub-03',
+  title: 'Manuel pratique de contrôle qualité sur chantier BTP en zone intertropicale',
+  type: 'Cours / Enseignement',
+  authors: ['Magatte Niang'],
+  date: '2022-09-15',
+  journalOrEvent: 'Support de c
+
+### 4) LABORATOIRE PAGE lignes 1-55
+     1| 'use client';
+     2| 
+     3| import React from 'react';
+     4| import Link from 'next/link';
+     5| import { Breadcrumb } from '@/components/layout/Breadcrumb';
+     6| import { LAB_TESTS } from '@/data/initialData';
+     7| import { PHOTOS_REELLES } from '@/data/siteImages';
+     8| import { FlaskConical, ShieldCheck, FileCheck, Clock, CheckCircle2, ArrowRight, MapPin, Phone, Mail, Award } from 'lucide-react';
+     9| 
+    10| const CATEGORIES = ['Tous', 'Sols & géotechnique', 'Bétons & granulats', 'Contrôle in-situ'] as const;
+    11| 
+    12| export default function LaboratoirePage() {
+    13|   const [category, setCategory] = React.useState<(typeof CATEGORIES)[number]>('Tous');
+    14| 
+    15|   const filteredTests = category === 'Tous'
+    16|     ? LAB_TESTS
+    17|     : LAB_TESTS.filter(t => t.category === category);
+    18| 
+    19|   return (
+    20|     <div className="min-h-screen bg-white dark:bg-brand-900">
+    21|       <Breadcrumb items={[{ label: 'Services' }, { label: 'Laboratoire SB-S Labo', href: '/services/laboratoire' }]} />
+    22| 
+    23|       {/* HERO */}
+    24|       <section className="bg-brand-900 dark:bg-brand-950 blueprint-grid-dense-dark text-white border-b border-brand-800">
+    25|         <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    26|           <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-500/15 border border-emerald-500/30 rounded-full text-xs font-mono font-bold  tracking-wider text-emerald-400 mb-5">
+    27|             <FlaskConical className="w-3.5 h-3.5" />
+    28|             Laboratoire agréé catégories C2 & A2
+    29|           </span>
+    30|           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-title font-bold tracking-tight mb-4">
+    31|             SB-S Labo — <span className="text-emerald-400">Géotechnique & contrôle qualité</span>
+    32|           </h1>
+    33|           <p className="text-neutral-300 text-base sm:text-lg leading-relaxed max-w-3xl">
+    34|             Filiale géotechnique créée en 2021 et agréée catégories C2 et A2, SB-S Labo est spécialisée en
+    35|             mécanique des sols. Nous réalisons des études de sol, des essais sur roches et des analyses
+    36|             sur béton avec un équipement de pointe pour garantir la sécurité et la pérennité de vos ouvrages.
+    37|           </p>
+    38|           <p className="text-xs font-mono text-neutral-500 mt-4">RC : SN DKR 2021 B 12675 · Agréments ministériels C2 & A2 — cadre LNR-BTP (loi n° 2023-12, décret n° 2023-1780)</p>
+    39| 
+    40|           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
+    41|             {[
+    42|               { label: 'Essais / an', value: '12 800+' },
+    43|               { label: 'Études de sol', value: '380+' },
+    44|               { label: 'Délai PV standard', value: '48h' },
+    45|               { label: 'Création', value: '2021' },
+    46|             ].map(m => (
+    47|               <div key={m.label} className="bg-brand-800/60 border border-brand-700 rounded-m p-4">
+    48|                 <p className="text-2xl font-title font-bold text-emerald-400 tabular-nums">{m.value}</p>
+    49|                 <p className="text-[11px] font-mono  tracking-wider text-neutral-400 mt-1">{m.label}</p>
+    50|               </div>
+    51|             ))}
+    52|           </div>
+    53|         </div>
+    54| 
+    55|         {/* Vraies photos du laboratoire (documents officiels) */}
+
+### 5) PROFIL PAGE lignes 1-80
+     1| 'use client';
+     2| 
+     3| import React from 'react';
+     4| import Link from 'next/link';
+     5| import { Breadcrumb } from '@/components/layout/Breadcrumb';
+     6| import { FOUNDER_PROFILE, PUBLICATIONS } from '@/data/initialData';
+     7| import { SITE_IMAGES } from '@/data/siteImages';
+     8| import { GraduationCap, FlaskConical, Building2, Quote, ArrowRight, BookOpen, Award, Users, Microscope } from 'lucide-react';
+     9| 
+    10| const ROLES_ICONS = [
+    11|   { icon: <Building2 className="w-5 h-5 text-accent-500" /> },
+    12|   { icon: <GraduationCap className="w-5 h-5 text-accent-500" /> },
+    13|   { icon: <Award className="w-5 h-5 text-accent-500" /> },
+    14| ];
+    15| 
+    16| export default function ProfilPage() {
+    17|   return (
+    18|     <div className="min-h-screen bg-white dark:bg-brand-900">
+    19|       <Breadcrumb items={[{ label: 'Profil & recherche', href: '/profil' }]} />
+    20| 
+    21|       {/* HERO */}
+    22|       <section className="bg-brand-900 dark:bg-brand-950 blueprint-grid-dense-dark text-white border-b border-brand-800">
+    23|         <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    24|           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8">
+    25|             {/* Portrait officiel — magatteniang-expert.sn */}
+    26|             <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden shrink-0 shadow-elev-3 ring-4 ring-accent-500/40 bg-brand-800">
+    27|               {/* eslint-disable-next-line @next/next/no-img-element */}
+    28|               <img
+    29|                 src={SITE_IMAGES.magatteNiangPortraitCover}
+    30|                 alt="Magatte Niang — portrait officiel"
+    31|                 className="w-full h-full object-cover"
+    32|               />
+    33|             </div>
+    34|             <div className="flex-1">
+    35|               <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent-500/15 border border-accent-500/30 rounded-full text-xs font-mono font-bold  tracking-wider text-accent-400 mb-4">
+    36|                 <Users className="w-3.5 h-3.5" />
+    37|                 Fondateur & Directeur Général
+    38|               </span>
+    39|               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-title font-bold tracking-tight mb-3">
+    40|                 {FOUNDER_PROFILE.name}
+    41|               </h1>
+    42|               <p className="text-gold-400 font-semibold text-sm sm:text-base mb-4">
+    43|                 Bâtir l'avenir du Sénégal — {FOUNDER_PROFILE.title}
+    44|               </p>
+    45|               <p className="text-neutral-300 text-sm sm:text-base leading-relaxed max-w-3xl">
+    46|                 Un leader pluridisciplinaire alliant expertise BTP, innovation en recherche et vision
+    47|                 entrepreneuriale pour des projets d'excellence.
+    48|               </p>
+    49|             </div>
+    50|           </div>
+    51| 
+    52|           <div className="grid grid-cols-3 gap-4 mt-10">
+    53|             {FOUNDER_PROFILE.verifiedMetrics.map(m => (
+    54|               <div key={m.label} className="bg-brand-800/60 border border-brand-700 rounded-m p-4 text-center">
+    55|                 <p className="text-2xl sm:text-3xl font-title font-bold text-accent-400 tabular-nums">{m.value}</p>
+    56|                 <p className="text-[11px] font-mono  tracking-wider text-neutral-400 mt-1">{m.label}</p>
+    57|               </div>
+    58|             ))}
+    59|           </div>
+    60|         </div>
+    61|       </section>
+    62| 
+    63|       {/* BIOGRAPHIE */}
+    64|       <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    65|         <div className="max-w-reading">
+    66|           <h2 className="text-2xl sm:text-3xl font-title font-bold text-neutral-900 dark:text-white tracking-tight mb-6">
+    67|             Biographie
+    68|           </h2>
+    69|           <div className="space-y-4 text-sm sm:text-[15px] text-neutral-700 dark:text-neutral-300 leading-relaxed">
+    70|             <p>
+    71|               Magatte Niang est un leader pluridisciplinaire qui incarne une nouvelle génération
+    72|               d'entrepreneurs africains alliant excellence académique, expertise opérationnelle et
+    73|               vision stratégique.
+    74|             </p>
+    75|             <p>
+    76|               Ingénieur diplômé de l'<strong>École Polytechnique de Thiès</strong> en Génie Civil, il a
+    77|               complété sa formation à l'étranger en se spécialisant en <strong>structures métalliques au
+    78|               Centre des Hautes Études en Construction (CHEM) en France</strong>. Cette double formation
+    79|               lui a permis de maîtriser tant les standards internationaux que les réalités du contexte africain.
+    80|             </p>
+
+### 6) ESPACE-PRO PAGE lignes 1-70
+     1| 'use client';
+     2| 
+     3| import React from 'react';
+     4| import Link from 'next/link';
+     5| import { Breadcrumb } from '@/components/layout/Breadcrumb';
+     6| import { store } from '@/lib/store';
+     7| import { SITE_IMAGES } from '@/data/siteImages';
+     8| import { Quote as QuoteIcon, Calendar, ShoppingCart, FileText, ArrowRight, Building, Phone, Mail, ShieldCheck, TrendingUp } from 'lucide-react';
+     9| 
+    10| export default function EspaceProPage() {
+    11|   const [quotes, setQuotes] = React.useState<ReturnType<typeof store.getQuotes>>([]);
+    12|   const [appointments, setAppointments] = React.useState<ReturnType<typeof store.getAppointments>>([]);
+    13|   const [cartCount, setCartCount] = React.useState(0);
+    14| 
+    15|   React.useEffect(() => {
+    16|     setQuotes(store.getQuotes());
+    17|     setAppointments(store.getAppointments());
+    18|     setCartCount(store.getCart().length);
+    19|   }, []);
+    20| 
+    21|   const formatDate = (iso: string) => {
+    22|     try {
+    23|       return new Date(iso).toLocaleDateString('fr-FR', { day: '2-digit', month: 'short', year: 'numeric' });
+    24|     } catch {
+    25|       return iso;
+    26|     }
+    27|   };
+    28| 
+    29|   const statusStyles: Record<string, string> = {
+    30|     'Envoyé': 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400',
+    31|     'Accepté': 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-400',
+    32|     'Brouillon': 'bg-neutral-100 text-neutral-600 dark:bg-brand-900 dark:text-neutral-400',
+    33|     'Refusé': 'bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-400',
+    34|     'Expiré': 'bg-neutral-100 text-neutral-500 dark:bg-brand-900 dark:text-neutral-500',
+    35|     'En négociation': 'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-400',
+    36|   };
+    37| 
+    38|   return (
+    39|     <div className="min-h-screen bg-white dark:bg-brand-900">
+    40|       <Breadcrumb items={[{ label: 'Espace professionnel', href: '/espace-pro' }]} />
+    41| 
+    42|       {/* HERO */}
+    43|       <section className="relative overflow-hidden bg-brand-900 dark:bg-brand-950 blueprint-grid-dense-dark text-white border-b border-brand-800">
+    44|         {/* eslint-disable-next-line @next/next/no-img-element */}
+    45|         <img
+    46|           src={SITE_IMAGES.rubonChantier}
+    47|           alt="Bureau d'études et ateliers SERMA BTP"
+    48|           className="absolute inset-0 w-full h-full object-cover opacity-25"
+    49|           loading="lazy"
+    50|         />
+    51|         <div className="absolute inset-0 bg-gradient-to-r from-brand-900/80 to-brand-950/60" />
+    52|         <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-14 relative">
+    53|           <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent-500/15 border border-accent-500/30 rounded-full text-xs font-mono font-bold  tracking-wider text-accent-400 mb-5">
+    54|             <Building className="w-3.5 h-3.5" />
+    55|             Suivi client & devis
+    56|           </span>
+    57|           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-title font-bold tracking-tight mb-4">
+    58|             Espace <span className="text-accent-400">Professionnel</span>
+    59|           </h1>
+    60|           <p className="text-neutral-300 text-base sm:text-lg leading-relaxed max-w-3xl">
+    61|             Suivez vos demandes de devis, vos rendez-vous confirmés et votre panier de matériaux.
+    62|             Vos documents contractuels sont centralisés et traçables.
+    63|           </p>
+    64|         </div>
+    65|       </section>
+    66| 
+    67|       <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    68|         {/* ACCÈS RAPIDE */}
+    69|         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+    70|           {[
+
+### 7) STORE: auth/admin?
+  store.ts 544 lignes; mots-cles:
+    Admin: 2
+    auth: 2
+    role: 7
+    user: 13
+    premier match admin: Admin',
+
+### 8) API ROUTES
+  src/app/api\appointments\route.ts
+  src/app/api\contact\route.ts
+  src/app/api\entities\route.ts
+  src/app/api\entities\[id]\route.ts
+  src/app/api\lab-tests\route.ts
+  src/app/api\leads\route.ts
+  src/app/api\products\route.ts
+  src/app/api\products\[id]\route.ts
+  src/app/api\projects\route.ts
+  src/app/api\projects\[slug]\route.ts
+  src/app/api\quotes\route.ts
+  src/app/api\search\route.ts
+
+### 9) IMAGES DISPONIBLES (groupe par prefixe)
+  public/images  (30) : architecture-moderne.jpg, beton-prefabrique.jpg, bureau-etudes.jpg, camion-sbs.webp, carrelage-interieur.jpg, chantier.webp ...
+  public/images/engins  (22) : auto-betonniere-venus.jpg, betonniere-1000l.jpg, brouette.jpg, camion-benne-40t.jpg, camion-grue-6t.jpg, camion-plateau-groupe.jpg ...
+  public/images/illustrations  (11) : catalogue-showroom.svg, charpente-metal.svg, finitions-revetements.svg, genie-civil-vrd.svg, hero-ingenierie.svg, laboratoire-geotechnique.svg ...
+  public/images/realisations  (23) : p2m-realisation-chambre-carrelage-bois.jpg, p2m-realisation-fann-hall-marbre.jpg, p2m-realisation-fann-salle-de-bain.jpg, p2m-realisation-salon-blanc-marbre.jpg, p2m-realisation-salon-marbre-luxe.jpg, p2m-realisation-sejour-prestige-dakar.jpg ...
+  public/images/reelles  (210) : logistik-001.jpg, logistik-002.jpg, logistik-003.jpg, logistik-004.jpg, logistik-005.jpg, logistik-006.jpg ...

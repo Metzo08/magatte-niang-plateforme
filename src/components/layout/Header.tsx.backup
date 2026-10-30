@@ -1,0 +1,526 @@
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import {
+  Building2,
+  Hammer,
+  FlaskConical,
+  Factory,
+  Truck,
+  Layers,
+  Globe,
+  Search,
+  ShoppingCart,
+  User,
+  ChevronDown,
+  ChevronRight,
+  Menu,
+  X,
+  Sparkles,
+  Sun,
+  Moon,
+  ShieldAlert,
+  ArrowRight,
+  FileText,
+  Lock
+} from 'lucide-react';
+import { ENTITIES } from '@/data/initialData';
+import { store, CartItem } from '@/lib/store';
+
+interface HeaderProps {
+  onOpenSearch: () => void;
+  onOpenAI: () => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenAI }) => {
+  const pathname = usePathname();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [cartCount, setCartCount] = useState(0);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+
+    // Initial cart load & listen to changes
+    const updateCart = () => {
+      const cart = store.getCart();
+      const total = cart.reduce((acc, item) => acc + item.quantity, 0);
+      setCartCount(total);
+    };
+    updateCart();
+    window.addEventListener('storage-update', updateCart);
+
+    // Dark mode check
+    if (document.documentElement.classList.contains('dark')) {
+      setIsDarkMode(true);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('storage-update', updateCart);
+    };
+  }, []);
+
+  const toggleDarkMode = () => {
+    if (document.documentElement.classList.contains('dark')) {
+      document.documentElement.classList.remove('dark');
+      setIsDarkMode(false);
+    } else {
+      document.documentElement.classList.add('dark');
+      setIsDarkMode(true);
+    }
+  };
+
+  const getEntityIcon = (iconName: string) => {
+    switch (iconName) {
+      case 'Hammer': return <Hammer className="w-5 h-5" />;
+      case 'Building2': return <Building2 className="w-5 h-5" />;
+      case 'FlaskConical': return <FlaskConical className="w-5 h-5" />;
+      case 'Factory': return <Factory className="w-5 h-5" />;
+      case 'Truck': return <Truck className="w-5 h-5" />;
+      case 'Layers': return <Layers className="w-5 h-5" />;
+      case 'Globe': return <Globe className="w-5 h-5" />;
+      default: return <Building2 className="w-5 h-5" />;
+    }
+  };
+
+  return (
+    <header className={`sticky top-0 z-40 transition-all duration-200 ${
+      isScrolled
+        ? 'bg-white/95 dark:bg-brand-900/95 backdrop-blur-md shadow-elev-1 py-2.5'
+        : 'bg-white dark:bg-brand-900 border-b border-neutral-300 dark:border-brand-800 py-3.5'
+    }`}>
+      <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-2">
+
+          {/* LOGO CORPORATE */}
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3.5 group focus:outline-none shrink-0">
+            <div className="relative w-10 h-10 sm:w-11 sm:h-11 bg-brand-900 dark:bg-brand-950 border border-brand-700/80 rounded-m flex items-center justify-center text-white font-title font-bold text-lg sm:text-xl tracking-tighter shadow-md group-hover:border-accent-500 group-hover:shadow-[0_0_15px_rgba(242,106,27,0.3)] transition-all">
+              <span className="text-white">M</span>
+              <span className="text-accent-500">N</span>
+              <span className="absolute -bottom-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-500 border-2 border-white dark:border-brand-900" title="Écosystème certifié actif" />
+            </div>
+            <div className="flex flex-col">
+              <div className="flex items-center gap-1.5">
+                <span className="font-title font-bold text-sm sm:text-base tracking-tight text-neutral-900 dark:text-white leading-none group-hover:text-accent-500 transition-colors whitespace-nowrap">
+                  Magatte Niang
+                </span>
+                <span className="hidden 2xl:inline-block text-[10px] font-mono  font-bold px-1.5 py-0.5 bg-gradient-to-r from-accent-500/10 to-gold-500/20 text-accent-600 dark:text-accent-400 border border-accent-500/30 rounded whitespace-nowrap">
+                  Expert BTP
+                </span>
+              </div>
+              <span className="hidden sm:flex text-[11px] font-sans font-medium text-neutral-500 dark:text-neutral-400 tracking-wider  mt-1 items-center gap-1.5 whitespace-nowrap">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent-500" />
+                7 pôles industriels intégrés
+              </span>
+            </div>
+          </Link>
+
+          {/* DESKTOP MAIN NAVIGATION */}
+          <nav className="hidden xl:flex items-center justify-end gap-0.5 flex-1 min-w-0">
+
+            {/* LINK: ACCUEIL */}
+            <Link
+              href="/"
+              className={`px-2.5 xl:px-3 py-2 text-sm font-medium rounded-m transition-colors whitespace-nowrap ${
+                pathname === '/'
+                  ? 'text-accent-500 font-semibold'
+                  : 'text-neutral-700 dark:text-neutral-300 hover:text-brand-700 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-brand-800'
+              }`}
+            >
+              Accueil
+            </Link>
+
+            {/* MEGA-MENU : ENTITÉS DU GROUPE */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown('entities')}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <button
+                className={`flex items-center gap-1.5 px-2.5 xl:px-3 py-2 text-sm font-medium rounded-m transition-colors whitespace-nowrap ${
+                  pathname.startsWith('/entites')
+                    ? 'text-accent-500 font-semibold'
+                    : 'text-neutral-700 dark:text-neutral-300 hover:text-brand-700 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-brand-800'
+                }`}
+                aria-expanded={activeDropdown === 'entities'}
+              >
+                <span>7 entités</span>
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === 'entities' ? 'rotate-180 text-accent-500' : ''}`} />
+              </button>
+
+              {activeDropdown === 'entities' && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[min(820px,calc(100vw-2rem))] bg-white dark:bg-brand-900 rounded-l shadow-2xl border border-neutral-300/80 dark:border-brand-700 p-6 grid grid-cols-1 sm:grid-cols-2 gap-4 animate-in fade-in slide-in-from-top-2 duration-150 z-50">
+                  <div className="col-span-2 pb-3 border-b border-neutral-200 dark:border-brand-800 flex justify-between items-center">
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-accent-500 animate-pulse" />
+                        <h4 className="text-xs font-bold  tracking-wider text-accent-600 dark:text-accent-400 font-mono">
+                          Architecture industrielle intégrée
+                        </h4>
+                      </div>
+                      <p className="text-sm font-semibold text-neutral-900 dark:text-white mt-0.5">
+                        7 entités complémentaires couvrant 100% de la chaîne BTP
+                      </p>
+                    </div>
+                    <Link href="/entites" className="text-xs font-bold text-accent-500 hover:text-accent-600 dark:hover:text-accent-400 flex items-center gap-1.5 px-3 py-1.5 bg-accent-50 dark:bg-brand-800 rounded-m transition-colors">
+                      <span>Cartographie & synergies</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                  {ENTITIES.map((ent) => {
+                    const topMetric = ent.verifiedMetrics?.[0];
+                    return (
+                      <Link
+                        key={ent.id}
+                        href={`/entites/${ent.id}`}
+                        className="flex items-start gap-3 p-3 rounded-m hover:bg-neutral-50 dark:hover:bg-brand-800/80 border border-transparent hover:border-neutral-200 dark:hover:border-brand-700 transition-all group"
+                      >
+                        <div
+                          className="w-10 h-10 rounded-m flex items-center justify-center text-white shrink-0 shadow-sm transition-transform group-hover:scale-105"
+                          style={{ backgroundColor: ent.colorHex }}
+                        >
+                          {getEntityIcon(ent.icon)}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center justify-between">
+                            <span className="font-title font-bold text-sm text-neutral-900 dark:text-white group-hover:text-accent-500 transition-colors">
+                              {ent.name}
+                            </span>
+                            {topMetric && (
+                              <span className="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-neutral-100 dark:bg-brand-950 text-neutral-700 dark:text-neutral-300">
+                                {topMetric.value} {topMetric.unit}
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-xs text-neutral-600 dark:text-neutral-400 line-clamp-1 mt-0.5">
+                            {ent.badge}
+                          </p>
+                          <span className="text-[11px] text-accent-600 dark:text-accent-400 font-medium group-hover:underline inline-block mt-0.5">
+                            {ent.ctaText} →
+                          </span>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                  <div className="col-span-2 pt-3 border-t border-neutral-200 dark:border-brand-800 flex items-center justify-between bg-neutral-50 dark:bg-brand-950/60 -mx-6 -mb-6 p-4 rounded-b-l">
+                    <span className="text-xs text-neutral-600 dark:text-neutral-400">
+                      Besoin d'un chiffrage multi-entités groupé ?
+                    </span>
+                    <Link
+                      href="/assistant"
+                      className="text-xs font-bold text-accent-500 hover:underline flex items-center gap-1"
+                    >
+                      Lancer l'assistant d'orientation express →
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* LINK: EXPERTISES */}
+            <Link
+              href="/expertises"
+              className={`px-2.5 xl:px-3 py-2 text-sm font-medium rounded-m transition-colors whitespace-nowrap ${
+                pathname.startsWith('/expertises')
+                  ? 'text-accent-500 font-semibold'
+                  : 'text-neutral-700 dark:text-neutral-300 hover:text-brand-700 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-brand-800'
+              }`}
+            >
+              Expertises
+            </Link>
+
+            {/* LINK: PROJETS & RÉALISATIONS */}
+            <Link
+              href="/projets"
+              className={`px-2.5 xl:px-3 py-2 text-sm font-medium rounded-m transition-colors whitespace-nowrap ${
+                pathname.startsWith('/projets')
+                  ? 'text-accent-500 font-semibold'
+                  : 'text-neutral-700 dark:text-neutral-300 hover:text-brand-700 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-brand-800'
+              }`}
+            >
+              Projets & carte
+            </Link>
+
+            {/* LINK: CATALOGUE P2M — masqué sous 2xl */}
+            <Link
+              href="/catalogue"
+              className={`hidden 2xl:block px-2.5 py-2 text-sm font-medium rounded-m transition-colors whitespace-nowrap ${
+                pathname.startsWith('/catalogue')
+                  ? 'text-accent-500 font-semibold'
+                  : 'text-neutral-700 dark:text-neutral-300 hover:text-brand-700 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-brand-800'
+              }`}
+            >
+              Catalogue P2M
+            </Link>
+
+            {/* LINK: SERVICES METIERS */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown('services')}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <button
+                className={`flex items-center gap-1.5 px-3 py-2 text-sm font-medium rounded-m transition-colors ${
+                  pathname.startsWith('/services') || pathname.startsWith('/labo') || pathname.startsWith('/logistik')
+                    ? 'text-accent-500 font-semibold'
+                    : 'text-neutral-700 dark:text-neutral-300 hover:text-brand-700 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-brand-800'
+                }`}
+                aria-expanded={activeDropdown === 'services'}
+              >
+                <span className="whitespace-nowrap">Services & labo</span>
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === 'services' ? 'rotate-180 text-accent-500' : ''}`} />
+              </button>
+
+              {activeDropdown === 'services' && (
+                <div className="absolute top-full left-0 w-72 bg-white dark:bg-brand-900 rounded-l shadow-elev-3 border border-neutral-300 dark:border-brand-700 p-3 space-y-1 animate-in fade-in slide-in-from-top-2 duration-150">
+                  <Link href="/services/laboratoire" className="flex items-center gap-2.5 p-2 rounded-m hover:bg-neutral-100 dark:hover:bg-brand-800 text-sm">
+                    <FlaskConical className="w-4 h-4 text-emerald-600" />
+                    <div>
+                      <span className="font-semibold block text-neutral-900 dark:text-white">SB-S Labo</span>
+                      <span className="text-xs text-neutral-500">Essais géotechniques & bétons</span>
+                    </div>
+                  </Link>
+                  <Link href="/services/engins" className="flex items-center gap-2.5 p-2 rounded-m hover:bg-neutral-100 dark:hover:bg-brand-800 text-sm">
+                    <Truck className="w-4 h-4 text-amber-500" />
+                    <div>
+                      <span className="font-semibold block text-neutral-900 dark:text-white">SB-S Logistik</span>
+                      <span className="text-xs text-neutral-500">Location d'engins & transport</span>
+                    </div>
+                  </Link>
+                  <Link href="/services/sourcing" className="flex items-center gap-2.5 p-2 rounded-m hover:bg-neutral-100 dark:hover:bg-brand-800 text-sm">
+                    <Globe className="w-4 h-4 text-purple-600" />
+                    <div>
+                      <span className="font-semibold block text-neutral-900 dark:text-white">PGT Transit</span>
+                      <span className="text-xs text-neutral-500">Sourcing international & fret</span>
+                    </div>
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {/* LINK: FONDATEUR & PUBLICATIONS — masqué sous 2xl */}
+            <Link
+              href="/profil"
+              className={`hidden 2xl:block px-2.5 py-2 text-sm font-medium rounded-m transition-colors whitespace-nowrap ${
+                pathname.startsWith('/profil') || pathname.startsWith('/publications')
+                  ? 'text-accent-500 font-semibold'
+                  : 'text-neutral-700 dark:text-neutral-300 hover:text-brand-700 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-brand-800'
+              }`}
+            >
+              Magatte Niang
+            </Link>
+
+            {/* LINK: CONTACT */}
+            <Link
+              href="/contact"
+              className={`px-2.5 xl:px-3 py-2 text-sm font-medium rounded-m transition-colors whitespace-nowrap ${
+                pathname === '/contact'
+                  ? 'text-accent-500 font-semibold'
+                  : 'text-neutral-700 dark:text-neutral-300 hover:text-brand-700 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-brand-800'
+              }`}
+            >
+              Contact
+            </Link>
+          </nav>
+
+          {/* ACTION BUTTONS */}
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+
+            {/* SEARCH BUTTON WITH SHORTCUT */}
+            <button
+              onClick={onOpenSearch}
+              className="hidden md:flex items-center gap-2 px-2.5 py-1.5 text-xs text-neutral-600 dark:text-neutral-300 hover:text-brand-700 dark:hover:text-white bg-neutral-100 dark:bg-brand-800/80 border-neutral-300/80 dark:border-brand-700 rounded-m hover:border-accent-500 dark:hover:border-accent-500 transition-all shrink-0"
+              title="Recherche globale technique (Ctrl+K)"
+              aria-label="Ouvrir la recherche globale"
+            >
+              <Search className="w-4 h-4 text-neutral-500 shrink-0" />
+              <span className="hidden 2xl:inline text-neutral-500">Rechercher...</span>
+              <kbd className="hidden xl:inline-block text-[10px] font-mono px-1.5 py-0.5 rounded bg-white dark:bg-brand-900 border-neutral-300 dark:border-brand-700 text-neutral-500">
+                Ctrl+K
+              </kbd>
+            </button>
+
+            {/* AI ASSISTANT BUTTON */}
+            <button
+              onClick={onOpenAI}
+              className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-semibold text-brand-700 dark:text-brand-400 bg-brand-50 dark:bg-brand-800/60 border border-brand-200 dark:border-brand-700 rounded-m hover:bg-brand-100 dark:hover:bg-brand-700 transition-colors shrink-0"
+              title="Assistant IA BTP Magatte Niang"
+            >
+              <Sparkles className="w-4 h-4 text-accent-500 shrink-0" />
+              <span className="hidden 2xl:inline">Assistant IA</span>
+            </button>
+
+            {/* CART (PANIER DEVIS P2M) */}
+            <Link
+              href="/panier"
+              className="relative p-2 text-neutral-700 dark:text-neutral-300 hover:text-brand-700 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-brand-800 rounded-m transition-colors shrink-0"
+              title="Panier de devis multi-produits"
+              aria-label="Voir le panier de devis"
+            >
+              <ShoppingCart className="w-5 h-5" />
+              {cartCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-accent-500 text-white text-[11px] font-bold font-mono w-5 h-5 rounded-full flex items-center justify-center animate-pulse">
+                  {cartCount}
+                </span>
+              )}
+            </Link>
+
+            {/* DARK MODE TOGGLE */}
+            <button
+              onClick={toggleDarkMode}
+              className="p-2 text-neutral-700 dark:text-neutral-300 hover:text-brand-700 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-brand-800 rounded-m transition-colors shrink-0"
+              title={isDarkMode ? "Passer en mode clair" : "Passer en mode sombre"}
+              aria-label="Changer le thème"
+            >
+              {isDarkMode ? <Sun className="w-5 h-5 text-amber-400" /> : <Moon className="w-5 h-5" />}
+            </button>
+
+            {/* ESPACE ADMIN RÉSERVÉ */}
+            <Link
+              href="/espace-pro"
+              className="hidden 2xl:flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-neutral-700 dark:text-neutral-200 border border-neutral-300 dark:border-brand-700 rounded-m hover:bg-neutral-100 dark:hover:bg-brand-800 transition-colors shrink-0"
+              title="Accès réservé administration"
+            >
+              <Lock className="w-3.5 h-3.5 text-accent-500 shrink-0" />
+              <span>Espace Admin</span>
+            </Link>
+
+            {/* PRIMARY CTA : QUALIFY ASSISTANT */}
+            <Link
+              href="/assistant"
+              className="hidden sm:inline-flex items-center justify-center gap-2 px-4 py-2 bg-accent-500 hover:bg-accent-600 active:bg-accent-600 text-white text-xs sm:text-sm font-bold rounded-m shadow-elev-2 hover:shadow-[0_0_20px_rgba(242,106,27,0.4)] transition-all focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 shrink-0 whitespace-nowrap"
+            >
+              <span className="hidden xl:inline">Chiffrage express</span>
+              <span className="xl:hidden">Chiffrage</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+
+            {/* MOBILE MENU TOGGLE */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="xl:hidden p-2 text-neutral-700 dark:text-neutral-200 rounded-m hover:bg-neutral-100 dark:hover:bg-brand-800"
+              aria-label="Ouvrir le menu mobile"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* MOBILE FULL NAVIGATION OVERLAY - MENU AMÉLIORÉ */}
+      {mobileMenuOpen && (
+        <div className="xl:hidden bg-white dark:bg-brand-900 border-b border-neutral-200 dark:border-brand-800 animate-in slide-in-from-top-4 max-h-[calc(100vh-4rem)] overflow-y-auto">
+
+          {/* Header du menu mobile avec liens rapides */}
+          <div className="px-4 pt-4 pb-3 border-b border-neutral-200 dark:border-brand-800">
+            <div className="grid grid-cols-2 gap-2">
+              <button
+                onClick={() => { setMobileMenuOpen(false); onOpenSearch(); }}
+                className="flex items-center justify-center gap-2.5 px-3 py-3 bg-neutral-100 dark:bg-brand-800/70 border border-neutral-300/80 dark:border-brand-700 rounded-m text-sm text-neutral-700 dark:text-neutral-300 hover:border-accent-500 transition-colors"
+              >
+                <Search className="w-4 h-4 text-neutral-500" />
+                <span className="text-xs font-semibold">Recherche</span>
+              </button>
+              <button
+                onClick={() => { setMobileMenuOpen(false); onOpenAI(); }}
+                className="flex items-center justify-center gap-2.5 px-3 py-3 bg-accent-50 dark:bg-brand-800/60 border border-accent-500/30 dark:border-accent-500/40 rounded-m text-sm text-accent-600 dark:text-accent-400 hover:bg-accent-100 transition-colors"
+              >
+                <Sparkles className="w-4 h-4" />
+                <span className="text-xs font-semibold">Assistant IA</span>
+              </button>
+              <button
+                onClick={toggleDarkMode}
+                className="flex items-center justify-center gap-2.5 px-3 py-3 bg-neutral-100 dark:bg-brand-800/60 border border-neutral-300/80 dark:border-brand-700 rounded-m text-sm text-neutral-700 dark:text-neutral-300 hover:border-accent-500 transition-colors col-span-2"
+              >
+                {isDarkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4" />}
+                <span className="text-xs font-semibold">{isDarkMode ? '☀ Mode clair' : '🌙 Mode sombre'}</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Navigation principale */}
+          <nav className="px-4 py-4">
+            <span className="text-[10px] font-mono font-bold  tracking-wider text-neutral-500 px-1">
+              Navigation
+            </span>
+            <div className="mt-2 space-y-0.5">
+              {[
+                { href: '/', label: 'Accueil' },
+                { href: '/entites', label: 'Les 7 entités du groupe' },
+                { href: '/expertises', label: 'Expertises métiers' },
+                { href: '/projets', label: 'Projets & réalisations' },
+                { href: '/catalogue', label: 'Catalogue P2M' },
+                { href: '/services/laboratoire', label: 'Laboratoire SB-S Labo' },
+                { href: '/contact', label: 'Contact & Devis direct' },
+                { href: '/profil', label: 'Magatte Niang — profil & recherche' },
+                { href: '/espace-pro', label: 'Espace Administration (Accès réservé)' }
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`flex items-center justify-between px-3 py-2.5 rounded-m text-sm font-medium transition-colors ${
+                    pathname === item.href
+                      ? 'bg-accent-50 dark:bg-brand-800 text-accent-600 dark:text-accent-400 font-semibold'
+                      : 'text-neutral-800 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-brand-800'
+                  }`}
+                >
+                  <span>{item.label}</span>
+                  <ChevronRight className="w-4 h-4 text-neutral-400" />
+                </Link>
+              ))}
+            </div>
+          </nav>
+
+          {/* Les 7 entités en pastilles colorées */}
+          <div className="px-4 pb-4">
+            <span className="text-[10px] font-mono font-bold  tracking-wider text-neutral-500 px-1">
+              Les 7 piliers de l'écosystème
+            </span>
+            <div className="mt-2 grid-cols-2 gap-2">
+              {ENTITIES.map((ent) => (
+                <Link
+                  key={ent.id}
+                  href={`/entites/${ent.id}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-2.5 px-3 py-2.5 bg-neutral-50 dark:bg-brand-800/50 border border-neutral-200 dark:border-brand-700 rounded-m transition-colors hover:border-accent-500"
+                >
+                  <span
+                    className="w-7 h-7 rounded-m flex items-center justify-center text-white text-[10px] font-title font-bold shrink-0"
+                    style={{ backgroundColor: ent.colorHex }}
+                  >
+                    {ent.name.slice(0, 2)}
+                  </span>
+                  <span className="text-xs font-semibold text-neutral-800 dark:text-neutral-200 truncate">
+                    {ent.name}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA principal */}
+          <div className="px-4 pb-5 pt-1">
+            <Link
+              href="/assistant"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full flex items-center justify-center gap-2 px-4 py-3.5 bg-accent-500 hover:bg-accent-600 text-white font-bold rounded-m shadow-elev-2 transition-all"
+            >
+              <Sparkles className="w-4 h-4" />
+              Démarrer un projet / chiffrage express
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+};

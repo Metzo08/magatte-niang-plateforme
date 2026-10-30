@@ -1,0 +1,53 @@
+total image files: 296
+
+=== 40 SMALLEST (suspicious / broken) ===
+     5496  public/images/illustrations/finitions-revetements.svg
+     5669  public/images/illustrations/charpente-metal.svg
+     5997  public/images/illustrations/genie-civil-vrd.svg
+     6309  public/images/illustrations/parc-engins.svg
+     6447  public/images/illustrations/prefabrication-beton.svg
+     6548  public/images/illustrations/recherche-academique.svg
+     6700  public/images/illustrations/sourcing-fret.svg
+     7358  public/images/illustrations/catalogue-showroom.svg
+     7587  public/images/illustrations/logistique-transport.svg
+     7984  public/images/illustrations/laboratoire-geotechnique.svg
+    10181  public/images/illustrations/hero-ingenierie.svg
+    12908  public/images/pgt.jpg
+    15101  public/images/reelles/p2m-133.jpg
+    16204  public/images/reelles/p2m-129.jpg
+    16684  public/images/magatte-portrait.webp
+    17153  public/images/reelles/p2m-130.jpg
+    17903  public/images/serma-btp.jpg
+    18777  public/images/reelles/p2m-131.jpg
+    20020  public/images/reelles/p2m-134.jpg
+    20040  public/images/reelles/p2m-132.jpg
+    21082  public/images/reelles/p2m-135.jpg
+    21724  public/images/reelles/p2m-127.jpg
+    24757  public/images/reelles/projet-secaa-aire-lavage-01.jpg
+    24757  public/images/reelles/projet-secaa-aire-lavage-02.jpg
+    26029  public/images/reelles/p2m-136.jpg
+    28124  public/images/chantier.webp
+    28435  public/images/magatte-niang.jpg
+    29321  public/images/reelles/projet-secaa-aire-lavage-03.jpg
+    29321  public/images/reelles/projet-secaa-aire-lavage-09.jpg
+    30574  public/images/reelles/sbs-reel-006.jpg
+    31485  public/images/reelles/projet-oim-societe-generale-03.jpg
+    32820  public/images/reelles/projet-oim-societe-generale-04.jpg
+    33547  public/images/reelles/projet-oim-societe-generale-05.jpg
+    35525  public/images/reelles/projet-oim-societe-generale-02.jpg
+    37311  public/images/sbs-group.jpg
+    37479  public/images/reelles/projet-oim-societe-generale-01.jpg
+    38280  public/images/reelles/p2m-111.jpg
+    39827  public/images/realisations/pont-mixte-acier-beton-senegal.jpg
+    39897  public/images/reelles/projet-oim-societe-generale-06.jpg
+    40169  public/images/reelles/projet-oim-societe-generale-07.jpg
+
+=== files under 5 KB ===
+count: 0
+
+=== per-directory summary ===
+public/images                                    30 files     9551885 bytes  avg  318396
+public/images/engins                             22 files     3804653 bytes  avg  172938
+public/images/illustrations                      11 files       76276 bytes  avg    6934
+public/images/realisations                       23 files     6788982 bytes  avg  295173
+public/images/reelles                           210 files    38179708 bytes  avg  181808

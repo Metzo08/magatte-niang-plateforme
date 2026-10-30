@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rtk ls *)",
+      "Bash(node _checkdup.js)",
+      "Bash(node -e ' *)",
+      "Bash(node -e 'const {PrismaClient}=require\\('\\\\''./node_modules/@prisma/client'\\\\''\\); const p=new PrismaClient\\(\\); p.$connect\\(\\).then\\(async\\(\\)=>{const ps=await p.project.findMany\\({where:{primaryEntityId:sbs-group}}\\); console.log\\(DB' projects 'sbs-group:,ps.length\\); for\\(const x of ps\\){console.log\\(x.slug, JSON.stringify\\(x.images\\).slice\\(0,200\\)\\);} const g=await p.$queryRaw`SELECT * FROM Entity WHERE id='\\\\''sbs-group'\\\\''`; console.log\\(JSON.stringify\\(g,null,1\\).slice\\(0,500\\)\\); process.exit\\(0\\);}\\).catch\\(e=>{console.error\\(e.message\\);process.exit\\(1\\);}\\); *)",
+      "Bash(node _checkdb.js)",
+      "Bash(node _checkdup2.js)",
+      "Bash(awk '/sbs-group.*\\\\[/,/  \\\\],/' _recovery_backups/siteImages.ts.before-repair.txt)",
+      "Bash(node _checkdb2.js)",
+      "Bash(node -e 'const fs=require\\(\"fs\"\\);const b=fs.readFileSync\\(\"public/images/reelles/coulage-beton-pompe-chantier.jpg\"\\);console.log\\(\"size\",b.length,\"bytes\"\\);console.log\\(\"header\",Buffer.from\\(b.slice\\(0,4\\)\\).toString\\(\"hex\"\\)\\);')",
+      "Bash(rtk grep *)",
+      "Bash(rtk read *)",
+      "Bash(node _find_unused.js)"
+    ]
+  }
+}

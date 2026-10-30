@@ -1,0 +1,317 @@
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { store } from '@/lib/store';
+import { SITE_IMAGES } from '@/data/siteImages';
+import { Quote as QuoteIcon, Calendar, ShoppingCart, FileText, ArrowRight, Building, Phone, Mail, ShieldCheck, TrendingUp, Lock, LogOut, CheckCircle2, AlertCircle } from 'lucide-react';
+
+export default function EspaceProPage() {
+  const [isAdminAuthenticated, setIsAdminAuthenticated] = React.useState<boolean>(false);
+  const [passcode, setPasscode] = React.useState('');
+  const [errorMsg, setErrorMsg] = React.useState('');
+  const [quotes, setQuotes] = React.useState<ReturnType<typeof store.getQuotes>>([]);
+  const [appointments, setAppointments] = React.useState<ReturnType<typeof store.getAppointments>>([]);
+  const [cartCount, setCartCount] = React.useState(0);
+
+  React.useEffect(() => {
+    const isAuth = typeof window !== 'undefined' && sessionStorage.getItem('mn_admin_authenticated') === 'true';
+    if (isAuth) {
+      setIsAdminAuthenticated(true);
+    }
+    setQuotes(store.getQuotes());
+    setAppointments(store.getAppointments());
+    setCartCount(store.getCart().length);
+  }, []);
+
+  const handleAdminLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    const cleanPass = passcode.trim().toLowerCase();
+    if (cleanPass === '2026' || cleanPass === 'admin' || cleanPass === 'admin2026') {
+      setIsAdminAuthenticated(true);
+      if (typeof window !== 'undefined') {
+        sessionStorage.setItem('mn_admin_authenticated', 'true');
+      }
+      setErrorMsg('');
+    } else {
+      setErrorMsg('Code d\'accès incorrect. Veuillez saisir le code d\'administration autorisé.');
+    }
+  };
+
+  const handleAdminLogout = () => {
+    setIsAdminAuthenticated(false);
+    if (typeof window !== 'undefined') {
+      sessionStorage.removeItem('mn_admin_authenticated');
+    }
+    setPasscode('');
+  };
+
+  const formatDate = (iso: string) => {
+    try {
+      return new Date(iso).toLocaleDateString('fr-FR', { day: '2-digit', month: 'short', year: 'numeric' });
+    } catch {
+      return iso;
+    }
+  };
+
+  const statusStyles: Record<string, string> = {
+    'Envoyé': 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400',
+    'Accepté': 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-400',
+    'Brouillon': 'bg-neutral-100 text-neutral-600 dark:bg-brand-900 dark:text-neutral-400',
+    'Refusé': 'bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-400',
+    'Expiré': 'bg-neutral-100 text-neutral-500 dark:bg-brand-900 dark:text-neutral-500',
+    'En négociation': 'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-400',
+  };
+
+  // ÉCRAN DE VERROUILLAGE / ACCÈS RÉSERVÉ À L'ADMINISTRATION
+  if (!isAdminAuthenticated) {
+    return (
+      <div className="min-h-screen bg-neutral-100 dark:bg-brand-950 flex flex-col justify-between">
+        <Breadcrumb items={[{ label: 'Espace Professionnel (Admin)', href: '/espace-pro' }]} />
+
+        <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-1 flex items-center justify-center">
+          <div className="w-full max-w-md bg-white dark:bg-brand-900 border border-neutral-300 dark:border-brand-700 rounded-xl p-6 sm:p-8 shadow-elev-3 text-center space-y-6">
+            <div className="w-16 h-16 bg-brand-800 text-accent-500 border border-brand-700 rounded-full flex items-center justify-center mx-auto shadow-sm">
+              <Lock className="w-8 h-8" />
+            </div>
+
+            <div className="space-y-2">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-accent-500/10 border border-accent-500/20 rounded-full text-[11px] font-mono font-bold text-accent-500">
+                <ShieldCheck className="w-3.5 h-3.5" />
+                Accès réservé · Administration & Direction
+              </span>
+              <h1 className="text-2xl font-title font-bold text-neutral-900 dark:text-white">
+                Espace Professionnel
+              </h1>
+              <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                Suivez vos demandes de devis, vos rendez-vous confirmés et votre panier de matériaux. Vos documents contractuels sont centralisés et traçables.
+              </p>
+            </div>
+
+            <form onSubmit={handleAdminLogin} className="space-y-4 text-left">
+              <div>
+                <label className="block text-xs font-mono font-semibold text-neutral-700 dark:text-neutral-300 mb-1.5">
+                  Code d'accès administrateur :
+                </label>
+                <input
+                  type="password"
+                  value={passcode}
+                  onChange={(e) => {
+                    setPasscode(e.target.value);
+                    if (errorMsg) setErrorMsg('');
+                  }}
+                  placeholder="Entrez le code administrateur (ex: 2026)..."
+                  className="w-full px-3.5 py-2.5 text-sm bg-neutral-50 dark:bg-brand-800 border border-neutral-300 dark:border-brand-700 rounded-m text-neutral-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-500"
+                  autoFocus
+                />
+                {errorMsg && (
+                  <p className="flex items-center gap-1.5 text-xs text-red-500 mt-2">
+                    <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+                    <span>{errorMsg}</span>
+                  </p>
+                )}
+              </div>
+
+              <button
+                type="submit"
+                disabled={!passcode.trim()}
+                className="w-full py-2.5 px-4 bg-accent-500 hover:bg-accent-600 disabled:opacity-50 text-white font-bold rounded-m text-sm transition-colors shadow-sm flex items-center justify-center gap-2"
+              >
+                <span>Déverrouiller l'Espace Administration</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+
+              <div className="pt-2 text-center">
+                <p className="text-[11px] font-mono text-neutral-400">
+                  Code d'accès démo : <strong className="text-accent-500">2026</strong>
+                </p>
+              </div>
+            </form>
+
+            <div className="pt-2 border-t border-neutral-200 dark:border-brand-800 flex justify-center">
+              <Link
+                href="/"
+                className="text-xs text-neutral-500 hover:text-accent-500 transition-colors"
+              >
+                ← Retour à l'accueil du site
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-white dark:bg-brand-900">
+      <Breadcrumb items={[{ label: 'Espace professionnel (Admin)', href: '/espace-pro' }]} />
+
+      {/* BANDEAU DE SESSION ADMINISTRATEUR */}
+      <div className="bg-brand-950 text-white px-4 sm:px-8 py-2.5 flex items-center justify-between text-xs border-b border-brand-800">
+        <div className="flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="font-mono text-emerald-400 font-bold">Session Administration Active</span>
+          <span className="hidden sm:inline text-neutral-400">· Direction & Supervision centrale</span>
+        </div>
+        <button
+          onClick={handleAdminLogout}
+          className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-brand-800 hover:bg-red-900/60 text-neutral-300 hover:text-white rounded text-xs transition-colors"
+          title="Verrouiller la session"
+        >
+          <LogOut className="w-3.5 h-3.5" />
+          <span>Verrouiller l'accès</span>
+        </button>
+      </div>
+
+      {/* HERO */}
+      <section className="relative overflow-hidden bg-brand-900 dark:bg-brand-950 blueprint-grid-dense-dark text-white border-b border-brand-800">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={SITE_IMAGES.rubonChantier}
+          alt="Bureau d'études et ateliers SERMA BTP"
+          className="absolute inset-0 w-full h-full object-cover opacity-25"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-900/80 to-brand-950/60" />
+        <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-14 relative">
+          <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent-500/15 border border-accent-500/30 rounded-full text-xs font-mono font-bold  tracking-wider text-accent-400 mb-5">
+            <Building className="w-3.5 h-3.5" />
+            Suivi client & devis
+          </span>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-title font-bold tracking-tight mb-4">
+            Espace <span className="text-accent-400">Professionnel</span>
+          </h1>
+          <p className="text-neutral-300 text-base sm:text-lg leading-relaxed max-w-3xl">
+            Suivez vos demandes de devis, vos rendez-vous confirmés et votre panier de matériaux.
+            Vos documents contractuels sont centralisés et traçables.
+          </p>
+        </div>
+      </section>
+
+      <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* ACCÈS RAPIDE */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+          {[
+            { icon: <ShoppingCart className="w-5 h-5 text-accent-500" />, title: 'Panier de devis', desc: `${cartCount} produit(s) sélectionné(s)`, href: '/panier', cta: 'Ouvrir le panier' },
+            { icon: <FileText className="w-5 h-5 text-accent-500" />, title: 'Catalogue P2M', desc: 'Carrelages & sanitaires', href: '/catalogue', cta: 'Parcourir' },
+            { icon: <Calendar className="w-5 h-5 text-accent-500" />, title: 'Prendre rendez-vous', desc: 'Conseil ou visite chantier', href: '/contact', cta: 'Réserver' },
+            { icon: <TrendingUp className="w-5 h-5 text-accent-500" />, title: 'Assistant qualification', desc: 'Cadrage de projet en 2 min', href: '/assistant', cta: 'Démarrer' },
+          ].map(card => (
+            <Link
+              key={card.title}
+              href={card.href}
+              className="group bg-white dark:bg-brand-800 border border-neutral-200 dark:border-brand-700 rounded-l p-5 hover:border-accent-500 hover:shadow-elev-2 transition-all"
+            >
+              <div className="w-10 h-10 bg-accent-100 dark:bg-accent-900/30 rounded-m flex items-center justify-center mb-3">
+                {card.icon}
+              </div>
+              <h3 className="font-title font-bold text-neutral-900 dark:text-white text-sm mb-1">{card.title}</h3>
+              <p className="text-xs text-neutral-500 dark:text-neutral-400 mb-3">{card.desc}</p>
+              <span className="text-xs font-bold text-accent-500 inline-flex items-center gap-1 group-hover:underline">
+                {card.cta} <ArrowRight className="w-3 h-3" />
+              </span>
+            </Link>
+          ))}
+        </div>
+
+        {/* MES DEVIS */}
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-xl sm:text-2xl font-title font-bold text-neutral-900 dark:text-white tracking-tight">
+            Mes devis
+          </h2>
+          <span className="text-xs font-mono text-neutral-500">{quotes.length} document(s)</span>
+        </div>
+
+        {quotes.length === 0 ? (
+          <div className="bg-neutral-50 dark:bg-brand-800/50 border border-dashed border-neutral-300 dark:border-brand-700 rounded-l p-10 text-center mb-12">
+            <QuoteIcon className="w-10 h-10 text-neutral-400 mx-auto mb-3" />
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
+              Aucun devis pour le moment. Constituez votre panier depuis le catalogue P2M pour générer un devis.
+            </p>
+            <Link href="/catalogue" className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent-500 hover:bg-accent-600 text-white font-bold rounded-m text-sm transition-colors">
+              Explorer le catalogue <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        ) : (
+          <div className="bg-white dark:bg-brand-800 border border-neutral-200 dark:border-brand-700 rounded-l overflow-hidden divide-y divide-neutral-200 dark:divide-brand-700 mb-12">
+            {quotes.map(q => (
+              <div key={q.id} className="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                  <div className="flex items-center gap-2 mb-1 flex-wrap">
+                    <span className="text-xs font-mono font-bold text-neutral-900 dark:text-white">{q.quoteNumber}</span>
+                    <span className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded ${statusStyles[q.status] ?? ''}`}>
+                      {q.status}
+                    </span>
+                  </div>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400">
+                    {q.clientCompany || q.clientName} · {q.items.length} ligne(s) · Émis le {formatDate(q.createdAt)}
+                  </p>
+                </div>
+                <div className="text-right">
+                  <p className="text-sm font-mono font-bold text-accent-500 tabular-nums">
+                    {q.totalTTC.toLocaleString('fr-FR')} FCFA
+                  </p>
+                  <p className="text-[10px] text-neutral-500">TTC · Valable jusqu'au {formatDate(q.validUntil)}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* MES RENDEZ-VOUS */}
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-xl sm:text-2xl font-title font-bold text-neutral-900 dark:text-white tracking-tight">
+            Mes rendez-vous
+          </h2>
+          <span className="text-xs font-mono text-neutral-500">{appointments.length} confirmé(s)</span>
+        </div>
+
+        {appointments.length === 0 ? (
+          <div className="bg-neutral-50 dark:bg-brand-800/50 border border-dashed border-neutral-300 dark:border-brand-700 rounded-l p-10 text-center">
+            <Calendar className="w-10 h-10 text-neutral-400 mx-auto mb-3" />
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
+              Aucun rendez-vous programmé. Réservez un créneau avec un ingénieur de l'écosystème.
+            </p>
+            <Link href="/contact" className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent-500 hover:bg-accent-600 text-white font-bold rounded-m text-sm transition-colors">
+              Prendre rendez-vous <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        ) : (
+          <div className="bg-white dark:bg-brand-800 border border-neutral-200 dark:border-brand-700 rounded-l overflow-hidden divide-y divide-neutral-200 dark:divide-brand-700">
+            {appointments.map(a => (
+              <div key={a.id} className="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                  <div className="flex items-center gap-2 mb-1 flex-wrap">
+                    <span className="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400">{a.status}</span>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-100 dark:bg-brand-900 text-neutral-600 dark:text-neutral-400">
+                      {a.entityId}
+                    </span>
+                  </div>
+                  <p className="text-sm font-semibold text-neutral-900 dark:text-white">{a.type}</p>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400">{a.subject}</p>
+                </div>
+                <div className="text-right shrink-0">
+                  <p className="text-sm font-mono font-bold text-neutral-900 dark:text-white">{a.date}</p>
+                  <p className="text-[10px] font-mono text-neutral-500">{a.timeSlot}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* CONFORMITÉ */}
+        <div className="mt-12 flex items-start gap-3 bg-neutral-50 dark:bg-brand-800/50 border border-neutral-200 dark:border-brand-700 rounded-l p-5">
+          <ShieldCheck className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+          <div>
+            <p className="text-sm font-semibold text-neutral-900 dark:text-white">Données protégées · Loi n° 2008-12 CDP Sénégal</p>
+            <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-0.5">
+              Vos documents et coordonnées sont stockés localement et ne sont jamais cédés à des tiers.
+              Besoin d'aide ? <a href="mailto:contact@magatteniang-expert.sn" className="text-accent-500 underline">contact@magatteniang-expert.sn</a> · <Phone className="w-3 h-3 inline" /> +221 33 832 40 10
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

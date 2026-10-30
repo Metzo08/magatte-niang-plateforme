@@ -1,0 +1,419 @@
+===== src/app/expertises/page.tsx | NOT FOUND: 'Sourcing direct usines' =====
+
+===== src/app/expertises/page.tsx | NOT FOUND: 'Approvisionnement mati' =====
+
+===== src/app/expertises/page.tsx | NOT FOUND: 'Sourcing et livraison de mat' =====
+
+===== src/app/expertises/page.tsx | line 83 | 'Logistique lourde' =====
+  73|       icon: Building2,
+  74|       desc: 'Construction d\'infrastructures routières, ponts mixtes acier-béton, plateformes multimodales et assainissement lourd en groupement d\'entreprises.',
+  75|       points: [
+  76|         'Direction de projets d\'infrastructures publiques et privées',
+  77|         'Bétons techniques haute durabilité en milieu salin',
+  78|         'Voiries et réseaux divers (VRD) grande envergure',
+  79|         'Respect rigoureux des plannings d\'exécution'
+  80|       ]
+  81|     },
+  82|     {
+  83|       title: 'Logistique lourde & levage BTP',
+  84|       entity: 'SB-S Logistik',
+  85|       entityId: 'sbs-logistik',
+  86|       color: '#E0A800',
+  87|       image: EXPERTISE_IMAGES.camionBenne,
+  88|       icon: Truck,
+  89|       desc: 'Mise à disposition d\'une flotte de 82 engins lourds (pelles 36T, grues télescopiques 60T/100T, camions bennes 8x4) avec opérateurs qualifiés et maintenance 24/7.',
+  90|       points: [
+  91|         'Taux de disponibilité de la flotte supérieur à 94%',
+  92|         'Transport de matériaux et agrégats sur tout le Sénégal',
+  93|         'Opérations de levage complexe sous encadrement HSE',
+  94|         'Réservation en ligne avec calendrier de disponibilité'
+  95|       ]
+  96|     },
+  97|     {
+
+===== src/app/expertises/page.tsx | NOT FOUND: 'Fourniture de b' =====
+
+===== src/app/expertises/page.tsx | NOT FOUND: 'levage lourd' =====
+
+===== src/app/expertises/page.tsx | line 27 | 'image:' =====
+  17| import { Breadcrumb } from '@/components/layout/Breadcrumb';
+  18| import { EXPERTISE_IMAGES, SITE_IMAGES } from '@/data/siteImages';
+  19| 
+  20| export default function ExpertisesPage() {
+  21|   const domains = [
+  22|     {
+  23|       title: 'Charpentes métalliques & ouvrages industriels',
+  24|       entity: 'SERMA BTP',
+  25|       entityId: 'serma-btp',
+  26|       color: '#1B4965',
+  27|       image: EXPERTISE_IMAGES.charpenteMetal,
+  28|       icon: Hammer,
+  29|       desc: 'Étude aux éléments finis, modélisation 3D, usinage haute précision, grenaillage et montage sur site de charpentes à grande portée (jusqu\'à 45m sans poteau).',
+  30|       points: [
+  31|         'Calculs conformes aux Eurocodes 3 et normes NF',
+  32|         'Ligne de découpe plasma 3D haute définition',
+  33|         'Capacité d\'usinage de plus de 4 500 tonnes / an',
+  34|         'Protections anticorrosion adaptées au climat marin de Dakar'
+  35|       ]
+  36|     },
+  37|     {
+  38|       title: 'Géotechnique, sols & essais matériaux',
+  39|       entity: 'SB-S Labo',
+  40|       entityId: 'sbs-labo',
+  41|       color: '#1F9D6B',
+
+===== src/app/expertises/page.tsx | line 42 | 'image:' =====
+  32|         'Ligne de découpe plasma 3D haute définition',
+  33|         'Capacité d\'usinage de plus de 4 500 tonnes / an',
+  34|         'Protections anticorrosion adaptées au climat marin de Dakar'
+  35|       ]
+  36|     },
+  37|     {
+  38|       title: 'Géotechnique, sols & essais matériaux',
+  39|       entity: 'SB-S Labo',
+  40|       entityId: 'sbs-labo',
+  41|       color: '#1F9D6B',
+  42|       image: EXPERTISE_IMAGES.foreuseGeotechnique,
+  43|       icon: FlaskConical,
+  44|       desc: 'Reconnaissance des sols de fondation, essais in-situ au pénétromètre et laboratoire d\'écrasement béton avec émission de procès-verbaux certifiés sous 48h.',
+  45|       points: [
+  46|         'Essais CBR et Proctor selon NF P 94-078',
+  47|         'Écrasement d\'éprouvettes béton sur presses asservies 3000 kN',
+  48|         'Sondages carottés et analyses de stabilité de talus',
+  49|         'Contrôle qualité indépendant pour maîtres d\'ouvrage'
+  50|       ]
+  51|     },
+  52|     {
+  53|       title: 'Revêtements & carrelages grand format',
+  54|       entity: 'P2M',
+  55|       entityId: 'p2m',
+  56|       color: '#C0562F',
+
+===== src/app/expertises/page.tsx | line 57 | 'image:' =====
+  47|         'Écrasement d\'éprouvettes béton sur presses asservies 3000 kN',
+  48|         'Sondages carottés et analyses de stabilité de talus',
+  49|         'Contrôle qualité indépendant pour maîtres d\'ouvrage'
+  50|       ]
+  51|     },
+  52|     {
+  53|       title: 'Revêtements & carrelages grand format',
+  54|       entity: 'P2M',
+  55|       entityId: 'p2m',
+  56|       color: '#C0562F',
+  57|       image: EXPERTISE_IMAGES.carrelagePrestige,
+  58|       icon: Layers,
+  59|       desc: 'Distribution et fourniture de grès cérame de premier choix, faïence, dalles 20mm antidérapantes, sanitaires rimless et robinetterie inox pour projets tertiaires et résidentiels.',
+  60|       points: [
+  61|         'Stock centralisé de 45 000 m² à Dakar',
+  62|         'Import direct d\'usines certifiées en Espagne et Italie',
+  63|         'Formats 60x60, 60x120, 120x240 cm et épaisseurs 20mm',
+  64|         'Accompagnement calepinage et devis grossiste sous 24h'
+  65|       ]
+  66|     },
+  67|     {
+  68|       title: 'Génie civil, ouvrages d\'art & VRD',
+  69|       entity: 'SB-S Group',
+  70|       entityId: 'sbs-group',
+  71|       color: '#2D6A8E',
+
+===== src/app/expertises/page.tsx | line 72 | 'image:' =====
+  62|         'Import direct d\'usines certifiées en Espagne et Italie',
+  63|         'Formats 60x60, 60x120, 120x240 cm et épaisseurs 20mm',
+  64|         'Accompagnement calepinage et devis grossiste sous 24h'
+  65|       ]
+  66|     },
+  67|     {
+  68|       title: 'Génie civil, ouvrages d\'art & VRD',
+  69|       entity: 'SB-S Group',
+  70|       entityId: 'sbs-group',
+  71|       color: '#2D6A8E',
+  72|       image: EXPERTISE_IMAGES.chantierInfrastructure,
+  73|       icon: Building2,
+  74|       desc: 'Construction d\'infrastructures routières, ponts mixtes acier-béton, plateformes multimodales et assainissement lourd en groupement d\'entreprises.',
+  75|       points: [
+  76|         'Direction de projets d\'infrastructures publiques et privées',
+  77|         'Bétons techniques haute durabilité en milieu salin',
+  78|         'Voiries et réseaux divers (VRD) grande envergure',
+  79|         'Respect rigoureux des plannings d\'exécution'
+  80|       ]
+  81|     },
+  82|     {
+  83|       title: 'Logistique lourde & levage BTP',
+  84|       entity: 'SB-S Logistik',
+  85|       entityId: 'sbs-logistik',
+  86|       color: '#E0A800',
+
+===== src/app/expertises/page.tsx | line 87 | 'image:' =====
+  77|         'Bétons techniques haute durabilité en milieu salin',
+  78|         'Voiries et réseaux divers (VRD) grande envergure',
+  79|         'Respect rigoureux des plannings d\'exécution'
+  80|       ]
+  81|     },
+  82|     {
+  83|       title: 'Logistique lourde & levage BTP',
+  84|       entity: 'SB-S Logistik',
+  85|       entityId: 'sbs-logistik',
+  86|       color: '#E0A800',
+  87|       image: EXPERTISE_IMAGES.camionBenne,
+  88|       icon: Truck,
+  89|       desc: 'Mise à disposition d\'une flotte de 82 engins lourds (pelles 36T, grues télescopiques 60T/100T, camions bennes 8x4) avec opérateurs qualifiés et maintenance 24/7.',
+  90|       points: [
+  91|         'Taux de disponibilité de la flotte supérieur à 94%',
+  92|         'Transport de matériaux et agrégats sur tout le Sénégal',
+  93|         'Opérations de levage complexe sous encadrement HSE',
+  94|         'Réservation en ligne avec calendrier de disponibilité'
+  95|       ]
+  96|     },
+  97|     {
+  98|       title: 'Préfabrication béton industrielle',
+  99|       entity: 'SB-S Industries',
+ 100|       entityId: 'sbs-industries',
+ 101|       color: '#6B7A8F',
+
+===== src/app/expertises/page.tsx | line 102 | 'image:' =====
+  92|         'Transport de matériaux et agrégats sur tout le Sénégal',
+  93|         'Opérations de levage complexe sous encadrement HSE',
+  94|         'Réservation en ligne avec calendrier de disponibilité'
+  95|       ]
+  96|     },
+  97|     {
+  98|       title: 'Préfabrication béton industrielle',
+  99|       entity: 'SB-S Industries',
+ 100|       entityId: 'sbs-industries',
+ 101|       color: '#6B7A8F',
+ 102|       image: EXPERTISE_IMAGES.betonPrefabrique,
+ 103|       icon: Factory,
+ 104|       desc: 'Usine de fabrication d\'éléments modulaires en béton précontraint et armé pour accélérer les chantiers et fiabiliser la qualité structurelle.',
+ 105|       points: [
+ 106|         'Prédalles industrielles pour planchers grande portée',
+ 107|         'Bordures de trottoirs T1, T2, A2 et caniveaux normalisés',
+ 108|         'Pavés autobloquants 6cm et 8cm pour voiries lourdes',
+ 109|         'Production automatisée sous contrôle continu SB-S Labo'
+ 110|       ]
+ 111|     }
+ 112|   ];
+ 113| 
+ 114|   return (
+ 115|     <div className="min-h-screen bg-neutral-50 dark:bg-brand-900 pb-16">
+ 116|       <Breadcrumb items={[{ label: 'Expertises BTP' }]} />
+
+===== src/app/expertises/page.tsx | NOT FOUND: 'images:' =====
+===== src/data/siteImages.ts | line 97 | 'EXPERTISE_IMAGES' =====
+  93| /**
+  94|  * Galerie thématique BTP — branchée sur les VRAIES photos
+  95|  * des chantiers et du parc matériel du groupe.
+  96|  */
+  97| export const EXPERTISE_IMAGES = {
+  98|   charpenteMetal: '/images/reelles/projet-ces-stockage-sendou-03.jpg', // Ossature & charpente métallique sur chantier
+  99|   chantierInfrastructure: '/images/reelles/projet-ces-stockage-sendou-03.jpg', // Génie civil & infrastructures
+ 100|   chantierLevage: '/images/reelles/sbs-reel-001.jpg',             // Montage chantier / coordination
+ 101|   foreuseGeotechnique: '/images/reelles/sbs-labo-reel-005.jpg',   // Foreuse géotechnique en action
+ 102|   ouvrageArtPont: '/images/reelles/sbs-reel-007.jpg',             // Ouvrages d'art & infrastructures
+ 103|   enginTerrassement: '/images/engins/parc-terrassement.jpg',      // Parc d'engins de terrassement
+ 104|   camionBenne: '/images/engins/camion-benne-40t.jpg',             // Camion benne 40T réel
+ 105|   carrelageInterieur: '/images/carrelage-interieur.jpg',          // Finitions / intérieurs carrelés
+ 106|   carrelagePrestige: '/images/carrelage-interieur.jpg',           // Intérieur prestige P2M
+ 107|   sanitairesModernes: '/images/reelles/sbs-labo-reel-002.jpg',    // Matériel labo / sanitaires
+ 108|   controleQualite: '/images/reelles/sbs-labo-reel-001.jpg',       // Laboratoire / contrôle qualité
+ 109|   betonPrefabrique: '/images/beton-prefabrique.jpg',              // Préfabrication béton (planchers & prédalles)
+ 110|   ingenieurBureau: '/images/reelles/sbs-labo-reel-004.jpg',       // Bureau d'études
+ 111|   logistique: '/images/reelles/sbs-reel-007.jpg',                 // Logistique & engins
+ 112|   sourcing: '/images/reelles/projet-ces-stockage-sendou-03.jpg',  // Chantier industriel CES
+ 113| } as const;
+ 114| 
+ 115| export type SiteImageKey = keyof typeof SITE_IMAGES;
+ 116| /**
+ 117|  * Galeries par entité — VRAIES photos issues des dossiers officiels
+ 118|  * (dossier 'doc magatte niang', flyers P2M et SB-S Logistik).
+ 119|  * Affichées sur chaque page /entites/[id].
+ 120|  */
+ 121| export const ENTITY_GALLERY: Record<string, { src: string; caption: string }[]> = {
+ 122|   // Galerie complète P2M : 136 photos réelles du showroom Mbao et des flyers
+ 123|   // officiels (carreaux + plomberie). Légendes = contenu réellement visible.
+ 124|   p2m: [
+ 125|     { src: '/images/reelles/p2m-005.jpg', caption: 'Céramique vitrifiée 60×120 — Sathvario Goldy 8 500 F/m² · Alaska Grey · Dyna Blue' },
+ 126|     { src: '/images/reelles/p2m-022.jpg', caption: 'Calacatta Glossy 60×60 — blanc marbre veiné, 6 000 F/m²' },
+ 127|     { src: '/images/reelles/p2m-026.jpg', caption: '3D Wall Design Glossy 20×30 — faïence murale, 3 500 F/m²' },
+ 128|     { src: '/images/reelles/p2m-002.jpg', caption: 'Carrelage imitation bois 60×120 — German Wood Brown Matt' },
+ 129|     { src: '/images/reelles/p2m-068.jpg', caption: 'Carreau porcelaine 60×60 beige sable — showroom Mbao' },
+ 130|     { src: '/images/reelles/p2m-069.jpg', caption: 'Carreau porcelaine 40×40 gris mat adouci — showroom Mbao' },
+ 131|     { src: '/images/reelles/p2m-078.jpg', caption: 'Carreau porcelaine 30×30 blanc antidérapant — showroom Mbao' },
+ 132|     { src: '/images/reelles/p2m-070.jpg', caption: 'Carrelage imitation bois chêne naturel — showroom Mbao' },
+ 133|     { src: '/images/reelles/p2m-076.jpg', caption: 'Dalle effet marbre Calacatta Gold blanc veiné or' },
+ 134|     { src: '/images/reelles/p2m-080.jpg', caption: 'Dalle effet marbre blanc veiné or — Calacatta Gold' },
+ 135|     { src: '/images/reelles/p2m-090.jpg', caption: 'Dalle effet marbre blanc/or poli brillant 80×240' },
+ 136|     { src: '/images/reelles/p2m-081.jpg', caption: 'Mosaïque décor mural effet pierre naturelle' },
+ 137|     { src: '/images/reelles/p2m-083.jpg', caption: 'Mosaïque décor piscine — pâte de verre bleue' },
+===== src/app/profil/page.tsx | line 43 | "Bâtir l'avenir" =====
+  31|                 className="w-full h-full object-cover"
+  32|               />
+  33|             </div>
+  34|             <div className="flex-1">
+  35|               <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent-500/15 border border-accent-500/30 rounded-full text-xs font-mono font-bold  tracking-wider text-accent-400 mb-4">
+  36|                 <Users className="w-3.5 h-3.5" />
+  37|                 Fondateur & Directeur Général
+  38|               </span>
+  39|               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-title font-bold tracking-tight mb-3">
+  40|                 {FOUNDER_PROFILE.name}
+  41|               </h1>
+  42|               <p className="text-gold-400 font-semibold text-sm sm:text-base mb-4">
+  43|                 Bâtir l'avenir du Sénégal — {FOUNDER_PROFILE.title}
+  44|               </p>
+  45|               <p className="text-neutral-300 text-sm sm:text-base leading-relaxed max-w-3xl">
+  46|                 Un leader pluridisciplinaire alliant expertise BTP, innovation en recherche et vision
+  47|                 entrepreneuriale pour des projets d'excellence.
+  48|               </p>
+  49|             </div>
+  50|           </div>
+  51| 
+  52|           <div className="grid grid-cols-3 gap-4 mt-10">
+  53|             {FOUNDER_PROFILE.verifiedMetrics.map(m => (
+  54|               <div key={m.label} className="bg-brand-800/60 border border-brand-700 rounded-m p-4 text-center">
+  55|                 <p className="text-2xl sm:text-3xl font-title font-bold text-accent-400 tabular-nums">{m.value}</p>
+  56|                 <p className="text-[11px] font-mono  tracking-wider text-neutral-400 mt-1">{m.label}</p>
+  57|               </div>
+  58|             ))}
+  59|           </div>
+  60|         </div>
+  61|       </section>
+===== src/app/services/laboratoire/page.tsx | line 28 | 'Laboratoire agré' =====
+  14| 
+  15|   const filteredTests = category === 'Tous'
+  16|     ? LAB_TESTS
+  17|     : LAB_TESTS.filter(t => t.category === category);
+  18| 
+  19|   return (
+  20|     <div className="min-h-screen bg-white dark:bg-brand-900">
+  21|       <Breadcrumb items={[{ label: 'Services' }, { label: 'Laboratoire SB-S Labo', href: '/services/laboratoire' }]} />
+  22| 
+  23|       {/* HERO */}
+  24|       <section className="bg-brand-900 dark:bg-brand-950 blueprint-grid-dense-dark text-white border-b border-brand-800">
+  25|         <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  26|           <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-500/15 border border-emerald-500/30 rounded-full text-xs font-mono font-bold  tracking-wider text-emerald-400 mb-5">
+  27|             <FlaskConical className="w-3.5 h-3.5" />
+  28|             Laboratoire agréé catégories C2 & A2
+  29|           </span>
+  30|           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-title font-bold tracking-tight mb-4">
+  31|             SB-S Labo — <span className="text-emerald-400">Géotechnique & contrôle qualité</span>
+  32|           </h1>
+  33|           <p className="text-neutral-300 text-base sm:text-lg leading-relaxed max-w-3xl">
+  34|             Filiale géotechnique créée en 2021 et agréée catégories C2 et A2, SB-S Labo est spécialisée en
+  35|             mécanique des sols. Nous réalisons des études de sol, des essais sur roches et des analyses
+  36|             sur béton avec un équipement de pointe pour garantir la sécurité et la pérennité de vos ouvrages.
+  37|           </p>
+  38|           <p className="text-xs font-mono text-neutral-500 mt-4">RC : SN DKR 2021 B 12675 · Agréments ministériels C2 & A2 — cadre LNR-BTP (loi n° 2023-12, décret n° 2023-1780)</p>
+  39| 
+  40|           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
+  41|             {[
+  42|               { label: 'Essais / an', value: '12 800+' },
+  43|               { label: 'Études de sol', value: '380+' },
+  44|               { label: 'Délai PV standard', value: '48h' },
+  45|               { label: 'Création', value: '2021' },
+  46|             ].map(m => (
+  47|               <div key={m.label} className="bg-brand-800/60 border border-brand-700 rounded-m p-4">
+  48|                 <p className="text-2xl font-title font-bold text-emerald-400 tabular-nums">{m.value}</p>
+  49|                 <p className="text-[11px] font-mono  tracking-wider text-neutral-400 mt-1">{m.label}</p>
+  50|               </div>
+===== src/app/espace-pro/page.tsx | NOT FOUND: 'Espace Professionnel' =====
+===== HEADS =====
+--- src/lib/api.ts (first 40 lines of 154) ---
+   1| // Client API centralisé pour tous les appels backend
+   2| const API_BASE = typeof window !== 'undefined' ? '' : (process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000');
+   3| 
+   4| // Type générique pour les réponses API
+   5| type ApiResponse<T> = {
+   6|   data?: T;
+   7|   error?: string;
+   8| };
+   9| 
+  10| // Fonction utilitaire pour les appels fetch
+  11| async function fetchAPI<T>(
+  12|   endpoint: string,
+  13|   options?: RequestInit
+  14| ): Promise<T> {
+  15|   const url = `${API_BASE}${endpoint}`;
+  16|   
+  17|   try {
+  18|     const response = await fetch(url, {
+  19|       ...options,
+  20|       headers: {
+  21|         'Content-Type': 'application/json',
+  22|         ...options?.headers,
+  23|       },
+  24|     });
+  25| 
+  26|     if (!response.ok) {
+  27|       const error = await response.json().catch(() => ({ error: 'Erreur serveur' }));
+  28|       throw new Error(error.error || `Erreur ${response.status}`);
+  29|     }
+  30| 
+  31|     return response.json();
+  32|   } catch (error) {
+  33|     console.error('API Error:', error);
+  34|     throw error;
+  35|   }
+  36| }
+  37| 
+  38| // === ENTITÉS ===
+  39| export const entitiesAPI = {
+  40|   getAll: () => fetchAPI<any[]>('/api/entities'),
+
+--- src/lib/db.ts (first 40 lines of 15) ---
+   1| import { PrismaClient } from '@prisma/client';
+   2| 
+   3| const globalForPrisma = globalThis as unknown as {
+   4|   prisma: PrismaClient | undefined;
+   5| };
+   6| 
+   7| export const prisma =
+   8|   globalForPrisma.prisma ??
+   9|   new PrismaClient({
+  10|     log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
+  11|   });
+  12| 
+  13| if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
+  14| 
+  15| export default prisma;
+
+--- src/lib/store.ts (first 40 lines of 545) ---
+   1| 'use client';
+   2| 
+   3| import {
+   4|   EntityId,
+   5|   Project,
+   6|   Product,
+   7|   LabTest,
+   8|   Equipment,
+   9|   Lead,
+  10|   LeadStage,
+  11|   Quote,
+  12|   DocumentItem,
+  13|   Appointment,
+  14|   AuditLogEntry,
+  15|   RoutingRule,
+  16|   ScoringRule,
+  17|   PublicationItem
+  18| } from '../types';
+  19| import {
+  20|   ENTITIES,
+  21|   FOUNDER_PROFILE,
+  22|   PROJECTS,
+  23|   PRODUCTS_P2M,
+  24|   LAB_TESTS,
+  25|   EQUIPMENTS,
+  26|   PUBLICATIONS,
+  27|   INITIAL_LEADS,
+  28|   INITIAL_QUOTES,
+  29|   INITIAL_DOCUMENTS,
+  30|   INITIAL_ROUTING_RULES,
+  31|   INITIAL_SCORING_RULES,
+  32|   INITIAL_AUDIT_LOGS
+  33| } from '../data/initialData';
+  34| 
+  35| const STORAGE_KEYS = {
+  36|   LEADS: 'mn_expert_leads_v2',
+  37|   QUOTES: 'mn_expert_quotes_v2',
+  38|   PROJECTS: 'mn_expert_projects_v2',
+  39|   PRODUCTS: 'mn_expert_products_v2',
+  40|   APPOINTMENTS: 'mn_expert_appointments_v2',
+

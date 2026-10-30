@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="p2mBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A0E08"/>
+      <stop offset="55%" stop-color="#2B1810"/>
+      <stop offset="100%" stop-color="#120905"/>
+    </linearGradient>
+    <linearGradient id="tileA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F7F0DE"/>
+      <stop offset="100%" stop-color="#D9C285"/>
+    </linearGradient>
+    <linearGradient id="tileB" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#EBDDB8"/>
+      <stop offset="100%" stop-color="#C8A24A"/>
+    </linearGradient>
+    <linearGradient id="tileC" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C0562F"/>
+      <stop offset="100%" stop-color="#6B2A05"/>
+    </linearGradient>
+    <linearGradient id="tileD" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3A2A20"/>
+      <stop offset="100%" stop-color="#1C1008"/>
+    </linearGradient>
+    <radialGradient id="showroomLight" cx="50%" cy="0%" r="90%">
+      <stop offset="0%" stop-color="#F9B685" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#F9B685" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="tileGrid" width="150" height="150" patternUnits="userSpaceOnUse">
+      <rect width="150" height="150" fill="#241209"/>
+      <rect x="2" y="2" width="146" height="146" rx="3" fill="#C8A24A" opacity="0.12"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#p2mBg)"/>
+
+  <!-- Faisceaux lumineux du showroom -->
+  <circle cx="600" cy="0" r="700" fill="url(#showroomLight)"/>
+
+  <!-- Panneau mural de carreaux exposés -->
+  <g>
+    <rect x="70" y="80" width="640" height="380" rx="10" fill="#1C1008" stroke="#C8A24A" stroke-width="2" opacity="0.95"/>
+    <!-- Rangée 1 -->
+    <rect x="95" y="105" width="185" height="155" rx="4" fill="url(#tileA)"/>
+    <rect x="300" y="105" width="185" height="155" rx="4" fill="url(#tileB)"/>
+    <rect x="505" y="105" width="185" height="155" rx="4" fill="url(#tileC)"/>
+    <!-- Rangée 2 -->
+    <rect x="95" y="280" width="185" height="155" rx="4" fill="url(#tileD)"/>
+    <rect x="300" y="280" width="185" height="155" rx="4" fill="url(#tileC)"/>
+    <rect x="505" y="280" width="185" height="155" rx="4" fill="url(#tileA)"/>
+    <!-- Reflets -->
+    <path d="M95 105 L185 105 L120 260 L95 260 Z" fill="#FFFFFF" opacity="0.18"/>
+    <path d="M300 105 L370 105 L320 260 L300 260 Z" fill="#FFFFFF" opacity="0.12"/>
+    <path d="M505 280 L555 280 L525 435 L505 435 Z" fill="#FFFFFF" opacity="0.14"/>
+    <!-- Étiquettes prix -->
+    <g>
+      <rect x="108" y="236" width="72" height="18" rx="3" fill="#0B1B2B" opacity="0.85"/>
+      <text x="116" y="250" fill="#D9C285" font-family="monospace" font-size="12">12 500 F</text>
+      <rect x="313" y="236" width="72" height="18" rx="3" fill="#0B1B2B" opacity="0.85"/>
+      <text x="321" y="250" fill="#D9C285" font-family="monospace" font-size="12">9 800 F</text>
+      <rect x="518" y="411" width="72" height="18" rx="3" fill="#0B1B2B" opacity="0.85"/>
+      <text x="526" y="425" fill="#D9C285" font-family="monospace" font-size="12">15 200 F</text>
+    </g>
+  </g>
+
+  <!-- Poseur au travail -->
+  <g fill="#0E0603">
+    <circle cx="855" cy="330" r="17"/>
+    <path d="M836 350 h38 l10 56 h-58 Z"/>
+    <path d="M838 406 l-8 68 h16 l6 -52 Z"/>
+    <path d="M872 406 l8 68 h-16 l-6 -52 Z"/>
+    <!-- Bras tendu vers le sol -->
+    <path d="M846 360 L800 430 l10 8 L870 372 Z"/>
+  </g>
+  <!-- Casque du poseur -->
+  <path d="M838 322 a17 17 0 0 1 34 0 Z" fill="#F26A1B"/>
+
+  <!-- Carreau posé au sol devant le poseur -->
+  <g>
+    <rect x="740" y="470" width="150" height="110" rx="4" fill="url(#tileA)" opacity="0.95"/>
+    <path d="M740 470 L810 470 L760 580 L740 580 Z" fill="#FFFFFF" opacity="0.2"/>
+  </g>
+
+  <!-- Sol showroom en damier perspective -->
+  <g>
+    <!-- Rangée avant (grands carreaux) -->
+    <g>
+      <path d="M0 780 L300 780 L260 620 L0 660 Z" fill="url(#tileA)"/>
+      <path d="M300 780 L600 780 L580 620 L260 620 Z" fill="url(#tileB)"/>
+      <path d="M600 780 L900 780 L880 620 L580 620 Z" fill="url(#tileA)"/>
+      <path d="M900 780 L1200 780 L1200 660 L880 620 Z" fill="url(#tileB)"/>
+    </g>
+    <!-- Rangée arrière (perspective) -->
+    <g opacity="0.8">
+      <path d="M0 660 L260 620 L250 540 L0 570 Z" fill="url(#tileD)"/>
+      <path d="M260 620 L580 620 L570 540 L250 540 Z" fill="url(#tileD)"/>
+      <path d="M580 620 L880 620 L870 540 L570 540 Z" fill="url(#tileD)"/>
+      <path d="M880 620 L1200 660 L1200 570 L870 540 Z" fill="url(#tileD)"/>
+    </g>
+  </g>
+
+  <!-- Truelle et outils -->
+  <g>
+    <rect x="1050" y="430" width="90" height="14" rx="4" fill="#8A6238"/>
+    <path d="M1050 437 L1000 437 L1014 470 L1050 460 Z" fill="#B8C4D0"/>
+    <rect x="1128" y="424" width="12" height="26" rx="3" fill="#6B4A2E"/>
+  </g>
+
+  <!-- Croix de traçage au mur -->
+  <g stroke="#F26A1B" stroke-width="3" opacity="0.7">
+    <line x1="760" y1="120" x2="760" y2="150"/>
+    <line x1="745" y1="135" x2="775" y2="135"/>
+    <line x1="960" y1="200" x2="960" y2="230"/>
+    <line x1="945" y1="215" x2="975" y2="215"/>
+  </g>
+
+  <!-- Vignette texture mur -->
+  <rect x="700" y="60" width="440" height="400" fill="url(#tileGrid)" opacity="0.35"/>
+</svg>

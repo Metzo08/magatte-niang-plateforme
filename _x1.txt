@@ -1,0 +1,47 @@
+SOURCING-CARD at -1
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+import {
+  Hammer,
+  Building2,
+  FlaskConical,
+  Factory,
+  Truck,
+  Layers,
+  Globe,
+  ArrowRight,
+  ShieldCheck,
+  CheckCircle2
+} from 'lucide-react';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { EXPERTISE_IMAGES, SITE_IMAGES } from '@/data/siteImages';
+
+export default function ExpertisesPage() {
+  const domains = [
+    {
+      title: 'Charpentes métalliques & ouvrages industriels',
+      entity: 'SERMA BTP',
+      entityId: 'serma-btp',
+      color: '#1B4965',
+      image: EXPERTISE_IMAGES.charpenteMetal,
+      icon: Hammer,
+      desc: 'Étude aux éléments finis, modélisation 3D, usinage haute précision, grenaillage et montage sur site de charpentes à grande portée (jusqu\'à 45m sans poteau).',
+      points: [
+        'Calculs conformes aux Eurocodes 3 et normes NF',
+        'Ligne de découpe plasma 3D haute définition',
+        'Capacité d\'usinage de plus de 4 500 tonnes / an',
+        'Protections anticorrosion adaptées au climat marin de Dakar'
+      ]
+    },
+    {
+      title: 'Géotechnique, sols & essais matériaux',
+      entity: 'SB-S Labo',
+      entityId: 'sbs-labo',
+      color: '#1F9D6B',
+      image: EXPERTISE_IMAGES.foreuseGeotechnique,
+      icon: FlaskConical,
+      desc: 'Reconnaissance des sols de fondation, essais in-situ au pénétromètre et laboratoire d\'écrasement béton avec émission de procès-verbaux certifiés sous 48h.',
+      points: [
+        'Essais C

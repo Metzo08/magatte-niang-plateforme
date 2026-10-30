@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-space: 'Space Grotesk', sans-serif;
+  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Design Tokens - Light Mode */
+  --bg-base: #FFFFFF;
+  --bg-surface: #F2F5F8;
+  --bg-card: #FFFFFF;
+  --border-color: #DDE3E8;
+  --text-primary: #1C2733;
+  --text-secondary: #55636F;
+  --text-muted: #8A9199;
+  
+  --brand-navy: #0B1B2B;
+  --brand-surface: #132C42;
+  --brand-primary: #1B4965;
+  --brand-blue: #2D6A8E;
+  
+  --accent-orange: #F26A1B;
+  --accent-hover: #D4560E;
+  --accent-soft: #FEF3EA;
+  
+  --gold-500: #C8A24A;
+}
+
+.dark {
+  /* Design Tokens - Dark Mode (§ 31) */
+  --bg-base: #0B1B2B;
+  --bg-surface: #132C42;
+  --bg-card: #132C42;
+  --border-color: #1E3B55;
+  --text-primary: #E8EEF3;
+  --text-secondary: #A7B6C2;
+  --text-muted: #8A9199;
+  
+  --accent-orange: #FF8438;
+  --accent-hover: #F26A1B;
+  --accent-soft: #231B15;
+}
+
+body {
+  font-family: var(--font-inter);
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Les blobs décoratifs flous ne doivent jamais créer de défilement horizontal */
+  overflow-x: hidden;
+}
+
+/* Tabular figures for numbers as required in § 27.3 */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-mono);
+}
+
+/* Headings font */
+h1, h2, h3, h4, h5, h6, .font-title {
+  font-family: var(--font-space);
+  letter-spacing: -0.01em;
+}
+
+/* Custom industrial scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2D6A8E;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1B4965;
+}
+
+/* Focus Visible WCAG AA (§ 32) */
+:focus-visible {
+  outline: 2px solid var(--accent-orange) !important;
+  outline-offset: 2px !important;
+}
+
+/* Touch targets at least 44x44px (§ 28) */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* === CLEAN INDUSTRIAL DESIGN SYSTEM UTILITIES === */
+
+/* Micro-grille technique en filigrane (Industrial Blueprint Grid) */
+.blueprint-grid-dark {
+  background-color: #0B1B2B;
+  background-image:
+    linear-gradient(rgba(45, 106, 142, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 106, 142, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.blueprint-grid-dense-dark {
+  background-image:
+    linear-gradient(rgba(242, 106, 27, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242, 106, 27, 0.05) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.blueprint-grid-light {
+  background-image:
+    linear-gradient(rgba(11, 27, 43, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 27, 43, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Effets de lueur et surfaces industrielles */
+.industrial-card {
+  background: rgba(19, 44, 66, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.industrial-card:hover {
+  border-color: rgba(242, 106, 27, 0.5);
+  box-shadow: 0 10px 30px -10px rgba(242, 106, 27, 0.2);
+  transform: translateY(-2px);
+}
+
+.industrial-card-light {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.industrial-card-light:hover {
+  border-color: #F26A1B;
+  box-shadow: 0 10px 25px -5px rgba(242, 106, 27, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Badges avec balise lumineuse pulsante */
+.beacon-dot-orange {
+  position: relative;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #F26A1B;
+}
+
+.beacon-dot-orange::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  border: 2px solid #F26A1B;
+  animation: beacon-pulse 2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
+
+.beacon-dot-green {
+  position: relative;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #1F9D6B;
+}
+
+.beacon-dot-green::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  border: 2px solid #1F9D6B;
+  animation: beacon-pulse 2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
+
+@keyframes beacon-pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* Coins techniques décoratifs (Architectural brackets) */
+.tech-bracket-tl {
+  position: relative;
+}
+.tech-bracket-tl::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #F26A1B;
+  border-left: 2px solid #F26A1B;
+  pointer-events: none;
+}
+
+/* Gradient text accents */
+.text-gradient-orange {
+  background: linear-gradient(135deg, #FFFFFF 20%, #F26A1B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #F26A1B 0%, #C8A24A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -1,0 +1,47 @@
+
+=== Sourcing direct usines ===
+   src\data\aiKnowledgeBase.ts
+   src\data\initialData.ts
+   src\data\siteImages.ts
+
+=== Approvisionnement matières premières ===
+   src\data\initialData.ts
+   src\data\siteImages.ts
+
+=== projets institutionnels ===
+   src\data\siteImages.ts
+
+=== Logistique lourde ===
+   src\app\expertises\page.tsx
+
+=== Préfabrication béton industrielle ===
+   src\app\assistant\page.tsx
+   src\app\expertises\page.tsx
+
+=== Fourniture de béton prêt à l ===
+   src\data\initialData.ts
+
+=== convois exceptionnels ===
+   src\app\services\engins\page.tsx
+   src\data\aiKnowledgeBase.ts
+   src\data\initialData.ts
+
+=== Laboratoire agréé catégories ===
+   src\app\services\laboratoire\page.tsx
+
+=== Bâtir l'avenir du Sénégal ===
+   src\app\profil\page.tsx
+
+=== Espace Professionnel ===
+   (not found)
+
+=== 82 engins lourds ===
+   src\app\expertises\page.tsx
+   src\data\aiKnowledgeBase.ts
+
+=== éléments modulaires en béton ===
+   src\app\expertises\page.tsx
+
+
+=== PGT / sourcing full source ===
+lines: 236

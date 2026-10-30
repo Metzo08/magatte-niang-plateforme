@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="showBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#15090B"/>
+      <stop offset="55%" stop-color="#241016"/>
+      <stop offset="100%" stop-color="#0E0508"/>
+    </linearGradient>
+    <linearGradient id="swatchA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F7F0DE"/>
+      <stop offset="100%" stop-color="#D9C285"/>
+    </linearGradient>
+    <linearGradient id="swatchB" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C0562F"/>
+      <stop offset="100%" stop-color="#6B2A05"/>
+    </linearGradient>
+    <linearGradient id="swatchC" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E4EEF6"/>
+      <stop offset="100%" stop-color="#9FC1D9"/>
+    </linearGradient>
+    <linearGradient id="swatchD" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2D6A8E"/>
+      <stop offset="100%" stop-color="#132C42"/>
+    </linearGradient>
+    <radialGradient id="showGlow" cx="50%" cy="0%" r="90%">
+      <stop offset="0%" stop-color="#F9B685" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#F9B685" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="mosaic" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="#1B4965"/>
+      <circle cx="10" cy="10" r="7" fill="#5FA8D3" opacity="0.7"/>
+      <circle cx="30" cy="30" r="7" fill="#2D6A8E" opacity="0.8"/>
+      <circle cx="30" cy="10" r="5" fill="#9FC1D9" opacity="0.6"/>
+      <circle cx="10" cy="30" r="5" fill="#9FC1D9" opacity="0.5"/>
+    </pattern>
+    <pattern id="hexa" width="46" height="40" patternUnits="userSpaceOnUse">
+      <path d="M23 0 L46 13 L46 36 L23 49 L0 36 L0 13 Z" fill="none" stroke="#C8A24A" stroke-width="2" opacity="0.6"/>
+    </pattern>
+    <pattern id="terrazzo" width="44" height="44" patternUnits="userSpaceOnUse">
+      <rect width="44" height="44" fill="#F7F0DE"/>
+      <circle cx="10" cy="12" r="4" fill="#C0562F"/>
+      <circle cx="30" cy="8" r="3" fill="#2D6A8E"/>
+      <circle cx="36" cy="30" r="4.5" fill="#C8A24A"/>
+      <circle cx="14" cy="34" r="3.5" fill="#55636F"/>
+      <circle cx="24" cy="22" r="2.5" fill="#6B7A8F"/>
+    </pattern>
+    <pattern id="woodSlat" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="#3A2A20"/>
+      <rect x="2" width="8" height="24" fill="#6B4A2E"/>
+      <rect x="14" width="6" height="24" fill="#8A6238"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#showBg)"/>
+  <rect width="1200" height="800" fill="url(#showGlow)"/>
+
+  <!-- Étagère du showroom -->
+  <g>
+    <!-- Cadre -->
+    <rect x="60" y="80" width="1080" height="420" rx="14" fill="none" stroke="#C8A24A" stroke-width="3" opacity="0.8"/>
+    <!-- Étagère 1 : 4 échantillons -->
+    <g>
+      <rect x="90" y="110" width="240" height="160" rx="6" fill="url(#swatchA)"/>
+      <path d="M110 130 Q170 190 250 150" stroke="#B8C4D0" stroke-width="5" fill="none" opacity="0.7"/>
+      <path d="M120 230 Q200 170 310 220" stroke="#C8A24A" stroke-width="3" fill="none" opacity="0.6"/>
+
+      <rect x="360" y="110" width="240" height="160" rx="6" fill="url(#swatchB)"/>
+      <path d="M380 130 Q450 200 580 150" stroke="#F9B685" stroke-width="4" fill="none" opacity="0.5"/>
+
+      <rect x="630" y="110" width="240" height="160" rx="6" fill="url(#swatchC)"/>
+      <path d="M650 140 Q720 180 850 130" stroke="#FFFFFF" stroke-width="4" fill="none" opacity="0.6"/>
+
+      <rect x="900" y="110" width="210" height="160" rx="6" fill="url(#mosaic)"/>
+
+      <rect x="90" y="278" width="1020" height="12" fill="#C8A24A" opacity="0.85"/>
+    </g>
+    <!-- Étagère 2 -->
+    <g>
+      <rect x="90" y="310" width="240" height="160" rx="6" fill="url(#terrazzo)"/>
+      <rect x="360" y="310" width="240" height="160" rx="6" fill="url(#hexa)" fill-opacity="0.9"/>
+      <rect x="360" y="310" width="240" height="160" rx="6" fill="#132C42" opacity="0.55"/>
+      <rect x="630" y="310" width="240" height="160" rx="6" fill="url(#woodSlat)"/>
+      <rect x="900" y="310" width="210" height="160" rx="6" fill="url(#swatchD)"/>
+      <path d="M920 330 Q990 380 1090 330" stroke="#5FA8D3" stroke-width="4" fill="none" opacity="0.55"/>
+    </g>
+  </g>
+
+  <!-- Étiquettes de référence -->
+  <g font-family="monospace">
+    <rect x="98" y="240" width="86" height="20" rx="3" fill="#0B1B2B" opacity="0.9"/>
+    <text x="106" y="255" font-size="12" fill="#D9C285">MAR-60120</text>
+    <rect x="368" y="240" width="86" height="20" rx="3" fill="#0B1B2B" opacity="0.9"/>
+    <text x="376" y="255" font-size="12" fill="#D9C285">TER-60120</text>
+    <rect x="638" y="240" width="86" height="20" rx="3" fill="#0B1B2B" opacity="0.9"/>
+    <text x="646" y="255" font-size="12" fill="#D9C285">GRA-60120</text>
+    <rect x="98" y="440" width="86" height="20" rx="3" fill="#0B1B2B" opacity="0.9"/>
+    <text x="106" y="455" font-size="12" fill="#D9C285">TZA-60120</text>
+    <rect x="368" y="440" width="86" height="20" rx="3" fill="#0B1B2B" opacity="0.9"/>
+    <text x="376" y="455" font-size="12" fill="#D9C285">HEX-30E30</text>
+    <rect x="638" y="440" width="86" height="20" rx="3" fill="#0B1B2B" opacity="0.9"/>
+    <text x="646" y="455" font-size="12" fill="#D9C285">BOI-20200</text>
+  </g>
+
+  <!-- Carreaux géants appuyés (avant-plan) -->
+  <g>
+    <rect x="120" y="500" width="330" height="270" rx="8" fill="url(#swatchA)" stroke="#C8A24A" stroke-width="3"/>
+    <path d="M150 540 Q260 640 420 570" stroke="#B8C4D0" stroke-width="8" fill="none" opacity="0.65"/>
+    <path d="M140 700 Q240 620 440 690" stroke="#C8A24A" stroke-width="5" fill="none" opacity="0.55"/>
+
+    <rect x="470" y="520" width="300" height="250" rx="8" fill="url(#swatchB)" stroke="#F26A1B" stroke-width="3"/>
+    <path d="M490 550 Q570 640 750 560" stroke="#F9B685" stroke-width="6" fill="none" opacity="0.5"/>
+
+    <rect x="790" y="500" width="330" height="270" rx="8" fill="url(#swatchC)" stroke="#5FA8D3" stroke-width="3"/>
+    <path d="M815 545 Q900 630 1100 545" stroke="#FFFFFF" stroke-width="7" fill="none" opacity="0.6"/>
+  </g>
+
+  <!-- Badge P2M -->
+  <g>
+    <rect x="500" y="60" width="200" height="0" fill="none"/>
+    <circle cx="600" cy="580" r="0" fill="none"/>
+    <rect x="40" y="60" width="150" height="0" fill="none"/>
+  </g>
+  <g transform="translate(1030,470)">
+    <rect x="-60" y="-24" width="120" height="48" rx="24" fill="#C0562F"/>
+    <text x="0" y="7" text-anchor="middle" font-family="monospace" font-size="20" font-weight="bold" fill="#F7F0DE">P2M</text>
+  </g>
+
+  <!-- Spots lumineux -->
+  <g>
+    <rect x="290" y="0" width="16" height="26" rx="4" fill="#C8A24A"/>
+    <path d="M282 26 L314 26 L360 240 L236 240 Z" fill="#F9B685" opacity="0.1"/>
+    <rect x="730" y="0" width="16" height="26" rx="4" fill="#C8A24A"/>
+    <path d="M722 26 L754 26 L800 240 L676 240 Z" fill="#F9B685" opacity="0.1"/>
+  </g>
+
+  <!-- Sol réfléchissant -->
+  <rect x="0" y="770" width="1200" height="30" fill="#1A0B10"/>
+  <line x1="0" y1="770" x2="1200" y2="770" stroke="#C8A24A" stroke-width="2" opacity="0.4"/>
+</svg>

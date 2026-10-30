@@ -1,0 +1,27 @@
+# Identification visuelle des photos produits P2M
+# Format: NNN|CATEGORIE|NOM_PRODUIT|SOUS_CATEGORIE
+# Rempli par inspection des planches-contacts tmp-sheets/sheet-NN.jpg
+# (5 colonnes x 3 lignes = 15 photos par planche, numerotees 001..136)
+#
+# Rappel des vrais libelles des flyers P2M :
+# CARREAUX (flyers carreaux):
+#   PORCELAINE: 30x30 / 40x40 / 60x60 / 60x120 / 80x240
+#   CERAMIQUE VITRIFIEE: 20x30 / 20x40 / 25x37 / 30x30 / 30x60 / 40x40 / 60x60 / 60x120 / 80x240
+#   FAIENCE (murs): 20x30 / 25x37,5 / 25x40 / 30x45 / 30x60
+# PLOMBERIE (flyer plomberie):
+#   SALLE DE BAIN: Mitigeur (lavabo, douche, baignoire), Robinet simple, Robinet double,
+#     Chasse encastre, Lavabo/Vasque, Baignoire, Receveur de douche,
+#     W.C (complet, simple, suspendue), Accessoires (porte-serviette, miroir, porte savon...)
+#   CUISINE: Evier (simple, double bac), Robinetterie de cuisine (mitigeur, melangeur)
+#   CHAISE ANGLAISE: one piece, aqua, Turque, camon, suspendue, inaya
+#   LAVABO: Lavabo rosan, Lavabo Breg, Lavabo Exelon, Lave main
+#   COLONNE ET APPAREIL: Colonne de douche hand shower, Distributeur liquide,
+#     Colonne de douche avec mitigeur, Colonne de douche hydromassante, Receveur de douche
+#   ROBINNETERIE: Robinet Evier, Robinet lavabo, Robinet, Flexible, Mitigeur,
+#     Robinet Evier Mix, Robinet puisage, Robinet double
+#   PORTE BAGAGE: Porte savon, Porte brosse, Porte mouchoir, Porte serviette,
+#     Accroche robe, Double porte savon et brosse, porte eponge, Mini etagere brosse
+#   OUTILS ET ACCESSOIRES: Siphon, Metre Pex, Nourrice, Coude Pex, Robinet d'arret,
+#     Manchon, TE Pex, Clapet, Bouchon, Teflon, Vice W.C, Jeu de boulon lavabo, Regard Visite
+#
+# STATUT: identification en cours

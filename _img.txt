@@ -1,0 +1,7 @@
+total distinct /images/ references: 186
+MISSING on disk: 0
+
+SVG references: 3
+  /images/illustrations/charpente-metal.svg  exists=True  size=5669
+  /images/illustrations/genie-civil-vrd.svg  exists=True  size=5997
+  /images/illustrations/sourcing-fret.svg  exists=True  size=6700

@@ -1,0 +1,324 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Entity {
+  id          String   @id
+  name        String
+  tagline     String
+  badge       String
+  color       String
+  colorHex    String
+  accentClass String
+  mission     String   @db.Text
+  description String   @db.Text
+  leader      String
+  leaderRole  String
+  address     String
+  city        String
+  country     String
+  phone       String
+  email       String
+  whatsapp    String
+  ctaText     String
+  ctaAction   String
+  expertises  Json     // PostgreSQL JSONB
+  equipmentList Json?  // PostgreSQL JSONB
+  synergies   Json     // PostgreSQL JSONB
+  verifiedMetrics Json // PostgreSQL JSONB
+  icon        String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([name])
+}
+
+model Project {
+  id                String   @id
+  slug              String   @unique
+  title             String
+  client            String
+  location          String
+  region            String
+  year              Int
+  status            String
+  sector            String
+  primaryEntityId   String
+  partnerEntityIds  Json     // PostgreSQL JSONB
+  summary           String   @db.Text
+  technicalData     Json     // PostgreSQL JSONB
+  story             Json     // PostgreSQL JSONB
+  testimonial       Json?    // PostgreSQL JSONB
+  images            Json     // PostgreSQL JSONB
+  isPublished       Boolean  @default(false)
+  isFeatured        Boolean  @default(false)
+  publicationApproval String @default("pending")
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@index([slug])
+  @@index([primaryEntityId])
+  @@index([status])
+  @@index([isFeatured])
+}
+
+model Product {
+  id                 String   @id
+  ref                String   @unique
+  name               String
+  category           String
+  subCategory        String
+  brand              String
+  dimensions         String
+  material           String
+  finish             String
+  color              String
+  usage              String   @db.Text
+  unit               String
+  packaging          String
+  origin             String
+  indicativePriceFCFA Decimal @db.Decimal(10, 2)
+  isPriceVisible     Boolean  @default(true)
+  availability       String
+  leadTime           String
+  images             Json     // PostgreSQL JSONB
+  specs              Json     // PostgreSQL JSONB
+  documents          Json?    // PostgreSQL JSONB
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@index([ref])
+  @@index([category])
+  @@index([availability])
+}
+
+model Lead {
+  id              String   @id
+  leadNumber      String   @unique
+  createdAt       DateTime @default(now())
+  fullName        String
+  company         String?
+  role            String?
+  phone           String
+  email           String
+  country         String
+  city            String
+  sector          String
+  source          String
+  needCategory    String
+  projectType     String
+  projectLocation String
+  projectStage    String
+  budgetRange     String
+  timeframe       String
+  assignedEntityId String
+  assignedToUser  String?
+  score           Int      @default(0)
+  scoreBreakdown  Json     // PostgreSQL JSONB
+  stage           String   @default("Nouveau")
+  lostReason      String?
+  items           Json?    // PostgreSQL JSONB
+  notes           Json     // PostgreSQL JSONB
+  history         Json     // PostgreSQL JSONB
+  filesCount      Int      @default(0)
+  updatedAt       DateTime @updatedAt
+
+  @@index([leadNumber])
+  @@index([stage])
+  @@index([assignedEntityId])
+  @@index([email])
+}
+
+model Quote {
+  id              String   @id
+  quoteNumber     String   @unique
+  leadId          String?
+  clientName      String
+  clientCompany   String
+  clientEmail     String
+  clientPhone     String
+  entityId        String
+  createdAt       DateTime @default(now())
+  validUntil      DateTime
+  status          String   @default("Brouillon")
+  items           Json     // PostgreSQL JSONB
+  totalHT         Decimal  @db.Decimal(12, 2)
+  taxRate         Decimal  @db.Decimal(5, 2)
+  totalTTC        Decimal  @db.Decimal(12, 2)
+  notes           String?  @db.Text
+  acceptedAt      DateTime?
+  acceptedBy      String?
+  auditTrail      Json     // PostgreSQL JSONB
+  updatedAt       DateTime @updatedAt
+
+  @@index([quoteNumber])
+  @@index([status])
+  @@index([entityId])
+}
+
+model Appointment {
+  id          String   @id
+  type        String
+  entityId    String
+  fullName    String
+  email       String
+  phone       String
+  company     String?
+  date        DateTime
+  timeSlot    String
+  subject     String   @db.Text
+  status      String   @default("En attente")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([entityId])
+  @@index([date])
+  @@index([status])
+}
+
+model Document {
+  id                 String   @id
+  title              String
+  reference          String   @unique
+  category           String
+  entityId           String
+  version            String
+  isLatest           Boolean  @default(true)
+  visibility         String
+  requiresForm       Boolean  @default(false)
+  isValidatedForAI   Boolean  @default(false)
+  downloadCount      Int      @default(0)
+  fileSize           String
+  fileType           String
+  url                String
+  publishedAt        DateTime @default(now())
+  abstract           String?  @db.Text
+  authors            Json?    // PostgreSQL JSONB
+
+  @@index([reference])
+  @@index([entityId])
+  @@index([category])
+}
+
+model LabTest {
+  id              String   @id
+  code            String   @unique
+  name            String
+  category        String
+  norm            String
+  sampleRequired  String
+  standardDelayDays Int
+  description     String   @db.Text
+  isAvailable     Boolean  @default(true)
+
+  @@index([code])
+  @@index([category])
+}
+
+model Equipment {
+  id               String   @id
+  code             String   @unique
+  name             String
+  category         String
+  capacity         String
+  power            String
+  availabilityStatus String @default("Disponible")
+  location         String
+  driverIncluded   Boolean  @default(false)
+  imageUrl         String?
+  ratePerDayFCFA   Decimal? @db.Decimal(10, 2)
+
+  @@index([code])
+  @@index([category])
+  @@index([availabilityStatus])
+}
+
+model Publication {
+  id              String   @id
+  title           String
+  type            String
+  authors         Json     // PostgreSQL JSONB
+  date            String
+  journalOrEvent  String
+  abstract        String   @db.Text
+  keywords        Json     // PostgreSQL JSONB
+  downloadUrl     String?
+  doi             String?
+  validatedForAI  Boolean  @default(false)
+
+  @@index([type])
+  @@index([date])
+}
+
+model Partner {
+  id          String   @id
+  name        String
+  logo        String
+  website     String?
+  category    String
+  description String?  @db.Text
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+
+  @@index([category])
+  @@index([order])
+}
+
+model Testimonial {
+  id          String   @id
+  authorName  String
+  authorRole  String
+  company     String
+  content     String   @db.Text
+  rating      Int      @default(5)
+  projectId   String?
+  isPublished Boolean  @default(false)
+  createdAt   DateTime @default(now())
+
+  @@index([projectId])
+  @@index([isPublished])
+}
+
+model BlogPost {
+  id          String   @id
+  slug        String   @unique
+  title       String
+  excerpt     String   @db.Text
+  content     String   @db.Text
+  coverImage  String?
+  author      String
+  category    String
+  tags        Json     // PostgreSQL JSONB
+  isPublished Boolean  @default(false)
+  publishedAt DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([slug])
+  @@index([category])
+  @@index([isPublished])
+}
+
+model Contact {
+  id          String   @id
+  fullName    String
+  email       String
+  phone       String?
+  company     String?
+  subject     String
+  message     String   @db.Text
+  status      String   @default("Nouveau")
+  assignedTo  String?
+  createdAt   DateTime @default(now())
+  respondedAt DateTime?
+
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
+}
