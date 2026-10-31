@@ -284,9 +284,20 @@ export const Footer: React.FC = () => {
               Gouvernance des chiffres
             </Link>
           </div>
+        </div>
 
+        {/* DEVELOPER CREDIT & COPYRIGHT */}
+        <div className="mt-6 pt-4 border-t border-brand-800/60 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-neutral-400">
           <div>
             © {new Date().getFullYear()} Magatte Niang Expert · Tous droits réservés.
+          </div>
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-1.5 text-neutral-400">
+            <span>Plateforme développée par <strong className="text-white font-medium">Sen-E-Carte</strong></span>
+            <span>·</span>
+            <span>Contact développeur :</span>
+            <a href="tel:+221776026783" className="text-accent-500 hover:text-accent-400 font-mono font-semibold transition-colors">
+              77 602 67 83
+            </a>
           </div>
         </div>
 
