@@ -111,6 +111,16 @@ export async function ensureLogistikSeeded(): Promise<void> {
 async function runLogistikSeed(): Promise<void> {
   await ensureEntityManagerAccount('sbs-logistik');
 
+  // Les équipements SBS-IND-* appartiennent à SBS Industrie et non à SBS Logistik
+  await prisma.logistikEquipment.deleteMany({
+    where: {
+      OR: [
+        { code: { startsWith: 'SBS-IND-' } },
+        { category: 'Préfabrication & centrale à béton' },
+      ],
+    },
+  });
+
   const existingRows = await prisma.logistikEquipment.findMany({ select: { code: true } });
   const existingCodes = new Set(existingRows.map((r) => r.code));
   const deleteCount = await prisma.logistikAuditLog.count({
