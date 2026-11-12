@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/lib/db';
+import { PRODUCTS_P2M } from '@/data/initialData';
 import { apiHandler } from '@/lib/utils';
 import { ensureP2mSeeded } from '@/lib/p2mBootstrap';
 import { getAuthenticatedEntityManager } from '@/lib/entityAuth';
@@ -12,12 +13,21 @@ export async function GET(
 
   return apiHandler(
     async () => {
-      await ensureP2mSeeded();
-      const product = await prisma.product.findUnique({
-        where: { id },
-      });
-      if (product) {
-        return product;
+      try {
+        await ensureP2mSeeded();
+        const product = await prisma.product.findUnique({
+          where: { id },
+        });
+        if (product) {
+          return product;
+        }
+      } catch (err) {
+        console.error('Product GET DB fallback:', err);
+      }
+
+      const fallback = PRODUCTS_P2M.find((p) => p.id === id);
+      if (fallback) {
+        return fallback;
       }
       throw new Error('Product not found');
     },
