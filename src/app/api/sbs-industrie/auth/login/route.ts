@@ -11,6 +11,7 @@ import {
   SBS_MANAGER_ROLE,
   SBS_SESSION_COOKIE,
   signSbsSession,
+  verifySbsFallbackCredentials,
   verifySbsPassword,
 } from '@/lib/sbsAuth';
 import { ensureSbsSeeded, recordSbsAudit } from '@/lib/sbsDbBootstrap';
@@ -52,22 +53,50 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Identifiants invalides.' }, { status: 400 });
     }
 
-    await ensureSbsSeeded();
+    const targetUsername =
+      parsed.data.username || process.env.SBS_MANAGER_USERNAME || 'sbs-gestionnaire';
 
-    const targetUsername = parsed.data.username || process.env.SBS_MANAGER_USERNAME || 'sbs-gestionnaire';
-    const account = await prisma.sbsManagerAccount.findUnique({
-      where: { username: targetUsername },
-    });
+    let sessionSub = 'fallback-sbs-manager';
+    let sessionUsername = targetUsername;
+    let sessionDisplayName = 'Gestionnaire Usine SBS Industrie';
+    let authenticatedOk = false;
 
-    if (
-      !account ||
-      !account.isActive ||
-      account.entityId !== SBS_ENTITY_ID ||
-      account.role !== SBS_MANAGER_ROLE ||
-      !verifySbsPassword(parsed.data.password, account.passwordHash)
-    ) {
-      recordFailedLogin(ip);
-      await recordSbsAudit('AUTH_LOGIN_FAILED', targetUsername, { reason: 'bad_credentials' }, ip);
+    try {
+      await ensureSbsSeeded();
+      const account = await prisma.sbsManagerAccount.findUnique({
+        where: { username: targetUsername },
+      });
+
+      if (
+        account &&
+        account.isActive &&
+        account.entityId === SBS_ENTITY_ID &&
+        account.role === SBS_MANAGER_ROLE &&
+        verifySbsPassword(parsed.data.password, account.passwordHash)
+      ) {
+        authenticatedOk = true;
+        sessionSub = account.id;
+        sessionUsername = account.username;
+        sessionDisplayName = account.displayName;
+        await prisma.sbsManagerAccount.update({
+          where: { id: account.id },
+          data: { lastLoginAt: new Date() },
+        });
+        await recordSbsAudit('AUTH_LOGIN_SUCCESS', account.username, { entityId: SBS_ENTITY_ID }, ip);
+      } else {
+        recordFailedLogin(ip);
+        await recordSbsAudit('AUTH_LOGIN_FAILED', targetUsername, { reason: 'bad_credentials' }, ip);
+      }
+    } catch (dbErr) {
+      console.error('SBS Auth DB fallback:', dbErr);
+      if (verifySbsFallbackCredentials(targetUsername, parsed.data.password)) {
+        authenticatedOk = true;
+      } else {
+        recordFailedLogin(ip);
+      }
+    }
+
+    if (!authenticatedOk) {
       return NextResponse.json(
         { error: 'Identifiant ou mot de passe incorrect pour le gestionnaire SBS Industrie.' },
         { status: 401 }
@@ -75,28 +104,21 @@ export async function POST(req: Request) {
     }
 
     clearFailedLogins(ip);
-    await prisma.sbsManagerAccount.update({
-      where: { id: account.id },
-      data: { lastLoginAt: new Date() },
-    });
-
     const token = signSbsSession({
-      sub: account.id,
-      username: account.username,
-      displayName: account.displayName,
+      sub: sessionSub,
+      username: sessionUsername,
+      displayName: sessionDisplayName,
       role: SBS_MANAGER_ROLE,
       entityId: SBS_ENTITY_ID,
     });
 
-    await recordSbsAudit('AUTH_LOGIN_SUCCESS', account.username, { entityId: SBS_ENTITY_ID }, ip);
-
     const res = NextResponse.json({
       authenticated: true,
       manager: {
-        username: account.username,
-        displayName: account.displayName,
-        role: account.role,
-        entityId: account.entityId,
+        username: sessionUsername,
+        displayName: sessionDisplayName,
+        role: SBS_MANAGER_ROLE,
+        entityId: SBS_ENTITY_ID,
       },
     });
 

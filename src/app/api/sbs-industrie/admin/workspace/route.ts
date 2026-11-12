@@ -14,7 +14,13 @@ import {
   recordSbsAudit,
 } from '@/lib/sbsDbBootstrap';
 import { computeSbsErp } from '@/lib/sbsErpCalc';
-import { SbsFactoryConfigData, SbsMonthlyLedgerData } from '@/lib/sbsErpDefaults';
+import {
+  createNov2026SeedLedger,
+  DEFAULT_SBS_CONFIG,
+  DEFAULT_SBS_PRODUCTS,
+  SbsFactoryConfigData,
+  SbsMonthlyLedgerData,
+} from '@/lib/sbsErpDefaults';
 
 const putWorkspaceSchema = z.object({
   year: z.number().int().min(2024).max(2040).optional(),
@@ -69,8 +75,23 @@ export async function GET(req: NextRequest) {
       auditLogs,
     });
   } catch (err) {
-    console.error('SBS Admin Workspace GET error:', err);
-    return NextResponse.json({ error: 'Erreur lors du chargement de l’ERP SBS Industrie.' }, { status: 500 });
+    console.error('SBS Admin Workspace GET error (fallback mode):', err);
+    const fallbackConfig: SbsFactoryConfigData = DEFAULT_SBS_CONFIG;
+    const fallbackLedger: SbsMonthlyLedgerData = {
+      id: 'fallback-2026-11',
+      ...createNov2026SeedLedger(),
+    };
+    const computed = computeSbsErp(fallbackConfig, DEFAULT_SBS_PRODUCTS, fallbackLedger);
+    return NextResponse.json({
+      manager,
+      config: fallbackConfig,
+      products: DEFAULT_SBS_PRODUCTS,
+      ledger: fallbackLedger,
+      computed,
+      availablePeriods: [{ year: fallbackLedger.year, month: fallbackLedger.month }],
+      auditLogs: [],
+      dbOfflineMode: true,
+    });
   }
 }
 

@@ -9,6 +9,7 @@ import {
   isEntityLoginRateLimited,
   recordEntityFailedLogin,
   signEntitySession,
+  verifyEntityFallbackCredentials,
   verifyEntityPassword,
 } from '@/lib/entityAuth';
 import { ensureP2mSeeded, recordP2mAudit } from '@/lib/p2mBootstrap';
@@ -52,23 +53,50 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Identifiants invalides.' }, { status: 400 });
     }
 
-    await ensureP2mSeeded();
-
     const targetUsername =
       parsed.data.username || process.env[cfg.envUsernameKey] || cfg.defaultUsername;
-    const account = await prisma.entityManagerAccount.findUnique({
-      where: { username: targetUsername },
-    });
 
-    if (
-      !account ||
-      !account.isActive ||
-      account.entityId !== cfg.entityId ||
-      account.role !== cfg.role ||
-      !verifyEntityPassword(parsed.data.password, account.passwordHash)
-    ) {
-      recordEntityFailedLogin('p2m', ip);
-      await recordP2mAudit('AUTH_LOGIN_FAILED', targetUsername, { reason: 'bad_credentials' }, ip);
+    let sessionSub = 'fallback-p2m';
+    let sessionUsername = targetUsername;
+    let sessionDisplayName = cfg.displayName;
+    let authenticatedOk = false;
+
+    try {
+      await ensureP2mSeeded();
+      const account = await prisma.entityManagerAccount.findUnique({
+        where: { username: targetUsername },
+      });
+
+      if (
+        account &&
+        account.isActive &&
+        account.entityId === cfg.entityId &&
+        account.role === cfg.role &&
+        verifyEntityPassword(parsed.data.password, account.passwordHash)
+      ) {
+        authenticatedOk = true;
+        sessionSub = account.id;
+        sessionUsername = account.username;
+        sessionDisplayName = account.displayName;
+        await prisma.entityManagerAccount.update({
+          where: { id: account.id },
+          data: { lastLoginAt: new Date() },
+        });
+        await recordP2mAudit('AUTH_LOGIN_SUCCESS', account.username, { entityId: 'p2m' }, ip);
+      } else {
+        recordEntityFailedLogin('p2m', ip);
+        await recordP2mAudit('AUTH_LOGIN_FAILED', targetUsername, { reason: 'bad_credentials' }, ip);
+      }
+    } catch (dbErr) {
+      console.error('P2M Auth DB fallback:', dbErr);
+      if (verifyEntityFallbackCredentials('p2m', targetUsername, parsed.data.password)) {
+        authenticatedOk = true;
+      } else {
+        recordEntityFailedLogin('p2m', ip);
+      }
+    }
+
+    if (!authenticatedOk) {
       return NextResponse.json(
         { error: 'Identifiant ou mot de passe incorrect pour le gestionnaire P2M.' },
         { status: 401 }
@@ -76,28 +104,21 @@ export async function POST(req: Request) {
     }
 
     clearEntityFailedLogins('p2m', ip);
-    await prisma.entityManagerAccount.update({
-      where: { id: account.id },
-      data: { lastLoginAt: new Date() },
-    });
-
     const token = signEntitySession({
-      sub: account.id,
-      username: account.username,
-      displayName: account.displayName,
+      sub: sessionSub,
+      username: sessionUsername,
+      displayName: sessionDisplayName,
       role: cfg.role,
       entityId: 'p2m',
     });
 
-    await recordP2mAudit('AUTH_LOGIN_SUCCESS', account.username, { entityId: 'p2m' }, ip);
-
     const res = NextResponse.json({
       authenticated: true,
       manager: {
-        username: account.username,
-        displayName: account.displayName,
-        role: account.role,
-        entityId: account.entityId,
+        username: sessionUsername,
+        displayName: sessionDisplayName,
+        role: cfg.role,
+        entityId: 'p2m',
       },
     });
 

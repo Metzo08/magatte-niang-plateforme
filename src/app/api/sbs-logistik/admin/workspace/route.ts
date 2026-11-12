@@ -7,7 +7,13 @@ import {
   hashEntityPassword,
   verifyEntityPassword,
 } from '@/lib/entityAuth';
-import { ensureLogistikSeeded, recordLogistikAudit } from '@/lib/logistikBootstrap';
+import {
+  ensureLogistikSeeded,
+  inferBrandFromItem,
+  inferDailyRateFromItem,
+  recordLogistikAudit,
+} from '@/lib/logistikBootstrap';
+import { SBS_LOGISTIK_ITEMS } from '@/data/sbsLogistikData';
 
 export async function GET() {
   const manager = await getAuthenticatedEntityManager('sbs-logistik');
@@ -55,11 +61,40 @@ export async function GET() {
       auditLogs,
     });
   } catch (err) {
-    console.error('Logistik admin workspace GET error:', err);
-    return NextResponse.json(
-      { error: 'Erreur lors du chargement du workspace SB-S Logistik.' },
-      { status: 500 }
-    );
+    console.error('Logistik admin workspace GET error (fallback mode):', err);
+    const fallbackEquipment = SBS_LOGISTIK_ITEMS.map((item, i) => {
+      const pricing = inferDailyRateFromItem(item);
+      return {
+        id: item.id,
+        code: item.code,
+        title: item.title,
+        category: item.category,
+        brand: inferBrandFromItem(item),
+        description: item.description,
+        specs: item.specs,
+        usage: item.usage,
+        imageUrl: item.imageUrl,
+        pageNumber: item.pageNumber,
+        dailyRateFCFA: pricing.dailyRateFCFA,
+        isPriceVisible: pricing.isPriceVisible,
+        availability: 'Disponible',
+        isPublished: true,
+        sortOrder: i + 1,
+        updatedBy: 'Système (Mode hors-ligne)',
+      };
+    });
+    return NextResponse.json({
+      manager,
+      equipment: fallbackEquipment,
+      clients: [],
+      needs: [],
+      quotes: [],
+      invoices: [],
+      payments: [],
+      afterSalesLogs: [],
+      auditLogs: [],
+      dbOfflineMode: true,
+    });
   }
 }
 

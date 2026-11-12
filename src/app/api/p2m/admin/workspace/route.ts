@@ -8,6 +8,7 @@ import {
   verifyEntityPassword,
 } from '@/lib/entityAuth';
 import { ensureP2mSeeded, recordP2mAudit } from '@/lib/p2mBootstrap';
+import { PRODUCTS_P2M } from '@/data/initialData';
 
 export async function GET() {
   const manager = await getAuthenticatedEntityManager('p2m');
@@ -34,8 +35,16 @@ export async function GET() {
       auditLogs,
     });
   } catch (err) {
-    console.error('P2M workspace GET error:', err);
-    return NextResponse.json({ error: 'Erreur chargement workspace P2M.' }, { status: 500 });
+    console.error('P2M workspace GET error (fallback mode):', err);
+    return NextResponse.json({
+      manager,
+      products: PRODUCTS_P2M,
+      clients: [],
+      needs: [],
+      ordersInvoices: [],
+      auditLogs: [],
+      dbOfflineMode: true,
+    });
   }
 }
 

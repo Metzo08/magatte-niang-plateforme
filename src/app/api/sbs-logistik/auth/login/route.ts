@@ -9,6 +9,7 @@ import {
   isEntityLoginRateLimited,
   recordEntityFailedLogin,
   signEntitySession,
+  verifyEntityFallbackCredentials,
   verifyEntityPassword,
 } from '@/lib/entityAuth';
 import { ensureLogistikSeeded, recordLogistikAudit } from '@/lib/logistikBootstrap';
@@ -52,28 +53,60 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Identifiants invalides.' }, { status: 400 });
     }
 
-    await ensureLogistikSeeded();
-
     const targetUsername =
       parsed.data.username || process.env[cfg.envUsernameKey] || cfg.defaultUsername;
-    const account = await prisma.entityManagerAccount.findUnique({
-      where: { username: targetUsername },
-    });
 
-    if (
-      !account ||
-      !account.isActive ||
-      account.entityId !== cfg.entityId ||
-      account.role !== cfg.role ||
-      !verifyEntityPassword(parsed.data.password, account.passwordHash)
-    ) {
-      recordEntityFailedLogin('sbs-logistik', ip);
-      await recordLogistikAudit(
-        'AUTH_LOGIN_FAILED',
-        targetUsername,
-        { reason: 'bad_credentials' },
-        ip
-      );
+    let sessionSub = 'fallback-sbs-logistik';
+    let sessionUsername = targetUsername;
+    let sessionDisplayName = cfg.displayName;
+    let authenticatedOk = false;
+
+    try {
+      await ensureLogistikSeeded();
+      const account = await prisma.entityManagerAccount.findUnique({
+        where: { username: targetUsername },
+      });
+
+      if (
+        account &&
+        account.isActive &&
+        account.entityId === cfg.entityId &&
+        account.role === cfg.role &&
+        verifyEntityPassword(parsed.data.password, account.passwordHash)
+      ) {
+        authenticatedOk = true;
+        sessionSub = account.id;
+        sessionUsername = account.username;
+        sessionDisplayName = account.displayName;
+        await prisma.entityManagerAccount.update({
+          where: { id: account.id },
+          data: { lastLoginAt: new Date() },
+        });
+        await recordLogistikAudit(
+          'AUTH_LOGIN_SUCCESS',
+          account.username,
+          { entityId: 'sbs-logistik' },
+          ip
+        );
+      } else {
+        recordEntityFailedLogin('sbs-logistik', ip);
+        await recordLogistikAudit(
+          'AUTH_LOGIN_FAILED',
+          targetUsername,
+          { reason: 'bad_credentials' },
+          ip
+        );
+      }
+    } catch (dbErr) {
+      console.error('Logistik Auth DB fallback:', dbErr);
+      if (verifyEntityFallbackCredentials('sbs-logistik', targetUsername, parsed.data.password)) {
+        authenticatedOk = true;
+      } else {
+        recordEntityFailedLogin('sbs-logistik', ip);
+      }
+    }
+
+    if (!authenticatedOk) {
       return NextResponse.json(
         { error: 'Identifiant ou mot de passe incorrect pour le gestionnaire SB-S Logistik.' },
         { status: 401 }
@@ -81,28 +114,21 @@ export async function POST(req: Request) {
     }
 
     clearEntityFailedLogins('sbs-logistik', ip);
-    await prisma.entityManagerAccount.update({
-      where: { id: account.id },
-      data: { lastLoginAt: new Date() },
-    });
-
     const token = signEntitySession({
-      sub: account.id,
-      username: account.username,
-      displayName: account.displayName,
+      sub: sessionSub,
+      username: sessionUsername,
+      displayName: sessionDisplayName,
       role: cfg.role,
       entityId: 'sbs-logistik',
     });
 
-    await recordLogistikAudit('AUTH_LOGIN_SUCCESS', account.username, { entityId: 'sbs-logistik' }, ip);
-
     const res = NextResponse.json({
       authenticated: true,
       manager: {
-        username: account.username,
-        displayName: account.displayName,
-        role: account.role,
-        entityId: account.entityId,
+        username: sessionUsername,
+        displayName: sessionDisplayName,
+        role: cfg.role,
+        entityId: 'sbs-logistik',
       },
     });
 
