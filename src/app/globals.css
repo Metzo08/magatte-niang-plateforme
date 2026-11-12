@@ -236,3 +236,8 @@ h1, h2, h3, h4, h5, h6, .font-title {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* Règle typographique : première lettre en majuscule, tout le reste en minuscule */
+.uppercase {
+  text-transform: none !important;
+}

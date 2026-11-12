@@ -137,7 +137,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenAI }) => {
       <div className="hidden lg:block bg-brand-900 dark:bg-brand-950 text-neutral-300 text-xs border-b border-brand-800">
         <div className="max-w-editorial mx-auto px-8 h-8 flex items-center justify-between">
           <span className="font-mono tracking-wider">
-            GROUPE MAGATTE NIANG — BTP, INDUSTRIE &amp; INGÉNIERIE AU SÉNÉGAL
+            Groupe magatte niang — btp, industrie &amp; ingénierie au sénégal
           </span>
           <div className="flex items-center gap-5">
             <Link href="/profil" className="hover:text-accent-400 transition-colors">

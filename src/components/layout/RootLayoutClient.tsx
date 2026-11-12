@@ -8,6 +8,7 @@ import { MobileActionBar } from '@/components/layout/MobileActionBar';
 import { CDPConsentBanner } from '@/components/common/CDPConsentBanner';
 import { GlobalSearchModal } from '@/components/common/GlobalSearchModal';
 import { AIAssistantModal } from '@/components/common/AIAssistantModal';
+import { SentenceCaseEnforcer } from '@/components/common/SentenceCaseEnforcer';
 
 export function RootLayoutClient({ children }: { children: React.ReactNode }) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -16,6 +17,7 @@ export function RootLayoutClient({ children }: { children: React.ReactNode }) {
   return (
     <>
       {/* SKIP LINK FOR KEYBOARD ACCESSIBILITY (WCAG 2.2 AA) */}
+      <SentenceCaseEnforcer />
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-accent-500 focus:text-white focus:rounded focus:shadow-elev-3 focus:outline-none"

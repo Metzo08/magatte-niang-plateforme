@@ -5,9 +5,9 @@ import { RootLayoutClient } from '@/components/layout/RootLayoutClient';
 import { QueryProvider } from '@/components/providers/QueryProvider';
 
 export const metadata: Metadata = {
-  title: 'Magatte Niang expert · plateforme & écosystème BTP Sénégal',
+  title: 'Magatte niang expert · plateforme & écosystème btp sénégal',
   description:
-    "Infrastructure technique et industrielle BTP au Sénégal : ingénierie, charpentes SERMA BTP, laboratoire SB-S Labo, matériaux P2M, préfabrication, logistique.",
+    "Infrastructure technique et industrielle btp au sénégal : ingénierie, charpentes serma btp, laboratoire sb-s labo, matériaux p2m, préfabrication, logistique.",
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
