@@ -18,10 +18,15 @@ import {
 import { useEntity } from '@/hooks/useEntities';
 import { useProjects } from '@/hooks/useProjects';
 import { useProducts } from '@/hooks/useProducts';
+import { ENTITIES } from '@/data/initialData';
 import { SITE_IMAGES, ENTITY_GALLERY } from '@/data/siteImages';
 import LoadingSpinner from '@/components/common/LoadingSpinner';
 import ErrorMessage from '@/components/common/ErrorMessage';
 import PhotoLightbox from '@/components/common/PhotoLightbox';
+import SbsPresentationGallery from '@/components/sbs/SbsPresentationGallery';
+import SbsLogistikGallery from '@/components/sbs/SbsLogistikGallery';
+import SbsIndustriesPublicCatalog from '@/components/sbs/SbsIndustriesPublicCatalog';
+import { Layers, Truck } from 'lucide-react';
 
 // Photos officielles des entités — magatteniang-expert.sn
 const ENTITY_IMAGES: Record<string, string> = {
@@ -36,7 +41,9 @@ const ENTITY_IMAGES: Record<string, string> = {
 
 export default function EntityDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
-  const { entity, loading, error } = useEntity(id);
+  const staticEntity = ENTITIES.find((e) => e.id === id);
+  const { entity: fetchedEntity, loading, error } = useEntity(id);
+  const entity = fetchedEntity || staticEntity;
   const { projects, loading: projectsLoading } = useProjects({ entityId: id });
   const { products, loading: productsLoading } = useProducts();
 
@@ -56,7 +63,7 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
           (p: any) => (p.brand || '').toLowerCase().includes(id) || (p.ref || '').toUpperCase().startsWith(id.toUpperCase())
         );
 
-  if (loading) {
+  if (loading && !entity) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <LoadingSpinner size="lg" message="Chargement de l'entité..." />
@@ -64,7 +71,7 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
     );
   }
 
-  if (error || !entity) {
+  if (!entity) {
     return (
       <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <ErrorMessage
@@ -189,8 +196,8 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
         </div>
       </section>
 
-      {/* Galerie photo de l'entité — VRAIES photos du dossier officiel */}
-      {gallery.length > 0 && (
+      {/* Galerie photo standard pour les autres entités */}
+      {id !== 'sbs-group' && id !== 'sbs-logistik' && gallery.length > 0 && (
         <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-12 border-b border-neutral-200 dark:border-brand-700">
           <h2 className="text-2xl font-title font-bold text-neutral-900 dark:text-white mb-6">
             Galerie {entity.name}
@@ -217,6 +224,49 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
             ))}
           </div>
         </section>
+      )}
+
+      {/* CATALOGUE MATÉRIEL & ENGINS LOURDS VALORISÉ PHOTO PAR PHOTO POUR SB-S LOGISTIK */}
+      {id === 'sbs-logistik' && (
+        <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-12 border-b border-neutral-200 dark:border-brand-700">
+          <div className="flex items-center gap-3 mb-6">
+            <Truck className="w-6 h-6 text-amber-600" />
+            <div>
+              <h2 className="text-2xl font-title font-bold text-neutral-900 dark:text-white">
+                Parc matériel, engins lourds & équipements SB-S Logistik
+              </h2>
+              <p className="text-sm text-neutral-600 dark:text-neutral-300 mt-1">
+                62 photographies réelles d&apos;engins et matériels vérifiées une par une depuis le document officiel &apos;PRESENTATION MATERIEL.pdf&apos;, avec caractéristiques d&apos;exploitation, matricules de parc et planches techniques 4K.
+              </p>
+            </div>
+          </div>
+          <SbsLogistikGallery />
+        </section>
+      )}
+
+      {/* PHOTOTHEQUE COMPLETE VALORISEE PHOTO PAR PHOTO POUR SBS GROUP */}
+      {id === 'sbs-group' && (
+        <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-12 border-b border-neutral-200 dark:border-brand-700">
+          <div className="flex items-center gap-3 mb-6">
+            <Layers className="w-6 h-6 text-accent-500" />
+            <div>
+              <h2 className="text-2xl font-title font-bold text-neutral-900 dark:text-white">
+                Photothèque des réalisations, flotte & carte interactive SB-S Group
+              </h2>
+              <p className="text-sm text-neutral-600 dark:text-neutral-300 mt-1">
+                Chaque intervention de génie civil, ouvrage d&apos;art, équipement et bâtiment est documentée photo par photo (100% clichés réels authentiques), avec la carte interactive vectorielle de la base logistique centrale et des 7 corridors nationaux.
+              </p>
+            </div>
+          </div>
+          <SbsPresentationGallery />
+        </section>
+      )}
+
+      {/* CATALOGUE OFFICIEL, FLYERS, BETON BPE, LOCATIONS & ACCES GESTIONNAIRE POUR SBS INDUSTRIES */}
+      {id === 'sbs-industries' && (
+        <SbsIndustriesPublicCatalog
+          onOpenLightbox={(images, index, title) => setLightbox({ images, index, title })}
+        />
       )}
 
       {/* Mission & Leadership */}
@@ -246,7 +296,7 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
       {/* Expertises */}
       <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-12 border-b border-neutral-200 dark:border-brand-700">
         <h2 className="text-2xl font-title font-bold text-neutral-900 dark:text-white mb-6">
-          Domaines d'Expertise
+          Domaines d'expertise
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {entity.expertises?.map((exp: string, idx: number) => (
@@ -451,17 +501,35 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
       {/* Catalogue produits de l'entité (ex: showroom P2M) */}
       {!productsLoading && entityProducts.length > 0 && (
         <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
             <h2 className="text-2xl font-title font-bold text-neutral-900 dark:text-white">
               {id === 'p2m' ? 'Catalogue Complet P2M' : 'Produits & Catalogue'}
             </h2>
-            <Link
-              href="/catalogue"
-              className="text-xs font-semibold text-accent-500 hover:underline flex items-center gap-1"
-            >
-              <span>Voir tout le catalogue</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
+            <div className="flex flex-wrap items-center gap-3">
+              {id === 'p2m' && (
+                <>
+                  <Link
+                    href="/panier?entite=p2m"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-m bg-accent-500 text-white text-xs font-bold hover:bg-accent-600 transition-colors"
+                  >
+                    <span>Mon panier P2M</span>
+                  </Link>
+                  <Link
+                    href="/entites/p2m/admin"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-m bg-brand-900 dark:bg-brand-800 border border-brand-700 text-white text-xs font-semibold hover:bg-brand-800 transition-colors"
+                  >
+                    <span>Espace Gestionnaire P2M</span>
+                  </Link>
+                </>
+              )}
+              <Link
+                href="/catalogue"
+                className="text-xs font-semibold text-accent-500 hover:underline flex items-center gap-1"
+              >
+                <span>Voir tout le catalogue</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {entityProducts.map((product: any) => (

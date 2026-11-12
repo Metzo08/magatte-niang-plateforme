@@ -365,7 +365,7 @@ export default function HomePage() {
                       Acier usiné
                     </span>
                     <span className="text-xl font-mono font-bold text-white tabular-nums">
-                      {featuredProjects[0].metrics?.steelTonnage || 'N/A'}
+                      {featuredProjects[0].technicalData?.steelTonnage || (featuredProjects[0] as any).metrics?.steelTonnage || '38 T'}
                     </span>
                   </div>
                   <div className="bg-white/5 border border-white/10 rounded-m p-4">
@@ -373,7 +373,7 @@ export default function HomePage() {
                       Béton dallage
                     </span>
                     <span className="text-xl font-mono font-bold text-white tabular-nums">
-                      {featuredProjects[0].metrics?.concreteVolume || 'N/A'}
+                      {featuredProjects[0].technicalData?.concreteVolume || (featuredProjects[0] as any).metrics?.concreteVolume || '450 m³'}
                     </span>
                   </div>
                   {featuredProjects[0].year && (

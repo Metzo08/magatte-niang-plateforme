@@ -32,6 +32,41 @@ export function normalizeQuery(text: string): string {
 }
 
 export const AI_KNOWLEDGE_BASE: KnowledgeTopic[] = [
+  // --- SB-S GROUP (GENIE CIVIL, OUVRAGES D'ART & INDUSTRIE) ---
+  {
+    id: 'sbs-group-genie-civil-travaux',
+    keywords: [
+      'sbs group', 'stein bauer', 'genie civil', 'ouvrages d art', 'travaux publics',
+      'bureau des methodes', 'sendou', 'richard toll', 'css', 'lafarge', 'port autonome',
+      'concassage', 'mako', 'kaffrine', 'vrd', 'dallage'
+    ],
+    title: 'SB-S Group - Génie Civil, Grands Travaux & Références Industrielles',
+    answer: `**SB-S Group (Stein Bauer Sénégal Group)** est le fer de lance de l'écosystème pour le génie civil lourd, les ouvrages d'art et les infrastructures industrielles au Sénégal et dans la sous-région.
+
+**Ses atouts majeurs :**
+- **Un Bureau des Méthodes performant** garantissant des calculs structurels optimisés aux Eurocodes et le respect rigoureux des délais.
+- **Un parc matériel autonome** : camions grues 5T & 6T, grues à tour, nacelles, tractopelles, dumpers, centrales et bétonnières 1 000L, camions bennes 40T et camions TATA 5T.
+- **Philosophie d'excellence** : « Réaliser des prestations de qualité dans une recherche constante de la satisfaction du client ».
+
+**Références industrielles réelles et vérifiées :**
+1. **Centrale électrique de Sendou (CES)** : Bâtiment de stockage de produits chimiques et toiture métallique.
+2. **Compagnie Sucrière Sénégalaise (CSS - Richard Toll)** : Réhausse de la hauteur sous plafond du hangar industriel de stockage.
+3. **Port Autonome de Dakar (PAD)** : Construction du bâtiment des sous-traitants maritimes.
+4. **LafargeHolcim Côte d'Ivoire** : Extension de la ligne de production cimentière à Abidjan.
+5. **Carrière de Concassage** : Mur de soutènement en béton armé grande hauteur.
+6. **Optimisation Circuit de Broyage** : Massifs et génie civil pour deuxième concasseur industriel.
+7. **Zone Minière de Mako (Kédougou)** : Usine d'oxygène PSA 6T/j et puisard industriel de décantation des eaux.
+8. **Infrastructures de Kaffrine** : Gradins de complexe sportif (1 200 places) et restaurant municipal.
+9. **Zone Industrielle Diamniadio** : 12 000 m² de dallages industriels, réseau de caniveaux et fosse septique.
+
+Pour vos appels d'offres ou marchés de génie civil, SB-S Group assure une réponse technique et financière sous 48h.`,
+    sources: [
+      { title: 'Présentation Institutionnelle SBS Group 2026', ref: 'PRES-SBS-2026', link: '/entites/sbs-group' },
+      { title: 'Répertoire des grands travaux et références d\'ouvrages d\'art', ref: 'CAT-PROJ-2026', link: '/projets' }
+    ],
+    suggestedAction: { label: 'Consulter les réalisations de SBS Group', href: '/projets?entite=sbs-group' }
+  },
+
   // --- SALUTATIONS, ACCUEIL & PRÉSENTATION GÉNÉRALE ---
   {
     id: 'salutations-accueil',
@@ -239,12 +274,12 @@ Livraison rapide sur chantier à Dakar, Diamniadio, Thiès, Saly et partout au S
   - Livraison par camions malaxeurs (toupies) avec pompage direct sur site
   - Contrôle qualité continu des éprouvettes par SB-S Labo
 
-• **Préfabrication d'Agglos & Éléments Béton :**
-  - **Agglos creux 10×20×40 :** tarif officiel indicatif de **300 FCFA HT / pièce**
-  - **Agglos creux et pleins 15×20×40 et 20×20×40 :** parpaings vibrés haute compacité pour murs porteurs et clôtures
-  - **Hourdis béton allégés :** pour dalles de compression et planchers d'étage
+• **Préfabrication d'Agglos, Hourdis, Pavés & Locations (Rufisque en face Avisen — Tél : 77 566 48 06) :**
+  - **Agglos creux :** 10×20×40 (**380 F**), 12×20×40 (**400 F**), 15×20×40 (**475 F**), 20×20×40 (**590 F**)
+  - **Agglos pleins haute résistance :** 15×20×40 (**700 F**) et 20×20×40 (**850 F**) pour murs porteurs, soubassements et clôtures
+  - **Hourdis béton pour dalles & planchers :** 12×20×50 (**450 F**), 16×20×50 (**580 F**), 20×20×50 (**650 F**), 25×20×50 (**750 F**)
   - **Bordures de trottoir normalisées :** profils T2, CS, bordures d'accotement
-  - **Pavés autobloquants haute densité :** pour voiries urbaines, stations-service et parkings lourds.`,
+  - **Pavés d'aménagement (prix/m²) :** 6 cm (**6 750 F/m²**), 8 cm (**7 750 F/m²**), 10 cm (**9 000 F/m²**) & location matériel béton (toupie, pompe, QT40-3A, coffrages).`,
     sources: [
       { title: 'Fiche technique béton prêt à l\'emploi SB-S Industries', ref: 'FT-IND-2026', link: '/entites/sbs-industries' },
       { title: 'Plaquette tarifaire préfabrication béton', ref: 'TAR-IND-2026' }
@@ -453,7 +488,7 @@ Voici nos principaux pôles d'activité :
 1. **Carrelages & Sanitaires P2M (Mbao)** : Porcelaine 60×60 (5 500–6 000 F), 40×40 (4 000–5 500 F), 30×30 (3 000–3 500 F), 60×120 vitrifié (7 500–8 500 F), dalles 80×240, WC suspendus ESTA, lavabos Partas/Rosen, robinetterie HKI.
 2. **Charpente Métallique SERMA BTP** : Usinage acier 4 500 T/an, hangars industriels, portées libres > 42m sans poteau intermédiaire.
 3. **Laboratoire SB-S Labo** : Essais de sol CBR 4j immersion, Proctor, écrasement béton 3 000 kN, pénétromètre dynamique.
-4. **Béton & Agglos SB-S Industries** : Centrale BPE 250 m³/j, agglos creux 10×20×40 à 300 FCFA HT / pièce, hourdis.
+4. **Béton, Agglos & Locations SB-S Industries** : Rufisque (face Avisen) — Tél 77 566 48 06 — Agglos creux (380–590 F), Agglos pleins 15×20×40 (700 F) & 20×20×40 (850 F), Hourdis (450–750 F), Pavés (6 750–9 000 F/m²), BPE & Locations.
 5. **Location d'Engins SB-S Logistik** : Grues 50T (500 000 F/j), camions-grues 6T (100 000 F/j), tractopelles (120 000 F/j) — contact direct : 77 858 61 05.
 6. **Chiffrage & Devis** : Réponse sous 24h–48h ouvrées ou appel direct à nos ingénieurs au +221 33 832 40 10.
 

@@ -10,6 +10,7 @@ import {
   ArrowRight,
   CheckCircle2,
   Search,
+  Lock,
   X
 } from 'lucide-react';
 import { useProducts } from '@/hooks/useProducts';
@@ -112,10 +113,28 @@ export default function CatalogueP2MPage() {
             </div>
           </div>
 
-          <p className="text-white/90 text-base max-w-3xl">
-            {products.length} références en stock à Dakar · livraison rapide ·
-            devis personnalisé sous 24h
-          </p>
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <p className="text-white/90 text-base max-w-3xl">
+              {products.length} références en stock à Dakar · livraison rapide ·
+              devis personnalisé sous 24h
+            </p>
+            <div className="flex flex-wrap items-center gap-2">
+              <Link
+                href="/entites/p2m/admin"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-m bg-amber-400 hover:bg-amber-300 text-brand-950 font-bold text-xs shadow-sm transition-colors"
+              >
+                <Lock className="w-3.5 h-3.5" />
+                <span>Espace Gestionnaire P2M</span>
+              </Link>
+              <Link
+                href="/panier?entite=p2m"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-m bg-white/15 hover:bg-white/25 border border-white/25 text-white font-semibold text-xs transition-colors"
+              >
+                <ShoppingCart className="w-3.5 h-3.5" />
+                <span>Mon panier P2M</span>
+              </Link>
+            </div>
+          </div>
 
           {/* Tarifs indicatifs officiels — source : plaquette P2M */}
           <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 text-xs">
@@ -303,11 +322,11 @@ export default function CatalogueP2MPage() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <Link
-              href="/panier"
+              href="/panier?entite=p2m"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#C0562F] hover:bg-[#A04525] text-white font-bold rounded-m shadow-elev-2 transition-all"
             >
               <ShoppingCart className="w-4 h-4" />
-              <span>Voir mon panier</span>
+              <span>Voir mon panier P2M</span>
             </Link>
             <Link
               href="/assistant?entite=p2m"

@@ -8,9 +8,12 @@ export async function GET(
 ) {
   const { slug } = await context.params;
   try {
-    const project = await prisma.project.findUnique({
-      where: { slug },
-    });
+    const project = await Promise.race([
+      prisma.project.findUnique({
+        where: { slug },
+      }),
+      new Promise((_, reject) => setTimeout(() => reject(new Error('DB_TIMEOUT')), 400)),
+    ]);
 
     if (project) {
       return NextResponse.json(project);

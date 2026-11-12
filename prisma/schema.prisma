@@ -322,3 +322,402 @@ model Contact {
   @@index([status])
   @@index([createdAt])
 }
+
+// ============================================================================
+// SBS INDUSTRIE — GESTION USINE, CATALOGUE, LOCATIONS & ERP CONNECTÉ
+// ============================================================================
+
+model SbsManagerAccount {
+  id           String    @id
+  username     String    @unique
+  displayName  String
+  email        String?
+  passwordHash String
+  role         String    @default("SBS_INDUSTRIES_MANAGER")
+  entityId     String    @default("sbs-industries")
+  isActive     Boolean   @default(true)
+  lastLoginAt  DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@index([entityId, role])
+}
+
+model SbsFactoryConfig {
+  id                        String   @id @default("default")
+  companyName               String   @default("SBS INDUSTRIE")
+  phone                     String   @default("77 566 48 06")
+  whatsapp                  String   @default("+221 77 566 48 06")
+  address                   String   @default("Rufisque route national en face Avisen")
+  deliveryZone              String   @default("Livraison partout à Dakar")
+  rawMaterials              Json     // [{ id, code, name, priceFCFA, unit, densityKgM3, qtyPerDelivery }]
+  wheelbarrowVolumeL        Float    @default(60)
+  freshConcreteDensityKgM3  Float    @default(2300)
+  fixedCharges              Json     // { loyer, assurances, impots, entretien, transport, fraisAdmin, gardiennage, autres }
+  depreciations             Json     // [{ id, equipment, valueFCFA, durationYears }]
+  fixedPayroll              Json     // [{ id, role, headcount, monthlySalaryFCFA }]
+  modPerCementTonFCFA       Float    @default(30000)
+  electricityRatePercent    Float    @default(5)
+  tvaRatePercent            Float    @default(18)
+  kpiTargets                Json     // { minMcvRate, minNetMarginRate, minCementYield }
+  updatedAt                 DateTime @updatedAt
+}
+
+model SbsProduct {
+  id                 String   @id
+  code               String   @unique
+  family             String   // agglos-creux | agglos-pleins | hourdis | paves | beton | location
+  name               String
+  dimensions         String
+  lengthCm           Float?
+  widthCm            Float?
+  heightCm           Float?
+  unit               String   @default("pièce")
+  sellingPriceFCFA   Float
+  priceMaxFCFA       Float?
+  isPriceVisible     Boolean  @default(true)
+  isPublished        Boolean  @default(true)
+  availability       String   @default("En stock")
+  isRental           Boolean  @default(false)
+  imageUrl           String?
+  description        String?  @db.Text
+  hasFormulation     Boolean  @default(false)
+  isSolidBlock       Boolean  @default(false)
+  gravier38Brouettes Float    @default(0)
+  gravier03Brouettes Float    @default(0)
+  sableBrouettes     Float    @default(0)
+  eauLitres          Float    @default(20)
+  rendementPerSac    Float    @default(24)
+  volumeExtLitres    Float    @default(12)
+  stockOpening       Float    @default(0)
+  sortOrder          Int      @default(0)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@index([family])
+  @@index([isPublished])
+  @@index([sortOrder])
+}
+
+model SbsMonthlyLedger {
+  id                      String   @id
+  year                    Int
+  month                   Int
+  dailyEntries            Json     // Jours 1..31: productionByCode, cementSacs, sandM3, gravier03M3, gravier38M3, waterL, dailyRevenueFCFA, unitsSold, note
+  salesByCode             Json     // Record<code, { qtySold, unitPriceFCFA, syncFromDaily? }>
+  electricityOverrideFCFA Float?
+  rawMaterialStock        Json     // Record<code, { opening, entries }>
+  productStock            Json     // Record<code, { opening, adjustment? }>
+  rentalBookings          Json     // Array<{ id, date, clientName, clientPhone, itemCode, itemName, qty, days, unitRateFCFA, totalFCFA, status, notes }>
+  notes                   String?  @db.Text
+  createdAt               DateTime @default(now())
+  updatedAt               DateTime @updatedAt
+
+  @@unique([year, month])
+  @@index([year, month])
+}
+
+model SbsAuditLog {
+  id        String   @id
+  action    String
+  actor     String
+  details   Json?
+  ipAddress String?
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([actor])
+}
+
+// ============================================================================
+// COMPTES GESTIONNAIRES ISOLÉS PAR ENTITÉ (P2M, SBS LOGISTIK)
+// ============================================================================
+
+model EntityManagerAccount {
+  id           String    @id
+  entityId     String    // 'p2m' | 'sbs-logistik'
+  username     String    @unique
+  displayName  String
+  email        String?
+  passwordHash String
+  role         String    // 'P2M_MANAGER' | 'SBS_LOGISTIK_MANAGER'
+  isActive     Boolean   @default(true)
+  lastLoginAt  DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@index([entityId, role])
+}
+
+// ============================================================================
+// SBS LOGISTIK — PARC MATÉRIELS, BESOINS, CLIENTS, DEVIS, FACTURES, PAIEMENTS & SAV
+// ============================================================================
+
+model LogistikEquipment {
+  id             String   @id
+  code           String   @unique
+  title          String
+  category       String
+  brand          String   @default("Standard Industriel")
+  description    String   @db.Text
+  specs          String   @db.Text
+  usage          String   @db.Text
+  imageUrl       String
+  pageNumber     Int      @default(1)
+  dailyRateFCFA  Float    @default(0)
+  isPriceVisible Boolean  @default(false)
+  availability   String   @default("Disponible") // Disponible | En location | En maintenance | Réservé | Hors service
+  isPublished    Boolean  @default(true)
+  sortOrder      Int      @default(0)
+  updatedBy      String   @default("logistik-gestionnaire")
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([category])
+  @@index([brand])
+  @@index([availability])
+  @@index([isPublished])
+}
+
+model LogistikClient {
+  id          String   @id
+  code        String   @unique // CLI-LOG-0001
+  identifier  String   @default("") // NINEA / RC / CNI
+  fullName    String
+  company     String   @default("")
+  email       String   @default("")
+  phone       String
+  whatsapp    String   @default("")
+  address     String   @default("")
+  city        String   @default("Dakar")
+  category    String   @default("Entreprise BTP")
+  notes       String?  @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([code])
+  @@index([phone])
+}
+
+model LogistikNeedExpression {
+  id               String   @id
+  needNumber       String   @unique // BES-LOG-2026-0001
+  clientCode       String?
+  clientName       String
+  company          String   @default("")
+  phone            String
+  whatsapp         String   @default("")
+  email            String   @default("")
+  siteLocation     String   @default("Dakar")
+  startDate        String   @default("")
+  durationDays     Int      @default(1)
+  withOperator     Boolean  @default(true)
+  urgency          String   @default("Normale") // Normale | Urgente | Planifiée
+  items            Json     // Array<{ equipmentId?, code, title, brand, category, qty, days, dailyRateFCFA }>
+  notes            String?  @db.Text
+  status           String   @default("Nouveau") // Nouveau | Qualifié | Devis envoyé | Converti | Annulé
+  source           String   @default("Panier SBS Logistik")
+  convertedQuoteId String?
+  updatedBy        String   @default("Système")
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+model LogistikQuote {
+  id            String   @id
+  quoteNumber   String   @unique // DEV-LOG-2026-0001
+  needId        String?
+  clientId      String?
+  clientCode    String   @default("")
+  clientName    String
+  clientCompany String   @default("")
+  clientPhone   String
+  clientEmail   String   @default("")
+  clientAddress String   @default("Dakar")
+  items         Json     // Array<{ equipmentId?, code, title, brand, category, qty, days, unitRateFCFA, lineTotalFCFA }>
+  transportFee  Float    @default(0)
+  operatorFee   Float    @default(0)
+  cautionAmount Float    @default(0)
+  discountFCFA  Float    @default(0)
+  subtotalHT    Float    @default(0)
+  taxRate       Float    @default(18)
+  totalTTC      Float    @default(0)
+  status        String   @default("Brouillon") // Brouillon | Envoyé | Accepté | Refusé | Facturé
+  validUntil    String   @default("")
+  notes         String?  @db.Text
+  createdBy     String   @default("logistik-gestionnaire")
+  updatedBy     String   @default("logistik-gestionnaire")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([status])
+  @@index([clientId])
+}
+
+model LogistikInvoice {
+  id              String   @id
+  invoiceNumber   String   @unique // FAC-LOG-2026-0001
+  quoteId         String?
+  clientId        String?
+  clientCode      String   @default("")
+  clientName      String
+  clientCompany   String   @default("")
+  clientPhone     String
+  clientEmail     String   @default("")
+  clientAddress   String   @default("Dakar")
+  items           Json
+  subtotalHT      Float    @default(0)
+  taxRate         Float    @default(18)
+  totalTTC        Float    @default(0)
+  amountPaidFCFA  Float    @default(0)
+  balanceDueFCFA  Float    @default(0)
+  status          String   @default("Émise") // Émise | Partielle | Payée | En retard | Annulée
+  dueDate         String   @default("")
+  paymentToken    String   @unique
+  notes           String?  @db.Text
+  updatedBy       String   @default("logistik-gestionnaire")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([status])
+  @@index([clientId])
+}
+
+model LogistikPayment {
+  id            String   @id
+  paymentRef    String   @unique // PAY-LOG-2026-0001
+  invoiceId     String
+  invoiceNumber String
+  clientName    String
+  method        String   // Wave | Orange Money | Carte Bancaire | Virement | Espèces | Chèque
+  channel       String   @default("Paiement en ligne")
+  providerRef   String   @default("")
+  amountFCFA    Float
+  status        String   @default("Validé") // En attente | Validé | Échoué
+  paidAt        DateTime @default(now())
+  recordedBy    String   @default("logistik-gestionnaire")
+  notes         String?  @db.Text
+  createdAt     DateTime @default(now())
+
+  @@index([invoiceId])
+  @@index([paidAt])
+}
+
+model LogistikAfterSalesLog {
+  id                 String   @id
+  ticketNumber       String   @unique // SAV-LOG-2026-0001
+  equipmentId        String?
+  equipmentCode      String
+  equipmentTitle     String
+  equipmentBrand     String   @default("")
+  clientId           String?
+  clientName         String
+  clientPhone        String   @default("")
+  type               String   @default("Location active") // Location active | Retour matériel | Maintenance préventive | Panne chantier | Réclamation SAV
+  priority           String   @default("Normale") // Basse | Normale | Haute | Critique
+  siteLocation       String   @default("Dakar")
+  operatorName       String   @default("")
+  startDate          String   @default("")
+  expectedReturnDate String   @default("")
+  actualReturnDate   String   @default("")
+  meterOut           String   @default("")
+  meterIn            String   @default("")
+  conditionNotes     String   @default("")
+  actionTaken        String?  @db.Text
+  costFCFA           Float    @default(0)
+  status             String   @default("En cours") // En cours | Planifié | Résolu | Clôturé
+  updatedBy          String   @default("logistik-gestionnaire")
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@index([status])
+  @@index([equipmentCode])
+}
+
+model LogistikAuditLog {
+  id        String   @id
+  action    String
+  actor     String
+  details   Json?
+  ipAddress String?
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+}
+
+// ============================================================================
+// P2M SHOWROOM — BESOINS, CLIENTS, DEVIS, FACTURES & AUDIT ISOLÉS
+// ============================================================================
+
+model P2mClient {
+  id         String   @id
+  code       String   @unique // CLI-P2M-0001
+  identifier String   @default("")
+  fullName   String
+  company    String   @default("")
+  phone      String
+  email      String   @default("")
+  address    String   @default("")
+  city       String   @default("Dakar")
+  notes      String?  @db.Text
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model P2mNeedExpression {
+  id           String   @id
+  needNumber   String   @unique // BES-P2M-2026-0001
+  clientName   String
+  company      String   @default("")
+  phone        String
+  email        String   @default("")
+  city         String   @default("Dakar")
+  items        Json
+  notes        String?  @db.Text
+  status       String   @default("Nouveau")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([status])
+}
+
+model P2mOrderInvoice {
+  id             String   @id
+  docNumber      String   @unique // DEV-P2M-... / FAC-P2M-...
+  docType        String   @default("Devis") // Devis | Facture
+  clientCode     String   @default("")
+  clientName     String
+  clientCompany  String   @default("")
+  clientPhone    String
+  clientEmail    String   @default("")
+  items          Json
+  subtotalHT     Float    @default(0)
+  discountFCFA   Float    @default(0)
+  taxRate        Float    @default(18)
+  totalTTC       Float    @default(0)
+  amountPaidFCFA Float    @default(0)
+  paymentMethod  String   @default("Wave")
+  paymentRef     String   @default("")
+  status         String   @default("Émise")
+  notes          String?  @db.Text
+  updatedBy      String   @default("p2m-gestionnaire")
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([docType])
+  @@index([status])
+}
+
+model P2mAuditLog {
+  id        String   @id
+  action    String
+  actor     String
+  details   Json?
+  ipAddress String?
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+}

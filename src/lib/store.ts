@@ -42,16 +42,21 @@ const STORAGE_KEYS = {
   ROUTING_RULES: 'mn_expert_routing_rules_v2',
   SCORING_RULES: 'mn_expert_scoring_rules_v2',
   AUDIT_LOGS: 'mn_expert_audit_logs_v2',
-  CART: 'mn_expert_cart_v2',
+  CART: 'mn_cart_p2m_v1',
+  CART_SBS_INDUSTRIES: 'mn_cart_sbs_industries_v1',
+  CART_SBS_LOGISTIK: 'mn_cart_sbs_logistik_v1',
   THEME: 'mn_expert_theme_v2',
   SETTINGS: 'mn_expert_settings_v2',
   CDP_CONSENT: 'mn_expert_cdp_consent_v2',
   PROFILE: 'mn_expert_profile_v1'
 };
 
+export type CartEntityId = 'p2m' | 'sbs-industries' | 'sbs-logistik';
+
 export interface CartItem {
   product: Product;
   quantity: number;
+  days?: number;
 }
 
 export interface PlatformSettings {
@@ -499,36 +504,63 @@ class PlatformStore {
     return true;
   }
 
-  // --- SHOPPING CART (PANIER DE DEVIS P2M) ---
-  getCart(): CartItem[] {
-    return this.getItem<CartItem[]>(STORAGE_KEYS.CART, []);
+  // --- PANIERS ISOLÉS PAR ENTITÉ (P2M | SBS INDUSTRIE | SBS LOGISTIK) ---
+  private getCartStorageKey(entityId: CartEntityId = 'p2m'): string {
+    if (entityId === 'sbs-industries') return STORAGE_KEYS.CART_SBS_INDUSTRIES;
+    if (entityId === 'sbs-logistik') return STORAGE_KEYS.CART_SBS_LOGISTIK;
+    return STORAGE_KEYS.CART;
   }
 
-  addToCart(product: Product, quantity = 1): void {
-    const cart = this.getCart();
+  getCart(entityId: CartEntityId = 'p2m'): CartItem[] {
+    return this.getItem<CartItem[]>(this.getCartStorageKey(entityId), []);
+  }
+
+  getCartCount(entityId: CartEntityId = 'p2m'): number {
+    return this.getCart(entityId).reduce((acc, item) => acc + item.quantity, 0);
+  }
+
+  getAllCartCounts(): Record<CartEntityId, number> {
+    return {
+      p2m: this.getCartCount('p2m'),
+      'sbs-industries': this.getCartCount('sbs-industries'),
+      'sbs-logistik': this.getCartCount('sbs-logistik'),
+    };
+  }
+
+  addToCart(product: Product, quantity = 1, entityId: CartEntityId = 'p2m', days?: number): void {
+    const key = this.getCartStorageKey(entityId);
+    const cart = this.getCart(entityId);
     const existingIndex = cart.findIndex(item => item.product.id === product.id);
 
     if (existingIndex > -1) {
       cart[existingIndex].quantity += quantity;
+      if (days && days > 0) {
+        cart[existingIndex].days = days;
+      }
     } else {
-      cart.push({ product, quantity });
+      cart.push({ product, quantity, ...(days && days > 0 ? { days } : {}) });
     }
 
-    this.setItem(STORAGE_KEYS.CART, cart);
+    this.setItem(key, cart);
   }
 
-  updateCartQuantity(productId: string, quantity: number): void {
-    let cart = this.getCart();
+  updateCartQuantity(productId: string, quantity: number, entityId: CartEntityId = 'p2m', days?: number): void {
+    const key = this.getCartStorageKey(entityId);
+    let cart = this.getCart(entityId);
     if (quantity <= 0) {
       cart = cart.filter(item => item.product.id !== productId);
     } else {
-      cart = cart.map(item => item.product.id === productId ? { ...item, quantity } : item);
+      cart = cart.map(item =>
+        item.product.id === productId
+          ? { ...item, quantity, ...(days && days > 0 ? { days } : {}) }
+          : item
+      );
     }
-    this.setItem(STORAGE_KEYS.CART, cart);
+    this.setItem(key, cart);
   }
 
-  clearCart(): void {
-    this.setItem(STORAGE_KEYS.CART, []);
+  clearCart(entityId: CartEntityId = 'p2m'): void {
+    this.setItem(this.getCartStorageKey(entityId), []);
   }
 
   // --- APPOINTMENTS (RENDEZ-VOUS) ---

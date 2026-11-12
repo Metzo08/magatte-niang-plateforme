@@ -1,5 +1,5 @@
 {
-    "CodeGPT.apiKey": "Groq",
+    "CodeGPT.apiKey": "CodeGPT Plus Beta",
     "chat.defaultModel": "glm/glm-5.3-flash",
     "files.exclude": {
         "**/.git": true,

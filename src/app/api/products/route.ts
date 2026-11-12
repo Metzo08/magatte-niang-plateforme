@@ -1,57 +1,36 @@
 import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/lib/db';
-import { PRODUCTS_P2M } from '@/data/initialData';
 import { apiHandler } from '@/lib/utils';
+import { ensureP2mSeeded } from '@/lib/p2mBootstrap';
+import { getAuthenticatedEntityManager } from '@/lib/entityAuth';
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   return apiHandler(
     async () => {
-      const { searchParams } = new URL(request.url);
-      const category = searchParams.get('category');
-      const search = searchParams.get('search');
-
-      // Données réelles du catalogue P2M (flyers officiels) — prioritaires sur la base
-      let staticData = PRODUCTS_P2M;
-      if (category && category !== 'all') {
-        staticData = staticData.filter(p => p.category === category);
-      }
-      if (search) {
-        const q = search.toLowerCase();
-        staticData = staticData.filter(p =>
-          p.name.toLowerCase().includes(q) ||
-          p.ref.toLowerCase().includes(q) ||
-          p.category.toLowerCase().includes(q) ||
-          p.material.toLowerCase().includes(q)
-        );
-      }
-
-      // Complète avec les produits ajoutés via l'admin (base de données) sans doublon
-      try {
-        const dbProducts = await prisma.product.findMany({
-          orderBy: { createdAt: 'desc' },
-        });
-        const staticIds = new Set(staticData.map(p => p.id));
-        const extras = (dbProducts || []).filter((p: any) => !staticIds.has(p.id));
-        return [...staticData, ...extras];
-      } catch {
-        return staticData;
-      }
+      await ensureP2mSeeded();
+      const dbProducts = await prisma.product.findMany({
+        orderBy: { createdAt: 'asc' },
+      });
+      return dbProducts;
     },
     'Products GET',
-    PRODUCTS_P2M,
-    true // Use fallback on error
+    undefined,
+    false
   );
 }
 
 export async function POST(request: NextRequest) {
-  return apiHandler(
-    async () => {
-      const body = await request.json();
-      const product = await prisma.product.create({
-        data: body,
-      });
-      return product;
-    },
-    'Products POST'
-  );
+  const manager = await getAuthenticatedEntityManager('p2m');
+  if (!manager) {
+    return NextResponse.json({ error: 'Authentification P2M requise.' }, { status: 401 });
+  }
+
+  return apiHandler(async () => {
+    await ensureP2mSeeded();
+    const body = await request.json();
+    const product = await prisma.product.create({
+      data: body,
+    });
+    return product;
+  }, 'Products POST');
 }

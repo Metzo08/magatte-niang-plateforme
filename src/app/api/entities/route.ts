@@ -1,26 +1,25 @@
 import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/lib/db';
 import { ENTITIES } from '@/data/initialData';
-import { apiHandler, handleApiError } from '@/lib/utils';
+import { apiHandler } from '@/lib/utils';
 
 export async function GET() {
-  return apiHandler(
-    async () => {
-      const entities = await prisma.entity.findMany({
+  try {
+    const entities = await Promise.race([
+      prisma.entity.findMany({
         orderBy: { name: 'asc' },
-      });
+      }),
+      new Promise((_, reject) => setTimeout(() => reject(new Error('DB_TIMEOUT')), 400)),
+    ]);
 
-      if (entities && entities.length > 0) {
-        return entities;
-      }
+    if (entities && (entities as any[]).length > 0) {
+      return NextResponse.json(entities);
+    }
+  } catch {
+    // Si la DB est lente ou indisponible, fallback direct sans latence
+  }
 
-      // Fallback to static ENTITIES
-      return ENTITIES;
-    },
-    'Entities GET',
-    ENTITIES,
-    true // Use fallback on error
-  );
+  return NextResponse.json(ENTITIES);
 }
 
 export async function POST(request: NextRequest) {

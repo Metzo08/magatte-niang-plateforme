@@ -8,40 +8,28 @@ export async function GET(
   context: { params: Promise<{ id: string }> }
 ) {
   const { id } = await context.params;
+  const fallbackEntity = ENTITIES.find((e) => e.id === id);
 
-  return apiHandler(
-    async () => {
-      const entity = await prisma.entity.findUnique({
+  try {
+    const entity = await Promise.race([
+      prisma.entity.findUnique({
         where: { id },
-      });
+      }),
+      new Promise((_, reject) => setTimeout(() => reject(new Error('DB_TIMEOUT')), 400)),
+    ]);
 
-      if (entity) {
-        return entity;
-      }
-
-      // Fallback to static ENTITIES
-      const fallbackEntity = ENTITIES.find((e) => e.id === id);
-      if (fallbackEntity) {
-        return fallbackEntity;
-      }
-
-      throw new Error('Entity not found');
-    },
-    'Entity GET',
-    undefined,
-    false
-  ).catch((error) => {
-    if (error.message === 'Entity not found') {
-      return NextResponse.json(
-        { error: 'Entity not found' },
-        { status: 404 }
-      );
+    if (entity) {
+      return NextResponse.json(entity);
     }
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    );
-  });
+  } catch {
+    // Si la DB est lente ou indisponible, fallback direct sans latence
+  }
+
+  if (fallbackEntity) {
+    return NextResponse.json(fallbackEntity);
+  }
+
+  return NextResponse.json({ error: 'Entity not found' }, { status: 404 });
 }
 
 export async function PUT(

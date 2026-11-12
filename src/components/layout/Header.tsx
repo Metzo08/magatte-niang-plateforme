@@ -62,7 +62,7 @@ const MOBILE_NAV = [
   { href: '/catalogue', label: 'Catalogue P2M' },
   { href: '/services/laboratoire', label: 'Laboratoire SB-S Labo' },
   { href: '/mediatheque', label: 'Médiathèque & presse' },
-  { href: '/contact', label: 'Contact & Devis direct' },
+  { href: '/contact', label: 'Contact & devis direct' },
   { href: '/profil', label: 'Magatte Niang — profil & recherche' },
   { href: '/espace-pro', label: 'Espace professionnel (accès réservé)' }
 ];
@@ -72,6 +72,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenAI }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const activeCartEntity = pathname?.includes('sbs-industries') ? 'sbs-industries' : pathname?.includes('sbs-logistik') || pathname?.includes('/services/engins') ? 'sbs-logistik' : 'p2m';
   const [cartCount, setCartCount] = useState(0);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -82,7 +83,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenAI }) => {
     window.addEventListener('scroll', handleScroll);
 
     const updateCart = () => {
-      const cart = store.getCart();
+      const entity = window.location.pathname.includes('sbs-industries') ? 'sbs-industries' : window.location.pathname.includes('sbs-logistik') || window.location.pathname.includes('/services/engins') ? 'sbs-logistik' : 'p2m';
+      const cart = store.getCart(entity);
       const total = cart.reduce((acc, item) => acc + item.quantity, 0);
       setCartCount(total);
     };
@@ -103,6 +105,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenAI }) => {
   useEffect(() => {
     setMobileMenuOpen(false);
     setActiveDropdown(null);
+    setCartCount(store.getCartCount(activeCartEntity));
   }, [pathname]);
 
   const toggleDarkMode = () => {
@@ -178,7 +181,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenAI }) => {
             {DESKTOP_NAV.map((item) => {
               const isActive =
                 pathname === item.href ||
-                (item.href !== '/' && pathname.startsWith(item.href));
+                (item.href !== '/' && !!pathname?.startsWith(item.href));
 
               if (item.dropdown) {
                 return (
@@ -296,7 +299,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenAI }) => {
             </button>
 
             <Link
-              href="/catalogue"
+              href={`/panier?entite=${activeCartEntity}`}
               aria-label="Panier"
               className="relative w-9 h-9 flex items-center justify-center rounded-m text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-brand-800 transition-colors"
             >

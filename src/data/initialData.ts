@@ -61,13 +61,13 @@ export const ENTITIES: EntityInfo[] = [
   {
     id: 'sbs-group',
     name: 'Sbs Group',
-    tagline: 'Infrastructures, travaux publics & ouvrages d\'art',
-    badge: 'Grands travaux & VRD',
+    tagline: 'Génie civil, grands ouvrages d\'art & industrie',
+    badge: 'Grands travaux, VRD & Industrie',
     color: 'entity-sbsGroup',
     colorHex: '#2D6A8E',
     accentClass: 'bg-[#2D6A8E]',
-    mission: 'Le partenaire intégré pour vos projets de construction et d\'infrastructures : génie civil, industrie et ouvrages d\'art, exécutés avec autonomie et rigueur.',
-    description: 'Fondé en 2016, SB-S Group (Stein Bauer Sénégal Group) est un acteur de référence du génie civil et des ouvrages d\'art. Son organisation en divisions spécialisées (SB-S Construction, SB-S Logistik, SB-S Industries) et son parc matériel complet lui permettent de maîtriser l\'ensemble de la chaîne de valeur de la construction.',
+    mission: 'Concevoir et bâtir des infrastructures pérennes avec un Bureau des Méthodes de pointe, une rigueur absolue d\'exécution aux Eurocodes et le respect strict des délais contractuels.',
+    description: 'Fondé en 2016, SB-S Group (Stein Bauer Sénégal Group) est un acteur majeur du génie civil, de l\'industrie et des ouvrages d\'art au Sénégal et en Afrique de l\'Ouest. Sa force repose sur un Bureau des Méthodes hautement qualifié (plans d\'exécution, phasage optimisé, métrés rigoureux), un parc matériel lourd autonome et des références industrielles de premier plan (Centrale Sendou, CSS Richard Toll, LafargeHolcim CI, Port Autonome de Dakar). Philosophie : « Réaliser des prestations de qualité dans une recherche constante de la satisfaction client ».',
     leader: 'Maguette Niang',
     leaderRole: 'Directeur général',
     address: 'Zone Industrielle de Diamniadio, Lot B4',
@@ -76,32 +76,35 @@ export const ENTITIES: EntityInfo[] = [
     phone: '+221 33 879 50 00',
     email: 'contact@sbsgroup.sn',
     whatsapp: '+221 77 500 44 22',
-    ctaText: 'Consulter pour un marché TP',
+    ctaText: 'Consulter pour un marché TP & Industrie',
     ctaAction: 'qualify-sbsgroup',
     expertises: [
-      'Terrassement, fondations et travaux de VRD',
-      'Construction de bâtiments (villas, immeubles R+2 à R+7, hangars)',
-      'Ouvrages d\'art et infrastructures (ponts, murs de soutènement)',
-      'Gros œuvre et structures béton armé',
-      'Charpente métallique et couverture'
+      'Génie civil industriel et fondations spéciales de concasseurs & usines',
+      'Ouvrages d\'art et ponts mixtes acier-béton (Eurocodes 2, 3 et 4)',
+      'Terrassement de masse, plateformes logistiques et voiries lourdes VRD',
+      'Bâtiments industriels, hangars grande portée et réhausse de structures',
+      'Bureau des Méthodes intégré : études préalables, calculs et métrés d\'exécution',
+      'Dallages industriels haute résistance, caniveaux et fosses septiques grande capacité'
     ],
     equipmentList: [
-      'Levage : grue mobile 50T, camion grue 6T',
-      'Terrassement : tractopelle, dumper, compacteur',
-      'Transport : camion benne 40T',
-      'Bétonnage : toupie 10 m³, pompes à béton (électrique et diesel)',
-      'Énergie : groupes électrogènes 150 KVA et 5 KVA',
-      'Échafaudages, coffrages et matériel de chantier'
+      'Levage lourd : camion grue 5T, camion grue 6T, grue à tour et seaux de coulage',
+      'Hauteur & Manutention : nacelles élévatrices télescopiques, chargeurs frontaux',
+      'Terrassement lourd : tracto-pelles, dumpers de chantier, compacteurs vibrants',
+      'Bétonnage : bétonnière professionnelle 1 000L, toupies 10 m³ et pompes à béton',
+      'Transport industriel : camions bennes 40T et camions porteurs TATA 5T',
+      'Énergie & Chantier : groupes électrogènes 150 kVA et 5 kVA, équipements de coffrage lourd'
     ],
     synergies: [
-      { entityId: 'serma-btp', role: 'Fabrication des tabliers et armatures métalliques', benefit: 'Réduction des délais d\'approvisionnement de 40%' },
-      { entityId: 'sbs-labo', role: 'Essais de portance et compacité des plateformes', benefit: 'Validation continue des couches de forme' },
-      { entityId: 'sbs-logistik', role: 'Rotation continue de 30 semi-remorques bennes', benefit: 'Sécurisation de la chaîne logistique' }
+      { entityId: 'serma-btp', role: 'Conception et fabrication des charpentes métalliques et réhausses', benefit: 'Réduction des délais de montage industriel de 40%' },
+      { entityId: 'sbs-labo', role: 'Essais géotechniques in-situ, contrôle continu béton et agréments ministériels', benefit: 'Garantie d\'assurance décennale et conformité NF' },
+      { entityId: 'sbs-logistik', role: 'Flotte de rotation de 30 semi-remorques et grues de levage', benefit: 'Approvisionnement continu et sécurité HSE certifiée' },
+      { entityId: 'sbs-industries', role: 'Fourniture de bordures T2/T3, dalots et béton prêt à l\'emploi', benefit: 'Tarifs industriels directs et cadences de coulage maîtrisées' }
     ],
     verifiedMetrics: [
-      { label: 'Capacité centrale à béton', value: '60', unit: 'm³/heure', status: 'confirmed' },
-      { label: 'Immeubles livrés', value: 'R+2 à R+7', unit: 'réalisations', status: 'confirmed' },
-      { label: 'Clients industriels & institutionnels', value: '5+', unit: 'références', status: 'confirmed' }
+      { label: 'Références industrielles majeures', value: '10+', unit: 'sites réels', status: 'confirmed' },
+      { label: 'Disponibilité du parc matériel', value: '98', unit: '%', status: 'confirmed' },
+      { label: 'Tonnage acier & coulage', value: '450+', unit: 'm³/projet', status: 'confirmed' },
+      { label: 'Capacité centrale à béton', value: '60', unit: 'm³/heure', status: 'confirmed' }
     ],
     icon: 'Building2'
   },
@@ -147,27 +150,27 @@ export const ENTITIES: EntityInfo[] = [
   {
     id: 'sbs-industries',
     name: 'Sbs industries',
-    tagline: 'Préfabrication béton & production industrielle BTP',
+    tagline: 'Préfabrication béton, BPE & locations d’équipements BTP',
     badge: 'Unité industrielle de préfabrication',
     color: 'entity-sbsIndustries',
     colorHex: '#6B7A8F',
     accentClass: 'bg-[#6B7A8F]',
     mission: 'Assurer l\'autonomie du groupe par la production intégrée de matériaux de construction préfabriqués, garantissant qualité constante et maîtrise des coûts.',
-    description: 'Unité de production du groupe spécialisée dans la fabrication de matériaux préfabriqués : centrale à béton de 60 m³/heure, pondeuse automatique QT40-3A. Gamme : agglos et parpaings, hourdis (16, 20, 25 cm), pavés autobloquants, bordures et béton prêt à l\'emploi (toutes formulations).',
+    description: 'Unité industrielle située à Rufisque route nationale (en face Avisen) & Diass : centrale à béton 60 m³/h, pondeuse automatique QT40-3A. Gamme : agglos creux (10×20×40 à 20×20×40), agglos pleins haute résistance (15×20×40 & 20×20×40), hourdis (12, 16, 20, 25 cm), pavés (6, 8, 10 cm), béton prêt à l\'emploi (C15 à C30) et location de matériel béton.',
     leader: 'Maguette Niang',
     leaderRole: 'Directeur général',
-    address: 'Zone Économique Spéciale Intégrée (DIASS)',
-    city: 'Diass',
+    address: 'Rufisque route nationale, en face Avisen / ZESI Diass',
+    city: 'Rufisque & Diass',
     country: 'Sénégal',
-    phone: '+221 76 480 15 05',
+    phone: '+221 77 566 48 06',
     email: 'wsbsindustrie2021@gmail.com',
-    whatsapp: '+221 77 858 61 05',
+    whatsapp: '+221 77 566 48 06',
     ctaText: 'Commander des éléments préfabriqués',
     ctaAction: 'qualify-industries',
     expertises: [
-      'Agglos creux et pleins (toutes dimensions)',
-      'Hourdis pour planchers (16, 20, 25 cm)',
-      'Pavés autobloquants et bordures',
+      'Agglos creux (10×20×40 à 20×20×40) & Agglos pleins (15×20×40, 20×20×40)',
+      'Hourdis pour dalles et planchers (12, 16, 20, 25 cm)',
+      'Pavés d’aménagement (6, 8, 10 cm) & location matériel béton (toupie, pompe, QT40-3A)',
       'Béton prêt à l\'emploi (toutes formulations, centrale 60 m³/h)',
       'Pondeuse automatique QT40-3A pour préfabriqués'
     ],
@@ -177,7 +180,7 @@ export const ENTITIES: EntityInfo[] = [
     ],
     verifiedMetrics: [
       { label: 'Capacité centrale à béton', value: '60', unit: 'm³/heure', status: 'confirmed' },
-      { label: 'Hourdis produits', value: '16/20/25', unit: 'cm', status: 'confirmed' },
+      { label: 'Hourdis produits', value: '12/16/20/25', unit: 'cm', status: 'confirmed' },
       { label: 'Approvisionnement prioritaire chantiers du groupe', value: '100', unit: '%', status: 'confirmed' }
     ],
     icon: 'Factory'
@@ -333,6 +336,7 @@ export const PROJECTS: Project[] = [
     summary: 'Conception, usinage et montage d\'une structure métallique industrielle de 38 tonnes d\'acier à haute limite élastique avec portée libre de 36 mètres sans appui intermédiaire.',
     technicalData: {
       steelTonnage: '38 T',
+      concreteVolume: '450 m³',
       span: '36 m',
       surface: '2 400 m²',
       durationMonths: 4
@@ -353,39 +357,6 @@ export const PROJECTS: Project[] = [
       { url: '/images/entrepot-logistique.jpg', caption: 'Hangar logistique grande portée et plateforme multimodale achevée' },
       { url: '/images/realisations/serma-modelisation-structurelle-3d-eurocodes.jpg', caption: 'Modélisation structurelle 3D et calculs de résistance Eurocodes 3' },
       { url: '/images/realisations/serma-atelier-usinage-poutrelles.jpg', caption: 'Profilés et poutrelles métalliques usinés dans les ateliers SERMA BTP' }
-    ],
-    isPublished: true,
-    isFeatured: true,
-    publicationApproval: 'confirmed'
-  },
-  {
-    id: 'proj-02',
-    slug: 'pont-franchissement-cours-eau-fatick',
-    title: 'Ouvrage d\'Art & Pont Mixte Acier-Béton sur Bras de Fleuve',
-    client: 'Ministère des Infrastructures, des Transports Terrestres et du Désenclavement',
-    location: 'Fatick / Région du Sine Saloum',
-    region: 'Fatick',
-    year: 2023,
-    status: 'Achevé',
-    sector: 'Ouvrage d\'art',
-    primaryEntityId: 'sbs-group',
-    partnerEntityIds: ['serma-btp', 'sbs-labo', 'sbs-industries'],
-    summary: 'Construction d\'un pont mixte bipoutre métallique et tablier en béton armé de 64 mètres de brèche pour désenclaver 12 localités de la région de Fatick.',
-    technicalData: {
-      steelTonnage: '92 T',
-      concreteVolume: '450 m³',
-      span: '64 m (2 travées de 32 m)',
-      durationMonths: 8
-    },
-    story: {
-      constraints: 'Régime d\'écoulement torrentiel en saison des pluies et agressivité extrême du milieu halomorphe (salinité élevée).',
-      solution: 'Poutres maîtresses en acier patinable autopatiné S355W et béton B35 formulé avec pouzzolane locale et adjuvants hydrofuges de masse validés par SB-S Labo.',
-      results: 'Ouvrage livré avec PV de conformité du CEREEQ sans réserve, pérennité estimée à 100 ans selon les critères Eurocodes 2 & 4.'
-    },
-    images: [
-      { url: '/images/realisations/pont-mixte-acier-beton-fatick.jpg', caption: 'Vue du tablier et de l\'ouvrage d\'art franchissant le bras de fleuve — Sine Saloum', isHero: true },
-      { url: '/images/port-conteneurs.jpg', caption: 'Plateforme d\'accès et culées en béton armé' },
-      { url: '/images/illustrations/genie-civil-vrd.svg', caption: 'Modélisation structurelle et calculs de charge Eurocodes' }
     ],
     isPublished: true,
     isFeatured: true,
@@ -483,10 +454,9 @@ export const PROJECTS: Project[] = [
       results: 'Bâtiment livré et réceptionné par la CES — référence industrielle majeure du groupe (2024-2025).'
     },
     images: [
-      { url: '/images/reelles/projet-ces-stockage-sendou-01.jpg', caption: 'Bâtiment de stockage de produits chimiques — Centrale de Sendou', isHero: true },
-      { url: '/images/reelles/projet-ces-stockage-sendou-02.jpg', caption: 'Structure de toiture métallique et bardage industriel Sendou' },
-      { url: '/images/reelles/projet-ces-stockage-sendou-03.jpg', caption: 'Génie civil et élévation de l\'ouvrage de stockage' },
-      { url: '/images/reelles/projet-ces-stockage-sendou-04.jpg', caption: 'Finitions intérieures et conformité aux normes HSE Sendou' }
+      { url: '/images/sbs-presentation/sbs-page21-img01.jpeg', caption: 'Centrale thermique CES Sendou — Cuvelage étanche et rétention (Extrait officiel PDF P.21)' },
+      { url: '/images/sbs-presentation/sbs-page21-img02.jpeg', caption: 'Structure de stockage et génie civil produits chimiques (Extrait officiel PDF P.21)' },
+      { url: '/images/sbs-slides/sbs-slide-21.jpg', caption: 'Planche officielle CES Sendou Stockage (Document Maître)' }
     ],
     isPublished: true,
     isFeatured: true,
@@ -516,10 +486,9 @@ export const PROJECTS: Project[] = [
       results: 'Usine d\'oxygène PSA 6TPJ installée et mise en service — référence d\'ingénierie industrielle en région (2023).'
     },
     images: [
-      { url: '/images/reelles/projet-dlm-usine-oxygene-mako-01.jpg', caption: 'Installation de l\'usine d\'oxygène PSA 6T/j — Mako, Kédougou', isHero: true },
-      { url: '/images/reelles/projet-dlm-usine-oxygene-mako-02.jpg', caption: 'Génie civil et plots de fondations industriels' },
-      { url: '/images/reelles/projet-dlm-usine-oxygene-mako-03.jpg', caption: 'Montage des équipements mécaniques et électriques' },
-      { url: '/images/reelles/projet-dlm-usine-oxygene-mako-04.jpg', caption: 'Unités de compression et cuves de stockage oxygène' }
+      { url: '/images/sbs-presentation/sbs-page25-img01.jpeg', caption: 'Usine d\'oxygène PSA 6TPJ à Mako — Génie civil & massifs compresseurs (Extrait officiel PDF P.25)' },
+      { url: '/images/sbs-presentation/sbs-page25-img02.jpeg', caption: 'Réseaux fluides industriels et plateforme technique Mako (Extrait officiel PDF P.25)' },
+      { url: '/images/sbs-slides/sbs-slide-25.jpg', caption: 'Planche officielle DLM Sénégal Mako (Document Maître)' }
     ],
     isPublished: true,
     isFeatured: true,
@@ -549,10 +518,9 @@ export const PROJECTS: Project[] = [
       results: 'Bureaux livrés à Polytech Entreprise (référence 2025) — dans la continuité des travaux de génie civil du deuxième concasseur.'
     },
     images: [
-      { url: '/images/reelles/projet-polytech-bureaux-sococim-01.jpg', caption: 'Bâtiments de bureaux d\'exploitation — Carrière SOCOCIM', isHero: true },
-      { url: '/images/reelles/projet-polytech-bureaux-sococim-02.jpg', caption: 'Gros œuvre et structure béton armé' },
-      { url: '/images/reelles/projet-polytech-bureaux-sococim-03.jpg', caption: 'Finitions extérieures et menuiseries des bureaux' },
-      { url: '/images/reelles/projet-polytech-bureaux-sococim-04.jpg', caption: 'Aménagements intérieurs pour équipes de production' }
+      { url: '/images/sbs-presentation/sbs-page17-img02.jpeg', caption: 'Bâtiment administratif & bureaux d\'exploitation carrière SOCOCIM (Extrait officiel PDF P.17)', isHero: true },
+      { url: '/images/sbs-presentation/sbs-page17-img03.jpeg', caption: 'Gros œuvre et maçonnerie renforcée SOCOCIM (Extrait officiel PDF P.17)' },
+      { url: '/images/sbs-slides/sbs-slide-17.jpg', caption: 'Planche officielle Carrière SOCOCIM (Document Maître)' }
     ],
     isPublished: true,
     isFeatured: false,
@@ -582,10 +550,9 @@ export const PROJECTS: Project[] = [
       results: 'Aire de lavage opérationnelle, livrée dans les délais pour SECAA SA.'
     },
     images: [
-      { url: '/images/reelles/projet-secaa-aire-lavage-01.jpg', caption: 'Chantier de l\'aire de lavage industrielle — SECAA Autoroute', isHero: true },
-      { url: '/images/reelles/projet-secaa-aire-lavage-02.jpg', caption: 'Terrassements et pose des réseaux d\'évacuation' },
-      { url: '/images/reelles/projet-secaa-aire-lavage-03.jpg', caption: 'Coulage du dallage béton armé haute résistance' },
-      { url: '/images/reelles/projet-secaa-aire-lavage-04.jpg', caption: 'Traitement de surface antidérapant et caniveaux de collecte' }
+      { url: '/images/sbs-presentation/sbs-page46-img01.jpeg', caption: 'Aire de lavage poids lourds autoroute SECAA — Dalle béton armé (Extrait officiel PDF P.46)' },
+      { url: '/images/sbs-presentation/sbs-page46-img02.jpeg', caption: 'Caniveaux déshuileurs et fosses de décantation SECAA (Extrait officiel PDF P.46)' },
+      { url: '/images/sbs-slides/sbs-slide-46.jpg', caption: 'Planche officielle Aire de lavage SECAA (Document Maître)' }
     ],
     isPublished: true,
     isFeatured: false,
@@ -614,10 +581,9 @@ export const PROJECTS: Project[] = [
       results: 'Travaux réceptionnés conformément aux standards de l\'OIM.'
     },
     images: [
-      { url: '/images/reelles/projet-oim-societe-generale-01.jpg', caption: 'Infrastructures d\'accueil et bâtiments humanitaires — OIM Sénégal', isHero: true },
-      { url: '/images/reelles/projet-oim-societe-generale-02.jpg', caption: 'Élévation des structures et maçonnerie' },
-      { url: '/images/reelles/projet-oim-societe-generale-03.jpg', caption: 'Finitions intérieures et sanitaires conformes aux normes OIM' },
-      { url: '/images/reelles/projet-oim-societe-generale-04.jpg', caption: 'Réception finale des ouvrages' }
+      { url: '/images/sbs-presentation/sbs-page43-img01.jpeg', caption: 'Infrastructures et bâtiments sécurisés OIM Sénégal (Extrait officiel PDF P.43)' },
+      { url: '/images/sbs-presentation/sbs-page43-img02.jpeg', caption: 'Aménagements intérieurs et blocs sanitaires OIM (Extrait officiel PDF P.43)' },
+      { url: '/images/sbs-slides/sbs-slide-43.jpg', caption: 'Planche officielle OIM Sénégal (Document Maître)' }
     ],
     isPublished: true,
     isFeatured: false,
@@ -647,9 +613,9 @@ export const PROJECTS: Project[] = [
       results: 'Ouvrages livrés et validés par le client Gorée Offshore (contact : Gaspard Mendy).'
     },
     images: [
-      { url: '/images/realisations/sbs-dallage-industriel-arme.jpg', caption: 'Préparation et ferraillage du dallage béton armé industriel — Gorée Offshore', isHero: true },
-      { url: '/images/reelles/dallage-beton-arme-goree-offshore.jpg', caption: 'Coulage et surfaçage mécanique du dallage haute résistance' },
-      { url: '/images/illustrations/genie-civil-vrd.svg', caption: 'Réseau de caniveaux et drainage hydrocarbures' }
+      { url: '/images/sbs-presentation/sbs-page20-img01.jpeg', caption: 'Dallage béton armé 12 000 m² anti-usure quartz (Extrait officiel PDF P.20)' },
+      { url: '/images/sbs-presentation/sbs-page20-img02.jpeg', caption: 'Caniveaux VRD préfabriqués et fosses techniques (Extrait officiel PDF P.20)' },
+      { url: '/images/sbs-slides/sbs-slide-20.jpg', caption: 'Planche officielle Dallage & Caniveaux VRD (Document Maître)' }
     ],
     isPublished: true,
     isFeatured: false,
@@ -777,8 +743,8 @@ export const PROJECTS: Project[] = [
     },
     images: [
       { url: '/images/realisations/sbs-beton-malaxeur-pompe-site.jpg', caption: 'Coulage à la pompe et fourniture de béton prêt à l\'emploi pour voiries & plateformes — SB-S Industries', isHero: true },
-      { url: '/images/realisations/sbs-centrale-beton-malaxeur.jpg', caption: 'Livraison de béton frais par camion malaxeur et pompage direct' },
-      { url: '/images/reelles/agglos-industrie-production-blocs.jpg', caption: 'Production d\'agglos creux 10×20×40 (300 F), hourdis et bordures normalisées' },
+      { url: '/images/sbs-logistik/logistik-equip-010.jpg', caption: 'Livraison de béton frais par camion malaxeur toupie 10 m³ — SB-S Industries' },
+      { url: '/images/reelles/agglos-industrie-production-blocs.jpg', caption: 'Production d\'agglos creux 10×20×40 (380 F), pleins 15×20×40 (700 F), hourdis et pavés' },
       { url: '/images/reelles/surfacement-mecanique-dallage-talocheuse.jpg', caption: 'Dallage et surfaçage mécanique haute résistance' }
     ],
     isPublished: true,
@@ -808,16 +774,15 @@ export const PROJECTS: Project[] = [
       results: 'Zéro accident de levage, respect des délais d\'acheminement et satisfaction totale des maîtres d\'ouvrage partenaires.'
     },
     images: [
-      { url: '/images/engins/sbs-grue-mobile-chantier.jpg', caption: 'Opérations de levage lourd par grues mobiles télescopiques 50T — SB-S Logistik', isHero: true },
-      { url: '/images/reelles/logistik-017.jpg', caption: 'Levage et manutention de charges lourdes industrielles par grue mobile' },
-      { url: '/images/engins/grue-mobile-50t.jpg', caption: 'Grue mobile télescopique 50T — levage de charpentes et équipements lourds' },
-      { url: '/images/engins/camion-grue-6t.jpg', caption: 'Camion-grue 6 tonnes — livraison et pose de matériaux sur site' },
-      { url: '/images/reelles/logistik-001.jpg', caption: 'Flotte de nacelles élévatrices télescopiques SB-S Logistik' },
-      { url: '/images/engins/parc-terrassement.jpg', caption: 'Parc d\'engins de terrassement SB-S Logistik — 82 engins lourds' },
-      { url: '/images/reelles/logistik-018.jpg', caption: 'Flotte de transport et transfert d\'engins lourds au Sénégal' },
-      { url: '/images/reelles/logistik-014.jpg', caption: 'Camion benne 40T de terrassement et transfert de déblais' },
-      { url: '/images/reelles/logistik-009.jpg', caption: 'Dumper tout-terrain et camion de chantier — 180 000 F/jour' },
-      { url: '/images/engins/tractopelle.jpg', caption: 'Tractopelle en travaux de terrassement et fouilles' }
+      { url: '/images/sbs-logistik/logistik-equip-001.jpg', caption: 'Opérations de levage lourd par grue mobile télescopique 50 tonnes Samsung — SB-S Logistik', isHero: true },
+      { url: '/images/sbs-logistik/logistik-equip-002.jpg', caption: 'Camion-grue 6 tonnes à flèche hydraulique télescopique en déploiement' },
+      { url: '/images/sbs-logistik/logistik-equip-008.jpg', caption: 'Nacelle automotrice télescopique grande hauteur 30 mètres Aichi' },
+      { url: '/images/sbs-logistik/logistik-equip-007.jpg', caption: 'Nacelle élévatrice télescopique sur porteur 21 mètres Isuzu' },
+      { url: '/images/sbs-logistik/logistik-equip-003.jpg', caption: 'Camion benne 40 tonnes Sinotruk HOWO pour transport massif d\'agrégats' },
+      { url: '/images/sbs-logistik/logistik-equip-004.jpg', caption: 'Ensemble routier semi-remorque benne 40 tonnes Renault' },
+      { url: '/images/sbs-logistik/logistik-equip-005.jpg', caption: 'Camion porteur plateau à ridelles TATA 6 tonnes' },
+      { url: '/images/sbs-logistik/logistik-equip-009.jpg', caption: 'Dumper articulé tout-terrain FCY30R — capacité 3 tonnes' },
+      { url: '/images/sbs-logistik/logistik-equip-006.jpg', caption: 'Tractopelle polyvalent 4x4 en travaux de terrassement et fouilles' }
     ],
     isPublished: true,
     isFeatured: true,
@@ -885,7 +850,7 @@ export const PROJECTS: Project[] = [
     images: [
       { url: '/images/reelles/sbs-labo-reel-002.jpg', caption: 'Essais de portance in-situ et contrôle géotechnique de plateforme — SB-S Labo', isHero: true },
       { url: '/images/reelles/sbs-labo-reel-003.jpg', caption: 'Ingénieur géotechnicien SB-S Labo réalisant les mesures de compacité' },
-      { url: '/images/reelles/sbs-labo-reel-007.jpg', caption: 'Levés topographiques d\'assiette et nivellement géodésique de précision' }
+      { url: '/images/reelles/sbs-labo-reel-005.jpg', caption: 'Sondeuse géotechnique APAFOR 450RS mobilisée pour reconnaissance des sols' }
     ],
     isPublished: true,
     isFeatured: true,
@@ -916,8 +881,8 @@ export const PROJECTS: Project[] = [
     },
     images: [
       { url: '/images/realisations/sbs-labo-presse-compression-eprouvettes.jpg', caption: 'Essai d\'écrasement d\'éprouvette béton 16×32 sous presse asservie 3 000 kN — SB-S Labo', isHero: true },
-      { url: '/images/reelles/sbs-labo-reel-001.jpg', caption: 'Laboratoire central SB-S Labo agréé ministériel C2 & A2 à Sangalkam' },
-      { url: '/images/reelles/sbs-labo-reel-008.jpg', caption: 'Équipe d\'ingénieurs et techniciens de laboratoire SB-S Labo' }
+      { url: '/images/reelles/sbs-labo-reel-003.jpg', caption: 'Ingénieurs géotechniciens et qualiticiens SB-S Labo en mission de contrôle' },
+      { url: '/images/reelles/sbs-labo-reel-006.jpg', caption: 'Ouvrage en béton armé contrôlé et certifié par le laboratoire SB-S Labo' }
     ],
     isPublished: true,
     isFeatured: true,
@@ -1072,9 +1037,265 @@ export const PROJECTS: Project[] = [
     ],
     isPublished: true,
     isFeatured: false,
+    publicationApproval: 'confirmed'  },
+
+  {
+    id: 'proj-23',
+    slug: 'mur-soutenement-carriere-concassage',
+    title: 'Mur de soutènement lourd en béton armé - Carrière de concassage',
+    client: 'Exploitant Minier & Granulats Sénégal',
+    location: 'Région de Thiès',
+    region: 'Thiès',
+    year: 2023,
+    status: 'Achevé',
+    sector: 'Industrie',
+    primaryEntityId: 'sbs-group',
+    partnerEntityIds: ['sbs-labo', 'sbs-industries', 'sbs-logistik'],
+    summary: 'Construction d\'un mur de soutènement en béton armé grande hauteur pour stabiliser le front de taille et sécuriser l\'installation de la nouvelle carrière de concassage.',
+    technicalData: {
+      concreteVolume: '520 m³',
+      surface: '850 m²',
+      durationMonths: 4
+    },
+    story: {
+      constraints: 'Poussée des terres très importante et vibrations continues générées par le concasseur primaire.',
+      solution: 'Dimensionnement aux Eurocodes 2 et 7 avec redans et barbacanes d\'évacuation des eaux par le Bureau des Méthodes SBS Group.',
+      results: 'Ouvrage livré sans réserve, stabilité parfaite vérifiée par les capteurs d\'auscultation de SB-S Labo.'
+    },
+    images: [
+      { url: '/images/sbs-presentation/sbs-page18-img01.jpeg', caption: 'Mur de soutènement en béton armé carrière de concassage (Extrait officiel PDF P.18)' },
+      { url: '/images/sbs-presentation/sbs-page18-img02.jpeg', caption: 'Redans et barbacanes de stabilisation front de taille (Extrait officiel PDF P.18)' },
+      { url: '/images/sbs-slides/sbs-slide-18.jpg', caption: 'Planche officielle Mur de soutènement concassage (Document Maître)' }
+    ],
+    isPublished: true,
+    isFeatured: true,
+    publicationApproval: 'confirmed'
+  },
+  {
+    id: 'proj-24',
+    slug: 'genie-civil-deuxieme-concasseur-circuit-broyage',
+    title: 'Génie civil & massif de fondation pour deuxième concasseur industriel',
+    client: 'Société Industrielle des Mines et Carrières',
+    location: 'Sénégal',
+    region: 'Thiès',
+    year: 2023,
+    status: 'Achevé',
+    sector: 'Industrie',
+    primaryEntityId: 'sbs-group',
+    partnerEntityIds: ['serma-btp', 'sbs-labo'],
+    summary: 'Réalisation d\'un deuxième concasseur pour l\'optimisation du circuit de broyage : massifs de fondation spéciaux anti-vibratiles et génie civil lourd.',
+    technicalData: {
+      concreteVolume: '380 m³',
+      durationMonths: 3
+    },
+    story: {
+      constraints: 'Exigences extrêmes d\'ancrage dynamique pour résister aux fréquences de résonance du broyeur.',
+      solution: 'Massif en béton haute performance armé de cages d\'acier renforcées et réservations de précision au millimètre.',
+      results: 'Gain de productivité de 45% sur le débit de concassage de granulats dès la mise en service.'
+    },
+    images: [
+      { url: '/images/sbs-presentation/sbs-page19-img01.jpeg', caption: 'Massif de fondation lourd pour concasseur industriel primaire (Extrait officiel PDF P.19)' },
+      { url: '/images/sbs-presentation/sbs-page19-img04.jpeg', caption: 'Massif béton armé et voiles de génie civil du 2ème concasseur (Extrait officiel PDF P.19)' },
+      { url: '/images/sbs-slides/sbs-slide-19.jpg', caption: 'Planche officielle Massif concasseur (Document Maître)' }
+    ],
+    isPublished: true,
+    isFeatured: false,
+    publicationApproval: 'confirmed'
+  },
+  {
+    id: 'proj-25',
+    slug: 'dallage-caniveau-fosse-septique-industrielle',
+    title: 'Dallages béton armé/non armé, caniveaux d\'évacuation & fosse septique industrielle',
+    client: 'Parc Industriel Agroalimentaire & Logistique',
+    location: 'Zone Industrielle Diamniadio',
+    region: 'Dakar',
+    year: 2024,
+    status: 'Achevé',
+    sector: 'Infrastructures',
+    primaryEntityId: 'sbs-group',
+    partnerEntityIds: ['sbs-industries', 'sbs-labo'],
+    summary: 'Réalisation de 12 000 m² de dallages industriels, réseau de caniveaux béton haute capacité pour eaux pluviales et fosse septique industrielle.',
+    technicalData: {
+      surface: '12 000 m²',
+      concreteVolume: '1 800 m³',
+      durationMonths: 5
+    },
+    story: {
+      constraints: 'Trafic intense d\'essieux lourds de 13 tonnes et évacuation rapide des fortes précipitations d\'hivernage.',
+      solution: 'Dallage scié avec traitement de surface anti-usure au quartz et caniveaux préfabriqués par SB-S Industries.',
+      results: 'Zéro fissuration après 12 mois d\'exploitation logistique cadencée.'
+    },
+    images: [
+      { url: '/images/sbs-presentation/sbs-page20-img01.jpeg', caption: 'Dallages industriels pour trafic d\'essieux 13T (Extrait officiel PDF P.20)' },
+      { url: '/images/sbs-presentation/sbs-page20-img03.jpeg', caption: 'Caniveaux d\'assainissement lourds coulés en place (Extrait officiel PDF P.20)' },
+      { url: '/images/sbs-slides/sbs-slide-20.jpg', caption: 'Planche officielle Dallage & Caniveaux VRD (Document Maître)' }
+    ],
+    isPublished: true,
+    isFeatured: false,
+    publicationApproval: 'confirmed'
+  },
+  {
+    id: 'proj-26',
+    slug: 'rehausse-hauteur-hangar-industriel-css-richard-toll',
+    title: 'Réhausse de la hauteur du hangar industriel CSS - Richard Toll',
+    client: 'Compagnie Sucrière Sénégalaise (CSS)',
+    location: 'Richard Toll',
+    region: 'Saint-Louis',
+    year: 2023,
+    status: 'Achevé',
+    sector: 'Industrie',
+    primaryEntityId: 'sbs-group',
+    partnerEntityIds: ['serma-btp', 'sbs-logistik'],
+    summary: 'Travaux supplémentaires de réhausse de la hauteur sous plafond du hangar de stockage industriel de la Compagnie Sucrière Sénégalaise pour accroître la capacité de stockage de sucre conditionné.',
+    technicalData: {
+      steelTonnage: '42 T',
+      surface: '3 500 m²',
+      durationMonths: 3
+    },
+    story: {
+      constraints: 'Intervention en site agro-industriel en activité nécessitant un phasage strict sans interruption d\'exploitation.',
+      solution: 'Réhausse métallique conçue par SERMA BTP et levage synchronisé par camions-grues SB-S Logistik.',
+      results: 'Capacité de stockage augmentée de 30% livrée avant le démarrage de la campagne sucrière.'
+    },
+    images: [
+      { url: '/images/sbs-presentation/sbs-page29-img25.jpeg', caption: 'Structures métalliques et génie civil usine CSS Richard-Toll (Extrait officiel PDF P.29)', isHero: true },
+      { url: '/images/sbs-presentation/sbs-page29-img26.jpeg', caption: 'Charpente et élévation industrielle CSS Richard-Toll (Extrait officiel PDF P.29)' },
+      { url: '/images/sbs-slides/sbs-slide-29.jpg', caption: 'Planche officielle Chaudière CSS Richard-Toll (Document Maître)' }
+    ],
+    isPublished: true,
+    isFeatured: true,
+    publicationApproval: 'confirmed'
+  },
+  {
+    id: 'proj-27',
+    slug: 'batiment-sous-traitants-port-autonome-dakar',
+    title: 'Bâtiment d\'accueil des sous-traitants au Port Autonome de Dakar (PAD)',
+    client: 'Port Autonome de Dakar (PAD)',
+    location: 'Zone Portuaire Nord, Dakar',
+    region: 'Dakar',
+    year: 2024,
+    status: 'Achevé',
+    sector: 'Bâtiment',
+    primaryEntityId: 'sbs-group',
+    partnerEntityIds: ['serma-btp', 'sbs-labo', 'p2m'],
+    summary: 'Construction d\'un bâtiment technique et administratif dédié aux entreprises sous-traitantes maritimes et logistiques au cœur du Port Autonome de Dakar.',
+    technicalData: {
+      surface: '1 450 m²',
+      durationMonths: 6
+    },
+    story: {
+      constraints: 'Environnement salin très agressif et accès réglementés 24/7 au domaine portuaire.',
+      solution: 'Structure mixte béton armé hydrofuge et finitions carrelage grand format P2M classe R10.',
+      results: 'Bâtiment certifié conforme et remis aux autorités portuaires dans les délais convenus.'
+    },
+    images: [
+      { url: '/images/sbs-presentation/sbs-page26-img01.jpeg', caption: 'Bâtiment administratif sous-traitants au Port de Dakar (Extrait officiel PDF P.26)' },
+      { url: '/images/sbs-presentation/sbs-page26-img02.jpeg', caption: 'Bureaux d\'exploitation et locaux modulaires portuaires (Extrait officiel PDF P.26)' },
+      { url: '/images/sbs-slides/sbs-slide-26.jpg', caption: 'Planche officielle Bâtiment PAD (Document Maître)' }
+    ],
+    isPublished: true,
+    isFeatured: true,
+    publicationApproval: 'confirmed'
+  },
+  {
+    id: 'proj-28',
+    slug: 'extension-ligne-production-lafargeholcim-ci',
+    title: 'Extension de la ligne de production cimentière - LafargeHolcim CI',
+    client: 'LafargeHolcim Côte d\'Ivoire',
+    location: 'Zone Industrielle, Abidjan',
+    region: 'Autre',
+    year: 2023,
+    status: 'Achevé',
+    sector: 'Industrie',
+    primaryEntityId: 'sbs-group',
+    partnerEntityIds: ['serma-btp', 'sbs-labo'],
+    summary: 'Travaux de génie civil spécialisé et structures métalliques pour l\'extension de la ligne de broyage et conditionnement de l\'usine cimentière LafargeHolcim Côte d\'Ivoire.',
+    technicalData: {
+      concreteVolume: '750 m³',
+      steelTonnage: '110 T',
+      durationMonths: 6
+    },
+    story: {
+      constraints: 'Respect des standards internationaux de sécurité HSE LafargeHolcim et coordination multinationale.',
+      solution: 'Déploiement d\'équipes hautement qualifiées du Bureau des Méthodes SBS Group et suivi qualité régulier.',
+      results: 'Extension réceptionnée avec zéro accident avec arrêt (0 LTI) et satisfaction totale du client.'
+    },
+    images: [
+      { url: '/images/sbs-presentation/sbs-page36-img01.jpeg', caption: 'Hangar de stockage clinker 7 890 m² LafargeHolcim CI Abidjan (Extrait officiel PDF P.36)' },
+      { url: '/images/sbs-presentation/sbs-page36-img02.jpeg', caption: 'Murs de soutènement clinker et charpente acier portée 45m (Extrait officiel PDF P.36)' },
+      { url: '/images/sbs-slides/sbs-slide-36.jpg', caption: 'Planche officielle Hangar LafargeHolcim CI (Document Maître)' }
+    ],
+    isPublished: true,
+    isFeatured: true,
+    publicationApproval: 'confirmed'
+  },
+  {
+    id: 'proj-29',
+    slug: 'gradin-restaurant-infrastructure-kaffrine',
+    title: 'Gradin omnisport & restaurant municipal d\'infrastructure - Kaffrine',
+    client: 'Collectivité Territoriale & Ministère des Sports',
+    location: 'Kaffrine',
+    region: 'Kaolack',
+    year: 2023,
+    status: 'Achevé',
+    sector: 'Infrastructures',
+    primaryEntityId: 'sbs-group',
+    partnerEntityIds: ['sbs-industries', 'p2m'],
+    summary: 'Construction d\'un gradin pour complexe sportif de 1 200 places et d\'un bâtiment restaurant d\'accueil panoramique pour la jeunesse et les compétitions régionales à Kaffrine.',
+    technicalData: {
+      concreteVolume: '420 m³',
+      surface: '950 m²',
+      durationMonths: 5
+    },
+    story: {
+      constraints: 'Zone climatique chaude à fortes amplitudes thermiques et sols latéritiques compressibles.',
+      solution: 'Gradins en éléments béton armé préfabriqués et toiture métallique ventilée avec pare-soleil intégrés.',
+      results: 'Inauguration festive réussie et pôle d\'attraction durable pour toute la région de Kaffrine.'
+    },
+    images: [
+      { url: '/images/sbs-presentation/sbs-page24-img01.jpeg', caption: 'Gradin omnisports et restaurant municipal à Kaffrine (Extrait officiel PDF P.24)', isHero: true },
+      { url: '/images/sbs-presentation/sbs-page24-img02.jpeg', caption: 'Structure béton armé des gradins et locaux sous tribune à Kaffrine (Extrait officiel PDF P.24)' },
+      { url: '/images/sbs-presentation/sbs-page40-img02.jpeg', caption: 'Bâtiment d\'accueil et complexe de la jeunesse à Kaffrine (Extrait officiel PDF P.40)' },
+      { url: '/images/sbs-slides/sbs-slide-24.jpg', caption: 'Planche officielle Gradin & Restaurant Kaffrine (Document Maître)' }
+    ],
+    isPublished: true,
+    isFeatured: false,
+    publicationApproval: 'confirmed'
+  },
+  {
+    id: 'proj-30',
+    slug: 'puisard-collecte-eaux-usees-minier-mako',
+    title: 'Puisard de collecte, décantation & traitement des eaux usées - Mako / Kédougou',
+    client: 'Société d\'Exploitation Minière de Mako',
+    location: 'Mako, Région de Kédougou',
+    region: 'Autre',
+    year: 2024,
+    status: 'Achevé',
+    sector: 'Industrie',
+    primaryEntityId: 'sbs-group',
+    partnerEntityIds: ['sbs-labo', 'sbs-industries'],
+    summary: 'Réalisation d\'un puisard industriel profond de rétention et décantation des eaux usées pour la préservation environnementale en zone minière à Mako.',
+    technicalData: {
+      concreteVolume: '290 m³',
+      depthMax: '9 m',
+      durationMonths: 3
+    },
+    story: {
+      constraints: 'Normes environnementales très sévères et nappe phréatique affleurante nécessitant un bétonnage sous étanchéité absolue.',
+      solution: 'Béton hydrofuge enrichi en silice avec adjuvants de cristallisation validés en laboratoire par SB-S Labo.',
+      results: 'Zéro fuite détectée lors des tests hydrauliques en charge, conformité environnementale certifiée.'
+    },
+    images: [
+      { url: '/images/sbs-presentation/sbs-page23-img01.jpeg', caption: 'Puisard de rétention minière 9m de profondeur à Mako Kédougou (Extrait officiel PDF P.23)' },
+      { url: '/images/sbs-presentation/sbs-page23-img02.jpeg', caption: 'Radier lourd béton hydrofuge étanche en zone minière (Extrait officiel PDF P.23)' },
+      { url: '/images/sbs-slides/sbs-slide-23.jpg', caption: 'Planche officielle Puisard Industriel Mako (Document Maître)' }
+    ],
+    isPublished: true,
+    isFeatured: false,
     publicationApproval: 'confirmed'
   }
-  ];
+
+];
 
 export const PRODUCTS_P2M: Product[] = [
   {
@@ -1247,8 +1468,7 @@ export const PRODUCTS_P2M: Product[] = [
     leadTime: 'Disponible au showroom Mbao',
     images: [
       '/images/reelles/p2m-060.jpg',
-      '/images/reelles/p2m-063.jpg',
-      '/images/reelles/p2m-136.jpg'
+      '/images/reelles/p2m-063.jpg'
     ],
     specs: {
       'Type': 'Lavabo sur colonne (pile)',
@@ -1334,8 +1554,8 @@ export const PRODUCTS_P2M: Product[] = [
     availability: 'En stock',
     leadTime: 'Disponible au showroom Mbao',
     images: [
-      '/images/reelles/p2m-041.jpg',
-      '/images/reelles/p2m-135.jpg'
+      '/images/reelles/p2m-135.jpg',
+      '/images/reelles/p2m-057.jpg'
     ],
     specs: {
       'Type': 'Mitigeur mural encastré',
@@ -1566,7 +1786,7 @@ export const PRODUCTS_P2M: Product[] = [
     images: [
       '/images/reelles/p2m-053.jpg',
       '/images/reelles/p2m-130.jpg',
-      '/images/reelles/p2m-136.jpg'
+      '/images/reelles/p2m-041.jpg'
     ],
     specs: {
       'Modèle': 'EXELON 7019 (Wash Basin) / Dover 7029',
@@ -1681,8 +1901,8 @@ export const PRODUCTS_P2M: Product[] = [
     availability: 'En stock',
     leadTime: 'Disponible au showroom Mbao',
     images: [
-      '/images/reelles/p2m-041.jpg',
-      '/images/reelles/p2m-135.jpg'
+      '/images/reelles/p2m-135.jpg',
+      '/images/reelles/p2m-057.jpg'
     ],
     specs: {
       'Gamme': 'CO-105(A), RO-106, AS-107, AS-106, EV-107, EV-106, RO-107',
@@ -1710,7 +1930,7 @@ export const PRODUCTS_P2M: Product[] = [
     leadTime: 'Disponible au showroom Mbao',
     images: [
       '/images/reelles/p2m-055.jpg',
-      '/images/reelles/p2m-131.jpg'
+      '/images/reelles/p2m-135.jpg'
     ],
     specs: {
       'Modèle': 'S-1003 Angle Cock / ROYAL HS-1002',
@@ -1943,8 +2163,8 @@ export const PRODUCTS_P2M: Product[] = [
     availability: 'En stock',
     leadTime: 'Disponible au showroom Mbao',
     images: [
-      '/images/reelles/p2m-131.jpg',
-      '/images/reelles/p2m-055.jpg'
+      '/images/reelles/p2m-055.jpg',
+      '/images/reelles/p2m-135.jpg'
     ],
     specs: {
       'Références': 'Siphon, Métre Pex, Nourrice, Coude Pex, Robinet d\'arrêt, Manchon, TE Pex, Clapet, Bouchon, Téflon, Vice WC, Jeu de boulon lavabo, Regard visite (réf. p2m-131)',
@@ -2020,7 +2240,7 @@ export const EQUIPMENTS: Equipment[] = [
     availabilityStatus: 'Disponible',
     location: 'Parc matériel SB-S Logistik',
     driverIncluded: true,
-    imageUrl: '/images/engins/camion-grue-6t.jpg',
+    imageUrl: '/images/sbs-logistik/logistik-equip-002.jpg',
     ratePerDayFCFA: 100000
   },
   {
@@ -2033,7 +2253,7 @@ export const EQUIPMENTS: Equipment[] = [
     availabilityStatus: 'Sur réservation',
     location: 'Parc matériel SB-S Logistik',
     driverIncluded: true,
-    imageUrl: '/images/engins/grue-mobile-50t.jpg',
+    imageUrl: '/images/sbs-logistik/logistik-equip-001.jpg',
     ratePerDayFCFA: 500000
   },
   {
@@ -2046,7 +2266,7 @@ export const EQUIPMENTS: Equipment[] = [
     availabilityStatus: 'Disponible',
     location: 'Parc matériel SB-S Logistik',
     driverIncluded: true,
-    imageUrl: '/images/engins/tractopelle.jpg',
+    imageUrl: '/images/sbs-logistik/logistik-equip-006.jpg',
     ratePerDayFCFA: 120000
   },
   {
@@ -2059,7 +2279,7 @@ export const EQUIPMENTS: Equipment[] = [
     availabilityStatus: 'Disponible',
     location: 'Parc matériel SB-S Logistik',
     driverIncluded: true,
-    imageUrl: '/images/engins/dumper.jpg',
+    imageUrl: '/images/sbs-logistik/logistik-equip-009.jpg',
     ratePerDayFCFA: 60000
   },
   {
@@ -2072,20 +2292,20 @@ export const EQUIPMENTS: Equipment[] = [
     availabilityStatus: 'Disponible',
     location: 'Parc matériel SB-S Logistik',
     driverIncluded: true,
-    imageUrl: '/images/engins/compacteur-rouleaux.jpg',
+    imageUrl: '/images/sbs-logistik/logistik-equip-021.jpg',
     ratePerDayFCFA: 70000
   },
   {
     id: 'eq-11',
     code: 'ENG-COMP-PLQ',
-    name: 'Compacteur à plaque',
+    name: 'Plaque vibrante thermique de compactage',
     category: 'Compactage',
     capacity: 'Compactage de surface · fosses, dallages, tranchées',
     power: 'Essence / Diesel',
     availabilityStatus: 'Disponible',
     location: 'Parc matériel SB-S Logistik',
     driverIncluded: false,
-    imageUrl: '/images/engins/compacteur-rouleaux.jpg',
+    imageUrl: '/images/sbs-logistik/logistik-equip-024.jpg',
     ratePerDayFCFA: 35000
   },
   {
@@ -2098,7 +2318,7 @@ export const EQUIPMENTS: Equipment[] = [
     availabilityStatus: 'Disponible',
     location: 'Parc matériel SB-S Logistik',
     driverIncluded: true,
-    imageUrl: '/images/engins/nacelle.jpg',
+    imageUrl: '/images/sbs-logistik/logistik-equip-008.jpg',
     ratePerDayFCFA: 120000
   },
   {
@@ -2111,7 +2331,7 @@ export const EQUIPMENTS: Equipment[] = [
     availabilityStatus: 'Disponible',
     location: 'Parc matériel SB-S Logistik',
     driverIncluded: true,
-    imageUrl: '/images/engins/camion-benne-40t.jpg',
+    imageUrl: '/images/sbs-logistik/logistik-equip-003.jpg',
     ratePerDayFCFA: 80000
   },
   {
@@ -2124,7 +2344,7 @@ export const EQUIPMENTS: Equipment[] = [
     availabilityStatus: 'Disponible',
     location: 'Parc matériel SB-S Logistik',
     driverIncluded: true,
-    imageUrl: '/images/engins/camion-plateau-groupe.jpg',
+    imageUrl: '/images/sbs-presentation/sbs-page12-img01.jpeg',
     ratePerDayFCFA: 100000
   },
   {
@@ -2137,7 +2357,7 @@ export const EQUIPMENTS: Equipment[] = [
     availabilityStatus: 'Disponible',
     location: 'Parc matériel SB-S Logistik',
     driverIncluded: true,
-    imageUrl: '/images/engins/camion-tata-6t.jpg',
+    imageUrl: '/images/sbs-logistik/logistik-equip-005.jpg',
     ratePerDayFCFA: 60000
   },
   {
@@ -2150,7 +2370,7 @@ export const EQUIPMENTS: Equipment[] = [
     availabilityStatus: 'Disponible',
     location: 'Parc matériel SB-S Logistik',
     driverIncluded: true,
-    imageUrl: '/images/engins/toupie-beton.jpg',
+    imageUrl: '/images/sbs-logistik/logistik-equip-010.jpg',
     ratePerDayFCFA: 100000
   },
   {
@@ -2163,7 +2383,7 @@ export const EQUIPMENTS: Equipment[] = [
     availabilityStatus: 'Disponible',
     location: 'Parc matériel SB-S Logistik',
     driverIncluded: false,
-    imageUrl: '/images/engins/betonniere-1000l.jpg',
+    imageUrl: '/images/sbs-logistik/logistik-equip-018.jpg',
     ratePerDayFCFA: 60000
   },
   {
@@ -2176,7 +2396,7 @@ export const EQUIPMENTS: Equipment[] = [
     availabilityStatus: 'Disponible',
     location: 'Parc matériel SB-S Logistik',
     driverIncluded: true,
-    imageUrl: '/images/engins/auto-betonniere-venus.jpg',
+    imageUrl: '/images/sbs-logistik/logistik-equip-015.jpg',
     ratePerDayFCFA: 180000
   },
   {
@@ -2189,7 +2409,7 @@ export const EQUIPMENTS: Equipment[] = [
     availabilityStatus: 'Sur réservation',
     location: 'Parc matériel SB-S Logistik',
     driverIncluded: true,
-    imageUrl: '/images/engins/pompe-beton.jpg',
+    imageUrl: '/images/sbs-logistik/logistik-equip-011.jpg',
     ratePerDayFCFA: 400000
   },
   {
@@ -2202,20 +2422,20 @@ export const EQUIPMENTS: Equipment[] = [
     availabilityStatus: 'Disponible',
     location: 'Parc matériel SB-S Logistik',
     driverIncluded: false,
-    imageUrl: '/images/engins/groupe-electrogene.jpg',
+    imageUrl: '/images/sbs-logistik/logistik-equip-019.jpg',
     ratePerDayFCFA: 300000
   },
   {
     id: 'eq-18',
     code: 'ENG-GE-5KVA',
-    name: 'Groupe électrogène 5 KVA',
+    name: 'Groupe électrogène 5 KVA Kipor KDE6700T',
     category: 'Énergie',
     capacity: 'Alimentation base-vie et petit chantier 5 KVA',
     power: 'Essence / Diesel',
     availabilityStatus: 'Disponible',
     location: 'Parc matériel SB-S Logistik',
     driverIncluded: false,
-    imageUrl: '/images/engins/groupe-electrogene.jpg',
+    imageUrl: '/images/sbs-logistik/logistik-equip-020.jpg',
     ratePerDayFCFA: 5000
   },
   {
@@ -2228,7 +2448,7 @@ export const EQUIPMENTS: Equipment[] = [
     availabilityStatus: 'Disponible',
     location: 'Magasin SB-S Logistik',
     driverIncluded: false,
-    imageUrl: '/images/reelles/logistik-007.jpg',
+    imageUrl: '/images/sbs-logistik/logistik-equip-041.jpg',
     ratePerDayFCFA: 2000
   },
   {
@@ -2241,7 +2461,7 @@ export const EQUIPMENTS: Equipment[] = [
     availabilityStatus: 'Disponible',
     location: 'Magasin SB-S Logistik',
     driverIncluded: false,
-    imageUrl: '/images/reelles/logistik-002.jpg',
+    imageUrl: '/images/sbs-logistik/logistik-equip-052.jpg',
     ratePerDayFCFA: 800
   },
   {
@@ -2254,7 +2474,7 @@ export const EQUIPMENTS: Equipment[] = [
     availabilityStatus: 'Sur réservation',
     location: 'Magasin SB-S Logistik',
     driverIncluded: false,
-    imageUrl: '/images/reelles/logistik-021.jpg',
+    imageUrl: '/images/sbs-logistik/logistik-equip-044.jpg',
     ratePerDayFCFA: 500
   },
   {
@@ -2267,7 +2487,7 @@ export const EQUIPMENTS: Equipment[] = [
     availabilityStatus: 'Disponible',
     location: 'Usine SB-S Industries (DIASS)',
     driverIncluded: false,
-    imageUrl: '/images/reelles/coulage-beton-pompe-tuyere.jpg',
+    imageUrl: '/images/sbs-logistik/logistik-equip-063.jpg',
     ratePerDayFCFA: 0
   }];
 // Matériaux de vente et granulats — tarifs officiels SB-S Logistik (flyers)

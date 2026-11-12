@@ -42,10 +42,13 @@ export async function GET(request: NextRequest) {
       }
 
       try {
-        const dbProjects = await prisma.project.findMany({
-          where,
-          orderBy: { year: 'desc' },
-        });
+        const dbProjects = (await Promise.race([
+          prisma.project.findMany({
+            where,
+            orderBy: { year: 'desc' },
+          }),
+          new Promise((_, reject) => setTimeout(() => reject(new Error('DB_TIMEOUT')), 400)),
+        ])) as any[];
 
         if (dbProjects && dbProjects.length > 0) {
           // Déduplique sur id ET slug : la base seedée contient les mêmes

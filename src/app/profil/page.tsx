@@ -119,7 +119,7 @@ export default function ProfilPage() {
         {/* FORMATION */}
         <div className="mt-12">
           <h2 className="text-2xl sm:text-3xl font-title font-bold text-neutral-900 dark:text-white tracking-tight mb-6">
-            Formation & Diplômes
+            Formation & diplômes
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[

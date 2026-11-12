@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, notFound } from 'next/navigation';
 import Link from 'next/link';
 import {
@@ -18,21 +18,58 @@ import {
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { PRODUCTS_P2M } from '@/data/initialData';
 import { store } from '@/lib/store';
+import type { Product } from '@/types';
 
 export default function ProductDetailPage() {
   const params = useParams();
   const prodId = params?.id as string;
 
-  const product = PRODUCTS_P2M.find(p => p.id === prodId);
-  if (!product) {
-    notFound();
-  }
+  const initialMatch = PRODUCTS_P2M.find((p) => p.id === prodId) || null;
+  const [product, setProduct] = useState<Product | null>(initialMatch);
+  const [loading, setLoading] = useState(!initialMatch);
+  const [notFoundError, setNotFoundError] = useState(false);
 
   const [quantity, setQuantity] = useState(100);
   const [isAdded, setIsAdded] = useState(false);
 
+  useEffect(() => {
+    let active = true;
+    fetch(`/api/products/${encodeURIComponent(prodId)}`, { cache: 'no-store' })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((json) => {
+        if (!active) return;
+        const p = json?.data || json;
+        if (p && p.id) {
+          setProduct(p);
+        } else if (!initialMatch) {
+          setNotFoundError(true);
+        }
+      })
+      .catch(() => {
+        if (active && !initialMatch) setNotFoundError(true);
+      })
+      .finally(() => {
+        if (active) setLoading(false);
+      });
+    return () => {
+      active = false;
+    };
+  }, [prodId, initialMatch]);
+
+  if (loading && !product) {
+    return (
+      <div className="min-h-screen bg-neutral-50 dark:bg-brand-900 flex items-center justify-center text-sm text-neutral-500">
+        Chargement de la fiche produit...
+      </div>
+    );
+  }
+
+  if (notFoundError || !product) {
+    notFound();
+  }
+
   const handleAdd = () => {
-    store.addToCart(product, quantity);
+    store.addToCart(product, quantity, 'p2m');
     setIsAdded(true);
     setTimeout(() => setIsAdded(false), 2500);
   };
@@ -174,8 +211,8 @@ export default function ProductDetailPage() {
               </div>
 
               <div className="flex items-center justify-between text-xs pt-2">
-                <Link href="/panier" className="font-bold text-brand-700 dark:text-brand-400 hover:underline">
-                  Finaliser ma demande de devis →
+                <Link href="/panier?entite=p2m" className="font-bold text-brand-700 dark:text-brand-400 hover:underline">
+                  Finaliser ma demande de devis P2M →
                 </Link>
                 <a
                   href={`https://wa.me/221783009090?text=Bonjour%20P2M,%20je%20souhaite%20des%20informations%20sur%20la%20reference%20${product.ref}`}

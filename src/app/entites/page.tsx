@@ -23,7 +23,7 @@ import EmptyState from '@/components/common/EmptyState';
 export default function EntitiesPage() {
   const { entities, loading, error } = useEntities();
 
-  if (loading) {
+  if (loading && entities.length === 0) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <LoadingSpinner size="lg" message="Chargement des entités..." />

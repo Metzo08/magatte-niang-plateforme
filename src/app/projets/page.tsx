@@ -23,7 +23,7 @@ import PhotoLightbox from '@/components/common/PhotoLightbox';
 
 function ProjectsListContent() {
   const searchParams = useSearchParams();
-  const initialEntity = searchParams.get('entite') || 'all';
+  const initialEntity = searchParams?.get('entite') || 'all';
 
   const [selectedRegion, setSelectedRegion] = useState<string>('all');
   const [selectedEntity, setSelectedEntity] = useState<string>(initialEntity);
@@ -34,7 +34,7 @@ function ProjectsListContent() {
   const [lightbox, setLightbox] = useState<{ project: (typeof PROJECTS)[number]; index: number } | null>(null);
 
   useEffect(() => {
-    const ent = searchParams.get('entite');
+    const ent = searchParams?.get('entite');
     if (ent) {
       setSelectedEntity(ent);
     }

@@ -4,6 +4,8 @@ import React from 'react';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { PUBLICATIONS } from '@/data/initialData';
 import { SITE_IMAGES } from '@/data/siteImages';
+import SbsPresentationGallery from '@/components/sbs/SbsPresentationGallery';
+import { Layers } from 'lucide-react';
 import {
   Newspaper, Image, FileText, Download, Mail, Phone, Calendar,
   Building2, Camera, Megaphone, ArrowRight, BookOpen
@@ -133,6 +135,22 @@ export default function MediathequePage() {
             </figure>
           ))}
         </div>
+      </section>
+    
+      {/* ARCHIVES COMPLETES : 64 PLANCHES OFFICIELLES SBS GROUP */}
+      <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-14 border-t border-neutral-200 dark:border-brand-700">
+        <div className="flex items-center gap-3 mb-6">
+          <Layers className="w-6 h-6 text-accent-500" />
+          <div>
+            <h2 className="text-2xl font-title font-bold text-neutral-900 dark:text-white">
+              Archives techniques : 64 planches officielles Stein Bauer Sénégal Group
+            </h2>
+            <p className="text-sm text-neutral-600 dark:text-neutral-300 mt-1">
+              Document technique officiel présentant l'ensemble des équipements, méthodes de calcul et réalisations certifiées du groupe au Sénégal et dans la sous-région.
+            </p>
+          </div>
+        </div>
+        <SbsPresentationGallery />
       </section>
     </div>
   );
