@@ -274,7 +274,7 @@ Livraison rapide sur chantier à Dakar, Diamniadio, Thiès, Saly et partout au S
   - Livraison par camions malaxeurs (toupies) avec pompage direct sur site
   - Contrôle qualité continu des éprouvettes par SB-S Labo
 
-• **Préfabrication d'Agglos, Hourdis, Pavés & Locations (Rufisque en face Avisen — Tél : 77 566 48 06) :**
+• **Préfabrication d'Agglos, Hourdis, Pavés & Locations (Zone franche industrielle de Mbao, Dakar — Responsable : Salimata SOW — Tél : 77 566 48 06) :**
   - **Agglos creux :** 10×20×40 (**380 F**), 12×20×40 (**400 F**), 15×20×40 (**475 F**), 20×20×40 (**590 F**)
   - **Agglos pleins haute résistance :** 15×20×40 (**700 F**) et 20×20×40 (**850 F**) pour murs porteurs, soubassements et clôtures
   - **Hourdis béton pour dalles & planchers :** 12×20×50 (**450 F**), 16×20×50 (**580 F**), 20×20×50 (**650 F**), 25×20×50 (**750 F**)
@@ -488,7 +488,7 @@ Voici nos principaux pôles d'activité :
 1. **Carrelages & Sanitaires P2M (Mbao)** : Porcelaine 60×60 (5 500–6 000 F), 40×40 (4 000–5 500 F), 30×30 (3 000–3 500 F), 60×120 vitrifié (7 500–8 500 F), dalles 80×240, WC suspendus ESTA, lavabos Partas/Rosen, robinetterie HKI.
 2. **Charpente Métallique SERMA BTP** : Usinage acier 4 500 T/an, hangars industriels, portées libres > 42m sans poteau intermédiaire.
 3. **Laboratoire SB-S Labo** : Essais de sol CBR 4j immersion, Proctor, écrasement béton 3 000 kN, pénétromètre dynamique.
-4. **Béton, Agglos & Locations SB-S Industries** : Rufisque (face Avisen) — Tél 77 566 48 06 — Agglos creux (380–590 F), Agglos pleins 15×20×40 (700 F) & 20×20×40 (850 F), Hourdis (450–750 F), Pavés (6 750–9 000 F/m²), BPE & Locations.
+4. **Béton, Agglos & Locations SB-S Industries** : Zone franche industrielle de Mbao (Dakar) — Responsable : Salimata SOW — Tél 77 566 48 06 — Agglos creux (380–590 F), Agglos pleins 15×20×40 (700 F) & 20×20×40 (850 F), Hourdis (450–750 F), Pavés (6 750–9 000 F/m²), BPE & Locations.
 5. **Location d'Engins SB-S Logistik** : Grues 50T (500 000 F/j), camions-grues 6T (100 000 F/j), tractopelles (120 000 F/j) — contact direct : 77 858 61 05.
 6. **Chiffrage & Devis** : Réponse sous 24h–48h ouvrées ou appel direct à nos ingénieurs au +221 33 832 40 10.
 

@@ -58,7 +58,7 @@ export async function POST(req: Request) {
 
     let sessionSub = 'fallback-sbs-manager';
     let sessionUsername = targetUsername;
-    let sessionDisplayName = 'Gestionnaire Usine SBS Industrie';
+    let sessionDisplayName = 'Salimata SOW — Responsable SBS Industrie';
     let authenticatedOk = false;
 
     try {

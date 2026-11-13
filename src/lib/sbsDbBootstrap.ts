@@ -41,7 +41,7 @@ async function runEnsureSbsSeeded(): Promise<void> {
       data: {
         id: 'sbs-manager-primary',
         username,
-        displayName: 'Gestionnaire SBS Industrie',
+        displayName: 'Salimata SOW — Responsable SBS Industrie',
         email: 'wsbsindustrie2021@gmail.com',
         passwordHash: hashSbsPassword(initialPassword),
         role: SBS_MANAGER_ROLE,
