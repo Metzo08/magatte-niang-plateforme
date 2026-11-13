@@ -4,6 +4,8 @@ import React, { useMemo, useState } from 'react';
 import {
   Plus,
   Pencil,
+  Upload,
+  ImageIcon,
   Trash2,
   X,
   Save,
@@ -94,6 +96,26 @@ export default function SbsCatalogTab({
   const [draft, setDraft] = useState<ProductDraft | null>(null);
   const [saving, setSaving] = useState(false);
   const [err, setErr] = useState('');
+  const [uploadingImage, setUploadingImage] = useState(false);
+
+  const handleUploadImage = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file || !draft) return;
+    setUploadingImage(true);
+    setErr('');
+    try {
+      const fd = new FormData();
+      fd.append('file', file);
+      const res = await fetch('/api/upload', { method: 'POST', body: fd });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Erreur lors de l\'envoi de l\'image');
+      setDraft({ ...draft, imageUrl: data.url });
+    } catch (error: any) {
+      setErr(error?.message || 'Erreur lors de l\'upload');
+    } finally {
+      setUploadingImage(false);
+    }
+  };
 
   const costByCode = useMemo(
     () => Object.fromEntries(computed.costRows.map((c) => [c.code, c])),
@@ -371,7 +393,11 @@ export default function SbsCatalogTab({
                         </button>
                         <button
                           type="button"
-                          onClick={() => onDeleteProduct(p.id, p.code)}
+                          onClick={() => {
+                          if (window.confirm(`Confirmer la suppression définitive de ${p.code} (${p.name}) du catalogue SBS Industrie ?`)) {
+                            onDeleteProduct(p.id, p.code);
+                          }
+                        }}
                           className="p-1.5 rounded hover:bg-red-100 dark:hover:bg-red-900/40 text-red-600"
                           title="Supprimer"
                         >

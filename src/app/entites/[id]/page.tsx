@@ -82,8 +82,49 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
     );
   }
 
+  const entitySchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: entity.name,
+    description: entity.description,
+    image: `https://www.magatteniang-expert.sn${ENTITY_IMAGES[entity.id] || '/images/magatte-portrait.webp'}`,
+    telephone: entity.phone,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: entity.address,
+      addressLocality: entity.city,
+      addressCountry: 'SN',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 14.7335,
+      longitude: -17.3325,
+    },
+    url: `https://www.magatteniang-expert.sn/entites/${entity.id}`,
+    founder: {
+      '@type': 'Person',
+      name: 'Magatte Niang',
+    },
+    employee: entity.leader
+      ? {
+          '@type': 'Person',
+          name: entity.leader,
+          jobTitle:
+            entity.id === 'sbs-industries'
+              ? 'Responsable SBS Industrie'
+              : entity.id === 'sbs-logistik'
+              ? 'Responsable SBS Logistik'
+              : 'Responsable d’entité',
+        }
+      : undefined,
+  };
+
   return (
     <div className="min-h-screen bg-white dark:bg-brand-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(entitySchema) }}
+      />
       {/* Breadcrumb */}
       <div className="bg-neutral-100 dark:bg-brand-800/50 border-b border-neutral-200 dark:border-brand-700">
         <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-3">

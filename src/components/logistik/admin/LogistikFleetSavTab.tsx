@@ -11,6 +11,8 @@ import {
   Trash2,
   Check,
   Clock,
+  Upload,
+  ImageIcon,
 } from 'lucide-react';
 import type { LogistikClientRow, LogistikEquipmentRow, LogistikSavRow } from './types';
 
@@ -22,6 +24,26 @@ interface Props {
   onRefresh: () => Promise<void>;
   notify: (msg: string, err?: boolean) => void;
 }
+
+
+const LOGISTIK_PRESET_IMAGES = [
+  { label: '★ Mbao Usine — Stock & Parc matériel lourd', url: '/images/sbs-industries/sbs-mbao-agglos-creux-parc.jpg' },
+  { label: '★ Mbao Usine — Pondeuse automatique QT40-3A', url: '/images/sbs-logistik/logistik-equip-068.jpg' },
+  { label: '★ Mbao Usine — Centrale à béton 60 m³/h', url: '/images/sbs-logistik/logistik-equip-070.jpg' },
+  { label: 'Grue mobile télescopique 50T Samsung', url: '/images/sbs-presentation/sbs-page06-img02.jpeg' },
+  { label: 'Grue mobile 50T & nacelle télescopique', url: '/images/sbs-presentation/sbs-page06-img03.jpeg' },
+  { label: 'Nacelle télescopique 30m Aichi', url: '/images/sbs-presentation/sbs-page06-img04.jpeg' },
+  { label: 'Chargeuse sur pneus Caterpillar 950G', url: '/images/sbs-presentation/sbs-page06-img01.jpeg' },
+  { label: 'Bétonnière hydraulique 1 000 L', url: '/images/sbs-presentation/sbs-page07-img01.jpeg' },
+  { label: 'Dumper articulé tout-terrain FCY30R (3 tonnes)', url: '/images/sbs-presentation/sbs-page07-img02.jpeg' },
+  { label: 'Camion benne 40T HOWO', url: '/images/sbs-presentation/sbs-page08-img01.jpeg' },
+  { label: 'Camion plateau porte-engins 50T', url: '/images/sbs-presentation/sbs-page08-img02.jpeg' },
+  { label: 'Camion grue 6T tout-terrain', url: '/images/sbs-presentation/sbs-page09-img01.jpeg' },
+  { label: 'Camion toupie 10 m³ HOWO', url: '/images/sbs-logistik/logistik-equip-010.jpg' },
+  { label: 'Pompe stationnaire Aquarius', url: '/images/sbs-logistik/logistik-equip-011.jpg' },
+  { label: 'Tractopelle & rétrochargeuse', url: '/images/sbs-logistik/logistik-equip-002.jpg' },
+  { label: 'Compacteur rouleau vibrant', url: '/images/sbs-logistik/logistik-equip-005.jpg' },
+];
 
 const AVAILABILITY_OPTIONS = [
   'Disponible',
@@ -42,6 +64,26 @@ export function LogistikFleetSavTab({
   const [search, setSearch] = useState('');
   const [catFilter, setCatFilter] = useState('Toutes');
   const [busy, setBusy] = useState(false);
+  const [uploadingImage, setUploadingImage] = useState(false);
+  const handleUploadImage = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setUploadingImage(true);
+    try {
+      const fd = new FormData();
+      fd.append('file', file);
+      const res = await fetch('/api/upload', { method: 'POST', body: fd });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Erreur lors du chargement');
+      setEquipForm((p) => ({ ...p, imageUrl: data.url }));
+      notify('Photo uploadée et associée avec succès !');
+    } catch (err: any) {
+      notify(err?.message || 'Erreur upload', true);
+    } finally {
+      setUploadingImage(false);
+    }
+  };
+
 
   // --- CLIENTS FORM ---
   const [showClientForm, setShowClientForm] = useState(false);
@@ -762,7 +804,22 @@ export function LogistikFleetSavTab({
           <tbody className="divide-y divide-slate-800">
             {filteredFleet.map((eq) => (
               <tr key={eq.id} className="hover:bg-slate-800/40 align-top">
-                <td className="p-3 font-mono font-bold text-amber-400">{eq.code}</td>
+                <td className="p-3 font-mono font-bold text-amber-400">
+                  <div className="flex items-center gap-2">
+                    {eq.imageUrl && (
+                      /* eslint-disable-next-line @next/next/no-img-element */
+                      <img
+                        src={eq.imageUrl}
+                        alt={eq.title}
+                        className="w-10 h-10 rounded-lg object-cover border border-slate-700 shrink-0 bg-slate-950"
+                        onError={(e) => {
+                          (e.target as HTMLElement).style.display = 'none';
+                        }}
+                      />
+                    )}
+                    <span>{eq.code}</span>
+                  </div>
+                </td>
                 <td className="p-3 text-slate-300 font-medium">{eq.category}</td>
                 <td className="p-3 max-w-xs">
                   <div className="font-bold text-white">{eq.title}</div>
