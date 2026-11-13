@@ -6,6 +6,7 @@ import { SOCIAL_LINKS } from '@/data/socialLinks';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { store } from '@/lib/store';
 import { SITE_IMAGES } from '@/data/siteImages';
+import InteractiveLocationMap from '@/components/maps/InteractiveLocationMap';
 
 const TikTokIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -15,33 +16,53 @@ const TikTokIcon = (props: SVGProps<SVGSVGElement>) => (
 
 const OFFICES = [
   {
-    entity: 'SB-S Group / Direction Générale',
-    address: 'Km 14, Boulevard du Centenaire de la Commune de Dakar',
-    city: 'Dakar',
-    phone: '+221 33 832 40 10',
+    entity: 'SB-S Group · Siège & Direction Générale',
+    address: 'Mbao Villeneuve, Villa S04, Route Nationale (proximité ZFI de Mbao)',
+    city: 'Mbao, Dakar (Pikine)',
+    phone: '+221 33 871 08 61',
     email: 'contact@magatteniang-expert.sn',
-    whatsapp: '+221 77 638 12 00',
-    hours: 'Lun–Ven : 08h00 – 18h00',
-    color: '#2D6A8E',
+    whatsapp: '+221 77 566 48 06',
+    hours: 'Lun–Sam : 08h00 – 18h00',
+    color: '#D4AF37',
   },
   {
-    entity: 'SERMA BTP',
+    entity: 'SBS Industrie · Usine de Préfabrication',
+    address: 'Zone Franche Industrielle (ZFI) de Mbao, Route Nationale',
+    city: 'Mbao, Dakar (Pikine)',
+    phone: '+221 33 871 08 61',
+    email: 'industrie@sbsgroup.sn',
+    whatsapp: '+221 77 566 48 06',
+    hours: 'Lun–Sam : 07h30 – 18h00',
+    color: '#6B7A8F',
+  },
+  {
+    entity: 'SBS Logistik · Engins BTP & Levage',
+    address: 'Zone Franche Industrielle (ZFI) de Mbao, Route Nationale',
+    city: 'Mbao, Dakar (Pikine)',
+    phone: '+221 33 871 08 61',
+    email: 'logistik@sbsgroup.sn',
+    whatsapp: '+221 77 858 61 05',
+    hours: '24h/24 – 7j/7 sur astreinte chantiers',
+    color: '#D97706',
+  },
+  {
+    entity: 'SERMA BTP · Ateliers de Charpente Métallique',
     address: 'Zone Industrielle de Dakar, Km 14 Route de Rufisque',
     city: 'Dakar',
-    phone: '+221 33 832 40 10',
+    phone: '+221 33 871 08 61',
     email: 'contact@sermabtp.com',
     whatsapp: '+221 77 638 12 00',
     hours: 'Lun–Sam : 07h30 – 18h00',
     color: '#1B4965',
   },
   {
-    entity: 'SB-S Labo',
-    address: 'Cité Keur Gorgui, Dakar',
+    entity: 'SB-S Labo · Géotechnique & Essais Béton',
+    address: 'Cité Keur Gorgui, Immeuble R+5, Dakar',
     city: 'Dakar',
-    phone: '+221 33 832 40 10',
+    phone: '+221 33 871 08 61',
     email: 'labo@sbsgroup.sn',
     whatsapp: '+221 77 638 12 00',
-    hours: 'Lun–Ven : 08h00 – 17h00',
+    hours: 'Lun–Ven : 08h00 – 17h30',
     color: '#3A7D6F',
   },
 ];
@@ -350,17 +371,9 @@ export default function ContactPage() {
         </div>
       </div>
 
-      {/* Map placeholder */}
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <div className="bg-brand-900 border border-brand-800 rounded-2xl p-8 text-center">
-          <Building2 className="w-10 h-10 text-accent-400 mx-auto mb-3" />
-          <h3 className="text-white font-bold text-lg mb-2">Siège social — Dakar, Sénégal</h3>
-          <p className="text-slate-400 text-sm">Km 14, Boulevard du Centenaire de la Commune de Dakar — en face de la zone industrielle de Hann</p>
-          <a href="https://maps.google.com/?q=Km+14+Boulevard+du+Centenaire+Dakar+Senegal" target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-4 text-accent-400 hover:text-accent-300 text-sm font-semibold">
-            <MapPin className="w-4 h-4" /> Voir sur Google Maps
-          </a>
-        </div>
+      {/* Carte Interactive & Géolocalisation Certifiée */}
+      <div className="max-w-6xl mx-auto px-4 pb-16">
+        <InteractiveLocationMap />
       </div>
     </div>
   );

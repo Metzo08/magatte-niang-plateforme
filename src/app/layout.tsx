@@ -105,9 +105,10 @@ const jsonLdData = {
       },
       geo: {
         '@type': 'GeoCoordinates',
-        latitude: 14.7335,
-        longitude: -17.3325,
+        latitude: 14.7486088,
+        longitude: -17.3310687,
       },
+      hasMap: 'https://www.google.com/maps/place/SBS-GROUP/@14.7486088,-17.3310687,17z/data=!3m1!4b1!4m6!3m5!1s0xec10bbf4e072a31:0xfd8cb427cbcc2356!8m2!3d14.7486088!4d-17.3310687!16s%2Fg%2F11fqzg5jpj?hl=fr-SN',
       sameAs: [
         'https://www.facebook.com/profile.php?id=100063789422000',
         'https://www.linkedin.com/company/stein-bauer-senegal-group',
@@ -129,9 +130,10 @@ const jsonLdData = {
       },
       geo: {
         '@type': 'GeoCoordinates',
-        latitude: 14.7335,
-        longitude: -17.3325,
+        latitude: 14.7486088,
+        longitude: -17.3310687,
       },
+      hasMap: 'https://www.google.com/maps/place/SBS-GROUP/@14.7486088,-17.3310687,17z/data=!3m1!4b1!4m6!3m5!1s0xec10bbf4e072a31:0xfd8cb427cbcc2356!8m2!3d14.7486088!4d-17.3310687!16s%2Fg%2F11fqzg5jpj?hl=fr-SN',
       openingHoursSpecification: [
         {
           '@type': 'OpeningHoursSpecification',
@@ -157,9 +159,10 @@ const jsonLdData = {
       },
       geo: {
         '@type': 'GeoCoordinates',
-        latitude: 14.7335,
-        longitude: -17.3325,
+        latitude: 14.7486088,
+        longitude: -17.3310687,
       },
+      hasMap: 'https://www.google.com/maps/place/SBS-GROUP/@14.7486088,-17.3310687,17z/data=!3m1!4b1!4m6!3m5!1s0xec10bbf4e072a31:0xfd8cb427cbcc2356!8m2!3d14.7486088!4d-17.3310687!16s%2Fg%2F11fqzg5jpj?hl=fr-SN',
       url: 'https://www.magatteniang-expert.sn/entites/sbs-logistik',
     },
   ],

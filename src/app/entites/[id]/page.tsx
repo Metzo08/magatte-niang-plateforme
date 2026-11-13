@@ -26,6 +26,7 @@ import PhotoLightbox from '@/components/common/PhotoLightbox';
 import SbsPresentationGallery from '@/components/sbs/SbsPresentationGallery';
 import SbsLogistikGallery from '@/components/sbs/SbsLogistikGallery';
 import SbsIndustriesPublicCatalog from '@/components/sbs/SbsIndustriesPublicCatalog';
+import InteractiveLocationMap from '@/components/maps/InteractiveLocationMap';
 import { Layers, Truck } from 'lucide-react';
 
 // Photos officielles des entités — magatteniang-expert.sn
@@ -635,6 +636,11 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
           </div>
         </section>
       )}
+
+      {/* Géolocalisation & Carte Interactive du Site */}
+      <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <InteractiveLocationMap initialSiteId={entity.id} />
+      </section>
 
       {/* CTA Prise de contact */}
       <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-16">
