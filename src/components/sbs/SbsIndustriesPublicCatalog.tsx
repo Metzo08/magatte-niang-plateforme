@@ -111,12 +111,12 @@ const DIMENSION_GRIDS: SbsDimensionCard[] = [
     usage: 'Fondations, soubassements étanches & murs de clôture porteurs',
   },
   {
-    url: '/images/sbs-industries/agglos-pleins-palette-stock-mbao.jpg',
+    url: '/images/sbs-industries/sbs-mbao-agglos-pleins-texture.jpg',
     dim: '20×20×40 cm',
     title: 'Agglo plein 20×20×40',
     price: '850 F',
     family: 'Agglo plein',
-    caption: 'Brique pleine 20×20×40 — Soutènements & génie civil (Stock Usine SBS Mbao)',
+    caption: 'Brique pleine 20×20×40 — Haute compacité 31,7 kg (Stock Usine SBS Mbao)',
     usage: 'Ouvrages d\'art, massifs lourds & murs coupe-feu',
   },
   {
@@ -129,8 +129,8 @@ const DIMENSION_GRIDS: SbsDimensionCard[] = [
     usage: 'Dalles de compression et planchers à forte charge d\'exploitation',
   },
   {
-    url: '/images/sbs-industries/controle-calibrage-metre-50cm-mbao.jpg',
-    dim: 'Hourdis 12..25 cm',
+    url: '/images/sbs-industries/sbs-mbao-hourdis-50cm-mesure.jpg',
+    dim: '50 cm étalonné',
     title: 'Hourdis plancher 50 cm',
     price: '450 – 750 F',
     family: 'Hourdis',
@@ -172,6 +172,33 @@ const DIMENSION_GRIDS: SbsDimensionCard[] = [
     family: 'Béton BPE',
     caption: 'Coulage structural certifié laboratoire SB-S à la pompe haute pression',
     usage: 'Poteaux, poutres, radiers d\'ouvrages d\'art & génie civil lourd',
+  },
+  {
+    url: '/images/sbs-industries/sbs-mbao-agglos-creux-moulage.jpg',
+    dim: 'Ligne pondeuse',
+    title: 'Moulage continu agglos',
+    price: 'Direct usine',
+    family: 'Usine Mbao',
+    caption: 'Démoulage continu pondeuse automatique — Usine SBS Mbao',
+    usage: 'Cadence industrielle 3 500 unités/jour certifiées',
+  },
+  {
+    url: '/images/sbs-industries/sbs-mbao-agglos-creux-parc.jpg',
+    dim: 'Piste de cure',
+    title: 'Parc de séchage Mbao',
+    price: 'Norme BTP',
+    family: 'Usine Mbao',
+    caption: 'Cure contrôlée à l\'air libre sur plateforme stabilisée — Usine SBS Mbao',
+    usage: 'Résistance mécanique certifiée laboratoire',
+  },
+  {
+    url: '/images/sbs-industries/sbs-mbao-agglos-creux-stock-palettes.jpg',
+    dim: 'Stock expédition',
+    title: 'Palettes agglos Dakar',
+    price: 'Dispo immédiate',
+    family: 'Usine Mbao',
+    caption: 'Stock massif prêt pour livraison rapide chantiers Dakar & régions',
+    usage: 'Approvisionnement prioritaire et continu gros œuvre',
   },
 ];
 
@@ -342,14 +369,17 @@ export default function SbsIndustriesPublicCatalog({
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-brand-100">
               <span className="inline-flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-accent-400 shrink-0" />
-                {company.address}
+                <span>Zone franche industrielle de Mbao, Dakar, Sénégal</span>
               </span>
               <a
-                href={`tel:${company.phone.replace(/\s+/g, '')}`}
-                className="inline-flex items-center gap-2 font-mono font-bold text-white hover:text-accent-300"
+                href="https://wa.me/221775664806?text=Bonjour%20Salimata%20SOW%2C%20je%20souhaite%20commander%20des%20briques%20%2F%20mat%C3%A9riaux%20SBS%20Industrie."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-mono font-bold text-white hover:text-accent-300 bg-white/10 hover:bg-white/20 px-3 py-1 rounded-m border border-white/20 transition-colors"
+                title="Contacter Salimata SOW directement sur WhatsApp"
               >
-                <Phone className="w-4 h-4 text-accent-400 shrink-0" />
-                {company.phone}
+                <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span>Salimata SOW (Responsable) : +221 77 566 48 06</span>
               </a>
             </div>
           </div>
@@ -459,6 +489,124 @@ export default function SbsIndustriesPublicCatalog({
           ))}
         </div>
       </div>
+
+      {/* Galerie Usine de Production — Zone Franche Industrielle de Mbao (Dakar, Sénégal) */}
+      <div className="rounded-l border border-neutral-200 dark:border-brand-700 bg-white dark:bg-brand-850 p-6 sm:p-8 space-y-6 shadow-elev-1">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-neutral-200 dark:border-brand-700/80 pb-5">
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/30">
+                PHOTOS AUTHENTIQUES DE PRODUCTION
+              </span>
+              <span className="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30">
+                MBAO · DAKAR
+              </span>
+            </div>
+            <h3 className="text-xl sm:text-2xl font-title font-bold text-neutral-900 dark:text-white mt-1.5 flex items-center gap-2">
+              <Blocks className="w-6 h-6 text-accent-500" />
+              Usine SBS Industrie — Zone Franche Industrielle de Mbao
+            </h3>
+            <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-300 mt-1">
+              Responsable d'exploitation : <strong className="text-neutral-900 dark:text-white">Salimata SOW</strong> · Visites techniques &amp; commandes chantiers au <a href="https://wa.me/221775664806" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 font-bold hover:underline font-mono">+221 77 566 48 06</a>.
+            </p>
+          </div>
+          <a
+            href="https://wa.me/221775664806?text=Bonjour%20Salimata%20SOW%2C%20je%20souhaite%20commander%20des%20briques%20directement%20depuis%20l%27usine%20de%20Mbao."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-m bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-colors shrink-0 self-start md:self-auto"
+          >
+            <MessageSquare className="w-4 h-4" />
+            <span>Commander avec Salimata SOW</span>
+          </a>
+        </div>
+
+        {/* Grille des 5 clichǸs authentiques Mbao */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          {[
+            {
+              url: '/images/sbs-industries/sbs-mbao-agglos-creux-moulage.jpg',
+              title: 'Moulage continu agglos creux',
+              dim: '10×20×40 à 20×20×40',
+              caption: 'Démoulage continu sur planches et alignement immédiat à la sortie de la pondeuse automatique à l\'usine SBS de Mbao.',
+              badge: 'Pondeuse QT40-3A',
+            },
+            {
+              url: '/images/sbs-industries/sbs-mbao-agglos-pleins-texture.jpg',
+              title: 'Texture & compacité agglos pleins',
+              dim: '15×20×40 & 20×20×40',
+              caption: 'Agglos pleins haute compacité (masse volumique élevée, résistance forte charge) pour fondations et génie civil lourd.',
+              badge: 'Plein 31,7 kg',
+            },
+            {
+              url: '/images/sbs-industries/sbs-mbao-agglos-creux-parc.jpg',
+              title: 'Parc de séchage & cure à l\'air libre',
+              dim: 'Plateforme Mbao',
+              caption: 'Vue d\'ensemble de la piste de démoulage et du parc de séchage en plein air garantissant une cure optimale sous le soleil de Dakar.',
+              badge: 'Cure contrôlée',
+            },
+            {
+              url: '/images/sbs-industries/sbs-mbao-hourdis-50cm-mesure.jpg',
+              title: 'Contrôle métrologique ruban 50 cm',
+              dim: 'Hourdis 20×20×50 cm',
+              caption: 'Vérification métrologique au mètre ruban jaune étalonné : longueur exacte de 50 cm pour planchers nervurés sans jeu d\'assemblage.',
+              badge: '50 cm vérifiés',
+            },
+            {
+              url: '/images/sbs-industries/sbs-mbao-agglos-creux-stock-palettes.jpg',
+              title: 'Stock massif palettes d\'expédition',
+              dim: 'Dakar & Régions',
+              caption: 'Stockage vertical et palettes prêtes au chargement direct sur camions plateaux pour approvisionnement sans rupture des chantiers.',
+              badge: 'Expédition 24h-48h',
+            },
+          ].map((item, idx, arr) => (
+            <div
+              key={item.url}
+              className="group flex flex-col rounded-m border border-neutral-200 dark:border-brand-700 bg-neutral-50 dark:bg-brand-900/60 overflow-hidden hover:shadow-elev-2 hover:border-accent-500 transition-all"
+            >
+              <div
+                className="relative aspect-[4/3] bg-neutral-900 overflow-hidden cursor-zoom-in"
+                onClick={() =>
+                  onOpenLightbox?.(
+                    arr.map((p) => ({ url: p.url, caption: `${p.title} (${p.dim}) — ${p.caption}` })),
+                    idx,
+                    `Usine SBS Industrie Mbao : ${item.title}`
+                  )
+                }
+                title="Cliquer pour agrandir la photo de l'usine SBS Mbao"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={item.url}
+                  alt={item.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-brand-950/90 text-white font-mono text-[10px] font-bold shadow-sm">
+                  {item.badge}
+                </div>
+                <div className="absolute top-2 right-2 p-1 rounded-full bg-black/60 text-white opacity-80 group-hover:opacity-100 transition-opacity">
+                  <ZoomIn className="w-3 h-3" />
+                </div>
+              </div>
+              <div className="p-3 flex-1 flex flex-col justify-between">
+                <div>
+                  <span className="text-[10px] font-mono text-accent-600 dark:text-accent-400 font-bold block">
+                    {item.dim}
+                  </span>
+                  <h4 className="font-title font-bold text-xs text-neutral-900 dark:text-white mt-0.5 line-clamp-1">
+                    {item.title}
+                  </h4>
+                  <p className="text-[11px] text-neutral-600 dark:text-neutral-400 mt-1 line-clamp-2">
+                    {item.caption}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Filtres & Recherche Catalogue Interactif */}
       <div className="space-y-4">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -499,7 +647,7 @@ export default function SbsIndustriesPublicCatalog({
           {filteredProducts.map((p) => {
             const isAdded = addedCode === p.code;
             const waText = encodeURIComponent(
-              `Bonjour SBS Industrie, je souhaite commander / louer : ${p.name} (${p.dimensions}) — Réf ${p.code}.`
+              `Bonjour Salimata SOW (SBS Industrie), je souhaite commander / louer : ${p.name} (${p.dimensions}) — Réf ${p.code}.`
             );
             return (
               <div
