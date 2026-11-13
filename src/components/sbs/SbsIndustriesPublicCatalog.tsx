@@ -54,22 +54,88 @@ interface PublicCompanyInfo {
   deliveryZone: string;
 }
 
-const FLYERS = [
+export interface SbsDimensionCard {
+  url: string;
+  dim: string;
+  title: string;
+  price: string;
+  family: string;
+  caption: string;
+  usage: string;
+}
+
+const DIMENSION_GRIDS: SbsDimensionCard[] = [
   {
-    url: '/images/sbs-industries/flyer-agglos-creux.jpg',
-    caption: 'Agglos creux industriels haute résistance : 10×20×40 (380 F), 12×20×40 (400 F), 15×20×40 (475 F), 20×20×40 (590 F)',
+    url: '/images/sbs-industries/brique-creuse-10x20x40-teralta.png',
+    dim: '10×20×40 cm',
+    title: 'Agglo creux 10×20×40',
+    price: '380 F',
+    family: 'Agglo creux',
+    caption: 'Brique creuse 10×20×40 — Cloisons & murets légers',
+    usage: 'Cloisons intérieures & murets de clôture non porteurs',
   },
   {
-    url: '/images/sbs-industries/flyer-agglos-pleins.jpg',
-    caption: 'Agglos pleins industriels haute résistance : 15×20×40 (700 F) & 20×20×40 — Livraison partout à Dakar',
+    url: '/images/sbs-industries/brique-creuse-12x20x40-teralta.png',
+    dim: '12×20×40 cm',
+    title: 'Agglo creux 12×20×40',
+    price: '400 F',
+    family: 'Agglo creux',
+    caption: 'Brique creuse 12×20×40 — Murs de clôture calibrés',
+    usage: 'Clôtures, doublages et séparations acoustiques',
   },
   {
-    url: '/images/sbs-industries/flyer-hourdis.jpg',
-    caption: 'Hourdis haute résistance (dalle et plancher) : 12×20×50 (450 F), 16×20×50 (580 F), 20×20×50 (650 F), 25×20×50 (750 F)',
+    url: '/images/sbs-industries/brique-creuse-15x20x40-teralta.png',
+    dim: '15×20×40 cm',
+    title: 'Agglo creux 15×20×40',
+    price: '475 F',
+    family: 'Agglo creux',
+    caption: 'Brique creuse 15×20×40 — Murs extérieurs R+',
+    usage: 'Murs porteurs et façades de bâtiments R+1 / R+2',
+  },
+  {
+    url: '/images/sbs-industries/brique-creuse-20x20x40-teralta.png',
+    dim: '20×20×40 cm',
+    title: 'Agglo creux 20×20×40',
+    price: '590 F',
+    family: 'Agglo creux',
+    caption: 'Brique creuse 20×20×40 — Gros œuvre & soubassements',
+    usage: 'Murs porteurs forte charge, sous-sols & refends',
+  },
+  {
+    url: '/images/sbs-industries/brique-pleine-15x20x40-envain.png',
+    dim: '15×20×40 cm',
+    title: 'Agglo plein 15×20×40',
+    price: '700 F',
+    family: 'Agglo plein',
+    caption: 'Brique pleine 15×20×40 — Fondations & zones humides',
+    usage: 'Fondations, soubassements étanches & murs de clôture porteurs',
+  },
+  {
+    url: '/images/sbs-industries/agglos-pleins-palette-stock-mbao.jpg',
+    dim: '20×20×40 cm',
+    title: 'Agglo plein 20×20×40',
+    price: '850 F',
+    family: 'Agglo plein',
+    caption: 'Brique pleine 20×20×40 — Soutènements & génie civil',
+    usage: 'Ouvrages d\'art, massifs lourds & murs coupe-feu',
+  },
+  {
+    url: '/images/sbs-industries/hourdis-beton-50cm-alkern.jpg',
+    dim: '12..25×20×50 cm',
+    title: 'Hourdis plancher 12 à 25 cm',
+    price: '450 – 750 F',
+    family: 'Hourdis',
+    caption: 'Hourdis béton haute résistance — Dalles de compression 50 cm',
+    usage: 'Planchers nervurés hourdis 12, 16, 20 et 25×20×50 cm',
   },
   {
     url: '/images/sbs-industries/flyer-paves.jpg',
-    caption: "Pavés pour projets d'aménagement : 6 cm (6 750 F/m²), 8 cm (7 750 F/m²), 10 cm (9 000 F/m²)",
+    dim: '6, 8, 10 cm',
+    title: 'Pavés autobloquants',
+    price: '6 750 – 9 000 F/m²',
+    family: 'Pavés',
+    caption: 'Pavés d\'aménagement & voirie lourde — 6, 8 et 10 cm',
+    usage: 'Aménagements extérieurs, voiries urbaines & parkings poids lourds',
   },
 ];
 
@@ -272,51 +338,91 @@ export default function SbsIndustriesPublicCatalog({
         </div>
       </div>
 
-      {/* Plaquettes / Flyers Officiels SBS Industrie */}
+      {/* Grilles tarifaires officielles en images & Vraies photos de briques par dimension */}
       <div>
-        <div className="flex items-center justify-between gap-4 mb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
           <div>
             <h3 className="text-xl font-title font-bold text-neutral-900 dark:text-white flex items-center gap-2">
               <Layers className="w-5 h-5 text-accent-500" />
-              Grilles tarifaires officielles en images
+              Grilles tarifaires officielles en images &amp; vraies briques par dimension
             </h3>
-            <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-0.5">
-              Cliquez sur une plaquette pour l&apos;afficher en plein écran.
+            <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-1">
+              Photographies réelles des briques avec cotes précises (longueur × largeur × hauteur), alvéoles calibrées, tarifs officiels et applications chantier.
             </p>
           </div>
+          <span className="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-bold bg-emerald-50 dark:bg-emerald-950/40 px-3 py-1 rounded-full border border-emerald-500/30 self-start sm:self-auto">
+            Dimensions certifiées usine
+          </span>
         </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {FLYERS.map((flyer, idx) => (
-            <button
-              key={flyer.url}
-              type="button"
-              onClick={() =>
-                onOpenLightbox?.(FLYERS, idx, 'Plaquettes tarifaires officielles SBS Industrie')
-              }
-              className="group relative text-left overflow-hidden rounded-l border border-neutral-200 dark:border-brand-700 bg-neutral-900 shadow-elev-1 hover:shadow-elev-2 transition-all"
+          {DIMENSION_GRIDS.map((card, idx) => (
+            <div
+              key={card.url + card.dim}
+              className="group relative flex flex-col rounded-l border border-neutral-200 dark:border-brand-700 bg-white dark:bg-brand-800 shadow-elev-1 hover:shadow-elev-3 hover:border-accent-500 transition-all overflow-hidden"
             >
-              <div className="aspect-[16/9] overflow-hidden">
+              {/* Image réelle de la brique */}
+              <button
+                type="button"
+                onClick={() =>
+                  onOpenLightbox?.(
+                    DIMENSION_GRIDS.map((c) => ({ url: c.url, caption: `${c.title} (${c.dim}) — ${c.price} : ${c.usage}` })),
+                    idx,
+                    `Brique réelle SBS Industrie ${card.dim}`
+                  )
+                }
+                className="relative aspect-[16/11] w-full bg-neutral-900 overflow-hidden text-left cursor-zoom-in"
+                title="Cliquer pour afficher la photo haute résolution"
+              >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={flyer.url}
-                  alt={flyer.caption}
+                  src={card.url}
+                  alt={card.title}
                   loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300"
                 />
+                {/* Badge Dimension en incrustation */}
+                <div className="absolute top-2 left-2 px-2.5 py-1 rounded bg-brand-900/90 text-white font-mono font-bold text-xs shadow-sm border border-white/20">
+                  {card.dim}
+                </div>
+                {/* Badge Zoom */}
+                <div className="absolute top-2 right-2 p-1.5 rounded-full bg-black/60 text-white opacity-80 group-hover:opacity-100 transition-opacity">
+                  <ZoomIn className="w-3.5 h-3.5" />
+                </div>
+              </button>
+
+              {/* Détails techniques & tarifaires */}
+              <div className="p-3.5 flex-1 flex flex-col justify-between space-y-2.5">
+                <div>
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-accent-600 dark:text-accent-400 font-bold">
+                      {card.family}
+                    </span>
+                    <span className="text-sm font-mono font-bold text-emerald-600 dark:text-emerald-400 tabular-nums">
+                      {card.price}
+                    </span>
+                  </div>
+                  <h4 className="font-title font-bold text-neutral-900 dark:text-white text-sm mt-0.5">
+                    {card.title}
+                  </h4>
+                  <p className="text-[11px] text-neutral-600 dark:text-neutral-300 mt-1 line-clamp-2">
+                    {card.usage}
+                  </p>
+                </div>
+
+                <div className="pt-2 border-t border-neutral-100 dark:border-brand-700/80 flex items-center justify-between text-[11px]">
+                  <span className="text-neutral-500 dark:text-neutral-400 font-mono text-[10px]">
+                    Cote : {card.dim}
+                  </span>
+                  <span className="text-accent-600 dark:text-accent-400 font-semibold group-hover:underline inline-flex items-center gap-1">
+                    Voir détails
+                  </span>
+                </div>
               </div>
-              <div className="absolute top-2 right-2 p-1.5 rounded-full bg-black/60 text-white opacity-80 group-hover:opacity-100">
-                <ZoomIn className="w-3.5 h-3.5" />
-              </div>
-              <div className="p-2.5 bg-white dark:bg-brand-800 border-t border-neutral-200 dark:border-brand-700">
-                <p className="text-[11px] font-medium text-neutral-700 dark:text-neutral-200 line-clamp-2">
-                  {flyer.caption}
-                </p>
-              </div>
-            </button>
+            </div>
           ))}
         </div>
       </div>
-
       {/* Filtres & Recherche Catalogue Interactif */}
       <div className="space-y-4">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
