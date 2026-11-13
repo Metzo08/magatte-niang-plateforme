@@ -116,26 +116,62 @@ const DIMENSION_GRIDS: SbsDimensionCard[] = [
     title: 'Agglo plein 20×20×40',
     price: '850 F',
     family: 'Agglo plein',
-    caption: 'Brique pleine 20×20×40 — Soutènements & génie civil',
+    caption: 'Brique pleine 20×20×40 — Soutènements & génie civil (Stock Usine SBS Mbao)',
     usage: 'Ouvrages d\'art, massifs lourds & murs coupe-feu',
   },
   {
-    url: '/images/sbs-industries/hourdis-beton-50cm-alkern.jpg',
-    dim: '12..25×20×50 cm',
-    title: 'Hourdis plancher 12 à 25 cm',
+    url: '/images/sbs-industries/hourdis-20x20x50-reel.png',
+    dim: '20×20×50 cm',
+    title: 'Hourdis 20 (20×20×50)',
+    price: '650 F',
+    family: 'Hourdis',
+    caption: 'Hourdis béton alvéolaire 20×20×50 cm — Grande portée dalles et planchers',
+    usage: 'Dalles de compression et planchers à forte charge d\'exploitation',
+  },
+  {
+    url: '/images/sbs-industries/controle-calibrage-metre-50cm-mbao.jpg',
+    dim: 'Hourdis 12..25 cm',
+    title: 'Hourdis plancher 50 cm',
     price: '450 – 750 F',
     family: 'Hourdis',
-    caption: 'Hourdis béton haute résistance — Dalles de compression 50 cm',
+    caption: 'Contrôle métrologique ruban étalonné 50 cm — Usine SBS Mbao',
     usage: 'Planchers nervurés hourdis 12, 16, 20 et 25×20×50 cm',
   },
   {
     url: '/images/sbs-industries/pave-h-autobloquant-6cm-8cm.png',
-    dim: '6, 8, 10 cm',
+    dim: 'Ép. 6 & 8 cm',
     title: 'Pavés autobloquants',
-    price: '6 750 – 9 000 F/m²',
+    price: '6 750 – 7 750 F/m²',
     family: 'Pavés',
-    caption: 'Pavés d\'aménagement & voirie lourde — 6, 8 et 10 cm',
-    usage: 'Aménagements extérieurs, voiries urbaines & parkings poids lourds',
+    caption: 'Pavés profil H autobloquants — Aménagements & voiries urbaines',
+    usage: 'Esplanades, cours, allées piétonnes et parkings légers',
+  },
+  {
+    url: '/images/sbs-industries/pave-double-t-10cm-contern.jpg',
+    dim: 'Épaisseur 10 cm',
+    title: 'Pavés charges lourdes 10 cm',
+    price: '9 000 F/m²',
+    family: 'Pavés',
+    caption: 'Pavés industriels haute densité 10 cm — Profil H Double-T ultra résistant',
+    usage: 'Zones portuaires, stations-service & parkings logistiques poids lourds',
+  },
+  {
+    url: '/images/sbs-logistik/logistik-equip-070.jpg',
+    dim: 'Centrale 60 m³/h',
+    title: 'BPE C15 & C20 (Centrale)',
+    price: '62 000 – 68 000 F/m³',
+    family: 'Béton BPE',
+    caption: 'Centrale TeknoMac 60 m³/h et silos de stockage d\'adjuvants SBS Mbao',
+    usage: 'Bétons de propreté et bétons de structure dallages / chaînages',
+  },
+  {
+    url: '/images/reelles/coulage-beton-pompe-chantier.jpg',
+    dim: 'C25 & C30 Haute Perf.',
+    title: 'BPE C25 & C30 (Pompage)',
+    price: '71 000 – 77 000 F/m³',
+    family: 'Béton BPE',
+    caption: 'Coulage structural certifié laboratoire SB-S à la pompe haute pression',
+    usage: 'Poteaux, poutres, radiers d\'ouvrages d\'art & génie civil lourd',
   },
 ];
 
@@ -470,23 +506,41 @@ export default function SbsIndustriesPublicCatalog({
                 key={p.id}
                 className="flex flex-col bg-white dark:bg-brand-800 border border-neutral-200 dark:border-brand-700 rounded-l overflow-hidden shadow-elev-1 hover:shadow-elev-2 transition-shadow"
               >
-                <div className="relative aspect-[16/10] bg-neutral-100 dark:bg-brand-900 overflow-hidden">
+                <div
+                  className="relative aspect-[16/10] bg-neutral-100 dark:bg-brand-900 overflow-hidden cursor-zoom-in group/img"
+                  onClick={() =>
+                    onOpenLightbox?.(
+                      [
+                        {
+                          url: p.imageUrl || '/images/sbs-industries/flyer-agglos-pleins.jpg',
+                          caption: `${p.name} (${p.dimensions}) — ${p.sellingPriceFCFA ? fmtFCFA(p.sellingPriceFCFA) + '/' + p.unit : 'Sur devis'} : ${p.description || ''}`,
+                        },
+                      ],
+                      0,
+                      `${p.name} (${p.dimensions})`
+                    )
+                  }
+                  title="Cliquer pour afficher la photo haute résolution"
+                >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={p.imageUrl || '/images/sbs-industries/flyer-agglos-pleins.jpg'}
                     alt={p.name}
                     loading="lazy"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute top-2 left-2 flex items-center gap-1.5">
-                    <span className="px-2 py-0.5 rounded bg-brand-900/90 text-white text-[10px] font-mono font-bold">
+                  <div className="absolute top-2 left-2 flex items-center gap-1.5 pointer-events-none">
+                    <span className="px-2 py-0.5 rounded bg-brand-900/90 text-white text-[10px] font-mono font-bold shadow-sm">
                       {p.code}
                     </span>
                     {p.isRental && (
-                      <span className="px-2 py-0.5 rounded bg-amber-500 text-brand-950 text-[10px] font-bold inline-flex items-center gap-1">
+                      <span className="px-2 py-0.5 rounded bg-amber-500 text-brand-950 text-[10px] font-bold inline-flex items-center gap-1 shadow-sm">
                         <Wrench className="w-3 h-3" /> Location
                       </span>
                     )}
+                  </div>
+                  <div className="absolute bottom-2 right-2 p-1.5 rounded-full bg-black/60 text-white opacity-0 group-hover/img:opacity-100 transition-opacity pointer-events-none">
+                    <ZoomIn className="w-3.5 h-3.5" />
                   </div>
                   <span
                     className={`absolute top-2 right-2 px-2 py-0.5 rounded text-[10px] font-bold ${
