@@ -129,7 +129,7 @@ const DIMENSION_GRIDS: SbsDimensionCard[] = [
     usage: 'Planchers nervurés hourdis 12, 16, 20 et 25×20×50 cm',
   },
   {
-    url: '/images/sbs-industries/flyer-paves.jpg',
+    url: '/images/sbs-industries/pave-h-autobloquant-6cm-8cm.png',
     dim: '6, 8, 10 cm',
     title: 'Pavés autobloquants',
     price: '6 750 – 9 000 F/m²',
