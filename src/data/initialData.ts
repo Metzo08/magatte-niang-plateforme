@@ -194,7 +194,7 @@ export const ENTITIES: EntityInfo[] = [
     colorHex: '#E0A800',
     accentClass: 'bg-[#E0A800]',
     mission: 'Assurer la gestion, la maintenance et l\'optimisation du parc d\'engins et d\'équipements, garantissant disponibilité et efficacité sur tous les chantiers.',
-    description: 'SB-S Logistik assure la gestion et la maintenance du parc matériel, la location d\'engins avec ou sans opérateur, le support logistique multi-sites ainsi que le transport et l\'approvisionnement des chantiers.',
+    description: 'SB-S Logistik assure la gestion et la maintenance du parc matériel, la location d\'engins avec ou sans opérateur, le support logistique multi-sites ainsi que le transport et l\'approvisionnement des chantiers. Commandes et réservations directes auprès de Rokhaya KANE via WhatsApp au +221 77 858 61 05.',
     leader: 'Maguette Niang',
     leaderRole: 'Directeur général',
     address: 'Zone Franche Industrielle de Mbao',

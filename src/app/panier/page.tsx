@@ -18,6 +18,7 @@ import {
   Calendar,
   MapPin,
   Lock,
+  MessageCircle,
 } from 'lucide-react';
 import { store, CartEntityId, CartItem } from '@/lib/store';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
@@ -405,6 +406,33 @@ function PanierIsolateContent() {
               </strong>
             </div>
           </div>
+
+          {submittedResult.entityLabel === 'SB-S Logistik' && (
+            <div className="bg-amber-50 dark:bg-brand-900 border border-amber-300 dark:border-amber-700/50 rounded-l p-4 text-left space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-amber-800 dark:text-amber-300 flex items-center gap-1.5">
+                  <Truck className="w-4 h-4 text-amber-600" /> Suivi direct avec la responsable SB-S Logistik
+                </span>
+                <span className="text-[11px] font-mono font-bold text-neutral-600 dark:text-neutral-400">
+                  Rokhaya KANE
+                </span>
+              </div>
+              <p className="text-xs text-neutral-600 dark:text-neutral-300">
+                Pour valider immédiatement la disponibilité d&apos;un engin ou planifier l&apos;acheminement sur chantier, vous pouvez contacter directement Rokhaya KANE sur WhatsApp.
+              </p>
+              <a
+                href={`https://wa.me/221778586105?text=${encodeURIComponent(
+                  `Bonjour Rokhaya KANE, je viens d'enregistrer la demande Logistik N° ${submittedResult.refNumber} (${submittedResult.itemsCount} équipement(s)). Pouvez-vous me confirmer la disponibilité ?`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-m bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-sm transition-colors"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>Confirmer sur WhatsApp avec Rokhaya KANE (+221 77 858 61 05)</span>
+              </a>
+            </div>
+          )}
 
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
@@ -889,6 +917,45 @@ function PanierIsolateContent() {
                   </span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
+
+                {isLogistik && (
+                  <div className="pt-2">
+                    <div className="relative flex py-1 items-center">
+                      <div className="flex-grow border-t border-neutral-200 dark:border-brand-700"></div>
+                      <span className="flex-shrink mx-2 text-[10px] uppercase font-mono text-neutral-400">
+                        ou commande directe
+                      </span>
+                      <div className="flex-grow border-t border-neutral-200 dark:border-brand-700"></div>
+                    </div>
+
+                    <a
+                      href={`https://wa.me/221778586105?text=${encodeURIComponent(
+                        `Bonjour Rokhaya KANE, je souhaite commander / réserver ces matériels chez SBS Logistik :\n\n${cart
+                          .map(
+                            (item, idx) =>
+                              `${idx + 1}. ${item.product.name} — Qté : ${item.quantity}, Durée : ${item.days || 1} j${
+                                item.product.indicativePriceFCFA
+                                  ? ` (${item.product.indicativePriceFCFA.toLocaleString('fr-FR')} F/j)`
+                                  : ''
+                              }`
+                          )
+                          .join('\n')}\n\nClient : ${clientData.name || 'Client'}${
+                          clientData.company ? ` (${clientData.company})` : ''
+                        }\nTéléphone : ${clientData.phone || ''}\nLieu de livraison / Chantier : ${
+                          clientData.deliveryLocation || 'Dakar'
+                        }\nDate souhaitée : ${clientData.startDate || 'Dès que possible'}${
+                          clientData.notes ? `\nPrécisions : ${clientData.notes}` : ''
+                        }`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-m text-sm shadow-sm transition-colors flex items-center justify-center gap-2 mt-1"
+                    >
+                      <MessageCircle className="w-4 h-4" />
+                      <span>Commander via WhatsApp avec Rokhaya KANE (+221 77 858 61 05)</span>
+                    </a>
+                  </div>
+                )}
               </form>
             </div>
           </div>

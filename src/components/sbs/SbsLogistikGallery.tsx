@@ -18,6 +18,7 @@ import {
   Clock,
   Tag,
   Plus,
+  MessageCircle,
 } from 'lucide-react';
 import {
   SBS_LOGISTIK_ITEMS,
@@ -304,7 +305,7 @@ export function SbsLogistikGallery() {
     <div className="space-y-6">
       {/* BANDEAU GESTIONNAIRE & PANIER LOGISTIK STRICTEMENT ISOLÉ */}
       <div className="bg-gradient-to-r from-brand-900 via-brand-900 to-amber-950 text-white rounded-l p-4 sm:p-5 border border-amber-500/30 shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-        <div className="space-y-1">
+        <div className="space-y-1.5">
           <div className="flex flex-wrap items-center gap-2 text-[11px] font-mono text-amber-300">
             <span className="px-2 py-0.5 rounded bg-amber-500/20 border border-amber-400/30 font-bold">
               PARC EN DIRECT · {stats.total} ÉQUIPEMENTS
@@ -317,9 +318,34 @@ export function SbsLogistikGallery() {
             Disponibilités, marques et tarifs synchronisés depuis l&apos;espace d&apos;exploitation
             SB-S Logistik. Votre panier Logistik est totalement indépendant de P2M et SB-S Industrie.
           </p>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-amber-200 pt-1 font-medium">
+            <span>Commandes &amp; réservations matériels : <strong>Rokhaya KANE</strong></span>
+            <span>·</span>
+            <a
+              href="https://wa.me/221778586105?text=Bonjour%20Rokhaya%20KANE%2C%20je%20souhaite%20commander%20%2F%20r%C3%A9server%20du%20mat%C3%A9riel%20chez%20SBS%20Logistik."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-emerald-300 hover:text-emerald-200 font-bold underline"
+              title="Discuter directement sur WhatsApp avec Rokhaya KANE"
+            >
+              <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
+              WhatsApp : +221 77 858 61 05
+            </a>
+          </div>
         </div>
 
         <div className="flex flex-wrap items-center gap-2.5 shrink-0">
+          <a
+            href="https://wa.me/221778586105?text=Bonjour%20Rokhaya%20KANE%2C%20je%20souhaite%20commander%20%2F%20r%C3%A9server%20du%20mat%C3%A9riel%20chez%20SBS%20Logistik."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-m bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-sm transition-colors"
+            title="Commander directement via WhatsApp avec Rokhaya KANE"
+          >
+            <MessageCircle className="w-4 h-4" />
+            <span>WhatsApp Rokhaya KANE</span>
+          </a>
+
           <Link
             href="/panier?entite=sbs-logistik"
             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-m bg-amber-500 hover:bg-amber-400 text-neutral-950 font-bold text-xs shadow-sm transition-colors"
@@ -579,7 +605,7 @@ export function SbsLogistikGallery() {
                           className="flex items-center gap-1.5"
                           onClick={(e) => e.stopPropagation()}
                         >
-                          <div className="flex items-center border border-neutral-200 dark:border-brand-700 rounded bg-neutral-50 dark:bg-brand-900 px-1.5 py-1">
+                          <div className="flex items-center border border-neutral-200 dark:border-brand-700 rounded bg-neutral-50 dark:bg-brand-900 px-1 py-1">
                             <input
                               type="number"
                               min={1}
@@ -592,32 +618,46 @@ export function SbsLogistikGallery() {
                                 }))
                               }
                               aria-label="Durée en jours"
-                              className="w-10 text-center bg-transparent text-[11px] font-mono font-bold text-neutral-900 dark:text-white focus:outline-none"
+                              className="w-8 text-center bg-transparent text-[11px] font-mono font-bold text-neutral-900 dark:text-white focus:outline-none"
                             />
-                            <span className="text-[10px] text-neutral-500">j</span>
+                            <span className="text-[10px] text-neutral-500 pr-1">j</span>
                           </div>
 
                           <button
                             type="button"
                             onClick={(e) => handleAddToLogistikCart(item, e)}
-                            className={`flex-1 py-1.5 px-2.5 rounded text-xs font-bold flex items-center justify-center gap-1.5 transition-colors ${
+                            className={`flex-1 py-1.5 px-2 rounded text-xs font-bold flex items-center justify-center gap-1 transition-colors ${
                               isAdded
                                 ? 'bg-emerald-600 text-white'
                                 : 'bg-brand-900 hover:bg-amber-600 dark:bg-brand-700 dark:hover:bg-amber-600 text-white'
                             }`}
+                            title="Ajouter au panier de devis Logistik"
                           >
                             {isAdded ? (
                               <>
                                 <Check className="w-3.5 h-3.5" />
-                                <span>Ajouté Logistik</span>
+                                <span>Ajouté</span>
                               </>
                             ) : (
                               <>
                                 <Plus className="w-3.5 h-3.5" />
-                                <span>Panier Logistik</span>
+                                <span>Panier</span>
                               </>
                             )}
                           </button>
+
+                          <a
+                            href={`https://wa.me/221778586105?text=${encodeURIComponent(
+                              `Bonjour Rokhaya KANE, je souhaite commander / louer chez SBS Logistik :\n- Matériel : ${item.title}\n- Marque/Réf : ${item.brand} (${item.code || item.id})\n- Catégorie : ${item.category}\n- Durée : ${days} jour(s)\n- Tarif indicatif : ${item.isPriceVisible && item.dailyRateFCFA > 0 ? (item.dailyRateFCFA * days).toLocaleString('fr-FR') + ' F CFA' : 'Sur devis'}\n\nPouvez-vous me confirmer la disponibilité sur chantier ?`
+                            )}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="py-1.5 px-2.5 rounded text-xs font-bold flex items-center justify-center gap-1 bg-emerald-600 hover:bg-emerald-500 text-white transition-colors shadow-sm"
+                            title="Commander directement via WhatsApp avec Rokhaya KANE (+221 77 858 61 05)"
+                          >
+                            <MessageCircle className="w-3.5 h-3.5" />
+                            <span>WhatsApp</span>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -742,7 +782,19 @@ export function SbsLogistikGallery() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-2 shrink-0">
+              <div className="flex flex-wrap items-center gap-2 shrink-0">
+                <a
+                  href={`https://wa.me/221778586105?text=${encodeURIComponent(
+                    `Bonjour Rokhaya KANE, je souhaite commander / louer ce matériel chez SBS Logistik :\n- Matériel : ${activePhoto.title}\n- Code/Réf : ${activePhoto.code}\n- Marque : ${activePhoto.brand}\n- Catégorie : ${activePhoto.category}\n- Planche : ${activePhoto.pageNumber}\n- Spécifications : ${activePhoto.specs}\n\nPouvez-vous me confirmer les disponibilités et modalités de commande ?`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1.5 rounded bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center gap-1.5 shadow-sm transition-colors"
+                  title="Commander directement via WhatsApp avec Rokhaya KANE"
+                >
+                  <MessageCircle className="w-3.5 h-3.5" />
+                  <span>Commander via WhatsApp</span>
+                </a>
                 <button
                   type="button"
                   onClick={() => handleAddToLogistikCart(activePhoto)}

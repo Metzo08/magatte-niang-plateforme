@@ -85,7 +85,7 @@ Je suis à votre entière disposition pour vous guider et chiffrer vos besoins s
 • **Charpente Métallique (SERMA BTP)** : usinage de 4 500 T/an d'acier, découpe plasma 3D, hangars grande portée > 42m sans poteau intermédiaire.
 • **Géotechnique & Essais Sols (SB-S Labo)** : plus de 12 800 essais certifiés/an (CBR 4j immersion, Proctor, écrasement béton 3 000 kN, pénétromètre dynamique).
 • **Centrale à Béton & Agglos (SB-S Industries)** : BPE formulé (250 m³/j), agglos creux 10×20×40 à 300 FCFA HT / pièce, hourdis et bordures.
-• **Flotte Lourde & Grues (SB-S Logistik)** : grues mobiles 50T (500 000 F/j), camions-grues 6T (100 000 F/j), tractopelles (120 000 F/j) — contact direct : 77 858 61 05.
+• **Flotte Lourde & Grues (SB-S Logistik)** : grues mobiles 50T (500 000 F/j), camions-grues 6T (100 000 F/j), tractopelles (120 000 F/j) — contact direct & WhatsApp : Rokhaya KANE (+221 77 858 61 05).
 • **Sourcing International & Fret (PGT)** : approvisionnement direct usine sans intermédiaire, fret maritime conteneurisé et transit au Port de Dakar.
 • **Réalisations au Sénégal** : Sendou, usine DLM Mako, SOCOCIM, SECAA, résidences Almadies, villas Saly et Fann.
 
@@ -298,7 +298,7 @@ Livraison rapide sur chantier à Dakar, Diamniadio, Thiès, Saly et partout au S
     ],
     title: 'SB-S Logistik — Location d\'Engins & Flotte Lourde',
     answer: `SB-S Logistik gère un parc de 82 engins lourds et camions récents disponibles à la location avec opérateurs qualifiés et maintenance 24/7 sur site.
-📞 **Contact officiel direct : +221 77 858 61 05**
+📞 **Contact officiel direct & WhatsApp : Rokhaya KANE (+221 77 858 61 05)**
 
 **Grille tarifaire officielle (flyer SB-S Logistik) :**
 • **Camion-grue 6 tonnes : 100 000 FCFA / jour** (transport, livraison et pose de matériaux lourds)
@@ -382,7 +382,7 @@ Livraison rapide sur chantier à Dakar, Diamniadio, Thiès, Saly et partout au S
   - 📍 Adresse : Mbao Ville Neuve, Villa S04, Dakar (ouvert du lundi au samedi de 8h à 19h)
   - ✉️ Email : \`p2m.senegal@gmail.com\`
 • **SB-S Logistik (Engins & Transport lourd) :**
-  - 📞 Contact direct : **+221 77 858 61 05**
+  - 📞 Contact direct & WhatsApp : **Rokhaya KANE (+221 77 858 61 05)**
 • **Direction générale & Siège :**
   - ✉️ Email : \`contact@magatteniang-expert.sn\`
 
@@ -489,7 +489,7 @@ Voici nos principaux pôles d'activité :
 2. **Charpente Métallique SERMA BTP** : Usinage acier 4 500 T/an, hangars industriels, portées libres > 42m sans poteau intermédiaire.
 3. **Laboratoire SB-S Labo** : Essais de sol CBR 4j immersion, Proctor, écrasement béton 3 000 kN, pénétromètre dynamique.
 4. **Béton, Agglos & Locations SB-S Industries** : Zone franche industrielle de Mbao (Dakar) — Responsable : Salimata SOW — Tél 77 566 48 06 — Agglos creux (380–590 F), Agglos pleins 15×20×40 (700 F) & 20×20×40 (850 F), Hourdis (450–750 F), Pavés (6 750–9 000 F/m²), BPE & Locations.
-5. **Location d'Engins SB-S Logistik** : Grues 50T (500 000 F/j), camions-grues 6T (100 000 F/j), tractopelles (120 000 F/j) — contact direct : 77 858 61 05.
+5. **Location d'Engins SB-S Logistik** : Grues 50T (500 000 F/j), camions-grues 6T (100 000 F/j), tractopelles (120 000 F/j) — contact direct & WhatsApp : Rokhaya KANE (+221 77 858 61 05).
 6. **Chiffrage & Devis** : Réponse sous 24h–48h ouvrées ou appel direct à nos ingénieurs au +221 33 832 40 10.
 
 Sur quel sujet précis souhaitez-vous des précisions pour votre chantier ?`,

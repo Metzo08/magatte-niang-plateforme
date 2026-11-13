@@ -160,11 +160,26 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
                     href={`https://wa.me/${(entity.whatsapp || entity.phone || '').replace(/[\s\+]/g, '')}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:underline text-white"
+                    className="hover:underline text-white font-semibold"
                   >
-                    WhatsApp
+                    WhatsApp direct
                   </a>
                 </div>
+
+                {id === 'sbs-logistik' && (
+                  <div className="pt-2 border-t border-white/10 text-xs text-amber-200">
+                    <p className="font-semibold text-white">Rokhaya KANE</p>
+                    <p className="text-[11px] text-white/80">Responsable commandes &amp; matériels</p>
+                    <a
+                      href="https://wa.me/221778586105?text=Bonjour%20Rokhaya%20KANE%2C%20je%20souhaite%20commander%20%2F%20louer%20un%20mat%C3%A9riel%20chez%20SBS%20Logistik."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 mt-1 font-bold text-emerald-300 hover:text-emerald-200 underline"
+                    >
+                      WhatsApp : +221 77 858 61 05
+                    </a>
+                  </div>
+                )}
 
                 <div className="flex items-center gap-3">
                   <Mail className="w-4 h-4 shrink-0 text-white/80" />
