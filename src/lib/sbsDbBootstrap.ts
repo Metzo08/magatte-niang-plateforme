@@ -85,16 +85,21 @@ async function runEnsureSbsSeeded(): Promise<void> {
 
   if (existingCodes.size === 0 || deleteCount === 0) {
     for (const item of DEFAULT_SBS_PRODUCTS) {
-      if (!existingCodes.has(item.code)) {
-        await prisma.sbsProduct.upsert({
-          where: { code: item.code },
-          create: {
-            ...item,
-            family: item.family,
-          },
-          update: {},
-        });
-      }
+      await prisma.sbsProduct.upsert({
+        where: { code: item.code },
+        create: {
+          ...item,
+          family: item.family,
+        },
+        update: {
+          imageUrl: item.imageUrl,
+          dimensions: item.dimensions,
+          name: item.name,
+          description: item.description,
+          sellingPriceFCFA: item.sellingPriceFCFA,
+          priceMaxFCFA: item.priceMaxFCFA,
+        },
+      });
     }
   } else {
     // S'assurer que AP15 et AP20 existent toujours sauf suppression volontaire explicite
