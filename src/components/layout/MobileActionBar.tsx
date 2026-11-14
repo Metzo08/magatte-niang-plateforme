@@ -45,7 +45,7 @@ export const MobileActionBar: React.FC = () => {
 
         {/* ACTION: WHATSAPP */}
         <a
-          href="https://wa.me/221776381200?text=Bonjour%20Magatte%20Niang%20Expert,%20je%20souhaite%20un%20renseignement%20sur%20un%20projet%20BTP"
+          href="https://wa.me/221772671617?text=Bonjour%20Magatte%20Niang%20Expert,%20je%20souhaite%20un%20renseignement%20sur%20un%20projet%20BTP"
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center justify-center py-1 px-2 text-emerald-700 dark:text-emerald-400 active:scale-95 transition-transform touch-target"

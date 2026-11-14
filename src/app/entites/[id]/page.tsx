@@ -223,11 +223,37 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
                   </div>
                 )}
 
-                <div className="flex items-center gap-3">
-                  <Mail className="w-4 h-4 shrink-0 text-white/80" />
-                  <a href={`mailto:${entity.email}`} className="hover:underline text-white break-all">
-                    {entity.email}
-                  </a>
+                {id === 'pgt' && (
+                  <div className="pt-2 border-t border-white/10 text-xs text-amber-200">
+                    <p className="font-semibold text-white">PGT DUBAI - AJMAN</p>
+                    <a
+                      href="https://wa.me/971527631629"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 mt-1 font-bold text-emerald-300 hover:text-emerald-200 underline"
+                    >
+                      +971 52 763 1629
+                    </a>
+                  </div>
+                )}
+
+                <div className="flex items-start gap-3">
+                  <Mail className="w-4 h-4 shrink-0 text-white/80 mt-0.5" />
+                  {id === 'serma-btp' ? (
+                    <div className="text-white space-y-1">
+                      <span className="text-xs text-white/80 block">Contact :</span>
+                      <a href="mailto:serma@sermabtp.com" className="hover:underline text-white font-semibold block break-all">
+                        serma@sermabtp.com
+                      </a>
+                      <a href="mailto:sermabtp@gmail.com" className="hover:underline text-white font-semibold block break-all">
+                        sermabtp@gmail.com
+                      </a>
+                    </div>
+                  ) : (
+                    <a href={`mailto:${entity.email}`} className="hover:underline text-white break-all">
+                      {entity.email}
+                    </a>
+                  )}
                 </div>
 
                 <div className="flex items-start gap-3">
@@ -253,12 +279,112 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
         </div>
       </section>
 
-      {/* Galerie photo standard pour les autres entités */}
+      {/* Galerie photo et vidéo dédiée (avec focus Modélisation & 8 spécialités pour SERMA BTP) */}
       {id !== 'sbs-group' && id !== 'sbs-logistik' && gallery.length > 0 && (
         <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-12 border-b border-neutral-200 dark:border-brand-700">
-          <h2 className="text-2xl font-title font-bold text-neutral-900 dark:text-white mb-6">
-            Galerie {entity.name}
+          <h2 className="text-2xl font-title font-bold text-neutral-900 dark:text-white mb-2">
+            {id === 'serma-btp' ? 'Galerie SERMA' : `Galerie ${entity.name}`}
           </h2>
+
+          {id === 'serma-btp' && (
+            <div className="mb-8 space-y-8">
+              <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-3xl">
+                SERMA BTP réalise les études techniques, les simulations numériques et la modélisation 3D sur ses logiciels d&apos;ingénierie avant de transmettre les dossiers d&apos;exécution à SB-S Group.
+              </p>
+
+              {/* Les 8 spécialités exactes de la Galerie SERMA */}
+              <div>
+                <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-accent-500 mb-3">
+                  Les 8 domaines de la Galerie SERMA :
+                </h3>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  {[
+                    'Modélisation',
+                    'Pylône',
+                    'Station service',
+                    'Charpente métallique',
+                    'Bâtiment et immeuble IGH',
+                    'Maîtrise d\'œuvre - AMO - Supervision',
+                    'Ouvrages hydrauliques',
+                    'Lots techniques',
+                  ].map((pole, idx) => (
+                    <div
+                      key={pole}
+                      className="flex items-center gap-2.5 p-3 rounded-l bg-brand-900 text-white border border-brand-700 shadow-sm"
+                    >
+                      <span className="w-6 h-6 rounded-full bg-accent-500/20 border border-accent-400/40 text-accent-300 text-xs font-mono font-bold flex items-center justify-center shrink-0">
+                        {idx + 1}
+                      </span>
+                      <span className="text-xs sm:text-sm font-semibold leading-snug">{pole}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Étude & Modélisation Vidéo R+11 Sadio Digue au Mali / ACI 2000 à Bamako + Photos Hangar logistique AGL / Rocade Bel Air */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start bg-neutral-50 dark:bg-brand-800/50 border border-neutral-200 dark:border-brand-700 rounded-2xl p-5 sm:p-6">
+                <div className="lg:col-span-6 space-y-3">
+                  <span className="inline-block px-3 py-1 rounded-full bg-accent-500/15 text-accent-600 dark:text-accent-400 text-xs font-mono font-bold">
+                    Modélisation 3D &amp; Étude IGH (Vidéo)
+                  </span>
+                  <h3 className="text-lg sm:text-xl font-title font-bold text-neutral-900 dark:text-white">
+                    Immeuble R+11 Sadio Digue au Mali · ACI 2000 à Bamako
+                  </h3>
+                  <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                    Modélisation structurelle 3D et simulation numérique réalisées par le bureau d&apos;études SERMA BTP pour un immeuble de grande hauteur (R+11) situé à l&apos;ACI 2000 à Bamako (Mali).
+                  </p>
+                  <div className="rounded-xl overflow-hidden border border-neutral-300 dark:border-brand-700 bg-black shadow-lg">
+                    <video
+                      src="/videos/serma-modelisation-r11-sadio-digue-bamako.mp4"
+                      controls
+                      playsInline
+                      preload="metadata"
+                      className="w-full max-h-[420px] object-contain bg-black"
+                    >
+                      Votre navigateur ne supporte pas la lecture vidéo.
+                    </video>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-6 space-y-3">
+                  <span className="inline-block px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 text-xs font-mono font-bold">
+                    Charpente métallique &amp; Étude d&apos;exécution (4 photos)
+                  </span>
+                  <h3 className="text-lg sm:text-xl font-title font-bold text-neutral-900 dark:text-white">
+                    Hangar logistique AGL · Rocade Bel Air (Dakar)
+                  </h3>
+                  <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                    Étude, dimensionnement Eurocodes 3 et structure métallique grande portée du Hangar logistique AGL sur la Rocade Bel Air.
+                  </p>
+                  <div className="grid grid-cols-2 gap-3">
+                    {[
+                      { url: '/images/serma/hangar-agl-bel-air-01.jpg', caption: 'Hangar logistique AGL / Rocade Bel Air — Ossature et travées métalliques' },
+                      { url: '/images/serma/hangar-agl-bel-air-02.jpg', caption: 'Hangar logistique AGL / Rocade Bel Air — Fermes treillis grande hauteur' },
+                      { url: '/images/serma/hangar-agl-bel-air-03.jpg', caption: 'Hangar logistique AGL / Rocade Bel Air — Vue d’ensemble chantier et grue' },
+                      { url: '/images/serma/hangar-agl-bel-air-04.jpg', caption: 'Hangar logistique AGL / Rocade Bel Air — Structure métallique sur massifs béton' },
+                    ].map((photo, pIdx, arr) => (
+                      <div
+                        key={photo.url}
+                        onClick={() => setLightbox({ images: arr, index: pIdx, title: 'Hangar logistique AGL / Rocade Bel Air' })}
+                        className="group relative aspect-[4/3] rounded-xl overflow-hidden border border-neutral-200 dark:border-brand-700 bg-neutral-200 dark:bg-brand-900 cursor-zoom-in"
+                      >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={photo.url}
+                          alt={photo.caption}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-2 text-[11px] text-white">
+                          Hangar AGL Bel Air #{pIdx + 1}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {gallery.map((img, idx: number) => (
               <figure
@@ -420,12 +546,20 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
       {/* Synergies */}
       {entity.synergies && entity.synergies.length > 0 && (
         <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-12 border-b border-neutral-200 dark:border-brand-700">
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center gap-3 mb-4">
             <Network className="w-6 h-6 text-accent-500" />
             <h2 className="text-2xl font-title font-bold text-neutral-900 dark:text-white">
               Synergies avec les autres entités
             </h2>
           </div>
+
+          <div className="mb-6 p-4 sm:p-5 rounded-xl bg-brand-900 text-white border border-brand-700 text-xs sm:text-sm leading-relaxed">
+            <strong className="text-accent-400 block mb-1">Chaîne opérationnelle intégrée de l&apos;écosystème Magatte Niang :</strong>
+            <span>
+              <strong>1. SERMA BTP</strong> réalise les études techniques et la modélisation avec ses logiciels et transmet à <strong>2. SB-S Group</strong> qui se charge de l&apos;exécution des travaux sur le terrain, en s&apos;appuyant sur <strong>3. SBS Logistik</strong> pour le matériel et les engins sur les différents chantiers, sur <strong>4. SBS Industrie</strong> pour les briques, les pavés et le béton (BPE), puis sur <strong>5. P2M</strong> pour les carreaux et tout le sanitaire pour la décoration.
+            </span>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {entity.synergies.map((syn: any, idx: number) => (
               <div
@@ -450,8 +584,8 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
         </section>
       )}
 
-      {/* Projets de l'entité */}
-      {!projectsLoading && projects && projects.length > 0 && (
+      {/* Projets de l'entité (masqué pour SERMA BTP conformément à la demande) */}
+      {id !== 'serma-btp' && !projectsLoading && projects && projects.length > 0 && (
         <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-title font-bold text-neutral-900 dark:text-white">

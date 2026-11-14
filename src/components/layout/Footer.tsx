@@ -65,8 +65,8 @@ export const Footer: React.FC = () => {
               <span className="text-[10px] font-mono  tracking-wider text-neutral-500 block">
                 Centrale d'urgence chantiers 24/7
               </span>
-              <a href="tel:+221776381200" className="font-mono font-bold text-white hover:text-accent-500 transition-colors">
-                +221 77 638 12 00
+              <a href="tel:+221772671617" className="font-mono font-bold text-white hover:text-accent-500 transition-colors">
+                +221 77 267 16 17
               </a>
             </div>
           </div>
@@ -76,10 +76,10 @@ export const Footer: React.FC = () => {
             </div>
             <div>
               <span className="text-[10px] font-mono  tracking-wider text-neutral-500 block">
-                Sourcing international & transit
+                PGT Dubaï - Ajman · Sourcing international
               </span>
-              <a href="mailto:sourcing@pgt-transit.sn" className="font-mono font-bold text-white hover:text-accent-500 transition-colors break-all">
-                sourcing@pgt-transit.sn
+              <a href="https://wa.me/971527631629" target="_blank" rel="noopener noreferrer" className="font-mono font-bold text-white hover:text-accent-500 transition-colors break-all block">
+                PGT DUBAI - AJMAN : +971 52 763 1629
               </a>
             </div>
           </div>
@@ -119,7 +119,11 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-accent-500 shrink-0" />
-                <span>Standard : +221 33 832 40 10 / Urgence BTP : +221 77 638 12 00</span>
+                <span>Standard : +221 33 832 40 10 / Urgence BTP : +221 77 267 16 17</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Globe className="w-4 h-4 text-accent-500 shrink-0" />
+                <span>PGT DUBAI - AJMAN : +971 52 763 1629</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-accent-500 shrink-0" />

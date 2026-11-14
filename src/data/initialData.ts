@@ -15,46 +15,50 @@ export const ENTITIES: EntityInfo[] = [
   {
     id: 'serma-btp',
     name: 'Serma Btp',
-    tagline: 'Génie civil, charpente métallique & entreprise générale',
-    badge: 'Ingénierie & construction lourde',
+    tagline: 'Études techniques, modélisation logicielle 3D/BIM, simulations & maîtrise d\'œuvre',
+    badge: 'Bureau d\'études, modélisation & ingénierie',
     color: 'entity-serma',
     colorHex: '#1B4965',
     accentClass: 'bg-[#1B4965]',
-    mission: 'Concevoir et réaliser des ouvrages structurés — bâtiment, travaux publics, constructions métalliques et hydraulique — de la conception à la supervision, avec rigueur et conformité.',
-    description: 'Créée en 2012 (RC : SN DKR-2012-B-2619), SERMA BTP est un leader reconnu dans les études techniques et la réalisation d\'ouvrages structurés au Sénégal : bâtiment, travaux publics, constructions métalliques et hydraulique, de la conception à la supervision.',
-    leader: 'Maguette Niang',
+    mission: 'Réaliser les études d\'ingénierie, la modélisation logicielle 3D/BIM, les simulations de calcul structurel et la maîtrise d\'œuvre (AMO / supervision) des ouvrages — pylônes, stations-service, charpentes métalliques, immeubles IGH, ouvrages hydrauliques et lots techniques — en amont de l\'exécution des travaux par SB-S Group.',
+    description: 'Créée en 2012 (RC : SN DKR-2012-B-2619), SERMA BTP est le pôle d\'ingénierie, de modélisation logicielle et d\'études techniques de l\'écosystème Magatte Niang. Il assure la conception, les simulations numériques, le dimensionnement structurel et la supervision (MOE / AMO) avant de transmettre les dossiers d\'exécution à SB-S Group.',
+    leader: 'Magatte Niang',
     leaderRole: 'Directeur général',
-    address: 'Mbao Ville Neuve, Villa S04',
+    address: 'Dakar, Sénégal (hors pôle Mbao)',
     city: 'Dakar',
     country: 'Sénégal',
     phone: '+221 78 832 12 79',
-    email: 'contact@sermabtp.sn',
+    email: 'serma@sermabtp.com / sermabtp@gmail.com',
     whatsapp: '+221 78 832 12 79',
-    ctaText: 'Consulter pour un projet structure',
+    ctaText: 'Consulter pour une étude ou modélisation',
     ctaAction: 'qualify-serma',
     expertises: [
-      'Bâtiment et travaux publics',
-      'Constructions métalliques & ouvrages d\'art',
-      'Hydraulique, assainissement et énergie',
-      'Études de structures métalliques (charpentes, chaudronnerie)',
-      'Études de béton armé (bâtiments, ponts, dalots) et supervision de chantiers'
+      'Modélisation 3D / BIM & simulations logicielles de structures',
+      'Pylône (télécoms, éclairage & transport d\'énergie)',
+      'Station-service (conception structurelle, VRD & sécurité)',
+      'Charpente métallique (hangars industriels & structures complexes)',
+      'Bâtiment et immeuble IGH (immeubles de grande hauteur R+11 et plus)',
+      'Maîtrise d\'œuvre - AMO - Supervision de chantiers',
+      'Ouvrages hydrauliques (réseaux, bassins, dalots & stations)',
+      'Lots techniques (CVC, électricité, plomberie, sécurité incendie)'
     ],
     equipmentList: [
-      'Logiciels de modélisation et calcul structurel (RSA/Robot, AutoCAD)',
-      'Solutions BIM et CAO avancées',
-      'Station totale, niveaux optiques et instrumentation de suivi de chantier',
-      'Équipements de mesure et de contrôle qualité'
+      'Logiciels de modélisation 3D et calcul structurel (Autodesk Robot Structural Analysis, Tekla, AutoCAD, Revit BIM)',
+      'Simulateurs numériques d\'efforts (vent, séisme, descentes de charges IGH et charpentes)',
+      'Station totale, niveaux optiques et instrumentation de contrôle et supervision MOE/AMO',
+      'Équipements de diagnostic structurel et d\'audit technique'
     ],
     synergies: [
-      { entityId: 'sbs-labo', role: 'Contrôle qualité des soudures et résistance acier', benefit: 'Garantie de conformité Eurocodes et NF' },
-      { entityId: 'sbs-logistik', role: 'Levage et transport des tronçons de charpente', benefit: 'Disponibilité immédiate de grues 60T' },
-      { entityId: 'sbs-industries', role: 'Fourniture d\'éléments préfabriqués en béton', benefit: 'Optimisation des interfaces acier-béton' }
+      { entityId: 'sbs-group', role: 'Transmission des études et modèles 3D/BIM à SB-S Group qui se charge de l\'exécution des travaux', benefit: 'Exécution fidèle aux plans et simulations validés par SERMA BTP' },
+      { entityId: 'sbs-logistik', role: 'Mobilisation du matériel lourd, grues et engins pour les travaux sur les différents chantiers', benefit: 'Déploiement rapide de la flotte sur chaque site d\'exécution' },
+      { entityId: 'sbs-industries', role: 'Fourniture des briques, pavés et bétons (BPE) nécessaires à la construction des ouvrages', benefit: 'Approvisionnement industriel certifié directement depuis l\'usine de Mbao' },
+      { entityId: 'p2m', role: 'Fourniture des carreaux et de tout le sanitaire pour la décoration et les finitions', benefit: 'Parachèvement architectural haut de gamme des bâtiments livrés' }
     ],
     verifiedMetrics: [
-      { label: 'Tonnage acier usiné / an', value: '4 500', unit: 'tonnes', status: 'confirmed' },
-      { label: 'Surface industrielle couverte', value: '180 000', unit: 'm²', status: 'confirmed' },
-      { label: 'Ouvrages majeurs livrés', value: '64', unit: 'projets', status: 'confirmed' },
-      { label: 'Précision de montage', value: '± 1.5', unit: 'mm', status: 'confirmed' }
+      { label: 'Spécialités d\'ingénierie & modélisation', value: '8', unit: 'pôles', status: 'confirmed' },
+      { label: 'Modélisation & simulation BIM / RSA', value: '100', unit: '%', status: 'confirmed' },
+      { label: 'Études IGH, hangars & ouvrages', value: '120+', unit: 'études', status: 'confirmed' },
+      { label: 'Précision de dimensionnement', value: 'Eurocodes', unit: 'NF / ACI', status: 'confirmed' }
     ],
     icon: 'Hammer'
   },
@@ -95,10 +99,10 @@ export const ENTITIES: EntityInfo[] = [
       'Énergie & Chantier : groupes électrogènes 150 kVA et 5 kVA, équipements de coffrage lourd'
     ],
     synergies: [
-      { entityId: 'serma-btp', role: 'Conception et fabrication des charpentes métalliques et réhausses', benefit: 'Réduction des délais de montage industriel de 40%' },
-      { entityId: 'sbs-labo', role: 'Essais géotechniques in-situ, contrôle continu béton et agréments ministériels', benefit: 'Garantie d\'assurance décennale et conformité NF' },
-      { entityId: 'sbs-logistik', role: 'Flotte de rotation de 30 semi-remorques et grues de levage', benefit: 'Approvisionnement continu et sécurité HSE certifiée' },
-      { entityId: 'sbs-industries', role: 'Fourniture de bordures T2/T3, dalots et béton prêt à l\'emploi', benefit: 'Tarifs industriels directs et cadences de coulage maîtrisées' }
+      { entityId: 'serma-btp', role: 'Réalise les études techniques, la modélisation logicielle 3D/BIM et les simulations avant de confier l\'exécution à SB-S Group', benefit: 'Plans d\'exécution et notes de calcul certifiés en amont' },
+      { entityId: 'sbs-logistik', role: 'Fournit le matériel et les engins lourds pour le travail sur les différents chantiers', benefit: 'Flotte de grues, pompes et bennes disponible 24/7' },
+      { entityId: 'sbs-industries', role: 'Fournit les briques, les pavés et le béton prêt à l\'emploi pour la construction', benefit: 'Approvisionnement industriel direct depuis l\'usine de Mbao' },
+      { entityId: 'p2m', role: 'Fournit les carreaux et tout le sanitaire pour la décoration et le second-œuvre', benefit: 'Finitions architecturales complètes clé en main' }
     ],
     verifiedMetrics: [
       { label: 'Références industrielles majeures', value: '10+', unit: 'sites réels', status: 'confirmed' },
@@ -273,29 +277,29 @@ export const ENTITIES: EntityInfo[] = [
     description: 'PGT — Polytech General Trading : "Votre passerelle vers l\'excellence internationale". Sourcing stratégique en Inde (fournisseurs certifiés ISO, économies de 15-30%, délai 5-7 jours), import-export complet (documentation douanière, fret maritime LCL/FCL, assurance cargo 100%, dédouanement au Sénégal) et logistique & manutention (entreposage en zone franche à Dakar).',
     leader: 'Maguette Niang',
     leaderRole: 'Directeur général',
-    address: 'Dakar, Sénégal',
-    city: 'Dakar',
-    country: 'Sénégal',
-    phone: '+221 78 832 12 79',
+    address: 'Dakar, Sénégal · Bureau Dubaï - Ajman (Émirats Arabes Unis)',
+    city: 'Dakar / Dubaï - Ajman',
+    country: 'Sénégal & ÉAU',
+    phone: '+221 78 832 12 79 / PGT DUBAI - AJMAN : +971 52 763 1629',
     email: 'pgt.senegal@gmail.com',
-    whatsapp: '+221 78 832 12 79',
+    whatsapp: '+971 52 763 1629',
     ctaText: 'Lancer un sourcing international',
     ctaAction: 'qualify-pgt',
     expertises: [
-      'Sourcing international : matériaux de construction, sanitaires, pièces industrielles, engins lourds',
-      'Fournisseurs certifiés en Inde · Normes ISO · Audit qualité systématique',
+      'Sourcing international (Dubaï - Ajman +971 52 763 1629 & Inde) : matériaux de construction, sanitaires, pièces industrielles, engins lourds',
+      'Fournisseurs certifiés à Dubaï/Ajman et en Inde · Normes ISO · Audit qualité systématique',
       'Import-export complet : documentation douanière, transport maritime (LCL & FCL)',
       'Assurance cargo full value (100%) et dédouanement au Sénégal',
       'Logistique : entreposage zone franche Dakar, consolidation, distribution'
     ],
     synergies: [
-      { entityId: 'p2m', role: 'Importation des séries de carrelages exclusives', benefit: 'Optimisation fret conteneur maritime' },
-      { entityId: 'serma-btp', role: 'Sourcing de profilés métalliques spéciaux HEB/IPE', benefit: 'Certificats matière usine traçables 3.1' }
+      { entityId: 'p2m', role: 'Importation des séries de carrelages et sanitaires pour la décoration', benefit: 'Optimisation fret conteneur maritime depuis Dubaï/Ajman et l\'Inde' },
+      { entityId: 'sbs-group', role: 'Sourcing international d\'équipements et matériaux spéciaux pour les chantiers', benefit: 'Certificats matière usine traçables et délais maîtrisés' }
     ],
     verifiedMetrics: [
       { label: 'Économies négociées', value: '15-30', unit: '%', status: 'confirmed' },
       { label: 'Délai sourcing', value: '5-7', unit: 'jours', status: 'confirmed' },
-      { label: 'Expérience marché indien', value: '9+', unit: 'ans', status: 'confirmed' }
+      { label: 'Hubs internationaux', value: 'Dubaï · Ajman', unit: '& Inde', status: 'confirmed' }
     ],
     icon: 'Globe'
   }];
@@ -310,9 +314,9 @@ export const FOUNDER_PROFILE = {
     'Auditeur certifié Eurocodes et normes NF P'
   ],
   roles: [
-    { title: 'Président fondateur', org: 'Écosystème Magatte Niang Expert (SERMA BTP, SB-S Group, SB-S Labo, SB-S Industries, SB-S Logistik, P2M, PGT)', period: '2008 – Présent' },
-    { title: 'Enseignant & chercheur invité', org: 'Écoles polytechniques & universités de la sous-région', period: '2014 – Présent' },
-    { title: 'Expert judiciaire agréé', org: 'Cour d\'appel de Dakar (section bâtiment & travaux publics)', period: '2016 – Présent' }
+    { title: 'Président fondateur', org: 'Écosystème Magatte Niang Expert (SERMA BTP, SB-S Group, SB-S Labo, SB-S Industries, SB-S Logistik, P2M, PGT)', period: '2012 – présent' },
+    { title: 'Enseignant', org: 'Écoles polytechniques & universités de la sous-région', period: '2011 – présent' },
+    { title: 'Expert en BTP', org: 'Expertise technique en bâtiment, travaux publics & génie civil', period: '2016 – présent' }
   ],
   vision: 'Faire du Sénégal un hub technologique et industriel d\'excellence dans le BTP, capable de concevoir, tester, fabriquer et ériger ses propres ouvrages sans dépendance technologique externe.',
   verifiedMetrics: [

@@ -12,7 +12,10 @@ export function useEntities() {
     staleTime: 1000 * 60 * 30, // 30 minutes de cache
   });
 
-  const entities = data ?? ENTITIES;
+  const entities = ENTITIES.map((staticItem) => {
+    const apiItem = data?.find((d) => d.id === staticItem.id);
+    return apiItem ? { ...apiItem, ...staticItem } : staticItem;
+  });
 
   return {
     entities,
@@ -32,7 +35,7 @@ export function useEntity(id: string | null) {
     staleTime: 1000 * 60 * 30, // 30 minutes de cache
   });
 
-  const entity = data ?? staticEntity;
+  const entity = staticEntity ? { ...(data || {}), ...staticEntity } : data;
 
   return {
     entity,

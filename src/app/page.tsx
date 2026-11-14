@@ -306,8 +306,8 @@ export default function HomePage() {
                     <Phone className="w-3.5 h-3.5 text-accent-500" />
                     <span className="font-mono">Urgence chantier 24/7</span>
                   </div>
-                  <a href="tel:+221776381200" className="text-xs font-bold font-mono text-white hover:text-accent-500 transition-colors">
-                    +221 77 638 12 00
+                  <a href="tel:+221772671617" className="text-xs font-bold font-mono text-white hover:text-accent-500 transition-colors">
+                    +221 77 267 16 17
                   </a>
                 </div>
               </div>
@@ -897,7 +897,7 @@ export default function HomePage() {
               </div>
               <h3 className="font-title font-bold text-neutral-900 dark:text-white">Standard & urgence</h3>
               <p className="text-sm font-mono text-neutral-700 dark:text-neutral-300 mt-2">+221 33 832 40 10</p>
-              <p className="text-xs font-mono text-accent-500 mt-1">Chantier 24/7 : +221 77 638 12 00</p>
+              <p className="text-xs font-mono text-accent-500 mt-1">Chantier 24/7 : +221 77 267 16 17</p>
             </a>
             <a
               href="mailto:contact@magatteniang-expert.sn"

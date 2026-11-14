@@ -16,7 +16,7 @@ export default function MentionsLegalesPage() {
           bullets: [
             'Dénomination : Écosystème Magatte Niang Expert',
             'Siège social : Km 14, Boulevard du Centenaire de la Commune de Dakar, Sénégal',
-            'Standard : +221 33 832 40 10 · Urgence chantiers 24/7 : +221 77 638 12 00',
+            'Standard : +221 33 832 40 10 · Urgence chantiers 24/7 : +221 77 267 16 17',
             'Courriel : contact@magatteniang-expert.sn',
             'Fondateur et Directeur de la publication : Magatte Niang, Ingénieur en Chef des Ponts & Chaussées',
           ],

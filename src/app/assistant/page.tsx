@@ -877,7 +877,7 @@ export default function AssistantPage() {
                           required
                           value={formData.phone}
                           onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
-                          placeholder="+221 77 638 12 00"
+                          placeholder="+221 77 267 16 17"
                           className="w-full px-3 py-2 bg-neutral-50 dark:bg-brand-900 border border-neutral-300 dark:border-brand-700 rounded-m text-sm font-mono"
                         />
                       </div>
