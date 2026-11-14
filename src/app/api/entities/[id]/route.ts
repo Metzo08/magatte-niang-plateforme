@@ -19,7 +19,7 @@ export async function GET(
     ]);
 
     if (entity) {
-      return NextResponse.json(entity);
+      return NextResponse.json(fallbackEntity ? { ...(entity as object), ...fallbackEntity } : entity);
     }
   } catch {
     // Si la DB est lente ou indisponible, fallback direct sans latence

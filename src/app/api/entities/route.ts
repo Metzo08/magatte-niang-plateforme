@@ -13,7 +13,11 @@ export async function GET() {
     ]);
 
     if (entities && (entities as any[]).length > 0) {
-      return NextResponse.json(entities);
+      const merged = ENTITIES.map((staticItem) => {
+        const dbItem = (entities as any[]).find((e) => e.id === staticItem.id);
+        return dbItem ? { ...dbItem, ...staticItem } : staticItem;
+      });
+      return NextResponse.json(merged);
     }
   } catch {
     // Si la DB est lente ou indisponible, fallback direct sans latence

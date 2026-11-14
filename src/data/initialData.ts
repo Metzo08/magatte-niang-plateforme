@@ -33,14 +33,14 @@ export const ENTITIES: EntityInfo[] = [
     ctaText: 'Consulter pour une étude ou modélisation',
     ctaAction: 'qualify-serma',
     expertises: [
-      'Modélisation 3D / BIM & simulations logicielles de structures',
-      'Pylône (télécoms, éclairage & transport d\'énergie)',
-      'Station-service (conception structurelle, VRD & sécurité)',
-      'Charpente métallique (hangars industriels & structures complexes)',
-      'Bâtiment et immeuble IGH (immeubles de grande hauteur R+11 et plus)',
-      'Maîtrise d\'œuvre - AMO - Supervision de chantiers',
-      'Ouvrages hydrauliques (réseaux, bassins, dalots & stations)',
-      'Lots techniques (CVC, électricité, plomberie, sécurité incendie)'
+      'Modélisation',
+      'Pylône',
+      'Station service',
+      'Charpente métallique',
+      'Bâtiment et immeuble IGH',
+      'Maîtrise d\'œuvre - AMO - Supervision',
+      'Ouvrages hydrauliques',
+      'Lots techniques'
     ],
     equipmentList: [
       'Logiciels de modélisation 3D et calcul structurel (Autodesk Robot Structural Analysis, Tekla, AutoCAD, Revit BIM)',

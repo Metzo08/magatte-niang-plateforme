@@ -53,9 +53,9 @@ export default function HomePage() {
   // KPI monumentaux certifiés (données industrielles vérifiées)
   const operationalKpis = [
     {
-      value: '4 500',
-      unit: 'T',
-      label: "Tonnage d'acier usiné / an",
+      value: '120+',
+      unit: 'études',
+      label: 'Études techniques, modélisation 3D/BIM & simulations',
       entity: 'SERMA BTP',
       color: '#1B4965',
       icon: Hammer
@@ -148,28 +148,28 @@ export default function HomePage() {
   // Flux de synergies inter-entités (graphe technique)
   const synergyFlows = [
     {
-      from: 'Bureau d\'Études SERMA',
-      to: 'Contrôle Qualité SB-S Labo',
-      label: 'Validation Eurocodes & PV de résistance',
-      entities: ['serma-btp', 'sbs-labo']
+      from: '1. SERMA BTP (Études & Modélisation)',
+      to: '2. SB-S Group (Exécution des travaux)',
+      label: 'Études techniques et modélisation logicielle 3D/BIM transmises pour exécution',
+      entities: ['serma-btp', 'sbs-group']
     },
     {
-      from: 'Usine SB-S Industries',
-      to: 'Chantiers SB-S Group',
-      label: 'Prédalles & bordures livrées en flux tendu',
+      from: '2. SB-S Group (Chantiers)',
+      to: '3. SBS Logistik (Matériel & engins)',
+      label: 'Fourniture du matériel et des engins lourds sur les différents chantiers',
+      entities: ['sbs-group', 'sbs-logistik']
+    },
+    {
+      from: '3. SBS Industrie (Préfabrication & BPE)',
+      to: '2. SB-S Group (Construction)',
+      label: 'Fourniture des briques, pavés et béton prêt à l\'emploi pour la construction',
       entities: ['sbs-industries', 'sbs-group']
     },
     {
-      from: 'SERMA BTP',
-      to: 'Flotte SB-S Logistik',
-      label: 'Levage & convoi des tronçons d\'acier 60T',
-      entities: ['serma-btp', 'sbs-logistik']
-    },
-    {
-      from: 'Sourcing PGT International',
-      to: 'Showroom P2M',
-      label: 'Séries exclusives importées sans surstaries',
-      entities: ['pgt', 'p2m']
+      from: '4. P2M (Carreaux & Sanitaire)',
+      to: '2. SB-S Group (Décoration & Finitions)',
+      label: 'Fourniture des carreaux et de tout le sanitaire pour la décoration',
+      entities: ['p2m', 'sbs-group']
     }
   ];
 
