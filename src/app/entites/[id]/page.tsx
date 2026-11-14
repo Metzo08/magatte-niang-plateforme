@@ -28,6 +28,7 @@ import SbsLogistikGallery from '@/components/sbs/SbsLogistikGallery';
 import SbsIndustriesPublicCatalog from '@/components/sbs/SbsIndustriesPublicCatalog';
 import SbsLaboGalleryCategories from '@/components/sbs/SbsLaboGalleryCategories';
 import SermaGalleryDomains from '@/components/serma/SermaGalleryDomains';
+import P2mShowroomBlocks from '@/components/p2m/P2mShowroomBlocks';
 import InteractiveLocationMap from '@/components/maps/InteractiveLocationMap';
 import { Layers, Truck } from 'lucide-react';
 
@@ -298,8 +299,17 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
         </div>
       </section>
 
+      {/* SHOWROOM P2M ORGANISÉ PAR BLOCS (CARRELAGE, SANITAIRE, ROBINETTERIE, FAÏENCE & MOSAÏQUE) */}
+      {id === 'p2m' && (
+        <P2mShowroomBlocks
+          products={entityProducts}
+          loading={productsLoading}
+          onOpenLightbox={(images, index, title) => setLightbox({ images, index, title })}
+        />
+      )}
+
       {/* Galerie photo et vidéo dédiée (avec les 8 domaines SERMA BTP et les catégories LNR-BTP pour SB-S Labo) */}
-      {id !== 'sbs-group' && id !== 'sbs-logistik' && (id === 'serma-btp' || id === 'sbs-labo' || gallery.length > 0) && (
+      {id !== 'sbs-group' && id !== 'sbs-logistik' && id !== 'p2m' && (id === 'serma-btp' || id === 'sbs-labo' || gallery.length > 0) && (
         <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-12 border-b border-neutral-200 dark:border-brand-700">
           <h2 className="text-2xl font-title font-bold text-neutral-900 dark:text-white mb-4">
             {id === 'serma-btp' ? 'Galerie SERMA' : `Galerie ${entity.name}`}
@@ -732,8 +742,8 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
         </section>
       )}
 
-      {/* Catalogue produits de l'entité (ex: showroom P2M) */}
-      {!productsLoading && entityProducts.length > 0 && (
+      {/* Catalogue produits de l'entité (hors P2M qui dispose de son Showroom par blocs en haut de page) */}
+      {id !== 'p2m' && !productsLoading && entityProducts.length > 0 && (
         <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
             <h2 className="text-2xl font-title font-bold text-neutral-900 dark:text-white">

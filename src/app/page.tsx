@@ -25,29 +25,20 @@ import {
   Zap,
 } from 'lucide-react';
 import { useEntities } from '@/hooks/useEntities';
-import { useProducts } from '@/hooks/useProducts';
 import { useProjects } from '@/hooks/useProjects';
 import { ENTITIES } from '@/data/initialData';
 import { SITE_IMAGES, EXPERTISE_IMAGES, PHOTOS_REELLES } from '@/data/siteImages';
-import LoadingSpinner from '@/components/common/LoadingSpinner';
 
 export default function HomePage() {
   const { entities: apiEntities } = useEntities();
-  const { products, loading: loadingProducts } = useProducts();
   const { projects } = useProjects();
   const [hoveredSynergy, setHoveredSynergy] = React.useState<string | null>(null);
 
   // Piliers affichés immédiatement (fallback statique) puis enrichis par l'API
   const entities = apiEntities.length > 0 ? apiEntities : ENTITIES;
 
-  // Seul le catalogue produits justifie un écran de chargement
-  const loading = loadingProducts && entities.length === 0;
-
   // Projets en vedette (featured)
   const featuredProjects = projects.filter((p: any) => p.isFeatured || p.featured).slice(0, 3);
-
-  // Produits en vedette
-  const featuredProducts = products.slice(0, 3);
 
   // KPI monumentaux certifiés (données industrielles vérifiées)
   const operationalKpis = [
@@ -85,14 +76,6 @@ export default function HomePage() {
     }
   ];
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <LoadingSpinner size="lg" message="Chargement de l'écosystème..." />
-      </div>
-    );
-  }
-
   const intentionPaths = [
     {
       title: 'Construire une structure',
@@ -114,7 +97,7 @@ export default function HomePage() {
       title: 'Choisir des revêtements',
       subtitle: 'Carrelages grand format, faïence & sanitaires',
       entity: 'P2M',
-      href: '/catalogue',
+      href: '/entites/p2m',
       icon: Layers,
       color: '#C0562F'
     },
@@ -734,100 +717,6 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
-
-      {/* SECTION 6: CATALOGUE P2M */}
-      {featuredProducts.length > 0 && (
-        <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
-            <div>
-              <span className="text-xs font-mono font-bold text-accent-500  tracking-wider">
-                Showroom P2M · finitions & matériaux
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-title font-bold text-neutral-900 dark:text-white mt-2 tracking-tight">
-                Carrelages grand format & sanitaires de prestige
-              </h2>
-            </div>
-            <Link
-              href="/catalogue"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold rounded-m transition-all text-xs shrink-0 hover:bg-accent-500 dark:hover:bg-accent-500 dark:hover:text-white"
-            >
-              <span>Catalogue complet</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {featuredProducts.map((product: any) => {
-              const imageSrc = product.images && product.images[0]
-                ? (typeof product.images[0] === 'string' ? product.images[0] : product.images[0].url)
-                : null;
-              return (
-                <Link
-                  key={product.id}
-                  href={`/catalogue/${product.id}`}
-                  className="group bg-white dark:bg-brand-800 border border-neutral-300 dark:border-brand-700 rounded-l overflow-hidden shadow-elev-1 hover:shadow-elev-3 transition-all flex flex-col"
-                >
-                  <div className="relative h-48 bg-neutral-100 dark:bg-brand-900 flex items-center justify-center overflow-hidden">
-                    {imageSrc ? (
-                      /* eslint-disable-next-line @next/next/no-img-element */
-                      <img
-                        src={imageSrc}
-                        alt={product.name}
-                        loading="lazy"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    ) : (
-                      <>
-                        <div className="absolute inset-0 opacity-[0.07]" style={{
-                          backgroundImage: 'linear-gradient(rgba(11,27,43,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(11,27,43,0.5) 1px, transparent 1px)',
-                          backgroundSize: '20px 20px'
-                        }} />
-                        <Layers className="w-12 h-12 text-neutral-400 dark:text-brand-600 relative z-10 group-hover:scale-110 transition-transform" />
-                      </>
-                    )}
-                    <span className="absolute top-3 left-3 text-[10px] font-mono font-bold px-2 py-1 rounded bg-white/90 dark:bg-brand-950/90 text-neutral-700 dark:text-neutral-300 backdrop-blur-sm z-10">
-                      {product.category || 'P2M'}
-                    </span>
-                    <span className="absolute top-3 right-3 text-[10px] font-mono font-bold px-2 py-1 rounded bg-brand-900/90 text-white backdrop-blur-sm z-10">
-                      {product.ref}
-                    </span>
-                  </div>
-                  <div className="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                      <span className="text-xs font-mono text-neutral-500">{product.ref}</span>
-                      <h3 className="font-title font-bold text-neutral-900 dark:text-white mt-1 group-hover:text-accent-500 transition-colors line-clamp-2">
-                        {product.name}
-                      </h3>
-                      <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-2 line-clamp-2">
-                        {product.finish} · {product.material}
-                      </p>
-                    </div>
-                    <div className="flex items-end justify-between mt-4 pt-4 border-t border-neutral-200 dark:border-brand-700">
-                      <div>
-                        <span className="text-lg font-mono font-bold text-accent-500 tabular-nums">
-                          {product.indicativePriceFCFA?.toLocaleString()}
-                        </span>
-                        <span className="text-[11px] text-neutral-500 ml-1">FCFA/m² HT</span>
-                      </div>
-                      <span className="text-[10px] font-mono text-neutral-500">{product.availability || 'En stock'}</span>
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-
-          <div className="text-center mt-8">
-            <Link
-              href="/catalogue"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white font-bold rounded-m shadow-elev-2 transition-all text-sm"
-            >
-              <span>Accéder à tout le catalogue P2M</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </section>
-      )}
 
       {/* SECTION 7: ASSISTANT DE QUALIFICATION */}
       <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8">
