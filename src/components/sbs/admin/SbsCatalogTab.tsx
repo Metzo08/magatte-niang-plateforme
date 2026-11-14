@@ -12,7 +12,6 @@ import {
   Eye,
   EyeOff,
   Calculator,
-  Sparkles,
   Wrench,
   CheckCircle2,
 } from 'lucide-react';
@@ -356,7 +355,7 @@ export default function SbsCatalogTab({
                             className="text-[10px] text-accent-600 hover:underline inline-flex items-center gap-0.5"
                             title="Appliquer le prix conseillé +35 % HT"
                           >
-                            <Sparkles className="w-2.5 h-2.5" /> Conseillé +35% : {fmtFCFA(Math.round(cost.suggestedPrice35))}
+                            Conseillé +35% : {fmtFCFA(Math.round(cost.suggestedPrice35))}
                           </button>
                         </div>
                       ) : (

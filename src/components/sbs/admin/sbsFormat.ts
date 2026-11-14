@@ -35,11 +35,11 @@ export const FAMILY_LABELS: Record<string, string> = {
 
 export const SBS_PRESET_IMAGES = [
   // --- PHOTOS AUTHENTIQUES USINE MBAO (ZONE FRANCHE) ---
-  { label: '★ Mbao Usine · Texture agglos pleins (dense 31,7 kg)', url: '/images/sbs-industries/sbs-mbao-agglos-pleins-texture.jpg' },
-  { label: '★ Mbao Usine · Contrôle mètre 50 cm sur hourdis', url: '/images/sbs-industries/sbs-mbao-hourdis-50cm-mesure.jpg' },
-  { label: '★ Mbao Usine · Moulage continu pondeuse automatique', url: '/images/sbs-industries/sbs-mbao-agglos-creux-moulage.jpg' },
-  { label: '★ Mbao Usine · Piste de séchage & cure plein air', url: '/images/sbs-industries/sbs-mbao-agglos-creux-parc.jpg' },
-  { label: '★ Mbao Usine · Stock palettes expédition chantiers', url: '/images/sbs-industries/sbs-mbao-agglos-creux-stock-palettes.jpg' },
+  { label: 'Mbao Usine · Texture agglos pleins (dense 31,7 kg)', url: '/images/sbs-industries/sbs-mbao-agglos-pleins-texture.jpg' },
+  { label: 'Mbao Usine · Contrôle mètre 50 cm sur hourdis', url: '/images/sbs-industries/sbs-mbao-hourdis-50cm-mesure.jpg' },
+  { label: 'Mbao Usine · Moulage continu pondeuse automatique', url: '/images/sbs-industries/sbs-mbao-agglos-creux-moulage.jpg' },
+  { label: 'Mbao Usine · Piste de séchage & cure plein air', url: '/images/sbs-industries/sbs-mbao-agglos-creux-parc.jpg' },
+  { label: 'Mbao Usine · Stock palettes expédition chantiers', url: '/images/sbs-industries/sbs-mbao-agglos-creux-stock-palettes.jpg' },
 
   // --- COTES RÉELLES BRIQUES & BLOCS ---
   { label: 'Agglo creux 10×20×40 (Cote réelle calibrée)', url: '/images/sbs-industries/brique-creuse-10x20x40-teralta.png' },

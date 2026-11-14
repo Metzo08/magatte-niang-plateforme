@@ -9,7 +9,7 @@ import { Quote, Appointment, DocumentItem, EntityId, AuditLogEntry } from '@/typ
 import {
   LayoutDashboard, FileText, Calendar, ShoppingCart, FolderOpen, UserRound, History,
   Plus, Pencil, Trash2, CheckCircle2, X, Lock, LogOut, ShieldCheck, Phone,
-  Download, Save, ArrowRight, Sparkles, RotateCcw, Minus, Grid3X3
+  Download, Save, ArrowRight, RotateCcw, Minus, Grid3X3
 } from 'lucide-react';
 import TilesModule from '@/components/p2m/TilesModule';
 
@@ -685,7 +685,7 @@ export default function EspaceProPage() {
                 <ShoppingCart className="w-4 h-4" /> Parcourir le catalogue
               </Link>
               <Link href="/assistant" className={btnGhost}>
-                <Sparkles className="w-4 h-4" /> Assistant de qualification
+                Assistant de qualification
               </Link>
             </div>
           </div>

@@ -21,7 +21,6 @@ import {
   ChevronRight,
   ExternalLink,
   Award,
-  Sparkles,
   Search,
   Zap,
 } from 'lucide-react';
@@ -229,7 +228,6 @@ export default function HomePage() {
                   href="/assistant"
                   className="group inline-flex items-center justify-center gap-2.5 px-7 py-4 bg-accent-500 hover:bg-accent-600 text-white font-bold rounded-m shadow-elev-3 hover:shadow-[0_0_35px_rgba(242,106,27,0.5)] transition-all text-sm sm:text-base"
                 >
-                  <Sparkles className="w-5 h-5" />
                   <span>Lancer l'assistant de qualification</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -607,7 +605,6 @@ export default function HomePage() {
           <div className="relative z-10">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
               <div className="flex items-center gap-3">
-                <Sparkles className="w-5 h-5 text-accent-500" />
                 <div>
                   <h3 className="font-title font-bold text-white">
                     Flux de synergies inter-entités
@@ -839,7 +836,6 @@ export default function HomePage() {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-accent-500/15 rounded-full blur-[100px] pointer-events-none" />
           <div className="relative z-10">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent-500/15 border border-accent-500/30 rounded-full text-xs font-mono font-bold text-accent-400  tracking-wider mb-5">
-              <Sparkles className="w-3.5 h-3.5" />
               Assistant de qualification direct
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-title font-bold text-white mb-4 tracking-tight max-w-3xl mx-auto">

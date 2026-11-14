@@ -16,7 +16,6 @@ import {
   Building,
   Truck,
   Wrench,
-  Sparkles,
   MapPin,
   Map,
   Navigation,
@@ -120,7 +119,6 @@ export default function SbsPresentationGallery() {
         <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent-500/20 border border-accent-400/40 rounded-full text-xs font-mono font-bold text-accent-300">
-              <Sparkles className="w-3.5 h-3.5" />
               Photothèque haute résolution • Extraction certifiée
             </div>
             <h3 className="text-2xl sm:text-3xl font-title font-bold text-white tracking-tight">

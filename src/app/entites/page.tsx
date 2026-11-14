@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, Building2, Sparkles } from 'lucide-react';
+import { ArrowRight, Building2 } from 'lucide-react';
 import { useEntities } from '@/hooks/useEntities';
 import { SITE_IMAGES, EXPERTISE_IMAGES } from '@/data/siteImages';
 
@@ -85,7 +85,6 @@ export default function EntitiesPage() {
       <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="bg-accent-50 dark:bg-accent-950/20 border border-accent-200 dark:border-accent-800 rounded-l p-6 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Sparkles className="w-6 h-6 text-accent-500" />
             <div>
               <h3 className="font-title font-bold text-neutral-900 dark:text-white text-sm">
                 Synergie inter-entités

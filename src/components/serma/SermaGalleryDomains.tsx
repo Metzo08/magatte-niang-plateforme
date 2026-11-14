@@ -16,7 +16,6 @@ import {
   X,
   Eye,
   CheckCircle2,
-  Sparkles,
 } from 'lucide-react';
 
 export interface SermaExampleSlide {
@@ -502,7 +501,6 @@ export default function SermaGalleryDomains() {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-500/15 text-accent-600 dark:text-accent-400 text-xs font-mono font-bold mb-2">
-            <Sparkles className="w-3.5 h-3.5" />
             8 pôles d&apos;ingénierie &amp; modélisation logicielle
           </span>
           <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-3xl leading-relaxed">

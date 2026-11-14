@@ -10,7 +10,6 @@ import {
   ShieldCheck,
   Globe,
   ArrowUpRight,
-  Sparkles,
   Linkedin,
   Facebook,
   Youtube,
@@ -72,7 +71,7 @@ export const Footer: React.FC = () => {
           </div>
           <div className="bg-brand-900 dark:bg-brand-950 p-5 flex items-center gap-4">
             <div className="w-10 h-10 rounded-m bg-emerald-500/10 border-emerald-500/30 flex items-center justify-center shrink-0">
-              <Sparkles className="w-5 h-5 text-emerald-400" />
+              <Globe className="w-5 h-5 text-emerald-400" />
             </div>
             <div>
               <span className="text-[10px] font-mono  tracking-wider text-neutral-500 block">

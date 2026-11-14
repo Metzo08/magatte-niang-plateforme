@@ -10,7 +10,7 @@ import {
   ChevronRight,
   Menu,
   X,
-  Sparkles,
+
   Sun,
   Moon,
   ArrowRight,
@@ -286,7 +286,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenAI }) => {
               onClick={onOpenAI}
               className="hidden xl:inline-flex items-center gap-1.5 px-3 h-9 rounded-m bg-accent-50 dark:bg-accent-600/20 text-accent-600 dark:text-accent-400 border border-accent-200 dark:border-accent-600/40 text-xs font-bold hover:bg-accent-100 dark:hover:bg-accent-600/30 transition-colors"
             >
-              <Sparkles className="w-4 h-4" />
+
               Assistant IA
             </button>
 
@@ -334,7 +334,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenAI }) => {
               aria-label="Assistant IA"
               className="w-10 h-10 flex items-center justify-center rounded-m text-accent-600 dark:text-accent-400 hover:bg-accent-50 dark:hover:bg-brand-800 transition-colors"
             >
-              <Sparkles className="w-5 h-5" />
+              <span className="text-[11px] font-mono font-bold">IA</span>
             </button>
             <button
               onClick={() => setMobileMenuOpen((v) => !v)}

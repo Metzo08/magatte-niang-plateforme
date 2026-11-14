@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Calculator, Sparkles, Info } from 'lucide-react';
+import { Calculator, Info } from 'lucide-react';
 import type { SbsErpComputedReport } from '@/lib/sbsErpCalc';
 import type { SbsProductItem } from '@/lib/sbsErpDefaults';
 import { fmtFCFA, fmtNum, fmtPct } from './sbsFormat';
@@ -113,7 +113,7 @@ export default function SbsPrixRevientTab({
                           className="inline-flex items-center gap-1 px-2 py-1 rounded bg-brand-900 hover:bg-brand-800 text-white text-[10px] font-bold whitespace-nowrap"
                           title={`Mettre à jour le tarif public à ${Math.round(c.suggestedPrice35)} F`}
                         >
-                          <Sparkles className="w-3 h-3 text-amber-400" /> +35%
+                          +35%
                         </button>
                       )}
                     </td>

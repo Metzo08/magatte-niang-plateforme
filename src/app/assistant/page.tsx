@@ -19,7 +19,6 @@ import {
   FileText,
   ShieldCheck,
   Zap,
-  Sparkles,
   Phone,
   Mail,
   MapPin,
@@ -280,7 +279,6 @@ export default function AssistantPage() {
         {/* TOP HEADER */}
         <div className="max-w-3xl mx-auto text-center space-y-3 mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100 dark:bg-brand-800 text-brand-700 dark:text-brand-300 text-xs font-mono font-semibold">
-            <Sparkles className="w-3.5 h-3.5 text-accent-500" />
             <span>Assistant intelligent multi-étapes (§ 10)</span>
           </div>
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-title font-bold text-neutral-900 dark:text-white">
