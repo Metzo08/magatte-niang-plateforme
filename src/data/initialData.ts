@@ -49,7 +49,8 @@ export const ENTITIES: EntityInfo[] = [
       'Équipements de diagnostic structurel et d\'audit technique'
     ],
     synergies: [
-      { entityId: 'sbs-group', role: 'Transmission des études et modèles 3D/BIM à SB-S Group qui se charge de l\'exécution des travaux', benefit: 'Exécution fidèle aux plans et simulations validés par SERMA BTP' },
+      { entityId: 'sbs-labo', role: 'Réception des études géotechniques de sol et d\'essais matériaux réalisées par SB-S Labo (agréé C2 et A3) sur lesquelles SERMA BTP s\'appuie pour faire sa modélisation 3D/BIM', benefit: 'Modélisation structurelle et dimensionnement des fondations 100 % calés sur les études de SB-S Labo avant transmission à SB-S Group' },
+      { entityId: 'sbs-group', role: 'Transmission des études et modèles 3D/BIM (réalisés en fonction des études de SB-S Labo) à SB-S Group qui se charge de l\'exécution des travaux', benefit: 'Exécution fidèle aux plans et simulations validés par SERMA BTP' },
       { entityId: 'sbs-logistik', role: 'Mobilisation du matériel lourd, grues et engins pour les travaux sur les différents chantiers', benefit: 'Déploiement rapide de la flotte sur chaque site d\'exécution' },
       { entityId: 'sbs-industries', role: 'Fourniture des briques, pavés et bétons (BPE) nécessaires à la construction des ouvrages', benefit: 'Approvisionnement industriel certifié directement depuis l\'usine de Mbao' },
       { entityId: 'p2m', role: 'Fourniture des carreaux et de tout le sanitaire pour la décoration et les finitions', benefit: 'Parachèvement architectural haut de gamme des bâtiments livrés' }
@@ -99,7 +100,8 @@ export const ENTITIES: EntityInfo[] = [
       'Énergie & Chantier : groupes électrogènes 150 kVA et 5 kVA, équipements de coffrage lourd'
     ],
     synergies: [
-      { entityId: 'serma-btp', role: 'Réalise les études techniques, la modélisation logicielle 3D/BIM et les simulations avant de confier l\'exécution à SB-S Group', benefit: 'Plans d\'exécution et notes de calcul certifiés en amont' },
+      { entityId: 'sbs-labo', role: 'Réalise les études géotechniques de sol (Catégorie C2) et essais matériaux (Catégorie A3) qui servent de base à la modélisation de SERMA BTP', benefit: 'Fondations et bétons certifiés avec émission des PV en 24 heures' },
+      { entityId: 'serma-btp', role: 'Réalise la modélisation logicielle 3D/BIM et les études techniques en fonction des études de SB-S Labo avant de confier l\'exécution des travaux à SB-S Group', benefit: 'Plans d\'exécution et notes de calcul certifiés en amont' },
       { entityId: 'sbs-logistik', role: 'Fournit le matériel et les engins lourds pour le travail sur les différents chantiers', benefit: 'Flotte de grues, pompes et bennes disponible 24/7' },
       { entityId: 'sbs-industries', role: 'Fournit les briques, les pavés et le béton prêt à l\'emploi pour la construction', benefit: 'Approvisionnement industriel direct depuis l\'usine de Mbao' },
       { entityId: 'p2m', role: 'Fournit les carreaux et tout le sanitaire pour la décoration et le second-œuvre', benefit: 'Finitions architecturales complètes clé en main' }
@@ -115,39 +117,48 @@ export const ENTITIES: EntityInfo[] = [
   {
     id: 'sbs-labo',
     name: 'Sbs labo',
-    tagline: 'Géotechnique, contrôle qualité & essais matériaux',
-    badge: 'Laboratoire de contrôle agréé',
+    tagline: 'Géotechnique, études de sol, contrôle qualité & essais matériaux (Catégories C2 et A3)',
+    badge: 'Laboratoire agréé LNR-BTP · Catégories C2 et A3',
     color: 'entity-sbsLabo',
     colorHex: '#1F9D6B',
     accentClass: 'bg-[#1F9D6B]',
-    mission: 'Sécuriser chaque ouvrage par des études de sol, essais sur roches et analyses béton réalisés avec un équipement de pointe et des agréments de catégories C2 et A2.',
-    description: 'Filiale géotechnique créée en 2021 (RC : SN DKR 2021 B 12675), SB-S Labo est agréée catégories C2 et A2 et spécialisée en mécanique des sols : études de sol (G2AVP), topographie, essais sur sols et roches (Proctor, CBR, cisaillement) et analyses sur béton frais et durci. Agréments délivrés dans le cadre du référentiel LNR-BTP (loi n° 2023-12 et décret n° 2023-1780).',
-    leader: 'Maguette Niang',
-    leaderRole: 'Directeur général',
-    address: 'Route de Rufisque, Km 12',
+    mission: 'Sécuriser chaque ouvrage dès l\'amont en réalisant les études géotechniques de sol (Catégorie C2) et les essais sur matériaux de construction et bétons hydrauliques (Catégorie A3) avec un parc matériel certifié et étalonné, afin de fournir à SERMA BTP les données géotechniques indispensables à la modélisation 3D/BIM avant l\'exécution des travaux par SB-S Group.',
+    description: 'Filiale géotechnique créée en 2021 (RC : SN DKR 2021 B 12675), dirigée par son responsable Abdoulaye Niang (+221 77 321 78 60), SB-S Labo est agréée Catégories C2 (Domaine C : Ingénierie des sols et fondations) et A3 (Domaine A : Matériaux de construction et bétons hydrauliques) conformément au référentiel LNR-BTP (loi n° 2023-12 du 21 juin 2023 et décret n° 2023-1780 du 29 août 2023). SB-S Labo réalise les études géotechniques de référence à partir desquelles SERMA BTP effectue la modélisation logicielle avant de transmettre les dossiers à SB-S Group pour les travaux.',
+    leader: 'Abdoulaye Niang',
+    leaderRole: 'Responsable SB-S Labo & Référent Technique',
+    address: 'Dakar, Sénégal (hors pôle Mbao)',
     city: 'Dakar',
     country: 'Sénégal',
-    phone: '+221 33 834 18 90',
+    phone: '+221 77 321 78 60',
     email: 'labo@sbs-labo.sn',
-    whatsapp: '+221 78 120 33 44',
+    whatsapp: '+221 77 321 78 60',
     ctaText: 'Demander un essai de sol / béton',
     ctaAction: 'qualify-labo',
     expertises: [
-      'Études de sol (G2AVP) et topographie',
-      'Essais sur sols et roches (Proctor, CBR, cisaillement, limites d\'Atterberg)',
-      'Analyses sur béton frais et durci (écrasement, compression)',
-      'Auscultation et diagnostic d\'ouvrages existants',
-      'Levés topographiques et implantations',
-      'Agréments officiels C2 (contrôle qualité matériaux) et A2 (sondages & études de sols)'
+      'Catégorie C.2 (Domaine C · Ingénierie des sols et fondations) : teneur en eau, granulométrie par tamisage et densimétrie, limites d\'Atterberg, bleu de méthylène, équivalent de sable, masse volumique',
+      'Catégorie C.2 (Essais mécaniques & in-situ sur sol) : cisaillement direct à la boîte de Casagrande, œdomètre par palier, sondage manuel, pénétromètre dynamique et carottage',
+      'Catégorie A.3 (Domaine A · Granulats) : granularité, coefficient d\'aplatissement, propreté équivalent de sable, valeur de bleu et absorption d\'eau',
+      'Catégorie A.3 (Domaine A · Bétons hydrauliques & roches) : résistance à la compression simple des éprouvettes sous presse 3 000 kN, essai d\'affaissement au cône d\'Abrams, confection et conservation en salle de cure',
+      'Domaine B (Géotechnique routière) : essais Proctor Normal et Modifié, indice CBR après immersion et immédiat, compacité in-situ et essai à la plaque (EV2)',
+      'Domaine D (Auscultation & diagnostic des ouvrages) : scléromètre, carottage béton durci, auscultation d\'ouvrages et matériel 100 % certifié et étalonné'
+    ],
+    equipmentList: [
+      'Presse de compression hydraulique asservie 3 000 kN certifiée et étalonnée (écrasement béton 7j, 14j, 28j)',
+      'Sondeuse géotechnique carottière APAFOR 450RS, pénétromètres dynamiques lourds et tarières',
+      'Bâtis de cisaillement direct rectiligne (Casagrande) et cellules œdométriques étalonnés',
+      'Colonne de tamis normalisés AFNOR, appareil de Casagrande, moules Proctor/CBR, étuves thermostatiques et balances de précision certifiées'
     ],
     synergies: [
-      { entityId: 'serma-btp', role: 'Dimensionnement des fondations sur la base des portances', benefit: 'Optimisation du poids et coût des massifs' },
-      { entityId: 'sbs-industries', role: 'Certification continue des bétons préfabriqués', benefit: 'Délivrance de procès-verbaux de conformité' }
+      { entityId: 'serma-btp', role: 'Forte connexion amont : SB-S Labo réalise les études géotechniques de sol et essais matériaux, et SERMA BTP réalise la modélisation 3D/BIM en fonction des études de SB-S Labo', benefit: 'Dimensionnement structurel et modélisation SERMA BTP fondés sur les paramètres réels du sol avant transmission à SB-S Group' },
+      { entityId: 'sbs-group', role: 'Transmission conjointe (études SB-S Labo + modélisation SERMA BTP) à SB-S Group pour l\'exécution des travaux et contrôle continu de réception sur chantier', benefit: 'Sécurisation géotechnique intégrale des travaux et émission des PV en 24 heures' },
+      { entityId: 'sbs-industries', role: 'Contrôle qualité permanent (Catégorie A3) des granulats, bétons BPE, briques et pavés produits à l\'usine de Mbao', benefit: 'Délivrance de procès-verbaux de conformité sous 24 heures' },
+      { entityId: 'sbs-logistik', role: 'Déploiement coordonné des équipements de forage et d\'essais in-situ sur les différents chantiers', benefit: 'Réactivité immédiate sur l\'ensemble des sites d\'exécution' }
     ],
     verifiedMetrics: [
-      { label: 'Agrément laboratoire', value: 'C2 + A2', unit: 'catégories', status: 'confirmed' },
-      { label: 'Création de la filiale', value: '2021', unit: 'année', status: 'confirmed' },
-      { label: 'Délai standard d\'émission PV', value: '48', unit: 'heures', status: 'confirmed' }
+      { label: 'Catégorie C2 et A3', value: 'C2 et A3', unit: 'LNR-BTP', status: 'confirmed' },
+      { label: 'Certification et étalonnage du matériel', value: '100', unit: '% certifié', status: 'confirmed' },
+      { label: 'Nombre projet', value: '380+', unit: 'projets', status: 'confirmed' },
+      { label: 'Délai standard d\'émission PV', value: '24', unit: 'heures', status: 'confirmed' }
     ],
     icon: 'FlaskConical'
   },

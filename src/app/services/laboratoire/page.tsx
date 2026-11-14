@@ -34,24 +34,24 @@ export default function LaboratoirePage() {
         <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
           <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-500/15 border border-emerald-500/30 rounded-full text-xs font-mono font-bold  tracking-wider text-emerald-400 mb-5">
             <FlaskConical className="w-3.5 h-3.5" />
-            Laboratoire agréé catégories C2 & A2
+            Laboratoire agréé catégories C2 & A3 · Responsable : Abdoulaye Niang (+221 77 321 78 60)
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-title font-bold tracking-tight mb-4">
             SB-S Labo · <span className="text-emerald-400">Géotechnique & contrôle qualité</span>
           </h1>
           <p className="text-neutral-300 text-base sm:text-lg leading-relaxed max-w-3xl">
-            Filiale géotechnique créée en 2021 et agréée catégories C2 et A2, SB-S Labo est spécialisée en
+            Filiale géotechnique créée en 2021 et agréée catégories C2 et A3 (LNR-BTP), SB-S Labo est spécialisée en
             mécanique des sols. Nous réalisons des études de sol, des essais sur roches et des analyses
             sur béton avec un équipement de pointe pour garantir la sécurité et la pérennité de vos ouvrages.
           </p>
-          <p className="text-xs font-mono text-neutral-500 mt-4">RC : SN DKR 2021 B 12675 · Agréments ministériels C2 & A2 · cadre LNR-BTP (loi n° 2023-12, décret n° 2023-1780)</p>
+          <p className="text-xs font-mono text-neutral-500 mt-4">RC : SN DKR 2021 B 12675 · Agréments ministériels C2 & A3 · cadre LNR-BTP (loi n° 2023-12, décret n° 2023-1780) · Responsable : Abdoulaye Niang (+221 77 321 78 60)</p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
             {[
-              { label: 'Essais / an', value: '12 800+' },
-              { label: 'Études de sol', value: '380+' },
-              { label: 'Délai PV standard', value: '48h' },
-              { label: 'Création', value: '2021' },
+              { label: 'Catégorie C2 et A3', value: 'C2 & A3' },
+              { label: 'Nombre projet', value: '380+' },
+              { label: 'Délai standard PV', value: '24 heures' },
+              { label: 'Certification & étalonnage matériel', value: '100%' },
             ].map(m => (
               <div key={m.label} className="bg-brand-800/60 border border-brand-700 rounded-m p-4">
                 <p className="text-2xl font-title font-bold text-emerald-400 tabular-nums">{m.value}</p>
@@ -86,7 +86,7 @@ export default function LaboratoirePage() {
             ))}
           </div>
           <p className="text-center text-[11px] font-mono text-neutral-500 mt-3">
-            Laboratoire géotechnique agréé catégories C2 et A2 · Photos officielles SB-S Labo
+            Laboratoire géotechnique agréé catégories C2 et A3 · Photos officielles SB-S Labo · Responsable : Abdoulaye Niang (+221 77 321 78 60)
           </p>
         </div>
       </section>
@@ -97,7 +97,7 @@ export default function LaboratoirePage() {
           Prestations techniques
         </h2>
         <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-8">
-          Chaque essai est réalisé selon les normes NF / ISO en vigueur, avec procès-verbal traçable sous 48h.
+          Chaque essai est réalisé selon les normes NF / ISO en vigueur, avec procès-verbal traçable sous 24 heures.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">

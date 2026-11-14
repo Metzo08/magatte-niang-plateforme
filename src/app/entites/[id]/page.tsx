@@ -26,6 +26,7 @@ import PhotoLightbox from '@/components/common/PhotoLightbox';
 import SbsPresentationGallery from '@/components/sbs/SbsPresentationGallery';
 import SbsLogistikGallery from '@/components/sbs/SbsLogistikGallery';
 import SbsIndustriesPublicCatalog from '@/components/sbs/SbsIndustriesPublicCatalog';
+import SbsLaboGalleryCategories from '@/components/sbs/SbsLaboGalleryCategories';
 import SermaGalleryDomains from '@/components/serma/SermaGalleryDomains';
 import InteractiveLocationMap from '@/components/maps/InteractiveLocationMap';
 import { Layers, Truck } from 'lucide-react';
@@ -116,6 +117,8 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
               ? 'Responsable SBS Industrie'
               : entity.id === 'sbs-logistik'
               ? 'Responsable SBS Logistik'
+              : entity.id === 'sbs-labo'
+              ? 'Responsable SB-S Labo'
               : 'Responsable d’entité',
         }
       : undefined,
@@ -224,6 +227,21 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
                   </div>
                 )}
 
+                {id === 'sbs-labo' && (
+                  <div className="pt-2 border-t border-white/10 text-xs text-amber-200">
+                    <p className="font-semibold text-white">Abdoulaye Niang</p>
+                    <p className="text-[11px] text-white/80">Responsable SB-S Labo (Agréments C2 &amp; A3)</p>
+                    <a
+                      href="https://wa.me/221773217860?text=Bonjour%20Abdoulaye%20Niang%2C%20je%20souhaite%20solliciter%20SB-S%20Labo%20pour%20une%20%C3%A9tude%20g%C3%A9otechnique%20ou%20un%20essai%20b%C3%A9ton."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 mt-1 font-bold text-emerald-300 hover:text-emerald-200 underline"
+                    >
+                      WhatsApp / Contact : +221 77 321 78 60
+                    </a>
+                  </div>
+                )}
+
                 {id === 'pgt' && (
                   <div className="pt-2 border-t border-white/10 text-xs text-amber-200">
                     <p className="font-semibold text-white">PGT DUBAI - AJMAN</p>
@@ -280,8 +298,8 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
         </div>
       </section>
 
-      {/* Galerie photo et vidéo dédiée (avec les 8 domaines en cases + carrousel par domaine pour SERMA BTP) */}
-      {id !== 'sbs-group' && id !== 'sbs-logistik' && (id === 'serma-btp' || gallery.length > 0) && (
+      {/* Galerie photo et vidéo dédiée (avec les 8 domaines SERMA BTP et les catégories LNR-BTP pour SB-S Labo) */}
+      {id !== 'sbs-group' && id !== 'sbs-logistik' && (id === 'serma-btp' || id === 'sbs-labo' || gallery.length > 0) && (
         <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-12 border-b border-neutral-200 dark:border-brand-700">
           <h2 className="text-2xl font-title font-bold text-neutral-900 dark:text-white mb-4">
             {id === 'serma-btp' ? 'Galerie SERMA' : `Galerie ${entity.name}`}
@@ -289,6 +307,8 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
 
           {id === 'serma-btp' ? (
             <SermaGalleryDomains />
+          ) : id === 'sbs-labo' ? (
+            <SbsLaboGalleryCategories />
           ) : (
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {gallery.map((img, idx: number) => (
@@ -459,13 +479,13 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
             </h2>
           </div>
 
-          {/* Schéma d'interconnexion visuelle avec lignes de liaison entre les 5 entités */}
+          {/* Schéma d'interconnexion visuelle avec lignes de liaison entre les 6 entités */}
           <div className="mb-8 p-5 sm:p-6 rounded-2xl bg-brand-900 text-white border border-brand-700 shadow-lg">
             <div className="text-xs font-mono font-bold text-accent-400 mb-2">
               Schéma d&apos;interconnexion opérationnelle de l&apos;écosystème Magatte Niang :
             </div>
             <p className="text-xs sm:text-sm text-neutral-200 leading-relaxed mb-6">
-              <strong>SERMA BTP</strong> réalise les études et la modélisation 3D/BIM avec ses logiciels et les transmet à <strong>Sbs-group</strong> qui se charge de l&apos;exécution des travaux, appuyé par <strong>Sbs-logistik</strong> pour le matériel, par <strong>Sbs-industries</strong> pour les briques, pavés et bétons, puis par <strong>P2m</strong> pour les carreaux et tout le sanitaire.
+              <strong>Sbs-labo</strong> réalise les études géotechniques de sol et les essais matériaux (Catégories C2 et A3), <strong>Serma-btp</strong> réalise la modélisation 3D/BIM en fonction des études de <strong>Sbs-labo</strong> et transmet les dossiers à <strong>Sbs-group</strong> qui se charge de l&apos;exécution des travaux, appuyé par <strong>Sbs-logistik</strong> pour le matériel, par <strong>Sbs-industries</strong> pour les briques, pavés et bétons, puis par <strong>P2m</strong> pour les carreaux et tout le sanitaire.
             </p>
 
             {/* Graphe de noeuds reliés par de vraies lignes de connexion */}
@@ -473,34 +493,41 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
               {[
                 {
                   step: '01',
-                  id: 'serma-btp',
-                  label: 'Serma-btp',
-                  sub: 'Études & Modélisation 3D/BIM',
-                  color: '#1B4965',
+                  id: 'sbs-labo',
+                  label: 'Sbs-labo',
+                  sub: 'Études géotechniques C2 & A3',
+                  color: '#1F9D6B',
                 },
                 {
                   step: '02',
+                  id: 'serma-btp',
+                  label: 'Serma-btp',
+                  sub: 'Modélisation selon études Labo',
+                  color: '#1B4965',
+                },
+                {
+                  step: '03',
                   id: 'sbs-group',
                   label: 'Sbs-group',
                   sub: 'Exécution des travaux BTP',
                   color: '#2D6A8E',
                 },
                 {
-                  step: '03',
+                  step: '04',
                   id: 'sbs-logistik',
                   label: 'Sbs-logistik',
                   sub: 'Matériel lourd, grues & engins',
                   color: '#E07A5F',
                 },
                 {
-                  step: '04',
+                  step: '05',
                   id: 'sbs-industries',
                   label: 'Sbs-industries',
                   sub: 'Briques, pavés & bétons (BPE)',
                   color: '#577590',
                 },
                 {
-                  step: '05',
+                  step: '06',
                   id: 'p2m',
                   label: 'P2m',
                   sub: 'Carreaux & sanitaire finition',
