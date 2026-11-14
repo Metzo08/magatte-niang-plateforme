@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Store du module Carreaux P2M — catalogue + devis (localStorage).
+ * Store du module Carreaux P2M · catalogue + devis (localStorage).
  * Les lignes de devis figent désignation, m²/carton, prix/m² et prix/carton :
  * un devis émis ne change jamais si le catalogue évolue ensuite.
  */

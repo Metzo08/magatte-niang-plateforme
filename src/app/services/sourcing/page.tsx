@@ -49,7 +49,7 @@ export default function SourcingPage() {
             Sourcing international & import-export
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-title font-bold tracking-tight mb-4">
-            PGT — <span className="text-purple-300">Polytech General Trading</span>
+            PGT · <span className="text-purple-300">Polytech General Trading</span>
           </h1>
           <p className="text-neutral-300 text-base sm:text-lg leading-relaxed max-w-3xl">
             De l'Inde au Sénégal, vos ressources sans frontières. PGT est le partenaire stratégique
@@ -77,14 +77,14 @@ export default function SourcingPage() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={SITE_IMAGES.portInternational}
-            alt="Port international — fret maritime PGT"
+            alt="Port international · fret maritime PGT"
             className="w-full h-48 sm:h-60 object-cover rounded-l border border-brand-700 shadow-elev-3"
             loading="lazy"
           />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={SITE_IMAGES.pgt}
-            alt="PGT — Polytech General Trading, sourcing international"
+            alt="PGT · Polytech General Trading, sourcing international"
             className="w-full h-48 sm:h-60 object-cover rounded-l border border-brand-700 shadow-elev-3"
             loading="lazy"
           />
@@ -227,7 +227,7 @@ export default function SourcingPage() {
             </a>
           </div>
           <p className="mt-6 text-xs text-neutral-500 inline-flex items-center gap-1.5">
-            <FileCheck className="w-3.5 h-3.5" /> Dakar, Sénégal — Lun–Ven : 8h00–18h00 · Sam : 8h00–13h00
+            <FileCheck className="w-3.5 h-3.5" /> Dakar, Sénégal · Lun–Ven : 8h00–18h00 · Sam : 8h00–13h00
           </p>
         </div>
       </section>

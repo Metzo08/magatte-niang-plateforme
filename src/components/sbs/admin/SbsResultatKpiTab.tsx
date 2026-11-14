@@ -34,7 +34,7 @@ export default function SbsResultatKpiTab({
           <div>
             <h2 className="font-title font-bold text-lg text-brand-900 dark:text-white flex items-center gap-2">
               <FileSpreadsheet className="w-5 h-5 text-accent-500" />
-              Compte de Résultat Mensuel — {monthLabel}
+              Compte de Résultat Mensuel · {monthLabel}
             </h2>
             <p className="text-xs text-neutral-500 dark:text-neutral-400">
               Alimenté en temps réel par les Ventes, Locations, Journalier (consommations réelles) et Paramètres.

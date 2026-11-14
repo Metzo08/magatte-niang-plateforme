@@ -274,7 +274,7 @@ function PanierIsolateContent() {
           totalHT: subtotalHT,
           taxRate: 18,
           totalTTC,
-          notes: `Expression de besoin P2M (${needData.need?.needNumber || ''}) — Livraison : ${
+          notes: `Expression de besoin P2M (${needData.need?.needNumber || ''}) · Livraison : ${
             clientData.deliveryLocation || 'Dakar'
           }`,
         });
@@ -315,7 +315,7 @@ function PanierIsolateContent() {
         totalHT: subtotalHT,
         taxRate: 18,
         totalTTC,
-        notes: `Commande SB-S Industrie — Lieu : ${clientData.deliveryLocation || 'Dakar / Rufisque'}. ${
+        notes: `Commande SB-S Industrie · Lieu : ${clientData.deliveryLocation || 'Dakar / Rufisque'}. ${
           clientData.notes || ''
         }`,
       });
@@ -329,8 +329,8 @@ function PanierIsolateContent() {
         city: clientData.deliveryLocation || 'Dakar',
         sector: 'Bâtiment & Travaux Publics',
         source: 'Devis catalogue',
-        needCategory: 'Matériaux BTP — Agglos, Hourdis & Pavés',
-        projectType: 'Matériaux BTP — Agglos, Hourdis & Pavés',
+        needCategory: 'Matériaux BTP · Agglos, Hourdis & Pavés',
+        projectType: 'Matériaux BTP · Agglos, Hourdis & Pavés',
         projectLocation: clientData.deliveryLocation || 'Dakar',
         projectStage: 'Démarrage',
         budgetRange: `${totalTTC.toLocaleString('fr-FR')} FCFA`,
@@ -467,7 +467,7 @@ function PanierIsolateContent() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={SITE_IMAGES.rubonChantier}
-          alt="Panier dédié par entité — Groupe Magatte Niang"
+          alt="Panier dédié par entité · Groupe Magatte Niang"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
           loading="lazy"
         />
@@ -749,7 +749,7 @@ function PanierIsolateContent() {
                 <div className="flex justify-between items-center text-neutral-600 dark:text-neutral-300">
                   <span>TVA (18% Sénégal) :</span>
                   <span className="tabular-nums">
-                    {taxAmount > 0 ? `${taxAmount.toLocaleString('fr-FR')} FCFA` : '—'}
+                    {taxAmount > 0 ? `${taxAmount.toLocaleString('fr-FR')} FCFA` : '-'}
                   </span>
                 </div>
                 <div className="flex justify-between items-center text-sm font-bold text-neutral-900 dark:text-white pt-2 border-t border-neutral-200 dark:border-brand-800">
@@ -933,7 +933,7 @@ function PanierIsolateContent() {
                         `Bonjour Rokhaya KANE, je souhaite commander / réserver ces matériels chez SBS Logistik :\n\n${cart
                           .map(
                             (item, idx) =>
-                              `${idx + 1}. ${item.product.name} — Qté : ${item.quantity}, Durée : ${item.days || 1} j${
+                              `${idx + 1}. ${item.product.name} · Qté : ${item.quantity}, Durée : ${item.days || 1} j${
                                 item.product.indicativePriceFCFA
                                   ? ` (${item.product.indicativePriceFCFA.toLocaleString('fr-FR')} F/j)`
                                   : ''

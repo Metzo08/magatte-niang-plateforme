@@ -112,7 +112,7 @@ export default function SbsVentesLocationsTab({
           <div>
             <h2 className="font-title font-bold text-lg text-brand-900 dark:text-white flex items-center gap-2">
               <ShoppingBag className="w-5 h-5 text-accent-500" />
-              Ventes du mois — {monthLabel}
+              Ventes du mois · {monthLabel}
             </h2>
             <p className="text-xs text-neutral-500 dark:text-neutral-400">
               Lié au module Prix de revient : calcule automatiquement le CA et la marge nette unitaire par produit.
@@ -168,7 +168,7 @@ export default function SbsVentesLocationsTab({
                           unitPriceFCFA: e.target.value === '' ? null : Number(e.target.value) || 0,
                         })
                       }
-                      placeholder="—"
+                      placeholder="-"
                       className="w-24 px-2 py-1 text-right rounded border border-amber-300 dark:border-brand-700 bg-amber-50/70 dark:bg-brand-950 font-mono tabular-nums"
                     />
                   </td>
@@ -183,14 +183,14 @@ export default function SbsVentesLocationsTab({
                       (s.unitMarginFCFA ?? 0) >= 0 ? 'text-emerald-600' : 'text-red-600'
                     }`}
                   >
-                    {s.unitMarginFCFA != null ? fmtFCFA(s.unitMarginFCFA, 2) : '—'}
+                    {s.unitMarginFCFA != null ? fmtFCFA(s.unitMarginFCFA, 2) : '-'}
                   </td>
                   <td
                     className={`py-2 px-3 text-right font-mono font-bold tabular-nums ${
                       (s.totalMarginFCFA ?? 0) >= 0 ? 'text-emerald-600' : 'text-red-600'
                     }`}
                   >
-                    {s.totalMarginFCFA != null ? fmtFCFA(Math.round(s.totalMarginFCFA)) : '—'}
+                    {s.totalMarginFCFA != null ? fmtFCFA(Math.round(s.totalMarginFCFA)) : '-'}
                   </td>
                 </tr>
               ))}
@@ -272,7 +272,7 @@ export default function SbsVentesLocationsTab({
             >
               {products.map((p) => (
                 <option key={p.code} value={p.code}>
-                  {p.code} — {p.name}
+                  {p.code} · {p.name}
                 </option>
               ))}
             </select>

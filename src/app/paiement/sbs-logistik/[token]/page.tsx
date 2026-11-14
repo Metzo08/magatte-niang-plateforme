@@ -161,7 +161,7 @@ export default function LogistikOnlinePaymentPage() {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-5">
             <div>
               <div className="text-xs font-mono text-amber-400 font-bold">
-                SB-S LOGISTIK — GROUPE MAGATTE NIANG
+                SB-S LOGISTIK · GROUPE MAGATTE NIANG
               </div>
               <h1 className="text-2xl font-bold text-white mt-1">
                 Facture {invoice.invoiceNumber}

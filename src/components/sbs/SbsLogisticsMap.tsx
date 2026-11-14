@@ -59,7 +59,7 @@ const CORRIDORS: CorridorHub[] = [
   },
   {
     id: 'thies-carrieres',
-    name: 'Pôle Thiès — Carrières & VRD Lourd',
+    name: 'Pôle Thiès · Carrières & VRD Lourd',
     region: 'Région de Thiès',
     distanceKm: 70,
     deploymentTime: '< 1h30',
@@ -81,7 +81,7 @@ const CORRIDORS: CorridorHub[] = [
   },
   {
     id: 'sendou-bargny',
-    name: 'Pôle Côtier Sendou — Bargny — Énergie',
+    name: 'Pôle Côtier Sendou · Bargny · Énergie',
     region: 'Dakar Sud / Sendou',
     distanceKm: 35,
     deploymentTime: '< 45 min',
@@ -102,7 +102,7 @@ const CORRIDORS: CorridorHub[] = [
   },
   {
     id: 'petite-cote',
-    name: 'Pôle Petite Côte — Mbour / Saly / Pointe Sarène',
+    name: 'Pôle Petite Côte · Mbour / Saly / Pointe Sarène',
     region: 'Thiès Sud',
     distanceKm: 85,
     deploymentTime: '< 2h00',
@@ -124,7 +124,7 @@ const CORRIDORS: CorridorHub[] = [
   },
   {
     id: 'nord-richard-toll',
-    name: 'Corridor Fleuve Nord — Richard-Toll / Saint-Louis',
+    name: 'Corridor Fleuve Nord · Richard-Toll / Saint-Louis',
     region: 'Saint-Louis / Vallée du Fleuve',
     distanceKm: 375,
     deploymentTime: '< 5h00',
@@ -145,7 +145,7 @@ const CORRIDORS: CorridorHub[] = [
   },
   {
     id: 'centre-kaffrine',
-    name: 'Corridor Centre — Kaolack / Kaffrine',
+    name: 'Corridor Centre · Kaolack / Kaffrine',
     region: 'Bassin Arachidier / Centre',
     distanceKm: 255,
     deploymentTime: '< 3h30',
@@ -166,7 +166,7 @@ const CORRIDORS: CorridorHub[] = [
   },
   {
     id: 'sud-est-mako',
-    name: 'Pôle Sud-Est Minier — Mako / Kédougou',
+    name: 'Pôle Sud-Est Minier · Mako / Kédougou',
     region: 'Kédougou (Zone Minière de l\'Or)',
     distanceKm: 680,
     deploymentTime: 'Base Dépôt Déportée',
@@ -187,7 +187,7 @@ const CORRIDORS: CorridorHub[] = [
   },
   {
     id: 'abidjan-pk24',
-    name: 'Antenne Sous-Régionale — Abidjan PK 24 (Côte d\'Ivoire)',
+    name: 'Antenne Sous-Régionale · Abidjan PK 24 (Côte d\'Ivoire)',
     region: 'Côte d\'Ivoire (Corridor UEMOA)',
     distanceKm: 2100,
     deploymentTime: 'Équipe Résidente ETM-CI',
@@ -401,7 +401,7 @@ export default function SbsLogisticsMap() {
                         : 'bg-black/80 text-neutral-300 opacity-70 group-hover:opacity-100'
                     }`}
                   >
-                    {isBase ? 'HQ SÉNÉGAL (Base Centrale)' : hub.name.split('—')[0].trim()}
+                    {isBase ? 'HQ SÉNÉGAL (Base Centrale)' : hub.name.split('-')[0].trim()}
                   </div>
                 </div>
               );

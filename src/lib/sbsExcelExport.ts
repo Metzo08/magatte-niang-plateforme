@@ -44,7 +44,7 @@ export function downloadSbsExcelWorkbook(
   const monthLabel = `${MONTHS_FR[(ledger.month - 1) % 12] || ledger.month} ${ledger.year}`;
 
   const wsDashboard = worksheet('Dashboard', [
-    row([cell(`SBS INDUSTRIE — TABLEAU DE BORD (${monthLabel})`, 'Title')]),
+    row([cell(`SBS INDUSTRIE · TABLEAU DE BORD (${monthLabel})`, 'Title')]),
     row([cell('CA Total (F)', 'Header'), cell('Production (u)', 'Header'), cell('MCV (F)', 'Header'), cell('Résultat net (F)', 'Header'), cell('Taux MCV', 'Header'), cell('Prix revient moyen (F/u)', 'Header')]),
     row([
       cell(Math.round(computed.incomeStatement.caTotal)),
@@ -63,7 +63,7 @@ export function downloadSbsExcelWorkbook(
 
   const formCodes = products.filter((p) => p.hasFormulation).map((p) => p.code);
   const wsJournalier = worksheet('Journalier', [
-    row([cell(`SUIVI JOURNALIER DE PRODUCTION — ${monthLabel}`, 'Title')]),
+    row([cell(`SUIVI JOURNALIER DE PRODUCTION · ${monthLabel}`, 'Title')]),
     row([
       cell('Jour', 'Header'),
       ...formCodes.map((c) => cell(c, 'Header')),
@@ -108,7 +108,7 @@ export function downloadSbsExcelWorkbook(
   ]);
 
   const wsVentes = worksheet('Ventes & Locations', [
-    row([cell(`VENTES DU MOIS — ${monthLabel}`, 'Title')]),
+    row([cell(`VENTES DU MOIS · ${monthLabel}`, 'Title')]),
     row([
       cell('Code', 'Header'),
       cell('Désignation', 'Header'),
@@ -134,7 +134,7 @@ export function downloadSbsExcelWorkbook(
   ]);
 
   const wsPrixRevient = worksheet('Prix Revient', [
-    row([cell(`PRIX DE REVIENT & COMPACITÉ — ${monthLabel}`, 'Title')]),
+    row([cell(`PRIX DE REVIENT & COMPACITÉ · ${monthLabel}`, 'Title')]),
     row([
       cell('Code', 'Header'),
       cell('Désignation', 'Header'),
@@ -170,7 +170,7 @@ export function downloadSbsExcelWorkbook(
   ]);
 
   const wsCompteResultat = worksheet('Compte Resultat', [
-    row([cell(`COMPTE DE RÉSULTAT — ${monthLabel}`, 'Title')]),
+    row([cell(`COMPTE DE RÉSULTAT · ${monthLabel}`, 'Title')]),
     row([cell('Rubrique', 'Header'), cell('Montant (F CFA)', 'Header'), cell('% du CA', 'Header')]),
     row([cell('CA Ventes Produits'), cell(Math.round(computed.incomeStatement.caProduitsRetenu)), cell('100 %')]),
     row([cell('CA Locations'), cell(Math.round(computed.incomeStatement.caLocations)), cell('')]),
@@ -184,7 +184,7 @@ export function downloadSbsExcelWorkbook(
   ]);
 
   const wsStocks = worksheet('Stocks', [
-    row([cell(`SUIVI DES STOCKS — ${monthLabel}`, 'Title')]),
+    row([cell(`SUIVI DES STOCKS · ${monthLabel}`, 'Title')]),
     row([cell('Article', 'Header'), cell('Stock début', 'Header'), cell('Entrées', 'Header'), cell('Sorties', 'Header'), cell('Stock fin', 'Header'), cell('Note', 'Header')]),
     ...computed.stockRows.map((s) =>
       row([cell(s.label), cell(s.opening), cell(s.entries), cell(s.exits), cell(s.closing), cell(s.note)])
@@ -192,7 +192,7 @@ export function downloadSbsExcelWorkbook(
   ]);
 
   const wsCatalogue = worksheet('Catalogue & Parametres', [
-    row([cell(`${config.companyName} — CATALOGUE OFFICIEL (${config.phone})`, 'Title')]),
+    row([cell(`${config.companyName} · CATALOGUE OFFICIEL (${config.phone})`, 'Title')]),
     row([cell('Code', 'Header'), cell('Famille', 'Header'), cell('Désignation', 'Header'), cell('Dimensions', 'Header'), cell('Prix public (F CFA)', 'Header'), cell('Unité', 'Header'), cell('Disponibilité', 'Header')]),
     ...products.map((p) =>
       row([cell(p.code), cell(p.family), cell(p.name), cell(p.dimensions), cell(p.sellingPriceFCFA), cell(p.unit), cell(p.availability)])

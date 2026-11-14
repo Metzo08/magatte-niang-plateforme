@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Devis carreaux imprimable — génère une fenêtre d'impression (PDF via Ctrl+P / Enregistrer en PDF).
+ * Devis carreaux imprimable · génère une fenêtre d'impression (PDF via Ctrl+P / Enregistrer en PDF).
  * Contenu conforme au cahier des charges §9 : en-tête entreprise, numéro/date, validité, client/chantier,
  * tableau (désignation, surface, cartons, m² livrés, prix/m², prix carton, montant), HT/TVA/TTC,
  * conditions, mention arrondi au carton entier.
@@ -51,9 +51,9 @@ export function printTileQuote(q: TileQuote) {
   </style></head><body>
   <header>
     <div>
-      <h1>P2M — Polytech Matériaux &amp; Matériels</h1>
-      <div class="co">Showroom Mbao Ville Neuve, Villa S04, Dakar — Sénégal<br>
-      +221 78 832 12 79 / +221 78 424 64 45 — p2m.senegal@gmail.com</div>
+      <h1>P2M · Polytech Matériaux &amp; Matériels</h1>
+      <div class="co">Showroom Mbao Ville Neuve, Villa S04, Dakar · Sénégal<br>
+      +221 78 832 12 79 / +221 78 424 64 45 · p2m.senegal@gmail.com</div>
     </div>
     <div class="meta">
       <div class="num">DEVIS ${q.numero}</div>
@@ -62,8 +62,8 @@ export function printTileQuote(q: TileQuote) {
   </header>
 
   <div class="client-grid">
-    <div><h2>Client</h2>${q.clientNom || '—'}<br>${q.clientTelephone || ''}</div>
-    <div><h2>Chantier</h2>${q.adresseChantier || '—'}</div>
+    <div><h2>Client</h2>${q.clientNom || '-'}<br>${q.clientTelephone || ''}</div>
+    <div><h2>Chantier</h2>${q.adresseChantier || '-'}</div>
   </div>
 
   <h2>Détail des carreaux</h2>

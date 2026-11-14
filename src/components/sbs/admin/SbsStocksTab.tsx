@@ -56,7 +56,7 @@ export default function SbsStocksTab({
         <div>
           <h2 className="font-title font-bold text-lg text-brand-900 dark:text-white flex items-center gap-2">
             <PackageCheck className="w-5 h-5 text-accent-500" />
-            Suivi des Stocks (Matières Premières &amp; Produits Finis) — {monthLabel}
+            Suivi des Stocks (Matières Premières &amp; Produits Finis) · {monthLabel}
           </h2>
           <p className="text-xs text-neutral-600 dark:text-neutral-300 mt-0.5">
             Les sorties matières et productions/ventes produits sont calculées automatiquement depuis le Journalier et les Ventes.

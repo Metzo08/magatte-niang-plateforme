@@ -220,7 +220,7 @@ export default function HomePage() {
               </h1>
 
               <p className="text-neutral-300 text-base sm:text-lg leading-relaxed mt-7 max-w-2xl">
-                Un dispositif industriel intégré réunissant <strong className="text-white font-semibold">7 pôles spécialisés</strong> — bureau d'études, géotechnique, charpente métallique, préfabrication béton, logistique lourde, sourcing international et finitions. De l'essai de sol à la réception d'ouvrage.
+                Un dispositif industriel intégré réunissant <strong className="text-white font-semibold">7 pôles spécialisés</strong> · bureau d'études, géotechnique, charpente métallique, préfabrication béton, logistique lourde, sourcing international et finitions. De l'essai de sol à la réception d'ouvrage.
               </p>
 
               {/* Double CTA */}
@@ -519,7 +519,7 @@ export default function HomePage() {
             Les {entities.length} piliers de l'écosystème BTP
           </h2>
           <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-3 max-w-2xl mx-auto">
-            Chaque entité opère comme un maillon spécialisé — et chaque maillon alimente les autres.
+            Chaque entité opère comme un maillon spécialisé · et chaque maillon alimente les autres.
           </p>
         </div>
 
@@ -846,7 +846,7 @@ export default function HomePage() {
               Votre projet qualifié et chiffré, sans formulaire générique
             </h2>
             <p className="text-neutral-300 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
-              Décrivez votre besoin en 2 minutes. L'assistant analyse votre cahier des charges technique, applique les règles de routage de l'écosystème et transmet directement votre dossier à l'ingénieur référent — avec scoring immédiat.
+              Décrivez votre besoin en 2 minutes. L'assistant analyse votre cahier des charges technique, applique les règles de routage de l'écosystème et transmet directement votre dossier à l'ingénieur référent · avec scoring immédiat.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5">
               <Link

@@ -1,9 +1,9 @@
 /**
- * Catalogue de carreaux P2M — issu du classeur CATALOGUE_CARREAUX_DEVIS.xlsx (feuille Catalogue).
+ * Catalogue de carreaux P2M · issu du classeur CATALOGUE_CARREAUX_DEVIS.xlsx (feuille Catalogue).
  * 8 types d'origine (fichier TYPES_CARREAUX.xlsx) + 21 tailles indicatives (pieces_par_carton = valeur
  * marché à confirmer avec le fournisseur, poids vide).
  *
- * Les prix d'exemple 60×60 (achat 14 400, vente 13 000/m²) sont fictifs — sert uniquement de jeu de test.
+ * Les prix d'exemple 60×60 (achat 14 400, vente 13 000/m²) sont fictifs · sert uniquement de jeu de test.
  * Champs confidentiels (prixAchat, frais) : ne jamais envoyer au client web du vendeur.
  */
 

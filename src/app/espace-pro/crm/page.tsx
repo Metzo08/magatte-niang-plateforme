@@ -140,7 +140,7 @@ export default function CrmPage() {
                         </span>
                       </div>
                       <p className="text-sm font-semibold text-neutral-900 dark:text-white">
-                        {lead.fullName}{lead.company ? ` — ${lead.company}` : ''}
+                        {lead.fullName}{lead.company ? ` · ${lead.company}` : ''}
                       </p>
                       <p className="text-xs text-neutral-500 dark:text-neutral-400">
                         {lead.needCategory} · {lead.projectLocation} · {lead.budgetRange}

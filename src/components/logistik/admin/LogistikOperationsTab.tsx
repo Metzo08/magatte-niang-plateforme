@@ -407,7 +407,7 @@ export function LogistikOperationsTab({
                   </div>
 
                   <div className="text-sm font-bold text-white">
-                    {n.clientName} {n.company ? `— ${n.company}` : ''}{' '}
+                    {n.clientName} {n.company ? `- ${n.company}` : ''}{' '}
                     <span className="text-xs font-mono text-slate-400">({n.phone})</span>
                   </div>
                   <div className="text-xs text-slate-400">
@@ -698,7 +698,7 @@ export function LogistikOperationsTab({
                   )}
                 </div>
                 <div className="text-sm font-bold text-white">
-                  {q.clientName} {q.clientCompany ? `— ${q.clientCompany}` : ''} ·{' '}
+                  {q.clientName} {q.clientCompany ? `- ${q.clientCompany}` : ''} ·{' '}
                   <span className="text-amber-400 font-mono">
                     {q.totalTTC.toLocaleString('fr-FR')} FCFA TTC
                   </span>
@@ -797,7 +797,7 @@ export function LogistikOperationsTab({
                     </span>
                   </div>
                   <div className="text-sm font-bold text-white">
-                    {inv.clientName} {inv.clientCompany ? `— ${inv.clientCompany}` : ''}
+                    {inv.clientName} {inv.clientCompany ? `- ${inv.clientCompany}` : ''}
                   </div>
                   <div className="text-xs font-mono text-slate-300">
                     Total : <strong>{inv.totalTTC.toLocaleString('fr-FR')} F</strong> · Payé :{' '}
@@ -959,7 +959,7 @@ export function LogistikOperationsTab({
                 <td className="p-3 text-amber-300 font-semibold">
                   {p.method} · <span className="text-slate-400 font-normal">{p.channel}</span>
                 </td>
-                <td className="p-3 font-mono text-slate-400">{p.providerRef || '—'}</td>
+                <td className="p-3 font-mono text-slate-400">{p.providerRef || '-'}</td>
                 <td className="p-3 text-right font-mono font-bold text-white">
                   {p.amountFCFA.toLocaleString('fr-FR')} F
                 </td>

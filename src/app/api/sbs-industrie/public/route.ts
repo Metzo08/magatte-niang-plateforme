@@ -3,7 +3,7 @@ import { getSbsConfig, getSbsProducts } from '@/lib/sbsDbBootstrap';
 import { DEFAULT_SBS_CONFIG, DEFAULT_SBS_PRODUCTS } from '@/lib/sbsErpDefaults';
 
 /**
- * Endpoint PUBLIC SBS Industrie — Expose uniquement le catalogue commercial,
+ * Endpoint PUBLIC SBS Industrie · Expose uniquement le catalogue commercial,
  * les dimensions, prix publics et offres de location.
  * Aucune donnée interne (prix de revient, MCV, paie, charges fixes) n'est jamais exposée.
  */

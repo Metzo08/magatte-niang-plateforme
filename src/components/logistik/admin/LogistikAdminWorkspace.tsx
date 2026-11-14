@@ -147,7 +147,7 @@ export function LogistikAdminWorkspace({ onLogout }: { onLogout: () => void }) {
           </div>
           <div>
             <div className="text-sm font-bold text-white">
-              SB-S LOGISTIK — Espace Gestionnaire Dédié
+              SB-S LOGISTIK · Espace Gestionnaire Dédié
             </div>
             <div className="text-[11px] font-mono text-amber-400">
               Connecté : {managerName} · Cloisonnement strict (Zéro accès P2M / SB-S Industrie)

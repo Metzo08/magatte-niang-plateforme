@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Module Carreaux P2M — Catalogue + Générateur de devis (onglet de l'espace professionnel).
+ * Module Carreaux P2M · Catalogue + Générateur de devis (onglet de l'espace professionnel).
  * Rôles : « vendeur » (sans prix d'achat/frais/marge) et « gerant » (tout).
  * Formules = classeur CATALOGUE_CARREAUX_DEVIS.xlsx (font foi).
  */
@@ -117,7 +117,7 @@ export default function TilesModule({ role }: { role: Role }) {
       const line = computeLine({ tile: { ...calc, poidsCartonKg: t.poidsCartonKg, prixVenteCarton: calc.prixVenteCarton! }, surfaceM2: s, tauxPerte });
       if (!line) { lignes.push({ error: 'no-price' } as never); continue; }
       lignes.push({
-        tileId: t.id, designation: `${designation(t)} — ${t.reference}`,
+        tileId: t.id, designation: `${designation(t)} · ${t.reference}`,
         surfaceM2: s, m2Carton: calc.m2Carton, prixVenteM2: t.prixVenteM2,
         prixVenteCarton: calc.prixVenteCarton!, poidsCartonKg: t.poidsCartonKg,
         nbCartons: line.nbCartons, m2Livres: line.m2Livres,
@@ -261,10 +261,10 @@ export default function TilesModule({ role }: { role: Role }) {
                         />
                       ) : t.prixVenteM2 != null ? fmtFCFA(t.prixVenteM2) : <span className="text-amber-600 font-semibold">Prix à saisir</span>}
                     </td>
-                    <td className="px-3 py-2 tabular-nums">{c.prixVenteCarton != null ? fmtFCFA(c.prixVenteCarton) : '—'}</td>
-                    <td className="px-3 py-2 tabular-nums">{c.prixVentePiece != null ? fmtFCFA(c.prixVentePiece) : '—'}</td>
-                    {isGerant && <td className="px-3 py-2 tabular-nums">{c.coutRevientM2 != null ? fmtFCFA(c.coutRevientM2) : '—'}</td>}
-                    {isGerant && <td className={`px-3 py-2 tabular-nums ${negatif ? 'text-red-600 font-bold' : ''}`}>{c.margePct != null ? `${Math.round(c.margePct * 100)} %` : '—'}{negatif && ' ⚠'}</td>}
+                    <td className="px-3 py-2 tabular-nums">{c.prixVenteCarton != null ? fmtFCFA(c.prixVenteCarton) : '-'}</td>
+                    <td className="px-3 py-2 tabular-nums">{c.prixVentePiece != null ? fmtFCFA(c.prixVentePiece) : '-'}</td>
+                    {isGerant && <td className="px-3 py-2 tabular-nums">{c.coutRevientM2 != null ? fmtFCFA(c.coutRevientM2) : '-'}</td>}
+                    {isGerant && <td className={`px-3 py-2 tabular-nums ${negatif ? 'text-red-600 font-bold' : ''}`}>{c.margePct != null ? `${Math.round(c.margePct * 100)} %` : '-'}{negatif && ' ⚠'}</td>}
                     <td className="px-3 py-2 text-[10px] text-neutral-500">{t.source}</td>
                     <td className="px-3 py-2">
                       {isGerant && (
@@ -282,7 +282,7 @@ export default function TilesModule({ role }: { role: Role }) {
         </div>
         {!isGerant && (
           <p className="text-[11px] text-neutral-500 flex items-center gap-1.5">
-            <Lock className="w-3 h-3" /> Prix d&apos;achat, frais et marges réservés au gérant — ces données ne sont jamais envoyées à cette session.
+            <Lock className="w-3 h-3" /> Prix d&apos;achat, frais et marges réservés au gérant · ces données ne sont jamais envoyées à cette session.
           </p>
         )}
       </section>
@@ -327,8 +327,8 @@ export default function TilesModule({ role }: { role: Role }) {
                   <div className="col-span-12 sm:col-span-5">
                     <select className={inputCls} value={dl.tileId}
                       onChange={e => { const ls = [...draftLines]; ls[idx] = { ...dl, tileId: e.target.value }; setDraftLines(ls); }}>
-                      <option value="">— Choisir un carreau —</option>
-                      {devisables.map(x => <option key={x.id} value={x.id}>{designation(x)} — {x.reference}</option>)}
+                      <option value="">- Choisir un carreau -</option>
+                      {devisables.map(x => <option key={x.id} value={x.id}>{designation(x)} · {x.reference}</option>)}
                     </select>
                   </div>
                   <div className="col-span-4 sm:col-span-2">
@@ -436,7 +436,7 @@ export default function TilesModule({ role }: { role: Role }) {
                     </>
                   )}
                   {q.statut !== 'brouillon' && (
-                    <span className="text-[11px] text-neutral-500 self-center">Devis émis — non modifiable (dupliquez pour modifier).</span>
+                    <span className="text-[11px] text-neutral-500 self-center">Devis émis · non modifiable (dupliquez pour modifier).</span>
                   )}
                 </div>
               </article>

@@ -69,7 +69,7 @@ export function RootLayoutClient({ children }: { children: React.ReactNode }) {
           onClick={() => setIsAIOpen(true)}
           className="relative flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-tr from-accent-600 via-accent-500 to-amber-500 hover:from-accent-500 hover:to-accent-600 text-white shadow-elev-3 hover:shadow-[0_0_25px_rgba(242,106,27,0.6)] transform hover:scale-110 active:scale-95 transition-all duration-300 border-2 border-white/40 focus:outline-none focus:ring-4 focus:ring-accent-500/40"
           aria-label="Ouvrir l'Assistant IA Technique BTP"
-          title="Assistant IA Technique BTP — Conseils, tarifs & chiffrage"
+          title="Assistant IA Technique BTP · Conseils, tarifs & chiffrage"
         >
           {/* Halo pulsant */}
           <span className="absolute -inset-1 rounded-full bg-accent-500/40 animate-ping pointer-events-none" />

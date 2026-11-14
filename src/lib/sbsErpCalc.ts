@@ -385,12 +385,12 @@ export function computeSbsErp(
         compactnessDiagnostic = '⚠ un peu léger';
         compactnessLevel = 'warning';
       } else {
-        compactnessDiagnostic = '⚠ trop léger — rendement surestimé';
+        compactnessDiagnostic = '⚠ trop léger · rendement surestimé';
         compactnessLevel = 'danger';
       }
     } else {
       if (compactness > 0.78) {
-        compactnessDiagnostic = '⚠ trop dense — rendement sous-estimé';
+        compactnessDiagnostic = '⚠ trop dense · rendement sous-estimé';
         compactnessLevel = 'warning';
       } else if (compactness < 0.25) {
         compactnessDiagnostic = '⚠ trop creux';
@@ -695,7 +695,7 @@ export function computeSbsErp(
       message: `${negStocks.length} article(s) affichent un stock final négatif (${negStocks
         .slice(0, 3)
         .map((s) => `${s.label}: ${s.closing}`)
-        .join(', ')}) — vérifiez le stock début ou la production journalière.`,
+        .join(', ')}) · vérifiez le stock début ou la production journalière.`,
     });
   }
   if (totalProducedUnits === 0 && sumDailyMatCost > 0) {

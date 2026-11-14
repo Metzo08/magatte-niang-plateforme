@@ -20,7 +20,7 @@ export const ENTITIES: EntityInfo[] = [
     color: 'entity-serma',
     colorHex: '#1B4965',
     accentClass: 'bg-[#1B4965]',
-    mission: 'Réaliser les études d\'ingénierie, la modélisation logicielle 3D/BIM, les simulations de calcul structurel et la maîtrise d\'œuvre (AMO / supervision) des ouvrages — pylônes, stations-service, charpentes métalliques, immeubles IGH, ouvrages hydrauliques et lots techniques — en amont de l\'exécution des travaux par SB-S Group.',
+    mission: 'Réaliser les études d\'ingénierie, la modélisation logicielle 3D/BIM, les simulations de calcul structurel et la maîtrise d\'œuvre (AMO / supervision) des ouvrages · pylônes, stations-service, charpentes métalliques, immeubles IGH, ouvrages hydrauliques et lots techniques · en amont de l\'exécution des travaux par SB-S Group.',
     description: 'Créée en 2012 (RC : SN DKR-2012-B-2619), SERMA BTP est le pôle d\'ingénierie, de modélisation logicielle et d\'études techniques de l\'écosystème Magatte Niang. Il assure la conception, les simulations numériques, le dimensionnement structurel et la supervision (MOE / AMO) avant de transmettre les dossiers d\'exécution à SB-S Group.',
     leader: 'Magatte Niang',
     leaderRole: 'Directeur général',
@@ -236,7 +236,7 @@ export const ENTITIES: EntityInfo[] = [
     colorHex: '#C0562F',
     accentClass: 'bg-[#C0562F]',
     mission: 'Offrir des matériaux de qualité et des équipements sanitaires de première qualité pour toutes vos constructions, du gros œuvre à la finition.',
-    description: 'P2M — Polytech Matériaux Matériels : "Du sol au mur, le carreau parfait". Distributeur de carreaux (céramique, porcelaine, effet marbre, imitation bois), d\'équipements sanitaires, de robinetterie et de matériaux de construction (agglos, hourdis, pavés, bordures, BPE), avec conseil technique et livraison sur chantier.',
+    description: 'P2M · Polytech Matériaux Matériels : "Du sol au mur, le carreau parfait". Distributeur de carreaux (céramique, porcelaine, effet marbre, imitation bois), d\'équipements sanitaires, de robinetterie et de matériaux de construction (agglos, hourdis, pavés, bordures, BPE), avec conseil technique et livraison sur chantier.',
     leader: 'Maguette Niang',
     leaderRole: 'Directeur général',
     address: 'Mbao Ville Neuve, Villa S04',
@@ -274,7 +274,7 @@ export const ENTITIES: EntityInfo[] = [
     colorHex: '#7A5AA8',
     accentClass: 'bg-[#7A5AA8]',
     mission: 'Faciliter l\'accès aux ressources mondiales pour la croissance économique du Sénégal : de l\'Inde au Sénégal, vos ressources sans frontières.',
-    description: 'PGT — Polytech General Trading : "Votre passerelle vers l\'excellence internationale". Sourcing stratégique en Inde (fournisseurs certifiés ISO, économies de 15-30%, délai 5-7 jours), import-export complet (documentation douanière, fret maritime LCL/FCL, assurance cargo 100%, dédouanement au Sénégal) et logistique & manutention (entreposage en zone franche à Dakar).',
+    description: 'PGT · Polytech General Trading : "Votre passerelle vers l\'excellence internationale". Sourcing stratégique en Inde (fournisseurs certifiés ISO, économies de 15-30%, délai 5-7 jours), import-export complet (documentation douanière, fret maritime LCL/FCL, assurance cargo 100%, dédouanement au Sénégal) et logistique & manutention (entreposage en zone franche à Dakar).',
     leader: 'Maguette Niang',
     leaderRole: 'Directeur général',
     address: 'Dakar, Sénégal · Bureau Dubaï - Ajman (Émirats Arabes Unis)',
@@ -357,7 +357,7 @@ export const PROJECTS: Project[] = [
       quote: 'La précision des pièces métalliques usinées et la coordination exemplaire entre le bureau d\'études, le laboratoire et les équipes de levage ont permis un montage sans le moindre accroc.'
     },
     images: [
-      { url: '/images/realisations/serma-structure-metallique-etages.jpg', caption: 'Structure métallique industrielle d étages — SERMA BTP', isHero: true },
+      { url: '/images/realisations/serma-structure-metallique-etages.jpg', caption: 'Structure métallique industrielle d étages · SERMA BTP', isHero: true },
       { url: '/images/entrepot-logistique.jpg', caption: 'Hangar logistique grande portée et plateforme multimodale achevée' },
       { url: '/images/realisations/serma-modelisation-structurelle-3d-eurocodes.jpg', caption: 'Modélisation structurelle 3D et calculs de résistance Eurocodes 3' },
       { url: '/images/realisations/serma-atelier-usinage-poutrelles.jpg', caption: 'Profilés et poutrelles métalliques usinés dans les ateliers SERMA BTP' }
@@ -424,8 +424,8 @@ export const PROJECTS: Project[] = [
       results: 'Taux de casse inférieur à 0.4%, satisfaction totale du promoteur et attribution du lot de la tranche 2.'
     },
     images: [
-      { url: '/images/realisations/p2m-realisation-villa-almadies-salon.jpg', caption: 'Grand salon de réception avec carrelage grand format 60×120 cm poli miroir — Les Almadies', isHero: true },
-      { url: '/images/realisations/p2m-realisation-villa-almadies-sol.jpg', caption: 'Séjour et salle à manger en grès cérame pleine masse — Dakar' },
+      { url: '/images/realisations/p2m-realisation-villa-almadies-salon.jpg', caption: 'Grand salon de réception avec carrelage grand format 60×120 cm poli miroir · Les Almadies', isHero: true },
+      { url: '/images/realisations/p2m-realisation-villa-almadies-sol.jpg', caption: 'Séjour et salle à manger en grès cérame pleine masse · Dakar' },
       { url: '/images/realisations/p2m-villa-almadies-carrelage-salon.jpg', caption: 'Sol de séjour en dalles céramiques polies grand format' },
       { url: '/images/carrelage-interieur.jpg', caption: 'Finitions intérieures carrelées et plinthes assorties P2M' }
     ],
@@ -437,7 +437,7 @@ export const PROJECTS: Project[] = [
     id: 'proj-05',
     slug: 'stockage-produits-chimiques-centrale-sendou',
     title: 'Construction du bâtiment de stockage de produits chimiques & structure de toiture',
-    client: 'Compagnie d\'électricité du Sénégal (CES) — centrale électrique de Sendou',
+    client: 'Compagnie d\'électricité du Sénégal (CES) · centrale électrique de Sendou',
     location: 'Centrale électrique de Sendou, Dakar',
     region: 'Dakar',
     year: 2025,
@@ -455,10 +455,10 @@ export const PROJECTS: Project[] = [
     story: {
       constraints: 'Zone d\'exploitation d\'une centrale électrique en service : contraintes de coactivité strictes, normes HSE renforcées pour le stockage de produits chimiques.',
       solution: 'Étude et exécution par SB-S Group avec contrôle qualité SB-S Labo et levage assuré par la flotte SB-S Logistik.',
-      results: 'Bâtiment livré et réceptionné par la CES — référence industrielle majeure du groupe (2024-2025).'
+      results: 'Bâtiment livré et réceptionné par la CES · référence industrielle majeure du groupe (2024-2025).'
     },
     images: [
-      { url: '/images/sbs-presentation/sbs-page21-img01.jpeg', caption: 'Centrale thermique CES Sendou — Cuvelage étanche et rétention (Extrait officiel PDF P.21)' },
+      { url: '/images/sbs-presentation/sbs-page21-img01.jpeg', caption: 'Centrale thermique CES Sendou · Cuvelage étanche et rétention (Extrait officiel PDF P.21)' },
       { url: '/images/sbs-presentation/sbs-page21-img02.jpeg', caption: 'Structure de stockage et génie civil produits chimiques (Extrait officiel PDF P.21)' },
       { url: '/images/sbs-slides/sbs-slide-21.jpg', caption: 'Planche officielle CES Sendou Stockage (Document Maître)' }
     ],
@@ -469,7 +469,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'proj-06',
     slug: 'usine-oxygene-psa-mako-dlm',
-    title: 'Ingénierie & conception (civile, électrique, mécanique) — usine d\'oxygène PSA 6 T/j',
+    title: 'Ingénierie & conception (civile, électrique, mécanique) · usine d\'oxygène PSA 6 T/j',
     client: 'DLM Sénégal',
     location: 'Mako, Kédougou',
     region: 'Autre',
@@ -487,10 +487,10 @@ export const PROJECTS: Project[] = [
     story: {
       constraints: 'Site isolé en région de Kédougou : logistique d\'approvisionnement complexe et exigences techniques d\'une unité de production médicale/industrielle d\'oxygène.',
       solution: 'Conception multi-disciplinaire intégrée (bâtiments, fondations spéciales, réseaux électriques et mécaniques) avec études de sol préalables par SB-S Labo.',
-      results: 'Usine d\'oxygène PSA 6TPJ installée et mise en service — référence d\'ingénierie industrielle en région (2023).'
+      results: 'Usine d\'oxygène PSA 6TPJ installée et mise en service · référence d\'ingénierie industrielle en région (2023).'
     },
     images: [
-      { url: '/images/sbs-presentation/sbs-page25-img01.jpeg', caption: 'Usine d\'oxygène PSA 6TPJ à Mako — Génie civil & massifs compresseurs (Extrait officiel PDF P.25)' },
+      { url: '/images/sbs-presentation/sbs-page25-img01.jpeg', caption: 'Usine d\'oxygène PSA 6TPJ à Mako · Génie civil & massifs compresseurs (Extrait officiel PDF P.25)' },
       { url: '/images/sbs-presentation/sbs-page25-img02.jpeg', caption: 'Réseaux fluides industriels et plateforme technique Mako (Extrait officiel PDF P.25)' },
       { url: '/images/sbs-slides/sbs-slide-25.jpg', caption: 'Planche officielle DLM Sénégal Mako (Document Maître)' }
     ],
@@ -501,7 +501,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'proj-07',
     slug: 'bureaux-carriere-sococim-polytech',
-    title: 'Travaux de construction des bureaux — carrière SOCOCIM',
+    title: 'Travaux de construction des bureaux · carrière SOCOCIM',
     client: 'Polytech Entreprise',
     location: 'Carrière SOCOCIM',
     region: 'Thiès',
@@ -519,7 +519,7 @@ export const PROJECTS: Project[] = [
     story: {
       constraints: 'Site d\'exploitation de carrière en activité : phasage des travaux sans interruption de la production.',
       solution: 'Construction modulaire en gros œuvre béton avec fourniture d\'agglos et hourdis par SB-S Industries.',
-      results: 'Bureaux livrés à Polytech Entreprise (référence 2025) — dans la continuité des travaux de génie civil du deuxième concasseur.'
+      results: 'Bureaux livrés à Polytech Entreprise (référence 2025) · dans la continuité des travaux de génie civil du deuxième concasseur.'
     },
     images: [
       { url: '/images/sbs-presentation/sbs-page17-img02.jpeg', caption: 'Bâtiment administratif & bureaux d\'exploitation carrière SOCOCIM (Extrait officiel PDF P.17)', isHero: true },
@@ -554,7 +554,7 @@ export const PROJECTS: Project[] = [
       results: 'Aire de lavage opérationnelle, livrée dans les délais pour SECAA SA.'
     },
     images: [
-      { url: '/images/sbs-presentation/sbs-page46-img01.jpeg', caption: 'Aire de lavage poids lourds autoroute SECAA — Dalle béton armé (Extrait officiel PDF P.46)' },
+      { url: '/images/sbs-presentation/sbs-page46-img01.jpeg', caption: 'Aire de lavage poids lourds autoroute SECAA · Dalle béton armé (Extrait officiel PDF P.46)' },
       { url: '/images/sbs-presentation/sbs-page46-img02.jpeg', caption: 'Caniveaux déshuileurs et fosses de décantation SECAA (Extrait officiel PDF P.46)' },
       { url: '/images/sbs-slides/sbs-slide-46.jpg', caption: 'Planche officielle Aire de lavage SECAA (Document Maître)' }
     ],
@@ -566,7 +566,7 @@ export const PROJECTS: Project[] = [
     id: 'proj-09',
     slug: 'travaux-oim-societe-generale',
     title: 'Travaux pour le compte de l\'Organisation Internationale pour les Migrations (OIM)',
-    client: 'Société Générale des Travaux — pour l\'OIM',
+    client: 'Société Générale des Travaux · pour l\'OIM',
     location: 'Sénégal',
     region: 'Dakar',
     year: 2025,
@@ -596,7 +596,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'proj-10',
     slug: 'dallage-caniveau-fosse-septique-goree-offshore',
-    title: 'Dallage béton armé, caniveau & fosse septique — base industrielle',
+    title: 'Dallage béton armé, caniveau & fosse septique · base industrielle',
     client: 'Gorée Offshore',
     location: 'Dakar',
     region: 'Dakar',
@@ -628,7 +628,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'proj-11',
     slug: 'revetements-carrelage-villa-contemporaine-saly',
-    title: 'Revêtements carrelage céramique & terrasses extérieures — Villa contemporaine Saly',
+    title: 'Revêtements carrelage céramique & terrasses extérieures · Villa contemporaine Saly',
     client: 'Investissement Privé Résidentiel',
     location: 'Saly Portudal, Mbour',
     region: 'Thiès',
@@ -648,10 +648,10 @@ export const PROJECTS: Project[] = [
       results: 'Ouvrage livré avec des finitions remarquables, pérennité éprouvée en milieu côtier et entière satisfaction du maître d\'ouvrage.'
     },
     images: [
-      { url: '/images/realisations/p2m-realisation-villa-saly-sejour.jpg', caption: 'Séjour traversant carrelé ouvert sur l\'extérieur — Villa Saly', isHero: true },
-      { url: '/images/realisations/p2m-realisation-terrasse-piscine.jpg', caption: 'Plage de piscine & terrasse carrelée en porcelaine antidérapante R11 — Saly' },
-      { url: '/images/realisations/p2m-villa-saly-carrelage-sejour.jpg', caption: 'Salon contemporain avec carrelage haute brillance naturelle — Saly Portudal' },
-      { url: '/images/realisations/p2m-realisation-chambre-carrelage-bois.jpg', caption: 'Chambre parentale avec carrelage imitation parquet chêne — Villa Saly' }
+      { url: '/images/realisations/p2m-realisation-villa-saly-sejour.jpg', caption: 'Séjour traversant carrelé ouvert sur l\'extérieur · Villa Saly', isHero: true },
+      { url: '/images/realisations/p2m-realisation-terrasse-piscine.jpg', caption: 'Plage de piscine & terrasse carrelée en porcelaine antidérapante R11 · Saly' },
+      { url: '/images/realisations/p2m-villa-saly-carrelage-sejour.jpg', caption: 'Salon contemporain avec carrelage haute brillance naturelle · Saly Portudal' },
+      { url: '/images/realisations/p2m-realisation-chambre-carrelage-bois.jpg', caption: 'Chambre parentale avec carrelage imitation parquet chêne · Villa Saly' }
     ],
     isPublished: true,
     isFeatured: true,
@@ -660,7 +660,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'proj-12',
     slug: 'carrelage-marbre-sanitaires-villa-fann-residence',
-    title: 'Aménagement carrelage marbre & équipements sanitaires — Villa d\'architecte Fann Résidence',
+    title: 'Aménagement carrelage marbre & équipements sanitaires · Villa d\'architecte Fann Résidence',
     client: 'SCI Fann Corniche',
     location: 'Fann Résidence, Dakar',
     region: 'Dakar',
@@ -680,8 +680,8 @@ export const PROJECTS: Project[] = [
       results: 'Rendu architectural luxueux salué par l\'architecte en chef et publication dans la revue d\'architecture ouest-africaine.'
     },
     images: [
-      { url: '/images/realisations/p2m-realisation-salon-marbre-luxe.jpg', caption: 'Grand salon de réception avec carrelage marbré haute brillance — Fann Résidence', isHero: true },
-      { url: '/images/realisations/p2m-realisation-fann-hall-marbre.jpg', caption: 'Hall d\'entrée majestueux en dalles grand format effet marbre — Dakar' },
+      { url: '/images/realisations/p2m-realisation-salon-marbre-luxe.jpg', caption: 'Grand salon de réception avec carrelage marbré haute brillance · Fann Résidence', isHero: true },
+      { url: '/images/realisations/p2m-realisation-fann-hall-marbre.jpg', caption: 'Hall d\'entrée majestueux en dalles grand format effet marbre · Dakar' },
       { url: '/images/realisations/p2m-realisation-fann-salle-de-bain.jpg', caption: 'Salle de bain parentale : marbre mural, double vasque et baignoire îlot P2M' },
       { url: '/images/realisations/p2m-salle-de-bain-prestige.jpg', caption: 'Salle d\'eau moderne carrelée avec douche à l\'italienne & robinetterie encastrée' }
     ],
@@ -692,7 +692,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'proj-13',
     slug: 'sols-interieurs-terrasses-domaine-la-somone',
-    title: 'Sols intérieurs & terrasses de standing — Domaine résidentiel La Somone',
+    title: 'Sols intérieurs & terrasses de standing · Domaine résidentiel La Somone',
     client: 'Promoteur Teranga Habitat',
     location: 'La Somone, Petite Côte',
     region: 'Thiès',
@@ -712,8 +712,8 @@ export const PROJECTS: Project[] = [
       results: 'Six villas entièrement équipées et livrées aux acquéreurs dans le respect du calendrier convenu.'
     },
     images: [
-      { url: '/images/realisations/p2m-villa-somone-carrelage-terrasse.jpg', caption: 'Salon traversant ouvert sur terrasse carrelée — Domaine La Somone', isHero: true },
-      { url: '/images/realisations/p2m-villa-dakar-marbre-blanc.jpg', caption: 'Séjour lumineux carrelé en dalles porcelaine blanc cristal — La Somone' },
+      { url: '/images/realisations/p2m-villa-somone-carrelage-terrasse.jpg', caption: 'Salon traversant ouvert sur terrasse carrelée · Domaine La Somone', isHero: true },
+      { url: '/images/realisations/p2m-villa-dakar-marbre-blanc.jpg', caption: 'Séjour lumineux carrelé en dalles porcelaine blanc cristal · La Somone' },
       { url: '/images/realisations/p2m-realisation-salon-blanc-marbre.jpg', caption: 'Espace de vie contemporain avec carrelage grand format beige clair' },
       { url: '/images/realisations/p2m-villa-sol-marbre-salon.jpg', caption: 'Finitions intérieures soignées et plinthes assorties P2M' }
     ],
@@ -725,7 +725,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'proj-14',
     slug: 'fourniture-beton-prefabrication-voiries-dakar',
-    title: 'Fourniture de béton prêt à l\'emploi & préfabrication — Voiries & plateformes',
+    title: 'Fourniture de béton prêt à l\'emploi & préfabrication · Voiries & plateformes',
     client: 'Consortium BTP & Ageroute',
     location: 'Diamniadio - Dakar',
     region: 'Dakar',
@@ -746,8 +746,8 @@ export const PROJECTS: Project[] = [
       results: 'Résistances mécaniques à 28 jours supérieures de 12% aux spécifications contractuelles et respect rigoureux du planning de coulage.'
     },
     images: [
-      { url: '/images/realisations/sbs-beton-malaxeur-pompe-site.jpg', caption: 'Coulage à la pompe et fourniture de béton prêt à l\'emploi pour voiries & plateformes — SB-S Industries', isHero: true },
-      { url: '/images/sbs-logistik/logistik-equip-010.jpg', caption: 'Livraison de béton frais par camion malaxeur toupie 10 m³ — SB-S Industries' },
+      { url: '/images/realisations/sbs-beton-malaxeur-pompe-site.jpg', caption: 'Coulage à la pompe et fourniture de béton prêt à l\'emploi pour voiries & plateformes · SB-S Industries', isHero: true },
+      { url: '/images/sbs-logistik/logistik-equip-010.jpg', caption: 'Livraison de béton frais par camion malaxeur toupie 10 m³ · SB-S Industries' },
       { url: '/images/reelles/agglos-industrie-production-blocs.jpg', caption: 'Production d\'agglos creux 10×20×40 (380 F), pleins 15×20×40 (700 F), hourdis et pavés' },
       { url: '/images/reelles/surfacement-mecanique-dallage-talocheuse.jpg', caption: 'Dallage et surfaçage mécanique haute résistance' }
     ],
@@ -778,14 +778,14 @@ export const PROJECTS: Project[] = [
       results: 'Zéro accident de levage, respect des délais d\'acheminement et satisfaction totale des maîtres d\'ouvrage partenaires.'
     },
     images: [
-      { url: '/images/sbs-logistik/logistik-equip-001.jpg', caption: 'Opérations de levage lourd par grue mobile télescopique 50 tonnes Samsung — SB-S Logistik', isHero: true },
+      { url: '/images/sbs-logistik/logistik-equip-001.jpg', caption: 'Opérations de levage lourd par grue mobile télescopique 50 tonnes Samsung · SB-S Logistik', isHero: true },
       { url: '/images/sbs-logistik/logistik-equip-002.jpg', caption: 'Camion-grue 6 tonnes à flèche hydraulique télescopique en déploiement' },
       { url: '/images/sbs-logistik/logistik-equip-008.jpg', caption: 'Nacelle automotrice télescopique grande hauteur 30 mètres Aichi' },
       { url: '/images/sbs-logistik/logistik-equip-007.jpg', caption: 'Nacelle élévatrice télescopique sur porteur 21 mètres Isuzu' },
       { url: '/images/sbs-logistik/logistik-equip-003.jpg', caption: 'Camion benne 40 tonnes Sinotruk HOWO pour transport massif d\'agrégats' },
       { url: '/images/sbs-logistik/logistik-equip-004.jpg', caption: 'Ensemble routier semi-remorque benne 40 tonnes Renault' },
       { url: '/images/sbs-logistik/logistik-equip-005.jpg', caption: 'Camion porteur plateau à ridelles TATA 6 tonnes' },
-      { url: '/images/sbs-logistik/logistik-equip-009.jpg', caption: 'Dumper articulé tout-terrain FCY30R — capacité 3 tonnes' },
+      { url: '/images/sbs-logistik/logistik-equip-009.jpg', caption: 'Dumper articulé tout-terrain FCY30R · capacité 3 tonnes' },
       { url: '/images/sbs-logistik/logistik-equip-006.jpg', caption: 'Tractopelle polyvalent 4x4 en travaux de terrassement et fouilles' }
     ],
     isPublished: true,
@@ -819,9 +819,9 @@ export const PROJECTS: Project[] = [
       { url: '/images/port-conteneurs.jpg', caption: 'Terminal conteneurs et transit international PGT' },
       { url: '/images/pgt/pgt-parc-conteneurs-stockage.jpg', caption: 'Parc conteneurs et stockage sous douane au Port de Dakar' },
       { url: '/images/pgt/pgt-navire-cargo-manutention.jpg', caption: 'Navire cargo porte-conteneurs en opération de déchargement au PAD' },
-      { url: '/images/pgt/pgt-fret-maritime-conteneurs.jpg', caption: 'Fret maritime conteneurisé — approvisionnement direct usines' },
+      { url: '/images/pgt/pgt-fret-maritime-conteneurs.jpg', caption: 'Fret maritime conteneurisé · approvisionnement direct usines' },
       { url: '/images/pgt/pgt-transit-douane-entrepot.jpg', caption: 'Entrepôt logistique et dédouanement express de matériaux' },
-      { url: '/images/port.jpg', caption: 'Vue du Port Autonome de Dakar — plateforme d\'échanges internationaux' }
+      { url: '/images/port.jpg', caption: 'Vue du Port Autonome de Dakar · plateforme d\'échanges internationaux' }
     ],
     isPublished: true,
     isFeatured: false,
@@ -831,7 +831,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'proj-17',
     slug: 'controle-compactage-cbr-autoroute-mbour-kaolack',
-    title: 'Contrôle géotechnique, essais CBR & formulation de chaussée — Autoroute Mbour-Fatick-Kaolack',
+    title: 'Contrôle géotechnique, essais CBR & formulation de chaussée · Autoroute Mbour-Fatick-Kaolack',
     client: 'Ageroute Sénégal',
     location: 'Mbour - Kaolack',
     region: 'Thiès',
@@ -852,7 +852,7 @@ export const PROJECTS: Project[] = [
       results: 'Conformité géotechnique à 100% validée par la mission de contrôle CEREEQ, zéro reprise de couche et mise en service anticipée.'
     },
     images: [
-      { url: '/images/reelles/sbs-labo-reel-002.jpg', caption: 'Essais de portance in-situ et contrôle géotechnique de plateforme — SB-S Labo', isHero: true },
+      { url: '/images/reelles/sbs-labo-reel-002.jpg', caption: 'Essais de portance in-situ et contrôle géotechnique de plateforme · SB-S Labo', isHero: true },
       { url: '/images/reelles/sbs-labo-reel-003.jpg', caption: 'Ingénieur géotechnicien SB-S Labo réalisant les mesures de compacité' },
       { url: '/images/reelles/sbs-labo-reel-005.jpg', caption: 'Sondeuse géotechnique APAFOR 450RS mobilisée pour reconnaissance des sols' }
     ],
@@ -863,7 +863,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'proj-18',
     slug: 'controle-qualite-beton-ecrasement-pont-foundiougne',
-    title: 'Contrôle qualité béton & écrasement d\'éprouvettes sous presse 3 000 kN — Pont de Foundiougne',
+    title: 'Contrôle qualité béton & écrasement d\'éprouvettes sous presse 3 000 kN · Pont de Foundiougne',
     client: 'Direction des Travaux Publics & Groupement Ouvrages d\'Art',
     location: 'Foundiougne, Fatick',
     region: 'Fatick',
@@ -884,7 +884,7 @@ export const PROJECTS: Project[] = [
       results: 'Résistances caractéristiques fck atteintes à plus de 42 MPa à 28 jours, validation sans réserve des pieux, piles et voussoirs du pont.'
     },
     images: [
-      { url: '/images/realisations/sbs-labo-presse-compression-eprouvettes.jpg', caption: 'Essai d\'écrasement d\'éprouvette béton 16×32 sous presse asservie 3 000 kN — SB-S Labo', isHero: true },
+      { url: '/images/realisations/sbs-labo-presse-compression-eprouvettes.jpg', caption: 'Essai d\'écrasement d\'éprouvette béton 16×32 sous presse asservie 3 000 kN · SB-S Labo', isHero: true },
       { url: '/images/reelles/sbs-labo-reel-003.jpg', caption: 'Ingénieurs géotechniciens et qualiticiens SB-S Labo en mission de contrôle' },
       { url: '/images/reelles/sbs-labo-reel-006.jpg', caption: 'Ouvrage en béton armé contrôlé et certifié par le laboratoire SB-S Labo' }
     ],
@@ -895,7 +895,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'proj-19',
     slug: 'sondages-penetrometre-pdl-plateforme-diamniadio',
-    title: 'Étude de sol, forages carottés & pénétromètre dynamique lourd (PDL) — Diamniadio',
+    title: 'Étude de sol, forages carottés & pénétromètre dynamique lourd (PDL) · Diamniadio',
     client: 'Société de Gestion du Pôle Urbain de Diamniadio',
     location: 'Diamniadio, Dakar',
     region: 'Dakar',
@@ -917,7 +917,7 @@ export const PROJECTS: Project[] = [
       results: 'Fourniture du modèle de portance admissible sous 10 jours et optimisation du coût des fondations avec une économie de 22% sur les terrassements.'
     },
     images: [
-      { url: '/images/reelles/sbs-labo-reel-005.jpg', caption: 'Foreuse géotechnique autonome APAFOR 450RS sur plateforme industrielle — SB-S Labo', isHero: true },
+      { url: '/images/reelles/sbs-labo-reel-005.jpg', caption: 'Foreuse géotechnique autonome APAFOR 450RS sur plateforme industrielle · SB-S Labo', isHero: true },
       { url: '/images/reelles/sbs-labo-reel-004.jpg', caption: 'Forage carotté rotary et analyse stratigraphique des sols' },
       { url: '/images/reelles/sbs-labo-reel-003.jpg', caption: 'Contrôle des carottes et mesures de plasticité en laboratoire' }
     ],
@@ -928,7 +928,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'proj-20',
     slug: 'auvent-metallique-charpente-stations-service-vivo-energy',
-    title: 'Auvents métalliques grande portée & structures d\'auvent — Réseau stations-service VIVO Energy / Shell',
+    title: 'Auvents métalliques grande portée & structures d\'auvent · Réseau stations-service VIVO Energy / Shell',
     client: 'VIVO Energy Sénégal & Shell',
     location: 'Fatick, Sandiara, Touba Toul, Dakar',
     region: 'Fatick',
@@ -956,7 +956,7 @@ export const PROJECTS: Project[] = [
       quote: 'SERMA BTP a démontré une maîtrise exceptionnelle de la construction métallique : précision d\'usinage, respect scrupuleux des normes de sécurité et respect total des délais de livraison.'
     },
     images: [
-      { url: '/images/realisations/serma-auvent-station-service.jpg', caption: 'Auvent métallique et structure acier de couverture station-service — SERMA BTP', isHero: true },
+      { url: '/images/realisations/serma-auvent-station-service.jpg', caption: 'Auvent métallique et structure acier de couverture station-service · SERMA BTP', isHero: true },
       { url: '/images/realisations/serma-modelisation-structurelle-3d-eurocodes.jpg', caption: 'Calculs de résistance 3D aux Eurocodes 3 pour charges au vent et descente de charge' },
       { url: '/images/realisations/serma-atelier-usinage-poutrelles.jpg', caption: 'Profilés tubulaires et poutrelles métalliques usinés à Diamniadio' }
     ],
@@ -967,7 +967,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'proj-21',
     slug: 'hangar-industriel-stockage-pharmaceutique-ubipharm-2800m2',
-    title: 'Hangar industriel grande portée (2 800 m²) pour stockage pharmaceutique — UBIPHARM Sénégal',
+    title: 'Hangar industriel grande portée (2 800 m²) pour stockage pharmaceutique · UBIPHARM Sénégal',
     client: 'UBIPHARM Sénégal',
     location: 'Diamniadio, Dakar',
     region: 'Dakar',
@@ -995,7 +995,7 @@ export const PROJECTS: Project[] = [
       quote: 'La rigueur technique de SERMA BTP et la qualité de leur charpente métallique ont permis de créer un hub moderne conforme aux exigences internationales de stockage pharmaceutique.'
     },
     images: [
-      { url: '/images/realisations/serma-hangar-industriel-structure.jpg', caption: 'Charpente métallique et portiques industriels grande portée 42 m — SERMA BTP', isHero: true },
+      { url: '/images/realisations/serma-hangar-industriel-structure.jpg', caption: 'Charpente métallique et portiques industriels grande portée 42 m · SERMA BTP', isHero: true },
       { url: '/images/entrepot-logistique.jpg', caption: 'Hangar logistique achevé et aire de stockage haute capacité UBIPHARM' },
       { url: '/images/realisations/serma-charpente-metallique-chantier.jpg', caption: 'Assemblage de la charpente métallique et montage des pannes de toiture' },
       { url: '/images/realisations/serma-modelisation-structurelle-3d-eurocodes.jpg', caption: 'Modélisation structurelle 3D et notes de calcul Eurocodes 3' }
@@ -1007,7 +1007,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'proj-22',
     slug: 'etude-conception-structure-charpente-metallique-r9-dakar',
-    title: 'Étude d\'ingénierie & ossature métallique grande hauteur R+9 — Dakar',
+    title: 'Étude d\'ingénierie & ossature métallique grande hauteur R+9 · Dakar',
     client: 'Promoteur Immobilier Privé & SCI Dakar Résidences',
     location: 'Dakar Fann / Point E',
     region: 'Dakar',
@@ -1035,7 +1035,7 @@ export const PROJECTS: Project[] = [
       quote: 'L\'ingénierie fine déployée par SERMA BTP a rendu possible ce projet urbain complexe. Les calculs et les plans d\'exécution étaient irréprochables.'
     },
     images: [
-      { url: '/images/realisations/serma-structure-metallique-etages.jpg', caption: 'Ossature métallique multi-niveaux et structure porteuse acier grande hauteur — SERMA BTP', isHero: true },
+      { url: '/images/realisations/serma-structure-metallique-etages.jpg', caption: 'Ossature métallique multi-niveaux et structure porteuse acier grande hauteur · SERMA BTP', isHero: true },
       { url: '/images/realisations/serma-charpente-metallique-chantier.jpg', caption: 'Levage et montage de la charpente métallique en hauteur' },
       { url: '/images/realisations/serma-modelisation-structurelle-3d-eurocodes.jpg', caption: 'Analyse par éléments finis des déformations et contraintes structurales' }
     ],
@@ -1305,10 +1305,10 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-01',
     ref: 'P2M-POR-6060',
-    name: 'Carrelage porcelaine 60×60 cm — beige sable',
+    name: 'Carrelage porcelaine 60×60 cm · beige sable',
     category: 'Carrelage sol intérieur',
     subCategory: 'Porcelaine pleine masse',
-    brand: 'P2M — Polytech Matériaux Matériels',
+    brand: 'P2M · Polytech Matériaux Matériels',
     dimensions: '60 × 60 cm',
     material: 'Porcelaine pleine masse',
     finish: 'Mat soft',
@@ -1335,10 +1335,10 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-02',
     ref: 'P2M-POR-4040',
-    name: 'Carrelage porcelaine 40×40 cm — gris',
+    name: 'Carrelage porcelaine 40×40 cm · gris',
     category: 'Carrelage sol intérieur',
     subCategory: 'Porcelaine pleine masse',
-    brand: 'P2M — Polytech Matériaux Matériels',
+    brand: 'P2M · Polytech Matériaux Matériels',
     dimensions: '40 × 40 cm',
     material: 'Porcelaine pleine masse',
     finish: 'Mat adouci',
@@ -1364,10 +1364,10 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-03',
     ref: 'P2M-POR-3030',
-    name: 'Carrelage porcelaine 30×30 cm — blanc antidérapant',
+    name: 'Carrelage porcelaine 30×30 cm · blanc antidérapant',
     category: 'Carrelage sol intérieur',
     subCategory: 'Porcelaine pleine masse',
-    brand: 'P2M — Polytech Matériaux Matériels',
+    brand: 'P2M · Polytech Matériaux Matériels',
     dimensions: '30 × 30 cm',
     material: 'Porcelaine pleine masse',
     finish: 'Mat antidérapant R10',
@@ -1396,7 +1396,7 @@ export const PRODUCTS_P2M: Product[] = [
     name: 'Carrelage « CALACATTA GLOSSY » 60×60 cm',
     category: 'Carrelage sol & mur prestige',
     subCategory: 'Céramique vitrifiée polie',
-    brand: 'P2M — Polytech Matériaux Matériels',
+    brand: 'P2M · Polytech Matériaux Matériels',
     dimensions: '60 × 60 cm',
     material: 'Céramique vitrifiée glossy',
     finish: 'Glossy (poli brillant)',
@@ -1423,10 +1423,10 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-05',
     ref: 'P2M-CER-6012',
-    name: 'Céramique vitrifiée grand format 60×120 cm — Sathvario Goldy / Alaska Grey / Dyna Blue',
+    name: 'Céramique vitrifiée grand format 60×120 cm · Sathvario Goldy / Alaska Grey / Dyna Blue',
     category: 'Carrelage sol & mur prestige',
     subCategory: 'Céramique vitrifiée polie',
-    brand: 'P2M — Polytech Matériaux Matériels',
+    brand: 'P2M · Polytech Matériaux Matériels',
     dimensions: '60 × 120 cm',
     material: 'Céramique vitrifiée glossy',
     finish: 'Glossy (poli brillant miroir)',
@@ -1454,10 +1454,10 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-06',
     ref: 'P2M-LAV-PAR',
-    name: 'Lavabo sur colonne céramique Partas — blanc',
+    name: 'Lavabo sur colonne céramique Partas · blanc',
     category: 'Sanitaires & robinetterie',
     subCategory: 'Vasques & lavabos',
-    brand: 'Partas — distribué par P2M',
+    brand: 'Partas · distribué par P2M',
     dimensions: 'Cuve 55 cm · Colonne intégrée',
     material: 'Céramique vitrifiée blanche',
     finish: 'Émail brillant',
@@ -1482,10 +1482,10 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-07',
     ref: 'P2M-ESTA-2011',
-    name: 'WC suspendu p-trap « ESTA 2011 » — 525×360×370mm',
+    name: 'WC suspendu p-trap « ESTA 2011 » · 525×360×370mm',
     category: 'Sanitaires & robinetterie',
     subCategory: 'WC suspendus',
-    brand: 'P2M — Polytech Matériaux Matériels',
+    brand: 'P2M · Polytech Matériaux Matériels',
     dimensions: '525 × 360 × 370 mm',
     material: 'Céramique vitrifiée émaillée',
     finish: 'Blanc brillant anti-calcaire',
@@ -1512,10 +1512,10 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-08',
     ref: 'P2M-ROB-EVI',
-    name: 'Robinet évier chromé — mitigeur mural',
+    name: 'Robinet évier chromé · mitigeur mural',
     category: 'Sanitaires & robinetterie',
     subCategory: 'Robinetterie',
-    brand: 'P2M — Polytech Matériaux Matériels',
+    brand: 'P2M · Polytech Matériaux Matériels',
     dimensions: 'Mural, saillie standard',
     material: 'Laiton chromé',
     finish: 'Chrome poli miroir',
@@ -1541,10 +1541,10 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-09',
     ref: 'P2M-ROB-DOU',
-    name: 'Robinetterie murale douche & bain — mitigeur encastré chromé',
+    name: 'Robinetterie murale douche & bain · mitigeur encastré chromé',
     category: 'Sanitaires & robinetterie',
     subCategory: 'Robinetterie',
-    brand: 'Bathroom Accessories — distribué par P2M',
+    brand: 'Bathroom Accessories · distribué par P2M',
     dimensions: 'Encastré mural, entraxe standard 15 cm',
     material: 'Laiton chromé',
     finish: 'Chrome poli',
@@ -1570,15 +1570,15 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-10',
     ref: 'P2M-WC-TURQ',
-    name: 'WC à la turque (chaise turque) — céramique blanc',
+    name: 'WC à la turque (chaise turque) · céramique blanc',
     category: 'Sanitaires & robinetterie',
     subCategory: 'WC au sol',
-    brand: 'P2M — Polytech Matériaux Matériels',
+    brand: 'P2M · Polytech Matériaux Matériels',
     dimensions: 'Standard au sol, cuvette turque',
     material: 'Céramique vitrifiée blanche',
     finish: 'Émail blanc lisse',
     color: 'Blanc',
-    usage: 'Sanitaires publics, mosquées, écoles, salles d\'eau — usage intensif',
+    usage: 'Sanitaires publics, mosquées, écoles, salles d\'eau · usage intensif',
     unit: 'pièce',
     packaging: 'Carton avec protections',
     origin: 'Import direct P2M',
@@ -1601,7 +1601,7 @@ export const PRODUCTS_P2M: Product[] = [
     name: 'Mosaïque & décor mural effet pierre naturelle',
     category: 'Revêtement mural & décor',
     subCategory: 'Mosaïque / parement',
-    brand: 'P2M — Polytech Matériaux Matériels',
+    brand: 'P2M · Polytech Matériaux Matériels',
     dimensions: 'Format mosaïque (10 × 10 cm par élément)',
     material: 'Pierre naturelle & grès cérame',
     finish: 'Structuré naturel',
@@ -1629,7 +1629,7 @@ export const PRODUCTS_P2M: Product[] = [
     name: 'Pack WC au sol céramique blanc complet',
     category: 'Sanitaires & robinetterie',
     subCategory: 'WC au sol',
-    brand: 'P2M — Polytech Matériaux Matériels',
+    brand: 'P2M · Polytech Matériaux Matériels',
     dimensions: 'Standard au sol',
     material: 'Céramique vitrifiée',
     finish: 'Blanc brillant',
@@ -1655,10 +1655,10 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-14',
     ref: 'P2M-CAL-GOLD',
-    name: 'Dalle effet marbre blanc veiné or — Calacatta Gold',
+    name: 'Dalle effet marbre blanc veiné or · Calacatta Gold',
     category: 'Carrelage sol & mur prestige',
     subCategory: 'Effet marbre',
-    brand: 'P2M — Polytech Matériaux Matériels',
+    brand: 'P2M · Polytech Matériaux Matériels',
     dimensions: '60 × 120 cm / 60 × 60 cm selon pose',
     material: 'Grès cérame effet marbre',
     finish: 'Poli brillant, veinage doré',
@@ -1677,7 +1677,7 @@ export const PRODUCTS_P2M: Product[] = [
       '/images/reelles/p2m-024.jpg'
     ],
     specs: {
-      'Effet': 'Marbre Calacatta Gold — veinures or',
+      'Effet': 'Marbre Calacatta Gold · veinures or',
       'Prix': '8 000 F/m²',
       'Finition': 'Poli brillant'
     }
@@ -1685,10 +1685,10 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-15',
     ref: 'P2M-SFST-1',
-    name: 'Receveur de douche « SFST-1 » — 900×900×110mm',
+    name: 'Receveur de douche « SFST-1 » · 900×900×110mm',
     category: 'Sanitaires & robinetterie',
     subCategory: 'Receveurs de douche',
-    brand: 'P2M — Polytech Matériaux Matériels',
+    brand: 'P2M · Polytech Matériaux Matériels',
     dimensions: '900 × 900 × 110 mm',
     material: 'Acrylique renforcé / ABS',
     finish: 'Blanc satiné antidérapant',
@@ -1713,15 +1713,15 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-17',
     ref: 'P2M-CHA-ANG',
-    name: 'Chaise anglaise (WC) one piece — céramique blanc',
+    name: 'Chaise anglaise (WC) one piece · céramique blanc',
     category: 'Sanitaires & robinetterie',
     subCategory: 'WC au sol',
-    brand: 'P2M — Polytech Matériaux Matériels',
+    brand: 'P2M · Polytech Matériaux Matériels',
     dimensions: 'Standard au sol, monobloc',
     material: 'Céramique vitrifiée blanche',
     finish: 'Émail blanc brillant',
     color: 'Blanc',
-    usage: 'Résidentiel et tertiaire — WC complet monobloc',
+    usage: 'Résidentiel et tertiaire · WC complet monobloc',
     unit: 'pièce',
     packaging: 'Carton avec protections',
     origin: 'Import direct P2M',
@@ -1742,10 +1742,10 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-18',
     ref: 'P2M-LAV-ROSEN',
-    name: 'Lavabo sur pied « ROSEN 3001 » — 455×455×860mm',
+    name: 'Lavabo sur pied « ROSEN 3001 » · 455×455×860mm',
     category: 'Sanitaires & robinetterie',
     subCategory: 'Vasques & lavabos',
-    brand: 'HOLO — distribué par P2M',
+    brand: 'HOLO · distribué par P2M',
     dimensions: '455 × 455 × 860 mm',
     material: 'Céramique sanitaire émaillée',
     finish: 'Blanc brillant',
@@ -1771,10 +1771,10 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-19',
     ref: 'P2M-LAV-EXELON',
-    name: 'Vasque « EXELON 7019 » — 525×365×130mm',
+    name: 'Vasque « EXELON 7019 » · 525×365×130mm',
     category: 'Sanitaires & robinetterie',
     subCategory: 'Vasques & lavabos',
-    brand: 'HOLO — distribué par P2M',
+    brand: 'HOLO · distribué par P2M',
     dimensions: '525 × 365 × 130 mm (21 × 14 inch)',
     material: 'Céramique sanitaire émaillée',
     finish: 'Blanc brillant',
@@ -1804,7 +1804,7 @@ export const PRODUCTS_P2M: Product[] = [
     name: 'Baignoire acrylique « SFS-4 DELUX » avec embase PVC',
     category: 'Sanitaires & robinetterie',
     subCategory: 'Baignoires',
-    brand: 'P2M — Polytech Matériaux Matériels',
+    brand: 'P2M · Polytech Matériaux Matériels',
     dimensions: 'Baignoire standard 1700 mm',
     material: 'Acrylique renforcé + embase PVC',
     finish: 'Acrylique blanc brillant',
@@ -1829,15 +1829,15 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-21',
     ref: 'P2M-COL-DOU',
-    name: 'Colonne de douche avec mitigeur / hydromassante — hand shower',
+    name: 'Colonne de douche avec mitigeur / hydromassante · hand shower',
     category: 'Sanitaires & robinetterie',
     subCategory: 'Colonnes de douche',
-    brand: 'Bathroom Accessories — distribué par P2M',
+    brand: 'Bathroom Accessories · distribué par P2M',
     dimensions: 'Colonne murale standard',
     material: 'Laiton chromé + ABS',
     finish: 'Chrome poli',
     color: 'Chrome',
-    usage: 'Douches résidentielles et hôtelières — 3 variantes',
+    usage: 'Douches résidentielles et hôtelières · 3 variantes',
     unit: 'pièce',
     packaging: 'Boîte individuelle',
     origin: 'Import direct P2M',
@@ -1858,10 +1858,10 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-22',
     ref: 'P2M-EVIER',
-    name: 'Évier de cuisine inox — simple / double bac',
+    name: 'Évier de cuisine inox · simple / double bac',
     category: 'Sanitaires & robinetterie',
     subCategory: 'Éviers de cuisine',
-    brand: 'P2M — Polytech Matériaux Matériels',
+    brand: 'P2M · Polytech Matériaux Matériels',
     dimensions: 'Simple bac / double bac',
     material: 'Inox alimentaire',
     finish: 'Satiné brossé',
@@ -1888,10 +1888,10 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-23',
     ref: 'P2M-ROB-AS105',
-    name: 'Mitigeur mural « AS-105(A) » — douche & bain chromé',
+    name: 'Mitigeur mural « AS-105(A) » · douche & bain chromé',
     category: 'Sanitaires & robinetterie',
     subCategory: 'Robinetterie',
-    brand: 'Bathroom Accessories — distribué par P2M',
+    brand: 'Bathroom Accessories · distribué par P2M',
     dimensions: 'Encastré mural',
     material: 'Laiton chromé',
     finish: 'Chrome poli',
@@ -1916,10 +1916,10 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-24',
     ref: 'P2M-ROB-S1003',
-    name: 'Robinet d\'arrêt « S-1003 ANGLE COCK » — chromé',
+    name: 'Robinet d\'arrêt « S-1003 ANGLE COCK » · chromé',
     category: 'Sanitaires & robinetterie',
     subCategory: 'Robinetterie',
-    brand: 'Bathroom Accessories — distribué par P2M',
+    brand: 'Bathroom Accessories · distribué par P2M',
     dimensions: 'Angle cock mural',
     material: 'Laiton chromé',
     finish: 'Chrome poli',
@@ -1945,10 +1945,10 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-25',
     ref: 'P2M-ROB-HKI',
-    name: 'Robinet évier « HKI » — mitigeur mural chromé',
+    name: 'Robinet évier « HKI » · mitigeur mural chromé',
     category: 'Sanitaires & robinetterie',
     subCategory: 'Robinetterie',
-    brand: 'HKI — distribué par P2M',
+    brand: 'HKI · distribué par P2M',
     dimensions: 'Mural, saillie standard',
     material: 'Laiton chromé',
     finish: 'Chrome poli miroir',
@@ -1973,15 +1973,15 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-26',
     ref: 'P2M-ACC-SET',
-    name: 'Set accessoires salle de bain chromés — porte-serviettes, porte-savon, miroir',
+    name: 'Set accessoires salle de bain chromés · porte-serviettes, porte-savon, miroir',
     category: 'Sanitaires & robinetterie',
     subCategory: 'Accessoires sanitaires',
-    brand: 'Bathroom Accessories — distribué par P2M',
+    brand: 'Bathroom Accessories · distribué par P2M',
     dimensions: 'Standard mural',
     material: 'Laiton chromé / inox',
     finish: 'Chrome poli',
     color: 'Chrome',
-    usage: 'Salles de bains, WC, cuisines — gamme complète assortie',
+    usage: 'Salles de bains, WC, cuisines · gamme complète assortie',
     unit: 'set',
     packaging: 'Boîte individuelle par élément',
     origin: 'Import direct P2M',
@@ -2003,13 +2003,13 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-27',
     ref: 'P2M-FAI-3D',
-    name: 'Faïence murale 3D Wall Design Glossy 20×30 — 3 500 F/m²',
+    name: 'Faïence murale 3D Wall Design Glossy 20×30 · 3 500 F/m²',
     category: 'Revêtement mural & décor',
     subCategory: 'Faïence murale',
-    brand: 'P2M — Polytech Matériaux Matériels',
+    brand: 'P2M · Polytech Matériaux Matériels',
     dimensions: '20 × 30 cm',
     material: 'Faïence émaillée 3D',
-    finish: 'Glossy — relief goutte d\'eau',
+    finish: 'Glossy · relief goutte d\'eau',
     color: 'Blanc pur',
     usage: 'Murs de salles de bains, crédences, murs d\'accent',
     unit: 'm²',
@@ -2032,10 +2032,10 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-28',
     ref: 'P2M-MOS-PISC',
-    name: 'Mosaïque pâte de verre — décor piscine & crédence',
+    name: 'Mosaïque pâte de verre · décor piscine & crédence',
     category: 'Revêtement mural & décor',
     subCategory: 'Mosaïque / parement',
-    brand: 'P2M — Polytech Matériaux Matériels',
+    brand: 'P2M · Polytech Matériaux Matériels',
     dimensions: 'Mosaïque 30 × 30 cm (éléments 1×1 à 5×5 cm)',
     material: 'Pâte de verre',
     finish: 'Brillant, bordure décor assortie',
@@ -2061,10 +2061,10 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-29',
     ref: 'P2M-BOIS-6060',
-    name: 'Carrelage imitation bois 60×60 — chaleur & nature',
+    name: 'Carrelage imitation bois 60×60 · chaleur & nature',
     category: 'Carrelage sol intérieur',
     subCategory: 'Imitation bois',
-    brand: 'P2M — Polytech Matériaux Matériels',
+    brand: 'P2M · Polytech Matériaux Matériels',
     dimensions: '60 × 60 cm',
     material: 'Grès cérame effet bois',
     finish: 'Structuré mat',
@@ -2082,7 +2082,7 @@ export const PRODUCTS_P2M: Product[] = [
       '/images/reelles/p2m-002.jpg'
     ],
     specs: {
-      'Type': 'Imitation bois — chaleur et nature',
+      'Type': 'Imitation bois · chaleur et nature',
       'Format': '60 × 60 cm',
       'Prix': '6 500 F/m²'
     }
@@ -2090,10 +2090,10 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-30',
     ref: 'P2M-8024',
-    name: 'Dalle grand format 80×240 cm — plaque prestige',
+    name: 'Dalle grand format 80×240 cm · plaque prestige',
     category: 'Carrelage sol & mur prestige',
     subCategory: 'Grand format',
-    brand: 'P2M — Polytech Matériaux Matériels',
+    brand: 'P2M · Polytech Matériaux Matériels',
     dimensions: '80 × 240 cm',
     material: 'Grès cérame pleine masse',
     finish: 'Poli brillant / mat selon série',
@@ -2114,21 +2114,21 @@ export const PRODUCTS_P2M: Product[] = [
     specs: {
       'Format': '80 × 240 cm',
       'Prix': '30 000 F / plaque',
-      'Pose': 'Grand format — colles et ventouses professionnelles'
+      'Pose': 'Grand format · colles et ventouses professionnelles'
     }
   },
   {
     id: 'prod-31',
     ref: 'P2M-3030',
-    name: 'Carrelage 30×30 cm — sol & mur économique',
+    name: 'Carrelage 30×30 cm · sol & mur économique',
     category: 'Carrelage sol intérieur',
     subCategory: 'Céramique vitrifiée',
-    brand: 'P2M — Polytech Matériaux Matériels',
+    brand: 'P2M · Polytech Matériaux Matériels',
     dimensions: '30 × 30 cm',
     material: 'Céramique vitrifiée',
     finish: 'Matt et poli',
     color: 'Beige, gris, marron, blanc',
-    usage: 'Cuisines, salles de bain, salons, extérieurs — tous usages',
+    usage: 'Cuisines, salles de bain, salons, extérieurs · tous usages',
     unit: 'm²',
     packaging: 'Carton standard · Prix au m²',
     origin: 'Import direct P2M',
@@ -2150,10 +2150,10 @@ export const PRODUCTS_P2M: Product[] = [
   {
     id: 'prod-32',
     ref: 'P2M-BAIN-ACC',
-    name: 'Outils & accessoires plomberie — Pex, siphons, clapets, visserie WC',
+    name: 'Outils & accessoires plomberie · Pex, siphons, clapets, visserie WC',
     category: 'Sanitaires & robinetterie',
     subCategory: 'Outils & accessoires',
-    brand: 'P2M — Polytech Matériaux Matériels',
+    brand: 'P2M · Polytech Matériaux Matériels',
     dimensions: 'Divers (Pex, raccords, visserie)',
     material: 'Laiton / Pex / PVC',
     finish: 'Brut / chromé selon pièce',
@@ -2448,7 +2448,7 @@ export const EQUIPMENTS: Equipment[] = [
     name: 'Échafaudages (standard & multidirectionnel)',
     category: 'Accès & coffrage',
     capacity: 'Location par niveau/jour · Standards 2 000 F ou multidirectionnels 3 500 F',
-    power: '—',
+    power: '-',
     availabilityStatus: 'Disponible',
     location: 'Magasin SB-S Logistik',
     driverIncluded: false,
@@ -2461,7 +2461,7 @@ export const EQUIPMENTS: Equipment[] = [
     name: 'Étais en fer 4 m / étais galva 3,5 m',
     category: 'Accès & coffrage',
     capacity: 'Location (délai 21 jours) : 800 F | 1 000 F · Vente : 16 500 F | 14 500 F',
-    power: '—',
+    power: '-',
     availabilityStatus: 'Disponible',
     location: 'Magasin SB-S Logistik',
     driverIncluded: false,
@@ -2474,7 +2474,7 @@ export const EQUIPMENTS: Equipment[] = [
     name: 'Panneaux de coffrage',
     category: 'Accès & coffrage',
     capacity: 'Dimensions : 20×120 | 30×120 | 40×120 | 50×120 | 60×120 · Location/unité : 500 F | 750 F | 1 000 F (délai 21 jours, marge 9 jours)',
-    power: '—',
+    power: '-',
     availabilityStatus: 'Sur réservation',
     location: 'Magasin SB-S Logistik',
     driverIncluded: false,
@@ -2494,7 +2494,7 @@ export const EQUIPMENTS: Equipment[] = [
     imageUrl: '/images/sbs-logistik/logistik-equip-063.jpg',
     ratePerDayFCFA: 0
   }];
-// Matériaux de vente et granulats — tarifs officiels SB-S Logistik (flyers)
+// Matériaux de vente et granulats · tarifs officiels SB-S Logistik (flyers)
 export const LOGISTIK_MATERIALS: {
   id: string;
   name: string;
@@ -2529,7 +2529,7 @@ export const LOGISTIK_MATERIALS: {
     price: '75 000 F / pièce',
     imageUrl: '/images/engins/brouette.jpg'
   }];
-// Gamme de béton prêt à l'emploi — Centrale à béton 60 m³/h SB-S Industries
+// Gamme de béton prêt à l'emploi · Centrale à béton 60 m³/h SB-S Industries
 export const CENTRALE_BETON_PRICES: { classe: string; prix: string }[] = [
   { classe: 'C15', prix: '62 000 – 65 000 F' },
   { classe: 'C20', prix: '65 000 – 68 000 F' },
@@ -2578,7 +2578,7 @@ export const PUBLICATIONS: PublicationItem[] = [
     type: 'Presse',
     authors: ['Magatte Niang', 'DL Economie & Technique'],
     date: '2024-08-15',
-    journalOrEvent: 'Revue BTP Afrique — Édition Spéciale Sénégal',
+    journalOrEvent: 'Revue BTP Afrique · Édition Spéciale Sénégal',
     abstract: 'Interview exclusive sur la stratégie industrielle de SERMA BTP, leader dans la conception et fabrication de structures métalliques au Sénégal. Protection des ouvrages côtiers face à la corrosion saline, autonomie dans l\'usinage des charpentes et formation des jeunes ingénieurs aux Eurocodes.',
     keywords: ['SERMA BTP', 'Construction métallique', 'Sénégal', 'Eurocodes', 'Industrialisation'],
     validatedForAI: true
@@ -2600,7 +2600,7 @@ export const PUBLICATIONS: PublicationItem[] = [
     type: 'Presse',
     authors: ['Magatte Niang', 'BW Presse Industrielle'],
     date: '2024-12-20',
-    journalOrEvent: 'Echos de l\'Industrie — Hors-série Laboratoires agréés Sénégal',
+    journalOrEvent: 'Echos de l\'Industrie · Hors-série Laboratoires agréés Sénégal',
     abstract: 'Présentation des capacités du laboratoire SB-S Labo (agrément C2 & A2) : contrôle qualité béton en temps réel, essais CBR, Proctor et cisaillement, et supervision géotechnique sur les grands projets autoroutiers et ferroviaires de la sous-région. Pôle d\'expertise au service de la qualité des infrastructures au Sénégal.',
     keywords: ['SB-S Labo', 'Géotechnique', 'Essais matériaux', 'Contrôle qualité', 'BTP'],
     validatedForAI: true
@@ -2611,7 +2611,7 @@ export const PUBLICATIONS: PublicationItem[] = [
     type: 'Presse',
     authors: ['Magatte Niang', 'AI(ographie) Construction Pro'],
     date: '2025-02-05',
-    journalOrEvent: 'Construction & Bâtiment au Sénégal — Édition tertiaire & industrie',
+    journalOrEvent: 'Construction & Bâtiment au Sénégal · Édition tertiaire & industrie',
     abstract: 'Reportage sur l\'unité SB-S Industries de Diass : centrale à béton 60 m³/h, pondeuse QT40-3A, agglos et hourdis standardisés. Comment la préfabrication abaisse les coûts, réduit les délais de chantier et améliore la qualité du gros œuvre dans les projets résidentiels et publics du Sénégal.',
     keywords: ['SB-S Industries', 'Préfabrication', 'Béton', 'Industrie de la construction', 'Efficience chantier'],
     validatedForAI: true
@@ -2622,7 +2622,7 @@ export const PUBLICATIONS: PublicationItem[] = [
     type: 'Presse',
     authors: ['Magatte Niang', 'FG(édition) Transport & Logistique Afrique'],
     date: '2024-10-22',
-    journalOrEvent: 'Magazine Logistique & Fret — Spécial Routes et Ports Sénégal',
+    journalOrEvent: 'Magazine Logistique & Fret · Spécial Routes et Ports Sénégal',
     abstract: 'Focus sur SB-S Logistik, filiale dédiée à la gestion et maintenance du parc machines (82 engins), location d\'engins avec ou sans opérateur, le transport et l\'approvisionnement des chantiers. Rôle stratégique dans les opérations lourdes du Port Autonome de Dakar, des chantiers autoroutiers et des projets miniers.',
     keywords: ['SB-S Logistik', 'Logistique BTP', 'Parc machines', 'Transport chantiers', 'Port de Dakar'],
     validatedForAI: true

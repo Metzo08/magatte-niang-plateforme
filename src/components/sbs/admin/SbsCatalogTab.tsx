@@ -338,7 +338,7 @@ export default function SbsCatalogTab({
                       <span className="text-neutral-400 font-normal">/{p.unit}</span>
                     </td>
                     <td className="py-3 px-3 text-right font-mono tabular-nums text-neutral-600 dark:text-neutral-300">
-                      {cost ? fmtFCFA(cost.totalCostPricePerUnit, 1) : '—'}
+                      {cost ? fmtFCFA(cost.totalCostPricePerUnit, 1) : '-'}
                     </td>
                     <td className="py-3 px-3 text-right font-mono tabular-nums">
                       {cost ? (
@@ -360,7 +360,7 @@ export default function SbsCatalogTab({
                           </button>
                         </div>
                       ) : (
-                        '—'
+                        '-'
                       )}
                     </td>
                     <td className="py-3 px-3">
@@ -421,7 +421,7 @@ export default function SbsCatalogTab({
               <h3 className="font-title font-bold text-lg text-brand-900 dark:text-white">
                 {draft.mode === 'create'
                   ? 'Nouveau produit / location SBS Industrie'
-                  : `Modifier ${draft.code} — ${draft.name}`}
+                  : `Modifier ${draft.code} · ${draft.name}`}
               </h3>
               <button
                 type="button"
@@ -520,7 +520,7 @@ export default function SbsCatalogTab({
               <div className="p-3 rounded-m bg-neutral-50 dark:bg-brand-950/60 border border-neutral-200 dark:border-brand-700 space-y-2">
                 <div className="flex items-center justify-between">
                   <span className="font-bold text-neutral-700 dark:text-neutral-200">
-                    Dimensions exactes (cm) — Modifiables à volonté
+                    Dimensions exactes (cm) · Modifiables à volonté
                   </span>
                   <button
                     type="button"

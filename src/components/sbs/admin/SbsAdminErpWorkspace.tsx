@@ -336,7 +336,7 @@ export default function SbsAdminErpWorkspace({ onLoggedOut }: { onLoggedOut: () 
                 </span>
               </div>
               <h1 className="font-title font-bold text-base sm:text-lg leading-tight">
-                SBS Industrie — ERP Gestion Usine, Préfabrication &amp; Locations
+                SBS Industrie · ERP Gestion Usine, Préfabrication &amp; Locations
               </h1>
             </div>
           </div>

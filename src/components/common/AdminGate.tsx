@@ -78,7 +78,7 @@ export default function AdminGate({ children }: { children: React.ReactNode }) {
           </button>
         </form>
         <p className="mt-6 text-xs text-center text-neutral-500 dark:text-neutral-400">
-          Accès strictement réservé — toutes les consultations sont journalisées.
+          Accès strictement réservé · toutes les consultations sont journalisées.
         </p>
       </div>
     </div>

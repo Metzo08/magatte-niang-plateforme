@@ -31,12 +31,12 @@ export default function ProfilPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-brand-950 via-brand-900/90 to-brand-950/75 pointer-events-none" />
         <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8">
-            {/* Portrait officiel — magatteniang-expert.sn */}
+            {/* Portrait officiel · magatteniang-expert.sn */}
             <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden shrink-0 shadow-elev-3 ring-4 ring-accent-500/40 bg-brand-800">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={SITE_IMAGES.magatteNiangPortraitCover}
-                alt="Magatte Niang — portrait officiel"
+                alt="Magatte Niang · portrait officiel"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -49,7 +49,7 @@ export default function ProfilPage() {
                 {FOUNDER_PROFILE.name}
               </h1>
               <p className="text-gold-400 font-semibold text-sm sm:text-base mb-4">
-                Bâtir l'avenir du Sénégal — {FOUNDER_PROFILE.title}
+                Bâtir l'avenir du Sénégal · {FOUNDER_PROFILE.title}
               </p>
               <p className="text-neutral-300 text-sm sm:text-base leading-relaxed max-w-3xl">
                 Un leader pluridisciplinaire alliant expertise BTP, innovation en recherche et vision
@@ -89,8 +89,8 @@ export default function ProfilPage() {
             </p>
             <p>
               Entrepreneur aguerri, il a fondé et développé plusieurs entreprises du secteur de la
-              construction et des travaux publics — <strong>SERMA BTP (2012)</strong>, <strong>SB-S Group (2016)</strong>,
-              <strong> SB-S Labo (2021)</strong>, SB-S Industries, SB-S Logistik, P2M et PGT — transformant
+              construction et des travaux publics · <strong>SERMA BTP (2012)</strong>, <strong>SB-S Group (2016)</strong>,
+              <strong> SB-S Labo (2021)</strong>, SB-S Industries, SB-S Logistik, P2M et PGT · transformant
               chacune en acteur de référence dans son domaine.
             </p>
             <p>
@@ -123,8 +123,8 @@ export default function ProfilPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
-              { icon: <GraduationCap className="w-6 h-6 text-accent-500" />, title: 'École Polytechnique de Thiès', desc: 'Diplôme d\'Ingénieur en Génie Civil — structures et ouvrages d\'art.' },
-              { icon: <Award className="w-6 h-6 text-accent-500" />, title: 'CHEM France', desc: 'Spécialisation en structures métalliques — Centre des Hautes Études en Construction.' },
+              { icon: <GraduationCap className="w-6 h-6 text-accent-500" />, title: 'École Polytechnique de Thiès', desc: 'Diplôme d\'Ingénieur en Génie Civil · structures et ouvrages d\'art.' },
+              { icon: <Award className="w-6 h-6 text-accent-500" />, title: 'CHEM France', desc: 'Spécialisation en structures métalliques · Centre des Hautes Études en Construction.' },
               { icon: <Microscope className="w-6 h-6 text-accent-500" />, title: 'Doctorat en cours', desc: 'Recherche sur l\'innovation dans les matériaux de construction (bétons, aciers, composites).' },
             ].map(d => (
               <div key={d.title} className="bg-neutral-50 dark:bg-brand-800/50 border border-neutral-200 dark:border-brand-700 rounded-l p-6">

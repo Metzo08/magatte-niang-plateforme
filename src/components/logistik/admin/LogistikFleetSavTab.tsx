@@ -27,9 +27,9 @@ interface Props {
 
 
 const LOGISTIK_PRESET_IMAGES = [
-  { label: '★ Mbao Usine — Stock & Parc matériel lourd', url: '/images/sbs-industries/sbs-mbao-agglos-creux-parc.jpg' },
-  { label: '★ Mbao Usine — Pondeuse automatique QT40-3A', url: '/images/sbs-logistik/logistik-equip-068.jpg' },
-  { label: '★ Mbao Usine — Centrale à béton 60 m³/h', url: '/images/sbs-logistik/logistik-equip-070.jpg' },
+  { label: '★ Mbao Usine · Stock & Parc matériel lourd', url: '/images/sbs-industries/sbs-mbao-agglos-creux-parc.jpg' },
+  { label: '★ Mbao Usine · Pondeuse automatique QT40-3A', url: '/images/sbs-logistik/logistik-equip-068.jpg' },
+  { label: '★ Mbao Usine · Centrale à béton 60 m³/h', url: '/images/sbs-logistik/logistik-equip-070.jpg' },
   { label: 'Grue mobile télescopique 50T Samsung', url: '/images/sbs-presentation/sbs-page06-img02.jpeg' },
   { label: 'Grue mobile 50T & nacelle télescopique', url: '/images/sbs-presentation/sbs-page06-img03.jpeg' },
   { label: 'Nacelle télescopique 30m Aichi', url: '/images/sbs-presentation/sbs-page06-img04.jpeg' },
@@ -117,7 +117,7 @@ export function LogistikFleetSavTab({
     startDate: new Date().toISOString().slice(0, 10),
     expectedReturnDate: '',
     meterOut: '',
-    conditionNotes: 'RAS — contrôle pré-départ validé',
+    conditionNotes: 'RAS · contrôle pré-départ validé',
     costFCFA: 0,
   });
 
@@ -313,7 +313,7 @@ export function LogistikFleetSavTab({
               {filteredClients.map((c) => (
                 <tr key={c.id} className="hover:bg-slate-800/40">
                   <td className="p-3 font-mono font-bold text-amber-400">{c.code}</td>
-                  <td className="p-3 font-mono text-slate-300">{c.identifier || '—'}</td>
+                  <td className="p-3 font-mono text-slate-300">{c.identifier || '-'}</td>
                   <td className="p-3">
                     <div className="font-bold text-white">{c.fullName}</div>
                     <div className="text-[11px] text-slate-400">{c.company || c.category}</div>
@@ -521,8 +521,8 @@ export function LogistikFleetSavTab({
                 </div>
                 <div className="text-xs text-slate-400">
                   Client : <strong className="text-slate-200">{s.clientName}</strong> · Chantier :{' '}
-                  {s.siteLocation} · Opérateur : {s.operatorName || '—'} · Compteur départ :{' '}
-                  {s.meterOut || '—'}
+                  {s.siteLocation} · Opérateur : {s.operatorName || '-'} · Compteur départ :{' '}
+                  {s.meterOut || '-'}
                 </div>
               </div>
 

@@ -590,7 +590,7 @@ export const DEFAULT_SBS_PRODUCTS: SbsProductItem[] = [
     sortOrder: 13,
   },
 
-  // === BÉTON PRÊT À L'EMPLOI — CENTRALE 60 m³/h ===
+  // === BÉTON PRÊT À L'EMPLOI · CENTRALE 60 m³/h ===
   {
     id: 'sbs-prod-bpe-c15',
     code: 'BPE-C15',
@@ -896,6 +896,6 @@ export function createNov2026SeedLedger(): Omit<SbsMonthlyLedgerData, 'id'> {
       HD25: { opening: 0, entries: 0 },
     },
     rentalBookings: [],
-    notes: 'Import initial du classeur Excel v5 Novembre 2026 — Prêt pour saisie production & ventes.',
+    notes: 'Import initial du classeur Excel v5 Novembre 2026 · Prêt pour saisie production & ventes.',
   };
 }

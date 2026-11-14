@@ -3,31 +3,31 @@
 const REALISATIONS = [
   {
     src: '/images/reelles/sbs-labo-reel-001.jpg',
-    title: 'Études de sol G2AVP — tour R+16, Dakar Plateau',
+    title: 'Études de sol G2AVP · tour R+16, Dakar Plateau',
     desc: "Campagne complète de reconnaissance géotechnique : sondages carottés à 45 m, essais pressiométriques et recommandations de fondations profondes (pieux forés 800 mm) validées par le bureau de contrôle.",
     tag: 'Géotechnique · 2024',
   },
   {
     src: '/images/reelles/sbs-labo-reel-002.jpg',
-    title: 'Essais de portance — plateformes & couches de forme',
+    title: 'Essais de portance · plateformes & couches de forme',
     desc: "Essais Proctor, CBR et compacité in-situ pour la validation continue des plateformes des chantiers SB-S Group (VRD, voiries et zones industrielles).",
     tag: 'Contrôle in-situ · continu',
   },
   {
     src: '/images/reelles/sbs-labo-reel-003.jpg',
-    title: "Analyses béton frais & durci — centrale 60 m³/h",
+    title: "Analyses béton frais & durci · centrale 60 m³/h",
     desc: "Écrasement d'éprouvettes, slump et suivi de formulation pour la certification continue des bétons préfabriqués SB-S Industries et des BPE livrés sur chantiers.",
     tag: 'Laboratoire béton · agréé C2',
   },
   {
     src: '/images/reelles/sbs-labo-reel-004.jpg',
-    title: "Contrôle qualité — usine d'oxygène PSA, Mako (Kédougou)",
+    title: "Contrôle qualité · usine d'oxygène PSA, Mako (Kédougou)",
     desc: "Études de sol préalables et contrôle qualité du génie civil pour l'implantation de l'usine d'oxygène PSA 6 T/j en région isolée (2023).",
     tag: 'Industrie · 2023',
   },
   {
     src: '/images/reelles/sbs-labo-reel-006.jpg',
-    title: 'Auscultation & essais — dallage Gorée Offshore',
+    title: 'Auscultation & essais · dallage Gorée Offshore',
     desc: "Validation de la formulation béton et contrôle du dallage industriel soumis aux charges roulantes lourdes et à l'exposition aux hydrocarbures (2025).",
     tag: 'Infrastructures · 2025',
   },

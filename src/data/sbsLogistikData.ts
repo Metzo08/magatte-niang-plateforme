@@ -144,7 +144,7 @@ export const SBS_LOGISTIK_ITEMS: SbsLogistikEquipmentItem[] = [
   {
     "id": "sbs-logistik-item-09",
     "code": "SBS-TER-02",
-    "title": "Dumper articulé tout-terrain FCY30R — capacité 3 tonnes",
+    "title": "Dumper articulé tout-terrain FCY30R · capacité 3 tonnes",
     "category": "Terrassement & compactage",
     "pageNumber": 11,
     "imageUrl": "/images/sbs-logistik/logistik-equip-009.jpg",
@@ -200,7 +200,7 @@ export const SBS_LOGISTIK_ITEMS: SbsLogistikEquipmentItem[] = [
   {
     "id": "sbs-logistik-item-13",
     "code": "SBS-BET-04",
-    "title": "Camion malaxeur toupie MAN — flotte béton prêt à l'emploi",
+    "title": "Camion malaxeur toupie MAN · flotte béton prêt à l'emploi",
     "category": "Béton & malaxage",
     "pageNumber": 14,
     "imageUrl": "/images/sbs-logistik/logistik-equip-013.jpg",
@@ -214,7 +214,7 @@ export const SBS_LOGISTIK_ITEMS: SbsLogistikEquipmentItem[] = [
   {
     "id": "sbs-logistik-item-14",
     "code": "SBS-BET-05",
-    "title": "Camion malaxeur toupie Renault Mix — vue frontale sur parc",
+    "title": "Camion malaxeur toupie Renault Mix · vue frontale sur parc",
     "category": "Béton & malaxage",
     "pageNumber": 14,
     "imageUrl": "/images/sbs-logistik/logistik-equip-014.jpg",
@@ -256,7 +256,7 @@ export const SBS_LOGISTIK_ITEMS: SbsLogistikEquipmentItem[] = [
   {
     "id": "sbs-logistik-item-17",
     "code": "SBS-BET-08",
-    "title": "Bétonnière automotrice à skip de chargement hydraulique — vue de profil",
+    "title": "Bétonnière automotrice à skip de chargement hydraulique · vue de profil",
     "category": "Béton & malaxage",
     "pageNumber": 16,
     "imageUrl": "/images/sbs-logistik/logistik-equip-017.jpg",
@@ -326,7 +326,7 @@ export const SBS_LOGISTIK_ITEMS: SbsLogistikEquipmentItem[] = [
   {
     "id": "sbs-logistik-item-22",
     "code": "SBS-TER-04",
-    "title": "Compacteur vibrant tandem à timon de guidage — vue avant",
+    "title": "Compacteur vibrant tandem à timon de guidage · vue avant",
     "category": "Terrassement & compactage",
     "pageNumber": 20,
     "imageUrl": "/images/sbs-logistik/logistik-equip-022.jpg",
@@ -410,7 +410,7 @@ export const SBS_LOGISTIK_ITEMS: SbsLogistikEquipmentItem[] = [
   {
     "id": "sbs-logistik-item-28",
     "code": "SBS-BET-10",
-    "title": "Hélicoptère à béton thermique — truelle mécanique de surfaçage",
+    "title": "Hélicoptère à béton thermique · truelle mécanique de surfaçage",
     "category": "Béton & malaxage",
     "pageNumber": 25,
     "imageUrl": "/images/sbs-logistik/logistik-equip-028.jpg",

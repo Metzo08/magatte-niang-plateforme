@@ -17,13 +17,13 @@ export default function MediathequePage() {
 
   const medias = [
     { src: SITE_IMAGES.magatteNiang, label: 'Portrait officiel de Magatte Niang', tag: 'Portrait' },
-    { src: SITE_IMAGES.sbsGroup, label: 'SB-S Group — logo & chantiers', tag: 'Entité' },
-    { src: SITE_IMAGES.sermaBtp, label: 'SERMA BTP — ingénierie & construction', tag: 'Entité' },
-    { src: SITE_IMAGES.sbsLabo, label: 'SB-S Labo — laboratoire géotechnique', tag: 'Entité' },
-    { src: SITE_IMAGES.sbsIndustries, label: 'SB-S Industries — préfabrication béton', tag: 'Entité' },
-    { src: SITE_IMAGES.sbsLogistik, label: 'SB-S Logistik — location & matériaux', tag: 'Entité' },
-    { src: SITE_IMAGES.p2m, label: 'P2M — showroom carrelages & sanitaires', tag: 'Entité' },
-    { src: SITE_IMAGES.pgt, label: 'PGT — transit & logistique maritime', tag: 'Entité' },
+    { src: SITE_IMAGES.sbsGroup, label: 'SB-S Group · logo & chantiers', tag: 'Entité' },
+    { src: SITE_IMAGES.sermaBtp, label: 'SERMA BTP · ingénierie & construction', tag: 'Entité' },
+    { src: SITE_IMAGES.sbsLabo, label: 'SB-S Labo · laboratoire géotechnique', tag: 'Entité' },
+    { src: SITE_IMAGES.sbsIndustries, label: 'SB-S Industries · préfabrication béton', tag: 'Entité' },
+    { src: SITE_IMAGES.sbsLogistik, label: 'SB-S Logistik · location & matériaux', tag: 'Entité' },
+    { src: SITE_IMAGES.p2m, label: 'P2M · showroom carrelages & sanitaires', tag: 'Entité' },
+    { src: SITE_IMAGES.pgt, label: 'PGT · transit & logistique maritime', tag: 'Entité' },
   ];
 
   return (
@@ -42,7 +42,7 @@ export default function MediathequePage() {
           </h1>
           <p className="text-neutral-300 text-base sm:text-lg leading-relaxed max-w-3xl">
             Communiqués de presse, dossiers officiels, photothèque et éléments de marque de
-            l'écosystème Magatte Niang — mis à disposition des journalistes, partenaires et clients.
+            l'écosystème Magatte Niang · mis à disposition des journalistes, partenaires et clients.
           </p>
         </div>
       </section>

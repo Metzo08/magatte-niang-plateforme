@@ -173,7 +173,7 @@ async function runLogistikSeed(): Promise<void> {
         address: 'Zone Industrielle Diamniadio, Lot 14',
         city: 'Diamniadio',
         category: 'Entreprise BTP',
-        notes: 'Client compte clé — locations grues mobiles & camions bennes 40T.',
+        notes: 'Client compte clé · locations grues mobiles & camions bennes 40T.',
       },
     });
   }

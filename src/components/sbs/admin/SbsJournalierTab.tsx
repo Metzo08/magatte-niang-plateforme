@@ -82,7 +82,7 @@ export default function SbsJournalierTab({
         <div>
           <h2 className="font-title font-bold text-lg text-brand-900 dark:text-white flex items-center gap-2">
             <Calendar className="w-5 h-5 text-accent-500" />
-            Suivi Journalier de Production &amp; Consommations — {monthLabel}
+            Suivi Journalier de Production &amp; Consommations · {monthLabel}
           </h2>
           <p className="text-xs text-neutral-600 dark:text-neutral-300 mt-0.5">
             Saisissez les quantités produites par type d&apos;agglo/hourdis + votre relevé réel de matières (ciment, sable, graviers, eau) et le CA du jour. Cliquez sur un jour pour la fiche rapide.
@@ -289,7 +289,7 @@ export default function SbsJournalierTab({
       <div className="bg-white dark:bg-brand-800 border border-neutral-200 dark:border-brand-700 rounded-l p-5 shadow-elev-1 space-y-3">
         <div>
           <h3 className="font-title font-bold text-base text-brand-900 dark:text-white">
-            CONTRÔLE — Consommation RÉELLE saisie vs THÉORIQUE de la formulation
+            CONTRÔLE · Consommation RÉELLE saisie vs THÉORIQUE de la formulation
           </h3>
           <p className="text-xs text-neutral-500 dark:text-neutral-400">
             Détecte automatiquement les surconsommations de ciment ou granulats, ou les oublis de saisie de production.
@@ -353,7 +353,7 @@ export default function SbsJournalierTab({
           <div className="bg-white dark:bg-brand-900 border border-neutral-200 dark:border-brand-700 rounded-l w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 space-y-5 shadow-elev-3 text-xs">
             <div className="flex items-center justify-between border-b border-neutral-200 dark:border-brand-700 pb-3">
               <h3 className="font-title font-bold text-lg text-brand-900 dark:text-white">
-                Fiche Journée — Jour {activeDayRow.day} ({monthLabel})
+                Fiche Journée · Jour {activeDayRow.day} ({monthLabel})
               </h3>
               <button
                 type="button"

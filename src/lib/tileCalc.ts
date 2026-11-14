@@ -1,5 +1,5 @@
 /**
- * Moteur de calcul carreaux P2M — formules du classeur CATALOGUE_CARREAUX_DEVIS.xlsx (font foi).
+ * Moteur de calcul carreaux P2M · formules du classeur CATALOGUE_CARREAUX_DEVIS.xlsx (font foi).
  *
  * Point critique : le m² est calculé en décimal EXACT via des entiersscaled (pas de float)
  * afin que 0.09375 × 8 = 0.75 reste exact avant l'arrondi du plafond.
@@ -40,9 +40,9 @@ export function computeTile(t: TileCalcInput): TileCalc {
   const l = t.largeurCm;
   const N = t.piecesParCarton;
 
-  // surface_piece_m2 = L × l / 10000  — exact : L,l en cm, produits entiers quand possibles
+  // surface_piece_m2 = L × l / 10000  · exact : L,l en cm, produits entiers quand possibles
   const surfacePieceM2 = divExact(L * l, 10000);
-  // m2_carton = surface_piece × N — exact : (L*l*N)/10000
+  // m2_carton = surface_piece × N · exact : (L*l*N)/10000
   const m2Carton = divExact(L * l * N, 10000);
 
   const poidsM2 = t.poidsCartonKg && m2Carton > 0 ? t.poidsCartonKg / m2Carton : null;

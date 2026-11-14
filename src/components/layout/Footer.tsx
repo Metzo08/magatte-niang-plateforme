@@ -144,7 +144,7 @@ export const Footer: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-m bg-brand-800/80 hover:bg-brand-700 border border-brand-700 text-xs text-neutral-300 hover:text-white transition-all transform hover:scale-105 shadow-sm group"
-                    title={`${s.name} (${s.handle}) — ${s.description}`}
+                    title={`${s.name} (${s.handle}) · ${s.description}`}
                   >
                     <span className="text-accent-500 group-hover:text-accent-400">
                       {getSocialIcon(s.icon)}

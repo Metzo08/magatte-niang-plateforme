@@ -62,7 +62,7 @@ async function runP2mSeed(): Promise<void> {
         id: 'p2m-cli-0001',
         code: 'CLI-P2M-0001',
         identifier: 'NINEA-008341219-1B2',
-        fullName: 'Architecte Conseil — Résidence Almadies',
+        fullName: 'Architecte Conseil · Résidence Almadies',
         company: 'Cabinet Horizon Architecture',
         phone: '+221 77 620 45 10',
         email: 'achats@horizon-archi.sn',

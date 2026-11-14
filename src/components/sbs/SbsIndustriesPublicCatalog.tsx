@@ -71,7 +71,7 @@ const DIMENSION_GRIDS: SbsDimensionCard[] = [
     title: 'Agglo creux 10×20×40',
     price: '380 F',
     family: 'Agglo creux',
-    caption: 'Brique creuse 10×20×40 — Cloisons & murets légers',
+    caption: 'Brique creuse 10×20×40 · Cloisons & murets légers',
     usage: 'Cloisons intérieures & murets de clôture non porteurs',
   },
   {
@@ -80,7 +80,7 @@ const DIMENSION_GRIDS: SbsDimensionCard[] = [
     title: 'Agglo creux 12×20×40',
     price: '400 F',
     family: 'Agglo creux',
-    caption: 'Brique creuse 12×20×40 — Murs de clôture calibrés',
+    caption: 'Brique creuse 12×20×40 · Murs de clôture calibrés',
     usage: 'Clôtures, doublages et séparations acoustiques',
   },
   {
@@ -89,7 +89,7 @@ const DIMENSION_GRIDS: SbsDimensionCard[] = [
     title: 'Agglo creux 15×20×40',
     price: '475 F',
     family: 'Agglo creux',
-    caption: 'Brique creuse 15×20×40 — Murs extérieurs R+',
+    caption: 'Brique creuse 15×20×40 · Murs extérieurs R+',
     usage: 'Murs porteurs et façades de bâtiments R+1 / R+2',
   },
   {
@@ -98,7 +98,7 @@ const DIMENSION_GRIDS: SbsDimensionCard[] = [
     title: 'Agglo creux 20×20×40',
     price: '590 F',
     family: 'Agglo creux',
-    caption: 'Brique creuse 20×20×40 — Gros œuvre & soubassements',
+    caption: 'Brique creuse 20×20×40 · Gros œuvre & soubassements',
     usage: 'Murs porteurs forte charge, sous-sols & refends',
   },
   {
@@ -107,7 +107,7 @@ const DIMENSION_GRIDS: SbsDimensionCard[] = [
     title: 'Agglo plein 15×20×40',
     price: '700 F',
     family: 'Agglo plein',
-    caption: 'Brique pleine 15×20×40 — Fondations & zones humides',
+    caption: 'Brique pleine 15×20×40 · Fondations & zones humides',
     usage: 'Fondations, soubassements étanches & murs de clôture porteurs',
   },
   {
@@ -116,7 +116,7 @@ const DIMENSION_GRIDS: SbsDimensionCard[] = [
     title: 'Agglo plein 20×20×40',
     price: '850 F',
     family: 'Agglo plein',
-    caption: 'Brique pleine 20×20×40 — Haute compacité 31,7 kg (Stock Usine SBS Mbao)',
+    caption: 'Brique pleine 20×20×40 · Haute compacité 31,7 kg (Stock Usine SBS Mbao)',
     usage: 'Ouvrages d\'art, massifs lourds & murs coupe-feu',
   },
   {
@@ -125,7 +125,7 @@ const DIMENSION_GRIDS: SbsDimensionCard[] = [
     title: 'Hourdis 20 (20×20×50)',
     price: '650 F',
     family: 'Hourdis',
-    caption: 'Hourdis béton alvéolaire 20×20×50 cm — Grande portée dalles et planchers',
+    caption: 'Hourdis béton alvéolaire 20×20×50 cm · Grande portée dalles et planchers',
     usage: 'Dalles de compression et planchers à forte charge d\'exploitation',
   },
   {
@@ -134,7 +134,7 @@ const DIMENSION_GRIDS: SbsDimensionCard[] = [
     title: 'Hourdis plancher 50 cm',
     price: '450 – 750 F',
     family: 'Hourdis',
-    caption: 'Contrôle métrologique ruban étalonné 50 cm — Usine SBS Mbao',
+    caption: 'Contrôle métrologique ruban étalonné 50 cm · Usine SBS Mbao',
     usage: 'Planchers nervurés hourdis 12, 16, 20 et 25×20×50 cm',
   },
   {
@@ -143,7 +143,7 @@ const DIMENSION_GRIDS: SbsDimensionCard[] = [
     title: 'Pavés autobloquants',
     price: '6 750 – 7 750 F/m²',
     family: 'Pavés',
-    caption: 'Pavés profil H autobloquants — Aménagements & voiries urbaines',
+    caption: 'Pavés profil H autobloquants · Aménagements & voiries urbaines',
     usage: 'Esplanades, cours, allées piétonnes et parkings légers',
   },
   {
@@ -152,7 +152,7 @@ const DIMENSION_GRIDS: SbsDimensionCard[] = [
     title: 'Pavés charges lourdes 10 cm',
     price: '9 000 F/m²',
     family: 'Pavés',
-    caption: 'Pavés industriels haute densité 10 cm — Profil H Double-T ultra résistant',
+    caption: 'Pavés industriels haute densité 10 cm · Profil H Double-T ultra résistant',
     usage: 'Zones portuaires, stations-service & parkings logistiques poids lourds',
   },
   {
@@ -179,7 +179,7 @@ const DIMENSION_GRIDS: SbsDimensionCard[] = [
     title: 'Moulage continu agglos',
     price: 'Direct usine',
     family: 'Usine Mbao',
-    caption: 'Démoulage continu pondeuse automatique — Usine SBS Mbao',
+    caption: 'Démoulage continu pondeuse automatique · Usine SBS Mbao',
     usage: 'Cadence industrielle 3 500 unités/jour certifiées',
   },
   {
@@ -188,7 +188,7 @@ const DIMENSION_GRIDS: SbsDimensionCard[] = [
     title: 'Parc de séchage Mbao',
     price: 'Norme BTP',
     family: 'Usine Mbao',
-    caption: 'Cure contrôlée à l\'air libre sur plateforme stabilisée — Usine SBS Mbao',
+    caption: 'Cure contrôlée à l\'air libre sur plateforme stabilisée · Usine SBS Mbao',
     usage: 'Résistance mécanique certifiée laboratoire',
   },
   {
@@ -334,7 +334,7 @@ export default function SbsIndustriesPublicCatalog({
         usage: p.description || p.name,
         unit: p.unit,
         packaging: p.unit === 'm²' ? 'Au m²' : p.unit === 'm³' ? 'Toupie / m³' : 'Palette / Unité',
-        origin: 'Sénégal — Usine SBS Industrie',
+        origin: 'Sénégal · Usine SBS Industrie',
         indicativePriceFCFA: p.sellingPriceFCFA ?? 0,
         isPriceVisible: p.isPriceVisible,
         availability: (p.availability as any) || 'En stock',
@@ -432,7 +432,7 @@ export default function SbsIndustriesPublicCatalog({
                 type="button"
                 onClick={() =>
                   onOpenLightbox?.(
-                    DIMENSION_GRIDS.map((c) => ({ url: c.url, caption: `${c.title} (${c.dim}) — ${c.price} : ${c.usage}` })),
+                    DIMENSION_GRIDS.map((c) => ({ url: c.url, caption: `${c.title} (${c.dim}) · ${c.price} : ${c.usage}` })),
                     idx,
                     `Brique réelle SBS Industrie ${card.dim}`
                   )
@@ -490,7 +490,7 @@ export default function SbsIndustriesPublicCatalog({
         </div>
       </div>
 
-      {/* Galerie Usine de Production — Zone Franche Industrielle de Mbao (Dakar, Sénégal) */}
+      {/* Galerie Usine de Production · Zone Franche Industrielle de Mbao (Dakar, Sénégal) */}
       <div className="rounded-l border border-neutral-200 dark:border-brand-700 bg-white dark:bg-brand-850 p-6 sm:p-8 space-y-6 shadow-elev-1">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-neutral-200 dark:border-brand-700/80 pb-5">
           <div>
@@ -504,7 +504,7 @@ export default function SbsIndustriesPublicCatalog({
             </div>
             <h3 className="text-xl sm:text-2xl font-title font-bold text-neutral-900 dark:text-white mt-1.5 flex items-center gap-2">
               <Blocks className="w-6 h-6 text-accent-500" />
-              Usine SBS Industrie — Zone Franche Industrielle de Mbao
+              Usine SBS Industrie · Zone Franche Industrielle de Mbao
             </h3>
             <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-300 mt-1">
               Responsable d'exploitation : <strong className="text-neutral-900 dark:text-white">Salimata SOW</strong> · Visites techniques &amp; commandes chantiers au <a href="https://wa.me/221775664806" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 font-bold hover:underline font-mono">+221 77 566 48 06</a>.
@@ -568,7 +568,7 @@ export default function SbsIndustriesPublicCatalog({
                 className="relative aspect-[4/3] bg-neutral-900 overflow-hidden cursor-zoom-in"
                 onClick={() =>
                   onOpenLightbox?.(
-                    arr.map((p) => ({ url: p.url, caption: `${p.title} (${p.dim}) — ${p.caption}` })),
+                    arr.map((p) => ({ url: p.url, caption: `${p.title} (${p.dim}) · ${p.caption}` })),
                     idx,
                     `Usine SBS Industrie Mbao : ${item.title}`
                   )
@@ -647,7 +647,7 @@ export default function SbsIndustriesPublicCatalog({
           {filteredProducts.map((p) => {
             const isAdded = addedCode === p.code;
             const waText = encodeURIComponent(
-              `Bonjour Salimata SOW (SBS Industrie), je souhaite commander / louer : ${p.name} (${p.dimensions}) — Réf ${p.code}.`
+              `Bonjour Salimata SOW (SBS Industrie), je souhaite commander / louer : ${p.name} (${p.dimensions}) · Réf ${p.code}.`
             );
             return (
               <div
@@ -661,7 +661,7 @@ export default function SbsIndustriesPublicCatalog({
                       [
                         {
                           url: p.imageUrl || '/images/sbs-industries/flyer-agglos-pleins.jpg',
-                          caption: `${p.name} (${p.dimensions}) — ${p.sellingPriceFCFA ? fmtFCFA(p.sellingPriceFCFA) + '/' + p.unit : 'Sur devis'} : ${p.description || ''}`,
+                          caption: `${p.name} (${p.dimensions}) · ${p.sellingPriceFCFA ? fmtFCFA(p.sellingPriceFCFA) + '/' + p.unit : 'Sur devis'} : ${p.description || ''}`,
                         },
                       ],
                       0,
@@ -772,7 +772,7 @@ export default function SbsIndustriesPublicCatalog({
           <div className="space-y-2 max-w-xl">
             <h3 className="text-lg font-title font-bold text-neutral-900 dark:text-white flex items-center gap-2">
               <Calculator className="w-5 h-5 text-accent-500" />
-              Simulateur Rapide Chantier — Briques, Pavés, Béton &amp; Locations
+              Simulateur Rapide Chantier · Briques, Pavés, Béton &amp; Locations
             </h3>
             <p className="text-xs text-neutral-600 dark:text-neutral-300">
               Estimez instantanément le budget de votre commande ou location selon les tarifs actualisés par la direction SBS Industrie.
@@ -789,7 +789,7 @@ export default function SbsIndustriesPublicCatalog({
                 >
                   {products.map((p) => (
                     <option key={p.code} value={p.code}>
-                      {p.code} — {p.name} ({p.sellingPriceFCFA ? `${p.sellingPriceFCFA.toLocaleString('fr-FR')} F/${p.unit}` : 'Sur devis'})
+                      {p.code} · {p.name} ({p.sellingPriceFCFA ? `${p.sellingPriceFCFA.toLocaleString('fr-FR')} F/${p.unit}` : 'Sur devis'})
                     </option>
                   ))}
                 </select>
@@ -845,7 +845,7 @@ export default function SbsIndustriesPublicCatalog({
               href={`https://wa.me/${waNumber}?text=${encodeURIComponent(
                 `Bonjour SBS Industrie, demande de devis pour ${calcQty} ${calcProduct?.unit || 'u'} de ${
                   calcProduct?.name || ''
-                } (${calcProduct?.dimensions || ''}) — Estimation ${Math.round(calcEstimate.ttc).toLocaleString(
+                } (${calcProduct?.dimensions || ''}) · Estimation ${Math.round(calcEstimate.ttc).toLocaleString(
                   'fr-FR'
                 )} F CFA.`
               )}`}

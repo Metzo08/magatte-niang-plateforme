@@ -328,7 +328,7 @@ export default function SbsParametresTab({
         <div className="bg-white dark:bg-brand-800 border border-neutral-200 dark:border-brand-700 rounded-l p-5 space-y-4">
           <h3 className="font-title font-bold text-base text-brand-900 dark:text-white flex items-center gap-2">
             <KeyRound className="w-5 h-5 text-accent-500" />
-            Sécurité — Mot de passe Gestionnaire SBS Industrie
+            Sécurité · Mot de passe Gestionnaire SBS Industrie
           </h3>
           <form onSubmit={submitPwd} className="space-y-3">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">

@@ -93,7 +93,7 @@ export default function CatalogueP2MPage() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={SITE_IMAGES.rubonChantier}
-          alt="Showroom P2M — carrelages, sanitaires et finitions"
+          alt="Showroom P2M · carrelages, sanitaires et finitions"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
           loading="lazy"
         />
@@ -136,7 +136,7 @@ export default function CatalogueP2MPage() {
             </div>
           </div>
 
-          {/* Tarifs indicatifs officiels — source : plaquette P2M */}
+          {/* Tarifs indicatifs officiels · source : plaquette P2M */}
           <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 text-xs">
             {[
               { label: 'Porcelaine 60×60', price: '5 500 – 6 000 F/m²' },

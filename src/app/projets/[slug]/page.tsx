@@ -207,7 +207,7 @@ export default function ProjectCaseStudyPage() {
           </div>
         </div>
 
-        {/* GALERIE PHOTOS DU PROJET — toutes les images du dossier officiel */}
+        {/* GALERIE PHOTOS DU PROJET · toutes les images du dossier officiel */}
         {project.images && project.images.length > 1 && (
           <section className="bg-white dark:bg-brand-850 border border-neutral-300 dark:border-brand-700 rounded-l overflow-hidden">
             <div className="flex items-center gap-3 px-5 py-4 border-b border-neutral-200 dark:border-brand-700">

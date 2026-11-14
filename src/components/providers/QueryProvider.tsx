@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ENTITIES, PROJECTS, PRODUCTS_P2M, LAB_TESTS } from '@/data/initialData';
 
 /**
- * Provider TanStack Query — cache client ULTRA-RAPIDE sur toute la plateforme :
+ * Provider TanStack Query · cache client ULTRA-RAPIDE sur toute la plateforme :
  * 1. Pré-seeding du cache avec les données statiques locales (ENTITIES, PROJECTS,
  *    PRODUCTS_P2M, LAB_TESTS) : chaque page se peint INSTANTANÉMENT, sans spinner
  *    et sans attendre l'API.

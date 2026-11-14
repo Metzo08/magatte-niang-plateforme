@@ -24,14 +24,14 @@ interface HeaderProps {
   onOpenAI: () => void;
 }
 
-/** Menu desktop — entités (mega-menu) */
+/** Menu desktop · entités (mega-menu) */
 const ENTITY_LINKS = ENTITIES.map((ent) => ({
   href: `/entites/${ent.id}`,
   name: ent.name,
   colorHex: ent.colorHex
 }));
 
-/** Menu desktop — expertises (dropdown) */
+/** Menu desktop · expertises (dropdown) */
 const EXPERTISE_LINKS = [
   { href: '/expertises#genie-civil', label: 'Génie civil & BTP' },
   { href: '/expertises#construction-metallique', label: 'Construction métallique' },
@@ -41,7 +41,7 @@ const EXPERTISE_LINKS = [
   { href: '/expertises#etudes-ingenierie', label: 'Études & ingénierie' }
 ];
 
-/** Menu desktop — navigation principale horizontale */
+/** Menu desktop · navigation principale horizontale */
 const DESKTOP_NAV = [
   { href: '/', label: 'Accueil' },
   { href: '/entites', label: 'Entités', dropdown: 'entities' as const },
@@ -53,7 +53,7 @@ const DESKTOP_NAV = [
   { href: '/espace-pro', label: 'Espace pro' }
 ];
 
-/** Menu mobile — navigation complète (sans emojis, différente du desktop) */
+/** Menu mobile · navigation complète (sans emojis, différente du desktop) */
 const MOBILE_NAV = [
   { href: '/', label: 'Accueil' },
   { href: '/entites', label: 'Les 7 entités du groupe' },
@@ -63,7 +63,7 @@ const MOBILE_NAV = [
   { href: '/services/laboratoire', label: 'Laboratoire SB-S Labo' },
   { href: '/mediatheque', label: 'Médiathèque & presse' },
   { href: '/contact', label: 'Contact & devis direct' },
-  { href: '/profil', label: 'Magatte Niang — profil & recherche' },
+  { href: '/profil', label: 'Magatte Niang · profil & recherche' },
   { href: '/espace-pro', label: 'Espace professionnel (accès réservé)' }
 ];
 
@@ -137,7 +137,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenAI }) => {
       <div className="hidden lg:block bg-brand-900 dark:bg-brand-950 text-neutral-300 text-xs border-b border-brand-800">
         <div className="max-w-editorial mx-auto px-8 h-8 flex items-center justify-between">
           <span className="font-mono tracking-wider">
-            Groupe magatte niang — btp, industrie &amp; ingénierie au sénégal
+            Groupe magatte niang · btp, industrie &amp; ingénierie au sénégal
           </span>
           <div className="flex items-center gap-5">
             <Link href="/profil" className="hover:text-accent-400 transition-colors">
@@ -176,7 +176,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenAI }) => {
             </div>
           </Link>
 
-          {/* ===== MENU DESKTOP — horizontal, distinct du mobile ===== */}
+          {/* ===== MENU DESKTOP · horizontal, distinct du mobile ===== */}
           <nav className="hidden lg:flex items-center gap-0.5" aria-label="Navigation principale">
             {DESKTOP_NAV.map((item) => {
               const isActive =

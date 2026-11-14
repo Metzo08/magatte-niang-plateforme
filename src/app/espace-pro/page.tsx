@@ -506,7 +506,7 @@ export default function EspaceProPage() {
       visibility: docForm.visibility,
       requiresForm: false,
       isValidatedForAI: false,
-      fileSize: docForm.fileSize.trim() || '—',
+      fileSize: docForm.fileSize.trim() || '-',
       fileType: docForm.fileType.trim() || 'PDF',
       url: docForm.url.trim() || '#',
       publishedAt: docForm.publishedAt,

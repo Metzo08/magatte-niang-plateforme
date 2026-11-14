@@ -52,7 +52,7 @@ export async function GET(request: NextRequest) {
 
         if (dbProjects && dbProjects.length > 0) {
           // Déduplique sur id ET slug : la base seedée contient les mêmes
-          // projets que les données statiques — un slug légèrement différent
+          // projets que les données statiques · un slug légèrement différent
           // ne doit jamais produire deux cartes avec la même clé `id`.
           const seenIds = new Set(staticProjects.map(p => p.id));
           const seenSlugs = new Set(staticProjects.map(p => p.slug));

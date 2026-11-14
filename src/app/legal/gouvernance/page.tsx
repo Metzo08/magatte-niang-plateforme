@@ -17,20 +17,20 @@ export default function GouvernancePage() {
             "Toute métrique publiée sur la plateforme respecte quatre principes non négociables : traçabilité de la source, mesurabilité, vérification indépendante et révision périodique.",
           ],
           bullets: [
-            'Traçabilité — chaque chiffre est rattaché à un instrument ou un registre identifié',
-            'Mesurabilité — aucune estimation non documentée n\'est présentée comme un fait',
-            'Vérification — les indicateurs critiques sont contrôlés par une entité indépendante',
-            'Révision — les valeurs sont actualisées selon un cycle défini et daté',
+            'Traçabilité · chaque chiffre est rattaché à un instrument ou un registre identifié',
+            'Mesurabilité · aucune estimation non documentée n\'est présentée comme un fait',
+            'Vérification · les indicateurs critiques sont contrôlés par une entité indépendante',
+            'Révision · les valeurs sont actualisées selon un cycle défini et daté',
           ],
         },
         {
           heading: 'Sources de mesure par entité',
           bullets: [
-            'Tonnage d\'acier usiné (SERMA BTP) — registres de pesée atelier et bons de livraison fournisseurs',
-            'Capacité de production béton (SB-S Industries) — relevés quotidiens de la centrale à béton',
-            'Linéaire de voiries livrées (SB-S Group) — métrés contradictoires et PV de réception',
-            'Essais géotechniques (SB-S Labo) — base de données du laboratoire agréé, éprouvettes datées',
-            'Taux de disponibilité flotte (SB-S Logistik) — système de gestion de parc et rapports de maintenance',
+            'Tonnage d\'acier usiné (SERMA BTP) · registres de pesée atelier et bons de livraison fournisseurs',
+            'Capacité de production béton (SB-S Industries) · relevés quotidiens de la centrale à béton',
+            'Linéaire de voiries livrées (SB-S Group) · métrés contradictoires et PV de réception',
+            'Essais géotechniques (SB-S Labo) · base de données du laboratoire agréé, éprouvettes datées',
+            'Taux de disponibilité flotte (SB-S Logistik) · système de gestion de parc et rapports de maintenance',
           ],
         },
         {
@@ -43,11 +43,11 @@ export default function GouvernancePage() {
         {
           heading: 'Certifications et référentiels',
           bullets: [
-            'ISO 9001 — Système de management de la qualité',
-            'NF EN 1090 — Exécution des structures en acier',
-            'NF EN 206 — Spécification, performance, production et conformité des bétons',
-            'Eurocodes 3 & NF P — Calcul et dimensionnement des structures',
-            'Commissionnaire en douane agréé — Opérations de transit et dédouanement',
+            'ISO 9001 · Système de management de la qualité',
+            'NF EN 1090 · Exécution des structures en acier',
+            'NF EN 206 · Spécification, performance, production et conformité des bétons',
+            'Eurocodes 3 & NF P · Calcul et dimensionnement des structures',
+            'Commissionnaire en douane agréé · Opérations de transit et dédouanement',
           ],
         },
         {

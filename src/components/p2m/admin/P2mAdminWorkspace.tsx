@@ -194,7 +194,7 @@ export function P2mAdminWorkspace({ onLogout }: { onLogout: () => void }) {
           </div>
           <div>
             <div className="text-sm font-bold text-white">
-              P2M SHOWROOM — Espace Gestionnaire Isolé
+              P2M SHOWROOM · Espace Gestionnaire Isolé
             </div>
             <div className="text-[11px] font-mono text-sky-400">
               {managerName} · Cloisonnement strict (Zéro accès SB-S Industrie / SB-S Logistik)
@@ -525,7 +525,7 @@ export function P2mAdminWorkspace({ onLogout }: { onLogout: () => void }) {
                       <span className="px-2 py-0.5 rounded bg-slate-800 text-slate-200">{n.status}</span>
                     </div>
                     <div className="text-sm font-bold text-white">
-                      {n.clientName} {n.company ? `— ${n.company}` : ''} ({n.phone})
+                      {n.clientName} {n.company ? `- ${n.company}` : ''} ({n.phone})
                     </div>
                     <div className="flex flex-wrap gap-1.5 pt-1">
                       {(n.items || []).map((i, idx) => (

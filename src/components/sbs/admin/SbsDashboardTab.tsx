@@ -114,7 +114,7 @@ export default function SbsDashboardTab({
             <Target className="w-4 h-4 text-accent-500" />
           </div>
           <p className="text-2xl font-mono font-bold text-brand-900 dark:text-white tabular-nums mt-2">
-            {kpi.prixRevientMoyen > 0 ? fmtFCFA(kpi.prixRevientMoyen, 1) : '—'}
+            {kpi.prixRevientMoyen > 0 ? fmtFCFA(kpi.prixRevientMoyen, 1) : '-'}
           </p>
           <p className="text-[11px] text-neutral-500 dark:text-neutral-400 mt-1 tabular-nums">
             PV moyen : {fmtFCFA(kpi.prixVenteMoyen, 0)} /u ({fmtNum(kpi.unitesVendues)} vendues)
@@ -294,7 +294,7 @@ export default function SbsDashboardTab({
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div>
             <h3 className="font-title font-bold text-base text-brand-900 dark:text-white">
-              Activité journalière — CA encaissé vs Coût matières (F CFA)
+              Activité journalière · CA encaissé vs Coût matières (F CFA)
             </h3>
             <p className="text-xs text-neutral-500 dark:text-neutral-400">
               {activeDays.length} jour(s) avec mouvement enregistré sur {monthLabel}.
@@ -319,7 +319,7 @@ export default function SbsDashboardTab({
                 key={d.day}
                 type="button"
                 onClick={() => onNavigate('journalier')}
-                title={`Jour ${d.day} — CA: ${fmtFCFA(Math.round(d.dailyRevenueFCFA || 0))} | Matières: ${fmtFCFA(
+                title={`Jour ${d.day} · CA: ${fmtFCFA(Math.round(d.dailyRevenueFCFA || 0))} | Matières: ${fmtFCFA(
                   Math.round(d.materialCostFCFA || 0)
                 )} | Prod: ${d.totalUnitsProduced} u`}
                 className="flex-1 min-w-[18px] h-full flex flex-col justify-end items-center group"

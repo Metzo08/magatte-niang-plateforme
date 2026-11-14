@@ -6,7 +6,7 @@ import { ArrowRight, Building2, Sparkles } from 'lucide-react';
 import { useEntities } from '@/hooks/useEntities';
 import { SITE_IMAGES, EXPERTISE_IMAGES } from '@/data/siteImages';
 
-// Photos officielles des entités — magatteniang-expert.sn
+// Photos officielles des entités · magatteniang-expert.sn
 const ENTITY_IMAGES: Record<string, string> = {
   'serma-btp': SITE_IMAGES.sermaBtp,
   'sbs-group': SITE_IMAGES.sbsGroup,

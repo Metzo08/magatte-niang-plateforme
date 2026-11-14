@@ -51,7 +51,7 @@ export default function EnginsPage() {
             Parc d'engins & location BTP
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-title font-bold tracking-tight mb-4">
-            SB-S Logistik — <span className="text-amber-400">Location d'engins & logistique</span>
+            SB-S Logistik · <span className="text-amber-400">Location d'engins & logistique</span>
           </h1>
           <p className="text-neutral-300 text-base sm:text-lg leading-relaxed max-w-3xl">
             Gestion, maintenance et location d'un parc d'engins complet : levage, terrassement,
@@ -89,7 +89,7 @@ export default function EnginsPage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={SITE_IMAGES.sbsLogistik}
-              alt="SB-S Logistik — parc d'engins et logistique"
+              alt="SB-S Logistik · parc d'engins et logistique"
               className="w-full h-24 sm:h-[7.5rem] object-cover rounded-l border border-brand-700"
               loading="lazy"
             />
@@ -205,7 +205,7 @@ export default function EnginsPage() {
           ))}
         </div>
 
-        {/* CONDITIONS & MATÉRIAUX — issus des flyers officiels SB-S Logistik */}
+        {/* CONDITIONS & MATÉRIAUX · issus des flyers officiels SB-S Logistik */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-12">
           <div className="bg-amber-50 dark:bg-amber-900/10 border border-amber-200 dark:border-amber-900/40 rounded-l p-6">
             <h3 className="font-title font-bold text-neutral-900 dark:text-white mb-4 flex items-center gap-2">
@@ -221,7 +221,7 @@ export default function EnginsPage() {
           </div>
           <div className="bg-neutral-50 dark:bg-brand-800/50 border border-neutral-200 dark:border-brand-700 rounded-l p-6">
             <h3 className="font-title font-bold text-neutral-900 dark:text-white mb-4 flex items-center gap-2">
-              <TruckIcon className="w-5 h-5 text-amber-600" /> Béton prêt à l'emploi — Centrale 60 m³/h
+              <TruckIcon className="w-5 h-5 text-amber-600" /> Béton prêt à l'emploi · Centrale 60 m³/h
             </h3>
             <div className="grid grid-cols-2 gap-2">
               {CENTRALE_BETON_PRICES.map(b => (
@@ -240,7 +240,7 @@ export default function EnginsPage() {
           Vente de matériaux & granulats
         </h2>
         <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-6">
-          Livraison directe sur chantier depuis nos stocks — tarifs selon destination.
+          Livraison directe sur chantier depuis nos stocks · tarifs selon destination.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
           {LOGISTIK_MATERIALS.map(m => (
@@ -279,7 +279,7 @@ export default function EnginsPage() {
             </a>
           </div>
           <p className="mt-6 text-xs text-neutral-500 inline-flex items-center gap-1.5">
-            <Clock className="w-3.5 h-3.5" /> Dispatching joignable 7j/7 — Dakar & régions
+            <Clock className="w-3.5 h-3.5" /> Dispatching joignable 7j/7 · Dakar & régions
           </p>
         </div>
       </section>

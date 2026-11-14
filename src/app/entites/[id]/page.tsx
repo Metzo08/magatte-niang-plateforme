@@ -26,10 +26,11 @@ import PhotoLightbox from '@/components/common/PhotoLightbox';
 import SbsPresentationGallery from '@/components/sbs/SbsPresentationGallery';
 import SbsLogistikGallery from '@/components/sbs/SbsLogistikGallery';
 import SbsIndustriesPublicCatalog from '@/components/sbs/SbsIndustriesPublicCatalog';
+import SermaGalleryDomains from '@/components/serma/SermaGalleryDomains';
 import InteractiveLocationMap from '@/components/maps/InteractiveLocationMap';
 import { Layers, Truck } from 'lucide-react';
 
-// Photos officielles des entités — magatteniang-expert.sn
+// Photos officielles des entités · magatteniang-expert.sn
 const ENTITY_IMAGES: Record<string, string> = {
   'serma-btp': SITE_IMAGES.sermaBtp,
   'sbs-group': SITE_IMAGES.sbsGroup,
@@ -279,113 +280,16 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
         </div>
       </section>
 
-      {/* Galerie photo et vidéo dédiée (avec focus Modélisation & 8 spécialités pour SERMA BTP) */}
-      {id !== 'sbs-group' && id !== 'sbs-logistik' && gallery.length > 0 && (
+      {/* Galerie photo et vidéo dédiée (avec les 8 domaines en cases + carrousel par domaine pour SERMA BTP) */}
+      {id !== 'sbs-group' && id !== 'sbs-logistik' && (id === 'serma-btp' || gallery.length > 0) && (
         <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-12 border-b border-neutral-200 dark:border-brand-700">
-          <h2 className="text-2xl font-title font-bold text-neutral-900 dark:text-white mb-2">
+          <h2 className="text-2xl font-title font-bold text-neutral-900 dark:text-white mb-4">
             {id === 'serma-btp' ? 'Galerie SERMA' : `Galerie ${entity.name}`}
           </h2>
 
-          {id === 'serma-btp' && (
-            <div className="mb-8 space-y-8">
-              <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-3xl">
-                SERMA BTP réalise les études techniques, les simulations numériques et la modélisation 3D sur ses logiciels d&apos;ingénierie avant de transmettre les dossiers d&apos;exécution à SB-S Group.
-              </p>
-
-              {/* Les 8 spécialités exactes de la Galerie SERMA */}
-              <div>
-                <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-accent-500 mb-3">
-                  Les 8 domaines de la Galerie SERMA :
-                </h3>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                  {[
-                    'Modélisation',
-                    'Pylône',
-                    'Station service',
-                    'Charpente métallique',
-                    'Bâtiment et immeuble IGH',
-                    'Maîtrise d\'œuvre - AMO - Supervision',
-                    'Ouvrages hydrauliques',
-                    'Lots techniques',
-                  ].map((pole, idx) => (
-                    <div
-                      key={pole}
-                      className="flex items-center gap-2.5 p-3 rounded-l bg-brand-900 text-white border border-brand-700 shadow-sm"
-                    >
-                      <span className="w-6 h-6 rounded-full bg-accent-500/20 border border-accent-400/40 text-accent-300 text-xs font-mono font-bold flex items-center justify-center shrink-0">
-                        {idx + 1}
-                      </span>
-                      <span className="text-xs sm:text-sm font-semibold leading-snug">{pole}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Étude & Modélisation Vidéo R+11 Sadio Digue au Mali / ACI 2000 à Bamako + Photos Hangar logistique AGL / Rocade Bel Air */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start bg-neutral-50 dark:bg-brand-800/50 border border-neutral-200 dark:border-brand-700 rounded-2xl p-5 sm:p-6">
-                <div className="lg:col-span-6 space-y-3">
-                  <span className="inline-block px-3 py-1 rounded-full bg-accent-500/15 text-accent-600 dark:text-accent-400 text-xs font-mono font-bold">
-                    Modélisation 3D &amp; Étude IGH (Vidéo)
-                  </span>
-                  <h3 className="text-lg sm:text-xl font-title font-bold text-neutral-900 dark:text-white">
-                    Immeuble R+11 Sadio Digue au Mali · ACI 2000 à Bamako
-                  </h3>
-                  <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
-                    Modélisation structurelle 3D et simulation numérique réalisées par le bureau d&apos;études SERMA BTP pour un immeuble de grande hauteur (R+11) situé à l&apos;ACI 2000 à Bamako (Mali).
-                  </p>
-                  <div className="rounded-xl overflow-hidden border border-neutral-300 dark:border-brand-700 bg-black shadow-lg">
-                    <video
-                      src="/videos/serma-modelisation-r11-sadio-digue-bamako.mp4"
-                      controls
-                      playsInline
-                      preload="metadata"
-                      className="w-full max-h-[420px] object-contain bg-black"
-                    >
-                      Votre navigateur ne supporte pas la lecture vidéo.
-                    </video>
-                  </div>
-                </div>
-
-                <div className="lg:col-span-6 space-y-3">
-                  <span className="inline-block px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 text-xs font-mono font-bold">
-                    Charpente métallique &amp; Étude d&apos;exécution (4 photos)
-                  </span>
-                  <h3 className="text-lg sm:text-xl font-title font-bold text-neutral-900 dark:text-white">
-                    Hangar logistique AGL · Rocade Bel Air (Dakar)
-                  </h3>
-                  <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
-                    Étude, dimensionnement Eurocodes 3 et structure métallique grande portée du Hangar logistique AGL sur la Rocade Bel Air.
-                  </p>
-                  <div className="grid grid-cols-2 gap-3">
-                    {[
-                      { url: '/images/serma/hangar-agl-bel-air-01.jpg', caption: 'Hangar logistique AGL / Rocade Bel Air — Ossature et travées métalliques' },
-                      { url: '/images/serma/hangar-agl-bel-air-02.jpg', caption: 'Hangar logistique AGL / Rocade Bel Air — Fermes treillis grande hauteur' },
-                      { url: '/images/serma/hangar-agl-bel-air-03.jpg', caption: 'Hangar logistique AGL / Rocade Bel Air — Vue d’ensemble chantier et grue' },
-                      { url: '/images/serma/hangar-agl-bel-air-04.jpg', caption: 'Hangar logistique AGL / Rocade Bel Air — Structure métallique sur massifs béton' },
-                    ].map((photo, pIdx, arr) => (
-                      <div
-                        key={photo.url}
-                        onClick={() => setLightbox({ images: arr, index: pIdx, title: 'Hangar logistique AGL / Rocade Bel Air' })}
-                        className="group relative aspect-[4/3] rounded-xl overflow-hidden border border-neutral-200 dark:border-brand-700 bg-neutral-200 dark:bg-brand-900 cursor-zoom-in"
-                      >
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={photo.url}
-                          alt={photo.caption}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-2 text-[11px] text-white">
-                          Hangar AGL Bel Air #{pIdx + 1}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {id !== 'serma-btp' && (
+          {id === 'serma-btp' ? (
+            <SermaGalleryDomains />
+          ) : (
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {gallery.map((img, idx: number) => (
                 <figure
@@ -545,7 +449,7 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
         </section>
       )}
 
-      {/* Synergies */}
+      {/* Synergies avec vraie interconnexion visuelle (lignes et flèches entre les entités) */}
       {entity.synergies && entity.synergies.length > 0 && (
         <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-12 border-b border-neutral-200 dark:border-brand-700">
           <div className="flex items-center gap-3 mb-4">
@@ -555,33 +459,143 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
             </h2>
           </div>
 
-          <div className="mb-6 p-4 sm:p-5 rounded-xl bg-brand-900 text-white border border-brand-700 text-xs sm:text-sm leading-relaxed">
-            <strong className="text-accent-400 block mb-1">Chaîne opérationnelle intégrée de l&apos;écosystème Magatte Niang :</strong>
-            <span>
-              <strong>1. SERMA BTP</strong> réalise les études techniques et la modélisation avec ses logiciels et transmet à <strong>2. SB-S Group</strong> qui se charge de l&apos;exécution des travaux sur le terrain, en s&apos;appuyant sur <strong>3. SBS Logistik</strong> pour le matériel et les engins sur les différents chantiers, sur <strong>4. SBS Industrie</strong> pour les briques, les pavés et le béton (BPE), puis sur <strong>5. P2M</strong> pour les carreaux et tout le sanitaire pour la décoration.
-            </span>
+          {/* Schéma d'interconnexion visuelle avec lignes de liaison entre les 5 entités */}
+          <div className="mb-8 p-5 sm:p-6 rounded-2xl bg-brand-900 text-white border border-brand-700 shadow-lg">
+            <div className="text-xs font-mono font-bold text-accent-400 mb-2">
+              Schéma d&apos;interconnexion opérationnelle de l&apos;écosystème Magatte Niang :
+            </div>
+            <p className="text-xs sm:text-sm text-neutral-200 leading-relaxed mb-6">
+              <strong>SERMA BTP</strong> réalise les études et la modélisation 3D/BIM avec ses logiciels et les transmet à <strong>Sbs-group</strong> qui se charge de l&apos;exécution des travaux, appuyé par <strong>Sbs-logistik</strong> pour le matériel, par <strong>Sbs-industries</strong> pour les briques, pavés et bétons, puis par <strong>P2m</strong> pour les carreaux et tout le sanitaire.
+            </p>
+
+            {/* Graphe de noeuds reliés par de vraies lignes de connexion */}
+            <div className="relative flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-0">
+              {[
+                {
+                  step: '01',
+                  id: 'serma-btp',
+                  label: 'Serma-btp',
+                  sub: 'Études & Modélisation 3D/BIM',
+                  color: '#1B4965',
+                },
+                {
+                  step: '02',
+                  id: 'sbs-group',
+                  label: 'Sbs-group',
+                  sub: 'Exécution des travaux BTP',
+                  color: '#2D6A8E',
+                },
+                {
+                  step: '03',
+                  id: 'sbs-logistik',
+                  label: 'Sbs-logistik',
+                  sub: 'Matériel lourd, grues & engins',
+                  color: '#E07A5F',
+                },
+                {
+                  step: '04',
+                  id: 'sbs-industries',
+                  label: 'Sbs-industries',
+                  sub: 'Briques, pavés & bétons (BPE)',
+                  color: '#577590',
+                },
+                {
+                  step: '05',
+                  id: 'p2m',
+                  label: 'P2m',
+                  sub: 'Carreaux & sanitaire finition',
+                  color: '#C0562F',
+                },
+              ].map((node, i, arr) => (
+                <React.Fragment key={node.id}>
+                  <Link
+                    href={`/entites/${node.id}`}
+                    className={`relative z-10 flex-1 p-3.5 rounded-xl border transition-all hover:scale-[1.02] ${
+                      node.id === id
+                        ? 'bg-accent-500/20 border-accent-400 shadow-[0_0_20px_rgba(242,106,27,0.3)]'
+                        : 'bg-brand-950/80 border-brand-700 hover:border-accent-400'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2 mb-1">
+                      <span
+                        className="w-6 h-6 rounded-full text-[11px] font-mono font-bold text-white flex items-center justify-center shrink-0"
+                        style={{ backgroundColor: node.color }}
+                      >
+                        {node.step}
+                      </span>
+                      <span className="font-title font-bold text-sm text-white">
+                        {node.label}
+                      </span>
+                    </div>
+                    <span className="text-[11px] text-neutral-300 block leading-snug">
+                      {node.sub}
+                    </span>
+                  </Link>
+
+                  {i < arr.length - 1 && (
+                    <>
+                      {/* Ligne de connexion horizontale (Desktop) */}
+                      <div className="hidden lg:flex items-center justify-center w-10 shrink-0 relative">
+                        <div className="w-full h-0.5 bg-gradient-to-r from-accent-400 via-emerald-400 to-accent-400" />
+                        <ArrowRight className="w-4 h-4 text-accent-400 -ml-2 shrink-0" />
+                      </div>
+                      {/* Ligne de connexion verticale (Mobile) */}
+                      <div className="flex lg:hidden flex-col items-center justify-center h-7 shrink-0">
+                        <div className="w-0.5 h-full bg-gradient-to-b from-accent-400 to-emerald-400" />
+                      </div>
+                    </>
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {entity.synergies.map((syn: any, idx: number) => (
-              <div
-                key={idx}
-                className="bg-neutral-50 dark:bg-brand-800/50 border border-neutral-200 dark:border-brand-700 rounded-l p-4"
-              >
-                <Link
-                  href={`/entites/${syn.entityId}`}
-                  className="font-semibold text-accent-600 dark:text-accent-400 hover:underline block mb-2"
-                >
-                  → {syn.entityId}
-                </Link>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-1">
-                  <strong>Rôle:</strong> {syn.role}
-                </p>
-                <p className="text-sm text-emerald-700 dark:text-emerald-400">
-                  <strong>Bénéfice:</strong> {syn.benefit}
-                </p>
-              </div>
-            ))}
+          {/* Cartes d'interconnexion reliées par une ligne conductrice continue */}
+          <div className="relative pl-6 sm:pl-10 space-y-5">
+            {/* Ligne verticale principale reliant toutes les entités connectées */}
+            <div
+              className="absolute left-2.5 sm:left-4 top-4 bottom-4 w-0.5 bg-gradient-to-b from-accent-500 via-emerald-500 to-accent-500"
+              aria-hidden="true"
+            />
+
+            {entity.synergies.map((syn: any, idx: number) => {
+              const formattedId =
+                syn.entityId.charAt(0).toUpperCase() + syn.entityId.slice(1).toLowerCase();
+              return (
+                <div key={idx} className="relative flex items-start group">
+                  {/* Noeud sur la ligne verticale */}
+                  <div className="absolute -left-6 sm:-left-10 top-5 flex items-center">
+                    <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-accent-500 text-white text-[11px] font-mono font-bold flex items-center justify-center ring-4 ring-white dark:ring-brand-900 shadow">
+                      {idx + 1}
+                    </span>
+                    {/* Ligne horizontale de branchement vers la carte */}
+                    <span className="w-3 sm:w-4 h-0.5 bg-accent-500 block" />
+                  </div>
+
+                  {/* Carte de l'entité interconnectée */}
+                  <div className="w-full bg-neutral-50 dark:bg-brand-800/60 border border-neutral-200 dark:border-brand-700 group-hover:border-accent-500 rounded-xl p-4 sm:p-5 shadow-sm transition-all">
+                    <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+                      <Link
+                        href={`/entites/${syn.entityId}`}
+                        className="inline-flex items-center gap-1.5 font-title font-bold text-base text-accent-600 dark:text-accent-400 hover:underline"
+                      >
+                        <span>→ {formattedId}</span>
+                      </Link>
+                      <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-accent-500/10 text-accent-600 dark:text-accent-300 border border-accent-500/20">
+                        Connexion directe #{idx + 1}
+                      </span>
+                    </div>
+
+                    <p className="text-sm text-neutral-700 dark:text-neutral-300 mb-1.5">
+                      <strong>Rôle:</strong> {syn.role}
+                    </p>
+                    <p className="text-sm text-emerald-700 dark:text-emerald-400">
+                      <strong>Bénéfice:</strong> {syn.benefit}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </section>
       )}
@@ -646,7 +660,7 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
                     </span>
                   </div>
 
-                  {/* STRIP DE MINIATURES — jusqu'à 8 photos du projet visibles d'un coup d'oeil */}
+                  {/* STRIP DE MINIATURES · jusqu'à 8 photos du projet visibles d'un coup d'oeil */}
                   {project.images && project.images.length > 1 && (
                     <div className="grid grid-cols-4 gap-1.5 px-3 pt-1.5">
                       {project.images.slice(0, 8).map((img: any, i: number) => (
