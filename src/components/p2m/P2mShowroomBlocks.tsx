@@ -729,7 +729,10 @@ export default function P2mShowroomBlocks({
                           >
                             {/* Image produit avec zoom lightbox */}
                             <div
-                              className="relative h-52 sm:h-56 w-full shrink-0 bg-neutral-100 dark:bg-brand-900 overflow-hidden cursor-zoom-in"
+                              role="button"
+                              tabIndex={0}
+                              style={{ cursor: 'pointer' }}
+                              className="relative h-52 sm:h-56 w-full shrink-0 bg-neutral-100 dark:bg-brand-900 overflow-hidden cursor-pointer"
                               onClick={() => {
                                 if (onOpenLightbox && images.length > 0) {
                                   onOpenLightbox(

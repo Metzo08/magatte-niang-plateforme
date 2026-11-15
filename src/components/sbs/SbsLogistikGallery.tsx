@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import {
   Search,
@@ -19,6 +20,8 @@ import {
   Tag,
   Plus,
   MessageCircle,
+  ZoomIn,
+  ZoomOut,
 } from 'lucide-react';
 import {
   SBS_LOGISTIK_ITEMS,
@@ -140,6 +143,16 @@ export function SbsLogistikGallery() {
   const [displayCount, setDisplayCount] = useState<number>(24);
   const [activePhoto, setActivePhoto] = useState<LiveLogistikEquipment | null>(null);
   const [showOriginalSlideInModal, setShowOriginalSlideInModal] = useState<boolean>(false);
+  const [modalZoomed, setModalZoomed] = useState<boolean>(false);
+  const [mounted, setMounted] = useState<boolean>(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    setModalZoomed(false);
+  }, [activePhoto]);
   const [logistikCartCount, setLogistikCartCount] = useState<number>(0);
   const [daysByItem, setDaysByItem] = useState<Record<string, number>>({});
   const [addedItemId, setAddedItemId] = useState<string | null>(null);
@@ -748,13 +761,13 @@ export function SbsLogistikGallery() {
       )}
 
       {/* MODAL LIGHTBOX */}
-      {activePhoto && (
+      {mounted && activePhoto && createPortal(
         <div
-          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-2 sm:p-4 lg:p-6"
+          className="fixed top-0 right-0 bottom-0 left-0 z-[9999] bg-black/95 flex items-center justify-center p-2 sm:p-4 lg:p-6"
           onClick={() => setActivePhoto(null)}
         >
           <div
-            className="relative bg-white dark:bg-brand-900 rounded-l max-w-5xl w-full max-h-[92dvh] flex flex-col overflow-y-auto shadow-2xl border border-white/10"
+            className="relative bg-white dark:bg-brand-900 rounded-l max-w-5xl w-full max-h-[92vh] flex flex-col overflow-y-auto shadow-2xl border border-white/10"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-neutral-200 dark:border-brand-700 flex flex-col lg:flex-row lg:items-center justify-between shrink-0 bg-neutral-50 dark:bg-brand-800 gap-3">
@@ -805,6 +818,14 @@ export function SbsLogistikGallery() {
                 </button>
                 <button
                   type="button"
+                  onClick={() => setModalZoomed((z) => !z)}
+                  className="px-3 py-1.5 rounded text-xs font-semibold border bg-brand-900 text-white border-brand-700 hover:bg-accent-500 flex items-center gap-1 cursor-pointer"
+                >
+                  {modalZoomed ? <ZoomOut className="w-3.5 h-3.5" /> : <ZoomIn className="w-3.5 h-3.5" />}
+                  <span>{modalZoomed ? '1x' : 'Zoom'}</span>
+                </button>
+                <button
+                  type="button"
                   onClick={() => setShowOriginalSlideInModal((p) => !p)}
                   className="px-3 py-1.5 rounded text-xs font-semibold border bg-white dark:bg-brand-700 text-neutral-700 dark:text-neutral-200 border-neutral-300 dark:border-brand-600"
                 >
@@ -821,7 +842,14 @@ export function SbsLogistikGallery() {
               </div>
             </div>
 
-            <div className="relative flex-1 bg-neutral-950 overflow-auto min-h-[240px] sm:min-h-[380px] p-2 sm:p-4 flex items-center justify-center">
+            <div
+              className={
+                modalZoomed
+                  ? 'relative flex-1 bg-neutral-950 overflow-auto min-h-[240px] sm:min-h-[380px] p-2 sm:p-4 block'
+                  : 'relative flex-1 bg-neutral-950 overflow-hidden min-h-[240px] sm:min-h-[380px] p-2 sm:p-4 flex items-center justify-center'
+              }
+              style={{ WebkitOverflowScrolling: 'touch' }}
+            >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={
@@ -830,21 +858,13 @@ export function SbsLogistikGallery() {
                     : activePhoto.imageUrl
                 }
                 alt={activePhoto.title}
-                className="max-h-[52dvh] sm:max-h-[62dvh] w-auto max-w-full object-contain cursor-zoom-in"
-                onClick={(e) => {
-                  const el = e.currentTarget;
-                  const parent = el.parentElement;
-                  const isZoomed = el.dataset.zoomed === '1';
-                  if (isZoomed) {
-                    el.dataset.zoomed = '0';
-                    el.className = 'max-h-[52dvh] sm:max-h-[62dvh] w-auto max-w-full object-contain cursor-zoom-in';
-                    if (parent) parent.className = 'relative flex-1 bg-neutral-950 overflow-auto min-h-[240px] sm:min-h-[380px] p-2 sm:p-4 flex items-center justify-center';
-                  } else {
-                    el.dataset.zoomed = '1';
-                    el.className = 'block mx-auto w-[170vw] sm:w-[130vw] max-w-none h-auto object-contain cursor-zoom-out';
-                    if (parent) parent.className = 'relative flex-1 bg-neutral-950 overflow-auto min-h-[240px] sm:min-h-[380px] p-2 sm:p-4 block';
-                  }
-                }}
+                onClick={() => setModalZoomed((z) => !z)}
+                className="block mx-auto object-contain"
+                style={
+                  modalZoomed
+                    ? { width: '160%', maxWidth: 'none', maxHeight: 'none', height: 'auto', cursor: 'zoom-out' }
+                    : { width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '58vh', cursor: 'zoom-in' }
+                }
               />
               <button
                 type="button"
@@ -887,7 +907,8 @@ export function SbsLogistikGallery() {
               </p>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );

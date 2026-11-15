@@ -565,7 +565,10 @@ export default function SbsIndustriesPublicCatalog({
               className="group flex flex-col rounded-m border border-neutral-200 dark:border-brand-700 bg-neutral-50 dark:bg-brand-900/60 overflow-hidden hover:shadow-elev-2 hover:border-accent-500 transition-all"
             >
               <div
-                className="relative h-48 sm:h-52 w-full shrink-0 bg-neutral-900 overflow-hidden cursor-zoom-in"
+                role="button"
+                tabIndex={0}
+                style={{ cursor: 'pointer' }}
+                className="relative h-48 sm:h-52 w-full shrink-0 bg-neutral-900 overflow-hidden cursor-pointer"
                 onClick={() =>
                   onOpenLightbox?.(
                     arr.map((p) => ({ url: p.url, caption: `${p.title} (${p.dim}) · ${p.caption}` })),
@@ -655,7 +658,10 @@ export default function SbsIndustriesPublicCatalog({
                 className="flex flex-col bg-white dark:bg-brand-800 border border-neutral-200 dark:border-brand-700 rounded-l overflow-hidden shadow-elev-1 hover:shadow-elev-2 transition-shadow"
               >
                 <div
-                  className="relative h-48 sm:h-52 w-full shrink-0 bg-neutral-100 dark:bg-brand-900 overflow-hidden cursor-zoom-in group/img"
+                  role="button"
+                  tabIndex={0}
+                  style={{ cursor: 'pointer' }}
+                  className="relative h-48 sm:h-52 w-full shrink-0 bg-neutral-100 dark:bg-brand-900 overflow-hidden cursor-pointer group/img"
                   onClick={() =>
                     onOpenLightbox?.(
                       [
