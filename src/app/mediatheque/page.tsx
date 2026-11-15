@@ -5,7 +5,6 @@ import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { PUBLICATIONS } from '@/data/initialData';
 import { SITE_IMAGES } from '@/data/siteImages';
 import SbsPresentationGallery from '@/components/sbs/SbsPresentationGallery';
-import { EcosystemPromoVideoPlayer } from '@/components/video/EcosystemPromoVideoPlayer';
 import { Layers } from 'lucide-react';
 import {
   Newspaper, Image, FileText, Download, Mail, Phone, Calendar,
@@ -46,19 +45,6 @@ export default function MediathequePage() {
             l'écosystème Magatte Niang · mis à disposition des journalistes, partenaires et clients.
           </p>
         </div>
-      </section>
-
-      {/* FILM PROMOTIONNEL OFFICIEL VOIX OFF */}
-      <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-14 border-b border-neutral-200 dark:border-brand-700">
-        <div className="mb-6">
-          <span className="text-xs font-mono font-bold text-accent-500 uppercase tracking-wider">
-            Film institutionnel 2026 · Voix Off Française
-          </span>
-          <h2 className="text-2xl sm:text-3xl font-title font-bold text-neutral-900 dark:text-white mt-1">
-            Présentation vidéo des 7 entités de l&apos;écosystème Magatte Niang
-          </h2>
-        </div>
-        <EcosystemPromoVideoPlayer />
       </section>
 
       {/* COMMUNIQUÉS DE PRESSE */}
