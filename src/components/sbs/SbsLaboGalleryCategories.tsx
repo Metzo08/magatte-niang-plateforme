@@ -435,21 +435,35 @@ export default function SbsLaboGalleryCategories() {
               Classification officielle des essais normalisés par domaine et par catégorie
             </h3>
             <p className="text-xs sm:text-sm text-emerald-100/90 leading-relaxed">
-              Sous la responsabilité technique d&apos;<strong>Abdoulaye Niang (+221 77 321 78 60)</strong>, SB-S Labo réalise les études géotechniques et essais normalisés avec un parc matériel 100 % certifié et étalonné. Ses études de sol alimentent directement la modélisation 3D/BIM de <strong>SERMA BTP</strong> avant exécution des travaux par <strong>SB-S Group</strong>.
+              Sous la Direction Technique d&apos;<strong>Aminata Dramé (+221 70 835 00 63)</strong> et avec <strong>Ablaye Niang (+221 77 321 78 60)</strong> comme Responsable Laboratoire pour les essais, SB-S Labo réalise les études géotechniques et essais normalisés avec un parc matériel 100 % certifié et étalonné. Ses études de sol alimentent directement la modélisation 3D/BIM de <strong>SERMA BTP</strong> avant exécution des travaux par <strong>SB-S Group</strong>.
             </p>
           </div>
 
-          <div className="shrink-0 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-xs space-y-1.5">
-            <div className="font-mono font-bold text-emerald-300">Responsable SB-S Labo :</div>
-            <div className="font-title font-bold text-base text-white">Abdoulaye Niang</div>
-            <a
-              href="https://wa.me/221773217860"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-mono font-bold text-emerald-300 hover:text-emerald-200 underline"
-            >
-              WhatsApp / Tél : +221 77 321 78 60
-            </a>
+          <div className="shrink-0 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-xs space-y-2.5">
+            <div>
+              <div className="font-mono font-bold text-emerald-300">Directrice Technique :</div>
+              <div className="font-title font-bold text-base text-white">Aminata Dramé</div>
+              <a
+                href="https://wa.me/221708350063"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 font-mono font-bold text-emerald-300 hover:text-emerald-200 underline"
+              >
+                WhatsApp / Tél : +221 70 835 00 63
+              </a>
+            </div>
+            <div className="pt-2 border-t border-white/15">
+              <div className="font-mono font-bold text-emerald-300">Responsable Laboratoire (Essais) :</div>
+              <div className="font-title font-bold text-base text-white">Ablaye Niang</div>
+              <a
+                href="https://wa.me/221773217860"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 font-mono font-bold text-emerald-300 hover:text-emerald-200 underline"
+              >
+                WhatsApp / Tél : +221 77 321 78 60
+              </a>
+            </div>
           </div>
         </div>
       </div>

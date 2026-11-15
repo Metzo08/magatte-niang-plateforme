@@ -37,7 +37,7 @@ const INITIAL_MESSAGES: ChatMessage[] = [
 
 • **SERMA BTP** : Études techniques, modélisation 3D/BIM, charpente métallique (> 42m), pylônes, stations-service, IGH & maîtrise d'œuvre (+221 78 832 12 79).
 • **SB-S Group** : Génie civil, grands travaux, VRD & industrie · Oumou DIOP (+221 77 203 84 38 / +221 33 871 08 61).
-• **SB-S Labo** : Laboratoire agréé LNR-BTP **Catégories C2 et A3** (sols CBR/Proctor/PDL, béton 3 000 kN, PV 24h) · Abdoulaye NIANG (+221 77 321 78 60).
+• **SB-S Labo** : Laboratoire agréé LNR-BTP **Catégories C2 et A3** (sols CBR/Proctor/PDL, béton 3 000 kN, PV 24h) · Directrice Technique Aminata DRAMÉ (+221 70 835 00 63) & Resp. Essais Ablaye NIANG (+221 77 321 78 60).
 • **SB-S Industries** : Centrale à béton 60 m³/h (C15–C30), agglos creux (380–590 F), agglos pleins (700–850 F), hourdis & pavés · Salimata SOW (+221 77 566 48 06).
 • **SB-S Logistik** : 82 engins en location (Grue 50T, Camion-grue 6T, Tractopelle, Pompe à béton, Bennes 40T, Coffrages) & agrégats · Rokhaya KANE (+221 77 858 61 05).
 • **P2M Showroom** : Blocs Carrelage (30×30 à 80×240), Sanitaire, Robinetterie & Faïence/Mosaïque à Mbao (+221 78 832 12 79).

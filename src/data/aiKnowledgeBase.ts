@@ -64,7 +64,7 @@ const SYNONYM_MAP: Record<string, string[]> = {
   'robinetterie': ['robinet', 'robinets', 'mitigeur', 'mitigeurs', 'evier', 'hki', 'plomberie', 'siphon', 'pex', 'colonne de douche'],
   'serma': ['serma btp', 'sermabtp', 'charpente', 'charpentes', 'charpante', 'metallique', 'metal', 'acier', 'hangar', 'hangars', 'bim', 'modelisation', 'pylone', 'station service', 'igh', 'amo', 'maitrise d oeuvre', 'eurocode', 'eurocodes', 'tekla', 'robot'],
   'sbs group': ['sbsgroup', 'stein bauer', 'genie civil', 'ouvrage d art', 'ouvrages d art', 'travaux publics', 'vrd', 'dallage', 'soutenement', 'oumou diop', 'oumou', 'bureau des methodes'],
-  'sbs labo': ['sbslabo', 'labo', 'laboratoire', 'geotechnique', 'geoteknik', 'etude de sol', 'sol', 'sols', 'cbr', 'proctor', 'atterberg', 'ecrasement', 'eprouvette', 'penetrometre', 'pdl', 'carottage', 'apafor', 'casagrande', 'oedometre', 'abdoulaye niang', 'abdoulaye', 'c2', 'a3', 'lnr btp'],
+  'sbs labo': ['sbslabo', 'labo', 'laboratoire', 'geotechnique', 'geoteknik', 'etude de sol', 'sol', 'sols', 'cbr', 'proctor', 'atterberg', 'ecrasement', 'eprouvette', 'penetrometre', 'pdl', 'carottage', 'apafor', 'casagrande', 'oedometre', 'aminata drame', 'aminata', '70 835 00 63', '708350063', 'ablaye', 'ablaye niang', 'abdoulaye niang', 'abdoulaye', 'c2', 'a3', 'lnr btp'],
   'sbs industries': ['sbs industrie', 'sbsindustrie', 'sbsindustries', 'agglo', 'agglos', 'parpaing', 'parpaings', 'brique', 'briques', 'hourdis', 'pave', 'paves', 'bordure', 'bpe', 'centrale a beton', 'pondeuse', 'qt40', 'salimata sow', 'salimata'],
   'sbs logistik': ['sbslogistik', 'logistik', 'logistique', 'engin', 'engins', 'grue', 'grues', 'camion', 'camions', 'benne', 'bennes', 'tractopelle', 'dumper', 'nacelle', 'compacteur', 'plaque vibrante', 'toupie', 'betonniere', 'pompe a beton', 'groupe electrogene', 'echafaudage', 'etais', 'coffrage', 'rokhaya kane', 'rokhaya', 'sable', 'gravier', 'basalte', 'ciment', 'brouette'],
   'p2m': ['polytech materiaux', 'showroom', 'showroom mbao', 'finitions', 'finition'],
@@ -145,7 +145,7 @@ export const AI_KNOWLEDGE_BASE: KnowledgeTopic[] = [
 
 2. **SB-S Labo (Laboratoire Géotechnique & Contrôle Matériaux · Agréé C2 & A3)** :
    - **Rôle :** Études de sol en amont (Catégorie C2 : CBR, Proctor, Atterberg, cisaillement Casagrande, œdomètre, pénétromètre dynamique PDL, carottage APAFOR 450RS) et essais sur bétons/granulats (Catégorie A3 : écrasement sous presse 3 000 kN, cône d'Abrams, scléromètre). Émission des PV en **24h**.
-   - **Contact :** Responsable **Abdoulaye Niang** · **+221 77 321 78 60** · \`labo@sbs-labo.sn\`.
+   - **Contact :** Directrice Technique **Aminata Dramé (+221 70 835 00 63)** · Responsable Laboratoire pour les essais **Ablaye Niang (+221 77 321 78 60)** · \`labo@sbs-labo.sn\`.
 
 3. **SB-S Group (Stein Bauer Sénégal Group · Génie Civil, Grands Travaux & Industrie)** :
    - **Rôle :** Exécution des travaux de génie civil lourd, ouvrages d'art, dallages industriels, murs de soutènement, VRD et bâtiments clés en main à partir des études de SB-S Labo et des modèles 3D de SERMA BTP. Doté d'un Bureau des Méthodes intégré.
@@ -282,12 +282,13 @@ export const AI_KNOWLEDGE_BASE: KnowledgeTopic[] = [
       'sondage', 'sondages', 'proctor', 'eprouvette', 'eprouvettes', 'compression',
       'ecrasement', 'presse', 'atterberg', 'pdl', 'penetrometre', 'densite',
       'portance', 'laterite', 'argile', 'nf p 94 078', 'nf en 12390', 'c2', 'a3',
-      'agrement', 'lnr btp', 'abdoulaye niang', 'abdoulaye', '77 321 78 60',
+      'agrement', 'lnr btp', 'aminata drame', 'aminata', '70 835 00 63', '708350063',
+      'ablaye', 'ablaye niang', 'abdoulaye niang', 'abdoulaye', '77 321 78 60',
       'apafor', 'carottage', 'casagrande', 'oedometre', 'sclerometre', 'abrams',
       'equivalent de sable', 'bleu de methylene', 'granulometrie', 'foundiougne'
     ],
     title: 'SB-S Labo · Laboratoire Agréé LNR-BTP (Catégories C2 & A3) · Études de Sol & Bétons',
-    answer: `**SB-S Labo** (créé en 2021, RC : SN DKR 2021 B 12675) est le laboratoire géotechnique et d'essais matériaux de l'écosystème, dirigé par **Abdoulaye Niang**.
+    answer: `**SB-S Labo** (créé en 2021, RC : SN DKR 2021 B 12675) est le laboratoire géotechnique et d'essais matériaux de l'écosystème, avec **Aminata Dramé** comme **Directrice Technique** (+221 70 835 00 63) et **Ablaye Niang** comme **Responsable Laboratoire pour les essais** (+221 77 321 78 60).
 
 • **Agréments officiels & Conformité :**
   - Agréé **Catégorie C2** (Domaine C : Ingénierie des sols et fondations) et **Catégorie A3** (Domaine A : Matériaux de construction et bétons hydrauliques) selon le référentiel **LNR-BTP** (Loi n° 2023-12 du 21 juin 2023 et Décret n° 2023-1780 du 29 août 2023).
@@ -307,7 +308,10 @@ export const AI_KNOWLEDGE_BASE: KnowledgeTopic[] = [
   4. **Domaine D (Auscultation d'ouvrages) :** Scléromètre, carottage sur béton durci et diagnostic structurel.
 
 • **Références majeures :** Pont de Foundiougne (1 200 éprouvettes béton contrôlées), Autoroute Mbour-Fatick-Kaolack (450 essais CBR/Proctor sur 65 km), Tour R+16 SICAP Plateau (8 forages carottés à 45 m), Plateforme Diamniadio (24 forages & PDL).
-• **Contact direct :** **Abdoulaye Niang** (Responsable SB-S Labo) · Tél & WhatsApp : **+221 77 321 78 60** · Email : \`labo@sbs-labo.sn\`.`,
+• **Contacts directs SB-S Labo :**
+  - **Directrice Technique :** **Aminata Dramé** · Tél & WhatsApp : **+221 70 835 00 63**
+  - **Responsable Laboratoire (pour les essais) :** **Ablaye Niang** · Tél & WhatsApp : **+221 77 321 78 60**
+  - **Email :** \`labo@sbs-labo.sn\`.`,
     sources: [
       { title: 'Catalogue officiel des essais SB-S Labo (C2 & A3)', ref: 'CAT-LABO-2026', link: '/services/laboratoire' },
       { title: 'Fiche de l\'entité SB-S Labo', ref: 'ENT-LABO-2026', link: '/entites/sbs-labo' }
@@ -315,7 +319,7 @@ export const AI_KNOWLEDGE_BASE: KnowledgeTopic[] = [
     suggestedAction: { label: 'Commander un essai ou une étude de sol', href: '/services/laboratoire' },
     followUpQuestions: [
       'Quel échantillon faut-il pour un essai CBR ou Proctor ?',
-      'Comment contacter Abdoulaye Niang pour un sondage géotechnique ?',
+      'Comment contacter Aminata Dramé ou Ablaye Niang pour un essai au laboratoire ?',
       'Quelles sont les références de SB-S Labo sur le Pont de Foundiougne ?'
     ]
   },
@@ -615,7 +619,8 @@ export const AI_KNOWLEDGE_BASE: KnowledgeTopic[] = [
      - Responsable : **Oumou DIOP** · WhatsApp : **+221 77 203 84 38**
      - Standard : **+221 33 871 08 61** · WhatsApp : **+221 77 500 44 22** · Email : \`contact@sbsgroup.sn\` · Mbao Villeneuve Villa S04 (Plus Code : \`PMX9+CHV, Dakar\`).
   3. **SB-S Labo (Géotechnique & Essais C2/A3) :**
-     - Responsable : **Abdoulaye NIANG** · Tél & WhatsApp : **+221 77 321 78 60**
+     - Directrice Technique : **Aminata DRAMÉ** · Tél & WhatsApp : **+221 70 835 00 63**
+     - Responsable Laboratoire (pour les essais) : **Ablaye NIANG** · Tél & WhatsApp : **+221 77 321 78 60**
      - Email : \`labo@sbs-labo.sn\` · Cité Keur Gorgui / Route de Rufisque Km 12, Dakar.
   4. **SB-S Industries (Centrale à Béton & Agglos) :**
      - Responsable : **Salimata SOW** · Tél & WhatsApp : **+221 77 566 48 06** / **+221 33 871 08 61**
@@ -750,7 +755,7 @@ export const AI_KNOWLEDGE_BASE: KnowledgeTopic[] = [
     title: 'Construire une Villa, un Immeuble ou une Usine Clé en Main avec les 7 Entités',
     answer: `Pour tout projet de construction (villa, immeuble R+, hangar industriel) au Sénégal, notre écosystème vous accompagne **étape par étape avec un interlocuteur unique** :
 
-1. **Étape 1 · Étude de sol géotechnique (SB-S Labo · +221 77 321 78 60) :**
+1. **Étape 1 · Étude de sol géotechnique (SB-S Labo · Directrice Technique Aminata Dramé +221 70 835 00 63 / Resp. Essais Ablaye Niang +221 77 321 78 60) :**
    - Sondages au pénétromètre dynamique (PDL), carottage, essais CBR et limites d'Atterberg pour déterminer la portance exacte du terrain et dimensionner les semelles, radier ou pieux.
 2. **Étape 2 · Conception architecturale, Modélisation 3D/BIM & Calculs (SERMA BTP · +221 78 832 12 79) :**
    - Plans d'exécution béton armé et charpente métallique aux Eurocodes, modélisation 3D/BIM et maîtrise d'œuvre (AMO / supervision).
@@ -788,7 +793,7 @@ export const AI_KNOWLEDGE_BASE: KnowledgeTopic[] = [
 
 • **1. SERMA BTP** : Études techniques, modélisation 3D/BIM, charpente métallique (4 500 T/an, portée > 42m), pylônes, stations-service, IGH & maîtrise d'œuvre (+221 78 832 12 79).
 • **2. SB-S Group** : Génie civil lourd, ouvrages d'art, dallages industriels & VRD · Responsable Oumou DIOP (+221 77 203 84 38 / +221 33 871 08 61).
-• **3. SB-S Labo** : Laboratoire agréé LNR-BTP **Catégories C2 et A3** (études de sol CBR, Proctor, PDL, carottage, écrasement béton 3 000 kN, PV en 24h) · Responsable Abdoulaye NIANG (+221 77 321 78 60).
+• **3. SB-S Labo** : Laboratoire agréé LNR-BTP **Catégories C2 et A3** (études de sol CBR, Proctor, PDL, carottage, écrasement béton 3 000 kN, PV en 24h) · Directrice Technique Aminata DRAMÉ (+221 70 835 00 63) & Responsable Laboratoire (Essais) Ablaye NIANG (+221 77 321 78 60).
 • **4. SB-S Industries** : Centrale à béton 60 m³/h (BPE C15–C30 : 62 000–77 000 F/m³), agglos creux (380–590 F), agglos pleins (700–850 F), hourdis (450–750 F), pavés (6 750–9 000 F/m²) · Responsable Salimata SOW (+221 77 566 48 06).
 • **5. SB-S Logistik** : Location de 82 engins lourds (Grue 50T à 500 000 F/j, Camion-grue 6T à 100 000 F/j, Tractopelle à 120 000 F/j, Pompe à béton, Bennes 40T, Échafaudages, Coffrages) & vente de sable/gravier/ciment · Responsable Rokhaya KANE (+221 77 858 61 05).
 • **6. P2M Showroom** : Carrelage 30×30 à 80×240 (dès 3 000 F/m²), sanitaires (WC ESTA, lavabos Partas/Rosen, baignoires), robinetterie HKI, faïence & mosaïque à Mbao (+221 78 832 12 79).

@@ -234,17 +234,31 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
                 )}
 
                 {id === 'sbs-labo' && (
-                  <div className="pt-2 border-t border-white/10 text-xs text-amber-200">
-                    <p className="font-semibold text-white">Abdoulaye Niang</p>
-                    <p className="text-[11px] text-white/80">Responsable SB-S Labo (Agréments C2 &amp; A3)</p>
-                    <a
-                      href="https://wa.me/221773217860?text=Bonjour%20Abdoulaye%20Niang%2C%20je%20souhaite%20solliciter%20SB-S%20Labo%20pour%20une%20%C3%A9tude%20g%C3%A9otechnique%20ou%20un%20essai%20b%C3%A9ton."
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 mt-1 font-bold text-emerald-300 hover:text-emerald-200 underline"
-                    >
-                      WhatsApp / Contact : +221 77 321 78 60
-                    </a>
+                  <div className="pt-2 border-t border-white/10 text-xs text-amber-200 space-y-2.5">
+                    <div>
+                      <p className="font-semibold text-white">Aminata Dramé</p>
+                      <p className="text-[11px] text-white/80">Directrice Technique SB-S Labo (Agréments C2 &amp; A3)</p>
+                      <a
+                        href="https://wa.me/221708350063?text=Bonjour%20Aminata%20Dram%C3%A9%2C%20je%20souhaite%20solliciter%20SB-S%20Labo%20pour%20une%20%C3%A9tude%20g%C3%A9otechnique%20ou%20un%20essai%20b%C3%A9ton."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 mt-1 font-bold text-emerald-300 hover:text-emerald-200 underline"
+                      >
+                        WhatsApp / Contact : +221 70 835 00 63
+                      </a>
+                    </div>
+                    <div className="pt-2 border-t border-white/10">
+                      <p className="font-semibold text-white">Ablaye Niang</p>
+                      <p className="text-[11px] text-white/80">Responsable Laboratoire pour les essais</p>
+                      <a
+                        href="https://wa.me/221773217860?text=Bonjour%20Ablaye%20Niang%2C%20je%20souhaite%20solliciter%20SB-S%20Labo%20pour%20un%20essai%20au%20laboratoire."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 mt-1 font-bold text-emerald-300 hover:text-emerald-200 underline"
+                      >
+                        WhatsApp / Contact : +221 77 321 78 60
+                      </a>
+                    </div>
                   </div>
                 )}
 
