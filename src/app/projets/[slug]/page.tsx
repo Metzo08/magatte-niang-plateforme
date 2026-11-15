@@ -107,13 +107,13 @@ export default function ProjectCaseStudyPage() {
 
         {/* 16:9 HERO IMAGE */}
         <div
-          className="group relative aspect-[16/9] w-full rounded-l overflow-hidden border border-neutral-300 dark:border-brand-700 shadow-elev-2 bg-neutral-200 cursor-zoom-in"
+          className="group relative h-64 sm:h-80 lg:h-96 w-full rounded-l overflow-hidden border border-neutral-300 dark:border-brand-700 shadow-elev-2 bg-neutral-200 cursor-zoom-in"
           onClick={() => setLightboxIndex(0)}
         >
           <img
             src={project.images[0].url}
             alt={project.title}
-            className="absolute inset-0 w-full h-full object-cover"
+            className="w-full h-full object-cover"
           />
           <div className="absolute bottom-3 left-3 bg-brand-900/90 backdrop-blur-md px-3 py-1.5 rounded text-xs text-white">
             {project.images[0].caption}
@@ -224,13 +224,13 @@ export default function ProjectCaseStudyPage() {
                   onClick={() => setLightboxIndex(idx)}
                   className="group relative overflow-hidden rounded-l border border-neutral-200 dark:border-brand-700 bg-neutral-100 dark:bg-brand-800 cursor-zoom-in hover:border-accent-500 transition-colors"
                 >
-                  <div className="relative aspect-square w-full overflow-hidden">
+                  <div className="relative h-44 sm:h-48 w-full overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={img.url}
                       alt={img.caption}
                       loading="lazy"
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   {idx === 0 && (

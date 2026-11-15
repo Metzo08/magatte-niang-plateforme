@@ -254,13 +254,13 @@ function ProjectsListContent() {
                 <div>
                   {/* 16:9 RATIO PROJECT IMAGE */}
                   <div
-                    className="relative aspect-[16/9] w-full overflow-hidden bg-neutral-200 cursor-zoom-in"
+                    className="relative h-48 sm:h-52 w-full shrink-0 overflow-hidden bg-neutral-200 cursor-zoom-in"
                     onClick={() => setLightbox({ project: proj, index: 0 })}
                   >
                     <img
                       src={proj.images[0].url}
                       alt={proj.title}
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute top-2.5 left-2.5 bg-brand-900/90 backdrop-blur-md px-2 py-1 rounded text-[11px] font-mono text-white flex items-center gap-1.5">
                       <span

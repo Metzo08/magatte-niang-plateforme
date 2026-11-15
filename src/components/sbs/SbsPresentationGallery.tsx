@@ -308,7 +308,7 @@ export default function SbsPresentationGallery() {
                 className="group cursor-pointer bg-white dark:bg-brand-850 rounded-xl border border-neutral-200 dark:border-brand-700 hover:border-accent-500 dark:hover:border-accent-400 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col"
               >
                 {/* PHOTO CONTAINER (CLEAN, BORDERLESS PHOTO) */}
-                <div className="relative aspect-[4/3] bg-neutral-900 overflow-hidden flex items-center justify-center">
+                <div className="relative h-52 sm:h-56 w-full shrink-0 bg-neutral-900 overflow-hidden flex items-center justify-center">
                   {isPortrait && (
                     /* eslint-disable-next-line @next/next/no-img-element */
                     <img
@@ -324,7 +324,7 @@ export default function SbsPresentationGallery() {
                     src={photo.imageUrl}
                     alt={photo.title}
                     loading="lazy"
-                    className={`absolute inset-0 z-10 w-full h-full group-hover:scale-105 transition-transform duration-500 ease-out ${
+                    className={`relative z-10 w-full h-full group-hover:scale-105 transition-transform duration-500 ease-out ${
                       isPortrait ? 'object-contain p-1' : 'object-cover'
                     }`}
                   />
@@ -438,13 +438,13 @@ export default function SbsPresentationGallery() {
               onClick={() => setActiveSlide(slide)}
               className="group cursor-pointer bg-white dark:bg-brand-850 rounded-xl border border-neutral-200 dark:border-brand-700 hover:border-accent-500 dark:hover:border-accent-400 overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 flex flex-col"
             >
-              <div className="relative aspect-[16/11] bg-neutral-100 dark:bg-brand-900 overflow-hidden">
+              <div className="relative h-48 sm:h-52 w-full shrink-0 bg-neutral-100 dark:bg-brand-900 overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={slide.imageUrl}
                   alt={slide.title}
                   loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <span className="px-3 py-1.5 bg-accent-500 text-white text-xs font-semibold rounded-lg flex items-center gap-1.5 shadow-lg">

@@ -437,7 +437,7 @@ export default function SbsIndustriesPublicCatalog({
                     `Brique réelle SBS Industrie ${card.dim}`
                   )
                 }
-                className="block relative aspect-[16/11] w-full bg-neutral-900 overflow-hidden text-left cursor-zoom-in"
+                className="block relative h-48 sm:h-52 w-full shrink-0 bg-neutral-900 overflow-hidden text-left cursor-zoom-in"
                 title="Cliquer pour afficher la photo haute résolution"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -445,7 +445,7 @@ export default function SbsIndustriesPublicCatalog({
                   src={card.url}
                   alt={card.title}
                   loading="lazy"
-                  className="absolute inset-0 w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300"
                 />
                 {/* Badge Dimension en incrustation */}
                 <div className="absolute top-2 left-2 px-2.5 py-1 rounded bg-brand-900/90 text-white font-mono font-bold text-xs shadow-sm border border-white/20">
@@ -565,7 +565,7 @@ export default function SbsIndustriesPublicCatalog({
               className="group flex flex-col rounded-m border border-neutral-200 dark:border-brand-700 bg-neutral-50 dark:bg-brand-900/60 overflow-hidden hover:shadow-elev-2 hover:border-accent-500 transition-all"
             >
               <div
-                className="relative aspect-[4/3] w-full bg-neutral-900 overflow-hidden cursor-zoom-in"
+                className="relative h-48 sm:h-52 w-full shrink-0 bg-neutral-900 overflow-hidden cursor-zoom-in"
                 onClick={() =>
                   onOpenLightbox?.(
                     arr.map((p) => ({ url: p.url, caption: `${p.title} (${p.dim}) · ${p.caption}` })),
@@ -580,7 +580,7 @@ export default function SbsIndustriesPublicCatalog({
                   src={item.url}
                   alt={item.title}
                   loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-brand-950/90 text-white font-mono text-[10px] font-bold shadow-sm">
                   {item.badge}
@@ -655,7 +655,7 @@ export default function SbsIndustriesPublicCatalog({
                 className="flex flex-col bg-white dark:bg-brand-800 border border-neutral-200 dark:border-brand-700 rounded-l overflow-hidden shadow-elev-1 hover:shadow-elev-2 transition-shadow"
               >
                 <div
-                  className="relative aspect-[16/10] bg-neutral-100 dark:bg-brand-900 overflow-hidden cursor-zoom-in group/img"
+                  className="relative h-48 sm:h-52 w-full shrink-0 bg-neutral-100 dark:bg-brand-900 overflow-hidden cursor-zoom-in group/img"
                   onClick={() =>
                     onOpenLightbox?.(
                       [
@@ -675,7 +675,7 @@ export default function SbsIndustriesPublicCatalog({
                     src={p.imageUrl || '/images/sbs-industries/flyer-agglos-pleins.jpg'}
                     alt={p.name}
                     loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-2 left-2 flex items-center gap-1.5 pointer-events-none">
                     <span className="px-2 py-0.5 rounded bg-brand-900/90 text-white text-[10px] font-mono font-bold shadow-sm">

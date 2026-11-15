@@ -78,14 +78,14 @@ export default function SourcingPage() {
           <img
             src={SITE_IMAGES.portInternational}
             alt="Port international · fret maritime PGT"
-            className="w-full aspect-[16/10] object-cover rounded-l border border-brand-700 shadow-elev-3"
+            className="w-full h-48 sm:h-60 object-cover rounded-l border border-brand-700 shadow-elev-3"
             loading="lazy"
           />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={SITE_IMAGES.pgt}
             alt="PGT · Polytech General Trading, sourcing international"
-            className="w-full aspect-[16/10] object-cover rounded-l border border-brand-700 shadow-elev-3"
+            className="w-full h-48 sm:h-60 object-cover rounded-l border border-brand-700 shadow-elev-3"
             loading="lazy"
           />
         </div>

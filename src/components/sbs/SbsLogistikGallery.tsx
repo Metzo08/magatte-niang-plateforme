@@ -525,7 +525,7 @@ export function SbsLogistikGallery() {
                     }}
                     className="group bg-white dark:bg-brand-850 border border-neutral-200 dark:border-brand-700 rounded-l overflow-hidden shadow-elev-1 hover:shadow-elev-3 hover:border-amber-500 transition-all cursor-pointer flex flex-col"
                   >
-                    <div className="relative aspect-[4/3] bg-neutral-100 dark:bg-brand-900 overflow-hidden flex items-center justify-center">
+                    <div className="relative h-52 sm:h-56 w-full shrink-0 bg-neutral-100 dark:bg-brand-900 overflow-hidden flex items-center justify-center">
                       {isPortraitOrSquare && (
                         // eslint-disable-next-line @next/next/no-img-element
                         <img
@@ -541,7 +541,7 @@ export function SbsLogistikGallery() {
                         src={item.imageUrl}
                         alt={item.title}
                         loading="lazy"
-                        className={`absolute inset-0 z-10 w-full h-full transition-transform duration-500 group-hover:scale-105 ${
+                        className={`relative z-10 w-full h-full transition-transform duration-500 group-hover:scale-105 ${
                           isPortraitOrSquare ? 'object-contain p-1.5 drop-shadow-sm' : 'object-cover'
                         }`}
                       />
@@ -718,13 +718,13 @@ export function SbsLogistikGallery() {
                 }}
                 className="group bg-white dark:bg-brand-850 border border-neutral-200 dark:border-brand-700 rounded-l overflow-hidden shadow-elev-1 hover:shadow-elev-3 hover:border-amber-500 transition-all cursor-pointer"
               >
-                <div className="relative aspect-[16/10] bg-neutral-100 dark:bg-brand-900 overflow-hidden">
+                <div className="relative h-44 sm:h-48 w-full shrink-0 bg-neutral-100 dark:bg-brand-900 overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={slide.slideSrc}
                     alt={slide.title}
                     loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute top-2 left-2 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-brand-900/90 text-white">
                     Planche {String(slide.pageNum).padStart(2, '0')} / 37

@@ -153,9 +153,9 @@ export default function EnginsPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12">
           {filtered.map(eq => (
             <div key={eq.id} className="bg-white dark:bg-brand-800 border border-neutral-200 dark:border-brand-700 rounded-l overflow-hidden flex flex-col sm:flex-row">
-              <div className="relative aspect-[4/3] sm:aspect-auto sm:w-48 sm:min-h-[160px] shrink-0 overflow-hidden bg-neutral-200 dark:bg-brand-900">
+              <div className="relative h-48 sm:w-48 sm:h-44 shrink-0 overflow-hidden bg-neutral-200 dark:bg-brand-900">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={eq.imageUrl} alt={eq.name} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                <img src={eq.imageUrl} alt={eq.name} className="w-full h-full object-cover" loading="lazy" />
               </div>
               <div className="p-5 flex-1">
                 <div className="flex items-center gap-2 mb-2 flex-wrap">
@@ -246,7 +246,7 @@ export default function EnginsPage() {
           {LOGISTIK_MATERIALS.map(m => (
             <div key={m.id} className="bg-white dark:bg-brand-800 border border-neutral-200 dark:border-brand-700 rounded-l overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-200 dark:bg-brand-900"><img src={m.imageUrl} alt={m.name} className="absolute inset-0 w-full h-full object-cover" loading="lazy" /></div>
+              <div className="relative h-40 sm:h-44 w-full overflow-hidden bg-neutral-200 dark:bg-brand-900"><img src={m.imageUrl} alt={m.name} className="w-full h-full object-cover" loading="lazy" /></div>
               <div className="p-4">
                 <p className="font-title font-bold text-neutral-900 dark:text-white text-sm">{m.name}</p>
                 <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">{m.detail}</p>

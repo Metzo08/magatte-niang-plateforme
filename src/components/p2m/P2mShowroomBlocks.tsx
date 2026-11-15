@@ -475,12 +475,12 @@ export default function P2mShowroomBlocks({
                 }`}
               >
                 {/* Image de couverture du bloc */}
-                <div className="relative aspect-[16/10] w-full bg-brand-950 overflow-hidden">
+                <div className="relative h-44 sm:h-48 w-full shrink-0 bg-brand-950 overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={block.coverImage}
                     alt={block.shortTitle}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
@@ -729,7 +729,7 @@ export default function P2mShowroomBlocks({
                           >
                             {/* Image produit avec zoom lightbox */}
                             <div
-                              className="relative aspect-square bg-neutral-100 dark:bg-brand-900 overflow-hidden cursor-zoom-in"
+                              className="relative h-52 sm:h-56 w-full shrink-0 bg-neutral-100 dark:bg-brand-900 overflow-hidden cursor-zoom-in"
                               onClick={() => {
                                 if (onOpenLightbox && images.length > 0) {
                                   onOpenLightbox(
@@ -749,7 +749,7 @@ export default function P2mShowroomBlocks({
                                 src={primaryImage}
                                 alt={product.name}
                                 loading="lazy"
-                                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                               />
 
                               <span className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-brand-950/90 text-white font-mono text-[10px] font-bold">
@@ -909,14 +909,14 @@ export default function P2mShowroomBlocks({
                       'Showroom P2M Mbao'
                     )
                   }
-                  className="group relative aspect-square overflow-hidden rounded-lg border border-neutral-200 dark:border-brand-700 bg-neutral-200 dark:bg-brand-900 cursor-zoom-in"
+                  className="group relative h-40 sm:h-44 w-full overflow-hidden rounded-lg border border-neutral-200 dark:border-brand-700 bg-neutral-200 dark:bg-brand-900 cursor-zoom-in"
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={img.src}
                     alt={img.caption}
                     loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent p-1.5 text-[10px] leading-tight text-white line-clamp-2">
                     {img.caption}

@@ -345,13 +345,13 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
                   key={idx}
                   className="group relative overflow-hidden rounded-l border border-neutral-200 dark:border-brand-700 bg-neutral-100 dark:bg-brand-800"
                 >
-                  <div className="relative aspect-square w-full overflow-hidden">
+                  <div className="relative h-44 sm:h-48 w-full overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={img.src}
                       alt={img.caption}
                       loading="lazy"
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-2 text-[11px] leading-tight text-white">
@@ -686,7 +686,7 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
                   className="group bg-white dark:bg-brand-800 border border-neutral-300 dark:border-brand-700 hover:border-brand-600 rounded-l overflow-hidden shadow-elev-1 hover:shadow-elev-2 transition-all"
                 >
                   <div
-                    className="relative aspect-[16/9] w-full overflow-hidden bg-neutral-200 dark:bg-brand-900 cursor-zoom-in"
+                    className="relative h-48 sm:h-52 w-full shrink-0 overflow-hidden bg-neutral-200 dark:bg-brand-900 cursor-zoom-in"
                     onClick={(e) => {
                       e.preventDefault();
                       e.stopPropagation();
@@ -700,7 +700,7 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
                         src={project.images[0].url}
                         alt={project.title}
                         loading="lazy"
-                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     )}
                     <div className="absolute top-2 left-2 bg-brand-900/90 backdrop-blur-md px-2 py-1 rounded text-[11px] font-mono text-white">
@@ -728,14 +728,14 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
                             e.stopPropagation();
                             setLightbox({ images: project.images, index: i, title: project.title });
                           }}
-                          className="relative aspect-square w-full overflow-hidden rounded-l border border-neutral-200 dark:border-brand-700 bg-neutral-100 dark:bg-brand-800 cursor-zoom-in hover:ring-2 hover:ring-accent-500 transition-shadow"
+                          className="relative h-24 sm:h-28 w-full overflow-hidden rounded-l border border-neutral-200 dark:border-brand-700 bg-neutral-100 dark:bg-brand-800 cursor-zoom-in hover:ring-2 hover:ring-accent-500 transition-shadow"
                         >
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             src={img.url}
                             alt={img.caption || project.title}
                             loading="lazy"
-                            className="absolute inset-0 w-full h-full object-cover"
+                            className="w-full h-full object-cover"
                           />
                           {i === 7 && project.images.length > 8 && (
                             <div className="absolute inset-0 bg-brand-900/70 flex items-center justify-center text-[10px] font-mono font-bold text-white">
@@ -801,14 +801,14 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
                 href={`/catalogue/${product.id}`}
                 className="group bg-white dark:bg-brand-800 border border-neutral-300 dark:border-brand-700 hover:border-brand-600 rounded-l overflow-hidden shadow-elev-1 hover:shadow-elev-2 transition-all"
               >
-                <div className="relative aspect-square w-full overflow-hidden bg-neutral-200 dark:bg-brand-900">
+                <div className="relative h-48 sm:h-52 w-full shrink-0 overflow-hidden bg-neutral-200 dark:bg-brand-900">
                   {product.images && product.images[0] && (
                     /* eslint-disable-next-line @next/next/no-img-element */
                     <img
                       src={typeof product.images[0] === 'string' ? product.images[0] : product.images[0].url}
                       alt={product.name}
                       loading="lazy"
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   )}
                   {product.isPriceVisible && product.indicativePriceFCFA && (

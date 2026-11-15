@@ -168,7 +168,7 @@ export default function ProfilPage() {
             <img
               src={SITE_IMAGES.magatteNiangProfesseur}
               alt="Professeur Magatte Niang en enseignement"
-              className="w-full aspect-[16/10] object-cover"
+              className="w-full h-48 sm:h-52 object-cover"
               loading="lazy"
             />
             <div className="p-6">
@@ -193,7 +193,7 @@ export default function ProfilPage() {
             <img
               src={SITE_IMAGES.magatteNiangChercheur}
               alt="Magatte Niang, doctorant chercheur en matériaux de construction"
-              className="w-full aspect-[16/10] object-cover"
+              className="w-full h-48 sm:h-52 object-cover"
               loading="lazy"
             />
             <div className="p-6">
@@ -222,7 +222,7 @@ export default function ProfilPage() {
           <img
             src={SITE_IMAGES.magatteNiangEquipe}
             alt="Magatte Niang et son équipe d'ingénieurs"
-            className="w-full aspect-[16/9] sm:aspect-[21/9] object-cover rounded-l border border-neutral-200 dark:border-brand-700 shadow-elev-2"
+            className="w-full h-56 sm:h-80 object-cover rounded-l border border-neutral-200 dark:border-brand-700 shadow-elev-2"
             loading="lazy"
           />
           <p className="text-center text-[11px] font-mono text-neutral-500 mt-2">

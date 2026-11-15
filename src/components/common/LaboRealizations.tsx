@@ -57,12 +57,12 @@ export default function LaboRealizations() {
               key={r.src}
               className="group overflow-hidden rounded-l border border-neutral-200 dark:border-brand-700 bg-white dark:bg-brand-800 shadow-elev-2 transition-transform duration-300 hover:-translate-y-1"
             >
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-200 dark:bg-brand-700">
+              <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-neutral-200 dark:bg-brand-700">
                 <img
                   src={r.src}
                   alt={r.title}
                   loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute bottom-2 left-2 bg-brand-900/90 text-white text-xs px-2.5 py-1 rounded">
                   {r.tag}

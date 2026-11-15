@@ -491,12 +491,12 @@ export default function SbsLaboGalleryCategories() {
                 }`}
               >
                 {/* Image de couverture */}
-                <div className="relative aspect-[16/10] w-full bg-brand-950 overflow-hidden">
+                <div className="relative h-44 sm:h-48 w-full shrink-0 bg-brand-950 overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={cat.coverImage}
                     alt={cat.title}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-brand-950/35 to-transparent" />
@@ -711,7 +711,7 @@ export default function SbsLaboGalleryCategories() {
                         <img
                           src={ex.src}
                           alt={ex.title}
-                          className="absolute inset-0 w-full h-full object-cover"
+                          className="w-full h-full object-cover"
                         />
                       </button>
                     ))}

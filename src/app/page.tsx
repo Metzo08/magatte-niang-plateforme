@@ -467,13 +467,13 @@ export default function HomePage() {
           ].map((item, idx) => (
             <div
               key={idx}
-              className="group relative w-full rounded-l overflow-hidden border border-neutral-200 dark:border-brand-700 shadow-elev-1 hover:shadow-elev-3 transition-all aspect-[4/3]"
+              className="group relative w-full rounded-l overflow-hidden border border-neutral-200 dark:border-brand-700 shadow-elev-1 hover:shadow-elev-3 transition-all h-48 sm:h-52"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={item.img}
                 alt={item.label}
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />

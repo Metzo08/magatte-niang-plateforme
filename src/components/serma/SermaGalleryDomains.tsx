@@ -532,12 +532,12 @@ export default function SermaGalleryDomains() {
                 }`}
               >
                 {/* Visuel de couverture de la case */}
-                <div className="relative aspect-[16/10] w-full bg-brand-950 overflow-hidden">
+                <div className="relative h-44 sm:h-48 w-full shrink-0 bg-brand-950 overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={domain.coverImage}
                     alt={domain.title}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-brand-950/30 to-transparent" />
@@ -680,13 +680,13 @@ export default function SermaGalleryDomains() {
                 key={photo.url}
                 type="button"
                 onClick={() => openDomain('charpente-metallique', pIdx)}
-                className="block w-full group relative aspect-[4/3] rounded-xl overflow-hidden border border-neutral-200 dark:border-brand-700 bg-neutral-200 dark:bg-brand-900 text-left"
+                className="block w-full group relative h-44 sm:h-48 rounded-xl overflow-hidden border border-neutral-200 dark:border-brand-700 bg-neutral-200 dark:bg-brand-900 text-left"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={photo.url}
                   alt={photo.label}
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent p-2 text-[11px] text-white font-medium">
                   {photo.label}
@@ -861,7 +861,7 @@ export default function SermaGalleryDomains() {
                           <img
                             src={ex.src}
                             alt={ex.title}
-                            className="absolute inset-0 w-full h-full object-cover"
+                            className="w-full h-full object-cover"
                           />
                         )}
                       </button>

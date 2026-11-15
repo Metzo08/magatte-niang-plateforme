@@ -70,12 +70,12 @@ export default function LaboratoirePage() {
               { img: PHOTOS_REELLES.laboMateriel1, label: 'Équipements d\'essai' },
               { img: PHOTOS_REELLES.laboMateriel2, label: 'Contrôle qualité béton' },
             ].map(p => (
-              <div key={p.label} className="relative w-full rounded-l overflow-hidden border border-brand-700 shadow-elev-2 aspect-[4/3]">
+              <div key={p.label} className="relative w-full h-48 sm:h-52 rounded-l overflow-hidden border border-brand-700 shadow-elev-2">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={p.img}
                   alt={`SB-S Labo · ${p.label}`}
-                  className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
@@ -239,12 +239,12 @@ export default function LaboratoirePage() {
                 key={idx}
                 className="bg-white dark:bg-brand-800 border border-neutral-300 dark:border-brand-700 rounded-l overflow-hidden shadow-elev-1 hover:shadow-elev-2 transition-all flex flex-col group"
               >
-                <div className="relative aspect-[16/9] w-full bg-neutral-200 dark:bg-brand-900 overflow-hidden">
+                <div className="relative h-48 sm:h-52 w-full shrink-0 bg-neutral-200 dark:bg-brand-900 overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={p.image}
                     alt={p.caption}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                   />
                   <div className="absolute top-2 left-2 bg-brand-900/90 backdrop-blur-md px-2 py-0.5 rounded text-[10px] font-mono font-bold text-emerald-400">
