@@ -5,13 +5,11 @@ import Link from 'next/link';
 import {
   X,
   Send,
-  User,
   ShieldCheck,
-  ExternalLink,
   PhoneCall,
-  Info,
   ArrowRight,
-  HelpCircle
+  Sparkles,
+  RotateCcw
 } from 'lucide-react';
 import { store } from '@/lib/store';
 import { queryKnowledgeBase } from '@/data/aiKnowledgeBase';
@@ -28,31 +26,74 @@ interface ChatMessage {
   timestamp: string;
   sources?: { title: string; ref: string; link?: string }[];
   suggestedAction?: { label: string; href: string };
+  followUpQuestions?: string[];
 }
 
 const INITIAL_MESSAGES: ChatMessage[] = [
   {
     id: 'm-init',
     sender: 'assistant',
-    text: 'Bonjour, je suis l\'assistant technique de l\'écosystème Magatte Niang Expert. Je réponds à vos questions en m\'appuyant exclusivement sur notre base documentaire validée (charpentes SERMA BTP, essais SB-S Labo, finitions P2M, logistique). Que puis-je préciser pour votre projet ?',
+    text: `Bonjour ! Je suis l'assistant IA omniscient de l'écosystème **Magatte Niang Expert**. Je maîtrise en temps réel l'intégralité de nos **7 entités**, nos stocks, nos grilles tarifaires et nos réalisations :
+
+• **SERMA BTP** : Études techniques, modélisation 3D/BIM, charpente métallique (> 42m), pylônes, stations-service, IGH & maîtrise d'œuvre (+221 78 832 12 79).
+• **SB-S Group** : Génie civil, grands travaux, VRD & industrie · Oumou DIOP (+221 77 203 84 38 / +221 33 871 08 61).
+• **SB-S Labo** : Laboratoire agréé LNR-BTP **Catégories C2 et A3** (sols CBR/Proctor/PDL, béton 3 000 kN, PV 24h) · Abdoulaye NIANG (+221 77 321 78 60).
+• **SB-S Industries** : Centrale à béton 60 m³/h (C15–C30), agglos creux (380–590 F), agglos pleins (700–850 F), hourdis & pavés · Salimata SOW (+221 77 566 48 06).
+• **SB-S Logistik** : 82 engins en location (Grue 50T, Camion-grue 6T, Tractopelle, Pompe à béton, Bennes 40T, Coffrages) & agrégats · Rokhaya KANE (+221 77 858 61 05).
+• **P2M Showroom** : Blocs Carrelage (30×30 à 80×240), Sanitaire, Robinetterie & Faïence/Mosaïque à Mbao (+221 78 832 12 79).
+• **PGT (Dubaï - Ajman & Inde)** : Sourcing international, fret conteneurisé FCL/LCL & transit PAD · WhatsApp **+971 52 763 1629**.
+
+Posez-moi n'importe quelle question ou demandez un **calcul instantané** (ex: *"120 m² de carrelage 60×60"*, *"1 000 agglos 15×20×40"*, *"30 m³ béton C25"*) !`,
     timestamp: new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }),
     sources: [
-      { title: 'Plaquette institutionnelle écosystème 2026', ref: 'PLA-CORP-2026', link: '/docs/plaquette' }
+      { title: 'Plaquette institutionnelle écosystème 2026', ref: 'PLA-CORP-2026', link: '/entites' }
+    ],
+    followUpQuestions: [
+      'Présente-moi les 7 entités et leur synergie',
+      'Quels sont les tarifs du Showroom P2M (Carrelage & Sanitaire) ?',
+      'Combien pour 100 m² de carrelage 60×60 ?'
     ]
   }
+];
+
+const QUICK_ENTITY_PILLS = [
+  { label: 'Les 7 entités', query: 'Présente-moi toutes les 7 entités et leur synergie' },
+  { label: 'P2M Carrelage & Sanitaire', query: 'Quels sont les prix du carrelage et des sanitaires P2M ?' },
+  { label: 'SERMA BTP (3D/BIM & Acier)', query: 'Quelles sont les expertises et réalisations de SERMA BTP ?' },
+  { label: 'SB-S Labo (C2 & A3)', query: 'Quels sont les essais et agréments C2 et A3 de SB-S Labo ?' },
+  { label: 'SB-S Group (Génie Civil)', query: 'Quelles sont les activités et références de SB-S Group ?' },
+  { label: 'SB-S Industries (Béton & Agglos)', query: 'Quels sont les tarifs du béton BPE, des agglos, hourdis et pavés chez SB-S Industries ?' },
+  { label: 'SB-S Logistik (82 Engins)', query: 'Quels sont les tarifs de location des grues, engins et granulats chez SB-S Logistik ?' },
+  { label: 'PGT Dubaï - Ajman (+971)', query: 'Comment fonctionne le sourcing international PGT Dubaï - Ajman et Inde ?' },
+  { label: 'Contacts & Responsables', query: 'Donne-moi tous les numéros de téléphone, WhatsApp et responsables des 7 entités' },
+  { label: 'Magatte Niang & Publications', query: 'Qui est l\'ingénieur Magatte Niang et quelles sont ses publications scientifiques ?' },
 ];
 
 function FormattedMessage({ text }: { text: string }) {
   const lines = text.split('\n');
 
-  const parseInlineBold = (line: string) => {
-    const parts = line.split(/(\*\*[^*]+\*\*)/g);
+  const parseInlineTokens = (line: string) => {
+    // Match **bold** and https://... links
+    const parts = line.split(/(\*\*[^*]+\*\*|https?:\/\/[^\s)]+)/g);
     return parts.map((part, idx) => {
       if (part.startsWith('**') && part.endsWith('**')) {
         return (
           <strong key={idx} className="font-semibold text-neutral-900 dark:text-white">
             {part.slice(2, -2)}
           </strong>
+        );
+      }
+      if (part.startsWith('http://') || part.startsWith('https://')) {
+        return (
+          <a
+            key={idx}
+            href={part}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent-500 hover:underline font-mono break-all"
+          >
+            {part}
+          </a>
         );
       }
       return part;
@@ -67,6 +108,10 @@ function FormattedMessage({ text }: { text: string }) {
           return <div key={idx} className="h-0.5" />;
         }
 
+        if (trimmed === '---') {
+          return <hr key={idx} className="my-2 border-neutral-200 dark:border-brand-700" />;
+        }
+
         // Bullet point • or -
         if (trimmed.startsWith('•') || trimmed.startsWith('-')) {
           const bulletContent = trimmed.replace(/^[•\-]\s*/, '');
@@ -74,7 +119,7 @@ function FormattedMessage({ text }: { text: string }) {
             <div key={idx} className="flex items-start gap-2 pl-0.5 my-1">
               <span className="w-1.5 h-1.5 rounded-full bg-accent-500 shrink-0 mt-1.5" />
               <div className="flex-1 text-xs sm:text-sm">
-                {parseInlineBold(bulletContent)}
+                {parseInlineTokens(bulletContent)}
               </div>
             </div>
           );
@@ -89,7 +134,7 @@ function FormattedMessage({ text }: { text: string }) {
                 {numMatch[1]}
               </span>
               <div className="flex-1 text-xs sm:text-sm">
-                {parseInlineBold(numMatch[2])}
+                {parseInlineTokens(numMatch[2])}
               </div>
             </div>
           );
@@ -98,7 +143,7 @@ function FormattedMessage({ text }: { text: string }) {
         // Standard paragraph
         return (
           <p key={idx} className="text-xs sm:text-sm leading-relaxed">
-            {parseInlineBold(line)}
+            {parseInlineTokens(line)}
           </p>
         );
       })}
@@ -123,25 +168,19 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({ isOpen, onCl
     }
   }, [messages, isOpen]);
 
-  const handleSend = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim()) return;
-
-    const userText = input.trim();
+  const processUserQuery = (queryText: string) => {
     const userMsg: ChatMessage = {
       id: `u-${Date.now()}`,
       sender: 'user',
-      text: userText,
+      text: queryText,
       timestamp: new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })
     };
 
     setMessages(prev => [...prev, userMsg]);
-    setInput('');
     setIsTyping(true);
 
-    // AI Guardrail enriched query logic using the full platform knowledge base
     setTimeout(() => {
-      const { text: responseText, sources, suggestedAction } = queryKnowledgeBase(userText);
+      const { text: responseText, sources, suggestedAction, followUpQuestions } = queryKnowledgeBase(queryText);
 
       const botMsg: ChatMessage = {
         id: `b-${Date.now()}`,
@@ -149,51 +188,39 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({ isOpen, onCl
         text: responseText,
         timestamp: new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }),
         sources,
-        suggestedAction
+        suggestedAction,
+        followUpQuestions
       };
 
       setMessages(prev => [...prev, botMsg]);
       setIsTyping(false);
 
-      // Log in store
       store.addAuditLog({
         user: 'Visiteur web',
         role: 'Public AI user',
         action: 'AI_QUERY',
         resourceType: 'AIAssistant',
         resourceId: `q-${Date.now()}`,
-        newValue: userText.slice(0, 100)
+        newValue: queryText.slice(0, 100)
       });
-    }, 450);
+    }, 280);
+  };
+
+  const handleSend = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim()) return;
+    const userText = input.trim();
+    setInput('');
+    processUserQuery(userText);
   };
 
   const handleSuggestionClick = (query: string) => {
     setInput('');
-    const userMsg: ChatMessage = {
-      id: `u-${Date.now()}`,
-      sender: 'user',
-      text: query,
-      timestamp: new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })
-    };
+    processUserQuery(query);
+  };
 
-    setMessages(prev => [...prev, userMsg]);
-    setIsTyping(true);
-
-    setTimeout(() => {
-      const { text: responseText, sources, suggestedAction } = queryKnowledgeBase(query);
-
-      const botMsg: ChatMessage = {
-        id: `b-${Date.now()}`,
-        sender: 'assistant',
-        text: responseText,
-        timestamp: new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }),
-        sources,
-        suggestedAction
-      };
-
-      setMessages(prev => [...prev, botMsg]);
-      setIsTyping(false);
-    }, 400);
+  const handleResetChat = () => {
+    setMessages(INITIAL_MESSAGES);
   };
 
   if (!isOpen) return null;
@@ -204,7 +231,7 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({ isOpen, onCl
       aria-modal="true"
       className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-brand-950/80 backdrop-blur-sm animate-in fade-in duration-200"
     >
-      <div className="bg-white dark:bg-brand-900 border border-neutral-300 dark:border-brand-700 w-full max-w-2xl h-[min(620px,calc(100dvh-1.5rem))] max-h-[92dvh] rounded-xl shadow-elev-3 flex flex-col overflow-hidden">
+      <div className="bg-white dark:bg-brand-900 border border-neutral-300 dark:border-brand-700 w-full max-w-2xl h-[min(660px,calc(100dvh-1.5rem))] max-h-[94dvh] rounded-xl shadow-elev-3 flex flex-col overflow-hidden">
 
         {/* HEADER (compact & shrink-0) */}
         <div className="shrink-0 px-3.5 sm:px-4 py-2.5 sm:py-3 bg-brand-900 text-white flex items-center justify-between border-b border-brand-800">
@@ -212,55 +239,56 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({ isOpen, onCl
             <img src={AVATAR_URL} alt="Maçon assistant" className="w-8 h-8 rounded-m border border-brand-700 shrink-0" />
             <div>
               <h3 className="font-title font-bold text-xs sm:text-sm text-white flex items-center gap-1.5 flex-wrap">
-                Assistant IA technique BTP
-                <span className="text-[10px] font-mono px-1.5 py-0.2 bg-emerald-900/80 text-emerald-300 border border-emerald-700 rounded">
-                  Sourcé & encadré
+                Assistant IA Omniscient · 7 Entités BTP
+                <span className="text-[10px] font-mono px-1.5 py-0.2 bg-emerald-900/80 text-emerald-300 border border-emerald-700 rounded inline-flex items-center gap-1">
+                  <Sparkles className="w-2.5 h-2.5" /> Temps réel & Calculateur
                 </span>
               </h3>
               <p className="text-[10px] sm:text-[11px] text-neutral-400">
-                Alimenté exclusivement par la base documentaire validée (§ 24)
+                SERMA BTP · SB-S Group · SB-S Labo · SB-S Industries · SB-S Logistik · P2M · PGT
               </p>
             </div>
           </div>
-          <button
-            onClick={onClose}
-            className="p-1.5 text-neutral-400 hover:text-white rounded hover:bg-brand-800 transition-colors"
-            aria-label="Fermer l'assistant"
-          >
-            <X className="w-5 h-5" />
-          </button>
+          <div className="flex items-center gap-1">
+            <button
+              onClick={handleResetChat}
+              className="p-1.5 text-neutral-400 hover:text-white rounded hover:bg-brand-800 transition-colors"
+              title="Réinitialiser la conversation"
+              aria-label="Réinitialiser la conversation"
+            >
+              <RotateCcw className="w-4 h-4" />
+            </button>
+            <button
+              onClick={onClose}
+              className="p-1.5 text-neutral-400 hover:text-white rounded hover:bg-brand-800 transition-colors"
+              aria-label="Fermer l'assistant"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
         {/* NOTICE BAR (shrink-0) */}
         <div className="shrink-0 bg-brand-50 dark:bg-brand-800/40 px-3 py-1.5 border-b border-brand-200 dark:border-brand-800 flex items-center justify-between text-[11px] text-brand-800 dark:text-brand-300 flex-wrap gap-1">
           <div className="flex items-center gap-1.5">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-            <span className="line-clamp-1">Garde-fou actif : aucune donnée contractuelle ou prix final n'est inventé.</span>
+            <span className="line-clamp-1">Données 100 % certifiées : tarifs officiels, stocks, essais C2/A3 & contacts directs.</span>
           </div>
           <Link href="/contact" onClick={onClose} className="font-semibold text-accent-500 hover:underline flex items-center gap-1 shrink-0">
-            <PhoneCall className="w-3 h-3" /> Escalade humain
+            <PhoneCall className="w-3 h-3" /> Parler à un ingénieur
           </Link>
         </div>
 
-        {/* QUICK SUGGESTIONS PILLS */}
+        {/* QUICK SUGGESTIONS PILLS FOR ALL 7 ENTITIES */}
         <div className="shrink-0 px-3 py-1.5 bg-neutral-100/80 dark:bg-brand-950/50 border-b border-neutral-200 dark:border-brand-800 flex items-center gap-1.5 overflow-x-auto text-[11px]">
-          <span className="text-neutral-500 dark:text-neutral-400 font-semibold shrink-0 text-[10px]">Suggestions :</span>
-          {[
-            'Carrelages P2M',
-            'Essais sol CBR',
-            'Charpentes SERMA',
-            'Location grues',
-            'Agglos 300F',
-            'Projets Sénégal',
-            'Magatte Niang',
-            'Contacts & Devis'
-          ].map((s) => (
+          <span className="text-neutral-500 dark:text-neutral-400 font-semibold shrink-0 text-[10px]">Accès direct :</span>
+          {QUICK_ENTITY_PILLS.map((pill) => (
             <button
-              key={s}
-              onClick={() => handleSuggestionClick(s)}
-              className="px-2 py-0.5 rounded-full bg-white dark:bg-brand-800 border border-neutral-300 dark:border-brand-700 hover:border-accent-500 text-neutral-700 dark:text-neutral-300 whitespace-nowrap hover:text-accent-500 transition-colors text-[10px]"
+              key={pill.label}
+              onClick={() => handleSuggestionClick(pill.query)}
+              className="px-2.5 py-0.5 rounded-full bg-white dark:bg-brand-800 border border-neutral-300 dark:border-brand-700 hover:border-accent-500 text-neutral-700 dark:text-neutral-300 whitespace-nowrap hover:text-accent-500 transition-colors text-[10px] font-medium"
             >
-              {s}
+              {pill.label}
             </button>
           ))}
         </div>
@@ -272,7 +300,7 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({ isOpen, onCl
               key={m.id}
               className={`flex flex-col ${m.sender === 'user' ? 'items-end' : 'items-start'}`}
             >
-              <div className="flex items-start gap-2 max-w-[90%] sm:max-w-[85%]">
+              <div className="flex items-start gap-2 max-w-[92%] sm:max-w-[88%]">
                 {m.sender === 'assistant' && (
                   <img src={AVATAR_URL} alt="Maçon assistant" className="w-7 h-7 rounded border border-brand-700 shrink-0 mt-0.5" />
                 )}
@@ -290,13 +318,23 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({ isOpen, onCl
                   {m.sources && m.sources.length > 0 && (
                     <div className="mt-3 pt-2.5 border-t border-neutral-200 dark:border-brand-700 text-xs">
                       <span className="font-bold text-[10px] sm:text-[11px] tracking-wider text-neutral-500 dark:text-neutral-400 block mb-1">
-                        Sources internes citées :
+                        Sources internes vérifiées :
                       </span>
                       <ul className="space-y-1">
                         {m.sources.map((src, i) => (
                           <li key={i} className="flex items-center gap-1.5 text-[11px] text-brand-600 dark:text-brand-300">
                             <span className="w-1.5 h-1.5 rounded-full bg-accent-500 shrink-0" />
-                            <span className="font-medium">{src.title}</span>
+                            {src.link ? (
+                              <Link
+                                href={src.link}
+                                onClick={onClose}
+                                className="font-medium hover:underline hover:text-accent-500"
+                              >
+                                {src.title}
+                              </Link>
+                            ) : (
+                              <span className="font-medium">{src.title}</span>
+                            )}
                             <span className="font-mono text-[10px] text-neutral-500">({src.ref})</span>
                           </li>
                         ))}
@@ -317,6 +355,27 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({ isOpen, onCl
                       </Link>
                     </div>
                   )}
+
+                  {/* FOLLOW-UP QUESTIONS */}
+                  {m.followUpQuestions && m.followUpQuestions.length > 0 && (
+                    <div className="mt-3 pt-2.5 border-t border-neutral-100 dark:border-brand-700/60">
+                      <span className="text-[10px] font-semibold text-neutral-500 dark:text-neutral-400 block mb-1.5">
+                        Questions fréquentes liées :
+                      </span>
+                      <div className="flex flex-wrap gap-1.5">
+                        {m.followUpQuestions.map((fq, idx) => (
+                          <button
+                            key={idx}
+                            type="button"
+                            onClick={() => handleSuggestionClick(fq)}
+                            className="text-left text-[11px] px-2.5 py-1 rounded-m bg-neutral-100 hover:bg-accent-500/10 dark:bg-brand-900/70 dark:hover:bg-accent-500/20 border border-neutral-200 dark:border-brand-700 hover:border-accent-500 text-neutral-700 dark:text-neutral-300 hover:text-accent-600 dark:hover:text-accent-400 transition-colors"
+                          >
+                            {fq}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
               <span className="text-[10px] text-neutral-400 mt-1 px-1">
@@ -328,7 +387,7 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({ isOpen, onCl
           {isTyping && (
             <div className="flex items-center gap-2 text-xs text-neutral-500 italic">
               <img src={AVATAR_URL} alt="Maçon assistant" className="w-6 h-6 rounded shrink-0" />
-              <span>Consultation de la base documentaire technique...</span>
+              <span>Analyse de la base documentaire des 7 entités...</span>
             </div>
           )}
           <div ref={messagesEndRef} />
@@ -340,7 +399,7 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({ isOpen, onCl
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Posez votre question (ex: carrelage 60×60, essais CBR, charpente, grues, agglos)..."
+            placeholder="Question sur les 7 entités, tarifs, ou calcul (ex: 100 m2 carrelage, 1000 agglos, PGT)..."
             className="flex-1 min-w-0 px-3 sm:px-3.5 py-2 sm:py-2.5 bg-neutral-100 dark:bg-brand-800/80 border border-neutral-300 dark:border-brand-700 rounded-m text-xs sm:text-sm text-neutral-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-500"
           />
           <button
