@@ -343,7 +343,15 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
               {gallery.map((img, idx: number) => (
                 <figure
                   key={idx}
-                  className="group relative overflow-hidden rounded-l border border-neutral-200 dark:border-brand-700 bg-neutral-100 dark:bg-brand-800"
+                  onClick={() =>
+                    setLightbox({
+                      images: gallery.map((g) => ({ url: g.src, caption: g.caption })),
+                      index: idx,
+                      title: entity.name,
+                    })
+                  }
+                  title="Cliquer pour agrandir et zoomer"
+                  className="group relative overflow-hidden rounded-l border border-neutral-200 dark:border-brand-700 bg-neutral-100 dark:bg-brand-800 cursor-zoom-in"
                 >
                   <div className="relative h-44 sm:h-48 w-full overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}

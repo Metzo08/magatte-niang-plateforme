@@ -750,7 +750,7 @@ export function SbsLogistikGallery() {
       {/* MODAL LIGHTBOX */}
       {activePhoto && (
         <div
-          className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 lg:p-6"
+          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-2 sm:p-4 lg:p-6"
           onClick={() => setActivePhoto(null)}
         >
           <div
@@ -821,7 +821,7 @@ export function SbsLogistikGallery() {
               </div>
             </div>
 
-            <div className="relative flex-1 bg-neutral-950 flex items-center justify-center overflow-auto min-h-[240px] sm:min-h-[380px] p-2 sm:p-4">
+            <div className="relative flex-1 bg-neutral-950 overflow-auto min-h-[240px] sm:min-h-[380px] p-2 sm:p-4 flex items-center justify-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={
@@ -833,8 +833,17 @@ export function SbsLogistikGallery() {
                 className="max-h-[52dvh] sm:max-h-[62dvh] w-auto max-w-full object-contain cursor-zoom-in"
                 onClick={(e) => {
                   const el = e.currentTarget;
-                  el.classList.toggle('scale-150');
-                  el.classList.toggle('cursor-zoom-out');
+                  const parent = el.parentElement;
+                  const isZoomed = el.dataset.zoomed === '1';
+                  if (isZoomed) {
+                    el.dataset.zoomed = '0';
+                    el.className = 'max-h-[52dvh] sm:max-h-[62dvh] w-auto max-w-full object-contain cursor-zoom-in';
+                    if (parent) parent.className = 'relative flex-1 bg-neutral-950 overflow-auto min-h-[240px] sm:min-h-[380px] p-2 sm:p-4 flex items-center justify-center';
+                  } else {
+                    el.dataset.zoomed = '1';
+                    el.className = 'block mx-auto w-[170vw] sm:w-[130vw] max-w-none h-auto object-contain cursor-zoom-out';
+                    if (parent) parent.className = 'relative flex-1 bg-neutral-950 overflow-auto min-h-[240px] sm:min-h-[380px] p-2 sm:p-4 block';
+                  }
                 }}
               />
               <button

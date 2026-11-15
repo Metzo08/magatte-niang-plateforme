@@ -16,6 +16,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import PhotoLightbox from '@/components/common/PhotoLightbox';
 import { PRODUCTS_P2M } from '@/data/initialData';
 import { store } from '@/lib/store';
 import type { Product } from '@/types';
@@ -31,6 +32,7 @@ export default function ProductDetailPage() {
 
   const [quantity, setQuantity] = useState(100);
   const [isAdded, setIsAdded] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   useEffect(() => {
     let active = true;
@@ -98,11 +100,15 @@ export default function ProductDetailPage() {
           
           {/* PRODUCT VISUAL (1:1 ZOOM § 30.2) */}
           <div className="lg:col-span-6 space-y-3">
-            <div className="relative h-72 sm:h-96 w-full rounded-m overflow-hidden bg-neutral-100 border border-neutral-200 dark:border-brand-700">
+            <div
+              onClick={() => setLightboxIndex(0)}
+              title="Cliquer pour agrandir et zoomer"
+              className="relative h-72 sm:h-96 w-full rounded-m overflow-hidden bg-neutral-100 border border-neutral-200 dark:border-brand-700 cursor-zoom-in group"
+            >
               <img
                 src={product.images[0]}
                 alt={product.name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute top-3 left-3 bg-brand-900/90 text-white font-mono text-xs px-2.5 py-1 rounded font-bold">
                 Réf : {product.ref}
@@ -231,6 +237,15 @@ export default function ProductDetailPage() {
         </div>
 
       </div>
+      {lightboxIndex !== null && (
+        <PhotoLightbox
+          images={product.images.map((url) => ({ url, caption: `${product.name} (${product.ref})` }))}
+          index={lightboxIndex}
+          onIndexChange={setLightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+          title={product.name}
+        />
+      )}
     </div>
   );
 }

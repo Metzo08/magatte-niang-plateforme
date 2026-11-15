@@ -17,7 +17,7 @@ interface PhotoLightboxProps {
 }
 
 /**
- * Visionneuse photos plein écran (lightbox) avec zoom interactif compatible macOS Safari / mobile.
+ * Visionneuse photos plein écran (lightbox) avec zoom réel compatible macOS Safari / mobile.
  */
 export default function PhotoLightbox({ images, index, onIndexChange, onClose, title }: PhotoLightboxProps) {
   const total = images.length;
@@ -55,7 +55,7 @@ export default function PhotoLightbox({ images, index, onIndexChange, onClose, t
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex flex-col bg-brand-950/95 backdrop-blur-md"
+      className="fixed inset-0 z-[100] flex flex-col bg-black/95"
       role="dialog"
       aria-modal="true"
       aria-label="Visionneuse photos"
@@ -63,7 +63,7 @@ export default function PhotoLightbox({ images, index, onIndexChange, onClose, t
     >
       {/* EN-TÊTE */}
       <div
-        className="flex items-start justify-between gap-3 px-4 sm:px-6 py-3 sm:py-4 border-b border-white/10 shrink-0"
+        className="flex items-start justify-between gap-3 px-4 sm:px-6 py-3 sm:py-4 border-b border-white/10 shrink-0 bg-brand-950/90"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="min-w-0 flex-1">
@@ -81,9 +81,10 @@ export default function PhotoLightbox({ images, index, onIndexChange, onClose, t
             onClick={() => setZoomed((z) => !z)}
             aria-label={zoomed ? 'Réduire le zoom' : 'Zoomer sur la photo'}
             title={zoomed ? 'Réduire (1x)' : 'Zoomer (2x)'}
-            className="w-9 h-9 flex items-center justify-center rounded-m bg-white/10 hover:bg-accent-500 text-white transition-colors"
+            className="px-2.5 h-9 flex items-center justify-center gap-1.5 rounded-m bg-white/10 hover:bg-accent-500 text-white text-xs font-mono transition-colors"
           >
             {zoomed ? <ZoomOut className="w-4 h-4" /> : <ZoomIn className="w-4 h-4" />}
+            <span className="hidden sm:inline">{zoomed ? '1x' : 'Zoom'}</span>
           </button>
           <button
             type="button"
@@ -98,17 +99,19 @@ export default function PhotoLightbox({ images, index, onIndexChange, onClose, t
 
       {/* PHOTO GRAND FORMAT */}
       <div
-        className={`relative flex-1 min-h-0 flex items-center justify-center px-3 sm:px-16 py-4 ${
-          zoomed ? 'overflow-auto' : 'overflow-hidden'
+        className={`relative flex-1 min-h-0 ${
+          zoomed
+            ? 'overflow-auto p-4 sm:p-8'
+            : 'flex items-center justify-center px-3 sm:px-16 py-4 overflow-hidden'
         }`}
         onClick={(e) => e.stopPropagation()}
       >
-        {total > 1 && (
+        {total > 1 && !zoomed && (
           <button
             type="button"
             onClick={goPrev}
             aria-label="Photo précédente"
-            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-black/60 hover:bg-accent-500 text-white transition-colors"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-black/70 hover:bg-accent-500 text-white transition-colors"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -119,24 +122,24 @@ export default function PhotoLightbox({ images, index, onIndexChange, onClose, t
           alt={current.caption || 'Photo agrandie'}
           onClick={() => setZoomed((z) => !z)}
           title={zoomed ? 'Cliquer pour dézoomer' : 'Cliquer pour zoomer'}
-          className={`object-contain rounded-m shadow-2xl border border-white/10 transition-transform duration-200 ${
+          className={`rounded-m shadow-2xl border border-white/10 ${
             zoomed
-              ? 'w-auto h-auto max-w-none max-h-none scale-150 sm:scale-175 cursor-zoom-out my-auto'
-              : 'w-auto h-auto max-w-[92vw] max-h-[calc(100dvh-180px)] cursor-zoom-in'
+              ? 'block mx-auto w-[170vw] sm:w-[135vw] max-w-none h-auto object-contain cursor-zoom-out'
+              : 'block w-auto h-auto max-w-[92vw] max-h-[calc(100dvh-180px)] object-contain cursor-zoom-in'
           }`}
         />
-        {total > 1 && (
+        {total > 1 && !zoomed && (
           <button
             type="button"
             onClick={goNext}
             aria-label="Photo suivante"
-            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-black/60 hover:bg-accent-500 text-white transition-colors"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-black/70 hover:bg-accent-500 text-white transition-colors"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
         )}
-        {total > 1 && (
-          <span className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 text-[11px] font-mono text-neutral-300 bg-brand-950/80 px-2.5 py-1 rounded tabular-nums">
+        {total > 1 && !zoomed && (
+          <span className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 text-[11px] font-mono text-neutral-300 bg-brand-950/85 px-2.5 py-1 rounded tabular-nums">
             {index + 1} / {total}
           </span>
         )}
@@ -145,7 +148,7 @@ export default function PhotoLightbox({ images, index, onIndexChange, onClose, t
       {/* STRIP DE MINIATURES CLIQUABLES */}
       {total > 1 && (
         <div
-          className="shrink-0 border-t border-white/10 px-4 py-3 overflow-x-auto"
+          className="shrink-0 border-t border-white/10 px-4 py-3 overflow-x-auto bg-brand-950/90"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex gap-2 justify-center min-w-min">
