@@ -57,6 +57,35 @@ function encodeS3Key(key) {
   return key.split('/').map((seg) => encodeURIComponent(seg)).join('/');
 }
 
+async function existsOnPublicR2(s3Key) {
+  if (!PUBLIC_URL) return false;
+  try {
+    const res = await fetch(`${PUBLIC_URL}/${encodeS3Key(s3Key)}`, { method: 'HEAD' });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
+
+async function uploadFileWithRetry(localPath, s3Key, maxRetries = 3) {
+  if (await existsOnPublicR2(s3Key)) {
+    return 'skipped';
+  }
+  let lastErr;
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      await uploadFile(localPath, s3Key);
+      return 'uploaded';
+    } catch (err) {
+      lastErr = err;
+      if (attempt < maxRetries) {
+        await new Promise((r) => setTimeout(r, 800 * attempt));
+      }
+    }
+  }
+  throw lastErr;
+}
+
 async function uploadFile(localPath, s3Key) {
   const body = fs.readFileSync(localPath);
   const payloadHash = sha256Hex(body);
@@ -155,14 +184,14 @@ async function main() {
 
   let done = 0;
   let failed = 0;
-  const concurrency = 8;
+  const concurrency = 4;
   let cursor = 0;
 
   async function worker() {
     while (cursor < files.length) {
       const item = files[cursor++];
       try {
-        await uploadFile(item.fullPath, item.key);
+        await uploadFileWithRetry(item.fullPath, item.key);
         done++;
         if (done % 50 === 0 || done === files.length) {
           console.log(`Progression : ${done}/${files.length} fichiers envoyes`);
