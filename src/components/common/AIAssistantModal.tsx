@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import {
   X,
@@ -44,7 +45,7 @@ const INITIAL_MESSAGES: ChatMessage[] = [
 • **PGT (Dubaï - Ajman & Inde)** : Sourcing international, fret conteneurisé FCL/LCL & transit PAD · WhatsApp **+971 52 763 1629**.
 
 Posez-moi n'importe quelle question ou demandez un **calcul instantané** (ex: *"120 m² de carrelage 60×60"*, *"1 000 agglos 15×20×40"*, *"30 m³ béton C25"*) !`,
-    timestamp: new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }),
+    timestamp: 'En ligne',
     sources: [
       { title: 'Plaquette institutionnelle écosystème 2026', ref: 'PLA-CORP-2026', link: '/entites' }
     ],
@@ -153,6 +154,10 @@ function FormattedMessage({ text }: { text: string }) {
 
 export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({ isOpen, onClose }) => {
   const AVATAR_URL = '/chatbot-macon.svg';
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   const [messages, setMessages] = useState<ChatMessage[]>(INITIAL_MESSAGES);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
@@ -186,7 +191,7 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({ isOpen, onCl
         id: `b-${Date.now()}`,
         sender: 'assistant',
         text: responseText,
-        timestamp: new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }),
+        timestamp: 'En ligne',
         sources,
         suggestedAction,
         followUpQuestions
@@ -223,15 +228,20 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({ isOpen, onCl
     setMessages(INITIAL_MESSAGES);
   };
 
-  if (!isOpen) return null;
+  if (!isOpen || !mounted) return null;
 
-  return (
+  return createPortal(
     <div
       role="dialog"
       aria-modal="true"
-      className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-brand-950/80 backdrop-blur-sm animate-in fade-in duration-200"
+      style={{ width: '100vw', height: '100vh' }}
+      onClick={onClose}
+      className="fixed top-0 right-0 bottom-0 left-0 z-[9999] flex items-center justify-center p-2 sm:p-4 bg-black/80"
     >
-      <div className="bg-white dark:bg-brand-900 border border-neutral-300 dark:border-brand-700 w-full max-w-2xl h-[min(660px,calc(100dvh-1.5rem))] max-h-[94dvh] rounded-xl shadow-elev-3 flex flex-col overflow-hidden">
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="bg-white dark:bg-brand-900 border border-neutral-300 dark:border-brand-700 w-full max-w-2xl h-[min(660px,calc(100vh-1.5rem))] max-h-[94vh] rounded-xl shadow-elev-3 flex flex-col overflow-hidden"
+      >
 
         {/* HEADER (compact & shrink-0) */}
         <div className="shrink-0 px-3.5 sm:px-4 py-2.5 sm:py-3 bg-brand-900 text-white flex items-center justify-between border-b border-brand-800">
@@ -413,6 +423,7 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({ isOpen, onCl
         </form>
 
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };

@@ -58,14 +58,16 @@ export function RootLayoutClient({ children }: { children: React.ReactNode }) {
       />
 
       {/* BOUTON FLOTTANT ASSISTANT IA (EN BAS À DROITE) */}
-      <div className="fixed bottom-20 lg:bottom-6 right-4 sm:right-6 z-40 flex items-center group">
+      <div className="fixed bottom-20 lg:bottom-6 right-4 sm:right-6 z-[90] flex items-center group">
         {/* Tooltip interactif */}
-        <div className="hidden sm:flex items-center gap-2 mr-3 px-3 py-1.5 bg-brand-900/95 dark:bg-brand-950/95 text-white text-xs font-semibold rounded-full shadow-elev-3 border border-brand-700/80 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none translate-x-2 group-hover:translate-x-0">
+        <div className="hidden sm:flex items-center gap-2 mr-3 px-3 py-1.5 bg-brand-900/95 dark:bg-brand-950/95 text-white text-xs font-semibold rounded-full shadow-elev-3 border border-brand-700/80 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none translate-x-2 group-hover:translate-x-0">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
           <span>Besoin d'un conseil ? Assistant IA BTP</span>
         </div>
 
         <button
+          type="button"
+          style={{ cursor: 'pointer' }}
           onClick={() => setIsAIOpen(true)}
           className="relative flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-tr from-accent-600 via-accent-500 to-amber-500 hover:from-accent-500 hover:to-accent-600 text-white shadow-elev-3 hover:shadow-[0_0_25px_rgba(242,106,27,0.6)] transform hover:scale-110 active:scale-95 transition-all duration-300 border-2 border-white/40 focus:outline-none focus:ring-4 focus:ring-accent-500/40"
           aria-label="Ouvrir l'Assistant IA Technique BTP"

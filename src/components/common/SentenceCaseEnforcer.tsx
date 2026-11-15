@@ -153,12 +153,27 @@ export function SentenceCaseEnforcer() {
 
     run();
 
-    const observer = new MutationObserver(() => {
+    const observer = new MutationObserver((mutations) => {
       if (isApplying) return;
+      const added: Node[] = [];
+      for (const m of mutations) {
+        m.addedNodes.forEach((n) => added.push(n));
+      }
+      if (added.length === 0) return;
       if (rafId !== null) cancelAnimationFrame(rafId);
       rafId = requestAnimationFrame(() => {
         rafId = null;
-        run();
+        if (isApplying) return;
+        isApplying = true;
+        try {
+          for (const n of added) {
+            if (document.body && document.body.contains(n)) {
+              normalizeRoot(n);
+            }
+          }
+        } finally {
+          isApplying = false;
+        }
       });
     });
 
@@ -166,7 +181,6 @@ export function SentenceCaseEnforcer() {
       observer.observe(document.body, {
         childList: true,
         subtree: true,
-        characterData: true,
       });
     }
 

@@ -350,7 +350,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenAI }) => {
 
       {/* ===== PANNEAU MOBILE (différent du menu desktop) ===== */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-neutral-200 dark:border-brand-800 bg-white dark:bg-brand-900 max-h-[calc(100dvh-72px)] overflow-y-auto">
+        <div className="lg:hidden border-t border-neutral-200 dark:border-brand-800 bg-white dark:bg-brand-900 max-h-[calc(100vh-72px)] overflow-y-auto">
           {/* Actions rapides */}
           <div className="flex gap-2 px-4 pt-4 pb-3">
             <button
