@@ -750,15 +750,15 @@ export function SbsLogistikGallery() {
       {/* MODAL LIGHTBOX */}
       {activePhoto && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 lg:p-6"
+          className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 lg:p-6"
           onClick={() => setActivePhoto(null)}
         >
           <div
-            className="relative bg-white dark:bg-brand-900 rounded-l max-w-5xl w-full max-h-[92vh] flex flex-col overflow-hidden shadow-2xl border border-white/10"
+            className="relative bg-white dark:bg-brand-900 rounded-l max-w-5xl w-full max-h-[92dvh] flex flex-col overflow-y-auto shadow-2xl border border-white/10"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="px-6 py-4 border-b border-neutral-200 dark:border-brand-700 flex items-center justify-between shrink-0 bg-neutral-50 dark:bg-brand-800 gap-3">
-              <div className="flex items-center gap-3 min-w-0">
+            <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-neutral-200 dark:border-brand-700 flex flex-col lg:flex-row lg:items-center justify-between shrink-0 bg-neutral-50 dark:bg-brand-800 gap-3">
+              <div className="flex items-start sm:items-center gap-2.5 sm:gap-3 min-w-0 pr-8 lg:pr-0">
                 <span className="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-600 text-white shrink-0">
                   {activePhoto.code}
                 </span>
@@ -813,14 +813,15 @@ export function SbsLogistikGallery() {
                 <button
                   type="button"
                   onClick={() => setActivePhoto(null)}
-                  className="p-1.5 rounded hover:bg-neutral-200 dark:hover:bg-brand-700 text-neutral-500"
+                  aria-label="Fermer"
+                  className="lg:static absolute top-3 right-3 p-1.5 rounded hover:bg-neutral-200 dark:hover:bg-brand-700 text-neutral-500"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
             </div>
 
-            <div className="relative flex-1 bg-neutral-950 flex items-center justify-center overflow-hidden min-h-[340px] sm:min-h-[440px]">
+            <div className="relative flex-1 bg-neutral-950 flex items-center justify-center overflow-auto min-h-[240px] sm:min-h-[380px] p-2 sm:p-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={
@@ -829,7 +830,12 @@ export function SbsLogistikGallery() {
                     : activePhoto.imageUrl
                 }
                 alt={activePhoto.title}
-                className="max-h-[62vh] w-auto max-w-full object-contain"
+                className="max-h-[52dvh] sm:max-h-[62dvh] w-auto max-w-full object-contain cursor-zoom-in"
+                onClick={(e) => {
+                  const el = e.currentTarget;
+                  el.classList.toggle('scale-150');
+                  el.classList.toggle('cursor-zoom-out');
+                }}
               />
               <button
                 type="button"
@@ -853,7 +859,7 @@ export function SbsLogistikGallery() {
               </button>
             </div>
 
-            <div className="p-5 border-t border-neutral-200 dark:border-brand-700 bg-white dark:bg-brand-850 shrink-0 space-y-2">
+            <div className="p-4 sm:p-5 border-t border-neutral-200 dark:border-brand-700 bg-white dark:bg-brand-850 shrink-0 space-y-2">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs font-mono">
                 <div className="text-neutral-600 dark:text-neutral-300">
                   <strong>Spécifications :</strong> {activePhoto.specs}

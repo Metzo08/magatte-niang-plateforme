@@ -263,7 +263,7 @@ export default function ContactPage() {
             ))}
           </div>
 
-          <form onSubmit={handleSubmit} className="p-6 space-y-5">
+          <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-4 sm:space-y-5">
             {/* Champs communs */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>

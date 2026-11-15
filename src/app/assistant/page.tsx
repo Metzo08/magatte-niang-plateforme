@@ -317,7 +317,7 @@ export default function AssistantPage() {
         </div>
 
         {/* MAIN FORM CONTAINER */}
-        <div className="max-w-3xl mx-auto bg-white dark:bg-brand-800 border border-neutral-300 dark:border-brand-700 rounded-l p-6 sm:p-10 shadow-elev-2">
+        <div className="max-w-3xl mx-auto bg-white dark:bg-brand-800 border border-neutral-300 dark:border-brand-700 rounded-l p-4 sm:p-6 lg:p-10 shadow-elev-2">
 
           <form onSubmit={handleSubmit} className="space-y-6">
 

@@ -798,7 +798,7 @@ function PanierIsolateContent() {
                   />
                 </div>
 
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   <div>
                     <label className="block text-[11px] font-semibold text-neutral-600 dark:text-neutral-400 mb-1">
                       Téléphone *

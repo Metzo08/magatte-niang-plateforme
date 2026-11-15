@@ -235,7 +235,7 @@ export default function SbsVentesLocationsTab({
           </div>
         </div>
 
-        <form onSubmit={addRentalBooking} className="grid grid-cols-2 sm:grid-cols-7 gap-2.5 p-3 rounded-m bg-neutral-50 dark:bg-brand-900/60 border border-neutral-200 dark:border-brand-700 text-xs">
+        <form onSubmit={addRentalBooking} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-2.5 p-3 rounded-m bg-neutral-50 dark:bg-brand-900/60 border border-neutral-200 dark:border-brand-700 text-xs">
           <div>
             <label className="block text-[10px] font-semibold mb-1">Date</label>
             <input

@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useCallback, useEffect } from 'react';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useCallback, useEffect, useState } from 'react';
+import { X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut } from 'lucide-react';
 
 export interface LightboxPhoto {
   url: string;
@@ -17,13 +17,16 @@ interface PhotoLightboxProps {
 }
 
 /**
- * Visionneuse photos plein écran (lightbox).
- * Affiche la photo en grand format avec sa description (légende),
- * et permet de naviguer entre toutes les photos d'une galerie.
+ * Visionneuse photos plein écran (lightbox) avec zoom interactif compatible macOS Safari / mobile.
  */
 export default function PhotoLightbox({ images, index, onIndexChange, onClose, title }: PhotoLightboxProps) {
   const total = images.length;
   const current = images[index];
+  const [zoomed, setZoomed] = useState(false);
+
+  useEffect(() => {
+    setZoomed(false);
+  }, [index]);
 
   const goPrev = useCallback(() => {
     onIndexChange(index === 0 ? total - 1 : index - 1);
@@ -58,14 +61,14 @@ export default function PhotoLightbox({ images, index, onIndexChange, onClose, t
       aria-label="Visionneuse photos"
       onClick={onClose}
     >
-      {/* EN-TÊTE : titre du projet + description de la photo + compteur + fermeture */}
+      {/* EN-TÊTE */}
       <div
-        className="flex items-start justify-between gap-4 px-4 sm:px-6 py-4 border-b border-white/10 shrink-0"
+        className="flex items-start justify-between gap-3 px-4 sm:px-6 py-3 sm:py-4 border-b border-white/10 shrink-0"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="min-w-0">
+        <div className="min-w-0 flex-1">
           {title && <p className="text-[11px] font-mono text-accent-400 truncate mb-0.5">{title}</p>}
-          <p className="text-xs sm:text-sm text-white font-medium leading-snug">
+          <p className="text-xs sm:text-sm text-white font-medium leading-snug line-clamp-2">
             {current.caption || 'Photo du chantier'}
           </p>
         </div>
@@ -74,6 +77,16 @@ export default function PhotoLightbox({ images, index, onIndexChange, onClose, t
             {index + 1} / {total}
           </span>
           <button
+            type="button"
+            onClick={() => setZoomed((z) => !z)}
+            aria-label={zoomed ? 'Réduire le zoom' : 'Zoomer sur la photo'}
+            title={zoomed ? 'Réduire (1x)' : 'Zoomer (2x)'}
+            className="w-9 h-9 flex items-center justify-center rounded-m bg-white/10 hover:bg-accent-500 text-white transition-colors"
+          >
+            {zoomed ? <ZoomOut className="w-4 h-4" /> : <ZoomIn className="w-4 h-4" />}
+          </button>
+          <button
+            type="button"
             onClick={onClose}
             aria-label="Fermer la visionneuse"
             className="w-9 h-9 flex items-center justify-center rounded-m bg-white/10 hover:bg-accent-500 text-white transition-colors"
@@ -85,14 +98,17 @@ export default function PhotoLightbox({ images, index, onIndexChange, onClose, t
 
       {/* PHOTO GRAND FORMAT */}
       <div
-        className="relative flex-1 min-h-0 flex items-center justify-center px-3 sm:px-16 py-4"
+        className={`relative flex-1 min-h-0 flex items-center justify-center px-3 sm:px-16 py-4 ${
+          zoomed ? 'overflow-auto' : 'overflow-hidden'
+        }`}
         onClick={(e) => e.stopPropagation()}
       >
         {total > 1 && (
           <button
+            type="button"
             onClick={goPrev}
             aria-label="Photo précédente"
-            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-accent-500 text-white transition-colors"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-black/60 hover:bg-accent-500 text-white transition-colors"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -101,19 +117,26 @@ export default function PhotoLightbox({ images, index, onIndexChange, onClose, t
         <img
           src={current.url}
           alt={current.caption || 'Photo agrandie'}
-          className="max-w-full max-h-full object-contain rounded-m shadow-2xl border border-white/10"
+          onClick={() => setZoomed((z) => !z)}
+          title={zoomed ? 'Cliquer pour dézoomer' : 'Cliquer pour zoomer'}
+          className={`object-contain rounded-m shadow-2xl border border-white/10 transition-transform duration-200 ${
+            zoomed
+              ? 'w-auto h-auto max-w-none max-h-none scale-150 sm:scale-175 cursor-zoom-out my-auto'
+              : 'w-auto h-auto max-w-[92vw] max-h-[calc(100dvh-180px)] cursor-zoom-in'
+          }`}
         />
         {total > 1 && (
           <button
+            type="button"
             onClick={goNext}
             aria-label="Photo suivante"
-            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-accent-500 text-white transition-colors"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-black/60 hover:bg-accent-500 text-white transition-colors"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
         )}
         {total > 1 && (
-          <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-[11px] font-mono text-neutral-300 bg-brand-950/80 px-2.5 py-1 rounded tabular-nums">
+          <span className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 text-[11px] font-mono text-neutral-300 bg-brand-950/80 px-2.5 py-1 rounded tabular-nums">
             {index + 1} / {total}
           </span>
         )}
@@ -128,6 +151,7 @@ export default function PhotoLightbox({ images, index, onIndexChange, onClose, t
           <div className="flex gap-2 justify-center min-w-min">
             {images.map((img, i) => (
               <button
+                type="button"
                 key={i}
                 onClick={() => onIndexChange(i)}
                 aria-label={`Voir la photo ${i + 1}`}

@@ -485,7 +485,7 @@ export default function SbsPresentationGallery() {
       {/* ================================================================= */}
       {activePhoto && (
         <div
-          className="fixed inset-0 z-50 bg-black/92 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 md:p-6"
+          className="fixed inset-0 z-[100] bg-black/92 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 md:p-6"
           onClick={() => setActivePhoto(null)}
         >
           <div
@@ -639,7 +639,7 @@ export default function SbsPresentationGallery() {
       {/* LIGHTBOX FOR SLIDES VIEW */}
       {activeSlide && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 md:p-6"
+          className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 md:p-6"
           onClick={() => setActiveSlide(null)}
         >
           <div

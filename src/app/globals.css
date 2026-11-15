@@ -245,3 +245,20 @@ h1, h2, h3, h4, h5, h6, .font-title {
 .uppercase {
   text-transform: none !important;
 }
+
+/* Correctifs formulaires mobile, tablette & Safari macOS/iOS */
+input,
+select,
+textarea {
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  input:not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
