@@ -328,7 +328,8 @@ Livraison rapide sur chantier à Dakar, Diamniadio, Thiès, Saly et partout au S
 • **Élimination des intermédiaires :** Garantit les prix les plus compétitifs du marché aux promoteurs et constructeurs au Sénégal.
 • **Fret maritime & logistique portuaire :** Gestion complète du transport conteneurisé jusqu'au Port Autonome de Dakar (PAD).
 • **Dédouanement express :** Prise en charge des formalités douanières et sécurisation du transit.
-• **Livraison directe sur site :** Acheminement rapide jusqu'au chantier du client sans rupture de charge.`,
+• **Livraison directe sur site :** Acheminement rapide jusqu'au chantier du client sans rupture de charge.
+• **Contact direct PGT Dubaï - Ajman (WhatsApp) :** **+971 52 763 1629**`,
     sources: [
       { title: 'Fiche d\'activité Sourcing & Fret PGT', ref: 'PGT-TRAD-2026', link: '/entites/pgt' }
     ],

@@ -196,7 +196,12 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
               <div className="space-y-3 text-sm">
                 <div className="flex items-center gap-3">
                   <Phone className="w-4 h-4 shrink-0 text-white/80" />
-                  <a href={`tel:${entity.phone}`} className="hover:underline text-white">
+                  <a
+                    href={id === 'pgt' ? 'https://wa.me/971527631629' : `tel:${entity.phone}`}
+                    target={id === 'pgt' ? '_blank' : undefined}
+                    rel={id === 'pgt' ? 'noopener noreferrer' : undefined}
+                    className="hover:underline text-white"
+                  >
                     {entity.phone}
                   </a>
                 </div>

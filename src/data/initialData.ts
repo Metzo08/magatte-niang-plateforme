@@ -291,7 +291,7 @@ export const ENTITIES: EntityInfo[] = [
     address: 'Dakar, Sénégal · Bureau Dubaï - Ajman (Émirats Arabes Unis)',
     city: 'Dakar / Dubaï - Ajman',
     country: 'Sénégal & ÉAU',
-    phone: '+221 78 832 12 79 / PGT DUBAI - AJMAN : +971 52 763 1629',
+    phone: '+971 52 763 1629',
     email: 'pgt.senegal@gmail.com',
     whatsapp: '+971 52 763 1629',
     ctaText: 'Lancer un sourcing international',
