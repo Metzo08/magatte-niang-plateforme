@@ -496,7 +496,7 @@ export default function SbsLaboGalleryCategories() {
                   <img
                     src={cat.coverImage}
                     alt={cat.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-brand-950/35 to-transparent" />
@@ -711,7 +711,7 @@ export default function SbsLaboGalleryCategories() {
                         <img
                           src={ex.src}
                           alt={ex.title}
-                          className="w-full h-full object-cover"
+                          className="absolute inset-0 w-full h-full object-cover"
                         />
                       </button>
                     ))}

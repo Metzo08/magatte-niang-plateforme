@@ -98,11 +98,11 @@ export default function ProductDetailPage() {
           
           {/* PRODUCT VISUAL (1:1 ZOOM § 30.2) */}
           <div className="lg:col-span-6 space-y-3">
-            <div className="relative aspect-[1/1] rounded-m overflow-hidden bg-neutral-100 border border-neutral-200 dark:border-brand-700">
+            <div className="relative aspect-square w-full rounded-m overflow-hidden bg-neutral-100 border border-neutral-200 dark:border-brand-700">
               <img
                 src={product.images[0]}
                 alt={product.name}
-                className="w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute top-3 left-3 bg-brand-900/90 text-white font-mono text-xs px-2.5 py-1 rounded font-bold">
                 Réf : {product.ref}

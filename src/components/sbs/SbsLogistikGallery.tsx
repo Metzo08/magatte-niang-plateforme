@@ -541,7 +541,7 @@ export function SbsLogistikGallery() {
                         src={item.imageUrl}
                         alt={item.title}
                         loading="lazy"
-                        className={`relative z-10 w-full h-full transition-transform duration-500 group-hover:scale-105 ${
+                        className={`absolute inset-0 z-10 w-full h-full transition-transform duration-500 group-hover:scale-105 ${
                           isPortraitOrSquare ? 'object-contain p-1.5 drop-shadow-sm' : 'object-cover'
                         }`}
                       />
@@ -724,7 +724,7 @@ export function SbsLogistikGallery() {
                     src={slide.slideSrc}
                     alt={slide.title}
                     loading="lazy"
-                    className="w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
                   <div className="absolute top-2 left-2 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-brand-900/90 text-white">
                     Planche {String(slide.pageNum).padStart(2, '0')} / 37

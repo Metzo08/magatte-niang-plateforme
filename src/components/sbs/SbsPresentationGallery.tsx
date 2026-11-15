@@ -240,7 +240,7 @@ export default function SbsPresentationGallery() {
           </div>
 
           {/* Live Search */}
-          <div className="relative min-w-[280px]">
+          <div className="relative w-full sm:min-w-[280px]">
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400" />
             <input
               type="text"
@@ -324,7 +324,7 @@ export default function SbsPresentationGallery() {
                     src={photo.imageUrl}
                     alt={photo.title}
                     loading="lazy"
-                    className={`relative z-10 w-full h-full group-hover:scale-105 transition-transform duration-500 ease-out ${
+                    className={`absolute inset-0 z-10 w-full h-full group-hover:scale-105 transition-transform duration-500 ease-out ${
                       isPortrait ? 'object-contain p-1' : 'object-cover'
                     }`}
                   />
@@ -444,7 +444,7 @@ export default function SbsPresentationGallery() {
                   src={slide.imageUrl}
                   alt={slide.title}
                   loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <span className="px-3 py-1.5 bg-accent-500 text-white text-xs font-semibold rounded-lg flex items-center gap-1.5 shadow-lg">

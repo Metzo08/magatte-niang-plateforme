@@ -45,6 +45,12 @@
   --accent-soft: #231B15;
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
 body {
   font-family: var(--font-inter);
   background-color: var(--bg-base);
@@ -52,8 +58,6 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Les blobs décoratifs flous ne doivent jamais créer de défilement horizontal */
-  overflow-x: hidden;
 }
 
 /* Tabular figures for numbers as required in § 27.3 */
@@ -240,4 +244,17 @@ h1, h2, h3, h4, h5, h6, .font-title {
 /* Règle typographique : première lettre en majuscule, tout le reste en minuscule */
 .uppercase {
   text-transform: none !important;
+}
+
+/* Correctif Safari / macOS WebKit : empêcher les dimensions intrinsèques d'image de déformer les conteneurs aspect-ratio */
+@supports (aspect-ratio: 1 / 1) {
+  [class*="aspect-"] {
+    position: relative;
+  }
+  [class*="aspect-"] > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
 }

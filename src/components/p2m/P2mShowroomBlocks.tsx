@@ -480,7 +480,7 @@ export default function P2mShowroomBlocks({
                   <img
                     src={block.coverImage}
                     alt={block.shortTitle}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
@@ -749,7 +749,7 @@ export default function P2mShowroomBlocks({
                                 src={primaryImage}
                                 alt={product.name}
                                 loading="lazy"
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                               />
 
                               <span className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-brand-950/90 text-white font-mono text-[10px] font-bold">
@@ -916,7 +916,7 @@ export default function P2mShowroomBlocks({
                     src={img.src}
                     alt={img.caption}
                     loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent p-1.5 text-[10px] leading-tight text-white line-clamp-2">
                     {img.caption}

@@ -114,12 +114,12 @@ export default function EntitiesPage() {
               className="group bg-white dark:bg-brand-800 border border-neutral-300 dark:border-brand-700 hover:border-brand-600 dark:hover:border-accent-500 rounded-l shadow-elev-1 hover:shadow-elev-3 transition-all flex flex-col overflow-hidden"
             >
               {/* Photo officielle de l'entité */}
-              <div className="relative h-40 bg-neutral-200 dark:bg-brand-900 overflow-hidden shrink-0">
+              <div className="relative aspect-[16/10] w-full bg-neutral-200 dark:bg-brand-900 overflow-hidden shrink-0">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={ENTITY_IMAGES[entity.id] || SITE_IMAGES.architectureHero}
                   alt={entity.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />

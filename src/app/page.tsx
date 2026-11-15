@@ -454,7 +454,7 @@ export default function HomePage() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           {[
             { img: PHOTOS_REELLES.cesStockageSendou, label: 'Stockage produits chimiques', tag: 'CES · SENDOU' },
             { img: PHOTOS_REELLES.dlmUsineOxygeneMako, label: 'Usine d\'oxygène PSA 6T/j', tag: 'DLM · MAKO' },
@@ -467,13 +467,13 @@ export default function HomePage() {
           ].map((item, idx) => (
             <div
               key={idx}
-              className="group relative rounded-l overflow-hidden border border-neutral-200 dark:border-brand-700 shadow-elev-1 hover:shadow-elev-3 transition-all aspect-[4/3]"
+              className="group relative w-full rounded-l overflow-hidden border border-neutral-200 dark:border-brand-700 shadow-elev-1 hover:shadow-elev-3 transition-all aspect-[4/3]"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={item.img}
                 alt={item.label}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />

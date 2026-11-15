@@ -152,12 +152,14 @@ export default function ExpertisesPage() {
               Notre écosystème intègre l'ensemble des expertises nécessaires pour sécuriser vos ouvrages de la phase conception jusqu'à la livraison finale.
             </p>
           </div>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={SITE_IMAGES.rubonChantier}
-            alt="Chantier d'ingénierie Magatte Niang Expert"
-            className="w-full h-56 sm:h-72 object-cover rounded-l border border-neutral-200 dark:border-brand-700 shadow-elev-2"
-          />
+          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-l border border-neutral-200 dark:border-brand-700 shadow-elev-2 bg-neutral-100 dark:bg-brand-900">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={SITE_IMAGES.rubonChantier}
+              alt="Chantier d'ingénierie Magatte Niang Expert"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
         </div>
 
         {/* DOMAINS GRID */}
@@ -168,13 +170,15 @@ export default function ExpertisesPage() {
               id={dom.id}
               className="scroll-mt-28 bg-white dark:bg-brand-850 border border-neutral-300 dark:border-brand-700 rounded-l shadow-sm flex flex-col justify-between overflow-hidden"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={dom.image}
-                alt={dom.title}
-                className="w-full h-44 object-cover"
-                loading="lazy"
-              />
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-100 dark:bg-brand-900 shrink-0">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={dom.image}
+                  alt={dom.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
               <div className="p-6 sm:p-8 space-y-4">
                 <div className="flex items-center justify-between">
                   <div

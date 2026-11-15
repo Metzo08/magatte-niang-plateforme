@@ -119,7 +119,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenAI }) => {
   };
 
   const navLinkClass = (isActive: boolean) =>
-    `relative px-3 py-2 text-[13px] font-semibold tracking-wide transition-colors rounded-m ${
+    `relative px-2 xl:px-3 py-2 text-[13px] font-semibold tracking-wide whitespace-nowrap transition-colors rounded-m ${
       isActive
         ? 'text-accent-600 dark:text-accent-400'
         : 'text-neutral-700 dark:text-neutral-300 hover:text-accent-600 dark:hover:text-accent-400'
@@ -350,7 +350,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenAI }) => {
 
       {/* ===== PANNEAU MOBILE (différent du menu desktop) ===== */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-neutral-200 dark:border-brand-800 bg-white dark:bg-brand-900 max-h-[calc(100vh-80px)] overflow-y-auto">
+        <div className="lg:hidden border-t border-neutral-200 dark:border-brand-800 bg-white dark:bg-brand-900 max-h-[calc(100dvh-72px)] overflow-y-auto">
           {/* Actions rapides */}
           <div className="flex gap-2 px-4 pt-4 pb-3">
             <button

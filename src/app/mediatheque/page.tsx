@@ -5,6 +5,7 @@ import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { PUBLICATIONS } from '@/data/initialData';
 import { SITE_IMAGES } from '@/data/siteImages';
 import SbsPresentationGallery from '@/components/sbs/SbsPresentationGallery';
+import { EcosystemPromoVideoPlayer } from '@/components/video/EcosystemPromoVideoPlayer';
 import { Layers } from 'lucide-react';
 import {
   Newspaper, Image, FileText, Download, Mail, Phone, Calendar,
@@ -45,6 +46,19 @@ export default function MediathequePage() {
             l'écosystème Magatte Niang · mis à disposition des journalistes, partenaires et clients.
           </p>
         </div>
+      </section>
+
+      {/* FILM PROMOTIONNEL OFFICIEL VOIX OFF */}
+      <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-14 border-b border-neutral-200 dark:border-brand-700">
+        <div className="mb-6">
+          <span className="text-xs font-mono font-bold text-accent-500 uppercase tracking-wider">
+            Film institutionnel 2026 · Voix Off Française
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-title font-bold text-neutral-900 dark:text-white mt-1">
+            Présentation vidéo des 7 entités de l&apos;écosystème Magatte Niang
+          </h2>
+        </div>
+        <EcosystemPromoVideoPlayer />
       </section>
 
       {/* COMMUNIQUÉS DE PRESSE */}
@@ -116,16 +130,16 @@ export default function MediathequePage() {
           Visuels officiels des entités du groupe, à réutiliser librement pour toute couverture
           presse, présentation partenaire ou dossier institutionnel (crédit photo apprécié).
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {medias.map((m, idx) => (
             <figure key={idx} className="group relative overflow-hidden rounded-l border border-neutral-200 dark:border-brand-700 bg-neutral-100 dark:bg-brand-800">
-              <div className="aspect-square">
+              <div className="relative aspect-square w-full overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={m.src}
                   alt={m.label}
                   loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-2 text-[11px] leading-tight text-white">
