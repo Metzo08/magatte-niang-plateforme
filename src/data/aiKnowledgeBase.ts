@@ -1,5 +1,5 @@
 /**
- * Moteur de Connaissances Hybride & Omniscient de l'Assistant IA Technique BTP
+ * Moteur de Connaissances Hybride de l'Assistant IA Technique BTP
  * Écosystème Magatte Niang Expert :
  *  1. SERMA BTP (Bureau d'études, modélisation 3D/BIM, charpente métallique, AMO)
  *  2. SB-S Group (Stein Bauer Sénégal Group · Génie civil, grands travaux, VRD, ouvrages d'art)
@@ -783,7 +783,7 @@ export const AI_KNOWLEDGE_BASE: KnowledgeTopic[] = [
       'qui es tu', 'comment ca marche', 'que faites vous', 'pouvez vous',
       'bienvenue', 'assistance'
     ],
-    title: 'Accueil · Assistant IA Omniscient de l\'Écosystème Magatte Niang Expert',
+    title: 'Accueil · Assistant IA de l\'Écosystème Magatte Niang Expert',
     answer: `Bonjour et bienvenue ! Je suis l'assistant technique et commercial de l'écosystème **Magatte Niang Expert**. Je connais **toutes les 7 entités**, **tous les produits et tarifs**, **tous les engins**, **tous les essais de laboratoire** et **toutes les réalisations** du groupe :
 
 • **1. SERMA BTP** : Études techniques, modélisation 3D/BIM, charpente métallique (4 500 T/an, portée > 42m), pylônes, stations-service, IGH & maîtrise d'œuvre (+221 78 832 12 79).

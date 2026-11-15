@@ -33,7 +33,7 @@ const INITIAL_MESSAGES: ChatMessage[] = [
   {
     id: 'm-init',
     sender: 'assistant',
-    text: `Bonjour ! Je suis l'assistant IA omniscient de l'écosystème **Magatte Niang Expert**. Je maîtrise en temps réel l'intégralité de nos **7 entités**, nos stocks, nos grilles tarifaires et nos réalisations :
+    text: `Bonjour ! Je suis l'assistant IA de l'écosystème **Magatte Niang Expert**. Je maîtrise en temps réel l'intégralité de nos **7 entités**, nos stocks, nos grilles tarifaires et nos réalisations :
 
 • **SERMA BTP** : Études techniques, modélisation 3D/BIM, charpente métallique (> 42m), pylônes, stations-service, IGH & maîtrise d'œuvre (+221 78 832 12 79).
 • **SB-S Group** : Génie civil, grands travaux, VRD & industrie · Oumou DIOP (+221 77 203 84 38 / +221 33 871 08 61).
@@ -239,7 +239,7 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({ isOpen, onCl
             <img src={AVATAR_URL} alt="Maçon assistant" className="w-8 h-8 rounded-m border border-brand-700 shrink-0" />
             <div>
               <h3 className="font-title font-bold text-xs sm:text-sm text-white flex items-center gap-1.5 flex-wrap">
-                Assistant IA Omniscient · 7 Entités BTP
+                Assistant IA Technique · 7 Entités BTP
                 <span className="text-[10px] font-mono px-1.5 py-0.2 bg-emerald-900/80 text-emerald-300 border border-emerald-700 rounded inline-flex items-center gap-1">
                   <Sparkles className="w-2.5 h-2.5" /> Temps réel & Calculateur
                 </span>
