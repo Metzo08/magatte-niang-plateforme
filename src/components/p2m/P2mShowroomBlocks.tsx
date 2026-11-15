@@ -755,12 +755,12 @@ export default function P2mShowroomBlocks({
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                               />
 
-                              <span className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-brand-950/90 text-white font-mono text-[10px] font-bold">
+                              <span className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-brand-950/90 text-white font-mono text-[10px] font-bold pointer-events-none">
                                 {product.ref}
                               </span>
 
                               <span
-                                className={`absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-bold text-white ${
+                                className={`absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-bold text-white pointer-events-none ${
                                   product.availability === 'En stock'
                                     ? 'bg-emerald-600'
                                     : product.availability === 'Sur commande'
@@ -772,7 +772,7 @@ export default function P2mShowroomBlocks({
                               </span>
 
                               {images.length > 1 && (
-                                <span className="absolute bottom-2.5 left-2.5 px-2 py-0.5 rounded bg-black/70 text-white font-mono text-[10px]">
+                                <span className="absolute bottom-2.5 left-2.5 px-2 py-0.5 rounded bg-black/70 text-white font-mono text-[10px] pointer-events-none">
                                   {images.length} photos
                                 </span>
                               )}

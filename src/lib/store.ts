@@ -98,29 +98,41 @@ const DEFAULT_PROFILE: ProProfile = {
 };
 
 class PlatformStore {
+  private memoryStorage: Record<string, string> = {};
+
   private isBrowser(): boolean {
     return typeof window !== 'undefined';
   }
 
-  // Generic getter / setter
+  // Generic getter / setter with in-memory fallback for Safari Private / strict storage
   private getItem<T>(key: string, defaultValue: T): T {
     if (!this.isBrowser()) return defaultValue;
     try {
-      const stored = localStorage.getItem(key);
+      const stored = localStorage.getItem(key) ?? this.memoryStorage[key];
       return stored ? JSON.parse(stored) : defaultValue;
     } catch {
-      return defaultValue;
+      try {
+        const mem = this.memoryStorage[key];
+        return mem ? JSON.parse(mem) : defaultValue;
+      } catch {
+        return defaultValue;
+      }
     }
   }
 
   private setItem<T>(key: string, value: T): void {
     if (!this.isBrowser()) return;
+    const serialized = JSON.stringify(value);
+    this.memoryStorage[key] = serialized;
     try {
-      localStorage.setItem(key, JSON.stringify(value));
-      // Dispatch custom storage event for sync
-      window.dispatchEvent(new Event('storage-update'));
+      localStorage.setItem(key, serialized);
     } catch (e) {
-      console.error('Failed to save to localStorage:', e);
+      console.error('Failed to save to localStorage (using memory fallback):', e);
+    }
+    try {
+      window.dispatchEvent(new Event('storage-update'));
+    } catch {
+      // Ignore event dispatch errors
     }
   }
 
@@ -512,7 +524,8 @@ class PlatformStore {
   }
 
   getCart(entityId: CartEntityId = 'p2m'): CartItem[] {
-    return this.getItem<CartItem[]>(this.getCartStorageKey(entityId), []);
+    const items = this.getItem<CartItem[]>(this.getCartStorageKey(entityId), []);
+    return Array.isArray(items) ? items : [];
   }
 
   getCartCount(entityId: CartEntityId = 'p2m'): number {

@@ -101,21 +101,41 @@ export default function ProductDetailPage() {
           {/* PRODUCT VISUAL (1:1 ZOOM § 30.2) */}
           <div className="lg:col-span-6 space-y-3">
             <div
+              role="button"
+              tabIndex={0}
+              style={{ cursor: 'pointer' }}
               onClick={() => setLightboxIndex(0)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setLightboxIndex(0);
+                }
+              }}
               title="Cliquer pour agrandir et zoomer"
-              className="relative h-72 sm:h-96 w-full rounded-m overflow-hidden bg-neutral-100 border border-neutral-200 dark:border-brand-700 cursor-zoom-in group"
+              className="relative h-72 sm:h-96 w-full rounded-m overflow-hidden bg-neutral-100 border border-neutral-200 dark:border-brand-700 cursor-pointer group"
             >
               <img
                 src={product.images[0]}
                 alt={product.name}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
-              <div className="absolute top-3 left-3 bg-brand-900/90 text-white font-mono text-xs px-2.5 py-1 rounded font-bold">
+              <div className="absolute top-3 left-3 bg-brand-900/90 text-white font-mono text-xs px-2.5 py-1 rounded font-bold pointer-events-none">
                 Réf : {product.ref}
               </div>
-              <div className="absolute bottom-3 left-3 bg-emerald-600 text-white font-mono text-xs font-bold px-2.5 py-1 rounded">
+              <div className="absolute bottom-3 left-3 bg-emerald-600 text-white font-mono text-xs font-bold px-2.5 py-1 rounded pointer-events-none">
                 {product.availability}
               </div>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setLightboxIndex(0);
+                }}
+                aria-label="Zoomer sur le produit"
+                className="absolute bottom-3 right-3 px-3 py-1.5 rounded-m bg-black/75 hover:bg-accent-500 text-white text-xs font-mono font-bold transition-colors cursor-pointer"
+              >
+                Zoomer
+              </button>
             </div>
           </div>
 
@@ -194,8 +214,9 @@ export default function ProductDetailPage() {
 
                 <div className="flex-1 self-end">
                   <button
+                    type="button"
                     onClick={handleAdd}
-                    className={`w-full py-2.5 px-4 rounded-m text-sm font-bold transition-all flex items-center justify-center gap-2 shadow-sm ${
+                    className={`w-full py-2.5 px-4 rounded-m text-sm font-bold transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer ${
                       isAdded
                         ? 'bg-emerald-600 text-white'
                         : 'bg-accent-500 hover:bg-accent-600 text-white'

@@ -697,7 +697,7 @@ export default function SbsIndustriesPublicCatalog({
                     <ZoomIn className="w-3.5 h-3.5" />
                   </div>
                   <span
-                    className={`absolute top-2 right-2 px-2 py-0.5 rounded text-[10px] font-bold ${
+                    className={`absolute top-2 right-2 px-2 py-0.5 rounded text-[10px] font-bold pointer-events-none ${
                       AVAILABILITY_STYLES[p.availability] || 'bg-neutral-100 text-neutral-700'
                     }`}
                   >

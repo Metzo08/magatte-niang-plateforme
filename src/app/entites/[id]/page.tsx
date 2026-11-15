@@ -343,6 +343,9 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
               {gallery.map((img, idx: number) => (
                 <figure
                   key={idx}
+                  role="button"
+                  tabIndex={0}
+                  style={{ cursor: 'pointer' }}
                   onClick={() =>
                     setLightbox({
                       images: gallery.map((g) => ({ url: g.src, caption: g.caption })),
@@ -350,8 +353,18 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
                       title: entity.name,
                     })
                   }
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      setLightbox({
+                        images: gallery.map((g) => ({ url: g.src, caption: g.caption })),
+                        index: idx,
+                        title: entity.name,
+                      });
+                    }
+                  }}
                   title="Cliquer pour agrandir et zoomer"
-                  className="group relative overflow-hidden rounded-l border border-neutral-200 dark:border-brand-700 bg-neutral-100 dark:bg-brand-800 cursor-zoom-in"
+                  className="group relative overflow-hidden rounded-l border border-neutral-200 dark:border-brand-700 bg-neutral-100 dark:bg-brand-800 cursor-pointer"
                 >
                   <div className="relative h-44 sm:h-48 w-full overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
