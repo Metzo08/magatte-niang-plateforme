@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const mediaBaseUrl = (process.env.NEXT_PUBLIC_MEDIA_BASE_URL || '').replace(/\/+$/, '');
+
 const nextConfig = {
   reactStrictMode: true,
   images: {
@@ -9,6 +11,21 @@ const nextConfig = {
         hostname: '**',
       },
     ],
+  },
+  redirects: async () => {
+    if (!mediaBaseUrl) return [];
+    return [
+      {
+        source: '/images/:path*',
+        destination: `${mediaBaseUrl}/images/:path*`,
+        permanent: false,
+      },
+      {
+        source: '/videos/:path*',
+        destination: `${mediaBaseUrl}/videos/:path*`,
+        permanent: false,
+      },
+    ];
   },
   headers: async () => [
     {
