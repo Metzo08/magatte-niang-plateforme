@@ -583,7 +583,17 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
                   sub: 'Équipements, matériels & matériaux',
                   color: '#C0562F',
                 },
-              ].map((node, i, arr) => (
+              ].map((node, i, arr) => {
+                const matchedSyn = entity.synergies?.find((s: any) => s.entityId === node.id);
+                const connLabel =
+                  node.id === id
+                    ? 'Entité actuelle'
+                    : matchedSyn?.connectionType === 'indirecte'
+                      ? 'Connexion indirecte'
+                      : matchedSyn?.connectionType === 'directe'
+                        ? 'Connexion directe'
+                        : null;
+                return (
                 <React.Fragment key={node.id}>
                   <Link
                     href={`/entites/${node.id}`}
@@ -607,6 +617,19 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
                     <span className="text-[11px] text-neutral-300 block leading-snug">
                       {node.sub}
                     </span>
+                    {connLabel && (
+                      <span
+                        className={`mt-2 inline-block text-[10px] font-mono px-2 py-0.5 rounded-full border ${
+                          connLabel === 'Connexion indirecte'
+                            ? 'bg-slate-800/90 text-slate-200 border-slate-600'
+                            : connLabel === 'Connexion directe'
+                              ? 'bg-emerald-500/20 text-emerald-300 border-emerald-400/40'
+                              : 'bg-accent-500/25 text-accent-200 border-accent-400/40'
+                        }`}
+                      >
+                        {connLabel}
+                      </span>
+                    )}
                   </Link>
 
                   {i < arr.length - 1 && (
@@ -623,7 +646,8 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
                     </>
                   )}
                 </React.Fragment>
-              ))}
+                );
+              })}
             </div>
           </div>
 

@@ -20,7 +20,7 @@ export const ENTITIES: EntityInfo[] = [
     color: 'entity-serma',
     colorHex: '#1B4965',
     accentClass: 'bg-[#1B4965]',
-    mission: 'Réaliser les études d\'ingénierie, la modélisation logicielle 3D/BIM, les simulations de calcul structurel et la maîtrise d\'œuvre (AMO / supervision) des ouvrages · pylônes, stations-service, charpentes métalliques, immeubles IGH, ouvrages hydrauliques et lots techniques · en amont de l\'exécution des travaux par SB-S Group.',
+    mission: 'Réaliser les études d\'ingénierie, la modélisation logicielle 3D/BIM, les simulations de calcul structurel et la maîtrise d\'œuvre (AMO / supervision) des ouvrages · pylônes, stations-service, charpentes métalliques, immeubles IGH, ouvrages hydrauliques et lots techniques · en amont de l\'exécution des travaux.',
     description: 'Créée en 2012 (RC : SN DKR-2012-B-2619), SERMA BTP est le pôle d\'ingénierie, de modélisation logicielle et d\'études techniques de l\'écosystème Magatte Niang. Il assure la conception, les simulations numériques, le dimensionnement structurel et la supervision (MOE / AMO) avant de transmettre les dossiers d\'exécution à SB-S Group.',
     leader: 'Magatte Niang',
     leaderRole: 'Directeur général',
