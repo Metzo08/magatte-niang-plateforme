@@ -535,7 +535,7 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
               Schéma d&apos;interconnexion opérationnelle de l&apos;écosystème Magatte Niang :
             </div>
             <p className="text-xs sm:text-sm text-neutral-200 leading-relaxed mb-6">
-              <strong>Sbs-labo</strong> réalise les études géotechniques de sol et les essais matériaux (Catégories C2 et A3), <strong>Serma-btp</strong> réalise la modélisation 3D/BIM en fonction des études de <strong>Sbs-labo</strong> et transmet les dossiers à <strong>Sbs-group</strong> qui se charge de l&apos;exécution des travaux, appuyé par <strong>Sbs-logistik</strong> pour le matériel, par <strong>Sbs-industries</strong> pour les briques, pavés et bétons, puis par <strong>P2m</strong> pour les carreaux et tout le sanitaire.
+              <strong>Sbs-labo</strong> réalise les études géotechniques de sol et les essais matériaux (Catégories C2 et A3), <strong>Serma-btp</strong> réalise la modélisation 3D/BIM en fonction des études de <strong>Sbs-labo</strong> et transmet les dossiers à <strong>Sbs-group</strong> qui se charge de l&apos;exécution des travaux, appuyé par <strong>Sbs-logistik</strong> pour le matériel, par <strong>Sbs-industries</strong> pour les briques, pavés et bétons, puis par <strong>P2m</strong> pour l&apos;ensemble des fournitures d&apos;équipements, de matériels et de matériaux.
             </p>
 
             {/* Graphe de noeuds reliés par de vraies lignes de connexion */}
@@ -580,7 +580,7 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
                   step: '06',
                   id: 'p2m',
                   label: 'P2m',
-                  sub: 'Carreaux & sanitaire finition',
+                  sub: 'Équipements, matériels & matériaux',
                   color: '#C0562F',
                 },
               ].map((node, i, arr) => (
@@ -659,7 +659,7 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
                         <span>→ {formattedId}</span>
                       </Link>
                       <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-accent-500/10 text-accent-600 dark:text-accent-300 border border-accent-500/20">
-                        Connexion directe #{idx + 1}
+                        {syn.connectionType === 'indirecte' ? 'Connexion indirecte' : 'Connexion directe'} #{idx + 1}
                       </span>
                     </div>
 

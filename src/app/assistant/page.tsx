@@ -1,7 +1,9 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
+import { SermaConsultationForm } from '@/components/serma/SermaConsultationForm';
 import {
   Hammer,
   Building2,
@@ -30,7 +32,9 @@ import { ENTITIES } from '@/data/initialData';
 import { store } from '@/lib/store';
 import { EntityId, Lead } from '@/types';
 
-export default function AssistantPage() {
+function AssistantPageContent() {
+  const searchParams = useSearchParams();
+  const entiteParam = searchParams?.get('entite');
   const [step, setStep] = useState(1);
   const [isQuickMode, setIsQuickMode] = useState(false);
   const [createdLead, setCreatedLead] = useState<Lead | null>(null);
@@ -197,6 +201,11 @@ export default function AssistantPage() {
     setCreatedLead(created);
     localStorage.removeItem('mn_assistant_draft');
   };
+
+  // Dedicated SERMA BTP consultation form when arriving from /entites/serma-btp
+  if (entiteParam === 'serma-btp') {
+    return <SermaConsultationForm />;
+  }
 
   // SUCCESS SCREEN
   if (createdLead) {
@@ -931,5 +940,13 @@ export default function AssistantPage() {
 
       </div>
     </div>
+  );
+}
+
+export default function AssistantPage() {
+  return (
+    <Suspense fallback={<div className="max-w-editorial mx-auto px-4 py-12 text-center text-sm text-neutral-500">Chargement de l&apos;assistant…</div>}>
+      <AssistantPageContent />
+    </Suspense>
   );
 }

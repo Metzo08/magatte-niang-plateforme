@@ -757,7 +757,7 @@ export const AI_KNOWLEDGE_BASE: KnowledgeTopic[] = [
 
 1. **Étape 1 · Étude de sol géotechnique (SB-S Labo · Directrice Technique Aminata Dramé +221 70 835 00 63 / Resp. Essais Ablaye Niang +221 77 321 78 60) :**
    - Sondages au pénétromètre dynamique (PDL), carottage, essais CBR et limites d'Atterberg pour déterminer la portance exacte du terrain et dimensionner les semelles, radier ou pieux.
-2. **Étape 2 · Conception architecturale, Modélisation 3D/BIM & Calculs (SERMA BTP · +221 78 832 12 79) :**
+2. **Étape 2 · Conception architecturale, Modélisation 3D/BIM & Calculs (SERMA BTP · +221 77 575 21 36) :**
    - Plans d'exécution béton armé et charpente métallique aux Eurocodes, modélisation 3D/BIM et maîtrise d'œuvre (AMO / supervision).
 3. **Étape 3 · Terrassement & Levage (SB-S Logistik · +221 77 858 61 05) :**
    - Mobilisation des tractopelles (120 000 F/j), bennes 40T, grues mobiles (6T à 50T), échafaudages, étais et coffrages, ainsi que la livraison de sable, gravier basalte et ciment.

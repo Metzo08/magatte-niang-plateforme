@@ -24,12 +24,12 @@ export const ENTITIES: EntityInfo[] = [
     description: 'Créée en 2012 (RC : SN DKR-2012-B-2619), SERMA BTP est le pôle d\'ingénierie, de modélisation logicielle et d\'études techniques de l\'écosystème Magatte Niang. Il assure la conception, les simulations numériques, le dimensionnement structurel et la supervision (MOE / AMO) avant de transmettre les dossiers d\'exécution à SB-S Group.',
     leader: 'Magatte Niang',
     leaderRole: 'Directeur général',
-    address: 'Dakar, Sénégal (hors pôle Mbao)',
+    address: 'HLM Hann Mariste Lot Z/22, Dakar',
     city: 'Dakar',
     country: 'Sénégal',
-    phone: '+221 78 832 12 79',
+    phone: '+221 77 575 21 36',
     email: 'serma@sermabtp.com / sermabtp@gmail.com',
-    whatsapp: '+221 78 832 12 79',
+    whatsapp: '+221 77 575 21 36',
     ctaText: 'Consulter pour une étude ou modélisation',
     ctaAction: 'qualify-serma',
     expertises: [
@@ -49,17 +49,17 @@ export const ENTITIES: EntityInfo[] = [
       'Équipements de diagnostic structurel et d\'audit technique'
     ],
     synergies: [
-      { entityId: 'sbs-labo', role: 'Réception des études géotechniques de sol et d\'essais matériaux réalisées par SB-S Labo (agréé C2 et A3) sur lesquelles SERMA BTP s\'appuie pour faire sa modélisation 3D/BIM', benefit: 'Modélisation structurelle et dimensionnement des fondations 100 % calés sur les études de SB-S Labo avant transmission à SB-S Group' },
-      { entityId: 'sbs-group', role: 'Transmission des études et modèles 3D/BIM (réalisés en fonction des études de SB-S Labo) à SB-S Group qui se charge de l\'exécution des travaux', benefit: 'Exécution fidèle aux plans et simulations validés par SERMA BTP' },
-      { entityId: 'sbs-logistik', role: 'Mobilisation du matériel lourd, grues et engins pour les travaux sur les différents chantiers', benefit: 'Déploiement rapide de la flotte sur chaque site d\'exécution' },
-      { entityId: 'sbs-industries', role: 'Fourniture des briques, pavés et bétons (BPE) nécessaires à la construction des ouvrages', benefit: 'Approvisionnement industriel certifié directement depuis l\'usine de Mbao' },
-      { entityId: 'p2m', role: 'Fourniture des carreaux et de tout le sanitaire pour la décoration et les finitions', benefit: 'Parachèvement architectural haut de gamme des bâtiments livrés' }
+      { entityId: 'sbs-labo', connectionType: 'directe', role: 'Réception des études géotechniques de sol et d\'essais matériaux réalisées par SB-S Labo (agréé C2 et A3) sur lesquelles SERMA BTP s\'appuie pour faire sa modélisation 3D/BIM', benefit: 'Modélisation structurelle et dimensionnement des fondations 100 % calés sur les études de SB-S Labo avant transmission à SB-S Group' },
+      { entityId: 'sbs-group', connectionType: 'directe', role: 'Transmission des études et modèles 3D/BIM (réalisés en fonction des études de SB-S Labo) à SB-S Group qui se charge de l\'exécution des travaux', benefit: 'Exécution fidèle aux plans et simulations validés par SERMA BTP' },
+      { entityId: 'sbs-logistik', connectionType: 'indirecte', role: 'Mobilisation du matériel lourd, grues et engins pour les travaux sur les différents chantiers', benefit: 'Déploiement rapide de la flotte sur chaque site d\'exécution' },
+      { entityId: 'sbs-industries', connectionType: 'indirecte', role: 'Fourniture des briques, pavés et bétons (BPE) nécessaires à la construction des ouvrages', benefit: 'Approvisionnement industriel certifié directement depuis l\'usine de Mbao' },
+      { entityId: 'p2m', connectionType: 'indirecte', role: 'Fourniture de l\'ensemble des équipements, des matériels et des matériaux (carreaux, sanitaire, robinetterie, gros œuvre et second œuvre)', benefit: 'Approvisionnement complet en équipements, matériels et matériaux pour chaque ouvrage' }
     ],
     verifiedMetrics: [
       { label: 'Spécialités d\'ingénierie & modélisation', value: '8', unit: 'pôles', status: 'confirmed' },
       { label: 'Modélisation & simulation BIM / RSA', value: '100', unit: '%', status: 'confirmed' },
       { label: 'Études IGH, hangars & ouvrages', value: '120+', unit: 'études', status: 'confirmed' },
-      { label: 'Précision de dimensionnement', value: 'Eurocodes', unit: 'NF / ACI', status: 'confirmed' }
+      { label: 'Précision de dimensionnement', value: 'Eurocodes, NF, ACI, ASTM', unit: '& normes conventionnelles', status: 'confirmed' }
     ],
     icon: 'Hammer'
   },
@@ -246,8 +246,8 @@ export const ENTITIES: EntityInfo[] = [
     color: 'entity-p2m',
     colorHex: '#C0562F',
     accentClass: 'bg-[#C0562F]',
-    mission: 'Offrir des matériaux de qualité et des équipements sanitaires de première qualité pour toutes vos constructions, du gros œuvre à la finition.',
-    description: 'P2M · Polytech Matériaux Matériels : "Du sol au mur, le carreau parfait". Distributeur de carreaux (céramique, porcelaine, effet marbre, imitation bois), d\'équipements sanitaires, de robinetterie et de matériaux de construction (agglos, hourdis, pavés, bordures, BPE), avec conseil technique et livraison sur chantier.',
+    mission: 'Fournir l\'ensemble des équipements, des matériels et des matériaux de construction de première qualité pour tous vos chantiers, du gros œuvre jusqu\'aux finitions.',
+    description: 'P2M · Polytech Matériaux Matériels : distributeur global de l\'ensemble des fournitures d\'équipements, de matériels et de matériaux BTP (carreaux, équipements sanitaires, robinetterie, quincaillerie technique, matériaux de gros œuvre et second œuvre), avec conseil technique et livraison sur chantier.',
     leader: 'Maguette Niang',
     leaderRole: 'Directeur général',
     address: 'Mbao Ville Neuve, Villa S04',

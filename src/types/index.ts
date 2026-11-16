@@ -30,7 +30,7 @@ export interface EntityInfo {
   ctaAction: string;
   expertises: string[];
   equipmentList?: string[];
-  synergies: { entityId: EntityId; role: string; benefit: string }[];
+  synergies: { entityId: EntityId; role: string; benefit: string; connectionType?: 'directe' | 'indirecte' }[];
   verifiedMetrics: { label: string; value: string; unit?: string; status: 'confirmed' | 'pending' | 'to_update' }[];
   icon: string;
 }
