@@ -53,7 +53,7 @@ export const PROMO_SCENES: PromoScene[] = [
     narration:
       '« Bâtir l’Afrique de l’Ouest par la rigueur d’ingénierie. Bienvenue dans l’écosystème Magatte Niang Expert : vingt-quatre ans d’excellence, sept entités complémentaires, et plus de deux cent cinquante projets majeurs livrés. »',
     colorHex: '#F26A1B',
-    image: '/images/magatte-portrait.webp',
+    image: '/images/promo-cartoon/scene-01.jpg',
     audioUrl: '/audio/promo/scene-01.mp3',
     contactLabel: '+221 77 575 21 36',
     contactHref: 'https://wa.me/221775752136',
@@ -79,7 +79,7 @@ export const PROMO_SCENES: PromoScene[] = [
     narration:
       '« Tout grand ouvrage commence par la vérité du sol. Agréé catégories C2 et A3, SB-S Labo, sous la direction technique d’Aminata Dramé et d’Ablaye Niang pour les essais, certifie vos sols et vos bétons sous vingt-quatre heures. »',
     colorHex: '#1F9D6B',
-    image: '/images/reelles/sbs-labo-reel-005.jpg',
+    image: '/images/promo-cartoon/scene-02.jpg',
     audioUrl: '/audio/promo/scene-02.mp3',
     contactLabel: 'WhatsApp Aminata Dramé : +221 70 835 00 63',
     contactHref: 'https://wa.me/221708350063',
@@ -105,7 +105,7 @@ export const PROMO_SCENES: PromoScene[] = [
     narration:
       '« À partir de ces données, SERMA BTP conçoit et modélise vos structures en trois dimensions aux normes Eurocodes : charpentes métalliques de plus de quarante-deux mètres de portée libre, tours de grande hauteur, stations-service et maîtrise d’œuvre. »',
     colorHex: '#2B6CB0',
-    image: '/images/reelles/projet-ces-stockage-sendou-03.jpg',
+    image: '/images/promo-cartoon/scene-03.jpg',
     audioUrl: '/audio/promo/scene-03.mp3',
     contactLabel: '+221 77 575 21 36 · Fixe : +221 33 832 13 33',
     contactHref: 'https://wa.me/221775752136',
@@ -130,7 +130,7 @@ export const PROMO_SCENES: PromoScene[] = [
     narration:
       '« Sur le terrain, SB-S Group transforme les plans en ouvrages durables : génie civil lourd, centrales électriques, usines industrielles, voiries et bâtiments clés en main. »',
     colorHex: '#2D6A8E',
-    image: '/images/reelles/sbs-reel-001.jpg',
+    image: '/images/promo-cartoon/scene-04.jpg',
     audioUrl: '/audio/promo/scene-04.mp3',
     contactLabel: 'WhatsApp Oumou Diop : +221 77 203 84 38',
     contactHref: 'https://wa.me/221772038438',
@@ -156,7 +156,7 @@ export const PROMO_SCENES: PromoScene[] = [
     narration:
       '« En Zone Franche Industrielle de Mbao, SB-S Industries alimente vos chantiers sans interruption grâce à sa centrale à béton de soixante mètres cubes par heure, ses agglos vibrés, ses hourdis et ses pavés haute résistance. »',
     colorHex: '#577590',
-    image: '/images/reelles/agglos-industrie-production-blocs.jpg',
+    image: '/images/promo-cartoon/scene-05.jpg',
     audioUrl: '/audio/promo/scene-05.mp3',
     contactLabel: 'WhatsApp Salimata Sow : +221 77 566 48 06',
     contactHref: 'https://wa.me/221775664806',
@@ -182,7 +182,7 @@ export const PROMO_SCENES: PromoScene[] = [
     narration:
       '« Pour le levage et le terrassement, SB-S Logistik déploie une flotte de quatre-vingt-deux engins : grues mobiles cinquante tonnes, pompes à béton, tractopelles, bennes quarante tonnes et granulats certifiés. »',
     colorHex: '#E07A5F',
-    image: '/images/sbs-logistik/logistik-equip-001.jpg',
+    image: '/images/promo-cartoon/scene-06.jpg',
     audioUrl: '/audio/promo/scene-06.mp3',
     contactLabel: 'WhatsApp Rokhaya Kane : +221 77 858 61 05',
     contactHref: 'https://wa.me/221778586105',
@@ -208,7 +208,7 @@ export const PROMO_SCENES: PromoScene[] = [
     narration:
       '« Pour sublimer vos espaces, le Showroom P2M à Mbao réunit nos quatre blocs d’excellence : carrelages grand format, sanitaires design, robinetterie de précision et mosaïques de prestige. »',
     colorHex: '#C0562F',
-    image: '/images/realisations/p2m-salle-de-bain-prestige.jpg',
+    image: '/images/promo-cartoon/scene-07.jpg',
     audioUrl: '/audio/promo/scene-07.mp3',
     contactLabel: 'Showroom P2M : +221 78 832 12 79',
     contactHref: 'https://wa.me/221788321279',
@@ -234,7 +234,7 @@ export const PROMO_SCENES: PromoScene[] = [
     narration:
       '« Et à l’échelle internationale, Polytech Global Trading, basé à Dubaï-Ajman et en Inde, assure le sourcing direct usine, le fret conteneurisé et le dédouanement complet au Port Autonome de Dakar. »',
     colorHex: '#D4A017',
-    image: '/images/pgt/pgt-terminal-port-dakar.jpg',
+    image: '/images/promo-cartoon/scene-08.jpg',
     audioUrl: '/audio/promo/scene-08.mp3',
     contactLabel: 'WhatsApp PGT Dubaï : +971 52 763 1629',
     contactHref: 'https://wa.me/971527631629',
@@ -382,6 +382,8 @@ export function EcosystemPromoVideoPlayer() {
               type="button"
               onClick={() => {
                 setMode('keynote');
+                setPlayAll(true);
+                setActiveSceneIdx(0);
                 setIsPlayingKeynote(true);
               }}
               className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-mono font-bold transition-all ${
@@ -391,7 +393,7 @@ export function EcosystemPromoVideoPlayer() {
               }`}
             >
               <Sparkles className="w-3.5 h-3.5" />
-              Présentation HD (8 chapitres)
+              Motion Design Animé (8 chapitres)
             </button>
           </div>
 
@@ -430,7 +432,7 @@ export function EcosystemPromoVideoPlayer() {
             key={activeScene.image}
             src={getMediaUrl(activeScene.image)}
             alt={activeScene.entityName}
-            className="absolute inset-0 w-full h-full object-cover opacity-45 scale-105 transition-transform duration-1000 pointer-events-none"
+            className="absolute inset-0 w-full h-full object-cover opacity-55 animate-[pulse_12s_ease-in-out_infinite] scale-105 transition-all duration-1000 pointer-events-none"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-950 via-brand-950/90 to-brand-900/70 pointer-events-none" />
           <div className="absolute inset-0 blueprint-grid-dense-dark opacity-30 pointer-events-none" />
@@ -548,12 +550,12 @@ export function EcosystemPromoVideoPlayer() {
 
             {/* Right Column: Visual Card + 4 KPIs */}
             <div className="lg:col-span-5 space-y-4">
-              <div className="relative rounded-xl overflow-hidden border-2 border-white/20 aspect-[16/10] shadow-2xl">
+              <div className="relative rounded-2xl overflow-hidden border-2 border-accent-400/40 aspect-[16/10] shadow-[0_20px_50px_rgba(0,0,0,0.65)] group">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={getMediaUrl(activeScene.image)}
                   alt={activeScene.entityName}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                 <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
