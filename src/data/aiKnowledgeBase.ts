@@ -145,7 +145,7 @@ export const AI_KNOWLEDGE_BASE: KnowledgeTopic[] = [
 
 2. **SB-S Labo (Laboratoire Géotechnique & Contrôle Matériaux · Agréé C2 & A3)** :
    - **Rôle :** Études de sol en amont (Catégorie C2 : CBR, Proctor, Atterberg, cisaillement Casagrande, œdomètre, pénétromètre dynamique PDL, carottage APAFOR 450RS) et essais sur bétons/granulats (Catégorie A3 : écrasement sous presse 3 000 kN, cône d'Abrams, scléromètre). Émission des PV en **24h**.
-   - **Contact :** Directrice Technique **Aminata Dramé (+221 70 835 00 63)** · Responsable Laboratoire pour les essais **Ablaye Niang (+221 77 321 78 60)** · \`labo@sbs-labo.sn\`.
+   - **Contact :** NINEA : 008501141 2E2 · RC : SN DKR 2021 B 12675 · Tél : **+221 33 872 06 78 / +221 77 321 78 60 / +221 70 835 00 63** · Directrice Technique **Aminata Dramé** · Responsable Laboratoire **Ablaye Niang** · \`sbslabo15@gmail.com\`.
 
 3. **SB-S Group (Stein Bauer Sénégal Group · Génie Civil, Grands Travaux & Industrie)** :
    - **Rôle :** Exécution des travaux de génie civil lourd, ouvrages d'art, dallages industriels, murs de soutènement, VRD et bâtiments clés en main à partir des études de SB-S Labo et des modèles 3D de SERMA BTP. Doté d'un Bureau des Méthodes intégré.
@@ -311,7 +311,7 @@ export const AI_KNOWLEDGE_BASE: KnowledgeTopic[] = [
 • **Contacts directs SB-S Labo :**
   - **Directrice Technique :** **Aminata Dramé** · Tél & WhatsApp : **+221 70 835 00 63**
   - **Responsable Laboratoire (pour les essais) :** **Ablaye Niang** · Tél & WhatsApp : **+221 77 321 78 60**
-  - **Email :** \`labo@sbs-labo.sn\`.`,
+  - **Email :** \`sbslabo15@gmail.com\`.`,
     sources: [
       { title: 'Catalogue officiel des essais SB-S Labo (C2 & A3)', ref: 'CAT-LABO-2026', link: '/services/laboratoire' },
       { title: 'Fiche de l\'entité SB-S Labo', ref: 'ENT-LABO-2026', link: '/entites/sbs-labo' }
@@ -621,7 +621,7 @@ export const AI_KNOWLEDGE_BASE: KnowledgeTopic[] = [
   3. **SB-S Labo (Géotechnique & Essais C2/A3) :**
      - Directrice Technique : **Aminata DRAMÉ** · Tél & WhatsApp : **+221 70 835 00 63**
      - Responsable Laboratoire (pour les essais) : **Ablaye NIANG** · Tél & WhatsApp : **+221 77 321 78 60**
-     - Email : \`labo@sbs-labo.sn\` · Cité Keur Gorgui / Route de Rufisque Km 12, Dakar.
+     - Email : \`sbslabo15@gmail.com\` · Ndiakhirate, Cité Assemblée, Villa N° 226, Dakar, Sénégal.
   4. **SB-S Industries (Centrale à Béton & Agglos) :**
      - Responsable : **Salimata SOW** · Tél & WhatsApp : **+221 77 566 48 06** / **+221 33 871 08 61**
      - Email : \`wsbsindustrie2021@gmail.com\` · Zone Franche Industrielle (ZFI) de Mbao.

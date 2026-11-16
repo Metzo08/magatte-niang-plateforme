@@ -353,12 +353,12 @@ export default function LaboratoirePage() {
               href="tel:+221708350063"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-800 hover:bg-brand-700 text-white font-bold rounded-m text-sm transition-colors"
             >
-              <Phone className="w-4 h-4" /> +221 70 835 00 63 (Aminata Dramé) · +221 77 321 78 60 (Ablaye · Essais)
+              <Phone className="w-4 h-4" /> +221 33 872 06 78 / +221 70 835 00 63 / +221 77 321 78 60
             </a>
           </div>
           <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4 text-xs text-neutral-500">
-            <span className="inline-flex items-center gap-1.5"><Mail className="w-3.5 h-3.5" /> labo@sbsgroup.sn</span>
-            <span className="inline-flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5" /> Cité Keur Gorgui, Dakar</span>
+            <span className="inline-flex items-center gap-1.5"><Mail className="w-3.5 h-3.5" /> sbslabo15@gmail.com</span>
+            <span className="inline-flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5" /> Ndiakhirate, Cité Assemblée, Villa N° 226, Dakar</span>
           </div>
         </div>
       </section>
