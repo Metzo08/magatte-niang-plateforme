@@ -28,6 +28,7 @@ import { useEntities } from '@/hooks/useEntities';
 import { useProjects } from '@/hooks/useProjects';
 import { ENTITIES } from '@/data/initialData';
 import { SITE_IMAGES, EXPERTISE_IMAGES, PHOTOS_REELLES } from '@/data/siteImages';
+import { EcosystemPromoVideoPlayer } from '@/components/video/EcosystemPromoVideoPlayer';
 
 export default function HomePage() {
   const { entities: apiEntities } = useEntities();
@@ -305,6 +306,24 @@ export default function HomePage() {
             <span className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" /> Commissionnaire en douane agréé</span>
           </div>
         </div>
+      </section>
+
+      {/* SECTION 1B: FILM PROMOTIONNEL OFFICIEL & KEYNOTE VOIX OFF DES 7 ENTITÉS */}
+      <section id="film-promotionnel" className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-6">
+          <div>
+            <span className="text-xs font-mono font-bold text-accent-500 uppercase tracking-wider">
+              Film institutionnel & présentation vocale
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-title font-bold text-neutral-900 dark:text-white mt-1.5 tracking-tight">
+              Découvrez notre écosystème en vidéo (Voix Off Studio)
+            </h2>
+          </div>
+          <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 max-w-md">
+            De l&apos;étude géotechnique <strong>SB-S Labo</strong> aux finitions <strong>P2M</strong> et au sourcing <strong>PGT</strong> : explorez nos 7 entités en 90 secondes.
+          </p>
+        </div>
+        <EcosystemPromoVideoPlayer />
       </section>
 
       {/* SECTION 2: RÉALISATION PHARE */}
@@ -796,7 +815,7 @@ export default function HomePage() {
               <p className="text-xs text-neutral-500 mt-1">Bureau d'études & expertise</p>
             </a>
             <Link
-              href="/assistant"
+              href="/contact?rdv=1#rendez-vous"
               className="group bg-white dark:bg-brand-800/60 border-neutral-200 dark:border-brand-700 hover:border-accent-500 dark:hover:border-accent-500 rounded-l p-6 transition-all text-center"
             >
               <div className="w-12 h-12 rounded-m bg-accent-500/10 border-accent-500/30 flex items-center justify-center mx-auto mb-4 group-hover:scale-105 transition-transform">

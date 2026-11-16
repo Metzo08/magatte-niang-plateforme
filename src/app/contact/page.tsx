@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, type SVGProps } from 'react';
+import { useState, useEffect, type SVGProps } from 'react';
 import { MapPin, Phone, Mail, Clock, Calendar, CheckCircle, Send, Loader2, Building2, Linkedin, Facebook, Youtube, Instagram, MessageCircle, Globe } from 'lucide-react';
 import { SOCIAL_LINKS } from '@/data/socialLinks';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
@@ -89,6 +89,15 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [activeTab, setActiveTab] = useState<'message' | 'rdv'>('message');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && (window.location.search.includes('rdv=1') || window.location.hash === '#rendez-vous')) {
+      setActiveTab('rdv');
+      setTimeout(() => {
+        document.getElementById('rendez-vous')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+  }, []);
 
   const today = new Date().toISOString().split('T')[0];
 
@@ -256,7 +265,7 @@ export default function ContactPage() {
           {/* Tabs */}
           <div className="flex border-b border-brand-800">
             {(['message', 'rdv'] as const).map(tab => (
-              <button key={tab} onClick={() => setActiveTab(tab)}
+              <button id={tab === 'rdv' ? 'rendez-vous' : undefined} key={tab} onClick={() => setActiveTab(tab)}
                 className={`flex-1 py-4 text-sm font-semibold transition-colors ${activeTab === tab ? 'bg-accent-600 text-white' : 'text-slate-400 hover:text-white hover:bg-brand-800'}`}>
                 {tab === 'message' ? '✉️ Message libre' : '📅 Prendre rendez-vous'}
               </button>
