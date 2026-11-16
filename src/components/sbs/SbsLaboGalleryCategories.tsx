@@ -204,7 +204,7 @@ export const SBS_LABO_CATEGORIES: LaboCategoryCard[] = [
     id: 'cat-c1-sondages-profonds',
     code: 'C.1 / C.2',
     badge: 'Ingénierie des Sols & Sondages In-Situ · Domaine C',
-    title: 'Catégories C.1 & C.2 · Sondages In-Situ (Tarière, Carotté, Pénétromètre, Pressiomètre)',
+    title: 'Catégories C1 & C2 · Sondages In-Situ (Tarière, Carotté, Pénétromètre, Pressiomètre)',
     shortDesc:
       'Sondage au pénétromètre dynamique, sondage carotté rotary profond (APAFOR 450RS), essai pressiométrique Ménard et suivi piézométrique.',
     coverImage: '/images/reelles/sbs-labo-reel-005.jpg',
@@ -373,6 +373,7 @@ function getCatIcon(iconName: string) {
 
 export default function SbsLaboGalleryCategories() {
   const [activeCatId, setActiveCatId] = useState<string | null>(null);
+  const [groupFilter, setGroupFilter] = useState<'ALL' | 'C' | 'A' | 'BD'>('ALL');
   const [slideIndex, setSlideIndex] = useState<number>(0);
 
   const activeCategory = SBS_LABO_CATEGORIES.find((c) => c.id === activeCatId) || null;
@@ -471,11 +472,38 @@ export default function SbsLaboGalleryCategories() {
       {/* Grille des 8 cases de catégories d'essais avec carrousel d'exemples */}
       <div>
         <h3 className="text-xs font-mono font-bold tracking-wider text-emerald-600 dark:text-emerald-400 mb-4">
-          Toutes les catégories d&apos;essais de la Galerie SB-S Labo (cliquez sur une catégorie pour ouvrir son carrousel d&apos;exemples) :
+          Toutes les catégories d&apos;essais de la Galerie SB-S Labo (Catégories C1, C2, A3, B & D — cliquez sur une catégorie pour ouvrir son carrousel d&apos;exemples) :
         </h3>
 
+        <div className="flex flex-wrap gap-2 mb-5">
+          {([
+            { key: 'ALL', label: 'Toutes les catégories (8)' },
+            { key: 'C', label: 'Catégories C1 & C2 · Sols & Géotechnique' },
+            { key: 'A', label: 'Catégorie A3 · Bétons & Matériaux' },
+            { key: 'BD', label: 'Domaines B & D · Routes & Auscultation' },
+          ] as const).map((tab) => (
+            <button
+              key={tab.key}
+              type="button"
+              onClick={() => setGroupFilter(tab.key)}
+              className={`px-3 py-1.5 rounded-full text-xs font-mono font-bold border transition ${
+                groupFilter === tab.key
+                  ? 'bg-emerald-600 text-white border-emerald-500 shadow-sm'
+                  : 'bg-white dark:bg-brand-800 text-neutral-700 dark:text-neutral-200 border-neutral-200 dark:border-brand-700 hover:border-emerald-500'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {SBS_LABO_CATEGORIES.map((cat) => {
+          {SBS_LABO_CATEGORIES.filter((cat) => {
+            if (groupFilter === 'ALL') return true;
+            if (groupFilter === 'C') return cat.code.toUpperCase().startsWith('C');
+            if (groupFilter === 'A') return cat.code.toUpperCase().startsWith('A');
+            return cat.code.toUpperCase().startsWith('B') || cat.code.toUpperCase().startsWith('D');
+          }).map((cat) => {
             const IconComp = getCatIcon(cat.iconName);
             const isSelected = activeCatId === cat.id;
 

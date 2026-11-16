@@ -447,6 +447,11 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
             <div className="text-sm">
               <p className="font-semibold text-neutral-900 dark:text-white">{entity.leader}</p>
               <p className="text-neutral-600 dark:text-neutral-400">{entity.leaderRole}</p>
+              {id === 'sbs-labo' && (
+                <p className="text-neutral-600 dark:text-neutral-400 mt-1">
+                  Ablaye Niang (responsable laboratoire pour les essais)
+                </p>
+              )}
             </div>
           </div>
         </div>
@@ -579,10 +584,21 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
                 {
                   step: '06',
                   id: 'p2m',
-                  label: 'P2m',
+                  label: 'P2M',
                   sub: 'Équipements, matériels & matériaux',
                   color: '#C0562F',
                 },
+                ...(id === 'sbs-labo'
+                  ? [
+                      {
+                        step: '07',
+                        id: 'pgt',
+                        label: 'PGT',
+                        sub: 'Sourcing & étalonnage matériel',
+                        color: '#7A5AA8',
+                      },
+                    ]
+                  : []),
               ].map((node, i, arr) => {
                 const matchedSyn = entity.synergies?.find((s: any) => s.entityId === node.id);
                 const connLabel =

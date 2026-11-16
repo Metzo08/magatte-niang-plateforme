@@ -33,8 +33,8 @@ export function toFirstUpperRestLower(
 
   // Préserve les sigles, normes, codes agréments et acronymes techniques en majuscules
   const PRESERVED_UPPERCASE: Array<[RegExp, string | ((m: string) => string)]> = [
-    [/\b(c2|a3|c1|b1|b2|ec2|ec3|ec7)\b/gi, (m) => m.toUpperCase()],
-    [/\b(btp|bim|3d|igh|amo|moe|bpe|vrd|sav|rsa|nf|aci|astm|hlm|p2m|pgt|aps|apd|doe|exe|dwg|pdf|ifc|cbr|fcfa|cfo|cfa|cvc|ssi)\b/gi, (m) => m.toUpperCase()],
+    [/\b(c\.?1|c\.?2|a\.?1|a\.?2|a\.?3|a\.?4|b\.?1|b\.?2|d\.?1|d\.?2|ec2|ec3|ec7)\b/gi, (m) => m.toUpperCase()],
+    [/\b(btp|bim|3d|igh|amo|moe|bpe|vrd|sav|rsa|nf|aci|astm|hlm|p2m|pgt|aps|apd|doe|exe|dwg|pdf|ifc|cbr|fcfa|cfo|cfa|cvc|ssi|ninea|rc|sn|dkr|lnr-btp|sbslabo|gtr|ev2|afnor|en|2e2)\b/gi, (m) => m.toUpperCase()],
     [/\bz\/22\b/gi, 'Z/22'],
     [/\bserma\b/gi, 'SERMA'],
     [/\bsb-s\b/gi, 'SB-S'],

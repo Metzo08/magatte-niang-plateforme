@@ -122,15 +122,15 @@ export const ENTITIES: EntityInfo[] = [
     color: 'entity-sbsLabo',
     colorHex: '#1F9D6B',
     accentClass: 'bg-[#1F9D6B]',
-    mission: 'Sécuriser chaque ouvrage dès l\'amont en réalisant les études géotechniques de sol (Catégorie C2) et les essais sur matériaux de construction et bétons hydrauliques (Catégorie A3) avec un parc matériel certifié et étalonné, afin de fournir à SERMA BTP les données géotechniques indispensables à la modélisation 3D/BIM avant l\'exécution des travaux par SB-S Group.',
-    description: 'Filiale géotechnique créée en 2021 (RC : SN DKR 2021 B 12675), ayant pour Directrice Technique Aminata Dramé (+221 70 835 00 63) et pour Responsable Laboratoire pour les essais Ablaye Niang (+221 77 321 78 60), SB-S Labo est agréée Catégories C2 (Domaine C : Ingénierie des sols et fondations) et A3 (Domaine A : Matériaux de construction et bétons hydrauliques) conformément au référentiel LNR-BTP (loi n° 2023-12 du 21 juin 2023 et décret n° 2023-1780 du 29 août 2023). SB-S Labo réalise les études géotechniques de référence à partir desquelles SERMA BTP effectue la modélisation logicielle avant de transmettre les dossiers à SB-S Group pour les travaux.',
+    mission: 'Sécuriser chaque ouvrage dès l\'amont en réalisant les études géotechniques de sol (Catégorie C2) et les essais sur matériaux de construction et bétons hydrauliques (Catégorie A3) avec un parc matériel certifié et étalonné, afin de fournir à SERMA BTP les données géotechniques indispensables à la modélisation 3D/BIM avant l\'exécution des travaux.',
+    description: 'SBSLABO (NINEA : 008501141 2E2 · RC : SN DKR 2021 B 12675 · Ndiakhirate, Cité Assemblée, Villa N° 226, Dakar, Sénégal · Tél : 33 872 06 78 / 77 321 78 60 / 70 835 00 63 · Email : sbslabo15@gmail.com), ayant pour Directrice Technique Aminata Dramé et pour Responsable Laboratoire pour les essais Ablaye Niang, SB-S Labo est agréée Catégories C2 (Domaine C : Ingénierie des sols et fondations) et A3 (Domaine A : Matériaux de construction et bétons hydrauliques) conformément au référentiel LNR-BTP (loi n° 2023-12 du 21 juin 2023 et décret n° 2023-1780 du 29 août 2023). SB-S Labo réalise les études géotechniques de référence à partir desquelles SERMA BTP effectue la modélisation logicielle avant de transmettre les dossiers à SB-S Group pour les travaux.',
     leader: 'Aminata Dramé',
-    leaderRole: 'Directrice Technique · Ablaye Niang (Responsable Laboratoire pour les essais)',
-    address: 'Dakar, Sénégal (hors pôle Mbao)',
+    leaderRole: 'Directrice technique',
+    address: 'Ndiakhirate, Cité Assemblée, Villa N° 226, Dakar, Sénégal',
     city: 'Dakar',
     country: 'Sénégal',
-    phone: '+221 70 835 00 63 / +221 77 321 78 60',
-    email: 'labo@sbs-labo.sn',
+    phone: '+221 33 872 06 78 / +221 77 321 78 60 / +221 70 835 00 63',
+    email: 'sbslabo15@gmail.com',
     whatsapp: '+221 70 835 00 63',
     ctaText: 'Demander un essai de sol / béton',
     ctaAction: 'qualify-labo',
@@ -149,10 +149,12 @@ export const ENTITIES: EntityInfo[] = [
       'Colonne de tamis normalisés AFNOR, appareil de Casagrande, moules Proctor/CBR, étuves thermostatiques et balances de précision certifiées'
     ],
     synergies: [
-      { entityId: 'serma-btp', role: 'Forte connexion amont : SB-S Labo réalise les études géotechniques de sol et essais matériaux, et SERMA BTP réalise la modélisation 3D/BIM en fonction des études de SB-S Labo', benefit: 'Dimensionnement structurel et modélisation SERMA BTP fondés sur les paramètres réels du sol avant transmission à SB-S Group' },
-      { entityId: 'sbs-group', role: 'Transmission conjointe (études SB-S Labo + modélisation SERMA BTP) à SB-S Group pour l\'exécution des travaux et contrôle continu de réception sur chantier', benefit: 'Sécurisation géotechnique intégrale des travaux et émission des PV en 24 heures' },
-      { entityId: 'sbs-industries', role: 'Contrôle qualité permanent (Catégorie A3) des granulats, bétons BPE, briques et pavés produits à l\'usine de Mbao', benefit: 'Délivrance de procès-verbaux de conformité sous 24 heures' },
-      { entityId: 'sbs-logistik', role: 'Déploiement coordonné des équipements de forage et d\'essais in-situ sur les différents chantiers', benefit: 'Réactivité immédiate sur l\'ensemble des sites d\'exécution' }
+      { entityId: 'serma-btp', connectionType: 'directe', role: 'Connexion directe amont : SB-S Labo réalise les études géotechniques de sol et essais matériaux (Catégories C2 et A3), et SERMA BTP réalise la modélisation 3D/BIM en fonction des études de SB-S Labo', benefit: 'Dimensionnement structurel et modélisation SERMA BTP fondés sur les paramètres réels du sol avant transmission à SB-S Group' },
+      { entityId: 'sbs-group', connectionType: 'directe', role: 'Connexion directe chantier : transmission conjointe (études SB-S Labo + modélisation SERMA BTP) à SB-S Group pour l\'exécution des travaux et contrôle continu de réception sur site', benefit: 'Sécurisation géotechnique intégrale des travaux et émission des PV en 24 heures' },
+      { entityId: 'pgt', connectionType: 'directe', role: 'Connexion directe équipement & étalonnage : sourcing international et importation des équipements, presses et consommables certifiés de laboratoire via PGT', benefit: 'Parc matériel 100 % certifié, étalonné et renouvelé sans rupture' },
+      { entityId: 'sbs-logistik', connectionType: 'indirecte', role: 'Appui logistique pour l\'acheminement des équipements lourds de forage et d\'essais in-situ sur les différents chantiers', benefit: 'Réactivité sur l\'ensemble des sites d\'exécution' },
+      { entityId: 'sbs-industries', connectionType: 'indirecte', role: 'Contrôle qualité permanent (Catégorie A3) des granulats, bétons BPE, briques et pavés produits à l\'usine de Mbao', benefit: 'Délivrance de procès-verbaux de conformité sous 24 heures' },
+      { entityId: 'p2m', connectionType: 'indirecte', role: 'Coordination qualité sur l\'ensemble des fournitures d\'équipements, de matériels et de matériaux livrés aux chantiers', benefit: 'Traçabilité et conformité des matériaux et équipements du gros œuvre aux finitions' }
     ],
     verifiedMetrics: [
       { label: 'Catégorie C2 et A3', value: 'C2 et A3', unit: 'LNR-BTP', status: 'confirmed' },
