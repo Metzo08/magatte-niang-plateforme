@@ -4,6 +4,7 @@ import React, { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { SermaConsultationForm } from '@/components/serma/SermaConsultationForm';
+import { SbsLaboConsultationForm } from '@/components/sbs/SbsLaboConsultationForm';
 import {
   Hammer,
   Building2,
@@ -205,6 +206,9 @@ function AssistantPageContent() {
   // Dedicated SERMA BTP consultation form when arriving from /entites/serma-btp
   if (entiteParam === 'serma-btp') {
     return <SermaConsultationForm />;
+  }
+  if (entiteParam === 'sbs-labo') {
+    return <SbsLaboConsultationForm />;
   }
 
   // SUCCESS SCREEN
