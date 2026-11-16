@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { SermaConsultationForm } from '@/components/serma/SermaConsultationForm';
 import { SbsLaboConsultationForm } from '@/components/sbs/SbsLaboConsultationForm';
+import { EntityConsultationForm, SupportedEntityFormId } from '@/components/entities/EntityConsultationForm';
 import {
   Hammer,
   Building2,
@@ -209,6 +210,9 @@ function AssistantPageContent() {
   }
   if (entiteParam === 'sbs-labo') {
     return <SbsLaboConsultationForm />;
+  }
+  if (entiteParam && ['sbs-group', 'sbs-industries', 'sbs-logistik', 'p2m', 'pgt'].includes(entiteParam)) {
+    return <EntityConsultationForm entityId={entiteParam as SupportedEntityFormId} />;
   }
 
   // SUCCESS SCREEN
