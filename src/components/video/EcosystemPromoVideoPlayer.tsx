@@ -44,7 +44,7 @@ export const PROMO_SCENES: PromoScene[] = [
   {
     id: 'scene-01',
     step: '01 / VISION & LEADERSHIP',
-    entityName: 'Écosystème Magatte Niang Expert',
+    entityName: 'Profil Magatte Niang',
     entitySlug: 'ecosysteme',
     badge: '24 ANS D’EXPÉRIENCE · 7 ENTITÉS · 250+ PROJETS LIVRÉS',
     title: 'Bâtir l’Afrique de l’Ouest',
@@ -75,7 +75,7 @@ export const PROMO_SCENES: PromoScene[] = [
     title: 'SB-S Labo',
     highlight: 'La vérité scientifique du sol & du béton.',
     subtitle:
-      'Directrice Technique : Aminata Dramé (+221 70 835 00 63) · Responsable Laboratoire (Essais) : Ablaye Niang (+221 77 321 78 60)',
+      'Ndiakhirate, Cité Assemblée, Villa N° 226 · +221 33 872 06 78 / 77 321 78 60 / 70 835 00 63 · sbslabo15@gmail.com',
     narration:
       '« Tout grand ouvrage commence par la vérité du sol. Agréé catégories C2 et A3, SB-S Labo, sous la direction technique d’Aminata Dramé et d’Ablaye Niang pour les essais, certifie vos sols et vos bétons sous vingt-quatre heures. »',
     colorHex: '#1F9D6B',
@@ -101,21 +101,21 @@ export const PROMO_SCENES: PromoScene[] = [
     title: 'SERMA BTP',
     highlight: 'Concevoir, modéliser et dimensionner.',
     subtitle:
-      'Charpentes métalliques, pylônes, stations-service, IGH, ouvrages hydrauliques & maîtrise d’œuvre (Eurocodes)',
+      'HLM Hann Mariste Lot Z/22 · Études 3D/BIM, charpentes métalliques, pylônes, IGH & AMO (Eurocodes, NF, ACI, ASTM)',
     narration:
       '« À partir de ces données, SERMA BTP conçoit et modélise vos structures en trois dimensions aux normes Eurocodes : charpentes métalliques de plus de quarante-deux mètres de portée libre, tours de grande hauteur, stations-service et maîtrise d’œuvre. »',
     colorHex: '#2B6CB0',
     image: '/images/reelles/projet-ces-stockage-sendou-03.jpg',
     audioUrl: '/audio/promo/scene-03.mp3',
-    contactLabel: '+221 78 832 12 79',
-    contactHref: 'https://wa.me/221788321279',
+    contactLabel: '+221 77 575 21 36 · Fixe : +221 33 832 13 33',
+    contactHref: 'https://wa.me/221775752136',
     ctaLabel: 'Explorer SERMA BTP',
     ctaHref: '/entites/serma-btp',
     kpis: [
       { value: '120+', label: 'Études 3D / BIM' },
       { value: '4 500 T/an', label: 'Capacité acier' },
       { value: '> 42 m', label: 'Portée libre' },
-      { value: 'Eurocode 3', label: 'Calculs certifiés' },
+      { value: 'Eurocodes / ASTM', label: 'NF · ACI · Conv.' },
     ],
   },
   {
@@ -200,11 +200,11 @@ export const PROMO_SCENES: PromoScene[] = [
     step: '07 / ÉTAPE 6 : SHOWROOM CARRELAGE & SANITAIRE',
     entityName: 'P2M Showroom',
     entitySlug: 'p2m',
-    badge: '4 BLOCS : CARRELAGE · SANITAIRE · ROBINETTERIE · FAÏENCE',
+    badge: 'ÉQUIPEMENTS · MATÉRIELS · MATÉRIAUX · FINITIONS',
     title: 'Showroom P2M Mbao',
-    highlight: 'L’élégance architecturale des finitions.',
+    highlight: 'L’ensemble des équipements, matériels et matériaux.',
     subtitle:
-      'Grès cérame 30×30 à 80×240, marbres Calacatta, sanitaires suspendus ESTA, baignoires & robinetterie HKI',
+      'Fourniture globale BTP : équipements techniques, matériels de chantier, matériaux de gros œuvre, carrelage 30×30 à 80×240 & sanitaires',
     narration:
       '« Pour sublimer vos espaces, le Showroom P2M à Mbao réunit nos quatre blocs d’excellence : carrelages grand format, sanitaires design, robinetterie de précision et mosaïques de prestige. »',
     colorHex: '#C0562F',
@@ -247,35 +247,11 @@ export const PROMO_SCENES: PromoScene[] = [
       { value: 'PAD Dakar', label: 'Transit certifié' },
     ],
   },
-  {
-    id: 'scene-09',
-    step: '09 / PASSEZ À L’ACTION DÈS AUJOURD’HUI',
-    entityName: 'Magatte Niang Expert',
-    entitySlug: 'contact',
-    badge: 'DEVIS INSTANTANÉ · ASSISTANT IA 24/7 · RENDEZ-VOUS INGÉNIEUR',
-    title: 'Confiez votre projet',
-    highlight: 'à un écosystème d’excellence.',
-    subtitle: 'De l’étude géotechnique à la remise des clés : un interlocuteur unique pour bâtir durablement.',
-    narration:
-      '« Un projet de construction, d’industrie ou d’aménagement ? Rendez-vous dès maintenant sur magatteniang-expert.sn. De l’étude de sol à la remise des clés : un seul écosystème, une maîtrise absolue. »',
-    colorHex: '#F26A1B',
-    image: '/images/reelles/sbs-reel-002.jpg',
-    audioUrl: '/audio/promo/scene-09.mp3',
-    contactLabel: '+221 78 832 12 79 / +221 33 871 08 61',
-    contactHref: 'https://wa.me/221788321279',
-    ctaLabel: 'Lancer mon chiffrage ou prendre RDV',
-    ctaHref: '/assistant',
-    kpis: [
-      { value: '24h - 48h', label: 'Délai de chiffrage' },
-      { value: '7 filiales', label: 'Synergie totale' },
-      { value: 'Assistant IA', label: 'Devis en direct' },
-      { value: 'Dakar · Dubaï', label: 'Présence globale' },
-    ],
-  },
 ];
 
 export function EcosystemPromoVideoPlayer() {
-  const [mode, setMode] = useState<'keynote' | 'mp4'>('mp4');
+  const [mode, setMode] = useState<'keynote' | 'mp4'>('keynote');
+  const [playAll, setPlayAll] = useState(false);
   const [activeSceneIdx, setActiveSceneIdx] = useState(0);
   const [isPlayingKeynote, setIsPlayingKeynote] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -300,7 +276,7 @@ export function EcosystemPromoVideoPlayer() {
     const audio = audioRef.current;
     if (!audio) return;
 
-    audio.src = activeScene.audioUrl;
+    audio.src = getMediaUrl(activeScene.audioUrl);
     audio.muted = isMuted;
 
     if (isPlayingKeynote) {
@@ -324,7 +300,7 @@ export function EcosystemPromoVideoPlayer() {
 
   const handleSceneEnded = () => {
     setSceneProgress(100);
-    if (activeSceneIdx < PROMO_SCENES.length - 1) {
+    if (playAll && activeSceneIdx < PROMO_SCENES.length - 1) {
       setActiveSceneIdx((prev) => prev + 1);
       setSceneProgress(0);
     } else {
@@ -339,7 +315,7 @@ export function EcosystemPromoVideoPlayer() {
       audio.pause();
       setIsPlayingKeynote(false);
     } else {
-      audio.src = activeScene.audioUrl;
+      audio.src = getMediaUrl(activeScene.audioUrl);
       audio.muted = isMuted;
       audio.play().catch(() => {});
       setIsPlayingKeynote(true);
@@ -347,12 +323,11 @@ export function EcosystemPromoVideoPlayer() {
   };
 
   const selectScene = (idx: number) => {
+    setPlayAll(false);
     setActiveSceneIdx(idx);
     setSceneProgress(0);
-    if (mode === 'mp4') {
-      setMode('keynote');
-      setIsPlayingKeynote(true);
-    }
+    setMode('keynote');
+    setIsPlayingKeynote(true);
   };
 
   const handleFullscreen = () => {
@@ -416,7 +391,7 @@ export function EcosystemPromoVideoPlayer() {
               }`}
             >
               <Sparkles className="w-3.5 h-3.5" />
-              Keynote Interactive (9 chapitres)
+              Présentation HD (8 chapitres)
             </button>
           </div>
 
@@ -438,7 +413,7 @@ export function EcosystemPromoVideoPlayer() {
           <video
             ref={videoRef}
             src={getMediaUrl('/videos/magatte-niang-promo-2026.mp4')}
-            poster="/images/reelles/sbs-reel-001.jpg"
+            poster={getMediaUrl('/images/reelles/sbs-reel-001.jpg')}
             controls
             playsInline
             preload="metadata"
@@ -455,7 +430,7 @@ export function EcosystemPromoVideoPlayer() {
             key={activeScene.image}
             src={getMediaUrl(activeScene.image)}
             alt={activeScene.entityName}
-            className="absolute inset-0 w-full h-full object-cover opacity-30 scale-105 transition-transform duration-1000 pointer-events-none"
+            className="absolute inset-0 w-full h-full object-cover opacity-45 scale-105 transition-transform duration-1000 pointer-events-none"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-950 via-brand-950/90 to-brand-900/70 pointer-events-none" />
           <div className="absolute inset-0 blueprint-grid-dense-dark opacity-30 pointer-events-none" />
@@ -633,7 +608,7 @@ export function EcosystemPromoVideoPlayer() {
           </span>
         </div>
 
-        <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 gap-2">
+        <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-8 gap-2">
           {PROMO_SCENES.map((sc, idx) => {
             const isSelected = idx === activeSceneIdx && mode === 'keynote';
             return (
