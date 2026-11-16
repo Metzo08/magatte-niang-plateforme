@@ -35,7 +35,8 @@ export function toFirstUpperRestLower(
   const PRESERVED_UPPERCASE: Array<[RegExp, string | ((...args: string[]) => string)]> = [
     [/\b([abcd]\.?[1-4]|ec2|ec3|ec7)\b/gi, (m: string) => m.toUpperCase()],
     [/\bdomaine\s+([abcd])\b/gi, (_: string, letter: string) => `Domaine ${letter.toUpperCase()}`],
-    [/\b(btp|bim|3d|igh|amo|moe|bpe|vrd|sav|rsa|nf|aci|astm|hlm|p2m|pgt|aps|apd|doe|exe|dwg|pdf|ifc|cbr|fcfa|cfo|cfa|cvc|ssi|ninea|rc|sn|dkr|lnr-btp|sbslabo|gtr|ev2|afnor|en|2e2|g1|g2|pv|vbs)\b/gi, (m) => m.toUpperCase()],
+    [/\b(btp|bim|3d|igh|amo|moe|bpe|vrd|sav|rsa|nf|aci|astm|hlm|p2m|pgt|aps|apd|doe|exe|dwg|pdf|ifc|cbr|fcfa|cfo|cfa|cvc|ssi|ninea|rc|sn|dkr|lnr-btp|sbslabo|gtr|ev2|afnor|2e2|g1|g2|pv|vbs)\b/gi, (m) => m.toUpperCase()],
+    [/\ben(?=\s+\d)/gi, 'EN'],
     [/\bz\/22\b/gi, 'Z/22'],
     [/\bserma\b/gi, 'SERMA'],
     [/\bsb-s\b/gi, 'SB-S'],
