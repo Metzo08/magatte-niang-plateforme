@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import { getMediaUrl } from '@/lib/mediaUrl';
 import {
   Play,
   Pause,
@@ -420,7 +421,7 @@ export function EcosystemPromoVideoPlayer() {
           </div>
 
           <a
-            href="/videos/magatte-niang-promo-2026.mp4"
+            href={getMediaUrl('/videos/magatte-niang-promo-2026.mp4')}
             download="Magatte-Niang-Expert-Film-Promotionnel-2026.mp4"
             className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white/10 hover:bg-white/15 border border-white/15 text-xs font-mono font-bold text-white transition-colors"
             title="Télécharger la vidéo MP4 HD avec voix off"
@@ -436,7 +437,7 @@ export function EcosystemPromoVideoPlayer() {
         <div className="relative aspect-video w-full bg-black">
           <video
             ref={videoRef}
-            src="/videos/magatte-niang-promo-2026.mp4"
+            src={getMediaUrl('/videos/magatte-niang-promo-2026.mp4')}
             poster="/images/reelles/sbs-reel-001.jpg"
             controls
             playsInline
@@ -452,7 +453,7 @@ export function EcosystemPromoVideoPlayer() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             key={activeScene.image}
-            src={activeScene.image}
+            src={getMediaUrl(activeScene.image)}
             alt={activeScene.entityName}
             className="absolute inset-0 w-full h-full object-cover opacity-30 scale-105 transition-transform duration-1000 pointer-events-none"
           />
@@ -575,7 +576,7 @@ export function EcosystemPromoVideoPlayer() {
               <div className="relative rounded-xl overflow-hidden border-2 border-white/20 aspect-[16/10] shadow-2xl">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={activeScene.image}
+                  src={getMediaUrl(activeScene.image)}
                   alt={activeScene.entityName}
                   className="w-full h-full object-cover"
                 />
