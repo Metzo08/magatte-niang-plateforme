@@ -614,7 +614,7 @@ export const AI_KNOWLEDGE_BASE: KnowledgeTopic[] = [
 • **Contacts directs par entité :**
   1. **SERMA BTP (Études 3D/BIM, Charpente & AMO) :**
      - Direction : **Magatte NIANG** · Tél / WhatsApp : **+221 78 832 12 79**
-     - Emails : \`serma@sermabtp.com\` / \`sermabtp@gmail.com\` · Zone Industrielle Km 14 Route de Rufisque, Dakar.
+     - Emails : \`serma@sermabtp.com\` / \`sermabtp@gmail.com\` · HLM Hann Mariste Lot Z/22, Dakar.
   2. **SB-S Group (Génie Civil & Grands Travaux) :**
      - Responsable : **Oumou DIOP** · WhatsApp : **+221 77 203 84 38**
      - Standard : **+221 33 871 08 61** · WhatsApp : **+221 77 500 44 22** · Email : \`contact@sbsgroup.sn\` · Mbao Villeneuve Villa S04 (Plus Code : \`PMX9+CHV, Dakar\`).

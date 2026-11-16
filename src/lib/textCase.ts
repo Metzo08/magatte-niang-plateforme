@@ -31,5 +31,24 @@ export function toFirstUpperRestLower(
       `${prefix}${letter.toLocaleUpperCase('fr-FR')}`
   );
 
+  // Préserve les sigles, normes, codes agréments et acronymes techniques en majuscules
+  const PRESERVED_UPPERCASE: Array<[RegExp, string | ((m: string) => string)]> = [
+    [/\b(c2|a3|c1|b1|b2|ec2|ec3|ec7)\b/gi, (m) => m.toUpperCase()],
+    [/\b(btp|bim|3d|igh|amo|moe|bpe|vrd|sav|rsa|nf|aci|astm|hlm|p2m|pgt|aps|apd|doe|exe|dwg|pdf|ifc|cbr|fcfa|cfo|cfa|cvc|ssi)\b/gi, (m) => m.toUpperCase()],
+    [/\bz\/22\b/gi, 'Z/22'],
+    [/\bserma\b/gi, 'SERMA'],
+    [/\bsb-s\b/gi, 'SB-S'],
+    [/\bsbs-labo\b/gi, 'SBS-Labo'],
+    [/\bsbs-group\b/gi, 'SBS-Group'],
+    [/\bsbs-logistik\b/gi, 'SBS-Logistik'],
+    [/\bsbs-industries\b/gi, 'SBS-Industries'],
+  ];
+
+  for (const [pattern, replacement] of PRESERVED_UPPERCASE) {
+    lowered = typeof replacement === 'string'
+      ? lowered.replace(pattern, replacement)
+      : lowered.replace(pattern, replacement);
+  }
+
   return lowered;
 }
