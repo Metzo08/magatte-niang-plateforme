@@ -49,8 +49,7 @@ const DESKTOP_NAV = [
   { href: '/projets', label: 'Projets' },
   { href: '/mediatheque', label: 'Médiathèque' },
   { href: '/catalogue', label: 'Catalogue' },
-  { href: '/contact', label: 'Contact' },
-  { href: '/espace-pro', label: 'Espace pro' }
+  { href: '/contact', label: 'Contact' }
 ];
 
 /** Menu mobile · navigation complète (sans emojis, différente du desktop) */
@@ -119,7 +118,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenAI }) => {
   };
 
   const navLinkClass = (isActive: boolean) =>
-    `relative px-2 xl:px-3 py-2 text-[13px] font-semibold tracking-wide whitespace-nowrap transition-colors rounded-m ${
+    `relative px-2 xl:px-2.5 py-2 text-[12.5px] xl:text-[13px] font-semibold tracking-wide whitespace-nowrap transition-colors rounded-m shrink-0 ${
       isActive
         ? 'text-accent-600 dark:text-accent-400'
         : 'text-neutral-700 dark:text-neutral-300 hover:text-accent-600 dark:hover:text-accent-400'
@@ -143,8 +142,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenAI }) => {
             <Link href="/profil" className="hover:text-accent-400 transition-colors">
               Profil &amp; recherche
             </Link>
-            <Link href="/espace-pro" className="hover:text-accent-400 transition-colors inline-flex items-center gap-1">
-              <Lock className="w-3 h-3" /> Espace pro
+            <Link href="/espace-pro" className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-accent-500/20 border border-accent-400/40 text-accent-300 hover:bg-accent-500/30 hover:text-white font-semibold transition-colors whitespace-nowrap">
+              <Lock className="w-3 h-3" /> Espace Pro
             </Link>
           </div>
         </div>
@@ -169,7 +168,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenAI }) => {
                   Expert BTP
                 </span>
               </div>
-              <span className="hidden sm:flex text-[11px] font-sans font-medium text-neutral-500 dark:text-neutral-400 tracking-wider mt-1 items-center gap-1.5 whitespace-nowrap">
+              <span className="hidden xl:flex text-[11px] font-sans font-medium text-neutral-500 dark:text-neutral-400 tracking-wider mt-1 items-center gap-1.5 whitespace-nowrap">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent-500" />
                 7 pôles industriels intégrés
               </span>
@@ -284,7 +283,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenAI }) => {
 
             <button
               onClick={onOpenAI}
-              className="hidden xl:inline-flex items-center gap-1.5 px-3 h-9 rounded-m bg-accent-50 dark:bg-accent-600/20 text-accent-600 dark:text-accent-400 border border-accent-200 dark:border-accent-600/40 text-xs font-bold hover:bg-accent-100 dark:hover:bg-accent-600/30 transition-colors"
+              className="hidden xl:inline-flex items-center gap-1.5 px-3 h-9 rounded-m bg-accent-50 dark:bg-accent-600/20 text-accent-600 dark:text-accent-400 border border-accent-200 dark:border-accent-600/40 text-xs font-bold hover:bg-accent-100 dark:hover:bg-accent-600/30 transition-colors whitespace-nowrap shrink-0"
             >
 
               Assistant IA
@@ -313,7 +312,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenAI }) => {
 
             <Link
               href="/assistant"
-              className="hidden xl:inline-flex items-center gap-1.5 ml-1 px-4 h-9 bg-brand-900 dark:bg-accent-600 text-white text-xs font-bold rounded-m hover:bg-accent-600 dark:hover:bg-accent-500 transition-colors"
+              className="hidden lg:inline-flex items-center gap-1.5 ml-1 px-3 xl:px-4 h-9 bg-brand-900 dark:bg-accent-600 text-white text-xs font-bold rounded-m hover:bg-accent-600 dark:hover:bg-accent-500 transition-colors whitespace-nowrap shrink-0"
             >
               Devis express
               <ArrowRight className="w-3.5 h-3.5" />
