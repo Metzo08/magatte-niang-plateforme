@@ -77,7 +77,7 @@ export const PROMO_SCENES: PromoScene[] = [
     subtitle:
       'Ndiakhirate, Cité Assemblée, Villa N° 226 · +221 33 872 06 78 / 77 321 78 60 / 70 835 00 63 · sbslabo15@gmail.com',
     narration:
-      '« Tout grand ouvrage commence par la vérité du sol. Agréé catégories C2 et A3, SB-S Labo, sous la direction technique d’Aminata Dramé et d’Ablaye Niang pour les essais, certifie vos sols et vos bétons sous vingt-quatre heures. »',
+      '« Tout grand ouvrage commence par la vérité du sol. Agréé catégories C1, C2 et A3, SB-S Labo — sous la direction technique d’Aminata Dramé et d’Abdoulaye Niang — réalise forages hydrauliques, pressiomètre, piézomètre, pénétromètres lourd/léger, Casagrande, CBR, Proctor, Los Angeles, Micro-Deval et écrasement béton 3 000 kN. »',
     colorHex: '#1F9D6B',
     image: '/images/promo-cartoon/scene-02.jpg',
     audioUrl: '/audio/promo/scene-02.mp3',

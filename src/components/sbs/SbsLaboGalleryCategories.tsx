@@ -62,7 +62,7 @@ export const SBS_LABO_CATEGORIES: LaboCategoryCard[] = [
         deliverable: 'PV d’analyse granulométrique certifié sous 24 heures pour dimensionnement par SERMA BTP',
       },
       {
-        title: 'Limites de liquidité et de plasticité (Limites d’Atterberg) & Teneur en eau',
+        title: 'Limites d’Atterberg à l’appareil de Casagrande & Teneur en eau',
         normOrRef: 'Référentiel LNR-BTP · Domaine C (Catégorie C.2) · NF P 94-051 / NF P 94-050',
         src: '/images/reelles/sbs-labo-reel-003.jpg',
         description:
@@ -87,13 +87,13 @@ export const SBS_LABO_CATEGORIES: LaboCategoryCard[] = [
     badge: 'Agrément officiel SB-S Labo · Domaine C',
     title: 'Catégorie C.2 · Essais mécaniques sur Sol & Fondations',
     shortDesc:
-      'Essai de cisaillement direct à la boîte de Casagrande, essai de chargement par palier à l’œdomètre, sondage manuel et calcul de portance.',
+      'Essai de cisaillement direct, essai de chargement par palier à l’œdomètre, sondage manuel et calcul de portance.',
     coverImage: '/images/reelles/sbs-labo-reel-004.jpg',
     isAccreditedCore: true,
     iconName: 'Layers',
     examples: [
       {
-        title: 'Essai de cisaillement direct rectiligne à la boîte de Casagrande',
+        title: 'Essai de cisaillement direct rectiligne',
         normOrRef: 'Référentiel LNR-BTP · Domaine C (Catégorie C.2) · NF P 94-071-1',
         src: '/images/reelles/sbs-labo-reel-004.jpg',
         description:
@@ -437,7 +437,7 @@ export default function SbsLaboGalleryCategories() {
               Classification officielle des essais normalisés par domaine et par catégorie
             </h3>
             <p className="text-xs sm:text-sm text-emerald-100/90 leading-relaxed">
-              Sous la Direction Technique d&apos;<strong>Aminata Dramé (+221 70 835 00 63)</strong> et avec <strong>Ablaye Niang (+221 77 321 78 60)</strong> comme Responsable Laboratoire pour les essais, SB-S Labo réalise les études géotechniques et essais normalisés avec un parc matériel 100 % certifié et étalonné. Ses études de sol alimentent directement la modélisation 3D/BIM de <strong>SERMA BTP</strong> avant exécution des travaux par <strong>SB-S Group</strong>.
+              Sous la Direction Technique d&apos;<strong>Aminata Dramé (+221 70 835 00 63)</strong> et avec <strong>Abdoulaye Niang (+221 77 321 78 60)</strong> comme Responsable Laboratoire pour les essais, SB-S Labo réalise les études géotechniques et essais normalisés avec un parc matériel 100 % certifié et étalonné. Ses études de sol alimentent directement la modélisation 3D/BIM de <strong>SERMA BTP</strong> avant exécution des travaux par <strong>SB-S Group</strong>.
             </p>
           </div>
 
@@ -456,7 +456,7 @@ export default function SbsLaboGalleryCategories() {
             </div>
             <div className="pt-2 border-t border-white/15">
               <div className="font-mono font-bold text-emerald-300">Responsable Laboratoire (Essais) :</div>
-              <div className="font-title font-bold text-base text-white">Ablaye Niang</div>
+              <div className="font-title font-bold text-base text-white">Abdoulaye Niang</div>
               <a
                 href="https://wa.me/221773217860"
                 target="_blank"

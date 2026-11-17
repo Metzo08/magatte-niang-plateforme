@@ -248,10 +248,10 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
                       </a>
                     </div>
                     <div className="pt-2 border-t border-white/10">
-                      <p className="font-semibold text-white">Ablaye Niang</p>
+                      <p className="font-semibold text-white">Abdoulaye Niang</p>
                       <p className="text-[11px] text-white/80">Responsable Laboratoire pour les essais</p>
                       <a
-                        href="https://wa.me/221773217860?text=Bonjour%20Ablaye%20Niang%2C%20je%20souhaite%20solliciter%20SB-S%20Labo%20pour%20un%20essai%20au%20laboratoire."
+                        href="https://wa.me/221773217860?text=Bonjour%20Abdoulaye%20Niang%2C%20je%20souhaite%20solliciter%20SB-S%20Labo%20pour%20un%20essai%20au%20laboratoire."
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 mt-1 font-bold text-emerald-300 hover:text-emerald-200 underline"
@@ -449,7 +449,7 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
               <p className="text-neutral-600 dark:text-neutral-400">{entity.leaderRole}</p>
               {id === 'sbs-labo' && (
                 <p className="text-neutral-600 dark:text-neutral-400 mt-1">
-                  Ablaye Niang (responsable laboratoire pour les essais)
+                  Abdoulaye Niang (responsable laboratoire pour les essais)
                 </p>
               )}
             </div>

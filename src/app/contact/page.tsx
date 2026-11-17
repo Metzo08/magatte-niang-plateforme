@@ -56,7 +56,7 @@ const OFFICES = [
     color: '#1B4965',
   },
   {
-    entity: 'SB-S Labo · Géotechnique & Essais Béton (Directrice Technique : Aminata Dramé · Resp. Essais : Ablaye Niang)',
+    entity: 'SB-S Labo · Géotechnique & Essais Béton (Directrice Technique : Aminata Dramé · Resp. Essais : Abdoulaye Niang)',
     address: 'Ndiakhirate, Cité Assemblée, Villa N° 226, Dakar, Sénégal',
     city: 'Dakar',
     phone: '+221 33 872 06 78 / +221 77 321 78 60 / +221 70 835 00 63',

@@ -123,7 +123,7 @@ export const ENTITIES: EntityInfo[] = [
     colorHex: '#1F9D6B',
     accentClass: 'bg-[#1F9D6B]',
     mission: 'Sécuriser chaque ouvrage dès l\'amont en réalisant les études géotechniques de sol (Catégorie C2) et les essais sur matériaux de construction et bétons hydrauliques (Catégorie A3) avec un parc matériel certifié et étalonné, afin de fournir à SERMA BTP les données géotechniques indispensables à la modélisation 3D/BIM avant l\'exécution des travaux.',
-    description: 'SBSLABO (NINEA : 008501141 2E2 · RC : SN DKR 2021 B 12675 · Ndiakhirate, Cité Assemblée, Villa N° 226, Dakar, Sénégal · Tél : 33 872 06 78 / 77 321 78 60 / 70 835 00 63 · Email : sbslabo15@gmail.com), ayant pour Directrice Technique Aminata Dramé et pour Responsable Laboratoire pour les essais Ablaye Niang, SB-S Labo est agréée Catégories C2 (Domaine C : Ingénierie des sols et fondations) et A3 (Domaine A : Matériaux de construction et bétons hydrauliques) conformément au référentiel LNR-BTP (loi n° 2023-12 du 21 juin 2023 et décret n° 2023-1780 du 29 août 2023). SB-S Labo réalise les études géotechniques de référence à partir desquelles SERMA BTP effectue la modélisation logicielle avant de transmettre les dossiers à SB-S Group pour les travaux.',
+    description: 'SBSLABO (NINEA : 008501141 2E2 · RC : SN DKR 2021 B 12675 · Ndiakhirate, Cité Assemblée, Villa N° 226, Dakar, Sénégal · Tél : 33 872 06 78 / 77 321 78 60 / 70 835 00 63 · Email : sbslabo15@gmail.com), ayant pour Directrice Technique Aminata Dramé et pour Responsable Laboratoire pour les essais Abdoulaye Niang, SB-S Labo est agréée Catégories C2 (Domaine C : Ingénierie des sols et fondations) et A3 (Domaine A : Matériaux de construction et bétons hydrauliques) conformément au référentiel LNR-BTP (loi n° 2023-12 du 21 juin 2023 et décret n° 2023-1780 du 29 août 2023). SB-S Labo réalise les études géotechniques de référence à partir desquelles SERMA BTP effectue la modélisation logicielle avant de transmettre les dossiers à SB-S Group pour les travaux.',
     leader: 'Aminata Dramé',
     leaderRole: 'Directrice technique',
     address: 'Ndiakhirate, Cité Assemblée, Villa N° 226, Dakar, Sénégal',
@@ -135,17 +135,17 @@ export const ENTITIES: EntityInfo[] = [
     ctaText: 'Demander un essai de sol / béton',
     ctaAction: 'qualify-labo',
     expertises: [
-      'Catégorie C.2 (Domaine C · Ingénierie des sols et fondations) : teneur en eau, granulométrie par tamisage et densimétrie, limites d\'Atterberg, bleu de méthylène, équivalent de sable, masse volumique',
-      'Catégorie C.2 (Essais mécaniques & in-situ sur sol) : cisaillement direct à la boîte de Casagrande, œdomètre par palier, sondage manuel, pénétromètre dynamique et carottage',
+      'Catégorie C.2 (Domaine C · Ingénierie des sols et fondations) : granulométrie par tamisage et densimétrie, limites d\'Atterberg (appareil de Casagrande), valeur au bleu de méthylène (VBS), équivalent de sable (ES), poids spécifique, poids volumique, teneur en eau',
+      'Catégorie C.2 (Essais mécaniques & in-situ sur sol) : essais d\'œdométrie, cisaillement direct, forage hydraulique, sondage carottage, lecture pressiomètre, sondage piézométrique, pénétromètre dynamique lourd et léger',
       'Catégorie A.3 (Domaine A · Granulats) : granularité, coefficient d\'aplatissement, propreté équivalent de sable, valeur de bleu et absorption d\'eau',
-      'Catégorie A.3 (Domaine A · Bétons hydrauliques & roches) : résistance à la compression simple des éprouvettes sous presse 3 000 kN, essai d\'affaissement au cône d\'Abrams, confection et conservation en salle de cure',
+      'Catégorie A.3 (Domaine A · Bétons hydrauliques & roches) : écrasement béton (presse 3 000 kN), formulation béton, prélèvement béton sur site, mesure d\'affaissement au cône d\'Abrams, essais Los Angeles et Micro-Deval',
       'Domaine B (Géotechnique routière) : essais Proctor Normal et Modifié, indice CBR après immersion et immédiat, compacité in-situ et essai à la plaque (EV2)',
       'Domaine D (Auscultation & diagnostic des ouvrages) : scléromètre, carottage béton durci, auscultation d\'ouvrages et matériel 100 % certifié et étalonné'
     ],
     equipmentList: [
       'Presse de compression hydraulique asservie 3 000 kN certifiée et étalonnée (écrasement béton 7j, 14j, 28j)',
-      'Sondeuse géotechnique carottière APAFOR 450RS, pénétromètres dynamiques lourds et tarières',
-      'Bâtis de cisaillement direct rectiligne (Casagrande) et cellules œdométriques étalonnés',
+      'Foreuse hydraulique & sondeuse carottière APAFOR 450RS, pressiomètre, piézomètre, pénétromètres dynamiques lourds et légers',
+      'Bâtis de cisaillement direct et cellules d\'œdométrie étalonnés',
       'Colonne de tamis normalisés AFNOR, appareil de Casagrande, moules Proctor/CBR, étuves thermostatiques et balances de précision certifiées'
     ],
     synergies: [

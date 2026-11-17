@@ -20,11 +20,11 @@ import { Lead } from '@/types';
 const LABO_DOMAINS = [
   {
     id: 'Catégorie C2 · Étude géotechnique de sol & fondations (G1 / G2)',
-    desc: 'Sondages carottés, pénétromètre dynamique, capacité portante et recommandations de fondations',
+    desc: 'Forage hydraulique, sondage carottage, lecture pressiomètre, sondage piézométrique, pénétromètre dynamique lourd et léger',
   },
   {
     id: 'Catégorie C2 · Identification & mécanique des sols en laboratoire',
-    desc: 'Granulométrie, limites d’Atterberg, VBS, équivalent de sable, cisaillement Casagrande, œdomètre',
+    desc: 'Granulométrie, limites d’Atterberg (appareil de Casagrande), valeur au bleu, équivalent de sable, poids spécifique/volumique, cisaillement direct, œdométrie',
   },
   {
     id: 'Catégorie A3 · Essais sur bétons hydrauliques & éprouvettes',
@@ -45,14 +45,16 @@ const LABO_DOMAINS = [
 ];
 
 const LABO_TESTS = [
-  'Sondages carottés / Pénétromètre dynamique',
-  'Granulométrie & Limites d’Atterberg + VBS',
-  'Cisaillement direct (Casagrande) & Œdomètre',
-  'Écrasement d’éprouvettes béton (7j / 14j / 28j)',
-  'Formulation de béton & Cône d’Abrams',
-  'Essais Proctor Normal/Modifié & Indice CBR',
-  'Contrôle de compactage in-situ / Essai à la plaque EV2',
-  'Carottage béton durci & Scléromètre',
+  'Écrasement béton (presse 3 000 kN) & Formulation béton',
+  'Essais œdométrie & Cisaillement direct',
+  'Limites d’Atterberg (appareil de Casagrande) & Valeur au bleu',
+  'Équivalent de sable, Granulométrie, Poids spécifique & Poids volumique',
+  'Essais CBR & Essais Proctor',
+  'Essais Los Angeles & Micro-Deval',
+  'Forage hydraulique & Sondage carottage (sur site)',
+  'Lecture pressiomètre & Sondage piézométrique (sur site)',
+  'Pénétromètre dynamique lourd et léger (sur site)',
+  'Prélèvement béton & Mesure d’affaissement au cône d’Abrams (sur site)',
 ];
 
 export function SbsLaboConsultationForm() {
@@ -140,7 +142,7 @@ export function SbsLaboConsultationForm() {
               Votre demande d’essai est transmise
             </h1>
             <p className="text-sm text-neutral-600 dark:text-neutral-300 mt-2">
-              La Direction Technique (<strong>Aminata Dramé</strong>) et le Responsable Laboratoire (<strong>Ablaye Niang</strong>) traitent votre demande et vous transmettent un devis / planning sous 24h.
+              La Direction Technique (<strong>Aminata Dramé</strong>) et le Responsable Laboratoire (<strong>Abdoulaye Niang</strong>) traitent votre demande et vous transmettent un devis / planning sous 24h.
             </p>
           </div>
 
