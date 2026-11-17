@@ -29,11 +29,13 @@ import { useProjects } from '@/hooks/useProjects';
 import { ENTITIES } from '@/data/initialData';
 import { SITE_IMAGES, EXPERTISE_IMAGES, PHOTOS_REELLES } from '@/data/siteImages';
 import { EcosystemPromoVideoPlayer } from '@/components/video/EcosystemPromoVideoPlayer';
+import PhotoLightbox from '@/components/common/PhotoLightbox';
 
 export default function HomePage() {
   const { entities: apiEntities } = useEntities();
   const { projects } = useProjects();
   const [hoveredSynergy, setHoveredSynergy] = React.useState<string | null>(null);
+  const [homeLightboxIdx, setHomeLightboxIdx] = React.useState<number | null>(null);
 
   // Piliers affichés immédiatement (fallback statique) puis enrichis par l'API
   const entities = apiEntities.length > 0 ? apiEntities : ENTITIES;
@@ -484,9 +486,11 @@ export default function HomePage() {
             { img: PHOTOS_REELLES.laboVue, label: 'Laboratoire géotechnique C2', tag: 'SB-S Labo' },
             { img: PHOTOS_REELLES.enginChantier, label: 'Parc matériel & engins', tag: 'SB-S Logistik' },
           ].map((item, idx) => (
-            <div
+            <button
+              type="button"
               key={idx}
-              className="group relative w-full rounded-l overflow-hidden border border-neutral-200 dark:border-brand-700 shadow-elev-1 hover:shadow-elev-3 transition-all h-48 sm:h-52"
+              onClick={() => setHomeLightboxIdx(idx)}
+              className="group relative w-full text-left cursor-pointer rounded-l overflow-hidden border border-neutral-200 dark:border-brand-700 shadow-elev-1 hover:shadow-elev-3 hover:border-accent-500 transition-all h-48 sm:h-52"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -495,19 +499,38 @@ export default function HomePage() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-3">
-                <span className="text-[9px] font-mono font-bold  tracking-wider text-accent-400 block">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+              <div className="absolute bottom-0 left-0 right-0 p-3 pointer-events-none">
+                <span className="text-[9px] font-mono font-bold tracking-wider text-accent-400 block">
                   {item.tag}
                 </span>
                 <span className="text-xs font-semibold text-white block leading-tight">
                   {item.label}
                 </span>
               </div>
-            </div>
+            </button>
           ))}
         </div>
       </section>
+
+        {homeLightboxIdx !== null && (
+          <PhotoLightbox
+            images={[
+              { url: PHOTOS_REELLES.cesStockageSendou, caption: 'CES · SENDOU — Stockage produits chimiques' },
+              { url: PHOTOS_REELLES.dlmUsineOxygeneMako, caption: 'DLM · MAKO — Usine d\'oxygène PSA 6T/j' },
+              { url: PHOTOS_REELLES.polytechBureauxSococim, caption: 'POLYTECH — Bureaux carrière SOCOCIM' },
+              { url: PHOTOS_REELLES.secaaAireLavage, caption: 'SECAA SA — Aire de lavage industrielle' },
+              { url: PHOTOS_REELLES.oimSocieteGenerale, caption: 'SGT · OIM — Travaux humanitaires OIM' },
+              { url: PHOTOS_REELLES.chantierCouverture, caption: 'SB-S Group — Chantier génie civil' },
+              { url: PHOTOS_REELLES.laboVue, caption: 'SB-S Labo — Laboratoire géotechnique C2' },
+              { url: PHOTOS_REELLES.enginChantier, caption: 'SB-S Logistik — Parc matériel & engins' },
+            ]}
+            index={homeLightboxIdx}
+            onIndexChange={setHomeLightboxIdx}
+            onClose={() => setHomeLightboxIdx(null)}
+            title="Du chantier à l’atelier, une maîtrise intégrale"
+          />
+        )}
 
       {/* SECTION 4: MATRICE INTERACTIVE DES ENTITÉS & SYNERGIES */}
       <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8">

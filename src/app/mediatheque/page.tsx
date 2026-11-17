@@ -1,7 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import PhotoLightbox from '@/components/common/PhotoLightbox';
 import { PUBLICATIONS } from '@/data/initialData';
 import { SITE_IMAGES } from '@/data/siteImages';
 import SbsPresentationGallery from '@/components/sbs/SbsPresentationGallery';
@@ -14,6 +15,7 @@ import {
 import Link from 'next/link';
 
 export default function MediathequePage() {
+  const [photoIdx, setPhotoIdx] = useState<number | null>(null);
   const pressItems = PUBLICATIONS.filter(p => p.type === 'Presse');
 
   const medias = [
@@ -132,7 +134,7 @@ export default function MediathequePage() {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {medias.map((m, idx) => (
-            <figure key={idx} className="group relative overflow-hidden rounded-l border border-neutral-200 dark:border-brand-700 bg-neutral-100 dark:bg-brand-800">
+            <figure key={idx} onClick={() => setPhotoIdx(idx)} role="button" tabIndex={0} onKeyDown={(e) => { if (e.key === 'Enter') setPhotoIdx(idx); }} className="group relative cursor-pointer overflow-hidden rounded-l border border-neutral-200 dark:border-brand-700 hover:border-accent-500 bg-neutral-100 dark:bg-brand-800 transition-all">
               <div className="relative h-48 sm:h-52 w-full overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -142,7 +144,7 @@ export default function MediathequePage() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-2 text-[11px] leading-tight text-white">
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-2 text-[11px] leading-tight text-white pointer-events-none">
                 <span className="font-semibold block">{m.tag}</span>
                 {m.label}
               </figcaption>
@@ -151,6 +153,16 @@ export default function MediathequePage() {
         </div>
       </section>
     
+      {photoIdx !== null && (
+        <PhotoLightbox
+          images={medias.map((m) => ({ url: m.src, caption: `${m.tag} — ${m.label}` }))}
+          index={photoIdx}
+          onIndexChange={setPhotoIdx}
+          onClose={() => setPhotoIdx(null)}
+          title="Photothèque officielle Magatte Niang Expert"
+        />
+      )}
+
       {/* ARCHIVES COMPLETES : 64 PLANCHES OFFICIELLES SBS GROUP */}
       <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-14 border-t border-neutral-200 dark:border-brand-700">
         <div className="flex items-center gap-3 mb-6">

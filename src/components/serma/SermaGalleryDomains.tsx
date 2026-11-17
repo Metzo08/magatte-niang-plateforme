@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import {
   ChevronLeft,
   ChevronRight,
@@ -698,9 +699,9 @@ export default function SermaGalleryDomains() {
       </div>
 
       {/* MODALE / VUE CARROUSEL INTERACTIF QUAND ON ENTRE DANS UN DOMAINE */}
-      {activeDomain && currentSlide && (
+      {typeof document !== 'undefined' && activeDomain && currentSlide && createPortal(
         <div
-          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 overflow-y-auto"
+          className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center p-3 sm:p-6 overflow-y-auto"
           onClick={closeCarousel}
         >
           <div
@@ -872,6 +873,7 @@ export default function SermaGalleryDomains() {
             </div>
           </div>
         </div>
+        , document.body
       )}
     </div>
   );
