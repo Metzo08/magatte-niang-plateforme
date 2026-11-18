@@ -83,8 +83,22 @@ export async function PUT(req: Request) {
   }
 
   try {
+    await ensureP2mSeeded();
     const body = await req.json();
-    const { id, name, category, brand, dimensions, indicativePriceFCFA, isPriceVisible, availability, leadTime, unit } = body;
+    const {
+      id,
+      ref,
+      name,
+      category,
+      brand,
+      dimensions,
+      indicativePriceFCFA,
+      isPriceVisible,
+      availability,
+      leadTime,
+      unit,
+      imageUrl,
+    } = body;
     if (!id) {
       return NextResponse.json({ error: 'ID produit requis.' }, { status: 400 });
     }
@@ -92,15 +106,17 @@ export async function PUT(req: Request) {
     const product = await prisma.product.update({
       where: { id },
       data: {
-        ...(name !== undefined ? { name } : {}),
-        ...(category !== undefined ? { category } : {}),
-        ...(brand !== undefined ? { brand } : {}),
-        ...(dimensions !== undefined ? { dimensions } : {}),
+        ...(ref !== undefined && String(ref).trim() ? { ref: String(ref).trim().toUpperCase() } : {}),
+        ...(name !== undefined ? { name: String(name).trim() } : {}),
+        ...(category !== undefined ? { category: String(category).trim() } : {}),
+        ...(brand !== undefined ? { brand: String(brand).trim() } : {}),
+        ...(dimensions !== undefined ? { dimensions: String(dimensions).trim() } : {}),
         ...(indicativePriceFCFA !== undefined ? { indicativePriceFCFA: Number(indicativePriceFCFA) } : {}),
         ...(isPriceVisible !== undefined ? { isPriceVisible: Boolean(isPriceVisible) } : {}),
-        ...(availability !== undefined ? { availability } : {}),
-        ...(leadTime !== undefined ? { leadTime } : {}),
-        ...(unit !== undefined ? { unit } : {}),
+        ...(availability !== undefined ? { availability: String(availability).trim() } : {}),
+        ...(leadTime !== undefined ? { leadTime: String(leadTime).trim() } : {}),
+        ...(unit !== undefined ? { unit: String(unit).trim() } : {}),
+        ...(imageUrl ? { images: [String(imageUrl).trim()] as any } : {}),
       },
     });
 

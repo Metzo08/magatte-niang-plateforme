@@ -658,9 +658,20 @@ function PanierIsolateContent() {
                         >
                           <Minus className="w-3.5 h-3.5" />
                         </button>
-                        <span className="px-2.5 text-xs font-mono font-bold tabular-nums">
-                          {item.quantity}
-                        </span>
+                        <input
+                          type="number"
+                          min={1}
+                          max={99999}
+                          value={item.quantity}
+                          onChange={(e) => {
+                            const parsed = parseInt(e.target.value, 10);
+                            if (!Number.isNaN(parsed) && parsed >= 1) {
+                              handleUpdateQty(item.product.id, parsed, days);
+                            }
+                          }}
+                          aria-label="Quantité"
+                          className="w-16 px-1 py-1 bg-transparent text-xs font-mono font-bold tabular-nums text-center text-neutral-900 dark:text-white focus:outline-none"
+                        />
                         <button
                           type="button"
                           onClick={() => handleUpdateQty(item.product.id, item.quantity + 1, days)}
@@ -918,44 +929,53 @@ function PanierIsolateContent() {
                   <ArrowRight className="w-4 h-4" />
                 </button>
 
-                {isLogistik && (
-                  <div className="pt-2">
-                    <div className="relative flex py-1 items-center">
-                      <div className="flex-grow border-t border-neutral-200 dark:border-brand-700"></div>
-                      <span className="flex-shrink mx-2 text-[10px] uppercase font-mono text-neutral-400">
-                        ou commande directe
-                      </span>
-                      <div className="flex-grow border-t border-neutral-200 dark:border-brand-700"></div>
-                    </div>
+                {(() => {
+                  const waConfig =
+                    activeEntity === 'sbs-logistik'
+                      ? { phone: '221778586105', display: '+221 77 858 61 05', contact: 'Rokhaya KANE (SB-S Logistik)' }
+                      : activeEntity === 'sbs-industries'
+                        ? { phone: '221775664806', display: '+221 77 566 48 06', contact: 'Salimata SOW (SB-S Industrie)' }
+                        : { phone: '221784246445', display: '+221 78 424 64 45', contact: 'P2M Showroom' };
 
-                    <a
-                      href={`https://wa.me/221778586105?text=${encodeURIComponent(
-                        `Bonjour Rokhaya KANE, je souhaite commander / réserver ces matériels chez SBS Logistik :\n\n${cart
-                          .map(
-                            (item, idx) =>
-                              `${idx + 1}. ${item.product.name} · Qté : ${item.quantity}, Durée : ${item.days || 1} j${
-                                item.product.indicativePriceFCFA
-                                  ? ` (${item.product.indicativePriceFCFA.toLocaleString('fr-FR')} F/j)`
-                                  : ''
-                              }`
-                          )
-                          .join('\n')}\n\nClient : ${clientData.name || 'Client'}${
-                          clientData.company ? ` (${clientData.company})` : ''
-                        }\nTéléphone : ${clientData.phone || ''}\nLieu de livraison / Chantier : ${
-                          clientData.deliveryLocation || 'Dakar'
-                        }\nDate souhaitée : ${clientData.startDate || 'Dès que possible'}${
-                          clientData.notes ? `\nPrécisions : ${clientData.notes}` : ''
-                        }`
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-m text-sm shadow-sm transition-colors flex items-center justify-center gap-2 mt-1"
-                    >
-                      <MessageCircle className="w-4 h-4" />
-                      <span>Commander via WhatsApp avec Rokhaya KANE (+221 77 858 61 05)</span>
-                    </a>
-                  </div>
-                )}
+                  const waLines = cart.map((item, idx) => {
+                    const d = isLogistik ? Math.max(1, item.days || 1) : 1;
+                    const unitPrice = item.product.indicativePriceFCFA || 0;
+                    const lineTot = unitPrice * item.quantity * d;
+                    const qtyText = isLogistik
+                      ? `Qté : ${item.quantity} × ${d} j`
+                      : `Qté : ${item.quantity} ${item.product.unit || 'u'}`;
+                    const priceText = unitPrice > 0 ? ` — ${lineTot.toLocaleString('fr-FR')} FCFA` : ' (Sur devis)';
+                    return `${idx + 1}. ${item.product.name} (${item.product.ref}) · ${qtyText}${priceText}`;
+                  });
+
+                  const waText = `Bonjour ${waConfig.contact}, je souhaite commander / demander un devis via ${meta.label} :\n\n${waLines.join('\n')}${
+                    totalTTC > 0 ? `\n\nTotal estimé TTC : ${totalTTC.toLocaleString('fr-FR')} FCFA` : ''
+                  }\n\nClient : ${clientData.name || 'Client'}${clientData.company ? ` (${clientData.company})` : ''}\nTéléphone : ${clientData.phone || ''}\nLieu de livraison / Chantier : ${clientData.deliveryLocation || 'Dakar'}${
+                    clientData.startDate ? `\nDate souhaitée : ${clientData.startDate}` : ''
+                  }${clientData.notes ? `\nPrécisions : ${clientData.notes}` : ''}`;
+
+                  return (
+                    <div className="pt-2">
+                      <div className="relative flex py-1 items-center">
+                        <div className="flex-grow border-t border-neutral-200 dark:border-brand-700"></div>
+                        <span className="flex-shrink mx-2 text-[10px] uppercase font-mono text-neutral-400">
+                          ou commande directe WhatsApp
+                        </span>
+                        <div className="flex-grow border-t border-neutral-200 dark:border-brand-700"></div>
+                      </div>
+
+                      <a
+                        href={`https://wa.me/${waConfig.phone}?text=${encodeURIComponent(waText)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-m text-sm shadow-sm transition-colors flex items-center justify-center gap-2 mt-1"
+                      >
+                        <MessageCircle className="w-4 h-4" />
+                        <span>Commander via WhatsApp · {waConfig.contact} ({waConfig.display})</span>
+                      </a>
+                    </div>
+                  );
+                })()}
               </form>
             </div>
           </div>

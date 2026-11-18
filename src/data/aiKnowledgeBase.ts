@@ -242,7 +242,8 @@ export const AI_KNOWLEDGE_BASE: KnowledgeTopic[] = [
   - **Directeur Général :** Magatte NIANG
   - **Responsable SBS-GROUP :** **Oumou DIOP** (WhatsApp : **+221 77 203 84 38**)
   - **Standard Siège :** **+221 33 871 08 61** · WhatsApp commercial : **+221 77 500 44 22** · Email : \`contact@sbsgroup.sn\`
-  - **Adresse :** Mbao Villeneuve, Villa S04, Route Nationale (proximité immédiate ZFI de Mbao, Plus Code : \`PMX9+CHV, Dakar\`).
+  - **Adresse :** Mbao Villeneuve, Villa S04, Route Nationale (Plus Code : \`PMX9+CHV, Dakar\`).
+- **3 Volets clés :** Volet Bâtiment, Volet Charpente, Travaux Industriels.
 
 • **Forces techniques & Bureau des Méthodes :**
   - **Bureau des Méthodes intégré** : plans d'exécution aux Eurocodes (2, 3, 4, 7), phasage optimisé, métrés rigoureux.

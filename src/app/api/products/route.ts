@@ -5,6 +5,9 @@ import { apiHandler } from '@/lib/utils';
 import { ensureP2mSeeded } from '@/lib/p2mBootstrap';
 import { getAuthenticatedEntityManager } from '@/lib/entityAuth';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function GET() {
   return apiHandler(
     async () => {

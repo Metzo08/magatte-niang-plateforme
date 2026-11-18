@@ -28,6 +28,7 @@ import SbsLogistikGallery from '@/components/sbs/SbsLogistikGallery';
 import SbsIndustriesPublicCatalog from '@/components/sbs/SbsIndustriesPublicCatalog';
 import SbsLaboGalleryCategories from '@/components/sbs/SbsLaboGalleryCategories';
 import SermaGalleryDomains from '@/components/serma/SermaGalleryDomains';
+import SermaOrganigramme from '@/components/serma/SermaOrganigramme';
 import P2mShowroomBlocks from '@/components/p2m/P2mShowroomBlocks';
 import InteractiveLocationMap from '@/components/maps/InteractiveLocationMap';
 import { Layers, Truck } from 'lucide-react';
@@ -407,6 +408,51 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
             </div>
           </div>
           <SbsLogistikGallery />
+        </section>
+      )}
+
+      {/* ORGANIGRAMME OFFICIEL SERMA BTP */}
+      {id === 'serma-btp' && <SermaOrganigramme />}
+
+      {/* 3 VOLETS D'ACTIVITÉ SB-S GROUP */}
+      {id === 'sbs-group' && (
+        <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-10 border-b border-neutral-200 dark:border-brand-700">
+          <div className="mb-6">
+            <span className="text-xs font-mono font-bold text-accent-600 dark:text-accent-400 uppercase tracking-wider">
+              Pôles opérationnels · SB-S Group
+            </span>
+            <h2 className="text-2xl font-title font-bold text-neutral-900 dark:text-white mt-1">
+              Nos 3 volets d&apos;intervention
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {[
+              {
+                title: 'Volet Bâtiment',
+                desc: 'Construction d’immeubles, résidences, ouvrages administratifs, gros œuvre, réhabilitations et livraisons clé en main aux normes Eurocodes & DTU.',
+              },
+              {
+                title: 'Volet Charpente',
+                desc: 'Fabrication et montage de charpentes métalliques lourdes, hangars grande portée, passerelles, auvents et ouvrages mixtes acier-béton.',
+              },
+              {
+                title: 'Travaux Industriels',
+                desc: 'Génie civil industriel, fondations spéciales d’usines et de concasseurs, dallages haute résistance, plateformes logistiques et VRD lourds.',
+              },
+            ].map((v) => (
+              <div
+                key={v.title}
+                className="bg-white dark:bg-brand-900/60 border border-neutral-200 dark:border-brand-700 rounded-l p-6 shadow-xs"
+              >
+                <h3 className="text-lg font-title font-bold text-neutral-900 dark:text-white mb-2">
+                  {v.title}
+                </h3>
+                <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                  {v.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </section>
       )}
 

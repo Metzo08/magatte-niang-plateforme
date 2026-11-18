@@ -67,9 +67,9 @@ export const productsAPI = {
     if (params?.category) query.append('category', params.category);
     if (params?.availability) query.append('availability', params.availability);
     const queryString = query.toString() ? `?${query.toString()}` : '';
-    return fetchAPI<any[]>(`/api/products${queryString}`);
+    return fetchAPI<any[]>(`/api/products${queryString}`, { cache: 'no-store' });
   },
-  getById: (id: string) => fetchAPI<any>(`/api/products/${id}`),
+  getById: (id: string) => fetchAPI<any>(`/api/products/${id}`, { cache: 'no-store' }),
   create: (data: any) => fetchAPI<any>('/api/products', { method: 'POST', body: JSON.stringify(data) }),
   update: (id: string, data: any) => fetchAPI<any>(`/api/products/${id}`, { method: 'PUT', body: JSON.stringify(data) }),
   delete: (id: string) => fetchAPI<any>(`/api/products/${id}`, { method: 'DELETE' }),

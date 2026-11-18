@@ -11,16 +11,18 @@ export function useProducts(params?: { category?: string; availability?: string 
     if (params?.availability) list = list.filter((p: any) => p.availability === params.availability);
     return list;
   };
-  const initial = getStaticProducts();
+  const fallback = getStaticProducts();
 
   const { data, isPending, isError, error } = useQuery({
     queryKey: ['products', params?.category ?? null, params?.availability ?? null],
     queryFn: () => productsAPI.getAll(params),
-    initialData: initial.length > 0 ? initial : undefined,
-    staleTime: 1000 * 60 * 30,
+    placeholderData: fallback.length > 0 ? fallback : undefined,
+    staleTime: 0,
+    refetchOnMount: 'always',
+    refetchOnWindowFocus: true,
   });
 
-  const products = data ?? initial;
+  const products = data ?? fallback;
 
   return {
     products,
@@ -36,8 +38,10 @@ export function useProduct(id: string | null) {
     queryKey: ['product', id],
     queryFn: () => productsAPI.getById(id as string),
     enabled: !!id,
-    initialData: staticProduct || undefined,
-    staleTime: 1000 * 60 * 30,
+    placeholderData: staticProduct || undefined,
+    staleTime: 0,
+    refetchOnMount: 'always',
+    refetchOnWindowFocus: true,
   });
 
   const product = data ?? staticProduct;

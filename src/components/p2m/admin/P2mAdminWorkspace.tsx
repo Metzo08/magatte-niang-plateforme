@@ -2,6 +2,7 @@
 
 import React, { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useQueryClient } from '@tanstack/react-query';
 import { EntityInterconnectionBar } from '@/components/entity-admin/EntityInterconnectionBar';
 import {
   LayoutDashboard,
@@ -82,6 +83,7 @@ interface P2mAuditRow {
 type P2mTab = 'dashboard' | 'catalogue' | 'needs' | 'clients' | 'docs' | 'security';
 
 export function P2mAdminWorkspace({ onLogout }: { onLogout: () => void }) {
+  const queryClient = useQueryClient();
   const [tab, setTab] = useState<P2mTab>('dashboard');
   const [loading, setLoading] = useState(true);
   const [toast, setToast] = useState<{ msg: string; err?: boolean } | null>(null);
@@ -163,10 +165,18 @@ export function P2mAdminWorkspace({ onLogout }: { onLogout: () => void }) {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Erreur produit P2M');
+      if (data.product) {
+        setProducts((prev) =>
+          editingProd
+            ? prev.map((item) => (item.id === data.product.id ? data.product : item))
+            : [data.product, ...prev]
+        );
+      }
       setShowProdForm(false);
       setEditingProd(null);
       await loadWorkspace();
-      notify('Catalogue P2M mis à jour et synchronisé sur /catalogue !');
+      await queryClient.invalidateQueries({ queryKey: ['products'] });
+      notify('Catalogue P2M mis à jour et synchronisé sur /catalogue et /entites/p2m !');
     } catch (err) {
       notify(err instanceof Error ? err.message : 'Erreur', true);
     }
