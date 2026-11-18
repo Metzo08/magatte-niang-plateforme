@@ -12,7 +12,7 @@ const createEquipSchema = z.object({
   description: z.string().trim().max(3000).default(''),
   specs: z.string().trim().max(2000).default(''),
   usage: z.string().trim().max(1000).default(''),
-  imageUrl: z.string().trim().max(500).default('/images/logistik/engin-default.jpg'),
+  imageUrl: z.string().trim().default('/images/logistik/engin-default.jpg'),
   dailyRateFCFA: z.number().min(0).default(0),
   isPriceVisible: z.boolean().default(true),
   availability: z
@@ -86,7 +86,7 @@ const updateEquipSchema = z.object({
   description: z.string().trim().max(3000).optional(),
   specs: z.string().trim().max(2000).optional(),
   usage: z.string().trim().max(1000).optional(),
-  imageUrl: z.string().trim().max(500).optional(),
+  imageUrl: z.string().trim().optional(),
   dailyRateFCFA: z.number().min(0).optional(),
   isPriceVisible: z.boolean().optional(),
   availability: z

@@ -149,7 +149,7 @@ export const AI_KNOWLEDGE_BASE: KnowledgeTopic[] = [
 
 3. **SB-S Group (Stein Bauer Sénégal Group · Génie Civil, Grands Travaux & Industrie)** :
    - **Rôle :** Exécution des travaux de génie civil lourd, ouvrages d'art, dallages industriels, murs de soutènement, VRD et bâtiments clés en main à partir des études de SB-S Labo et des modèles 3D de SERMA BTP. Doté d'un Bureau des Méthodes intégré.
-   - **Contact :** DG **Magatte Niang** · Responsable **Oumou DIOP (+221 77 203 84 38)** · Standard : **+221 33 871 08 61** · \`contact@sbsgroup.sn\` · Mbao Villeneuve Villa S04.
+   - **Contact :** DG **Magatte Niang** · Responsable **Oumou DIOP (+221 77 203 84 38)** · Standard : **+221 33 871 08 61** · \`contact@sbsgroup.sn\` · Mbao Villeneuve, Villa S/04, Route Nationale MBAO, Dakar (Pikine).
 
 4. **SB-S Industries (Centrale à Béton 60 m³/h & Préfabrication Béton)** :
    - **Rôle :** Production industrielle en ZFI de Mbao : Béton Prêt à l'Emploi (C15 à C30 : 62 000 à 77 000 F/m³), Agglos creux (10 à 20 cm : 380 à 590 F), Agglos pleins (15 et 20 cm : 700 et 850 F), Hourdis (12 à 25 cm : 450 à 750 F), Pavés (6, 8, 10 cm : 6 750 à 9 000 F/m²) sur pondeuse automatique QT40-3A.
@@ -242,7 +242,7 @@ export const AI_KNOWLEDGE_BASE: KnowledgeTopic[] = [
   - **Directeur Général :** Magatte NIANG
   - **Responsable SBS-GROUP :** **Oumou DIOP** (WhatsApp : **+221 77 203 84 38**)
   - **Standard Siège :** **+221 33 871 08 61** · WhatsApp commercial : **+221 77 500 44 22** · Email : \`contact@sbsgroup.sn\`
-  - **Adresse :** Mbao Villeneuve, Villa S04, Route Nationale (Plus Code : \`PMX9+CHV, Dakar\`).
+  - **Adresse :** Mbao Villeneuve, Villa S/04, Route Nationale MBAO, Dakar (Pikine) (Plus Code : \`PMX9+CHV, Dakar\`).
 - **3 Volets clés :** Volet Bâtiment, Volet Charpente, Travaux Industriels.
 
 • **Forces techniques & Bureau des Méthodes :**
@@ -618,7 +618,7 @@ export const AI_KNOWLEDGE_BASE: KnowledgeTopic[] = [
      - Emails : \`serma@sermabtp.com\` / \`sermabtp@gmail.com\` · HLM Hann Mariste Lot Z/22, Dakar.
   2. **SB-S Group (Génie Civil & Grands Travaux) :**
      - Responsable : **Oumou DIOP** · WhatsApp : **+221 77 203 84 38**
-     - Standard : **+221 33 871 08 61** · WhatsApp : **+221 77 500 44 22** · Email : \`contact@sbsgroup.sn\` · Mbao Villeneuve Villa S04 (Plus Code : \`PMX9+CHV, Dakar\`).
+     - Standard : **+221 33 871 08 61** · WhatsApp : **+221 77 500 44 22** · Email : \`contact@sbsgroup.sn\` · Mbao Villeneuve, Villa S/04, Route Nationale MBAO, Dakar (Pikine) (Plus Code : \`PMX9+CHV, Dakar\`).
   3. **SB-S Labo (Géotechnique & Essais C2/A3) :**
      - Directrice Technique : **Aminata DRAMÉ** · Tél & WhatsApp : **+221 70 835 00 63**
      - Responsable Laboratoire (pour les essais) : **Abdoulaye NIANG** · Tél & WhatsApp : **+221 77 321 78 60**

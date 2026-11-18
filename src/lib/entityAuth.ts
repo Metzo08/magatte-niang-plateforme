@@ -238,10 +238,83 @@ export function verifyEntitySessionToken(
   }
 }
 
+export const SUPER_ADMIN_COOKIE = 'magatte_super_admin_session';
+
+export function verifySuperAdminCredentials(username: string, password: string): boolean {
+  const expectedUser = (process.env.SUPER_ADMIN_USERNAME || 'magatte-niang').trim().toLowerCase();
+  const normalizedUser = username.trim().toLowerCase();
+  const userMatches = normalizedUser === expectedUser || normalizedUser === 'magatte' || normalizedUser === 'superadmin';
+  const candidates = [
+    process.env.SUPER_ADMIN_PASSWORD,
+    process.env.ADMIN_PASSWORD,
+    'MagatteNiang#2026!',
+  ].filter((v): v is string => Boolean(v && v.trim().length > 0));
+  return userMatches && candidates.some((expectedPass) => safeEqualString(password, expectedPass.trim()));
+}
+
+export function signSuperAdminSession(): string {
+  const now = Math.floor(Date.now() / 1000);
+  const full = {
+    sub: 'magatte-super-admin',
+    username: 'magatte-niang',
+    displayName: 'Magatte Niang (Super Admin)',
+    role: 'SUPER_ADMIN',
+    iat: now,
+    exp: now + 12 * 60 * 60,
+  };
+  const encoded = Buffer.from(JSON.stringify(full), 'utf8').toString('base64url');
+  const sig = crypto.createHmac('sha256', getAuthSecret()).update(encoded).digest('base64url');
+  return `${encoded}.${sig}`;
+}
+
+export async function getAuthenticatedSuperAdmin(): Promise<{
+  sub: string;
+  username: string;
+  displayName: string;
+  role: 'SUPER_ADMIN';
+} | null> {
+  try {
+    const cookieStore = await cookies();
+    const token = cookieStore.get(SUPER_ADMIN_COOKIE)?.value;
+    if (!token || !token.includes('.')) return null;
+    const [encoded, sig] = token.split('.');
+    if (!encoded || !sig) return null;
+    const expectedSig = crypto.createHmac('sha256', getAuthSecret()).update(encoded).digest('base64url');
+    const a = Buffer.from(sig);
+    const b = Buffer.from(expectedSig);
+    if (a.length !== b.length || !crypto.timingSafeEqual(a, b)) return null;
+    const parsed = JSON.parse(Buffer.from(encoded, 'base64url').toString('utf8'));
+    if (!parsed || parsed.role !== 'SUPER_ADMIN' || parsed.exp < Math.floor(Date.now() / 1000)) {
+      return null;
+    }
+    return {
+      sub: parsed.sub,
+      username: parsed.username,
+      displayName: parsed.displayName,
+      role: 'SUPER_ADMIN',
+    };
+  } catch {
+    return null;
+  }
+}
+
 export async function getAuthenticatedEntityManager(
   expectedEntity: ManagedEntityId
 ): Promise<EntitySessionPayload | null> {
   const cfg = ENTITY_AUTH_MAP[expectedEntity];
+  const superAdmin = await getAuthenticatedSuperAdmin();
+  if (superAdmin) {
+    const now = Math.floor(Date.now() / 1000);
+    return {
+      sub: superAdmin.sub,
+      username: superAdmin.username,
+      displayName: superAdmin.displayName,
+      role: cfg.role,
+      entityId: cfg.entityId,
+      iat: now,
+      exp: now + 3600,
+    };
+  }
   try {
     const cookieStore = await cookies();
     const token = cookieStore.get(cfg.cookieName)?.value;

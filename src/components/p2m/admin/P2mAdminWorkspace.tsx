@@ -4,6 +4,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useQueryClient } from '@tanstack/react-query';
 import { EntityInterconnectionBar } from '@/components/entity-admin/EntityInterconnectionBar';
+import { ImageUploadField } from '@/components/entity-admin/ImageUploadField';
 import {
   LayoutDashboard,
   Layers,
@@ -109,6 +110,7 @@ export function P2mAdminWorkspace({ onLogout }: { onLogout: () => void }) {
     isPriceVisible: true,
     availability: 'En stock',
     leadTime: 'Sous 48h',
+    imageUrl: '',
   });
 
   const [showClientForm, setShowClientForm] = useState(false);
@@ -350,6 +352,7 @@ export function P2mAdminWorkspace({ onLogout }: { onLogout: () => void }) {
                       isPriceVisible: true,
                       availability: 'En stock',
                       leadTime: 'Sous 48h',
+                      imageUrl: '',
                     });
                     setShowProdForm((v) => !v);
                   }}
@@ -434,6 +437,14 @@ export function P2mAdminWorkspace({ onLogout }: { onLogout: () => void }) {
                     onChange={(e) => setProdForm((p) => ({ ...p, unit: e.target.value }))}
                     className="px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-white"
                   />
+                  <div className="md:col-span-3">
+                    <ImageUploadField
+                      label="Photo du produit P2M (synchronisée en direct sur /catalogue et /entites/p2m)"
+                      value={prodForm.imageUrl}
+                      onChange={(url) => setProdForm((p) => ({ ...p, imageUrl: url }))}
+                      onNotify={notify}
+                    />
+                  </div>
                   <button
                     type="submit"
                     className="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold flex items-center justify-center gap-1.5"
@@ -491,6 +502,7 @@ export function P2mAdminWorkspace({ onLogout }: { onLogout: () => void }) {
                                   isPriceVisible: p.isPriceVisible,
                                   availability: p.availability,
                                   leadTime: p.leadTime,
+                                  imageUrl: Array.isArray((p as any).images) ? (p as any).images[0] || '' : '',
                                 });
                                 setShowProdForm(true);
                               }}

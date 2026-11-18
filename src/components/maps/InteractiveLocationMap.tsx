@@ -45,7 +45,7 @@ export const OFFICIAL_SITES: SiteLocation[] = [
     role: 'Exécution des travaux BTP, génie civil, ouvrages d’art et direction générale',
     plusCode: 'PMX9+CHV, Dakar',
     coords: { lat: 14.7486088, lng: -17.3310687 },
-    address: 'Mbao Villeneuve, Villa S04, Route Nationale (à proximité immédiate de la Zone Franche Industrielle ZFI de Mbao)',
+    address: 'Mbao Villeneuve, Villa S/04, Route Nationale MBAO, Dakar (Pikine)',
     city: 'Mbao, Dakar (Pikine)',
     phone: '+221 33 871 08 61',
     whatsapp: '+221 77 203 84 38',
@@ -221,7 +221,7 @@ export default function InteractiveLocationMap({
               </h3>
               <p className="text-xs sm:text-sm text-neutral-300 mt-0.5">
                 Plus Code certifié Google Maps :{' '}
-                <strong className="text-accent-300 font-mono">PMX9+CHV, Dakar</strong> · Mbao Villeneuve / ZFI
+                <strong className="text-accent-300 font-mono">PMX9+CHV, Dakar</strong> · Mbao Villeneuve, Villa S/04, Route Nationale MBAO
               </p>
             </div>
           </div>

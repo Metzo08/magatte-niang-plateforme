@@ -22,7 +22,7 @@ const createProductSchema = z.object({
   isPriceVisible: z.boolean().default(true),
   availability: z.string().trim().default('En stock'),
   leadTime: z.string().trim().default('Sous 48h'),
-  imageUrl: z.string().trim().max(500).optional(),
+  imageUrl: z.string().trim().optional(),
 });
 
 export async function POST(req: Request) {

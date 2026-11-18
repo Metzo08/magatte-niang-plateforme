@@ -1,6 +1,7 @@
 import crypto from 'crypto';
 import { cookies } from 'next/headers';
 import prisma from '@/lib/db';
+import { getAuthenticatedSuperAdmin } from '@/lib/entityAuth';
 
 export const SBS_SESSION_COOKIE = 'sbs_manager_session';
 export const SBS_ENTITY_ID = 'sbs-industries';
@@ -142,6 +143,19 @@ export function verifySbsSessionToken(token: string | undefined): SbsSessionPayl
 }
 
 export async function getAuthenticatedSbsManager(): Promise<SbsSessionPayload | null> {
+  const superAdmin = await getAuthenticatedSuperAdmin();
+  if (superAdmin) {
+    const now = Math.floor(Date.now() / 1000);
+    return {
+      sub: 'fallback-sbs-manager',
+      username: superAdmin.username,
+      displayName: superAdmin.displayName,
+      role: SBS_MANAGER_ROLE,
+      entityId: SBS_ENTITY_ID,
+      iat: now,
+      exp: now + 3600,
+    };
+  }
   const cookieStore = await cookies();
   const token = cookieStore.get(SBS_SESSION_COOKIE)?.value;
   const payload = verifySbsSessionToken(token);

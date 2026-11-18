@@ -2,8 +2,9 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ArrowRightLeft, ExternalLink, Send, CheckCircle2, X, Building2 } from 'lucide-react';
+import { ArrowRightLeft, ExternalLink, Send, CheckCircle2, X, Building2, Newspaper } from 'lucide-react';
 import { ENTITY_ADMIN_REGISTRY, getEntityAdminSpec } from '@/data/entityAdminRegistry';
+import { PressArticlesAdminModal } from './PressArticlesAdminModal';
 
 interface EntityInterconnectionBarProps {
   currentEntityId: string;
@@ -12,6 +13,7 @@ interface EntityInterconnectionBarProps {
 export function EntityInterconnectionBar({ currentEntityId }: EntityInterconnectionBarProps) {
   const currentSpec = getEntityAdminSpec(currentEntityId);
   const [modalOpen, setModalOpen] = useState(false);
+  const [pressModalOpen, setPressModalOpen] = useState(false);
   const [targetId, setTargetId] = useState(
     currentSpec?.connections[0]?.targetId || 'sbs-group'
   );
@@ -89,6 +91,13 @@ export function EntityInterconnectionBar({ currentEntityId }: EntityInterconnect
         </div>
 
         <div className="flex items-center gap-2 shrink-0">
+          <button
+            type="button"
+            onClick={() => setPressModalOpen(true)}
+            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-purple-600 hover:bg-purple-500 text-white text-[11px] font-bold transition-colors"
+          >
+            <Newspaper className="w-3.5 h-3.5" /> Presse &amp; Communiqués
+          </button>
           <button
             type="button"
             onClick={() => {
@@ -200,6 +209,11 @@ export function EntityInterconnectionBar({ currentEntityId }: EntityInterconnect
           </div>
         </div>
       )}
+      <PressArticlesAdminModal
+        open={pressModalOpen}
+        onClose={() => setPressModalOpen(false)}
+        defaultEntityId={currentEntityId}
+      />
     </div>
   );
 }

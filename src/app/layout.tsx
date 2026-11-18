@@ -98,7 +98,7 @@ const jsonLdData = {
       telephone: '+221 33 871 08 61',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Mbao Villeneuve, Villa S04, Route Nationale',
+        streetAddress: 'Mbao Villeneuve, Villa S/04, Route Nationale MBAO, Dakar (Pikine)',
         addressLocality: 'Mbao, Dakar',
         addressRegion: 'Pikine, Dakar',
         addressCountry: 'SN',

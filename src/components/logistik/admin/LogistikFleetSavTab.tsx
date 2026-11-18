@@ -15,6 +15,7 @@ import {
   ImageIcon,
 } from 'lucide-react';
 import type { LogistikClientRow, LogistikEquipmentRow, LogistikSavRow } from './types';
+import { ImageUploadField } from '@/components/entity-admin/ImageUploadField';
 
 interface Props {
   activeSubTab: 'clients' | 'sav' | 'fleet';
@@ -739,6 +740,14 @@ export function LogistikFleetSavTab({
             onChange={(e) => setEquipForm((p) => ({ ...p, specs: e.target.value }))}
             className="px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-white"
           />
+          <div className="md:col-span-3">
+            <ImageUploadField
+              label="Photo de l'engin / matériel (synchronisée en direct sur la plateforme)"
+              value={equipForm.imageUrl}
+              onChange={(url) => setEquipForm((p) => ({ ...p, imageUrl: url }))}
+              onNotify={notify}
+            />
+          </div>
           <div className="md:col-span-3 flex justify-end gap-2">
             <button
               type="button"

@@ -161,7 +161,7 @@ export const DEFAULT_SBS_CONFIG: SbsFactoryConfigData = {
   companyName: 'SBS INDUSTRIE',
   phone: '33 871 08 61 / 77 566 48 06',
   whatsapp: '+221 77 566 48 06',
-  address: 'Mbao Villeneuve, Villa S04, Route Nationale, Dakar, Sénégal',
+  address: 'Mbao Villeneuve, Villa S/04, Route Nationale MBAO, Dakar (Pikine)',
   deliveryZone: 'Livraison partout à Dakar',
   rawMaterials: [
     { id: 'mat-ciment', code: 'ciment', name: 'Ciment', priceFCFA: 3500, unit: 'sac de 50 kg', densityKgM3: 50, qtyPerDelivery: 20 },

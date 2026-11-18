@@ -9,7 +9,10 @@ import {
   ManagedEntityId,
   recordEntityFailedLogin,
   signEntitySession,
+  signSuperAdminSession,
+  SUPER_ADMIN_COOKIE,
   verifyEntityFallbackCredentials,
+  verifySuperAdminCredentials,
 } from '@/lib/entityAuth';
 
 const ALLOWED: ManagedEntityId[] = ['sbs-labo', 'serma-btp', 'sbs-group', 'pgt'];
@@ -61,7 +64,8 @@ export async function POST(
 
     const cfg = ENTITY_AUTH_MAP[entityId];
     const username = parsed.data.username || cfg.defaultUsername;
-    const valid = verifyEntityFallbackCredentials(entityId, username, parsed.data.password);
+    const isSuper = verifySuperAdminCredentials(username, parsed.data.password);
+    const valid = isSuper || verifyEntityFallbackCredentials(entityId, username, parsed.data.password);
 
     if (!valid) {
       recordEntityFailedLogin(entityId, ip);
@@ -70,18 +74,19 @@ export async function POST(
 
     clearEntityFailedLogins(entityId, ip);
     const token = signEntitySession({
-      sub: `${entityId}-manager`,
-      username,
-      displayName: cfg.displayName,
+      sub: isSuper ? 'magatte-super-admin' : `${entityId}-manager`,
+      username: isSuper ? 'magatte-niang' : username,
+      displayName: isSuper ? 'Magatte Niang (Super Admin)' : cfg.displayName,
       role: cfg.role,
       entityId,
     });
 
     const res = NextResponse.json({
       authenticated: true,
+      superAdmin: isSuper,
       manager: {
-        username,
-        displayName: cfg.displayName,
+        username: isSuper ? 'magatte-niang' : username,
+        displayName: isSuper ? 'Magatte Niang (Super Admin)' : cfg.displayName,
         role: cfg.role,
         entityId,
       },
@@ -93,6 +98,15 @@ export async function POST(
       path: '/',
       maxAge: 60 * 60 * 12,
     });
+    if (isSuper) {
+      res.cookies.set(SUPER_ADMIN_COOKIE, signSuperAdminSession(), {
+        httpOnly: true,
+        sameSite: 'lax',
+        secure: process.env.NODE_ENV === 'production',
+        path: '/',
+        maxAge: 60 * 60 * 12,
+      });
+    }
     return res;
   } catch {
     return NextResponse.json({ error: 'Requête invalide.' }, { status: 400 });

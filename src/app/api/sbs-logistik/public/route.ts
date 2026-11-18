@@ -7,6 +7,9 @@ import {
 } from '@/lib/logistikBootstrap';
 import { SBS_LOGISTIK_ITEMS } from '@/data/sbsLogistikData';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function GET() {
   try {
     await ensureLogistikSeeded();
