@@ -12,6 +12,7 @@ import {
   Download, Save, ArrowRight, RotateCcw, Minus, Grid3X3
 } from 'lucide-react';
 import TilesModule from '@/components/p2m/TilesModule';
+import { ENTITY_ADMIN_REGISTRY } from '@/data/entityAdminRegistry';
 
 /** Onglets de l'espace professionnel */
 type Tab = 'dashboard' | 'quotes' | 'tiles' | 'appointments' | 'cart' | 'documents' | 'profile' | 'audit';
@@ -666,6 +667,53 @@ export default function EspaceProPage() {
                 <p className="text-xs font-mono text-neutral-500 dark:text-neutral-400 mt-1">{s.label}</p>
               </button>
             ))}
+          </div>
+
+          {/* Espaces Admin par Entité & Interconnexion */}
+          <div className="bg-white dark:bg-brand-900 border border-neutral-200 dark:border-brand-700 rounded-l p-5">
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+              <div>
+                <h2 className="text-lg font-title font-bold text-neutral-900 dark:text-white">
+                  Espaces Admin par Entité &amp; Interconnexion
+                </h2>
+                <p className="text-xs text-neutral-500 dark:text-neutral-400">
+                  Chaque entité dispose de son espace d&apos;administration métier et peut transmettre des dossiers aux entités liées.
+                </p>
+              </div>
+              <Link href="/espace-pro/crm" className={btnGhost}>
+                CRM Transverse <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+              {ENTITY_ADMIN_REGISTRY.map((ent) => (
+                <Link
+                  key={ent.id}
+                  href={ent.adminHref}
+                  className="group flex flex-col justify-between p-4 rounded-m border border-neutral-200 dark:border-brand-700 bg-neutral-50 dark:bg-brand-950/60 hover:border-accent-500 hover:shadow-elev-1 transition-all"
+                >
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-1.5">
+                      <span className="text-sm font-title font-bold text-neutral-900 dark:text-white group-hover:text-accent-500 transition-colors">
+                        {ent.name}
+                      </span>
+                      <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded border ${ent.badgeColor}`}>
+                        Admin
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-neutral-600 dark:text-neutral-300 leading-snug mb-2">
+                      {ent.tagline}
+                    </p>
+                    <p className="text-[10px] font-mono text-neutral-500 dark:text-neutral-400">
+                      {ent.connections.length} connexion(s) · {ent.leader}
+                    </p>
+                  </div>
+                  <div className="mt-3 pt-2 border-t border-neutral-200 dark:border-brand-800 flex items-center justify-between text-[11px] font-bold text-accent-600 dark:text-accent-400">
+                    <span>Ouvrir l&apos;espace</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Actions rapides */}

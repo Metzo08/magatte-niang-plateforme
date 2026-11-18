@@ -2,10 +2,11 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Lock, ArrowLeft, ShieldCheck, Eye, EyeOff, Truck, Layers } from 'lucide-react';
+import { Lock, ArrowLeft, ShieldCheck, Eye, EyeOff, Truck, Layers, FlaskConical, Compass, Building2, Globe } from 'lucide-react';
+import type { ManagedEntityId } from '@/lib/entityAuth';
 
 interface EntityAdminLoginProps {
-  entityId: 'p2m' | 'sbs-logistik';
+  entityId: ManagedEntityId;
   onSuccess: () => void;
 }
 
@@ -34,6 +35,54 @@ const META = {
     accentFocus: 'focus:border-amber-400',
     badgeText: 'ACCÈS ISOLÉ · SB-S LOGISTIK',
     icon: Truck,
+  },
+  'sbs-labo': {
+    title: 'Espace Gestionnaire SB-S Labo',
+    subtitle: 'Forage hydraulique, essais labo C2/A3 (Casagrande, CBR, Proctor, béton), PV 24h & transmissions SERMA/SB-S Group',
+    loginEndpoint: '/api/entity-admin/sbs-labo/auth',
+    defaultUserPlaceholder: 'labo-gestionnaire',
+    backHref: '/entites/sbs-labo',
+    backLabel: 'Retour à SB-S Labo',
+    accentBg: 'from-cyan-500 to-teal-600',
+    accentFocus: 'focus:border-cyan-400',
+    badgeText: 'ACCÈS ISOLÉ · SB-S LABO (C2 & A3)',
+    icon: FlaskConical,
+  },
+  'serma-btp': {
+    title: 'Espace Direction Technique SERMA BTP',
+    subtitle: 'Réception études SB-S Labo, modélisation 3D/BIM, notes de calcul Eurocodes/DTU & transmission vers SB-S Group',
+    loginEndpoint: '/api/entity-admin/serma-btp/auth',
+    defaultUserPlaceholder: 'serma-gestionnaire',
+    backHref: '/entites/serma-btp',
+    backLabel: 'Retour à SERMA BTP',
+    accentBg: 'from-indigo-500 to-blue-600',
+    accentFocus: 'focus:border-indigo-400',
+    badgeText: 'ACCÈS ISOLÉ · SERMA BTP',
+    icon: Compass,
+  },
+  'sbs-group': {
+    title: 'Espace Direction Chantiers SB-S Group',
+    subtitle: 'Pilotage travaux génie civil, réception plans SERMA & PV Labo, mobilisation SB-S Logistik / Industries / P2M / PGT',
+    loginEndpoint: '/api/entity-admin/sbs-group/auth',
+    defaultUserPlaceholder: 'sbs-group-gestionnaire',
+    backHref: '/entites/sbs-group',
+    backLabel: 'Retour à SB-S Group',
+    accentBg: 'from-emerald-500 to-teal-600',
+    accentFocus: 'focus:border-emerald-400',
+    badgeText: 'ACCÈS ISOLÉ · SB-S GROUP',
+    icon: Building2,
+  },
+  pgt: {
+    title: 'Espace Direction PGT (Dubaï · Dakar)',
+    subtitle: 'Sourcing international, transit portuaire & douane, réapprovisionnement P2M Showroom, SB-S Industries & SB-S Group',
+    loginEndpoint: '/api/entity-admin/pgt/auth',
+    defaultUserPlaceholder: 'pgt-gestionnaire',
+    backHref: '/entites/pgt',
+    backLabel: 'Retour à PGT',
+    accentBg: 'from-purple-500 to-fuchsia-600',
+    accentFocus: 'focus:border-purple-400',
+    badgeText: 'ACCÈS ISOLÉ · PGT TRANSIT & SOURCING',
+    icon: Globe,
   },
 };
 

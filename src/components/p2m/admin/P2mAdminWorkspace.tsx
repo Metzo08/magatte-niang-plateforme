@@ -2,6 +2,7 @@
 
 import React, { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
+import { EntityInterconnectionBar } from '@/components/entity-admin/EntityInterconnectionBar';
 import {
   LayoutDashboard,
   Layers,
@@ -187,6 +188,7 @@ export function P2mAdminWorkspace({ onLogout }: { onLogout: () => void }) {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col">
+      <EntityInterconnectionBar currentEntityId="p2m" />
       <header className="border-b border-slate-800 bg-slate-900/95 px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3 sticky top-0 z-30">
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl bg-sky-500 text-slate-950 flex items-center justify-center">

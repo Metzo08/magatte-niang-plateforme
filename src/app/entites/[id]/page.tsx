@@ -312,6 +312,13 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
                   <span>{entity.ctaText}</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
+                <Link
+                  href={`/entites/${entity.id}/admin`}
+                  className="w-full mt-2.5 flex items-center justify-center gap-2 py-2.5 px-4 bg-white/10 hover:bg-white/20 border border-white/30 text-white text-xs font-bold rounded-m transition-colors"
+                >
+                  <span>Espace Admin {entity.name}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             </div>
           </div>

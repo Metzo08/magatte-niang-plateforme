@@ -2,6 +2,7 @@
 
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
+import { EntityInterconnectionBar } from '@/components/entity-admin/EntityInterconnectionBar';
 import {
   LayoutDashboard,
   Boxes,
@@ -314,6 +315,7 @@ export default function SbsAdminErpWorkspace({ onLoggedOut }: { onLoggedOut: () 
 
   return (
     <div className="min-h-screen bg-neutral-50 dark:bg-brand-900 text-brand-900 dark:text-neutral-100">
+      <EntityInterconnectionBar currentEntityId="sbs-industries" />
       {/* Top sticky header */}
       <header className="sticky top-0 z-40 bg-brand-900/95 backdrop-blur-md text-white border-b border-brand-800 shadow-elev-1">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-3">

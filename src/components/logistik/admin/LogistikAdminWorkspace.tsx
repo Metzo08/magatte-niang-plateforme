@@ -2,6 +2,7 @@
 
 import React, { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
+import { EntityInterconnectionBar } from '@/components/entity-admin/EntityInterconnectionBar';
 import {
   LayoutDashboard,
   ClipboardList,
@@ -139,6 +140,7 @@ export function LogistikAdminWorkspace({ onLogout }: { onLogout: () => void }) {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col">
+      <EntityInterconnectionBar currentEntityId="sbs-logistik" />
       {/* HEADER BAR */}
       <header className="border-b border-slate-800 bg-slate-900/95 backdrop-blur-md px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3 sticky top-0 z-30">
         <div className="flex items-center gap-3">

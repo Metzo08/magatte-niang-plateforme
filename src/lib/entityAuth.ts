@@ -2,12 +2,18 @@ import crypto from 'crypto';
 import { cookies } from 'next/headers';
 import prisma from '@/lib/db';
 
-export type ManagedEntityId = 'p2m' | 'sbs-logistik';
+export type ManagedEntityId = 'p2m' | 'sbs-logistik' | 'sbs-labo' | 'serma-btp' | 'sbs-group' | 'pgt';
 
 export interface EntityAuthConfig {
   entityId: ManagedEntityId;
   cookieName: string;
-  role: 'P2M_MANAGER' | 'SBS_LOGISTIK_MANAGER';
+  role:
+    | 'P2M_MANAGER'
+    | 'SBS_LOGISTIK_MANAGER'
+    | 'SBS_LABO_MANAGER'
+    | 'SERMA_MANAGER'
+    | 'SBS_GROUP_MANAGER'
+    | 'PGT_MANAGER';
   defaultUsername: string;
   envUsernameKey: string;
   envPasswordKey: string;
@@ -35,6 +41,46 @@ export const ENTITY_AUTH_MAP: Record<ManagedEntityId, EntityAuthConfig> = {
     envPasswordKey: 'LOGISTIK_MANAGER_PASSWORD',
     displayName: 'Gestionnaire Parc SBS Logistik',
     email: 'rokhayakane.sbs@gmail.com',
+  },
+  'sbs-labo': {
+    entityId: 'sbs-labo',
+    cookieName: 'sbs_labo_manager_session',
+    role: 'SBS_LABO_MANAGER',
+    defaultUsername: 'labo-gestionnaire',
+    envUsernameKey: 'SBS_LABO_MANAGER_USERNAME',
+    envPasswordKey: 'SBS_LABO_MANAGER_PASSWORD',
+    displayName: 'Abdoulaye Niang · Resp. SB-S Labo',
+    email: 'sbs.labo24@gmail.com',
+  },
+  'serma-btp': {
+    entityId: 'serma-btp',
+    cookieName: 'serma_manager_session',
+    role: 'SERMA_MANAGER',
+    defaultUsername: 'serma-gestionnaire',
+    envUsernameKey: 'SERMA_MANAGER_USERNAME',
+    envPasswordKey: 'SERMA_MANAGER_PASSWORD',
+    displayName: 'Direction Technique SERMA BTP',
+    email: 'serma@sermabtp.com',
+  },
+  'sbs-group': {
+    entityId: 'sbs-group',
+    cookieName: 'sbs_group_manager_session',
+    role: 'SBS_GROUP_MANAGER',
+    defaultUsername: 'sbs-group-gestionnaire',
+    envUsernameKey: 'SBS_GROUP_MANAGER_USERNAME',
+    envPasswordKey: 'SBS_GROUP_MANAGER_PASSWORD',
+    displayName: 'Direction Chantiers SB-S Group',
+    email: 'contact@sbsgroup-sn.com',
+  },
+  pgt: {
+    entityId: 'pgt',
+    cookieName: 'pgt_manager_session',
+    role: 'PGT_MANAGER',
+    defaultUsername: 'pgt-gestionnaire',
+    envUsernameKey: 'PGT_MANAGER_USERNAME',
+    envPasswordKey: 'PGT_MANAGER_PASSWORD',
+    displayName: 'Direction PGT Dubaï · Dakar',
+    email: 'contact@pgt-trade.com',
   },
 };
 
@@ -113,7 +159,15 @@ export function verifyEntityFallbackCredentials(
 ): boolean {
   const cfg = ENTITY_AUTH_MAP[entityId];
   const expectedUser = (process.env[cfg.envUsernameKey] || cfg.defaultUsername).trim();
-  const defaultPass = entityId === 'p2m' ? 'P2mShowroom#2026!' : 'LogistikParc#2026!';
+  const defaultPassMap: Record<ManagedEntityId, string> = {
+    p2m: 'P2mShowroom#2026!',
+    'sbs-logistik': 'LogistikParc#2026!',
+    'sbs-labo': 'SbsLabo#2026!',
+    'serma-btp': 'SermaBtp#2026!',
+    'sbs-group': 'SbsGroup#2026!',
+    pgt: 'PgtTrade#2026!',
+  };
+  const defaultPass = defaultPassMap[entityId];
   const expectedPass = (process.env[cfg.envPasswordKey] || defaultPass).trim();
   return safeEqualString(username.trim(), expectedUser) && safeEqualString(password, expectedPass);
 }

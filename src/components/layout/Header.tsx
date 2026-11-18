@@ -27,6 +27,7 @@ interface HeaderProps {
 /** Menu desktop · entités (mega-menu) */
 const ENTITY_LINKS = ENTITIES.map((ent) => ({
   href: `/entites/${ent.id}`,
+  adminHref: `/entites/${ent.id}/admin`,
   name: ent.name,
   colorHex: ent.colorHex
 }));
@@ -218,22 +219,35 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenAI }) => {
                           </div>
                           <div className="grid grid-cols-2 gap-1.5">
                             {ENTITY_LINKS.map((ent) => (
-                              <Link
+                              <div
                                 key={ent.href}
-                                href={ent.href}
-                                className="flex items-center gap-2.5 px-2.5 py-2 rounded-m hover:bg-neutral-50 dark:hover:bg-brand-800 transition-colors"
+                                className="flex items-center justify-between gap-2 px-2.5 py-2 rounded-m hover:bg-neutral-50 dark:hover:bg-brand-800 transition-colors"
                               >
-                                <span
-                                  className="w-7 h-7 rounded-m flex items-center justify-center text-white text-[10px] font-title font-bold shrink-0"
-                                  style={{ backgroundColor: ent.colorHex }}
+                                <Link href={ent.href} className="flex items-center gap-2.5 min-w-0 flex-1">
+                                  <span
+                                    className="w-7 h-7 rounded-m flex items-center justify-center text-white text-[10px] font-title font-bold shrink-0"
+                                    style={{ backgroundColor: ent.colorHex }}
+                                  >
+                                    {ent.name.slice(0, 2)}
+                                  </span>
+                                  <span className="text-xs font-semibold text-neutral-800 dark:text-neutral-200 truncate">
+                                    {ent.name}
+                                  </span>
+                                </Link>
+                                <Link
+                                  href={ent.adminHref}
+                                  className="shrink-0 px-1.5 py-0.5 rounded bg-accent-500/15 hover:bg-accent-500 text-accent-600 dark:text-accent-400 hover:text-white text-[10px] font-bold transition-colors"
                                 >
-                                  {ent.name.slice(0, 2)}
-                                </span>
-                                <span className="text-xs font-semibold text-neutral-800 dark:text-neutral-200 truncate">
-                                  {ent.name}
-                                </span>
-                              </Link>
+                                  Admin
+                                </Link>
+                              </div>
                             ))}
+                          </div>
+                          <div className="mt-2 pt-2 border-t border-neutral-100 dark:border-brand-800 flex items-center justify-between">
+                            <span className="text-[10px] font-mono text-neutral-500">Accès direct aux espaces métiers</span>
+                            <Link href="/espace-pro" className="text-[11px] font-bold text-accent-600 hover:underline inline-flex items-center gap-1">
+                              <Lock className="w-3 h-3" /> Hub Espace Pro &amp; CRM
+                            </Link>
                           </div>
                         </div>
                       </div>
