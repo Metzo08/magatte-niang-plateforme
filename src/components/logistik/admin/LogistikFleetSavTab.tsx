@@ -139,6 +139,11 @@ export function LogistikFleetSavTab({
     imageUrl: '/images/sbs-logistik/slides/page-01.jpg',
   });
 
+  const categories = useMemo(
+    () => Array.from(new Set(equipment.map((e) => e.category || 'Autres'))),
+    [equipment]
+  );
+
   const callOp = async (entity: string, action: string, payload: Record<string, unknown>) => {
     const res = await fetch('/api/sbs-logistik/admin/operations', {
       method: 'POST',
@@ -567,20 +572,15 @@ export function LogistikFleetSavTab({
   }
 
   // ==================== 3. PARC ENGINS & MATÉRIELS (CATÉGORIE, DESCRIPTION, MARQUE, DISPO, MAJ) ====================
-  const categories = useMemo(
-    () => Array.from(new Set(equipment.map((e) => e.category))),
-    [equipment]
-  );
-
   const filteredFleet = equipment.filter((eq) => {
-    const matchCat = catFilter === 'Toutes' || eq.category === catFilter;
+    const matchCat = catFilter === 'Toutes' || (eq.category || 'Autres') === catFilter;
     const q = search.toLowerCase().trim();
     const matchSearch =
       !q ||
-      eq.code.toLowerCase().includes(q) ||
-      eq.title.toLowerCase().includes(q) ||
-      eq.brand.toLowerCase().includes(q) ||
-      eq.description.toLowerCase().includes(q);
+      (eq.code || '').toLowerCase().includes(q) ||
+      (eq.title || '').toLowerCase().includes(q) ||
+      (eq.brand || '').toLowerCase().includes(q) ||
+      (eq.description || '').toLowerCase().includes(q);
     return matchCat && matchSearch;
   });
 
@@ -857,14 +857,20 @@ export function LogistikFleetSavTab({
                   </select>
                 </td>
                 <td className="p-3 text-right font-mono text-white">
-                  {eq.dailyRateFCFA > 0 ? `${eq.dailyRateFCFA.toLocaleString('fr-FR')} F` : 'Devis'}
+                  {(Number(eq.dailyRateFCFA) || 0) > 0
+                    ? `${(Number(eq.dailyRateFCFA) || 0).toLocaleString('fr-FR')} F`
+                    : 'Devis'}
                 </td>
                 <td className="p-3 text-[11px] font-mono text-slate-400">
                   <div className="flex items-center gap-1">
                     <Clock className="w-3 h-3" />
-                    <span>{new Date(eq.updatedAt).toLocaleDateString('fr-FR')}</span>
+                    <span>
+                      {eq.updatedAt && !Number.isNaN(new Date(eq.updatedAt).getTime())
+                        ? new Date(eq.updatedAt).toLocaleDateString('fr-FR')
+                        : '—'}
+                    </span>
                   </div>
-                  <div className="text-[10px] text-slate-500">{eq.updatedBy}</div>
+                  <div className="text-[10px] text-slate-500">{eq.updatedBy || 'Système'}</div>
                 </td>
                 <td className="p-3 text-right">
                   <div className="inline-flex items-center gap-1">
@@ -882,8 +888,8 @@ export function LogistikFleetSavTab({
                           usage: eq.usage,
                           dailyRateFCFA: eq.dailyRateFCFA,
                           isPriceVisible: eq.isPriceVisible,
-                          availability: eq.availability,
-                          imageUrl: eq.imageUrl,
+                          availability: eq.availability || 'Disponible',
+                          imageUrl: eq.imageUrl || '',
                         });
                         setShowEquipForm(true);
                       }}

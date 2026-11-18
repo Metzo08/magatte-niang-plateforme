@@ -81,6 +81,7 @@ export async function GET() {
         isPublished: true,
         sortOrder: i + 1,
         updatedBy: 'Système (Mode hors-ligne)',
+        updatedAt: new Date().toISOString(),
       };
     });
     return NextResponse.json({
