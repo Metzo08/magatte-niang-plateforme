@@ -52,7 +52,7 @@ export function printTileQuote(q: TileQuote) {
   <header>
     <div>
       <h1>P2M · Polytech Matériaux &amp; Matériels</h1>
-      <div class="co">Showroom Mbao Ville Neuve, Villa S04, Dakar · Sénégal<br>
+      <div class="co">Showroom Keur Massar, Dakar · Sénégal<br>
       +221 78 832 12 79 / +221 78 424 64 45 · p2m.senegal@gmail.com</div>
     </div>
     <div class="meta">

@@ -340,8 +340,22 @@ export default function SbsGroupOfficialOverview() {
         </div>
       </div>
 
-      {/* Nos Partenaires Officiels · Logos individuels extraits */}
-      <div className="rounded-2xl bg-neutral-50 dark:bg-brand-800/50 border border-neutral-200 dark:border-brand-700 p-6 sm:p-8 space-y-6">
+      {/* Nos Partenaires Officiels · Carrousel défilant continu */}
+      <div className="rounded-2xl bg-neutral-50 dark:bg-brand-800/50 border border-neutral-200 dark:border-brand-700 p-6 sm:p-8 space-y-6 overflow-hidden">
+        <style>{`
+          @keyframes sbsPartnersMarquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .sbs-partners-marquee-track {
+            display: flex;
+            width: max-content;
+            animation: sbsPartnersMarquee 28s linear infinite;
+          }
+          .sbs-partners-marquee-track:hover {
+            animation-play-state: paused;
+          }
+        `}</style>
         <div className="flex items-center gap-2.5">
           <Handshake className="w-5 h-5 text-[#2D6A8E] dark:text-sky-400" />
           <div>
@@ -355,27 +369,29 @@ export default function SbsGroupOfficialOverview() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-          {OFFICIAL_PARTNERS.map((p) => (
-            <div
-              key={p.name}
-              className="group rounded-xl bg-white border border-neutral-200 dark:border-brand-700 p-4 flex flex-col items-center justify-between text-center shadow-xs hover:border-[#2D6A8E] hover:shadow-md transition-all"
-            >
-              <div className="h-16 w-full flex items-center justify-center mb-3">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={p.logo}
-                  alt={`Logo partenaire ${p.name}`}
-                  className="max-h-14 max-w-full object-contain group-hover:scale-105 transition-transform duration-200"
-                  loading="lazy"
-                />
+        <div className="relative overflow-hidden py-2">
+          <div className="sbs-partners-marquee-track gap-4">
+            {[...OFFICIAL_PARTNERS, ...OFFICIAL_PARTNERS].map((p, idx) => (
+              <div
+                key={`${p.name}-${idx}`}
+                className="w-52 sm:w-56 shrink-0 group rounded-xl bg-white border border-neutral-200 dark:border-brand-700 p-4 flex flex-col items-center justify-between text-center shadow-xs hover:border-[#2D6A8E] hover:shadow-md transition-all"
+              >
+                <div className="h-16 w-full flex items-center justify-center mb-3">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={p.logo}
+                    alt={`Logo partenaire ${p.name}`}
+                    className="max-h-14 max-w-full object-contain group-hover:scale-105 transition-transform duration-200"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="pt-2 border-t border-neutral-100 w-full">
+                  <div className="text-xs font-bold text-neutral-900">{p.name}</div>
+                  <div className="text-[10px] text-neutral-500 leading-tight mt-0.5">{p.sub}</div>
+                </div>
               </div>
-              <div className="pt-2 border-t border-neutral-100 w-full">
-                <div className="text-xs font-bold text-neutral-900">{p.name}</div>
-                <div className="text-[10px] text-neutral-500 leading-tight mt-0.5">{p.sub}</div>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

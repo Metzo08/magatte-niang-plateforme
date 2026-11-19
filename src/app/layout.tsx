@@ -123,7 +123,7 @@ const jsonLdData = {
       priceRange: '380 FCFA - 77 000 FCFA',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Zone Franche Industrielle (ZFI) de Mbao, Route Nationale',
+        streetAddress: 'Mbao Ville Neuve, Villa S/04, Route Nationale (à côté de la Station MKA EXCELLENCE)',
         addressLocality: 'Mbao, Dakar',
         addressRegion: 'Pikine, Dakar',
         addressCountry: 'SN',
@@ -152,7 +152,7 @@ const jsonLdData = {
       telephone: '+221 33 871 08 61',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Zone Franche Industrielle (ZFI) de Mbao, Route Nationale',
+        streetAddress: 'Mbao Ville Neuve, Villa S/04, Route Nationale (à côté de la Station MKA EXCELLENCE)',
         addressLocality: 'Mbao, Dakar',
         addressRegion: 'Pikine, Dakar',
         addressCountry: 'SN',

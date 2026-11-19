@@ -178,7 +178,7 @@ export const ENTITY_GALLERY: Record<string, { src: string; caption: string }[]> 
     ...[107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121,
       122, 123, 124, 125, 126, 128].map(n => ({
       src: `/images/reelles/p2m-${String(n).padStart(3, '0')}.jpg`,
-      caption: 'Showroom P2M · Mbao Ville Neuve Villa S04',
+      caption: 'Showroom P2M · Keur Massar',
     })),
   ],
   'sbs-logistik': SBS_LOGISTIK_ITEMS.map((p) => ({

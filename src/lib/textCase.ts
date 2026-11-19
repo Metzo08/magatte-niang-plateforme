@@ -94,6 +94,7 @@ export function toFirstUpperRestLower(
     [/\bmbao\b/gi, 'Mbao'],
     [/\bvilleneuve\b/gi, 'Villeneuve'],
     [/\bville\s+neuve\b/gi, 'Ville Neuve'],
+    [/\bkeur\s+massar\b/gi, 'Keur Massar'],
     [/\bpikine\b/gi, 'Pikine'],
     [/\bthi[eè]s\b/gi, 'Thiès'],
     [/\bdiamniadio\b/gi, 'Diamniadio'],

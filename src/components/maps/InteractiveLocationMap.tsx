@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   MapPin,
   Navigation,
@@ -10,11 +10,9 @@ import {
   Phone,
   Clock,
   Compass,
-  Layers,
   Building,
   ShieldCheck,
-  Share2,
-  Car
+  Car,
 } from 'lucide-react';
 
 export interface SiteLocation {
@@ -45,16 +43,18 @@ export const OFFICIAL_SITES: SiteLocation[] = [
     role: 'Exécution des travaux BTP, génie civil, ouvrages d’art et direction générale',
     plusCode: 'PMX9+CHV, Dakar',
     coords: { lat: 14.7486088, lng: -17.3310687 },
-    address: 'Mbao Villeneuve, Villa S/04, Route Nationale MBAO, Dakar (Pikine)',
-    city: 'Mbao, Dakar (Pikine)',
-    phone: '+221 33 871 08 61',
+    address: 'Mbao Ville Neuve, Villa S/04, Route Nationale (à côté de la Station MKA EXCELLENCE)',
+    city: 'Sénégal',
+    phone: '+221 33 871 08 61 / +221 76 600 96 32 / +221 76 600 96 35',
     whatsapp: '+221 77 203 84 38',
     leader: 'Magatte NIANG (DG) · Oumou DIOP (Responsable SBS-GROUP)',
     hours: 'Lun–Sam : 08h00 – 18h00',
-    googleMapsUrl: 'https://www.google.com/maps/place/SBS-GROUP/@14.7486088,-17.3310687,17z/data=!3m1!4b1!4m6!3m5!1s0xec10bbf4e072a31:0xfd8cb427cbcc2356!8m2!3d14.7486088!4d-17.3310687!16s%2Fg%2F11fqzg5jpj?hl=fr-SN',
+    googleMapsUrl:
+      'https://www.google.com/maps/place/SBS-GROUP/@14.7486088,-17.3310687,17z/data=!3m1!4b1!4m6!3m5!1s0xec10bbf4e072a31:0xfd8cb427cbcc2356!8m2!3d14.7486088!4d-17.3310687!16s%2Fg%2F11fqzg5jpj?hl=fr-SN',
     directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=14.7486088,-17.3310687',
     wazeUrl: 'https://waze.com/ul?ll=14.7486088,-17.3310687&navigate=yes',
-    description: 'Implantation stratégique sur la Route Nationale à Mbao : SB-S Group pilote l’exécution complète des travaux à partir des études de SERMA BTP, en synergie avec SBS Logistik, SBS Industrie et P2M.',
+    description:
+      'Implantation stratégique sur la Route Nationale à Mbao Ville Neuve (Villa S/04, à côté de la Station MKA EXCELLENCE) : SB-S Group pilote l’exécution complète des travaux à partir des études de SERMA BTP.',
     highlights: [
       'Plus Code officiel : PMX9+CHV, Dakar',
       'Exécution des grands chantiers BTP & génie civil',
@@ -69,16 +69,18 @@ export const OFFICIAL_SITES: SiteLocation[] = [
     role: 'Fourniture de briques (agglos), pavés autobloquants, hourdis et béton prêt à l’emploi (BPE)',
     plusCode: 'PMX9+CHV, Dakar',
     coords: { lat: 14.7486088, lng: -17.3310687 },
-    address: 'Zone Franche Industrielle (ZFI) de Mbao, Route Nationale',
-    city: 'Mbao, Dakar (Pikine)',
-    phone: '+221 33 871 08 61',
+    address: 'Mbao Ville Neuve, Villa S/04, Route Nationale (à côté de la Station MKA EXCELLENCE)',
+    city: 'Sénégal',
+    phone: '+221 33 871 08 61 / +221 77 566 48 06',
     whatsapp: '+221 77 566 48 06',
     leader: 'Salimata SOW (Responsable SBS Industrie)',
     hours: 'Lun–Sam : 07h30 – 18h00',
-    googleMapsUrl: 'https://www.google.com/maps/place/SBS-GROUP/@14.7486088,-17.3310687,17z/data=!3m1!4b1!4m6!3m5!1s0xec10bbf4e072a31:0xfd8cb427cbcc2356!8m2!3d14.7486088!4d-17.3310687!16s%2Fg%2F11fqzg5jpj?hl=fr-SN',
+    googleMapsUrl:
+      'https://www.google.com/maps/place/SBS-GROUP/@14.7486088,-17.3310687,17z/data=!3m1!4b1!4m6!3m5!1s0xec10bbf4e072a31:0xfd8cb427cbcc2356!8m2!3d14.7486088!4d-17.3310687!16s%2Fg%2F11fqzg5jpj?hl=fr-SN',
     directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=14.7486088,-17.3310687',
     wazeUrl: 'https://waze.com/ul?ll=14.7486088,-17.3310687&navigate=yes',
-    description: 'Parc industriel de 20 000 m² fournissant les briques, pavés, hourdis et le béton prêt à l’emploi (BPE) pour la construction sur les chantiers du groupe et clients externes.',
+    description:
+      'Complexe industriel fournissant les briques, pavés, hourdis et le béton prêt à l’emploi (BPE) pour la construction sur les chantiers du groupe et clients externes.',
     highlights: [
       'Capacité : 25 000 agglos / jour & centrale BPE 60 m³/h',
       'Responsable : Salimata SOW (+221 77 566 48 06)',
@@ -93,21 +95,48 @@ export const OFFICIAL_SITES: SiteLocation[] = [
     role: 'Fourniture du matériel, engins lourds, grues et transport pour le travail sur les différents chantiers',
     plusCode: 'PMX9+CHV, Dakar',
     coords: { lat: 14.7486088, lng: -17.3310687 },
-    address: 'Zone Franche Industrielle (ZFI) de Mbao, Route Nationale',
-    city: 'Mbao, Dakar (Pikine)',
-    phone: '+221 33 871 08 61',
+    address: 'Mbao Ville Neuve, Villa S/04, Route Nationale (à côté de la Station MKA EXCELLENCE)',
+    city: 'Sénégal',
+    phone: '+221 33 871 08 61 / +221 77 858 61 05',
     whatsapp: '+221 77 858 61 05',
     leader: 'Rokhaya KANE (Responsable SBS Logistik)',
     hours: '24h/24 & 7j/7 sur astreinte chantiers',
-    googleMapsUrl: 'https://www.google.com/maps/place/SBS-GROUP/@14.7486088,-17.3310687,17z/data=!3m1!4b1!4m6!3m5!1s0xec10bbf4e072a31:0xfd8cb427cbcc2356!8m2!3d14.7486088!4d-17.3310687!16s%2Fg%2F11fqzg5jpj?hl=fr-SN',
+    googleMapsUrl:
+      'https://www.google.com/maps/place/SBS-GROUP/@14.7486088,-17.3310687,17z/data=!3m1!4b1!4m6!3m5!1s0xec10bbf4e072a31:0xfd8cb427cbcc2356!8m2!3d14.7486088!4d-17.3310687!16s%2Fg%2F11fqzg5jpj?hl=fr-SN',
     directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=14.7486088,-17.3310687',
     wazeUrl: 'https://waze.com/ul?ll=14.7486088,-17.3310687&navigate=yes',
-    description: 'Base opérationnelle fournissant les engins lourds, grues mobiles, pompes à béton et équipements nécessaires aux chantiers.',
+    description:
+      'Base opérationnelle fournissant les engins lourds, grues mobiles, pompes à béton et équipements nécessaires aux chantiers.',
     highlights: [
       'Disponibilité permanente grues 35T à 80T',
       'Responsable : Rokhaya KANE (+221 77 858 61 05)',
       'Porte-chars & transport convoi exceptionnel',
       'SAV et assistance mobile d’intervention rapide',
+    ],
+  },
+  {
+    id: 'p2m',
+    name: 'P2M · Showroom Carrelages, Sanitaires & Finitions',
+    badge: 'P2M · Showroom Keur Massar',
+    role: 'Distribution de carreaux, équipements sanitaires, robinetterie et matériaux de finition BTP',
+    plusCode: 'QMPQ+48, Keur Massar',
+    coords: { lat: 14.7828, lng: -17.3117 },
+    address: 'Keur Massar',
+    city: 'Keur Massar · Sénégal',
+    phone: '+221 78 832 12 79',
+    whatsapp: '+221 78 424 64 45',
+    leader: 'Magatte NIANG (Directeur général)',
+    hours: 'Lun–Ven : 08h00 – 18h00 · Sam : 08h00 – 13h00',
+    googleMapsUrl: 'https://www.google.com/maps/search/Keur+Massar+Dakar+Senegal',
+    directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=14.7828,-17.3117',
+    wazeUrl: 'https://waze.com/ul?ll=14.7828,-17.3117&navigate=yes',
+    description:
+      'Showroom P2M (Polytech Matériaux Matériels) implanté à Keur Massar : exposition grand format de carrelages, grès cérame, marbres, sanitaires et robinetterie avec livraison sur chantier.',
+    highlights: [
+      'Implantation : Keur Massar, Sénégal',
+      'Carrelages porcelaine 30×30 à 80×240, faïences & mosaïques',
+      'Équipements sanitaires complets & robinetterie chromée',
+      'Contact & Devis WhatsApp : +221 78 424 64 45',
     ],
   },
   {
@@ -118,7 +147,7 @@ export const OFFICIAL_SITES: SiteLocation[] = [
     plusCode: 'PQQR+C2, Dakar',
     coords: { lat: 14.7385, lng: -17.4325 },
     address: 'HLM Hann Mariste Lot Z/22, Dakar',
-    city: 'Dakar',
+    city: 'Dakar · Sénégal',
     phone: '+221 33 832 13 33',
     whatsapp: '+221 77 575 21 36',
     leader: 'Direction Technique SERMA BTP (serma@sermabtp.com / sermabtp@gmail.com)',
@@ -126,7 +155,8 @@ export const OFFICIAL_SITES: SiteLocation[] = [
     googleMapsUrl: 'https://www.google.com/maps/search/HLM+Hann+Mariste+Lot+Z22+Dakar',
     directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=14.7385,-17.4325',
     wazeUrl: 'https://waze.com/ul?ll=14.7385,-17.4325&navigate=yes',
-    description: 'Bureau d’études et de modélisation logicielle (bâtiments IGH, charpente métallique, pylônes, stations-service, ouvrages hydrauliques, lots techniques, maîtrise d’œuvre AMO) qui conçoit les projets en amont de l’exécution des travaux.',
+    description:
+      'Bureau d’études et de modélisation logicielle (bâtiments IGH, charpente métallique, pylônes, stations-service, ouvrages hydrauliques, lots techniques, maîtrise d’œuvre AMO) qui conçoit les projets en amont de l’exécution des travaux.',
     highlights: [
       'Modélisation 3D, simulations logicielles & calculs Eurocodes, NF, ACI, ASTM',
       'Maîtrise d’œuvre, AMO & supervision de chantiers · Mobile/WhatsApp : +221 77 575 21 36',
@@ -141,15 +171,17 @@ export const OFFICIAL_SITES: SiteLocation[] = [
     plusCode: 'QPG2+XJ, Ndiakhirate, Dakar',
     coords: { lat: 14.7785, lng: -17.2485 },
     address: 'Ndiakhirate, Cité Assemblée, Villa N° 226, Dakar, Sénégal',
-    city: 'Dakar',
+    city: 'Dakar · Sénégal',
     phone: '+221 33 872 06 78 / +221 77 321 78 60 / +221 70 835 00 63',
     whatsapp: '+221 70 835 00 63',
-    leader: 'Aminata DRAMÉ (Directrice technique) · Abdoulaye NIANG (Responsable laboratoire pour les essais)',
+    leader:
+      'Aminata DRAMÉ (Directrice technique) · Abdoulaye NIANG (Responsable laboratoire pour les essais)',
     hours: 'Lun–Ven : 08h00 – 17h30',
     googleMapsUrl: 'https://www.google.com/maps/search/Ndiakhirate+Cite+Assemblee+Villa+226+Dakar',
     directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=14.7785,-17.2485',
     wazeUrl: 'https://waze.com/ul?ll=14.7785,-17.2485&navigate=yes',
-    description: 'Laboratoire de pointe agréé catégories C2 et A3 doté de presses de compression hydrauliques 3000 kN, pénétromètres dynamiques et matériel certifié et étalonné.',
+    description:
+      'Laboratoire de pointe agréé catégories C2 et A3 doté de presses de compression hydrauliques 3000 kN, pénétromètres dynamiques et matériel certifié et étalonné.',
     highlights: [
       'Catégorie C2 et A3 · Certification & étalonnage matériel',
       'Études de sol transmises à SERMA BTP pour modélisation 3D/BIM',
@@ -174,6 +206,10 @@ export default function InteractiveLocationMap({
   const [mapMode, setMapMode] = useState<'standard' | 'satellite'>('standard');
   const [zoomLevel, setZoomLevel] = useState<number>(16);
 
+  useEffect(() => {
+    setSelectedSiteId(initialSiteId);
+  }, [initialSiteId]);
+
   const currentSite =
     OFFICIAL_SITES.find((s) => s.id === selectedSiteId) || OFFICIAL_SITES[0];
 
@@ -185,7 +221,6 @@ export default function InteractiveLocationMap({
     }
   };
 
-  // Google Maps embed URL with live satellite/hybrid or standard map view
   const mapEmbedUrl =
     mapMode === 'satellite'
       ? `https://maps.google.com/maps?q=${currentSite.coords.lat},${currentSite.coords.lng}+(${encodeURIComponent(
@@ -213,15 +248,16 @@ export default function InteractiveLocationMap({
                   Géolocalisation Officielle
                 </span>
                 <span className="text-xs px-2.5 py-0.5 rounded-full bg-white/10 text-neutral-200">
-                  Zone Franche Mbao · Dakar
+                  {currentSite.badge}
                 </span>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold mt-1 text-white">
-                Carte Interactive des Sites & Usines BTP
+                Carte Interactive des Sites &amp; Usines BTP
               </h3>
               <p className="text-xs sm:text-sm text-neutral-300 mt-0.5">
                 Plus Code certifié Google Maps :{' '}
-                <strong className="text-accent-300 font-mono">PMX9+CHV, Dakar</strong> · Mbao Villeneuve, Villa S/04, Route Nationale MBAO
+                <strong className="text-accent-300 font-mono">{currentSite.plusCode}</strong> ·{' '}
+                {currentSite.address}
               </p>
             </div>
           </div>
@@ -386,10 +422,12 @@ export default function InteractiveLocationMap({
               <div className="flex items-start gap-3 text-neutral-700 dark:text-neutral-300">
                 <MapPin className="w-4 h-4 text-accent-500 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="block text-neutral-900 dark:text-white">Adresse exacte :</strong>
+                  <strong className="block text-neutral-900 dark:text-white">
+                    Adresse exacte :
+                  </strong>
                   <span>{currentSite.address}</span>
                   <span className="block text-xs text-neutral-500 dark:text-neutral-400">
-                    {currentSite.city} · Coordonnées : {currentSite.coords.lat.toFixed(5)}, {currentSite.coords.lng.toFixed(5)}
+                    {currentSite.city}
                   </span>
                 </div>
               </div>
@@ -398,7 +436,9 @@ export default function InteractiveLocationMap({
                 <div className="flex items-start gap-3 text-neutral-700 dark:text-neutral-300">
                   <Building className="w-4 h-4 text-accent-500 mt-0.5 shrink-0" />
                   <div>
-                    <strong className="block text-neutral-900 dark:text-white">Responsable du site :</strong>
+                    <strong className="block text-neutral-900 dark:text-white">
+                      Responsable du site :
+                    </strong>
                     <span>{currentSite.leader}</span>
                   </div>
                 </div>
@@ -407,7 +447,9 @@ export default function InteractiveLocationMap({
               <div className="flex items-start gap-3 text-neutral-700 dark:text-neutral-300">
                 <Clock className="w-4 h-4 text-accent-500 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="block text-neutral-900 dark:text-white">Horaires de réception :</strong>
+                  <strong className="block text-neutral-900 dark:text-white">
+                    Horaires de réception :
+                  </strong>
                   <span>{currentSite.hours}</span>
                 </div>
               </div>
@@ -415,7 +457,9 @@ export default function InteractiveLocationMap({
               <div className="flex items-start gap-3 text-neutral-700 dark:text-neutral-300">
                 <Phone className="w-4 h-4 text-accent-500 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="block text-neutral-900 dark:text-white">Téléphone & commandes :</strong>
+                  <strong className="block text-neutral-900 dark:text-white">
+                    Téléphone &amp; commandes :
+                  </strong>
                   <a
                     href={`tel:${currentSite.phone.split('/')[0].trim().replace(/\s/g, '')}`}
                     className="text-accent-600 dark:text-accent-400 font-semibold hover:underline block"
@@ -448,7 +492,7 @@ export default function InteractiveLocationMap({
             {currentSite.whatsapp && (
               <a
                 href={`https://wa.me/${currentSite.whatsapp.replace(/[\s\+]/g, '')}?text=${encodeURIComponent(
-                  `Bonjour ${currentSite.name}, je souhaite me rendre sur votre site à Mbao / obtenir un devis.`
+                  `Bonjour ${currentSite.name}, je souhaite obtenir des informations / un devis.`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
