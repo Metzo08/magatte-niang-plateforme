@@ -158,8 +158,8 @@ export default function ProfilPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-center">
             <div className="lg:col-span-7 bg-black">
               <video
-                src="/videos/magatte-niang-profil.mp4"
-                poster="/images/magatte-niang/portrait-officiel.jpg"
+                src="/media/videos/magatte-niang-profil.mp4"
+                poster="/media/magatte-niang/portrait-officiel.jpg"
                 controls
                 playsInline
                 preload="metadata"

@@ -45,7 +45,7 @@ export const metadata: Metadata = {
       'SBS Industrie (agglos calibrés, pavés, BPE certifié à Mbao) & SBS Logistik (parc engins et transport lourd). Commandes et devis en ligne.',
     images: [
       {
-        url: '/images/magatte-niang/portrait-officiel.jpg',
+        url: '/media/magatte-niang/portrait-officiel.jpg',
         width: 1200,
         height: 630,
         alt: 'Magatte Niang - Expert BTP et Écosystème Industriel Sénégal',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: 'Magatte Niang Expert · Écosystème BTP Sénégal',
     description:
       'SBS Industrie & SBS Logistik - Zone Franche Industrielle de Mbao. Matériaux préfabriqués et logistique de chantier.',
-    images: ['/images/magatte-niang/portrait-officiel.jpg'],
+    images: ['/media/magatte-niang/portrait-officiel.jpg'],
   },
   robots: {
     index: true,
