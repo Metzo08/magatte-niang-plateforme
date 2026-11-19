@@ -31,6 +31,11 @@ const ROLES_ICONS = [
 
 export default function ProfilPage() {
   const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
+  const yearsOfExistence = Math.max(14, new Date().getFullYear() - 2012);
+  const dynamicMetrics = [
+    { label: "Années d'existence (depuis 2012)", value: `${yearsOfExistence} ans` },
+    ...FOUNDER_PROFILE.verifiedMetrics,
+  ];
 
   return (
     <div className="min-h-screen bg-white dark:bg-brand-900">
@@ -68,7 +73,7 @@ export default function ProfilPage() {
                 </span>
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-title font-bold tracking-tight mb-3">
-                {FOUNDER_PROFILE.name}
+                Magatte NIANG
               </h1>
               <p className="text-gold-400 font-semibold text-sm sm:text-base mb-4">
                 Bâtir l&apos;avenir du Sénégal · {FOUNDER_PROFILE.title}
@@ -80,8 +85,8 @@ export default function ProfilPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-4 mt-10">
-            {FOUNDER_PROFILE.verifiedMetrics.map((m) => (
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10">
+            {dynamicMetrics.map((m) => (
               <div
                 key={m.label}
                 className="bg-brand-800/60 border border-brand-700 rounded-m p-4 text-center"
@@ -120,9 +125,10 @@ export default function ProfilPage() {
               que les réalités du contexte africain.
             </p>
             <p>
-              Entrepreneur aguerri, il a fondé et développé un écosystème intégré de 7 entités du
-              secteur de la construction et des travaux publics : <strong>SERMA BTP (2012)</strong>
-              , <strong>SB-S Group (2016)</strong>, <strong>SB-S Labo (2021)</strong>, SB-S
+              Entrepreneur aguerri, il a fondé et développé depuis 2012 ({yearsOfExistence} ans
+              d&apos;existence) un écosystème intégré de 7 entités du secteur de la construction et
+              des travaux publics : <strong>SERMA BTP (2012)</strong>,{' '}
+              <strong>SB-S Group (2016)</strong>, <strong>SB-S Labo (2021)</strong>, SB-S
               Industries, SB-S Logistik, P2M et PGT — transformant chacune en acteur de référence
               dans son domaine. Son leadership a été couronné en 2026 par le{' '}
               <strong>Trophée LeadSen de l&apos;Entrepreneuriat BTP</strong>.

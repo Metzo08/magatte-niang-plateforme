@@ -63,7 +63,6 @@ export default function MediathequePage() {
       tag: 'Portrait' as const,
     })),
     { src: SITE_IMAGES.sbsGroup, label: 'SB-S Group · Stein Bauer Sénégal Group (« Nous partageons vos projets »)', tag: 'Entité' as const },
-    { src: '/media/sbs-group/sbs-installation-industrielle.jpg', label: 'SB-S Group · Génie civil & installations industrielles', tag: 'Entité' as const },
     { src: SITE_IMAGES.sermaBtp, label: 'SERMA BTP · ingénierie & modélisation 3D/BIM', tag: 'Entité' as const },
     { src: SITE_IMAGES.sbsLabo, label: 'SB-S Labo · laboratoire géotechnique C2 & A3', tag: 'Entité' as const },
     { src: SITE_IMAGES.sbsIndustries, label: 'SB-S Industries · préfabrication béton & BPE', tag: 'Entité' as const },
@@ -127,13 +126,14 @@ export default function MediathequePage() {
                   <div className="text-[11px] text-neutral-300">Communiqués publiés</div>
                 </div>
               </div>
-              <div className="pt-2 border-t border-white/10 text-xs text-neutral-300 space-y-1">
+              <div className="pt-2 border-t border-white/10 text-xs text-neutral-300 space-y-1.5">
                 <p className="font-semibold text-white">Contact Presse &amp; Communication</p>
-                <a href="mailto:contact@sbsgroup.sn" className="flex items-center gap-1.5 hover:text-accent-300">
-                  <Mail className="w-3.5 h-3.5 text-accent-400" /> contact@sbsgroup.sn
+                <a href="mailto:infos@sbsgroup.sn" className="flex items-center gap-1.5 hover:text-accent-300">
+                  <Mail className="w-3.5 h-3.5 text-accent-400 shrink-0" /> infos@sbsgroup.sn
                 </a>
-                <a href="tel:+221338710861" className="flex items-center gap-1.5 hover:text-accent-300">
-                  <Phone className="w-3.5 h-3.5 text-accent-400" /> +221 33 871 08 61
+                <a href="tel:+221338710861" className="flex items-start gap-1.5 hover:text-accent-300">
+                  <Phone className="w-3.5 h-3.5 text-accent-400 shrink-0 mt-0.5" />
+                  <span>+221 33 871 08 61 / +221 76 600 96 32 / +221 76 600 96 35</span>
                 </a>
               </div>
             </div>

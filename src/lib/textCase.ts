@@ -44,6 +44,7 @@ export function toFirstUpperRestLower(
     [/\bsbs-group\b/gi, 'SBS-Group'],
     [/\bsbs-logistik\b/gi, 'SBS-Logistik'],
     [/\bsbs-industries\b/gi, 'SBS-Industries'],
+    [/\bmagatte\s+niang\b/gi, 'Magatte NIANG'],
   ];
 
   for (const [pattern, replacement] of PRESERVED_UPPERCASE) {

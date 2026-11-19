@@ -322,10 +322,10 @@ export const ENTITIES: EntityInfo[] = [
     icon: 'Globe'
   }];
 export const FOUNDER_PROFILE = {
-  name: 'Magatte Niang',
+  name: 'Magatte NIANG',
   title: 'Ingénieur en chef des ponts & chaussées · chercheur & entrepreneur BTP',
   summary: 'Fondateur de l\'écosystème BTP regroupant 7 entités complémentaires au Sénégal. Diplômé des grandes écoles d\'ingénieurs, chercheur associé et enseignant en génie civil et structures métalliques, Magatte Niang allie rigueur scientifique, innovation technologique et leadership industriel pour bâtir les infrastructures de demain.',
-  experienceYears: 24,
+  experienceYears: Math.max(14, new Date().getFullYear() - 2012),
   degrees: [
     'Diplôme d\'ingénieur de génie civil (structures & ouvrages d\'art)',
     'Master de recherche en mécanique des matériaux et géotechnique',
