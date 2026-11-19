@@ -30,21 +30,21 @@ export default function FilmInstitutionnelPage() {
                 L&apos;Écosystème <span className="text-gradient-gold">Magatte NIANG Expert</span> en Vidéo
               </h1>
               <p className="text-neutral-300 text-sm sm:text-base mt-3 max-w-3xl leading-relaxed">
-                Découvrez en 90 secondes comment nos <strong>7 entités complémentaires</strong> (SB-S Labo, SERMA BTP, SB-S Group, SB-S Industries, SB-S Logistik, P2M et PGT) maîtrisent l&apos;intégralité de la chaîne de valeur BTP au Sénégal et à l&apos;international.
+                Découvrez en moins de 2 minutes comment nos <strong>7 entités complémentaires</strong> (SB-S Labo, SERMA BTP, SB-S Group, SB-S Industries, SB-S Logistik, P2M et PGT) maîtrisent l&apos;intégralité de la chaîne de valeur BTP au Sénégal et à l&apos;international.
               </p>
             </div>
 
             <div className="flex flex-wrap items-center gap-3 shrink-0">
               <a
-                href={getMediaUrl('/videos/magatte-niang-promo-2026.mp4')}
-                download="Magatte-Niang-Expert-Film-Promotionnel-2026.mp4"
+                href={'/media/videos/magatte-niang-ecosysteme-2026.mp4'}
+                download="Magatte-Niang-Expert-Ecosysteme-2026.mp4"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-accent-500 hover:bg-accent-600 text-white text-xs sm:text-sm font-bold transition-all shadow-lg"
               >
                 <Download className="w-4 h-4" />
                 <span>Télécharger la vidéo MP4 (Full HD)</span>
               </a>
               <a
-                href={getMediaUrl('/audio/promo/magatte-niang-promo-voix-off.mp3')}
+                href={'/media/audio/promo-2026/magatte-niang-promo-voix-off.mp3'}
                 download="Magatte-Niang-Expert-Voix-Off-2026.mp3"
                 className="inline-flex items-center gap-2 px-4 py-3 rounded-lg bg-white/10 hover:bg-white/15 border border-white/20 text-white text-xs sm:text-sm font-mono font-semibold transition-all"
               >
@@ -65,7 +65,7 @@ export default function FilmInstitutionnelPage() {
             Découpage par séquence & contacts directs
           </span>
           <h2 className="text-2xl sm:text-3xl font-title font-bold text-neutral-900 dark:text-white mt-1">
-            Les 9 séquences du film et leurs référents techniques
+            Les 8 séquences du film et leurs référents techniques
           </h2>
         </div>
 
