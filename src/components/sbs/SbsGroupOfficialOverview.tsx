@@ -16,6 +16,7 @@ import {
   Handshake,
   Factory,
   Truck,
+  Facebook,
 } from 'lucide-react';
 
 const OFFICIAL_DOMAINS = [
@@ -65,17 +66,17 @@ const OFFICIAL_PARTNERS = [
   {
     name: 'Solene',
     sub: 'Équipements & Systèmes d’Énergie',
-    logo: '/media/sbs-group/partners/solene.png',
+    logo: '/media/sbs-group/partners/solene.webp',
   },
   {
     name: 'Polytech Entreprise',
     sub: 'Supervision, Études & Réalisations Industrielles',
-    logo: '/media/sbs-group/partners/polytech.png',
+    logo: '/media/sbs-group/partners/polytech.svg',
   },
   {
     name: 'LDC',
     sub: 'Louis Dreyfus Company',
-    logo: '/media/sbs-group/partners/ldc.png',
+    logo: '/media/sbs-group/partners/ldc.svg',
   },
   {
     name: 'OIM',
@@ -85,12 +86,12 @@ const OFFICIAL_PARTNERS = [
   {
     name: 'CES',
     sub: 'Compagnie d’Électricité du Sénégal',
-    logo: '/media/sbs-group/partners/ces.png',
+    logo: '/media/sbs-group/partners/ces.svg',
   },
   {
     name: 'Eiffage',
     sub: 'Grands Travaux & Infrastructures',
-    logo: '/media/sbs-group/partners/eiffage.png',
+    logo: '/media/sbs-group/partners/eiffage.svg',
   },
   {
     name: 'Autoroute de l’Avenir',
@@ -99,13 +100,13 @@ const OFFICIAL_PARTNERS = [
   },
   {
     name: 'Grande Côte Operations SA',
-    sub: 'Industrie Minière',
-    logo: '/media/sbs-group/partners/gco.png',
+    sub: 'Eramet Grande Côte · Industrie Minière',
+    logo: '/media/sbs-group/partners/eramet.png',
   },
   {
     name: 'Press High-Tech',
     sub: 'Prestations & Sous-Traitance',
-    logo: '/media/sbs-group/partners/press-hightech.png',
+    logo: '/media/sbs-group/partners/press-hightech.svg',
   },
   {
     name: 'SERMA BTP',
@@ -156,12 +157,21 @@ export default function SbsGroupOfficialOverview() {
             <div className="p-3 rounded-xl bg-white/10 border border-white/15 flex items-start gap-2.5">
               <Mail className="w-4 h-4 text-sky-300 shrink-0 mt-0.5" />
               <div>
-                <div className="font-bold text-white">Contact officiel</div>
+                <div className="font-bold text-white">Contact &amp; Réseaux</div>
                 <a
                   href="mailto:infos@sbsgroup.sn"
-                  className="text-amber-300 hover:underline font-mono break-all"
+                  className="text-amber-300 hover:underline font-mono break-all block"
                 >
                   infos@sbsgroup.sn
+                </a>
+                <a
+                  href="https://www.facebook.com/profile.php?id=100065007634538"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-1.5 inline-flex items-center gap-1.5 text-sky-200 hover:text-white font-semibold hover:underline"
+                >
+                  <Facebook className="w-3.5 h-3.5 text-sky-400" />
+                  Page Facebook officielle
                 </a>
               </div>
             </div>

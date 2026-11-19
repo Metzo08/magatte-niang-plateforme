@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 120" width="260" height="120">
+  <rect width="260" height="120" fill="#ffffff"/>
+  <g transform="translate(88, 60)">
+    <!-- Dotted radial energy arc (blue top to green bottom) -->
+    <g fill="#1b4f8c">
+      <circle cx="-38" cy="-24" r="4.2"/><circle cx="-28" cy="-34" r="4.2"/><circle cx="-14" cy="-40" r="4.2"/>
+      <circle cx="1" cy="-42" r="4.2"/><circle cx="16" cy="-39" r="3.8"/><circle cx="29" cy="-31" r="3.2"/>
+      <circle cx="-46" cy="-14" r="4.2"/><circle cx="-36" cy="-22" r="3.4"/><circle cx="-24" cy="-30" r="3.4"/>
+      <circle cx="-11" cy="-33" r="3.4"/><circle cx="3" cy="-33" r="3.2"/><circle cx="16" cy="-29" r="2.8"/>
+    </g>
+    <g fill="#2e8b57">
+      <circle cx="-48" cy="0" r="4.2"/><circle cx="-46" cy="14" r="4.2"/><circle cx="-38" cy="26" r="4.2"/>
+      <circle cx="-26" cy="36" r="4.2"/><circle cx="-12" cy="42" r="4.2"/><circle cx="3" cy="42" r="4.0"/>
+      <circle cx="17" cy="37" r="3.4"/><circle cx="29" cy="28" r="2.8"/>
+      <circle cx="-38" cy="2" r="3.4"/><circle cx="-36" cy="14" r="3.4"/><circle cx="-28" cy="24" r="3.4"/>
+      <circle cx="-17" cy="31" r="3.2"/><circle cx="-4" cy="33" r="3.2"/><circle cx="9" cy="30" r="2.8"/>
+    </g>
+    <text x="16" y="7" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="800" font-style="italic" fill="#0f2744" letter-spacing="1">CES</text>
+    <text x="16" y="21" font-family="Arial, Helvetica, sans-serif" font-size="7.5" font-weight="600" fill="#2e8b57" letter-spacing="0.4">COMPAGNIE D'ÉLECTRICITÉ</text>
+  </g>
+</svg>

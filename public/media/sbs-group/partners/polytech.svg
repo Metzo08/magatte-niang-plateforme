@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 110" width="320" height="110">
+  <rect width="320" height="110" fill="#ffffff"/>
+  <!-- Stylized orbital rings -->
+  <g transform="translate(46, 46)" fill="none" stroke-linecap="round">
+    <path d="M 8,-26 A 26,26 0 1,0 16,24" stroke="#0c4a8c" stroke-width="4.5"/>
+    <path d="M 10,-18 A 18,18 0 1,0 14,16" stroke="#1d74c8" stroke-width="3"/>
+  </g>
+  <text x="58" y="48" font-family="Arial Black, Impact, Helvetica, sans-serif" font-size="23" font-weight="900" fill="#0c4a8c" letter-spacing="0.3">POLYTECH <tspan fill="#1463b8">Entreprise</tspan></text>
+  <text x="72" y="66" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="700" fill="#1e293b">Supervision · Études · Réalisations Industrielles</text>
+  <!-- Iconic blue swoosh curve -->
+  <path d="M 22,82 Q 165,78 302,94 L 302,88 Q 165,71 22,78 Z" fill="#0c4a8c"/>
+</svg>
