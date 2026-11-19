@@ -40,7 +40,6 @@ export default function SbsPresentationGallery() {
     'Toutes',
     'Industries, mines & portuaire',
     'Bâtiments R+7 & résidentiel',
-    'Équipements & matériel lourd',
     'Infrastructures & équipements publics',
     'Organisation & identité'
   ];
@@ -50,9 +49,20 @@ export default function SbsPresentationGallery() {
     setDisplayCount(24);
   }, [selectedCategory, searchQuery, viewMode]);
 
+  // Base photos sans les équipements/engins (planches #6 à #13 rattachées à SB-S Logistik)
+  const basePhotos = useMemo(
+    () => SBS_PHOTOS.filter((item) => item.category !== 'Équipements & matériel lourd' && item.pageNumber >= 14),
+    []
+  );
+
+  const baseSlides = useMemo(
+    () => SBS_SLIDES.filter((slide) => slide.category !== 'Équipements & matériel lourd' && slide.slideNumber >= 14),
+    []
+  );
+
   // Filtered photos
   const filteredPhotos = useMemo(() => {
-    return SBS_PHOTOS.filter((item) => {
+    return basePhotos.filter((item) => {
       const matchesCat = selectedCategory === 'Toutes' || item.category === selectedCategory;
       const q = searchQuery.toLowerCase().trim();
       if (!q) return matchesCat;
@@ -66,11 +76,11 @@ export default function SbsPresentationGallery() {
         `p.${item.pageNumber}`.includes(q);
       return matchesCat && matchesSearch;
     });
-  }, [selectedCategory, searchQuery]);
+  }, [basePhotos, selectedCategory, searchQuery]);
 
   // Filtered slides
   const filteredSlides = useMemo(() => {
-    return SBS_SLIDES.filter((slide) => {
+    return baseSlides.filter((slide) => {
       const matchesCat = selectedCategory === 'Toutes' || slide.category === selectedCategory;
       const q = searchQuery.toLowerCase().trim();
       if (!q) return matchesCat;
@@ -81,7 +91,7 @@ export default function SbsPresentationGallery() {
         `planche ${slide.slideNumber}`.includes(q);
       return matchesCat && matchesSearch;
     });
-  }, [selectedCategory, searchQuery]);
+  }, [baseSlides, selectedCategory, searchQuery]);
 
   // Keyboard navigation for photo lightbox
   useEffect(() => {
@@ -122,7 +132,7 @@ export default function SbsPresentationGallery() {
               Photothèque haute résolution • Extraction certifiée
             </div>
             <h3 className="text-2xl sm:text-3xl font-title font-bold text-white tracking-tight">
-              Réalisations & flotte STEIN BAUER SÉNÉGAL GROUP
+              Réalisations Bâtiment, Charpente & Travaux Industriels · SB-S GROUP
             </h3>
             <p className="text-neutral-300 text-sm sm:text-base max-w-2xl leading-relaxed">
               Chaque photographie de chantier et d&apos;engin lourd a été <strong className="text-white">extraite individuellement en haute définition</strong> du document maître officiel, avec sa fiche technique complète, ses métriques et son contexte d&apos;intervention.
@@ -132,11 +142,11 @@ export default function SbsPresentationGallery() {
           {/* Quick Metrics */}
           <div className="grid grid-cols-3 gap-3 sm:gap-4 shrink-0 text-center">
             <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-3 sm:p-4">
-              <span className="block text-2xl sm:text-3xl font-mono font-bold text-accent-400">{SBS_PHOTOS.length}</span>
+              <span className="block text-2xl sm:text-3xl font-mono font-bold text-accent-400">{basePhotos.length}</span>
               <span className="text-[11px] text-neutral-300 font-medium">Clichés HD réels</span>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-3 sm:p-4">
-              <span className="block text-2xl sm:text-3xl font-mono font-bold text-accent-400">64</span>
+              <span className="block text-2xl sm:text-3xl font-mono font-bold text-accent-400">{baseSlides.length}</span>
               <span className="text-[11px] text-neutral-300 font-medium">Planches / lots</span>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-3 sm:p-4">
@@ -159,7 +169,7 @@ export default function SbsPresentationGallery() {
               }`}
             >
               <ImageIcon className="w-4 h-4" />
-              <span>Clichés HD individuels ({SBS_PHOTOS.length})</span>
+              <span>Clichés HD individuels ({basePhotos.length})</span>
             </button>
             <button
               type="button"

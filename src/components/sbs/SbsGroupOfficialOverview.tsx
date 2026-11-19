@@ -62,22 +62,62 @@ const OFFICIAL_DOMAINS = [
 ];
 
 const OFFICIAL_PARTNERS = [
-  { name: 'Solene', sub: 'Équipements & Systèmes d’Énergie' },
-  { name: 'Polytech Entreprise', sub: 'Supervision, Études & Réalisations Industrielles' },
-  { name: 'LDC', sub: 'Louis Dreyfus Company' },
-  { name: 'OIM', sub: 'ONU Migration' },
-  { name: 'CES', sub: 'Compagnie d’Électricité du Sénégal' },
-  { name: 'Eiffage', sub: 'Grands Travaux & Infrastructures' },
-  { name: 'Autoroute de l’Avenir', sub: 'Dakar – AIBD' },
-  { name: 'Grande Côte Operations SA', sub: 'Industrie Minière' },
-  { name: 'Press High-Tech', sub: 'Prestations & Sous-Traitance' },
-  { name: 'SERMA BTP', sub: 'Ingénierie & Modélisation 3D/BIM' },
+  {
+    name: 'Solene',
+    sub: 'Équipements & Systèmes d’Énergie',
+    logo: '/media/sbs-group/partners/solene.png',
+  },
+  {
+    name: 'Polytech Entreprise',
+    sub: 'Supervision, Études & Réalisations Industrielles',
+    logo: '/media/sbs-group/partners/polytech.png',
+  },
+  {
+    name: 'LDC',
+    sub: 'Louis Dreyfus Company',
+    logo: '/media/sbs-group/partners/ldc.png',
+  },
+  {
+    name: 'OIM',
+    sub: 'ONU Migration',
+    logo: '/media/sbs-group/partners/oim.png',
+  },
+  {
+    name: 'CES',
+    sub: 'Compagnie d’Électricité du Sénégal',
+    logo: '/media/sbs-group/partners/ces.png',
+  },
+  {
+    name: 'Eiffage',
+    sub: 'Grands Travaux & Infrastructures',
+    logo: '/media/sbs-group/partners/eiffage.png',
+  },
+  {
+    name: 'Autoroute de l’Avenir',
+    sub: 'Dakar – AIBD',
+    logo: '/media/sbs-group/partners/autoroute-avenir.png',
+  },
+  {
+    name: 'Grande Côte Operations SA',
+    sub: 'Industrie Minière',
+    logo: '/media/sbs-group/partners/gco.png',
+  },
+  {
+    name: 'Press High-Tech',
+    sub: 'Prestations & Sous-Traitance',
+    logo: '/media/sbs-group/partners/press-hightech.png',
+  },
+  {
+    name: 'SERMA BTP',
+    sub: 'Ingénierie & Modélisation 3D/BIM',
+    logo: '/media/sbs-group/partners/serma-btp.jpg',
+  },
 ];
 
 export default function SbsGroupOfficialOverview() {
   return (
     <section className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-12 border-b border-neutral-200 dark:border-brand-700 space-y-10">
-      {/* En-tête Identité Officielle + Plaque Siège */}
+      {/* En-tête Identité Officielle + Logo SB-S Group */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center bg-gradient-to-br from-[#0f2744] via-[#133256] to-[#0a1b30] text-white rounded-2xl p-6 sm:p-8 border border-sky-400/20 shadow-elev-2">
         <div className="lg:col-span-8 space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/35 text-sky-200 text-xs font-mono font-bold">
@@ -88,9 +128,9 @@ export default function SbsGroupOfficialOverview() {
           </h2>
           <p className="text-sm text-sky-100/90 leading-relaxed max-w-2xl">
             <strong>Stein Bauer Sénégal Group (SB-S Group)</strong> déploie une expertise complète
-            en génie civil, construction métallique et travaux industriels au Sénégal et en Afrique
-            de l&apos;Ouest, appuyée par ses pôles intégrés <strong>SB-S Industrie</strong> et{' '}
-            <strong>SB-S Logistik</strong>.
+            en bâtiment, charpente métallique, génie civil et travaux industriels au Sénégal et en
+            Afrique de l&apos;Ouest, appuyée par ses pôles intégrés <strong>SB-S Industrie</strong>{' '}
+            et <strong>SB-S Logistik</strong>.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs">
             <div className="p-3 rounded-xl bg-white/10 border border-white/15 flex items-start gap-2.5">
@@ -127,15 +167,22 @@ export default function SbsGroupOfficialOverview() {
             </div>
           </div>
         </div>
-        <div className="lg:col-span-4">
-          <div className="rounded-xl overflow-hidden border-2 border-white/20 shadow-lg bg-white">
+        <div className="lg:col-span-4 flex justify-center">
+          <div className="w-full max-w-xs rounded-2xl bg-white p-6 shadow-xl border border-white/40 flex flex-col items-center justify-center text-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/media/sbs-group/sbs-plaque-siege-mbao.jpg"
-              alt="Plaque officielle SB-S Group · Stein Bauer Senegal Group, Mbao Ville Neuve Villa S/04"
-              className="w-full h-56 object-cover"
-              loading="lazy"
+              src="/media/sbs-group/logo-sbs-group.png"
+              alt="Logo officiel SB-S Group · Stein Bauer Sénégal Group"
+              className="w-48 h-36 object-contain"
             />
+            <div className="mt-3 pt-3 border-t border-neutral-200 w-full">
+              <div className="text-xs font-title font-bold text-[#0f2744] tracking-wide uppercase">
+                Stein Bauer Sénégal Group
+              </div>
+              <div className="text-[11px] text-neutral-500 mt-0.5">
+                Bâtiment · Charpente · Travaux Industriels
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -286,41 +333,39 @@ export default function SbsGroupOfficialOverview() {
         </div>
       </div>
 
-      {/* Nos Partenaires Officiels */}
-      <div className="rounded-2xl bg-neutral-50 dark:bg-brand-800/50 border border-neutral-200 dark:border-brand-700 p-6 sm:p-8 space-y-5">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center gap-2.5">
-            <Handshake className="w-5 h-5 text-[#2D6A8E] dark:text-sky-400" />
-            <div>
-              <h3 className="text-lg sm:text-xl font-title font-bold text-neutral-900 dark:text-white">
-                Nos partenaires &amp; références institutionnelles
-              </h3>
-              <p className="text-xs text-neutral-500 dark:text-neutral-400">
-                Ils font confiance à Stein Bauer Sénégal Group pour leurs infrastructures critiques.
-              </p>
-            </div>
+      {/* Nos Partenaires Officiels · Logos individuels extraits */}
+      <div className="rounded-2xl bg-neutral-50 dark:bg-brand-800/50 border border-neutral-200 dark:border-brand-700 p-6 sm:p-8 space-y-6">
+        <div className="flex items-center gap-2.5">
+          <Handshake className="w-5 h-5 text-[#2D6A8E] dark:text-sky-400" />
+          <div>
+            <h3 className="text-lg sm:text-xl font-title font-bold text-neutral-900 dark:text-white">
+              Nos partenaires &amp; références institutionnelles
+            </h3>
+            <p className="text-xs text-neutral-500 dark:text-neutral-400">
+              Ils font confiance à Stein Bauer Sénégal Group pour leurs ouvrages et infrastructures
+              critiques.
+            </p>
           </div>
         </div>
 
-        <div className="rounded-xl overflow-hidden border border-neutral-200 dark:border-brand-700 bg-white">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/media/sbs-group/sbs-partenaires-officiels.jpg"
-            alt="Partenaires officiels SB-S Group : Solene, Polytech Entreprise, LDC, OIM, CES, Eiffage, Autoroute de l'Avenir, Grande Côte Operations SA, Press High-Tech, SERMA BTP"
-            className="w-full max-h-64 object-contain bg-white"
-            loading="lazy"
-          />
-        </div>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
           {OFFICIAL_PARTNERS.map((p) => (
             <div
               key={p.name}
-              className="px-3 py-2.5 rounded-lg bg-white dark:bg-brand-900 border border-neutral-200 dark:border-brand-700"
+              className="group rounded-xl bg-white border border-neutral-200 dark:border-brand-700 p-4 flex flex-col items-center justify-between text-center shadow-xs hover:border-[#2D6A8E] hover:shadow-md transition-all"
             >
-              <div className="text-xs font-bold text-neutral-900 dark:text-white">{p.name}</div>
-              <div className="text-[10px] text-neutral-500 dark:text-neutral-400 leading-tight mt-0.5">
-                {p.sub}
+              <div className="h-16 w-full flex items-center justify-center mb-3">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={p.logo}
+                  alt={`Logo partenaire ${p.name}`}
+                  className="max-h-14 max-w-full object-contain group-hover:scale-105 transition-transform duration-200"
+                  loading="lazy"
+                />
+              </div>
+              <div className="pt-2 border-t border-neutral-100 w-full">
+                <div className="text-xs font-bold text-neutral-900">{p.name}</div>
+                <div className="text-[10px] text-neutral-500 leading-tight mt-0.5">{p.sub}</div>
               </div>
             </div>
           ))}
