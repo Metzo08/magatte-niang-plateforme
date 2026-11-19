@@ -3,6 +3,11 @@ import { z } from 'zod';
 import prisma from '@/lib/db';
 import { getAuthenticatedEntityManager, getRequestIp } from '@/lib/entityAuth';
 import { ensureP2mSeeded, recordP2mAudit } from '@/lib/p2mBootstrap';
+import {
+  createFallbackP2mProduct,
+  deleteFallbackP2mProduct,
+  updateFallbackP2mProduct,
+} from '@/lib/fallbackCatalogStore';
 
 const createProductSchema = z.object({
   ref: z.string().trim().min(2).max(50),
@@ -31,9 +36,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Non autorisé.' }, { status: 401 });
   }
 
+  let body: any = null;
   try {
-    await ensureP2mSeeded();
-    const body = await req.json();
+    body = await req.json();
     const parsed = createProductSchema.safeParse(body);
     if (!parsed.success) {
       return NextResponse.json(
@@ -43,36 +48,41 @@ export async function POST(req: Request) {
     }
 
     const d = parsed.data;
-    const product = await prisma.product.create({
-      data: {
-        id: `p2m-prod-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
-        ref: d.ref.toUpperCase(),
-        name: d.name,
-        category: d.category,
-        subCategory: d.subCategory,
-        brand: d.brand,
-        dimensions: d.dimensions,
-        material: d.material,
-        finish: d.finish,
-        color: d.color,
-        usage: d.usage,
-        unit: d.unit,
-        packaging: d.packaging,
-        origin: d.origin,
-        indicativePriceFCFA: d.indicativePriceFCFA,
-        isPriceVisible: d.isPriceVisible,
-        availability: d.availability,
-        leadTime: d.leadTime,
-        images: d.imageUrl ? ([d.imageUrl] as any) : (['/images/products/default.jpg'] as any),
-        specs: { Marque: d.brand, Dimensions: d.dimensions, Finition: d.finish } as any,
-      },
-    });
-
-    await recordP2mAudit('PRODUCT_CREATED', manager.username, { ref: product.ref, name: product.name }, getRequestIp(req));
-    return NextResponse.json({ product }, { status: 201 });
+    try {
+      await ensureP2mSeeded();
+      const product = await prisma.product.create({
+        data: {
+          id: `p2m-prod-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+          ref: d.ref.toUpperCase(),
+          name: d.name,
+          category: d.category,
+          subCategory: d.subCategory,
+          brand: d.brand,
+          dimensions: d.dimensions,
+          material: d.material,
+          finish: d.finish,
+          color: d.color,
+          usage: d.usage,
+          unit: d.unit,
+          packaging: d.packaging,
+          origin: d.origin,
+          indicativePriceFCFA: d.indicativePriceFCFA,
+          isPriceVisible: d.isPriceVisible,
+          availability: d.availability,
+          leadTime: d.leadTime,
+          images: d.imageUrl ? ([d.imageUrl] as any) : (['/images/products/default.jpg'] as any),
+          specs: { Marque: d.brand, Dimensions: d.dimensions, Finition: d.finish } as any,
+        },
+      });
+      await recordP2mAudit('PRODUCT_CREATED', manager.username, { ref: product.ref, name: product.name }, getRequestIp(req));
+      return NextResponse.json({ product }, { status: 201 });
+    } catch {
+      const product = createFallbackP2mProduct(d);
+      return NextResponse.json({ product, dbOfflineMode: true }, { status: 201 });
+    }
   } catch (err) {
     console.error('P2M product POST error:', err);
-    return NextResponse.json({ error: 'Impossible de créer ce produit (référence déjà prise ?).' }, { status: 400 });
+    return NextResponse.json({ error: 'Impossible de créer ce produit.' }, { status: 400 });
   }
 }
 
@@ -82,9 +92,9 @@ export async function PUT(req: Request) {
     return NextResponse.json({ error: 'Non autorisé.' }, { status: 401 });
   }
 
+  let body: any = null;
   try {
-    await ensureP2mSeeded();
-    const body = await req.json();
+    body = await req.json();
     const {
       id,
       ref,
@@ -103,30 +113,36 @@ export async function PUT(req: Request) {
       return NextResponse.json({ error: 'ID produit requis.' }, { status: 400 });
     }
 
-    const product = await prisma.product.update({
-      where: { id },
-      data: {
-        ...(ref !== undefined && String(ref).trim() ? { ref: String(ref).trim().toUpperCase() } : {}),
-        ...(name !== undefined ? { name: String(name).trim() } : {}),
-        ...(category !== undefined ? { category: String(category).trim() } : {}),
-        ...(brand !== undefined ? { brand: String(brand).trim() } : {}),
-        ...(dimensions !== undefined ? { dimensions: String(dimensions).trim() } : {}),
-        ...(indicativePriceFCFA !== undefined ? { indicativePriceFCFA: Number(indicativePriceFCFA) } : {}),
-        ...(isPriceVisible !== undefined ? { isPriceVisible: Boolean(isPriceVisible) } : {}),
-        ...(availability !== undefined ? { availability: String(availability).trim() } : {}),
-        ...(leadTime !== undefined ? { leadTime: String(leadTime).trim() } : {}),
-        ...(unit !== undefined ? { unit: String(unit).trim() } : {}),
-        ...(imageUrl ? { images: [String(imageUrl).trim()] as any } : {}),
-      },
-    });
+    try {
+      await ensureP2mSeeded();
+      const product = await prisma.product.update({
+        where: { id },
+        data: {
+          ...(ref !== undefined && String(ref).trim() ? { ref: String(ref).trim().toUpperCase() } : {}),
+          ...(name !== undefined ? { name: String(name).trim() } : {}),
+          ...(category !== undefined ? { category: String(category).trim() } : {}),
+          ...(brand !== undefined ? { brand: String(brand).trim() } : {}),
+          ...(dimensions !== undefined ? { dimensions: String(dimensions).trim() } : {}),
+          ...(indicativePriceFCFA !== undefined ? { indicativePriceFCFA: Number(indicativePriceFCFA) } : {}),
+          ...(isPriceVisible !== undefined ? { isPriceVisible: Boolean(isPriceVisible) } : {}),
+          ...(availability !== undefined ? { availability: String(availability).trim() } : {}),
+          ...(leadTime !== undefined ? { leadTime: String(leadTime).trim() } : {}),
+          ...(unit !== undefined ? { unit: String(unit).trim() } : {}),
+          ...(imageUrl !== undefined ? { images: imageUrl ? ([String(imageUrl).trim()] as any) : ([] as any) } : {}),
+        },
+      });
 
-    await recordP2mAudit(
-      'PRODUCT_UPDATED',
-      manager.username,
-      { id: product.id, ref: product.ref, price: product.indicativePriceFCFA, availability: product.availability },
-      getRequestIp(req)
-    );
-    return NextResponse.json({ product });
+      await recordP2mAudit(
+        'PRODUCT_UPDATED',
+        manager.username,
+        { id: product.id, ref: product.ref, price: product.indicativePriceFCFA, availability: product.availability },
+        getRequestIp(req)
+      );
+      return NextResponse.json({ product });
+    } catch {
+      const product = updateFallbackP2mProduct(body);
+      return NextResponse.json({ product, dbOfflineMode: true });
+    }
   } catch (err) {
     console.error('P2M product PUT error:', err);
     return NextResponse.json({ error: 'Erreur mise à jour produit P2M.' }, { status: 400 });
@@ -146,9 +162,14 @@ export async function DELETE(req: Request) {
       return NextResponse.json({ error: 'ID requis.' }, { status: 400 });
     }
 
-    const existing = await prisma.product.delete({ where: { id } });
-    await recordP2mAudit('PRODUCT_DELETE', manager.username, { id: existing.id, ref: existing.ref }, getRequestIp(req));
-    return NextResponse.json({ ok: true });
+    try {
+      const existing = await prisma.product.delete({ where: { id } });
+      await recordP2mAudit('PRODUCT_DELETE', manager.username, { id: existing.id, ref: existing.ref }, getRequestIp(req));
+      return NextResponse.json({ ok: true });
+    } catch {
+      deleteFallbackP2mProduct(id);
+      return NextResponse.json({ ok: true, dbOfflineMode: true });
+    }
   } catch (err) {
     console.error('P2M product DELETE error:', err);
     return NextResponse.json({ error: 'Erreur suppression produit P2M.' }, { status: 400 });

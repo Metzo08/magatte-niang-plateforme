@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/lib/db';
-import { PRODUCTS_P2M } from '@/data/initialData';
+import { getFallbackP2mProducts } from '@/lib/fallbackCatalogStore';
 import { apiHandler } from '@/lib/utils';
 import { ensureP2mSeeded } from '@/lib/p2mBootstrap';
 import { getAuthenticatedEntityManager } from '@/lib/entityAuth';
@@ -22,7 +22,7 @@ export async function GET() {
       } catch (err) {
         console.error('Products GET DB fallback:', err);
       }
-      return PRODUCTS_P2M;
+      return getFallbackP2mProducts();
     },
     'Products GET',
     undefined,

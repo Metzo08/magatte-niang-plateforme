@@ -3,6 +3,12 @@ import { z } from 'zod';
 import prisma from '@/lib/db';
 import { getAuthenticatedSbsManager, getClientIp } from '@/lib/sbsAuth';
 import { getSbsProducts, recordSbsAudit } from '@/lib/sbsDbBootstrap';
+import {
+  createFallbackSbsProduct,
+  deleteFallbackSbsProduct,
+  getFallbackSbsProducts,
+  updateFallbackSbsProduct,
+} from '@/lib/fallbackCatalogStore';
 
 export const dynamic = 'force-dynamic';
 
@@ -50,47 +56,55 @@ export async function POST(req: NextRequest) {
     }
     const d = parsed.data;
     const codeUpper = d.code.toUpperCase();
-    const existing = await prisma.sbsProduct.findUnique({ where: { code: codeUpper } });
-    if (existing) {
-      return NextResponse.json({ error: `Le code produit ${codeUpper} existe déjà.` }, { status: 409 });
+    try {
+      const existing = await prisma.sbsProduct.findUnique({ where: { code: codeUpper } });
+      if (existing) {
+        return NextResponse.json({ error: `Le code produit ${codeUpper} existe déjà.` }, { status: 409 });
+      }
+
+      const totalCount = await prisma.sbsProduct.count();
+      const created = await prisma.sbsProduct.create({
+        data: {
+          id: `sbs-prod-${codeUpper.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${Date.now().toString(36)}`,
+          code: codeUpper,
+          family: d.family,
+          name: d.name,
+          dimensions: d.dimensions,
+          lengthCm: d.lengthCm ?? null,
+          widthCm: d.widthCm ?? null,
+          heightCm: d.heightCm ?? null,
+          unit: d.unit,
+          sellingPriceFCFA: d.sellingPriceFCFA,
+          priceMaxFCFA: d.priceMaxFCFA ?? null,
+          isPriceVisible: d.isPriceVisible ?? true,
+          isPublished: d.isPublished ?? true,
+          availability: d.availability,
+          isRental: d.isRental ?? d.family === 'location',
+          imageUrl: d.imageUrl ?? null,
+          description: d.description ?? null,
+          hasFormulation: d.hasFormulation ?? ['agglos-creux', 'agglos-pleins', 'hourdis'].includes(d.family),
+          isSolidBlock: d.isSolidBlock ?? d.family === 'agglos-pleins',
+          gravier38Brouettes: d.gravier38Brouettes ?? 1,
+          gravier03Brouettes: d.gravier03Brouettes ?? 2.5,
+          sableBrouettes: d.sableBrouettes ?? 0.5,
+          eauLitres: d.eauLitres ?? 20,
+          rendementPerSac: d.rendementPerSac ?? 24,
+          volumeExtLitres: d.volumeExtLitres ?? 12,
+          stockOpening: d.stockOpening ?? 0,
+          sortOrder: d.sortOrder ?? totalCount + 1,
+        },
+      });
+
+      await recordSbsAudit('PRODUCT_CREATED', manager.username, { code: created.code, name: created.name }, getClientIp(req));
+      const products = await getSbsProducts();
+      return NextResponse.json({ ok: true, product: created, products }, { status: 201 });
+    } catch {
+      const created = createFallbackSbsProduct(d);
+      return NextResponse.json(
+        { ok: true, product: created, products: getFallbackSbsProducts(), dbOfflineMode: true },
+        { status: 201 }
+      );
     }
-
-    const totalCount = await prisma.sbsProduct.count();
-    const created = await prisma.sbsProduct.create({
-      data: {
-        id: `sbs-prod-${codeUpper.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${Date.now().toString(36)}`,
-        code: codeUpper,
-        family: d.family,
-        name: d.name,
-        dimensions: d.dimensions,
-        lengthCm: d.lengthCm ?? null,
-        widthCm: d.widthCm ?? null,
-        heightCm: d.heightCm ?? null,
-        unit: d.unit,
-        sellingPriceFCFA: d.sellingPriceFCFA,
-        priceMaxFCFA: d.priceMaxFCFA ?? null,
-        isPriceVisible: d.isPriceVisible ?? true,
-        isPublished: d.isPublished ?? true,
-        availability: d.availability,
-        isRental: d.isRental ?? d.family === 'location',
-        imageUrl: d.imageUrl ?? null,
-        description: d.description ?? null,
-        hasFormulation: d.hasFormulation ?? ['agglos-creux', 'agglos-pleins', 'hourdis'].includes(d.family),
-        isSolidBlock: d.isSolidBlock ?? d.family === 'agglos-pleins',
-        gravier38Brouettes: d.gravier38Brouettes ?? 1,
-        gravier03Brouettes: d.gravier03Brouettes ?? 2.5,
-        sableBrouettes: d.sableBrouettes ?? 0.5,
-        eauLitres: d.eauLitres ?? 20,
-        rendementPerSac: d.rendementPerSac ?? 24,
-        volumeExtLitres: d.volumeExtLitres ?? 12,
-        stockOpening: d.stockOpening ?? 0,
-        sortOrder: d.sortOrder ?? totalCount + 1,
-      },
-    });
-
-    await recordSbsAudit('PRODUCT_CREATED', manager.username, { code: created.code, name: created.name }, getClientIp(req));
-    const products = await getSbsProducts();
-    return NextResponse.json({ ok: true, product: created, products }, { status: 201 });
   } catch (err) {
     console.error('SBS Product POST error:', err);
     return NextResponse.json({ error: 'Erreur lors de la création du produit.' }, { status: 500 });
@@ -110,46 +124,56 @@ export async function PUT(req: NextRequest) {
       return NextResponse.json({ error: parsed.error?.issues[0]?.message || 'ID produit manquant.' }, { status: 400 });
     }
     const d = parsed.data;
-    const updated = await prisma.sbsProduct.update({
-      where: { id: d.id },
-      data: {
-        code: d.code.toUpperCase(),
-        family: d.family,
-        name: d.name,
-        dimensions: d.dimensions,
-        lengthCm: d.lengthCm ?? null,
-        widthCm: d.widthCm ?? null,
-        heightCm: d.heightCm ?? null,
-        unit: d.unit,
-        sellingPriceFCFA: d.sellingPriceFCFA,
-        priceMaxFCFA: d.priceMaxFCFA ?? null,
-        isPriceVisible: d.isPriceVisible ?? true,
-        isPublished: d.isPublished ?? true,
-        availability: d.availability,
-        isRental: d.isRental ?? d.family === 'location',
-        imageUrl: d.imageUrl ?? null,
-        description: d.description ?? null,
-        hasFormulation: d.hasFormulation,
-        isSolidBlock: d.isSolidBlock,
-        gravier38Brouettes: d.gravier38Brouettes,
-        gravier03Brouettes: d.gravier03Brouettes,
-        sableBrouettes: d.sableBrouettes,
-        eauLitres: d.eauLitres,
-        rendementPerSac: d.rendementPerSac,
-        volumeExtLitres: d.volumeExtLitres,
-        stockOpening: d.stockOpening,
-        sortOrder: d.sortOrder,
-      },
-    });
+    try {
+      const updated = await prisma.sbsProduct.update({
+        where: { id: d.id },
+        data: {
+          code: d.code.toUpperCase(),
+          family: d.family,
+          name: d.name,
+          dimensions: d.dimensions,
+          lengthCm: d.lengthCm ?? null,
+          widthCm: d.widthCm ?? null,
+          heightCm: d.heightCm ?? null,
+          unit: d.unit,
+          sellingPriceFCFA: d.sellingPriceFCFA,
+          priceMaxFCFA: d.priceMaxFCFA ?? null,
+          isPriceVisible: d.isPriceVisible ?? true,
+          isPublished: d.isPublished ?? true,
+          availability: d.availability,
+          isRental: d.isRental ?? d.family === 'location',
+          imageUrl: d.imageUrl ?? null,
+          description: d.description ?? null,
+          hasFormulation: d.hasFormulation,
+          isSolidBlock: d.isSolidBlock,
+          gravier38Brouettes: d.gravier38Brouettes,
+          gravier03Brouettes: d.gravier03Brouettes,
+          sableBrouettes: d.sableBrouettes,
+          eauLitres: d.eauLitres,
+          rendementPerSac: d.rendementPerSac,
+          volumeExtLitres: d.volumeExtLitres,
+          stockOpening: d.stockOpening,
+          sortOrder: d.sortOrder,
+        },
+      });
 
-    await recordSbsAudit(
-      'PRODUCT_UPDATED',
-      manager.username,
-      { code: updated.code, price: updated.sellingPriceFCFA, dimensions: updated.dimensions },
-      getClientIp(req)
-    );
-    const products = await getSbsProducts();
-    return NextResponse.json({ ok: true, product: updated, products });
+      await recordSbsAudit(
+        'PRODUCT_UPDATED',
+        manager.username,
+        { code: updated.code, price: updated.sellingPriceFCFA, dimensions: updated.dimensions },
+        getClientIp(req)
+      );
+      const products = await getSbsProducts();
+      return NextResponse.json({ ok: true, product: updated, products });
+    } catch {
+      const updated = updateFallbackSbsProduct(d);
+      return NextResponse.json({
+        ok: true,
+        product: updated,
+        products: getFallbackSbsProducts(),
+        dbOfflineMode: true,
+      });
+    }
   } catch (err) {
     console.error('SBS Product PUT error:', err);
     return NextResponse.json({ error: 'Erreur lors de la mise à jour du produit.' }, { status: 500 });
@@ -167,10 +191,15 @@ export async function DELETE(req: NextRequest) {
     if (!id) {
       return NextResponse.json({ error: 'ID produit requis.' }, { status: 400 });
     }
-    const deleted = await prisma.sbsProduct.delete({ where: { id } });
-    await recordSbsAudit('PRODUCT_DELETED', manager.username, { code: deleted.code }, getClientIp(req));
-    const products = await getSbsProducts();
-    return NextResponse.json({ ok: true, products });
+    try {
+      const deleted = await prisma.sbsProduct.delete({ where: { id } });
+      await recordSbsAudit('PRODUCT_DELETED', manager.username, { code: deleted.code }, getClientIp(req));
+      const products = await getSbsProducts();
+      return NextResponse.json({ ok: true, products });
+    } catch {
+      const products = deleteFallbackSbsProduct(id);
+      return NextResponse.json({ ok: true, products, dbOfflineMode: true });
+    }
   } catch (err) {
     console.error('SBS Product DELETE error:', err);
     return NextResponse.json({ error: 'Erreur lors de la suppression.' }, { status: 500 });

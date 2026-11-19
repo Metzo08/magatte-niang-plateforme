@@ -7,13 +7,8 @@ import {
   hashEntityPassword,
   verifyEntityPassword,
 } from '@/lib/entityAuth';
-import {
-  ensureLogistikSeeded,
-  inferBrandFromItem,
-  inferDailyRateFromItem,
-  recordLogistikAudit,
-} from '@/lib/logistikBootstrap';
-import { SBS_LOGISTIK_ITEMS } from '@/data/sbsLogistikData';
+import { ensureLogistikSeeded, recordLogistikAudit } from '@/lib/logistikBootstrap';
+import { getFallbackLogistikEquipment } from '@/lib/fallbackCatalogStore';
 
 export async function GET() {
   const manager = await getAuthenticatedEntityManager('sbs-logistik');
@@ -62,31 +57,9 @@ export async function GET() {
     });
   } catch (err) {
     console.error('Logistik admin workspace GET error (fallback mode):', err);
-    const fallbackEquipment = SBS_LOGISTIK_ITEMS.map((item, i) => {
-      const pricing = inferDailyRateFromItem(item);
-      return {
-        id: item.id,
-        code: item.code,
-        title: item.title,
-        category: item.category,
-        brand: inferBrandFromItem(item),
-        description: item.description,
-        specs: item.specs,
-        usage: item.usage,
-        imageUrl: item.imageUrl,
-        pageNumber: item.pageNumber,
-        dailyRateFCFA: pricing.dailyRateFCFA,
-        isPriceVisible: pricing.isPriceVisible,
-        availability: 'Disponible',
-        isPublished: true,
-        sortOrder: i + 1,
-        updatedBy: 'Système (Mode hors-ligne)',
-        updatedAt: new Date().toISOString(),
-      };
-    });
     return NextResponse.json({
       manager,
-      equipment: fallbackEquipment,
+      equipment: getFallbackLogistikEquipment(),
       clients: [],
       needs: [],
       quotes: [],

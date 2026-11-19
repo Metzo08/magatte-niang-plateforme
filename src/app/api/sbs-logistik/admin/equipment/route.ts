@@ -3,6 +3,11 @@ import { z } from 'zod';
 import prisma from '@/lib/db';
 import { getAuthenticatedEntityManager, getRequestIp } from '@/lib/entityAuth';
 import { ensureLogistikSeeded, recordLogistikAudit } from '@/lib/logistikBootstrap';
+import {
+  createFallbackLogistikEquipment,
+  deleteFallbackLogistikEquipment,
+  updateFallbackLogistikEquipment,
+} from '@/lib/fallbackCatalogStore';
 
 const createEquipSchema = z.object({
   code: z.string().trim().min(2).max(40),
@@ -28,7 +33,6 @@ export async function POST(req: Request) {
   }
 
   try {
-    await ensureLogistikSeeded();
     const body = await req.json();
     const parsed = createEquipSchema.safeParse(body);
     if (!parsed.success) {
@@ -39,39 +43,45 @@ export async function POST(req: Request) {
     }
 
     const d = parsed.data;
-    const maxSort = await prisma.logistikEquipment.aggregate({ _max: { sortOrder: true } });
-    const item = await prisma.logistikEquipment.create({
-      data: {
-        id: `log-eq-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
-        code: d.code.toUpperCase(),
-        title: d.title,
-        category: d.category,
-        brand: d.brand,
-        description: d.description,
-        specs: d.specs,
-        usage: d.usage,
-        imageUrl: d.imageUrl,
-        dailyRateFCFA: d.dailyRateFCFA,
-        isPriceVisible: d.isPriceVisible,
-        availability: d.availability,
-        isPublished: d.isPublished,
-        sortOrder: (maxSort._max.sortOrder || 0) + 1,
-        updatedBy: manager.displayName || manager.username,
-      },
-    });
+    try {
+      await ensureLogistikSeeded();
+      const maxSort = await prisma.logistikEquipment.aggregate({ _max: { sortOrder: true } });
+      const item = await prisma.logistikEquipment.create({
+        data: {
+          id: `log-eq-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+          code: d.code.toUpperCase(),
+          title: d.title,
+          category: d.category,
+          brand: d.brand,
+          description: d.description,
+          specs: d.specs,
+          usage: d.usage,
+          imageUrl: d.imageUrl,
+          dailyRateFCFA: d.dailyRateFCFA,
+          isPriceVisible: d.isPriceVisible,
+          availability: d.availability,
+          isPublished: d.isPublished,
+          sortOrder: (maxSort._max.sortOrder || 0) + 1,
+          updatedBy: manager.displayName || manager.username,
+        },
+      });
 
-    await recordLogistikAudit(
-      'EQUIPMENT_CREATED',
-      manager.username,
-      { code: item.code, title: item.title, brand: item.brand },
-      getRequestIp(req)
-    );
+      await recordLogistikAudit(
+        'EQUIPMENT_CREATED',
+        manager.username,
+        { code: item.code, title: item.title, brand: item.brand },
+        getRequestIp(req)
+      );
 
-    return NextResponse.json({ item }, { status: 201 });
+      return NextResponse.json({ item }, { status: 201 });
+    } catch {
+      const item = createFallbackLogistikEquipment(d, manager.displayName || manager.username);
+      return NextResponse.json({ item, dbOfflineMode: true }, { status: 201 });
+    }
   } catch (err) {
     console.error('Logistik equipment POST error:', err);
     return NextResponse.json(
-      { error: 'Impossible de créer cet équipement (code déjà utilisé ?).' },
+      { error: 'Impossible de créer cet équipement.' },
       { status: 400 }
     );
   }
@@ -109,22 +119,27 @@ export async function PUT(req: Request) {
     }
 
     const { id, ...rest } = parsed.data;
-    const item = await prisma.logistikEquipment.update({
-      where: { id },
-      data: {
-        ...rest,
-        updatedBy: manager.displayName || manager.username,
-      },
-    });
+    try {
+      const item = await prisma.logistikEquipment.update({
+        where: { id },
+        data: {
+          ...rest,
+          updatedBy: manager.displayName || manager.username,
+        },
+      });
 
-    await recordLogistikAudit(
-      'EQUIPMENT_UPDATED',
-      manager.username,
-      { id: item.id, code: item.code, availability: item.availability, brand: item.brand },
-      getRequestIp(req)
-    );
+      await recordLogistikAudit(
+        'EQUIPMENT_UPDATED',
+        manager.username,
+        { id: item.id, code: item.code, availability: item.availability, brand: item.brand },
+        getRequestIp(req)
+      );
 
-    return NextResponse.json({ item });
+      return NextResponse.json({ item });
+    } catch {
+      const item = updateFallbackLogistikEquipment(id, rest, manager.displayName || manager.username);
+      return NextResponse.json({ item, dbOfflineMode: true });
+    }
   } catch (err) {
     console.error('Logistik equipment PUT error:', err);
     return NextResponse.json({ error: 'Erreur mise à jour équipement.' }, { status: 400 });
@@ -144,15 +159,20 @@ export async function DELETE(req: Request) {
       return NextResponse.json({ error: 'ID requis.' }, { status: 400 });
     }
 
-    const existing = await prisma.logistikEquipment.delete({ where: { id } });
-    await recordLogistikAudit(
-      'EQUIPMENT_DELETE',
-      manager.username,
-      { id: existing.id, code: existing.code, title: existing.title },
-      getRequestIp(req)
-    );
+    try {
+      const existing = await prisma.logistikEquipment.delete({ where: { id } });
+      await recordLogistikAudit(
+        'EQUIPMENT_DELETE',
+        manager.username,
+        { id: existing.id, code: existing.code, title: existing.title },
+        getRequestIp(req)
+      );
 
-    return NextResponse.json({ ok: true });
+      return NextResponse.json({ ok: true });
+    } catch {
+      deleteFallbackLogistikEquipment(id);
+      return NextResponse.json({ ok: true, dbOfflineMode: true });
+    }
   } catch (err) {
     console.error('Logistik equipment DELETE error:', err);
     return NextResponse.json({ error: 'Impossible de supprimer cet équipement.' }, { status: 400 });

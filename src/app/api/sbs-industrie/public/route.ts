@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getSbsConfig, getSbsProducts } from '@/lib/sbsDbBootstrap';
-import { DEFAULT_SBS_CONFIG, DEFAULT_SBS_PRODUCTS } from '@/lib/sbsErpDefaults';
+import { DEFAULT_SBS_CONFIG } from '@/lib/sbsErpDefaults';
+import { getFallbackSbsProducts } from '@/lib/fallbackCatalogStore';
 
 export const dynamic = 'force-dynamic';
 
@@ -54,7 +55,7 @@ export async function GET() {
         address: DEFAULT_SBS_CONFIG.address,
         deliveryZone: DEFAULT_SBS_CONFIG.deliveryZone,
       },
-      products: DEFAULT_SBS_PRODUCTS.filter((p) => p.isPublished).map((p) => ({
+      products: getFallbackSbsProducts().filter((p) => p.isPublished).map((p) => ({
         id: p.id,
         code: p.code,
         family: p.family,

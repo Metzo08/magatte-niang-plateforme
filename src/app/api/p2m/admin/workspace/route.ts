@@ -8,7 +8,7 @@ import {
   verifyEntityPassword,
 } from '@/lib/entityAuth';
 import { ensureP2mSeeded, recordP2mAudit } from '@/lib/p2mBootstrap';
-import { PRODUCTS_P2M } from '@/data/initialData';
+import { getFallbackP2mProducts } from '@/lib/fallbackCatalogStore';
 
 export async function GET() {
   const manager = await getAuthenticatedEntityManager('p2m');
@@ -38,7 +38,7 @@ export async function GET() {
     console.error('P2M workspace GET error (fallback mode):', err);
     return NextResponse.json({
       manager,
-      products: PRODUCTS_P2M,
+      products: getFallbackP2mProducts(),
       clients: [],
       needs: [],
       ordersInvoices: [],

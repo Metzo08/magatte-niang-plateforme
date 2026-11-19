@@ -80,10 +80,10 @@ async function runEnsureSbsSeeded(): Promise<void> {
   const existingProducts = await prisma.sbsProduct.findMany({ select: { code: true } });
   const existingCodes = new Set(existingProducts.map((p) => p.code));
   const deleteCount = await prisma.sbsAuditLog.count({
-    where: { action: 'PRODUCT_DELETE' },
+    where: { action: { in: ['PRODUCT_DELETE', 'PRODUCT_DELETED'] } },
   });
 
-  if (existingCodes.size === 0 || deleteCount === 0) {
+  if (existingCodes.size === 0 && deleteCount === 0) {
     for (const item of DEFAULT_SBS_PRODUCTS) {
       await prisma.sbsProduct.upsert({
         where: { code: item.code },
@@ -91,29 +91,8 @@ async function runEnsureSbsSeeded(): Promise<void> {
           ...item,
           family: item.family,
         },
-        update: {
-          imageUrl: item.imageUrl,
-          dimensions: item.dimensions,
-          name: item.name,
-          description: item.description,
-          sellingPriceFCFA: item.sellingPriceFCFA,
-          priceMaxFCFA: item.priceMaxFCFA,
-        },
+        update: {},
       });
-    }
-  } else {
-    // S'assurer que AP15 et AP20 existent toujours sauf suppression volontaire explicite
-    for (const requiredCode of ['AP15', 'AP20']) {
-      if (!existingCodes.has(requiredCode)) {
-        const def = DEFAULT_SBS_PRODUCTS.find((p) => p.code === requiredCode);
-        if (def) {
-          await prisma.sbsProduct.upsert({
-            where: { code: def.code },
-            create: { ...def },
-            update: {},
-          });
-        }
-      }
     }
   }
 

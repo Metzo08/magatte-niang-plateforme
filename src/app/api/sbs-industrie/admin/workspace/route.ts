@@ -17,10 +17,10 @@ import { computeSbsErp } from '@/lib/sbsErpCalc';
 import {
   createNov2026SeedLedger,
   DEFAULT_SBS_CONFIG,
-  DEFAULT_SBS_PRODUCTS,
   SbsFactoryConfigData,
   SbsMonthlyLedgerData,
 } from '@/lib/sbsErpDefaults';
+import { getFallbackSbsProducts } from '@/lib/fallbackCatalogStore';
 
 const putWorkspaceSchema = z.object({
   year: z.number().int().min(2024).max(2040).optional(),
@@ -81,11 +81,12 @@ export async function GET(req: NextRequest) {
       id: 'fallback-2026-11',
       ...createNov2026SeedLedger(),
     };
-    const computed = computeSbsErp(fallbackConfig, DEFAULT_SBS_PRODUCTS, fallbackLedger);
+    const fallbackProducts = getFallbackSbsProducts();
+    const computed = computeSbsErp(fallbackConfig, fallbackProducts, fallbackLedger);
     return NextResponse.json({
       manager,
       config: fallbackConfig,
-      products: DEFAULT_SBS_PRODUCTS,
+      products: fallbackProducts,
       ledger: fallbackLedger,
       computed,
       availablePeriods: [{ year: fallbackLedger.year, month: fallbackLedger.month }],

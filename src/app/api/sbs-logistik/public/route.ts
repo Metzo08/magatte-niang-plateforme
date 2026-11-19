@@ -1,11 +1,7 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/db';
-import {
-  ensureLogistikSeeded,
-  inferBrandFromItem,
-  inferDailyRateFromItem,
-} from '@/lib/logistikBootstrap';
-import { SBS_LOGISTIK_ITEMS } from '@/data/sbsLogistikData';
+import { ensureLogistikSeeded } from '@/lib/logistikBootstrap';
+import { getFallbackLogistikEquipment } from '@/lib/fallbackCatalogStore';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -40,27 +36,7 @@ export async function GET() {
   }
 
   // Fallback résilient si la base de production n'est pas encore migrée/joignable
-  const fallbackItems = SBS_LOGISTIK_ITEMS.map((item, idx) => {
-    const pricing = inferDailyRateFromItem(item);
-    return {
-      id: item.id,
-      code: item.code,
-      title: item.title,
-      category: item.category,
-      brand: inferBrandFromItem(item),
-      description: item.description,
-      specs: item.specs,
-      usage: item.usage,
-      imageUrl: item.imageUrl,
-      pageNumber: item.pageNumber,
-      dailyRateFCFA: pricing.dailyRateFCFA,
-      isPriceVisible: pricing.isPriceVisible,
-      availability: 'Disponible',
-      isPublished: true,
-      sortOrder: idx + 1,
-      updatedBy: 'Parc Certifié SB-S Logistik',
-    };
-  });
+  const fallbackItems = getFallbackLogistikEquipment().filter((i) => i.isPublished !== false);
 
   const categories = Array.from(new Set(fallbackItems.map((i) => i.category)));
   const brands = Array.from(new Set(fallbackItems.map((i) => i.brand))).sort();
