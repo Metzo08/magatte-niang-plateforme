@@ -188,6 +188,30 @@ export const OFFICIAL_SITES: SiteLocation[] = [
       'Procès-verbaux d’essais officiels délivrés sous 24 heures',
     ],
   },
+  {
+    id: 'pgt',
+    name: 'PGT · Polytech General Trading',
+    badge: 'PGT · Dakar & Bureau Dubaï - Ajman',
+    role: 'Sourcing international, fret maritime, transit & approvisionnement',
+    plusCode: '9F46+XH, Ajman',
+    coords: { lat: 25.4052, lng: 55.5136 },
+    address: 'Dakar, Sénégal · Bureau Dubaï - Ajman (Émirats Arabes Unis)',
+    city: 'Dakar / Dubaï - Ajman, Sénégal',
+    phone: '+971 52 763 1629',
+    whatsapp: '+971 52 763 1629',
+    leader: 'Ajman (Émirats Arabes Unis)',
+    hours: 'Lun–Sam : 08h00 – 19h00',
+    googleMapsUrl: 'https://www.google.com/maps/search/Ajman+United+Arab+Emirates',
+    directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=25.4052,55.5136',
+    wazeUrl: 'https://waze.com/ul?ll=25.4052,55.5136&navigate=yes',
+    description:
+      'Passerelle internationale d’approvisionnement, fret maritime LCL/FCL, transit douanier et sourcing direct usines (Dubaï - Ajman & Inde) vers Dakar.',
+    highlights: [
+      'Bureau international : Dubaï - Ajman (Émirats Arabes Unis)',
+      'Sourcing direct usines certifiées ISO & fret maritime vers Dakar',
+      'Contact & WhatsApp direct : +971 52 763 1629',
+    ],
+  },
 ];
 
 interface InteractiveLocationMapProps {

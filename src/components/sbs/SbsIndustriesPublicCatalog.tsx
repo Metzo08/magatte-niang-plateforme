@@ -369,7 +369,7 @@ export default function SbsIndustriesPublicCatalog({
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-brand-100">
               <span className="inline-flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-accent-400 shrink-0" />
-                <span>Zone franche industrielle de Mbao, Dakar, Sénégal</span>
+                <span>Mbao Ville Neuve, Villa S/04, Route Nationale (à côté de la Station MKA EXCELLENCE), Sénégal</span>
               </span>
               <a
                 href="https://wa.me/221775664806?text=Bonjour%20Salimata%20SOW%2C%20je%20souhaite%20commander%20des%20briques%20%2F%20mat%C3%A9riaux%20SBS%20Industrie."
@@ -504,7 +504,7 @@ export default function SbsIndustriesPublicCatalog({
             </div>
             <h3 className="text-xl sm:text-2xl font-title font-bold text-neutral-900 dark:text-white mt-1.5 flex items-center gap-2">
               <Blocks className="w-6 h-6 text-accent-500" />
-              Usine SBS Industrie · Zone Franche Industrielle de Mbao
+              Usine SB-S Industrie · Mbao Ville Neuve, Villa S/04, Route Nationale (à côté de la Station MKA EXCELLENCE), Sénégal
             </h3>
             <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-300 mt-1">
               Responsable d'exploitation : <strong className="text-neutral-900 dark:text-white">Salimata SOW</strong> · Visites techniques &amp; commandes chantiers au <a href="https://wa.me/221775664806" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 font-bold hover:underline font-mono">+221 77 566 48 06</a>.

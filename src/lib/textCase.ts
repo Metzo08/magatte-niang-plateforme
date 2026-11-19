@@ -115,6 +115,7 @@ export function toFirstUpperRestLower(
     [/\babidjan\b/gi, 'Abidjan'],
     [/\bduba[iï]\b/gi, 'Dubaï'],
     [/\bajman\b/gi, 'Ajman'],
+    [/\b[eé]mirats\s+arabes\s+unis\b/gi, 'Émirats Arabes Unis'],
     [/\binde\b/gi, 'Inde'],
     [/\bfrance\b/gi, 'France'],
     [/\bitalie\b/gi, 'Italie'],

@@ -297,7 +297,7 @@ export const ENTITIES: EntityInfo[] = [
     leaderRole: 'Directeur général',
     address: 'Dakar, Sénégal · Bureau Dubaï - Ajman (Émirats Arabes Unis)',
     city: 'Dakar / Dubaï - Ajman',
-    country: 'Sénégal & ÉAU',
+    country: 'Sénégal',
     phone: '+971 52 763 1629',
     email: 'pgt.senegal@gmail.com',
     whatsapp: '+971 52 763 1629',
