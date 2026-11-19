@@ -24,6 +24,7 @@ export interface PressArticleItem {
   authors: string[];
   entityId?: string;
   imageUrl?: string;
+  downloadUrl?: string;
   updatedAt?: string;
 }
 
@@ -40,6 +41,7 @@ function initialSeed(): PressArticleItem[] {
     journalOrEvent: p.journalOrEvent || 'Groupe Magatte Niang',
     authors: p.authors || ['Direction Communication'],
     entityId: 'sbs-group',
+    downloadUrl: p.downloadUrl,
   }));
 }
 

@@ -300,7 +300,7 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
                   <MapPin className="w-4 h-4 shrink-0 text-white/80 mt-0.5" />
                   <div className="text-white/90">
                     <div>{entity.address}</div>
-                    <div>{entity.city}, {entity.country}</div>
+                    <div>{[entity.city, entity.country].filter(Boolean).join(', ')}</div>
                   </div>
                 </div>
               </div>

@@ -1,0 +1,77 @@
+{
+  "totalDuration": 111.19,
+  "scenes": [
+    {
+      "id": "scene-01",
+      "index": 0,
+      "startTime": 0.0,
+      "duration": 13.02,
+      "endTime": 13.02,
+      "audioUrl": "/audio/promo/scene-01.mp3"
+    },
+    {
+      "id": "scene-02",
+      "index": 1,
+      "startTime": 13.02,
+      "duration": 13.9,
+      "endTime": 26.92,
+      "audioUrl": "/audio/promo/scene-02.mp3"
+    },
+    {
+      "id": "scene-03",
+      "index": 2,
+      "startTime": 26.92,
+      "duration": 12.97,
+      "endTime": 39.89,
+      "audioUrl": "/audio/promo/scene-03.mp3"
+    },
+    {
+      "id": "scene-04",
+      "index": 3,
+      "startTime": 39.89,
+      "duration": 10.45,
+      "endTime": 50.34,
+      "audioUrl": "/audio/promo/scene-04.mp3"
+    },
+    {
+      "id": "scene-05",
+      "index": 4,
+      "startTime": 50.34,
+      "duration": 12.56,
+      "endTime": 62.9,
+      "audioUrl": "/audio/promo/scene-05.mp3"
+    },
+    {
+      "id": "scene-06",
+      "index": 5,
+      "startTime": 62.9,
+      "duration": 11.48,
+      "endTime": 74.38,
+      "audioUrl": "/audio/promo/scene-06.mp3"
+    },
+    {
+      "id": "scene-07",
+      "index": 6,
+      "startTime": 74.38,
+      "duration": 11.7,
+      "endTime": 86.07,
+      "audioUrl": "/audio/promo/scene-07.mp3"
+    },
+    {
+      "id": "scene-08",
+      "index": 7,
+      "startTime": 86.07,
+      "duration": 11.89,
+      "endTime": 97.96,
+      "audioUrl": "/audio/promo/scene-08.mp3"
+    },
+    {
+      "id": "scene-09",
+      "index": 8,
+      "startTime": 97.96,
+      "duration": 13.23,
+      "endTime": 111.19,
+      "audioUrl": "/audio/promo/scene-09.mp3"
+    }
+  ]
+}

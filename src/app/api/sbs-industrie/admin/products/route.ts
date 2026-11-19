@@ -4,6 +4,8 @@ import prisma from '@/lib/db';
 import { getAuthenticatedSbsManager, getClientIp } from '@/lib/sbsAuth';
 import { getSbsProducts, recordSbsAudit } from '@/lib/sbsDbBootstrap';
 
+export const dynamic = 'force-dynamic';
+
 const productSchema = z.object({
   id: z.string().optional(),
   code: z.string().trim().min(2).max(24),
@@ -20,7 +22,7 @@ const productSchema = z.object({
   isPublished: z.boolean().optional(),
   availability: z.string().trim().min(1).max(50),
   isRental: z.boolean().optional(),
-  imageUrl: z.string().max(400).nullable().optional(),
+  imageUrl: z.string().nullable().optional(),
   description: z.string().max(1500).nullable().optional(),
   hasFormulation: z.boolean().optional(),
   isSolidBlock: z.boolean().optional(),

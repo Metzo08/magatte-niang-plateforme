@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { getSbsConfig, getSbsProducts } from '@/lib/sbsDbBootstrap';
 import { DEFAULT_SBS_CONFIG, DEFAULT_SBS_PRODUCTS } from '@/lib/sbsErpDefaults';
 
+export const dynamic = 'force-dynamic';
+
 /**
  * Endpoint PUBLIC SBS Industrie · Expose uniquement le catalogue commercial,
  * les dimensions, prix publics et offres de location.

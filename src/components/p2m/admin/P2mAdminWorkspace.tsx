@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useQueryClient } from '@tanstack/react-query';
 import { EntityInterconnectionBar } from '@/components/entity-admin/EntityInterconnectionBar';
 import { ImageUploadField } from '@/components/entity-admin/ImageUploadField';
+import { ConfirmDeleteModal } from '@/components/entity-admin/ConfirmDeleteModal';
 import {
   LayoutDashboard,
   Layers,
@@ -124,6 +125,8 @@ export function P2mAdminWorkspace({ onLogout }: { onLogout: () => void }) {
   });
 
   const [pwdForm, setPwdForm] = useState({ currentPassword: '', newPassword: '' });
+  const [deleteTarget, setDeleteTarget] = useState<P2mProductRow | null>(null);
+  const [deleting, setDeleting] = useState(false);
 
   const notify = (msg: string, err = false) => {
     setToast({ msg, err });
@@ -512,14 +515,9 @@ export function P2mAdminWorkspace({ onLogout }: { onLogout: () => void }) {
                             </button>
                             <button
                               type="button"
-                              onClick={async () => {
-                                await fetch(`/api/p2m/admin/products?id=${encodeURIComponent(p.id)}`, {
-                                  method: 'DELETE',
-                                });
-                                await loadWorkspace();
-                                notify('Produit supprimé.');
-                              }}
-                              className="p-1.5 rounded bg-slate-800 text-rose-400"
+                              onClick={() => setDeleteTarget(p)}
+                              className="p-1.5 rounded bg-slate-800 hover:bg-rose-600/30 text-rose-400"
+                              title="Supprimer ce produit"
                             >
                               <Trash2 className="w-3.5 h-3.5" />
                             </button>
@@ -755,6 +753,34 @@ export function P2mAdminWorkspace({ onLogout }: { onLogout: () => void }) {
           )}
         </main>
       </div>
+
+      <ConfirmDeleteModal
+        open={Boolean(deleteTarget)}
+        title="Supprimer un produit P2M"
+        itemName={deleteTarget ? `${deleteTarget.ref} — ${deleteTarget.name}` : ''}
+        description="Ce produit sera retiré du catalogue public P2M (/catalogue et /entites/p2m)."
+        loading={deleting}
+        onCancel={() => setDeleteTarget(null)}
+        onConfirm={async () => {
+          if (!deleteTarget) return;
+          setDeleting(true);
+          try {
+            const res = await fetch(
+              `/api/p2m/admin/products?id=${encodeURIComponent(deleteTarget.id)}`,
+              { method: 'DELETE' }
+            );
+            if (!res.ok) throw new Error('Suppression impossible');
+            await loadWorkspace();
+            queryClient.invalidateQueries({ queryKey: ['products'] });
+            notify(`Produit ${deleteTarget.ref} supprimé.`);
+            setDeleteTarget(null);
+          } catch (err) {
+            notify(err instanceof Error ? err.message : 'Erreur de suppression', true);
+          } finally {
+            setDeleting(false);
+          }
+        }}
+      />
     </div>
   );
 }

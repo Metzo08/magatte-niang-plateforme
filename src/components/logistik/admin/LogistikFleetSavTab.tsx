@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import type { LogistikClientRow, LogistikEquipmentRow, LogistikSavRow } from './types';
 import { ImageUploadField } from '@/components/entity-admin/ImageUploadField';
+import { ConfirmDeleteModal } from '@/components/entity-admin/ConfirmDeleteModal';
 
 interface Props {
   activeSubTab: 'clients' | 'sav' | 'fleet';
@@ -142,6 +143,64 @@ export function LogistikFleetSavTab({
   const categories = useMemo(
     () => Array.from(new Set(equipment.map((e) => e.category || 'Autres'))),
     [equipment]
+  );
+
+  const [pendingDelete, setPendingDelete] = useState<{
+    kind: 'equipment' | 'client' | 'sav';
+    id: string;
+    label: string;
+  } | null>(null);
+  const [deleting, setDeleting] = useState(false);
+
+  const confirmDelete = async () => {
+    if (!pendingDelete) return;
+    setDeleting(true);
+    try {
+      if (pendingDelete.kind === 'equipment') {
+        const res = await fetch(
+          `/api/sbs-logistik/admin/equipment?id=${encodeURIComponent(pendingDelete.id)}`,
+          { method: 'DELETE' }
+        );
+        if (!res.ok) throw new Error('Suppression impossible');
+        await onRefresh();
+        notify(`Équipement ${pendingDelete.label} supprimé.`);
+      } else if (pendingDelete.kind === 'client') {
+        await callOp('client', 'delete', { id: pendingDelete.id });
+        await onRefresh();
+        notify(`Client ${pendingDelete.label} supprimé.`);
+      } else {
+        await callOp('sav', 'delete', { id: pendingDelete.id });
+        await onRefresh();
+        notify(`Fiche SAV ${pendingDelete.label} supprimée.`);
+      }
+      setPendingDelete(null);
+    } catch (err) {
+      notify(err instanceof Error ? err.message : 'Erreur lors de la suppression', true);
+    } finally {
+      setDeleting(false);
+    }
+  };
+
+  const deleteModal = (
+    <ConfirmDeleteModal
+      open={Boolean(pendingDelete)}
+      title={
+        pendingDelete?.kind === 'equipment'
+          ? 'Supprimer un équipement SB-S Logistik'
+          : pendingDelete?.kind === 'client'
+            ? 'Supprimer un client SB-S Logistik'
+            : 'Supprimer une fiche SAV'
+      }
+      itemName={pendingDelete?.label || ''}
+      description={
+        pendingDelete?.kind === 'equipment'
+          ? 'Cet engin/matériel sera immédiatement retiré du parc public SB-S Logistik.'
+          : undefined
+      }
+      loading={deleting}
+      onCancel={() => setPendingDelete(null)}
+      onConfirm={confirmDelete}
+    />
   );
 
   const callOp = async (entity: string, action: string, payload: Record<string, unknown>) => {
@@ -334,11 +393,13 @@ export function LogistikFleetSavTab({
                   <td className="p-3 text-right">
                     <button
                       type="button"
-                      onClick={async () => {
-                        await callOp('client', 'delete', { id: c.id });
-                        await onRefresh();
-                        notify('Client supprimé.');
-                      }}
+                      onClick={() =>
+                        setPendingDelete({
+                          kind: 'client',
+                          id: c.id,
+                          label: `${c.code} — ${c.fullName}`,
+                        })
+                      }
                       className="p-1.5 rounded bg-slate-800 hover:bg-rose-600/30 text-rose-400"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
@@ -349,6 +410,7 @@ export function LogistikFleetSavTab({
             </tbody>
           </table>
         </div>
+        {deleteModal}
       </div>
     );
   }
@@ -549,11 +611,13 @@ export function LogistikFleetSavTab({
                 </select>
                 <button
                   type="button"
-                  onClick={async () => {
-                    await callOp('sav', 'delete', { id: s.id });
-                    await onRefresh();
-                    notify('Fiche SAV supprimée.');
-                  }}
+                  onClick={() =>
+                    setPendingDelete({
+                      kind: 'sav',
+                      id: s.id,
+                      label: `${s.ticketNumber} — ${s.equipmentTitle}`,
+                    })
+                  }
                   className="p-2 rounded-xl bg-slate-800 hover:bg-rose-600/30 text-rose-400"
                 >
                   <Trash2 className="w-4 h-4" />
@@ -567,6 +631,7 @@ export function LogistikFleetSavTab({
             </div>
           )}
         </div>
+        {deleteModal}
       </div>
     );
   }
@@ -900,13 +965,13 @@ export function LogistikFleetSavTab({
                     </button>
                     <button
                       type="button"
-                      onClick={async () => {
-                        await fetch(`/api/sbs-logistik/admin/equipment?id=${encodeURIComponent(eq.id)}`, {
-                          method: 'DELETE',
-                        });
-                        await onRefresh();
-                        notify(`Équipement ${eq.code} supprimé.`);
-                      }}
+                      onClick={() =>
+                        setPendingDelete({
+                          kind: 'equipment',
+                          id: eq.id,
+                          label: `${eq.code} — ${eq.title}`,
+                        })
+                      }
                       className="p-1.5 rounded bg-slate-800 hover:bg-rose-600/30 text-rose-400"
                       title="Supprimer"
                     >
@@ -919,6 +984,7 @@ export function LogistikFleetSavTab({
           </tbody>
         </table>
       </div>
+      {deleteModal}
     </div>
   );
 }

@@ -9,12 +9,12 @@
 import { SBS_LOGISTIK_ITEMS } from './sbsLogistikData';
 
 export const SITE_IMAGES = {
-  // Portraits de Magatte Niang
-  magatteNiang: '/images/magatte-niang.jpg',
-  magatteNiangEquipe: '/images/magatte-equipe.png',
-  magatteNiangProfesseur: '/images/magatte-professeur.png',
-  magatteNiangChercheur: '/images/magatte-chercheur.png',
-  magatteNiangPortraitCover: '/images/magatte-portrait.webp',
+  // Portraits de Magatte Niang (Forum & Nuit des LeadSen 2026 · Trophée Entrepreneuriat BTP)
+  magatteNiang: '/images/magatte-niang/portrait-officiel.jpg',
+  magatteNiangEquipe: '/images/magatte-niang/equipe-leadsen-01.jpg',
+  magatteNiangProfesseur: '/images/magatte-niang/discours-podium-01.jpg',
+  magatteNiangChercheur: '/images/magatte-niang/discours-podium-02.jpg',
+  magatteNiangPortraitCover: '/images/magatte-niang/portrait-officiel.jpg',
 
   // Entités (logos & visuels officiels)
   sermaBtp: '/images/serma-btp.jpg',
@@ -216,6 +216,13 @@ export const ENTITY_GALLERY: Record<string, { src: string; caption: string }[]> 
     { src: '/images/serma/hangar-agl-bel-air-04.jpg', caption: 'Hangar logistique AGL / Rocade Bel Air · Structure métallique complète sur massifs béton' },
   ],
   'sbs-group': [
+    { src: '/images/sbs-group-officiel/sbs-kakemono-logo.jpg', caption: 'Stein Bauer Sénégal Group (SB-S Group) · Identité officielle — « Nous partageons vos projets »' },
+    { src: '/images/sbs-group-officiel/sbs-group-domaines.jpg', caption: 'SB-S Group · Domaines d’intervention : Bâtiment, TP, Constructions métalliques, Ouvrages d’art, Hydraulique, Assainissement, Énergie & Plomberie' },
+    { src: '/images/sbs-group-officiel/sbs-plaque-siege.jpg', caption: 'Siège social SB-S Group · Mbao Ville Neuve, Villa S/04, Route Nationale (à côté de la Station MKA EXCELLENCE)' },
+    { src: '/images/sbs-group-officiel/sbs-partenaires.jpg', caption: 'Partenaires de référence SB-S Group : Solene, Polytech Entreprise, LDC, OIM, CES, Eiffage, Autoroute de l’Avenir, GCO, Press High-Tech & SERMA BTP' },
+    { src: '/images/sbs-group-officiel/sbs-industrie-offre.jpg', caption: 'Pôle SB-S Industrie · « Construisez l’avenir » — Béton prêt à l’emploi, agglos creux & pleins, hourdis, bordures et pavés' },
+    { src: '/images/sbs-group-officiel/sbs-logistik-offre.jpg', caption: 'Pôle SB-S Logistik · « Ensemble pour mieux construire » — Location d’engins, EPI, matériaux et matériels' },
+    { src: '/images/sbs-group-officiel/sbs-contacts.jpg', caption: 'Coordonnées officielles SB-S Group : (+221) 33 871 08 61 · 76 600 96 32 / 76 600 96 35 · infos@sbsgroup.sn' },
     { src: '/images/sbs-presentation/sbs-page06-img03.jpeg', caption: 'Grues mobiles télescopiques 50T & nacelles grande hauteur' },
     { src: '/images/sbs-presentation/sbs-page07-img03.jpeg', caption: 'Camion-grue 6 tonnes à bras hydraulique télescopique' },
     { src: '/images/sbs-presentation/sbs-page08-img01.jpeg', caption: 'Pompe à béton stationnaire tractable haute pression Aquarius' },
@@ -252,3 +259,46 @@ export const ENTITY_GALLERY: Record<string, { src: string; caption: string }[]> 
     { src: '/images/pgt/pgt-fret-maritime-conteneurs.jpg', caption: 'Plateforme logistique d\'approvisionnement direct usines' },
   ]
 };
+
+export const MAGATTE_NIANG_GALLERY: { src: string; caption: string; tag: string }[] = [
+  {
+    src: '/images/magatte-niang/portrait-officiel.jpg',
+    caption: 'Magatte Niang · Prise de parole officielle au Forum & Nuit des LeadSen 2026',
+    tag: 'Portrait officiel',
+  },
+  {
+    src: '/images/magatte-niang/trophee-leadsen-01.jpg',
+    caption: 'Remise du Trophée LeadSen — Entrepreneuriat BTP (SB-S Group / SERMA BTP)',
+    tag: 'Distinction LeadSen 2026',
+  },
+  {
+    src: '/images/magatte-niang/trophee-leadsen-02.jpg',
+    caption: 'Cérémonie de distinction · Trophée LeadSen de l’Entrepreneuriat BTP',
+    tag: 'Distinction LeadSen 2026',
+  },
+  {
+    src: '/images/magatte-niang/discours-podium-01.jpg',
+    caption: 'Intervention au pupitre sur le leadership entrepreneurial et l’ingénierie BTP au Sénégal',
+    tag: 'Conférence',
+  },
+  {
+    src: '/images/magatte-niang/discours-podium-02.jpg',
+    caption: 'Allocution de Magatte Niang devant les décideurs et innovateurs sénégalais',
+    tag: 'Conférence',
+  },
+  {
+    src: '/images/magatte-niang/equipe-leadsen-01.jpg',
+    caption: 'Magatte Niang entouré de son équipe avec le Trophée LeadSen 2026',
+    tag: 'Équipe & Leadership',
+  },
+  {
+    src: '/images/magatte-niang/equipe-leadsen-02.jpg',
+    caption: 'Célébration du Trophée LeadSen 2026 avec les collaboratrices du groupe',
+    tag: 'Équipe & Leadership',
+  },
+  {
+    src: '/images/magatte-niang/laureats-leadsen-2026.jpg',
+    caption: 'Photo officielle des lauréats du Forum & Nuit des LeadSen 2026 (Leaders Sénégalais)',
+    tag: 'Lauréats 2026',
+  },
+];

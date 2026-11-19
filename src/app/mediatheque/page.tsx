@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import PhotoLightbox from '@/components/common/PhotoLightbox';
 import { PUBLICATIONS, ENTITIES } from '@/data/initialData';
-import { SITE_IMAGES } from '@/data/siteImages';
+import { SITE_IMAGES, MAGATTE_NIANG_GALLERY } from '@/data/siteImages';
 import SbsPresentationGallery from '@/components/sbs/SbsPresentationGallery';
 import {
   Newspaper,
@@ -33,6 +33,7 @@ interface PressArticle {
   authors: string[];
   entityId?: string;
   imageUrl?: string;
+  downloadUrl?: string;
 }
 
 export default function MediathequePage() {
@@ -56,8 +57,13 @@ export default function MediathequePage() {
   }, []);
 
   const medias = [
-    { src: SITE_IMAGES.magatteNiang, label: 'Portrait officiel de Magatte Niang', tag: 'Portrait' as const },
-    { src: SITE_IMAGES.sbsGroup, label: 'SB-S Group · Bâtiment, Charpente & Travaux Industriels', tag: 'Entité' as const },
+    ...MAGATTE_NIANG_GALLERY.slice(0, 4).map((p) => ({
+      src: p.src,
+      label: p.caption,
+      tag: 'Portrait' as const,
+    })),
+    { src: '/images/sbs-group-officiel/sbs-kakemono-logo.jpg', label: 'SB-S Group · Identité officielle « Nous partageons vos projets »', tag: 'Entité' as const },
+    { src: '/images/sbs-group-officiel/sbs-partenaires.jpg', label: 'SB-S Group · Partenaires industriels & institutionnels', tag: 'Entité' as const },
     { src: SITE_IMAGES.sermaBtp, label: 'SERMA BTP · ingénierie & modélisation 3D/BIM', tag: 'Entité' as const },
     { src: SITE_IMAGES.sbsLabo, label: 'SB-S Labo · laboratoire géotechnique C2 & A3', tag: 'Entité' as const },
     { src: SITE_IMAGES.sbsIndustries, label: 'SB-S Industries · préfabrication béton & BPE', tag: 'Entité' as const },
@@ -157,6 +163,71 @@ export default function MediathequePage() {
           </Link>
         </div>
 
+        {/* DOSSIER SPÉCIAL · PUBLICATION SCIENTIFIQUE DE MAGATTE NIANG (EPT THIÈS) */}
+        <div className="mb-8 rounded-2xl border border-accent-500/35 bg-gradient-to-br from-brand-950 via-brand-900 to-brand-950 text-white p-6 sm:p-8 shadow-elev-2">
+          <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-mono font-bold">
+              <FileText className="w-3.5 h-3.5" />
+              À la une · Publication Scientifique &amp; Dossier Presse
+            </span>
+            <span className="text-xs font-mono text-neutral-400">
+              École Polytechnique de Thiès (EPT) · 142 pages
+            </span>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div className="lg:col-span-8 space-y-3">
+              <h3 className="text-xl sm:text-2xl font-title font-bold leading-snug">
+                Dimensionnement structural des constructions en terre dans l&apos;habitat (Blocs de Terre Comprimée · BTC)
+              </h3>
+              <p className="text-xs text-amber-200/90 font-medium">
+                Par <strong>Magatte NIANG</strong> &amp; Abdou Karim FALL · Dir. Pr. Ibrahima Khalil CISSÉ &amp; Dr. Galaye NIANG (EPT Thiès)
+              </p>
+              <p className="text-sm text-neutral-300 leading-relaxed">
+                Cette étude d&apos;ingénierie de 142 pages formalise le calcul structural des murs porteurs et poteaux en BTC (norme AFNOR XP 13-901, méthodes CRATerre &amp; charge critique d&apos;Euler) à partir des carrières latéritiques sénégalaises de <strong>Sindia</strong> et <strong>Ngalane</strong>. Testée sur le bâtiment témoin de l&apos;EPT, la solution BTC réduit les coûts de construction d&apos;environ <strong>32 %</strong> tout en offrant un confort thermique et acoustique supérieur au béton armé.
+              </p>
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                <a
+                  href="/docs/PFE-Magatte-Niang-Constructions-Terre-EPT.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-m bg-accent-500 hover:bg-accent-600 text-white text-xs font-bold transition-colors"
+                >
+                  <Download className="w-4 h-4" />
+                  Lire / Télécharger l&apos;étude complète (PDF · 142 p.)
+                </a>
+                <Link
+                  href="/profil"
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-m bg-white/10 hover:bg-white/15 border border-white/20 text-white text-xs font-bold transition-colors"
+                >
+                  Profil &amp; Recherche Magatte Niang <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+            <div className="lg:col-span-4 grid grid-cols-2 gap-3">
+              <div className="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                <div className="text-xl font-title font-bold text-emerald-400">~32 %</div>
+                <div className="text-[11px] text-neutral-200 font-semibold">Économie vs BA</div>
+                <div className="text-[10px] text-neutral-400 mt-0.5">784 415 F vs 1 292 655 F</div>
+              </div>
+              <div className="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                <div className="text-xl font-title font-bold text-accent-400">0,34</div>
+                <div className="text-[11px] text-neutral-200 font-semibold">Rcd (m².K/W)</div>
+                <div className="text-[10px] text-neutral-400 mt-0.5">vs 0,25 en béton armé</div>
+              </div>
+              <div className="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                <div className="text-xl font-title font-bold text-amber-400">12 h</div>
+                <div className="text-[11px] text-neutral-200 font-semibold">Déphasage</div>
+                <div className="text-[10px] text-neutral-400 mt-0.5">Flux 1 511 W vs 2 050 W</div>
+              </div>
+              <div className="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                <div className="text-xl font-title font-bold text-sky-400">56 dB</div>
+                <div className="text-[11px] text-neutral-200 font-semibold">Acoustique</div>
+                <div className="text-[10px] text-neutral-400 mt-0.5">Norme AFNOR XP 13-901</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {pressItems.length === 0 ? (
           <div className="bg-neutral-50 dark:bg-brand-800/50 border border-neutral-200 dark:border-brand-700 rounded-l p-10 text-center">
             <FileText className="w-12 h-12 text-neutral-400 mx-auto mb-4" />
@@ -203,8 +274,19 @@ export default function MediathequePage() {
                       {p.abstract}
                     </p>
                   </div>
-                  <div className="text-xs text-neutral-500 dark:text-neutral-400 pt-2 border-t border-neutral-100 dark:border-brand-800">
-                    {p.journalOrEvent} · {(p.authors || []).join(', ')}
+                  <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-neutral-500 dark:text-neutral-400 pt-3 border-t border-neutral-100 dark:border-brand-800">
+                    <span>{p.journalOrEvent} · {(p.authors || []).join(', ')}</span>
+                    {p.downloadUrl && (
+                      <a
+                        href={p.downloadUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-accent-600 dark:text-accent-400 font-bold hover:underline shrink-0"
+                      >
+                        <Download className="w-3.5 h-3.5" />
+                        PDF complet
+                      </a>
+                    )}
                   </div>
                 </div>
               </article>

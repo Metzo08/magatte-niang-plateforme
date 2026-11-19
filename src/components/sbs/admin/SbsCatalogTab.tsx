@@ -18,6 +18,8 @@ import {
 import type { SbsErpComputedReport } from '@/lib/sbsErpCalc';
 import type { SbsProductFamily, SbsProductItem } from '@/lib/sbsErpDefaults';
 import { FAMILY_LABELS, fmtFCFA, fmtPct, SBS_PRESET_IMAGES } from './sbsFormat';
+import { ImageUploadField } from '@/components/entity-admin/ImageUploadField';
+import { ConfirmDeleteModal } from '@/components/entity-admin/ConfirmDeleteModal';
 
 interface ProductDraft {
   mode: 'create' | 'edit';
@@ -95,26 +97,8 @@ export default function SbsCatalogTab({
   const [draft, setDraft] = useState<ProductDraft | null>(null);
   const [saving, setSaving] = useState(false);
   const [err, setErr] = useState('');
-  const [uploadingImage, setUploadingImage] = useState(false);
-
-  const handleUploadImage = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file || !draft) return;
-    setUploadingImage(true);
-    setErr('');
-    try {
-      const fd = new FormData();
-      fd.append('file', file);
-      const res = await fetch('/api/upload', { method: 'POST', body: fd });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Erreur lors de l\'envoi de l\'image');
-      setDraft({ ...draft, imageUrl: data.url });
-    } catch (error: any) {
-      setErr(error?.message || 'Erreur lors de l\'upload');
-    } finally {
-      setUploadingImage(false);
-    }
-  };
+  const [deleteTarget, setDeleteTarget] = useState<SbsProductItem | null>(null);
+  const [deleting, setDeleting] = useState(false);
 
   const costByCode = useMemo(
     () => Object.fromEntries(computed.costRows.map((c) => [c.code, c])),
@@ -392,11 +376,7 @@ export default function SbsCatalogTab({
                         </button>
                         <button
                           type="button"
-                          onClick={() => {
-                          if (window.confirm(`Confirmer la suppression définitive de ${p.code} (${p.name}) du catalogue SBS Industrie ?`)) {
-                            onDeleteProduct(p.id, p.code);
-                          }
-                        }}
+                          onClick={() => setDeleteTarget(p)}
                           className="p-1.5 rounded hover:bg-red-100 dark:hover:bg-red-900/40 text-red-600"
                           title="Supprimer"
                         >
@@ -605,39 +585,55 @@ export default function SbsCatalogTab({
                 </div>
               </div>
 
-              {/* Visibilité & Image */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div>
-                  <label className="block font-semibold mb-1">Visuel / Photo catalogue</label>
-                  <select
-                    value={draft.imageUrl}
-                    onChange={(e) => setDraft({ ...draft, imageUrl: e.target.value })}
-                    className="w-full px-3 py-2 rounded-m border border-neutral-300 dark:border-brand-700 bg-white dark:bg-brand-950"
-                  >
-                    {SBS_PRESET_IMAGES.map((img) => (
-                      <option key={img.url} value={img.url}>
-                        {img.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                <div className="flex flex-wrap items-center gap-4 pt-5">
-                  <label className="inline-flex items-center gap-2 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={draft.isPublished}
-                      onChange={(e) => setDraft({ ...draft, isPublished: e.target.checked })}
-                    />
-                    <span>Afficher sur la page publique</span>
-                  </label>
-                  <label className="inline-flex items-center gap-2 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={draft.isPriceVisible}
-                      onChange={(e) => setDraft({ ...draft, isPriceVisible: e.target.checked })}
-                    />
-                    <span>Afficher le prix</span>
-                  </label>
+              {/* Visibilité & Photo produit (ajout, modification, suppression) */}
+              <div className="space-y-3 p-3.5 rounded-m bg-slate-900 text-white border border-slate-700">
+                <ImageUploadField
+                  label="Photo du produit SB-S Industrie (ajouter, modifier ou supprimer)"
+                  value={draft.imageUrl}
+                  onChange={(url) => setDraft({ ...draft, imageUrl: url })}
+                />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                  <div>
+                    <label className="block font-semibold text-slate-300 mb-1">
+                      Ou choisir un visuel prédéfini
+                    </label>
+                    <select
+                      value={
+                        SBS_PRESET_IMAGES.some((i) => i.url === draft.imageUrl)
+                          ? draft.imageUrl
+                          : ''
+                      }
+                      onChange={(e) => {
+                        if (e.target.value) setDraft({ ...draft, imageUrl: e.target.value });
+                      }}
+                      className="w-full px-3 py-2 rounded-m border border-slate-700 bg-slate-950 text-white"
+                    >
+                      <option value="">— Visuel personnalisé / sans preset —</option>
+                      {SBS_PRESET_IMAGES.map((img) => (
+                        <option key={img.url} value={img.url}>
+                          {img.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-4 pt-5">
+                    <label className="inline-flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={draft.isPublished}
+                        onChange={(e) => setDraft({ ...draft, isPublished: e.target.checked })}
+                      />
+                      <span>Afficher sur la page publique</span>
+                    </label>
+                    <label className="inline-flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={draft.isPriceVisible}
+                        onChange={(e) => setDraft({ ...draft, isPriceVisible: e.target.checked })}
+                      />
+                      <span>Afficher le prix</span>
+                    </label>
+                  </div>
                 </div>
               </div>
 
@@ -761,6 +757,25 @@ export default function SbsCatalogTab({
           </div>
         </div>
       )}
+
+      <ConfirmDeleteModal
+        open={Boolean(deleteTarget)}
+        title="Supprimer un produit SB-S Industrie"
+        itemName={deleteTarget ? `${deleteTarget.code} — ${deleteTarget.name}` : ''}
+        description="Ce produit sera retiré du catalogue public SB-S Industrie et de l'ERP."
+        loading={deleting}
+        onCancel={() => setDeleteTarget(null)}
+        onConfirm={async () => {
+          if (!deleteTarget) return;
+          setDeleting(true);
+          try {
+            await onDeleteProduct(deleteTarget.id, deleteTarget.code);
+            setDeleteTarget(null);
+          } finally {
+            setDeleting(false);
+          }
+        }}
+      />
     </div>
   );
 }
