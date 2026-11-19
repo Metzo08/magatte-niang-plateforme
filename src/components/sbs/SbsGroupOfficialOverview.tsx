@@ -168,18 +168,15 @@ export default function SbsGroupOfficialOverview() {
           </div>
         </div>
         <div className="lg:col-span-4 flex justify-center">
-          <div className="w-full max-w-xs rounded-2xl bg-white p-6 shadow-xl border border-white/40 flex flex-col items-center justify-center text-center">
+          <div className="w-full max-w-sm rounded-2xl bg-white p-6 shadow-xl border border-white/40 flex flex-col items-center justify-center text-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/media/sbs-group/logo-sbs-group.png"
               alt="Logo officiel SB-S Group · Stein Bauer Sénégal Group"
-              className="w-48 h-36 object-contain"
+              className="w-full max-w-[260px] h-auto object-contain"
             />
-            <div className="mt-3 pt-3 border-t border-neutral-200 w-full">
-              <div className="text-xs font-title font-bold text-[#0f2744] tracking-wide uppercase">
-                Stein Bauer Sénégal Group
-              </div>
-              <div className="text-[11px] text-neutral-500 mt-0.5">
+            <div className="mt-4 pt-3 border-t border-neutral-200 w-full">
+              <div className="text-[11px] font-semibold text-neutral-600">
                 Bâtiment · Charpente · Travaux Industriels
               </div>
             </div>
