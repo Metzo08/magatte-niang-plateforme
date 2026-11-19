@@ -34,12 +34,12 @@ const ENTITY_LINKS = ENTITIES.map((ent) => ({
 
 /** Menu desktop · expertises (dropdown) */
 const EXPERTISE_LINKS = [
-  { href: '/expertises#genie-civil', label: 'Génie civil & BTP' },
-  { href: '/expertises#construction-metallique', label: 'Construction métallique' },
-  { href: '/expertises#prefabrication-beton', label: 'Béton & préfabrication' },
+  { href: '/expertises?domaine=genie-civil', label: 'Génie civil & BTP' },
+  { href: '/expertises?domaine=construction-metallique', label: 'Construction métallique' },
+  { href: '/expertises?domaine=prefabrication-beton', label: 'Béton & préfabrication' },
   { href: '/services/laboratoire', label: 'Laboratoire & essais' },
-  { href: '/expertises#logistique', label: 'Logistique & transport' },
-  { href: '/expertises#etudes-ingenierie', label: 'Études & ingénierie' }
+  { href: '/expertises?domaine=logistique', label: 'Logistique & transport' },
+  { href: '/expertises?domaine=etudes-ingenierie', label: 'Études & ingénierie' },
 ];
 
 /** Menu desktop · navigation principale horizontale */
@@ -261,6 +261,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenAI }) => {
                             <Link
                               key={exp.label}
                               href={exp.href}
+                              onClick={() => setActiveDropdown(null)}
                               className="flex items-center justify-between px-3 py-2 rounded-m text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:bg-accent-50 dark:hover:bg-brand-800 hover:text-accent-600 transition-colors"
                             >
                               {exp.label}
