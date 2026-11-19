@@ -156,7 +156,7 @@ export default function ExpertisesPage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={SITE_IMAGES.rubonChantier}
-              alt="Chantier d'ingénierie Magatte Niang Expert"
+              alt="Chantier d'ingénierie Magatte NIANG Expert"
               className="w-full h-full object-cover"
             />
           </div>

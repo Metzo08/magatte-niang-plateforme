@@ -91,7 +91,7 @@ export default function MediathequePage() {
               </h1>
               <p className="text-neutral-300 text-base sm:text-lg leading-relaxed max-w-3xl">
                 Communiqués officiels, dossiers de presse, kit média haute définition et photothèque
-                des chantiers de l&apos;écosystème Magatte Niang — à destination des journalistes,
+                des chantiers de l&apos;écosystème Magatte NIANG — à destination des journalistes,
                 maîtres d&apos;ouvrage et partenaires institutionnels.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
@@ -199,7 +199,7 @@ export default function MediathequePage() {
                   href="/profil"
                   className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-m bg-white/10 hover:bg-white/15 border border-white/20 text-white text-xs font-bold transition-colors"
                 >
-                  Profil &amp; Recherche Magatte Niang <ArrowRight className="w-3.5 h-3.5" />
+                  Profil &amp; Recherche Magatte NIANG <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
             </div>
@@ -378,7 +378,7 @@ export default function MediathequePage() {
           images={filteredMedias.map((m) => ({ url: m.src, caption: m.label }))}
           index={photoIdx}
           onIndexChange={setPhotoIdx}
-          title="Médiathèque · Groupe Magatte Niang"
+          title="Médiathèque · Groupe Magatte NIANG"
           onClose={() => setPhotoIdx(null)}
         />
       )}

@@ -43,7 +43,7 @@ export const CDPConsentBanner: React.FC = () => {
             Protection des données (CDP Sénégal)
           </h4>
           <p className="text-neutral-300 leading-relaxed text-[11px]">
-            Conformément à la <strong>Loi n° 2008-12</strong> du Sénégal, la plateforme <em>Magatte Niang Expert</em> utilise uniquement les cookies strictement indispensables au routage sécurisé de vos demandes techniques et à la mesure d'audience anonymisée.
+            Conformément à la <strong>Loi n° 2008-12</strong> du Sénégal, la plateforme <em>Magatte NIANG Expert</em> utilise uniquement les cookies strictement indispensables au routage sécurisé de vos demandes techniques et à la mesure d'audience anonymisée.
           </p>
           <div className="pt-1 flex items-center gap-2">
             <button

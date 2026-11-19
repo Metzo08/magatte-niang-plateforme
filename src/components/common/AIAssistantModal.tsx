@@ -34,7 +34,7 @@ const INITIAL_MESSAGES: ChatMessage[] = [
   {
     id: 'm-init',
     sender: 'assistant',
-    text: `Bonjour ! Je suis l'assistant IA de l'écosystème **Magatte Niang Expert**. Je maîtrise en temps réel l'intégralité de nos **7 entités**, nos stocks, nos grilles tarifaires et nos réalisations :
+    text: `Bonjour ! Je suis l'assistant IA de l'écosystème **Magatte NIANG Expert**. Je maîtrise en temps réel l'intégralité de nos **7 entités**, nos stocks, nos grilles tarifaires et nos réalisations :
 
 • **SERMA BTP** : Études techniques, modélisation 3D/BIM, charpente métallique (> 42m), pylônes, stations-service, IGH & maîtrise d'œuvre (+221 78 832 12 79).
 • **SB-S Group** : Génie civil, grands travaux, VRD & industrie · Oumou DIOP (+221 77 203 84 38 / +221 33 871 08 61).
@@ -67,7 +67,7 @@ const QUICK_ENTITY_PILLS = [
   { label: 'SB-S Logistik (82 Engins)', query: 'Quels sont les tarifs de location des grues, engins et granulats chez SB-S Logistik ?' },
   { label: 'PGT Dubaï - Ajman (+971)', query: 'Comment fonctionne le sourcing international PGT Dubaï - Ajman et Inde ?' },
   { label: 'Contacts & Responsables', query: 'Donne-moi tous les numéros de téléphone, WhatsApp et responsables des 7 entités' },
-  { label: 'Magatte Niang & Publications', query: 'Qui est l\'ingénieur Magatte Niang et quelles sont ses publications scientifiques ?' },
+  { label: 'Magatte NIANG & Publications', query: 'Qui est l\'ingénieur Magatte NIANG et quelles sont ses publications scientifiques ?' },
 ];
 
 function FormattedMessage({ text }: { text: string }) {

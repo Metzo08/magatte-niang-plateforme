@@ -109,7 +109,7 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
     url: `https://www.magatteniang-expert.sn/entites/${entity.id}`,
     founder: {
       '@type': 'Person',
-      name: 'Magatte Niang',
+      name: 'Magatte NIANG',
     },
     employee: entity.leader
       ? {
@@ -238,7 +238,7 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
                 {id === 'sbs-labo' && (
                   <div className="pt-2 border-t border-white/10 text-xs text-amber-200 space-y-2.5">
                     <div>
-                      <p className="font-semibold text-white">Aminata Dramé</p>
+                      <p className="font-semibold text-white">Aminata DRAMÉ</p>
                       <p className="text-[11px] text-white/80">Directrice Technique SB-S Labo (Agréments C2 &amp; A3)</p>
                       <a
                         href="https://wa.me/221708350063?text=Bonjour%20Aminata%20Dram%C3%A9%2C%20je%20souhaite%20solliciter%20SB-S%20Labo%20pour%20une%20%C3%A9tude%20g%C3%A9otechnique%20ou%20un%20essai%20b%C3%A9ton."
@@ -250,7 +250,7 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
                       </a>
                     </div>
                     <div className="pt-2 border-t border-white/10">
-                      <p className="font-semibold text-white">Abdoulaye Niang</p>
+                      <p className="font-semibold text-white">Abdoulaye NIANG</p>
                       <p className="text-[11px] text-white/80">Responsable Laboratoire pour les essais</p>
                       <a
                         href="https://wa.me/221773217860?text=Bonjour%20Abdoulaye%20Niang%2C%20je%20souhaite%20solliciter%20SB-S%20Labo%20pour%20un%20essai%20au%20laboratoire."
@@ -504,7 +504,7 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
               <p className="text-neutral-600 dark:text-neutral-400">{entity.leaderRole}</p>
               {id === 'sbs-labo' && (
                 <p className="text-neutral-600 dark:text-neutral-400 mt-1">
-                  Abdoulaye Niang (responsable laboratoire pour les essais)
+                  Abdoulaye NIANG (responsable laboratoire pour les essais)
                 </p>
               )}
             </div>
@@ -592,7 +592,7 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
           {/* Schéma d'interconnexion visuelle avec lignes de liaison entre les 6 entités */}
           <div className="mb-8 p-5 sm:p-6 rounded-2xl bg-brand-900 text-white border border-brand-700 shadow-lg">
             <div className="text-xs font-mono font-bold text-accent-400 mb-2">
-              Schéma d&apos;interconnexion opérationnelle de l&apos;écosystème Magatte Niang :
+              Schéma d&apos;interconnexion opérationnelle de l&apos;écosystème Magatte NIANG :
             </div>
             <p className="text-xs sm:text-sm text-neutral-200 leading-relaxed mb-6">
               <strong>Sbs-labo</strong> réalise les études géotechniques de sol et les essais matériaux (Catégories C2 et A3), <strong>Serma-btp</strong> réalise la modélisation 3D/BIM en fonction des études de <strong>Sbs-labo</strong> et transmet les dossiers à <strong>Sbs-group</strong> qui se charge de l&apos;exécution des travaux, appuyé par <strong>Sbs-logistik</strong> pour le matériel, par <strong>Sbs-industries</strong> pour les briques, pavés et bétons, puis par <strong>P2m</strong> pour l&apos;ensemble des fournitures d&apos;équipements, de matériels et de matériaux.

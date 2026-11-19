@@ -35,7 +35,7 @@ export default function PublicationsPage() {
             Publications <span className="text-accent-400">& travaux scientifiques</span>
           </h1>
           <p className="text-neutral-300 text-base sm:text-lg leading-relaxed max-w-3xl">
-            Articles scientifiques, conférences et supports pédagogiques de Magatte Niang -
+            Articles scientifiques, conférences et supports pédagogiques de Magatte NIANG -
             recherche appliquée sur les matériaux de construction, les sols latéritiques et
             les structures métalliques en contexte ouest-africain.
           </p>
@@ -43,7 +43,7 @@ export default function PublicationsPage() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={PHOTOS_REELLES.laboEssais}
-          alt="Magatte Niang · doctorant chercheur en matériaux de construction"
+          alt="Magatte NIANG · doctorant chercheur en matériaux de construction"
           className="hidden lg:block absolute right-8 top-8 w-64 h-40 object-cover rounded-l border border-brand-700 shadow-elev-3 opacity-90"
           loading="lazy"
         />

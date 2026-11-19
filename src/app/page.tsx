@@ -168,7 +168,7 @@ export default function HomePage() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={SITE_IMAGES.gruesRealisation}
-          alt="Chantier de l'écosystème Magatte Niang Expert"
+          alt="Chantier de l'écosystème Magatte NIANG Expert"
           className="absolute inset-0 w-full h-full object-cover opacity-50"
           suppressHydrationWarning
         />

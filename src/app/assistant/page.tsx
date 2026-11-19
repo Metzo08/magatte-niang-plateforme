@@ -90,7 +90,7 @@ function AssistantPageContent() {
     { id: 'Engins', title: 'Location d\'engins / transport lourd', desc: 'Pelles 36T, grues télescopiques 60T, bennes 8x4', icon: Truck, entity: 'SB-S Logistik', color: '#E0A800' },
     { id: 'Prefabrication', title: 'Préfabrication béton industrielle', desc: 'Prédalles, bordures normalisées, tuyaux assainissement', icon: Factory, entity: 'SB-S Industries', color: '#6B7A8F' },
     { id: 'Sourcing', title: 'Sourcing international / importation', desc: 'Matières premières, fret maritime, transit portuaire', icon: Globe, entity: 'PGT Transit', color: '#7A5AA8' },
-    { id: 'Conseil', title: 'Expertise technique & conseil direction', desc: 'Audit de structure, arbitrage Eurocodes, diagnostic', icon: HelpCircle, entity: 'Magatte Niang', color: '#0B1B2B' }
+    { id: 'Conseil', title: 'Expertise technique & conseil direction', desc: 'Audit de structure, arbitrage Eurocodes, diagnostic', icon: HelpCircle, entity: 'Magatte NIANG', color: '#0B1B2B' }
   ];
 
   const projectTypesByNeed: Record<string, string[]> = {

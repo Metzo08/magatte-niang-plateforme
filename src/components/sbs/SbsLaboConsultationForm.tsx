@@ -142,7 +142,7 @@ export function SbsLaboConsultationForm() {
               Votre demande d’essai est transmise
             </h1>
             <p className="text-sm text-neutral-600 dark:text-neutral-300 mt-2">
-              La Direction Technique (<strong>Aminata Dramé</strong>) et le Responsable Laboratoire (<strong>Abdoulaye Niang</strong>) traitent votre demande et vous transmettent un devis / planning sous 24h.
+              La Direction Technique (<strong>Aminata DRAMÉ</strong>) et le Responsable Laboratoire (<strong>Abdoulaye NIANG</strong>) traitent votre demande et vous transmettent un devis / planning sous 24h.
             </p>
           </div>
 

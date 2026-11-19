@@ -8,7 +8,7 @@ export default function NotFound() {
       </div>
       <h1 className="text-3xl font-extrabold text-slate-900 mb-2">Page introuvable</h1>
       <p className="text-slate-600 max-w-md mb-8">
-        La page ou la ressource que vous recherchez n'existe pas ou a été déplacée au sein de l'écosystème Magatte Niang.
+        La page ou la ressource que vous recherchez n'existe pas ou a été déplacée au sein de l'écosystème Magatte NIANG.
       </p>
       <div className="flex flex-wrap gap-4 justify-center">
         <Link

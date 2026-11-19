@@ -34,7 +34,7 @@ export default function LaboratoirePage() {
         <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
           <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-500/15 border border-emerald-500/30 rounded-full text-xs font-mono font-bold  tracking-wider text-emerald-400 mb-5">
             <FlaskConical className="w-3.5 h-3.5" />
-            Laboratoire agréé C2 & A3 · Directrice Technique : Aminata Dramé (+221 70 835 00 63) · Resp. Essais : Abdoulaye Niang (+221 77 321 78 60)
+            Laboratoire agréé C2 & A3 · Directrice Technique : Aminata DRAMÉ (+221 70 835 00 63) · Resp. Essais : Abdoulaye NIANG (+221 77 321 78 60)
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-title font-bold tracking-tight mb-4">
             SB-S Labo · <span className="text-emerald-400">Géotechnique & contrôle qualité</span>
@@ -44,7 +44,7 @@ export default function LaboratoirePage() {
             mécanique des sols. Nous réalisons des études de sol, des essais sur roches et des analyses
             sur béton avec un équipement de pointe pour garantir la sécurité et la pérennité de vos ouvrages.
           </p>
-          <p className="text-xs font-mono text-neutral-500 mt-4">RC : SN DKR 2021 B 12675 · Agréments ministériels C2 & A3 · cadre LNR-BTP (loi n° 2023-12, décret n° 2023-1780) · Directrice Technique : Aminata Dramé (+221 70 835 00 63) · Responsable Laboratoire (Essais) : Abdoulaye Niang (+221 77 321 78 60)</p>
+          <p className="text-xs font-mono text-neutral-500 mt-4">RC : SN DKR 2021 B 12675 · Agréments ministériels C2 & A3 · cadre LNR-BTP (loi n° 2023-12, décret n° 2023-1780) · Directrice Technique : Aminata DRAMÉ (+221 70 835 00 63) · Responsable Laboratoire (Essais) : Abdoulaye NIANG (+221 77 321 78 60)</p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
             {[
@@ -86,7 +86,7 @@ export default function LaboratoirePage() {
             ))}
           </div>
           <p className="text-center text-[11px] font-mono text-neutral-500 mt-3">
-            Laboratoire géotechnique agréé catégories C2 et A3 · Photos officielles SB-S Labo · Directrice Technique : Aminata Dramé (+221 70 835 00 63) · Resp. Essais : Abdoulaye Niang (+221 77 321 78 60)
+            Laboratoire géotechnique agréé catégories C2 et A3 · Photos officielles SB-S Labo · Directrice Technique : Aminata DRAMÉ (+221 70 835 00 63) · Resp. Essais : Abdoulaye NIANG (+221 77 321 78 60)
           </p>
         </div>
       </section>

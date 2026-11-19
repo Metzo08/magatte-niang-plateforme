@@ -49,7 +49,7 @@ export const ENTITY_AUTH_MAP: Record<ManagedEntityId, EntityAuthConfig> = {
     defaultUsername: 'labo-gestionnaire',
     envUsernameKey: 'SBS_LABO_MANAGER_USERNAME',
     envPasswordKey: 'SBS_LABO_MANAGER_PASSWORD',
-    displayName: 'Abdoulaye Niang · Resp. SB-S Labo',
+    displayName: 'Abdoulaye NIANG · Resp. SB-S Labo',
     email: 'sbs.labo24@gmail.com',
   },
   'serma-btp': {
@@ -276,7 +276,7 @@ export function signSuperAdminSession(): string {
   const full = {
     sub: 'magatte-super-admin',
     username: 'magatte-niang',
-    displayName: 'Magatte Niang (Super Admin)',
+    displayName: 'Magatte NIANG (Super Admin)',
     role: 'SUPER_ADMIN',
     iat: now,
     exp: now + 12 * 60 * 60,

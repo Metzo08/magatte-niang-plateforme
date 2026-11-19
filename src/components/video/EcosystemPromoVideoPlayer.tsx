@@ -44,14 +44,14 @@ export const PROMO_SCENES: PromoScene[] = [
   {
     id: 'scene-01',
     step: '01 / VISION & LEADERSHIP',
-    entityName: 'Profil Magatte Niang',
+    entityName: 'Profil Magatte NIANG',
     entitySlug: 'ecosysteme',
     badge: '24 ANS D’EXPÉRIENCE · 7 ENTITÉS · 250+ PROJETS LIVRÉS',
     title: 'Bâtir l’Afrique de l’Ouest',
     highlight: 'par la rigueur d’ingénierie.',
-    subtitle: 'Ing. Magatte Niang · Ponts & Chaussées · Enseignant-Chercheur & Président Fondateur',
+    subtitle: 'Ing. Magatte NIANG · Ponts & Chaussées · Enseignant-Chercheur & Président Fondateur',
     narration:
-      '« Bâtir l’Afrique de l’Ouest par la rigueur d’ingénierie. Bienvenue dans l’écosystème Magatte Niang Expert : vingt-quatre ans d’excellence, sept entités complémentaires, et plus de deux cent cinquante projets majeurs livrés. »',
+      '« Bâtir l’Afrique de l’Ouest par la rigueur d’ingénierie. Bienvenue dans l’écosystème Magatte NIANG Expert : vingt-quatre ans d’excellence, sept entités complémentaires, et plus de deux cent cinquante projets majeurs livrés. »',
     colorHex: '#F26A1B',
     image: '/images/promo-cartoon/scene-01.jpg',
     audioUrl: '/audio/promo/scene-01.mp3',
@@ -77,11 +77,11 @@ export const PROMO_SCENES: PromoScene[] = [
     subtitle:
       'Ndiakhirate, Cité Assemblée, Villa N° 226 · +221 33 872 06 78 / 77 321 78 60 / 70 835 00 63 · sbslabo15@gmail.com',
     narration:
-      '« Tout grand ouvrage commence par la vérité du sol. Agréé catégories C1, C2 et A3, SB-S Labo — sous la direction technique d’Aminata Dramé et d’Abdoulaye Niang — réalise forages hydrauliques, pressiomètre, piézomètre, pénétromètres lourd/léger, Casagrande, CBR, Proctor, Los Angeles, Micro-Deval et écrasement béton 3 000 kN. »',
+      '« Tout grand ouvrage commence par la vérité du sol. Agréé catégories C1, C2 et A3, SB-S Labo — sous la direction technique d’Aminata DRAMÉ et d’Abdoulaye NIANG — réalise forages hydrauliques, pressiomètre, piézomètre, pénétromètres lourd/léger, Casagrande, CBR, Proctor, Los Angeles, Micro-Deval et écrasement béton 3 000 kN. »',
     colorHex: '#1F9D6B',
     image: '/images/promo-cartoon/scene-02.jpg',
     audioUrl: '/audio/promo/scene-02.mp3',
-    contactLabel: 'WhatsApp Aminata Dramé : +221 70 835 00 63',
+    contactLabel: 'WhatsApp Aminata DRAMÉ : +221 70 835 00 63',
     contactHref: 'https://wa.me/221708350063',
     ctaLabel: 'Commander un essai de sol / béton',
     ctaHref: '/entites/sbs-labo',
@@ -126,13 +126,13 @@ export const PROMO_SCENES: PromoScene[] = [
     badge: 'STEIN BAUER SÉNÉGAL GROUP · GÉNIE CIVIL & INDUSTRIE',
     title: 'SB-S Group',
     highlight: 'La puissance d’exécution sur chantier.',
-    subtitle: 'Bureau des Méthodes intégré · Responsable : Oumou Diop (+221 77 203 84 38 / +221 33 871 08 61)',
+    subtitle: 'Bureau des Méthodes intégré · Responsable : Oumou DIOP (+221 77 203 84 38 / +221 33 871 08 61)',
     narration:
       '« Sur le terrain, SB-S Group transforme les plans en ouvrages durables : génie civil lourd, centrales électriques, usines industrielles, voiries et bâtiments clés en main. »',
     colorHex: '#2D6A8E',
     image: '/images/promo-cartoon/scene-04.jpg',
     audioUrl: '/audio/promo/scene-04.mp3',
-    contactLabel: 'WhatsApp Oumou Diop : +221 77 203 84 38',
+    contactLabel: 'WhatsApp Oumou DIOP : +221 77 203 84 38',
     contactHref: 'https://wa.me/221772038438',
     ctaLabel: 'Découvrir SB-S Group',
     ctaHref: '/entites/sbs-group',
@@ -152,13 +152,13 @@ export const PROMO_SCENES: PromoScene[] = [
     title: 'SB-S Industries',
     highlight: 'La souveraineté industrielle du béton.',
     subtitle:
-      'Production en ZFI de Mbao : Bétons C15 à C30 & pondeuse automatique · Responsable : Salimata Sow (+221 77 566 48 06)',
+      'Production en ZFI de Mbao : Bétons C15 à C30 & pondeuse automatique · Responsable : Salimata SOW (+221 77 566 48 06)',
     narration:
       '« En Zone Franche Industrielle de Mbao, SB-S Industries alimente vos chantiers sans interruption grâce à sa centrale à béton de soixante mètres cubes par heure, ses agglos vibrés, ses hourdis et ses pavés haute résistance. »',
     colorHex: '#577590',
     image: '/images/promo-cartoon/scene-05.jpg',
     audioUrl: '/audio/promo/scene-05.mp3',
-    contactLabel: 'WhatsApp Salimata Sow : +221 77 566 48 06',
+    contactLabel: 'WhatsApp Salimata SOW : +221 77 566 48 06',
     contactHref: 'https://wa.me/221775664806',
     ctaLabel: 'Voir les tarifs Béton & Agglos',
     ctaHref: '/entites/sbs-industries',
@@ -178,13 +178,13 @@ export const PROMO_SCENES: PromoScene[] = [
     title: 'SB-S Logistik',
     highlight: '82 engins lourds prêts à intervenir 24/7.',
     subtitle:
-      'Location avec opérateurs certifiés, échafaudages, coffrages & granulats · Responsable : Rokhaya Kane (+221 77 858 61 05)',
+      'Location avec opérateurs certifiés, échafaudages, coffrages & granulats · Responsable : Rokhaya KANE (+221 77 858 61 05)',
     narration:
       '« Pour le levage et le terrassement, SB-S Logistik déploie une flotte de quatre-vingt-deux engins : grues mobiles cinquante tonnes, pompes à béton, tractopelles, bennes quarante tonnes et granulats certifiés. »',
     colorHex: '#E07A5F',
     image: '/images/promo-cartoon/scene-06.jpg',
     audioUrl: '/audio/promo/scene-06.mp3',
-    contactLabel: 'WhatsApp Rokhaya Kane : +221 77 858 61 05',
+    contactLabel: 'WhatsApp Rokhaya KANE : +221 77 858 61 05',
     contactHref: 'https://wa.me/221778586105',
     ctaLabel: 'Louer un engin ou commander des agrégats',
     ctaHref: '/entites/sbs-logistik',
@@ -359,7 +359,7 @@ export function EcosystemPromoVideoPlayer() {
             FILM OFFICIEL 2026 · VOIX OFF FR
           </span>
           <span className="hidden md:inline-block text-xs font-mono text-neutral-400">
-            Présentation intégrale des 7 entités de l’écosystème Magatte Niang Expert
+            Présentation intégrale des 7 entités de l’écosystème Magatte NIANG Expert
           </span>
         </div>
 

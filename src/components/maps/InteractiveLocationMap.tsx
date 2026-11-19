@@ -144,7 +144,7 @@ export const OFFICIAL_SITES: SiteLocation[] = [
     city: 'Dakar',
     phone: '+221 33 872 06 78 / +221 77 321 78 60 / +221 70 835 00 63',
     whatsapp: '+221 70 835 00 63',
-    leader: 'Aminata Dramé (Directrice technique) · Abdoulaye Niang (Responsable laboratoire pour les essais)',
+    leader: 'Aminata DRAMÉ (Directrice technique) · Abdoulaye NIANG (Responsable laboratoire pour les essais)',
     hours: 'Lun–Ven : 08h00 – 17h30',
     googleMapsUrl: 'https://www.google.com/maps/search/Ndiakhirate+Cite+Assemblee+Villa+226+Dakar',
     directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=14.7785,-17.2485',

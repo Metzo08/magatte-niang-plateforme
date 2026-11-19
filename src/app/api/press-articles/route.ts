@@ -38,7 +38,7 @@ function initialSeed(): PressArticleItem[] {
     type: 'Presse',
     date: p.date,
     abstract: p.abstract,
-    journalOrEvent: p.journalOrEvent || 'Groupe Magatte Niang',
+    journalOrEvent: p.journalOrEvent || 'Groupe Magatte NIANG',
     authors: p.authors || ['Direction Communication'],
     entityId: 'sbs-group',
     downloadUrl: p.downloadUrl,

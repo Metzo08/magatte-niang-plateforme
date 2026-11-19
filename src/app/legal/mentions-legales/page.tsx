@@ -8,17 +8,17 @@ export default function MentionsLegalesPage() {
     <LegalPageLayout
       eyebrow="Institutionnel · registre CDP"
       title="Mentions légales & registre CDP"
-      intro="Informations légales relatives à l'écosystème Magatte Niang Expert, regroupant sept entités complémentaires intervenant dans le génie civil, la charpente métallique, la géotechnique, la préfabrication béton, la logistique lourde, le sourcing international et les matériaux de finition."
+      intro="Informations légales relatives à l'écosystème Magatte NIANG Expert, regroupant sept entités complémentaires intervenant dans le génie civil, la charpente métallique, la géotechnique, la préfabrication béton, la logistique lourde, le sourcing international et les matériaux de finition."
       updatedAt="Janvier 2025"
       sections={[
         {
           heading: 'Éditeur du site',
           bullets: [
-            'Dénomination : Écosystème Magatte Niang Expert',
+            'Dénomination : Écosystème Magatte NIANG Expert',
             'Siège social : Km 14, Boulevard du Centenaire de la Commune de Dakar, Sénégal',
             'Standard : +221 33 832 40 10 · Urgence chantiers 24/7 : +221 77 267 16 17',
             'Courriel : contact@magatteniang-expert.sn',
-            'Fondateur et Directeur de la publication : Magatte Niang, Ingénieur en Chef des Ponts & Chaussées',
+            'Fondateur et Directeur de la publication : Magatte NIANG, Ingénieur en Chef des Ponts & Chaussées',
           ],
         },
         {
@@ -46,7 +46,7 @@ export default function MentionsLegalesPage() {
         {
           heading: 'Propriété intellectuelle',
           paragraphs: [
-            "L'ensemble des contenus du site (textes, données techniques, fiches produits, photographies de chantiers, code source, identité visuelle) est la propriété exclusive de l'écosystème Magatte Niang Expert, protégée par le droit d'auteur et le droit des marques.",
+            "L'ensemble des contenus du site (textes, données techniques, fiches produits, photographies de chantiers, code source, identité visuelle) est la propriété exclusive de l'écosystème Magatte NIANG Expert, protégée par le droit d'auteur et le droit des marques.",
             "Toute reproduction, représentation ou diffusion, totale ou partielle, sans autorisation écrite préalable est interdite et constitue une contrefaçon.",
           ],
         },

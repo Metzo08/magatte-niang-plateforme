@@ -6,13 +6,13 @@ import { QueryProvider } from '@/components/providers/QueryProvider';
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.magatteniang-expert.sn'),
   title: {
-    default: 'Magatte Niang Expert · Plateforme & Écosystème BTP Sénégal',
-    template: '%s · Magatte Niang BTP Sénégal',
+    default: 'Magatte NIANG Expert · Plateforme & Écosystème BTP Sénégal',
+    template: '%s · Magatte NIANG BTP Sénégal',
   },
   description:
     "Infrastructure technique, industrielle et logistique BTP au Sénégal : SBS Industrie (agglos, pavés, hourdis, BPE Mbao), SBS Logistik (engins, camions, grues), SERMA BTP, SBS Labo géotechnique, P2M & PGT.",
   keywords: [
-    'Magatte Niang',
+    'Magatte NIANG',
     'SBS Industrie',
     'SBS Logistik',
     'SBS Group',
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     'SERMA BTP',
     'Laboratoire géotechnique Sénégal',
   ],
-  authors: [{ name: 'Magatte Niang' }],
-  creator: 'Magatte Niang',
+  authors: [{ name: 'Magatte NIANG' }],
+  creator: 'Magatte NIANG',
   publisher: 'Stein Bauer Sénégal Group',
   alternates: {
     canonical: '/',
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'fr_SN',
     url: 'https://www.magatteniang-expert.sn',
-    siteName: 'Magatte Niang Expert · BTP Sénégal',
-    title: 'Magatte Niang Expert · Écosystème Industriel & Logistique BTP Sénégal',
+    siteName: 'Magatte NIANG Expert · BTP Sénégal',
+    title: 'Magatte NIANG Expert · Écosystème Industriel & Logistique BTP Sénégal',
     description:
       'SBS Industrie (agglos calibrés, pavés, BPE certifié à Mbao) & SBS Logistik (parc engins et transport lourd). Commandes et devis en ligne.',
     images: [
@@ -48,13 +48,13 @@ export const metadata: Metadata = {
         url: '/media/magatte-niang/portrait-officiel.jpg',
         width: 1200,
         height: 630,
-        alt: 'Magatte Niang - Expert BTP et Écosystème Industriel Sénégal',
+        alt: 'Magatte NIANG - Expert BTP et Écosystème Industriel Sénégal',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Magatte Niang Expert · Écosystème BTP Sénégal',
+    title: 'Magatte NIANG Expert · Écosystème BTP Sénégal',
     description:
       'SBS Industrie & SBS Logistik - Zone Franche Industrielle de Mbao. Matériaux préfabriqués et logistique de chantier.',
     images: ['/media/magatte-niang/portrait-officiel.jpg'],
@@ -84,8 +84,8 @@ const jsonLdData = {
       '@type': 'WebSite',
       '@id': 'https://www.magatteniang-expert.sn/#website',
       url: 'https://www.magatteniang-expert.sn',
-      name: 'Magatte Niang Expert · Écosystème BTP Sénégal',
-      description: 'Plateforme officielle du groupe BTP Magatte Niang : SBS Industrie, SBS Logistik, SERMA BTP, SBS Labo.',
+      name: 'Magatte NIANG Expert · Écosystème BTP Sénégal',
+      description: 'Plateforme officielle du groupe BTP Magatte NIANG : SBS Industrie, SBS Logistik, SERMA BTP, SBS Labo.',
       inLanguage: 'fr-SN',
     },
     {

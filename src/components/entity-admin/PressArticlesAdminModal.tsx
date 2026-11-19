@@ -32,7 +32,7 @@ export function PressArticlesAdminModal({ open, onClose, defaultEntityId }: Prop
   const [form, setForm] = useState({
     title: '',
     date: new Date().toISOString().slice(0, 10),
-    journalOrEvent: 'Communiqué officiel · Groupe Magatte Niang',
+    journalOrEvent: 'Communiqué officiel · Groupe Magatte NIANG',
     authors: 'Direction Communication',
     entityId: defaultEntityId,
     abstract: '',
@@ -63,7 +63,7 @@ export function PressArticlesAdminModal({ open, onClose, defaultEntityId }: Prop
     setForm({
       title: '',
       date: new Date().toISOString().slice(0, 10),
-      journalOrEvent: 'Communiqué officiel · Groupe Magatte Niang',
+      journalOrEvent: 'Communiqué officiel · Groupe Magatte NIANG',
       authors: 'Direction Communication',
       entityId: defaultEntityId,
       abstract: '',
@@ -188,7 +188,7 @@ export function PressArticlesAdminModal({ open, onClose, defaultEntityId }: Prop
                   onChange={(e) => setForm((p) => ({ ...p, entityId: e.target.value }))}
                   className="px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-white"
                 >
-                  <option value="all">Écosystème Groupe Magatte Niang</option>
+                  <option value="all">Écosystème Groupe Magatte NIANG</option>
                   {ENTITY_ADMIN_REGISTRY.map((ent) => (
                     <option key={ent.id} value={ent.id}>{ent.name}</option>
                   ))}

@@ -56,7 +56,7 @@ const OFFICES = [
     color: '#1B4965',
   },
   {
-    entity: 'SB-S Labo · Géotechnique & Essais Béton (Directrice Technique : Aminata Dramé · Resp. Essais : Abdoulaye Niang)',
+    entity: 'SB-S Labo · Géotechnique & Essais Béton (Directrice Technique : Aminata DRAMÉ · Resp. Essais : Abdoulaye NIANG)',
     address: 'Ndiakhirate, Cité Assemblée, Villa N° 226, Dakar, Sénégal',
     city: 'Dakar',
     phone: '+221 33 872 06 78 / +221 77 321 78 60 / +221 70 835 00 63',
@@ -177,7 +177,7 @@ export default function ContactPage() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={SITE_IMAGES.magatteNiangEquipe}
-          alt="L'équipe d'ingénieurs de Magatte Niang"
+          alt="L'équipe d'ingénieurs de Magatte NIANG"
           className="absolute inset-0 w-full h-full object-cover opacity-10"
           loading="lazy"
         />
@@ -188,7 +188,7 @@ export default function ContactPage() {
             Parlons de <span className="text-gold-400">votre projet</span>
           </h1>
           <p className="text-slate-300 text-lg max-w-2xl mx-auto">
-            Obtenez un conseil expert gratuit ou réservez un rendez-vous avec Magatte Niang et ses équipes.
+            Obtenez un conseil expert gratuit ou réservez un rendez-vous avec Magatte NIANG et ses équipes.
           </p>
         </div>
       </section>
@@ -308,7 +308,7 @@ export default function ContactPage() {
               <label className="block text-xs font-semibold text-slate-400 mb-1">Entité concernée</label>
               <select name="entity" value={formData.entity} onChange={handleChange}
                 className="w-full bg-brand-800 border border-brand-700 text-white rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-accent-500">
-                <option value="direction">Direction générale / Magatte Niang</option>
+                <option value="direction">Direction générale / Magatte NIANG</option>
                 <option value="serma-btp">SERMA BTP – charpente & génie civil</option>
                 <option value="sbs-group">SB-S Group – infrastructures & TP</option>
                 <option value="sbs-labo">SB-S Labo – géotechnique & contrôle</option>

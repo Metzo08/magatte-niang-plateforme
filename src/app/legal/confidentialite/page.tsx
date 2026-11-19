@@ -8,13 +8,13 @@ export default function ConfidentialitePage() {
     <LegalPageLayout
       eyebrow="Protection des données · CDP Sénégal"
       title="Politique de confidentialité"
-      intro="Magatte Niang Expert s'engage à protéger les données à caractère personnel collectées dans le cadre de ses activités d'ingénierie, de construction et de fourniture de matériaux BTP, conformément à la loi n° 2008-12 du 25 janvier 2008 relative à la protection des données à caractère personnel au Sénégal."
+      intro="Magatte NIANG Expert s'engage à protéger les données à caractère personnel collectées dans le cadre de ses activités d'ingénierie, de construction et de fourniture de matériaux BTP, conformément à la loi n° 2008-12 du 25 janvier 2008 relative à la protection des données à caractère personnel au Sénégal."
       updatedAt="Janvier 2025"
       sections={[
         {
           heading: 'Responsable du traitement',
           paragraphs: [
-            "Le responsable du traitement des données est l'écosystème Magatte Niang Expert, dont le siège est situé Km 14, Boulevard du Centenaire de la Commune de Dakar, Sénégal.",
+            "Le responsable du traitement des données est l'écosystème Magatte NIANG Expert, dont le siège est situé Km 14, Boulevard du Centenaire de la Commune de Dakar, Sénégal.",
             "Un Délégué à la Protection des Données (DPO) est désigné et peut être contacté à l'adresse contact@magatteniang-expert.sn pour toute question relative à vos données personnelles.",
           ],
         },

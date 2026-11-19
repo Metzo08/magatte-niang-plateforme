@@ -87,7 +87,7 @@ export interface ProProfile {
 }
 
 const DEFAULT_PROFILE: ProProfile = {
-  fullName: 'Magatte Niang',
+  fullName: 'Magatte NIANG',
   company: '',
   email: '',
   phone: '',

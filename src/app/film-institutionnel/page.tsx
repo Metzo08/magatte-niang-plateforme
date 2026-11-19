@@ -27,7 +27,7 @@ export default function FilmInstitutionnelPage() {
                 Film Promotionnel Officiel 2026 · Voix Off Studio Française
               </span>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-title font-bold tracking-tight">
-                L&apos;Écosystème <span className="text-gradient-gold">Magatte Niang Expert</span> en Vidéo
+                L&apos;Écosystème <span className="text-gradient-gold">Magatte NIANG Expert</span> en Vidéo
               </h1>
               <p className="text-neutral-300 text-sm sm:text-base mt-3 max-w-3xl leading-relaxed">
                 Découvrez en 90 secondes comment nos <strong>7 entités complémentaires</strong> (SB-S Labo, SERMA BTP, SB-S Group, SB-S Industries, SB-S Logistik, P2M et PGT) maîtrisent l&apos;intégralité de la chaîne de valeur BTP au Sénégal et à l&apos;international.

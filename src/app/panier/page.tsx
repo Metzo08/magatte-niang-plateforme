@@ -467,7 +467,7 @@ function PanierIsolateContent() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={SITE_IMAGES.rubonChantier}
-          alt="Panier dédié par entité · Groupe Magatte Niang"
+          alt="Panier dédié par entité · Groupe Magatte NIANG"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
           loading="lazy"
         />

@@ -9,7 +9,7 @@
 import { SBS_LOGISTIK_ITEMS } from './sbsLogistikData';
 
 export const SITE_IMAGES = {
-  // Portraits de Magatte Niang (Forum & Nuit des LeadSen 2026 · Trophée Entrepreneuriat BTP)
+  // Portraits de Magatte NIANG (Forum & Nuit des LeadSen 2026 · Trophée Entrepreneuriat BTP)
   magatteNiang: '/media/magatte-niang/portrait-officiel.jpg',
   magatteNiangEquipe: '/media/magatte-niang/equipe-leadsen-01.jpg',
   magatteNiangProfesseur: '/media/magatte-niang/discours-podium-01.jpg',
@@ -250,7 +250,7 @@ export const ENTITY_GALLERY: Record<string, { src: string; caption: string }[]> 
 export const MAGATTE_NIANG_GALLERY: { src: string; caption: string; tag: string }[] = [
   {
     src: '/media/magatte-niang/portrait-officiel.jpg',
-    caption: 'Magatte Niang · Prise de parole officielle au Forum & Nuit des LeadSen 2026',
+    caption: 'Magatte NIANG · Prise de parole officielle au Forum & Nuit des LeadSen 2026',
     tag: 'Portrait officiel',
   },
   {
@@ -270,12 +270,12 @@ export const MAGATTE_NIANG_GALLERY: { src: string; caption: string; tag: string 
   },
   {
     src: '/media/magatte-niang/discours-podium-02.jpg',
-    caption: 'Allocution de Magatte Niang devant les décideurs et innovateurs sénégalais',
+    caption: 'Allocution de Magatte NIANG devant les décideurs et innovateurs sénégalais',
     tag: 'Conférence',
   },
   {
     src: '/media/magatte-niang/equipe-leadsen-01.jpg',
-    caption: 'Magatte Niang entouré de son équipe avec le Trophée LeadSen 2026',
+    caption: 'Magatte NIANG entouré de son équipe avec le Trophée LeadSen 2026',
     tag: 'Équipe & Leadership',
   },
   {

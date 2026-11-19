@@ -1,6 +1,6 @@
 /**
- * Liens officiels des réseaux sociaux de l'écosystème Magatte Niang
- * (Magatte Niang Expert, P2M Showroom, SERMA BTP, SB-S Group).
+ * Liens officiels des réseaux sociaux de l'écosystème Magatte NIANG
+ * (Magatte NIANG Expert, P2M Showroom, SERMA BTP, SB-S Group).
  */
 
 export interface SocialLink {
@@ -31,7 +31,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
     url: 'https://www.linkedin.com/company/magatte-niang-expert',
   icon: 'Linkedin',
     color: '#0A66C2',
-    handle: 'Magatte Niang Expert BTP',
+    handle: 'Magatte NIANG Expert BTP',
     badge: 'Réseau pro',
     description: 'Actualités chantiers, publications techniques et partenariats'
   },
@@ -51,7 +51,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
     url: 'https://www.youtube.com/@magatteniangexpert',
   icon: 'Youtube',
     color: '#FF0000',
-    handle: 'Magatte Niang BTP TV',
+    handle: 'Magatte NIANG BTP TV',
     badge: 'Vidéos',
     description: 'Reportages sur nos chantiers d\'ouvrages d\'art et usinage acier'
   },

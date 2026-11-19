@@ -46,7 +46,7 @@ export default function ProfilPage() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/reelles/sbs-reel-002.jpg"
-          alt="Ingénierie BTP et direction de projets Magatte Niang"
+          alt="Ingénierie BTP et direction de projets Magatte NIANG"
           className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
           loading="lazy"
         />
@@ -57,7 +57,7 @@ export default function ProfilPage() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={SITE_IMAGES.magatteNiangPortraitCover}
-                alt="Magatte Niang · portrait officiel"
+                alt="Magatte NIANG · portrait officiel"
                 className="w-full h-full object-cover object-top"
               />
             </div>
@@ -111,7 +111,7 @@ export default function ProfilPage() {
           </h2>
           <div className="space-y-4 text-sm sm:text-[15px] text-neutral-700 dark:text-neutral-300 leading-relaxed">
             <p>
-              Magatte Niang est un leader pluridisciplinaire qui incarne une nouvelle génération
+              Magatte NIANG est un leader pluridisciplinaire qui incarne une nouvelle génération
               d&apos;entrepreneurs africains alliant excellence académique, expertise opérationnelle
               et vision stratégique.
             </p>
@@ -142,7 +142,7 @@ export default function ProfilPage() {
               scientifique du secteur.
             </p>
             <p>
-              Au-delà de ses réalisations entrepreneuriales, Magatte Niang s&apos;investit dans la
+              Au-delà de ses réalisations entrepreneuriales, Magatte NIANG s&apos;investit dans la
               transmission du savoir. Intervenant dans les plus grandes écoles d&apos;ingénieurs du
               Sénégal (
               <strong>École Polytechnique de Thiès, École Supérieure Polytechnique, SUP TP</strong>
@@ -183,7 +183,7 @@ export default function ProfilPage() {
                 Intervention &amp; Trophée LeadSen 2026 — Entrepreneuriat BTP
               </h2>
               <p className="text-sm text-neutral-300 leading-relaxed">
-                Découvrez la prise de parole de Magatte Niang lors du Forum &amp; Nuit des LeadSen
+                Découvrez la prise de parole de Magatte NIANG lors du Forum &amp; Nuit des LeadSen
                 2026 (Leaders Sénégalais), où le groupe SB-S Group / SERMA BTP a été distingué pour
                 son impact dans l&apos;ingénierie et la souveraineté industrielle au Sénégal.
               </p>
@@ -278,7 +278,7 @@ export default function ProfilPage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={SITE_IMAGES.magatteNiangProfesseur}
-              alt="Magatte Niang en conférence et enseignement"
+              alt="Magatte NIANG en conférence et enseignement"
               className="w-full h-56 sm:h-64 object-cover object-top"
               loading="lazy"
             />
@@ -311,7 +311,7 @@ export default function ProfilPage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={SITE_IMAGES.magatteNiangChercheur}
-              alt="Magatte Niang, doctorant chercheur en matériaux de construction"
+              alt="Magatte NIANG, doctorant chercheur en matériaux de construction"
               className="w-full h-56 sm:h-64 object-cover object-top"
               loading="lazy"
             />
@@ -534,7 +534,7 @@ export default function ProfilPage() {
           images={MAGATTE_NIANG_GALLERY.map((p) => ({ url: p.src, caption: p.caption }))}
           index={lightboxIdx}
           onIndexChange={setLightboxIdx}
-          title="Magatte Niang · Forum & Nuit des LeadSen 2026"
+          title="Magatte NIANG · Forum & Nuit des LeadSen 2026"
           onClose={() => setLightboxIdx(null)}
         />
       )}

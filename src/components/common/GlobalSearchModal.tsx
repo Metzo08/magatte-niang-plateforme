@@ -207,7 +207,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
               <p className="text-sm font-medium">Tapez votre recherche pour explorer la base de connaissances BTP</p>
               <div className="flex flex-wrap justify-center gap-2 mt-4 text-xs">
                 <span className="text-neutral-400">Suggestions :</span>
-                {['Charpente métallique', 'Essai CBR', 'Grès cérame 60x60', 'Grue 60T', 'Diamniadio', 'Magatte Niang'].map((s) => (
+                {['Charpente métallique', 'Essai CBR', 'Grès cérame 60x60', 'Grue 60T', 'Diamniadio', 'Magatte NIANG'].map((s) => (
                   <button
                     key={s}
                     onClick={() => setQuery(s)}

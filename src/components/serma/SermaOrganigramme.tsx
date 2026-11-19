@@ -8,14 +8,14 @@ const TECHNICAL_POLES = [
     pole: 'Charpente',
     responsable: 'Sokhna',
     role: 'Responsable Charpente',
-    sub: { role: 'Dessinateur', name: 'Mamadou Lamine Diallo' },
+    sub: { role: 'Dessinateur', name: 'Mamadou Lamine DIALLO' },
     accent: 'border-amber-500/60 bg-amber-50/70 dark:bg-amber-950/30',
   },
   {
     pole: 'Béton Armé (BA)',
     responsable: 'Diallo',
     role: 'Responsable BA',
-    sub: { role: 'Dessinateur', name: 'Adjy Marème' },
+    sub: { role: 'Dessinateur', name: 'Adjy MARÈME' },
     accent: 'border-blue-500/60 bg-blue-50/70 dark:bg-blue-950/30',
   },
   {
@@ -29,12 +29,12 @@ const TECHNICAL_POLES = [
     pole: 'Supervision & Diagnostic',
     responsable: 'Fall',
     role: 'Responsable Supervision & Diagnostic',
-    sub: { role: 'Dessinateur', name: 'Mouhamed Diop' },
+    sub: { role: 'Dessinateur', name: 'Mouhamed DIOP' },
     accent: 'border-emerald-500/60 bg-emerald-50/70 dark:bg-emerald-950/30',
   },
   {
     pole: 'Lots Techniques',
-    responsable: 'Cheikh Bèye',
+    responsable: 'Cheikh BÈYE',
     role: 'Responsable Lots Techniques',
     sub: { role: 'Dessinateur', name: 'Dessinateur Lots Techniques' },
     accent: 'border-purple-500/60 bg-purple-50/70 dark:bg-purple-950/30',
@@ -63,7 +63,7 @@ export default function SermaOrganigramme() {
             <div className="text-[10px] font-mono uppercase tracking-widest text-accent-300 dark:text-white/80 font-bold">
               Directeur Général (DG)
             </div>
-            <div className="text-lg font-title font-extrabold mt-0.5">Magatte Niang</div>
+            <div className="text-lg font-title font-extrabold mt-0.5">Magatte NIANG</div>
           </div>
 
           {/* Connecteur vertical */}
@@ -84,7 +84,7 @@ export default function SermaOrganigramme() {
               <div className="text-[10px] font-mono uppercase tracking-wider text-indigo-100 font-bold flex items-center justify-center gap-1">
                 <Wrench className="w-3.5 h-3.5" /> Directrice Technique (DT)
               </div>
-              <div className="text-base font-title font-bold mt-0.5">Fatima Ba</div>
+              <div className="text-base font-title font-bold mt-0.5">Fatima BA</div>
             </div>
           </div>
 
@@ -96,7 +96,7 @@ export default function SermaOrganigramme() {
                 <div className="text-[10px] font-mono uppercase tracking-wider text-amber-300 font-bold flex items-center justify-center gap-1">
                   <Briefcase className="w-3.5 h-3.5" /> DAF
                 </div>
-                <div className="text-base font-title font-bold mt-0.5">Fatoumata Baldé</div>
+                <div className="text-base font-title font-bold mt-0.5">Fatoumata BALDÉ</div>
               </div>
               <div className="hidden sm:block w-6 h-0.5 bg-neutral-400 dark:bg-brand-500 shrink-0" />
               <div className="sm:hidden w-0.5 h-4 bg-neutral-400 dark:bg-brand-500" />
@@ -114,7 +114,7 @@ export default function SermaOrganigramme() {
         <div className="flex flex-col items-center my-4">
           <div className="w-0.5 h-6 bg-indigo-400 dark:bg-indigo-500" />
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800 text-[11px] font-bold text-indigo-700 dark:text-indigo-300">
-            <ShieldCheck className="w-3.5 h-3.5" /> 5 Pôles Techniques sous la Direction de Fatima Ba (DT)
+            <ShieldCheck className="w-3.5 h-3.5" /> 5 Pôles Techniques sous la Direction de Fatima BA (DT)
           </div>
           <div className="w-0.5 h-5 bg-indigo-400 dark:bg-indigo-500" />
         </div>

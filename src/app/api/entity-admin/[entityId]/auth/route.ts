@@ -76,7 +76,7 @@ export async function POST(
     const token = signEntitySession({
       sub: isSuper ? 'magatte-super-admin' : `${entityId}-manager`,
       username: isSuper ? 'magatte-niang' : username,
-      displayName: isSuper ? 'Magatte Niang (Super Admin)' : cfg.displayName,
+      displayName: isSuper ? 'Magatte NIANG (Super Admin)' : cfg.displayName,
       role: cfg.role,
       entityId,
     });
@@ -86,7 +86,7 @@ export async function POST(
       superAdmin: isSuper,
       manager: {
         username: isSuper ? 'magatte-niang' : username,
-        displayName: isSuper ? 'Magatte Niang (Super Admin)' : cfg.displayName,
+        displayName: isSuper ? 'Magatte NIANG (Super Admin)' : cfg.displayName,
         role: cfg.role,
         entityId,
       },

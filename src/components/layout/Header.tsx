@@ -63,7 +63,7 @@ const MOBILE_NAV = [
   { href: '/services/laboratoire', label: 'Laboratoire SB-S Labo' },
   { href: '/mediatheque', label: 'Médiathèque & presse' },
   { href: '/contact', label: 'Contact & devis direct' },
-  { href: '/profil', label: 'Magatte Niang · profil & recherche' },
+  { href: '/profil', label: 'Magatte NIANG · profil & recherche' },
   { href: '/espace-pro', label: 'Espace professionnel (accès réservé)' }
 ];
 
@@ -163,7 +163,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenAI }) => {
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">
                 <span className="font-title font-bold text-sm sm:text-base tracking-tight text-neutral-900 dark:text-white leading-none group-hover:text-accent-500 transition-colors whitespace-nowrap">
-                  Magatte Niang
+                  Magatte NIANG
                 </span>
                 <span className="hidden 2xl:inline-block text-[10px] font-mono font-bold px-1.5 py-0.5 bg-gradient-to-r from-accent-500/10 to-gold-500/20 text-accent-600 dark:text-accent-400 border border-accent-500/30 rounded whitespace-nowrap">
                   Expert BTP
