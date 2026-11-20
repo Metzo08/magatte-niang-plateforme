@@ -14,7 +14,7 @@ interface TechnicalPole {
 const TECHNICAL_POLES: TechnicalPole[] = [
   {
     pole: 'Charpente Métallique',
-    responsable: 'Ndeye sokhna BAKHOUM',
+    responsable: 'Ndeye Sokhna BAKHOUM',
     role: 'Responsable Charpente Métallique',
     sub: { role: 'Dessinateur', name: 'Mamadou Lamine DIALLO' },
     accent: 'border-amber-500/60 bg-amber-50/70 dark:bg-amber-950/30',
@@ -23,7 +23,7 @@ const TECHNICAL_POLES: TechnicalPole[] = [
     pole: 'Béton Armé (BA)',
     responsable: 'Mouhamed DIALLO',
     role: 'Responsable Béton Armé',
-    sub: { role: 'Dessinateur', name: 'Adjia Mareme' },
+    sub: { role: 'Dessinateur', name: 'Adjia MAREME' },
     accent: 'border-blue-500/60 bg-blue-50/70 dark:bg-blue-950/30',
   },
   {

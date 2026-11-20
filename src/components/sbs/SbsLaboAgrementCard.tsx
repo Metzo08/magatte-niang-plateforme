@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Award, FileCheck2, Download, Eye, EyeOff, ShieldCheck, Calendar, Building2, MapPin, Scale } from 'lucide-react';
 
 const PDF_URL = '/media/documents/agrement-lnr-btp-sbs-labo-24-S1-AG6.pdf';
+const IMG_URL = '/media/documents/agrement-lnr-btp-sbs-labo-24-S1-AG6.jpg';
 
 export default function SbsLaboAgrementCard() {
   const [showPdf, setShowPdf] = useState(false);
@@ -121,11 +122,12 @@ export default function SbsLaboAgrementCard() {
         </div>
 
         {showPdf && (
-          <div className="mt-6 rounded-xl overflow-hidden border border-neutral-300 dark:border-brand-700 bg-neutral-900">
-            <iframe
-              src={PDF_URL}
-              title="Certificat d'Agrément LNR-BTP SB-S Labo (24/S1/AG6)"
-              className="w-full h-[640px]"
+          <div className="mt-6 rounded-xl overflow-hidden border-2 border-emerald-500/30 bg-white shadow-md">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={IMG_URL}
+              alt="Certificat d'Agrément LNR-BTP SB-S Labo (24/S1/AG6)"
+              className="w-full h-auto block"
             />
           </div>
         )}
