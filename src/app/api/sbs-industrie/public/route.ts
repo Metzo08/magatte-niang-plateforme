@@ -14,7 +14,7 @@ export async function GET() {
   try {
     const [config, products] = await Promise.all([getSbsConfig(), getSbsProducts()]);
     const publicProducts = products
-      .filter((p) => p.isPublished)
+      .filter((p) => p.isPublished && p.code !== 'LOC-COFFRAGE' && p.id !== 'sbs-loc-coffrage')
       .map((p) => ({
         id: p.id,
         code: p.code,
@@ -55,7 +55,7 @@ export async function GET() {
         address: DEFAULT_SBS_CONFIG.address,
         deliveryZone: DEFAULT_SBS_CONFIG.deliveryZone,
       },
-      products: getFallbackSbsProducts().filter((p) => p.isPublished).map((p) => ({
+      products: getFallbackSbsProducts().filter((p) => p.isPublished && p.code !== 'LOC-COFFRAGE' && p.id !== 'sbs-loc-coffrage').map((p) => ({
         id: p.id,
         code: p.code,
         family: p.family,
