@@ -36,22 +36,22 @@ export default function SbsLaboWolofVideoSection() {
 
         {/* Lecteur vidéo + Points clés pédagogiques */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-7">
-            <div className="relative rounded-xl overflow-hidden bg-black border-2 border-emerald-400/40 shadow-2xl">
+          <div className="lg:col-span-5 flex justify-center">
+            <div className="relative inline-block rounded-2xl overflow-hidden border-2 border-emerald-400/50 shadow-2xl">
               <video
                 src={VIDEO_URL}
                 poster="/images/reelles/sbs-labo-reel-005.jpg"
                 controls
                 playsInline
                 preload="metadata"
-                className="w-full max-h-[460px] object-contain bg-black"
+                className="block w-auto max-w-full max-h-[520px]"
               >
                 Votre navigateur ne supporte pas la lecture vidéo.
               </video>
             </div>
           </div>
 
-          <div className="lg:col-span-5 space-y-4">
+          <div className="lg:col-span-7 space-y-4">
             <div className="p-4 rounded-xl bg-white/5 border border-white/10 space-y-1.5">
               <div className="text-xs font-bold text-emerald-400 flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4" />
