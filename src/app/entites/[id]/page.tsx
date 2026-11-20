@@ -30,6 +30,7 @@ import SbsLaboGalleryCategories from '@/components/sbs/SbsLaboGalleryCategories'
 import SermaGalleryDomains from '@/components/serma/SermaGalleryDomains';
 import SermaOrganigramme from '@/components/serma/SermaOrganigramme';
 import SbsGroupOfficialOverview from '@/components/sbs/SbsGroupOfficialOverview';
+import SbsLaboAgrementCard from '@/components/sbs/SbsLaboAgrementCard';
 import P2mShowroomBlocks from '@/components/p2m/P2mShowroomBlocks';
 import InteractiveLocationMap from '@/components/maps/InteractiveLocationMap';
 import { Layers, Truck } from 'lucide-react';
@@ -414,6 +415,7 @@ export default function EntityDetailPage({ params }: { params: Promise<{ id: str
 
       {/* ORGANIGRAMME OFFICIEL SERMA BTP */}
       {id === 'serma-btp' && <SermaOrganigramme />}
+      {id === 'sbs-labo' && <SbsLaboAgrementCard />}
       {id === 'sbs-group' && <SbsGroupOfficialOverview />}
 
       {/* 3 VOLETS D'ACTIVITÉ SB-S GROUP */}
