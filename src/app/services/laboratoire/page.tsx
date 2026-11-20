@@ -6,6 +6,7 @@ import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { LAB_TESTS } from '@/data/initialData';
 import { PHOTOS_REELLES } from '@/data/siteImages';
 import SbsLaboAgrementCard from '@/components/sbs/SbsLaboAgrementCard';
+import SbsLaboWolofVideoSection from '@/components/sbs/SbsLaboWolofVideoSection';
 import { FlaskConical, ShieldCheck, FileCheck, Clock, CheckCircle2, ArrowRight, MapPin, Phone, Mail, Award } from 'lucide-react';
 
 const CATEGORIES = ['Tous', 'Sols & géotechnique', 'Bétons & granulats', 'Contrôle in-situ'] as const;
@@ -91,6 +92,9 @@ export default function LaboratoirePage() {
           </p>
         </div>
       </section>
+
+      {/* VIDÉO EXPLICATIVE ÉTUDE DE SOL EN WOLOF */}
+      <SbsLaboWolofVideoSection />
 
       {/* CERTIFICAT D'AGRÉMENT OFFICIEL LNR-BTP */}
       <SbsLaboAgrementCard />
