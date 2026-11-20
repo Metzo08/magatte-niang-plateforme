@@ -14,7 +14,7 @@ interface TechnicalPole {
 const TECHNICAL_POLES: TechnicalPole[] = [
   {
     pole: 'Charpente Métallique',
-    responsable: 'Ndeye Sokhna BAKOUM',
+    responsable: 'Ndeye sokhna BAKHOUM',
     role: 'Responsable Charpente Métallique',
     sub: { role: 'Dessinateur', name: 'Mamadou Lamine DIALLO' },
     accent: 'border-amber-500/60 bg-amber-50/70 dark:bg-amber-950/30',
@@ -23,7 +23,7 @@ const TECHNICAL_POLES: TechnicalPole[] = [
     pole: 'Béton Armé (BA)',
     responsable: 'Mouhamed DIALLO',
     role: 'Responsable Béton Armé',
-    sub: { role: 'Dessinateur', name: 'Adjy MARÈME' },
+    sub: { role: 'Dessinateur', name: 'Adjia Mareme' },
     accent: 'border-blue-500/60 bg-blue-50/70 dark:bg-blue-950/30',
   },
   {
@@ -104,7 +104,7 @@ export default function SermaOrganigramme() {
                 <div className="text-[10px] font-mono uppercase tracking-wider text-amber-300 font-bold flex items-center justify-center gap-1">
                   <Briefcase className="w-3.5 h-3.5" /> Direction Administrative
                 </div>
-                <div className="text-base font-title font-bold mt-0.5">Fatoumata BALDÉ</div>
+                <div className="text-base font-title font-bold mt-0.5">Fatoumata BALDE</div>
               </div>
               <div className="hidden sm:block w-6 h-0.5 bg-neutral-400 dark:bg-brand-500 shrink-0" />
               <div className="sm:hidden w-0.5 h-4 bg-neutral-400 dark:bg-brand-500" />
